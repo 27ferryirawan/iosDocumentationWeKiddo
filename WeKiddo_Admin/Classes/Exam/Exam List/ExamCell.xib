@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="examCellID" id="r6f-aO-4X9" customClass="ExamCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6f-aO-4X9" id="VLz-ez-pcF">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pi-8s-2XC">
+                        <rect key="frame" x="10" y="0.0" width="300" height="65.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 08 May 2019 - 10.00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEi-Fz-iGD">
+                                <rect key="frame" x="10" y="7" width="280" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Anatomy (Ulangan Harian)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJA-zX-FwX">
+                                <rect key="frame" x="10" y="25.5" width="280" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X IPA A  - Biology - Session 3 | Session 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4U-5o-tOK">
+                                <rect key="frame" x="10" y="44" width="280" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E4U-5o-tOK" firstAttribute="width" secondItem="PJA-zX-FwX" secondAttribute="width" id="LM3-q9-sGf"/>
+                            <constraint firstItem="PJA-zX-FwX" firstAttribute="width" secondItem="SEi-Fz-iGD" secondAttribute="width" id="S48-CX-eXt"/>
+                            <constraint firstAttribute="trailing" secondItem="SEi-Fz-iGD" secondAttribute="trailing" constant="10" id="Y5a-PE-Cyi"/>
+                            <constraint firstItem="PJA-zX-FwX" firstAttribute="trailing" secondItem="SEi-Fz-iGD" secondAttribute="trailing" id="YYN-bd-ydA"/>
+                            <constraint firstItem="E4U-5o-tOK" firstAttribute="trailing" secondItem="PJA-zX-FwX" secondAttribute="trailing" id="c60-SS-bZo"/>
+                            <constraint firstItem="SEi-Fz-iGD" firstAttribute="top" secondItem="5Pi-8s-2XC" secondAttribute="top" constant="7" id="dva-FH-sZe"/>
+                            <constraint firstItem="PJA-zX-FwX" firstAttribute="top" secondItem="SEi-Fz-iGD" secondAttribute="bottom" constant="5" id="gSi-iv-61O"/>
+                            <constraint firstItem="SEi-Fz-iGD" firstAttribute="leading" secondItem="5Pi-8s-2XC" secondAttribute="leading" constant="10" id="p6Y-Rv-OhL"/>
+                            <constraint firstItem="E4U-5o-tOK" firstAttribute="top" secondItem="PJA-zX-FwX" secondAttribute="bottom" constant="5" id="pQJ-Pm-tjB"/>
+                            <constraint firstItem="E4U-5o-tOK" firstAttribute="leading" secondItem="PJA-zX-FwX" secondAttribute="leading" id="tw5-TF-Phw"/>
+                            <constraint firstItem="PJA-zX-FwX" firstAttribute="leading" secondItem="SEi-Fz-iGD" secondAttribute="leading" id="wwj-e2-nnx"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-1h-cRI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5Pi-8s-2XC" firstAttribute="top" secondItem="VLz-ez-pcF" secondAttribute="top" id="6vF-z3-coB"/>
+                    <constraint firstItem="5Pi-8s-2XC" firstAttribute="centerX" secondItem="VLz-ez-pcF" secondAttribute="centerX" id="BYv-5A-ugE"/>
+                    <constraint firstAttribute="trailing" secondItem="5Pi-8s-2XC" secondAttribute="trailing" constant="10" id="Iug-4G-Dgq"/>
+                    <constraint firstItem="5Pi-8s-2XC" firstAttribute="centerY" secondItem="VLz-ez-pcF" secondAttribute="centerY" id="K4D-fK-u7t"/>
+                    <constraint firstItem="5Pi-8s-2XC" firstAttribute="leading" secondItem="VLz-ez-pcF" secondAttribute="leading" constant="10" id="VY6-C1-UFl"/>
+                    <constraint firstAttribute="bottom" secondItem="UPJ-1h-cRI" secondAttribute="bottom" id="YmT-rR-ePP"/>
+                    <constraint firstAttribute="trailing" secondItem="UPJ-1h-cRI" secondAttribute="trailing" id="Yup-Lf-gAK"/>
+                    <constraint firstItem="UPJ-1h-cRI" firstAttribute="leading" secondItem="VLz-ez-pcF" secondAttribute="leading" id="fP3-af-Ol4"/>
+                    <constraint firstAttribute="bottom" secondItem="5Pi-8s-2XC" secondAttribute="bottom" id="hXz-pA-yDA"/>
+                    <constraint firstItem="UPJ-1h-cRI" firstAttribute="top" secondItem="VLz-ez-pcF" secondAttribute="top" id="juP-dI-7PZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="45I-G6-g2v"/>
+            <connections>
+                <outlet property="examButton" destination="UPJ-1h-cRI" id="BnC-BI-FmC"/>
+                <outlet property="examChapter" destination="E4U-5o-tOK" id="4iP-O1-CPY"/>
+                <outlet property="examDate" destination="SEi-Fz-iGD" id="BEg-Jf-kxE"/>
+                <outlet property="examList" destination="5Pi-8s-2XC" id="LOH-JG-Nhm"/>
+                <outlet property="examTopic" destination="PJA-zX-FwX" id="Bor-zs-eBe"/>
+            </connections>
+            <point key="canvasLocation" x="100.00000000000001" y="45.535714285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsContentCell" rowHeight="223" id="KGk-i7-Jjw" customClass="NewsContentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="224.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pve-BZ-f0M">
+                        <rect key="frame" x="10" y="11" width="145" height="200"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_image" translatesAutoresizingMaskIntoConstraints="NO" id="cXN-GA-Hx0">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="HAw-EF-Vjy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pemerintah Kabupaten Landak akan Tindak Tegas Pelaku Pungutan Dana PIP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ9-Ot-s1z">
+                                <rect key="frame" x="0.0" y="140" width="145" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mp-ou-BEg">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BJ9-Ot-s1z" secondAttribute="trailing" id="415-2o-VNu"/>
+                            <constraint firstItem="cXN-GA-Hx0" firstAttribute="top" secondItem="Pve-BZ-f0M" secondAttribute="top" id="5aw-jA-dXf"/>
+                            <constraint firstItem="3mp-ou-BEg" firstAttribute="top" secondItem="Pve-BZ-f0M" secondAttribute="top" id="6f4-mn-VdQ"/>
+                            <constraint firstAttribute="bottom" secondItem="3mp-ou-BEg" secondAttribute="bottom" id="Jki-0s-xhF"/>
+                            <constraint firstAttribute="height" constant="200" id="SRk-FK-q8K"/>
+                            <constraint firstAttribute="trailing" secondItem="3mp-ou-BEg" secondAttribute="trailing" id="Tsw-ds-AId"/>
+                            <constraint firstAttribute="trailing" secondItem="cXN-GA-Hx0" secondAttribute="trailing" id="U4m-m4-M5p"/>
+                            <constraint firstItem="BJ9-Ot-s1z" firstAttribute="top" secondItem="cXN-GA-Hx0" secondAttribute="bottom" constant="5" id="ZR6-HL-XDz"/>
+                            <constraint firstItem="BJ9-Ot-s1z" firstAttribute="leading" secondItem="Pve-BZ-f0M" secondAttribute="leading" id="at5-NA-joY"/>
+                            <constraint firstItem="3mp-ou-BEg" firstAttribute="leading" secondItem="Pve-BZ-f0M" secondAttribute="leading" id="e8o-Hh-1oS"/>
+                            <constraint firstAttribute="width" constant="145" id="sjH-g6-DcB"/>
+                            <constraint firstAttribute="bottom" secondItem="BJ9-Ot-s1z" secondAttribute="bottom" id="ycT-hq-RIq"/>
+                            <constraint firstItem="cXN-GA-Hx0" firstAttribute="leading" secondItem="Pve-BZ-f0M" secondAttribute="leading" id="zSr-Te-2ru"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maL-FI-Prf">
+                        <rect key="frame" x="165" y="11" width="145" height="200"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_image" translatesAutoresizingMaskIntoConstraints="NO" id="G4o-Os-Fyp">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="AuB-Sf-xvb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Indonesia Pintar Jangkau Anak Putus Sekolah di Puncak Jaya Papua" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wia-nS-Iaa">
+                                <rect key="frame" x="0.0" y="140" width="145" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-iz-kAJ">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="G4o-Os-Fyp" secondAttribute="trailing" id="3I8-Pu-8D0"/>
+                            <constraint firstItem="G4o-Os-Fyp" firstAttribute="top" secondItem="maL-FI-Prf" secondAttribute="top" id="8E2-lP-ZLu"/>
+                            <constraint firstItem="wia-nS-Iaa" firstAttribute="leading" secondItem="maL-FI-Prf" secondAttribute="leading" id="9CX-s5-0ev"/>
+                            <constraint firstItem="Pu4-iz-kAJ" firstAttribute="top" secondItem="maL-FI-Prf" secondAttribute="top" id="L7P-LJ-CFb"/>
+                            <constraint firstItem="wia-nS-Iaa" firstAttribute="top" secondItem="G4o-Os-Fyp" secondAttribute="bottom" constant="5" id="M1a-fU-QHy"/>
+                            <constraint firstItem="Pu4-iz-kAJ" firstAttribute="leading" secondItem="maL-FI-Prf" secondAttribute="leading" id="MDt-d6-rYW"/>
+                            <constraint firstAttribute="bottom" secondItem="Pu4-iz-kAJ" secondAttribute="bottom" id="MIH-tU-DQt"/>
+                            <constraint firstAttribute="bottom" secondItem="wia-nS-Iaa" secondAttribute="bottom" id="PYU-cy-72b"/>
+                            <constraint firstAttribute="trailing" secondItem="wia-nS-Iaa" secondAttribute="trailing" id="gbn-t7-VrH"/>
+                            <constraint firstAttribute="trailing" secondItem="Pu4-iz-kAJ" secondAttribute="trailing" id="sJ4-kZ-H26"/>
+                            <constraint firstItem="G4o-Os-Fyp" firstAttribute="leading" secondItem="maL-FI-Prf" secondAttribute="leading" id="zAb-yV-pju"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="maL-FI-Prf" firstAttribute="leading" secondItem="Pve-BZ-f0M" secondAttribute="trailing" constant="10" id="08D-6F-Nm7"/>
+                    <constraint firstItem="Pve-BZ-f0M" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="GkL-Re-i0I"/>
+                    <constraint firstItem="maL-FI-Prf" firstAttribute="width" secondItem="Pve-BZ-f0M" secondAttribute="width" id="UAe-Wf-e4e"/>
+                    <constraint firstItem="maL-FI-Prf" firstAttribute="centerY" secondItem="Pve-BZ-f0M" secondAttribute="centerY" id="XBe-pt-gH7"/>
+                    <constraint firstItem="maL-FI-Prf" firstAttribute="height" secondItem="Pve-BZ-f0M" secondAttribute="height" id="kIx-Pl-bVh"/>
+                    <constraint firstItem="Pve-BZ-f0M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pen-3G-RjG"/>
+                    <constraint firstAttribute="trailing" secondItem="maL-FI-Prf" secondAttribute="trailing" constant="10" id="vbD-gL-3mH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonLeft" destination="3mp-ou-BEg" id="jhj-s7-G55"/>
+                <outlet property="buttonRight" destination="Pu4-iz-kAJ" id="Kry-AY-ZRg"/>
+                <outlet property="imageLeft" destination="cXN-GA-Hx0" id="QB7-kZ-zxv"/>
+                <outlet property="imageRight" destination="G4o-Os-Fyp" id="Gai-Hs-rxZ"/>
+                <outlet property="labelLeft" destination="BJ9-Ot-s1z" id="mLo-ab-97n"/>
+                <outlet property="labelRight" destination="wia-nS-Iaa" id="6cV-RH-FXA"/>
+                <outlet property="viewLeft" destination="Pve-BZ-f0M" id="qW4-dl-sto"/>
+                <outlet property="viewRight" destination="maL-FI-Prf" id="Zc2-u5-HCG"/>
+            </connections>
+            <point key="canvasLocation" x="-155.19999999999999" y="-40.929535232383813"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sample_image" width="1244" height="801"/>
+    </resources>
+</document>

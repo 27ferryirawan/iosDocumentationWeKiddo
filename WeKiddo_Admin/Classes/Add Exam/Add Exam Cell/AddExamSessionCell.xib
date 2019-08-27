@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addExamSessionCellID" id="Ohv-lU-XIn" customClass="AddExamSessionCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circumference" translatesAutoresizingMaskIntoConstraints="NO" id="mce-Ln-zNG">
+                        <rect key="frame" x="5" y="5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="eCP-yr-sol"/>
+                            <constraint firstAttribute="width" constant="20" id="gIU-dN-PSf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session 10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUO-tG-t2L">
+                        <rect key="frame" x="30" y="8.5" width="65" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vea-nF-mt6">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="xDj-sz-a9a" firstAttribute="trailing" secondItem="rUO-tG-t2L" secondAttribute="trailing" constant="5" id="01f-TB-XTs"/>
+                <constraint firstItem="mce-Ln-zNG" firstAttribute="centerY" secondItem="Ohv-lU-XIn" secondAttribute="centerY" id="A5l-Kg-Oyy"/>
+                <constraint firstAttribute="trailing" secondItem="vea-nF-mt6" secondAttribute="trailing" id="HjZ-Q7-SXE"/>
+                <constraint firstItem="mce-Ln-zNG" firstAttribute="leading" secondItem="Ohv-lU-XIn" secondAttribute="leading" constant="5" id="IZ3-AG-Gcv"/>
+                <constraint firstItem="rUO-tG-t2L" firstAttribute="centerY" secondItem="mce-Ln-zNG" secondAttribute="centerY" id="Kjd-53-BRv"/>
+                <constraint firstItem="rUO-tG-t2L" firstAttribute="leading" secondItem="mce-Ln-zNG" secondAttribute="trailing" constant="5" id="gno-6H-K2E"/>
+                <constraint firstItem="vea-nF-mt6" firstAttribute="top" secondItem="Ohv-lU-XIn" secondAttribute="top" id="lNR-ZO-ceI"/>
+                <constraint firstAttribute="bottom" secondItem="vea-nF-mt6" secondAttribute="bottom" id="vNg-8b-8N6"/>
+                <constraint firstItem="vea-nF-mt6" firstAttribute="leading" secondItem="Ohv-lU-XIn" secondAttribute="leading" id="w14-fH-QbV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="xDj-sz-a9a"/>
+            <connections>
+                <outlet property="sessionButton" destination="vea-nF-mt6" id="j3P-1N-7uR"/>
+                <outlet property="sessionImageStatus" destination="mce-Ln-zNG" id="tud-p9-8JF"/>
+                <outlet property="sessionLabel" destination="rUO-tG-t2L" id="O4G-sv-D1J"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="circumference" width="512" height="512"/>
+    </resources>
+</document>

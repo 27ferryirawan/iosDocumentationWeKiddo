@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="assignmentScoreStudentCellID" rowHeight="86" id="KGk-i7-Jjw" customClass="AssignmentScoreStudentCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-hF-CAu">
+                        <rect key="frame" x="20" y="5.5" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="Qr3-Ah-AlH"/>
+                            <constraint firstAttribute="height" constant="55" id="jbg-I3-Mw9"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zein Rezky Chandra" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tY-5H-sT1">
+                        <rect key="frame" x="83" y="25.5" width="113.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hr8-aV-D23">
+                        <rect key="frame" x="240" y="13" width="60" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="dDL-pv-aNv"/>
+                            <constraint firstAttribute="height" constant="40" id="m14-Uw-5jD"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="ETM-8G-Yvi"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5tY-5H-sT1" firstAttribute="leading" secondItem="rdM-hF-CAu" secondAttribute="trailing" constant="8" id="Cv3-di-YEj"/>
+                    <constraint firstItem="hr8-aV-D23" firstAttribute="centerY" secondItem="rdM-hF-CAu" secondAttribute="centerY" id="aor-EI-Uuy"/>
+                    <constraint firstItem="5tY-5H-sT1" firstAttribute="centerY" secondItem="rdM-hF-CAu" secondAttribute="centerY" id="hE7-5T-DYT"/>
+                    <constraint firstItem="rdM-hF-CAu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="i9U-AO-9ub"/>
+                    <constraint firstItem="rdM-hF-CAu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tTg-mL-Ejz"/>
+                    <constraint firstAttribute="trailing" secondItem="hr8-aV-D23" secondAttribute="trailing" constant="20" id="vs3-ci-gUU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="studentImage" destination="rdM-hF-CAu" id="4QW-CP-c8o"/>
+                <outlet property="studentName" destination="5tY-5H-sT1" id="JAH-5R-ejv"/>
+                <outlet property="studentText" destination="hr8-aV-D23" id="oqB-Dy-7tn"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="166.74107142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

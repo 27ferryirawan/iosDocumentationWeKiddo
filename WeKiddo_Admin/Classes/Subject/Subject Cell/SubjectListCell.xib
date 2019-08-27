@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectListCellID" id="KGk-i7-Jjw" customClass="SubjectListCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIF-Yg-b1Z">
+                        <rect key="frame" x="15" y="5" width="290" height="55.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bullet" translatesAutoresizingMaskIntoConstraints="NO" id="lWN-j1-4E5">
+                                <rect key="frame" x="10" y="18" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="5Sh-io-scl"/>
+                                    <constraint firstAttribute="height" constant="20" id="jXe-AV-SuT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhJ-UL-HPm">
+                                <rect key="frame" x="40" y="10" width="240" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Academic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRL-Ob-aVR">
+                                <rect key="frame" x="40" y="31" width="240" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WRL-Ob-aVR" firstAttribute="width" secondItem="fhJ-UL-HPm" secondAttribute="width" id="2vW-Pl-n9M"/>
+                            <constraint firstAttribute="trailing" secondItem="fhJ-UL-HPm" secondAttribute="trailing" constant="10" id="8Ii-28-Wdo"/>
+                            <constraint firstItem="WRL-Ob-aVR" firstAttribute="leading" secondItem="fhJ-UL-HPm" secondAttribute="leading" id="DaC-ik-HSb"/>
+                            <constraint firstItem="fhJ-UL-HPm" firstAttribute="leading" secondItem="lWN-j1-4E5" secondAttribute="trailing" constant="10" id="Kkw-zS-1jB"/>
+                            <constraint firstItem="WRL-Ob-aVR" firstAttribute="top" secondItem="fhJ-UL-HPm" secondAttribute="bottom" constant="-0.5" id="PDb-HP-XcT"/>
+                            <constraint firstItem="lWN-j1-4E5" firstAttribute="centerY" secondItem="TIF-Yg-b1Z" secondAttribute="centerY" id="QMs-DW-jeB"/>
+                            <constraint firstItem="fhJ-UL-HPm" firstAttribute="top" secondItem="TIF-Yg-b1Z" secondAttribute="top" constant="10" id="aHN-R7-QNg"/>
+                            <constraint firstItem="lWN-j1-4E5" firstAttribute="leading" secondItem="TIF-Yg-b1Z" secondAttribute="leading" constant="10" id="dBK-EG-gfr"/>
+                            <constraint firstItem="WRL-Ob-aVR" firstAttribute="trailing" secondItem="fhJ-UL-HPm" secondAttribute="trailing" id="y7n-eG-gSR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TIF-Yg-b1Z" secondAttribute="trailing" constant="15" id="HLo-fM-jnV"/>
+                    <constraint firstItem="TIF-Yg-b1Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="KUj-x7-HG1"/>
+                    <constraint firstAttribute="bottom" secondItem="TIF-Yg-b1Z" secondAttribute="bottom" constant="5" id="UpA-vE-RG8"/>
+                    <constraint firstItem="TIF-Yg-b1Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="gPC-8T-Sch"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="TIF-Yg-b1Z" id="dKu-SK-ZCp"/>
+                <outlet property="subTitleLabel" destination="WRL-Ob-aVR" id="xz7-qv-9vf"/>
+                <outlet property="titleLabel" destination="fhJ-UL-HPm" id="334-9a-pNd"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="34.821428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_bullet" width="161" height="160"/>
+    </resources>
+</document>

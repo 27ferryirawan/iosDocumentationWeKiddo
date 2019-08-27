@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchLocationViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="yJI-d1-qKj" id="MUc-TX-dJH"/>
+                <outlet property="tableView" destination="ujD-dC-ONZ" id="cVW-aw-0A9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="yJI-d1-qKj">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="QfB-Ak-T9W"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="wIY-LC-ZcF"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-dC-ONZ">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="seX-9j-xG8"/>
+                        <outlet property="delegate" destination="-1" id="2XB-Gm-nHY"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yJI-d1-qKj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1fS-YU-pP7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ujD-dC-ONZ" secondAttribute="bottom" id="O2O-bV-8oG"/>
+                <constraint firstItem="yJI-d1-qKj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cz2-3C-jsD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ujD-dC-ONZ" secondAttribute="trailing" id="gJG-p8-dnc"/>
+                <constraint firstItem="ujD-dC-ONZ" firstAttribute="top" secondItem="yJI-d1-qKj" secondAttribute="bottom" id="i06-Yl-8Yv"/>
+                <constraint firstItem="ujD-dC-ONZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="j12-xF-3qS"/>
+                <constraint firstItem="yJI-d1-qKj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="t3E-M9-g2a"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

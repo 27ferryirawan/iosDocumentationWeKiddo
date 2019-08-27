@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchAssignmentCellID" id="KGk-i7-Jjw" customClass="SearchAssignmentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTn-pl-1ik">
+                        <rect key="frame" x="15" y="5" width="290" height="77.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdO-H2-Sj5">
+                                <rect key="frame" x="15" y="15" width="260" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Human Anatomy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXh-J8-ToU">
+                                <rect key="frame" x="15" y="34.5" width="260" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon, 5 Sept 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVw-ha-cEP">
+                                <rect key="frame" x="15" y="59" width="260" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DVw-ha-cEP" firstAttribute="width" secondItem="pXh-J8-ToU" secondAttribute="width" id="1r6-DJ-tSg"/>
+                            <constraint firstItem="DVw-ha-cEP" firstAttribute="trailing" secondItem="pXh-J8-ToU" secondAttribute="trailing" id="8ce-st-4TY"/>
+                            <constraint firstItem="DVw-ha-cEP" firstAttribute="top" secondItem="pXh-J8-ToU" secondAttribute="bottom" constant="5" id="AHg-7Y-eJx"/>
+                            <constraint firstAttribute="trailing" secondItem="tdO-H2-Sj5" secondAttribute="trailing" constant="15" id="Ed3-nb-viS"/>
+                            <constraint firstItem="pXh-J8-ToU" firstAttribute="trailing" secondItem="tdO-H2-Sj5" secondAttribute="trailing" id="HiI-jh-2qj"/>
+                            <constraint firstItem="tdO-H2-Sj5" firstAttribute="leading" secondItem="sTn-pl-1ik" secondAttribute="leading" constant="15" id="OXa-dG-pKm"/>
+                            <constraint firstItem="DVw-ha-cEP" firstAttribute="leading" secondItem="pXh-J8-ToU" secondAttribute="leading" id="REF-pB-H1F"/>
+                            <constraint firstItem="pXh-J8-ToU" firstAttribute="top" secondItem="tdO-H2-Sj5" secondAttribute="bottom" constant="5" id="i2U-aJ-Cjt"/>
+                            <constraint firstItem="pXh-J8-ToU" firstAttribute="width" secondItem="tdO-H2-Sj5" secondAttribute="width" id="kQi-vK-qjC"/>
+                            <constraint firstItem="pXh-J8-ToU" firstAttribute="leading" secondItem="tdO-H2-Sj5" secondAttribute="leading" id="nmB-GQ-ahe"/>
+                            <constraint firstItem="tdO-H2-Sj5" firstAttribute="top" secondItem="sTn-pl-1ik" secondAttribute="top" constant="15" id="sqc-dV-Wu7"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-EV-bDz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                        <connections>
+                            <action selector="goToSessionDetail:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GGJ-WE-r7w"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="MTi-EV-bDz" secondAttribute="trailing" id="BjH-i3-Xea"/>
+                    <constraint firstAttribute="trailing" secondItem="sTn-pl-1ik" secondAttribute="trailing" constant="15" id="P0e-BS-o7V"/>
+                    <constraint firstItem="MTi-EV-bDz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SeU-DF-jHM"/>
+                    <constraint firstItem="MTi-EV-bDz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vgy-qe-cGH"/>
+                    <constraint firstItem="sTn-pl-1ik" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hgB-fQ-W7M"/>
+                    <constraint firstAttribute="bottom" secondItem="MTi-EV-bDz" secondAttribute="bottom" id="lIX-KF-g0g"/>
+                    <constraint firstItem="sTn-pl-1ik" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="pL2-qK-Xsh"/>
+                    <constraint firstItem="sTn-pl-1ik" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vvL-4L-5rv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="sTn-pl-1ik" id="WEP-nh-Ecq"/>
+                <outlet property="dateLabel" destination="DVw-ha-cEP" id="vac-Gc-JXE"/>
+                <outlet property="titleLabel" destination="tdO-H2-Sj5" id="WbR-i0-jqw"/>
+                <outlet property="topicLabel" destination="pXh-J8-ToU" id="7Ft-bY-kEg"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

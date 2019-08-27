@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addExamAddMoreClassCellID" id="KGk-i7-Jjw" customClass="AddExamAddMoreClassCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyH-cK-5qF">
+                        <rect key="frame" x="175" y="5.5" width="130" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="Fmm-vL-BDP"/>
+                            <constraint firstAttribute="width" constant="130" id="HfB-Ui-uke"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_question" translatesAutoresizingMaskIntoConstraints="NO" id="EZ1-vk-ba6">
+                        <rect key="frame" x="140" y="9.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="81V-o1-zID"/>
+                            <constraint firstAttribute="width" constant="25" id="GFw-8s-Pvq"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nry-g0-WRV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lyH-cK-5qF" firstAttribute="leading" secondItem="EZ1-vk-ba6" secondAttribute="trailing" constant="10" id="4Bw-Qo-cfr"/>
+                    <constraint firstItem="Nry-g0-WRV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ax9-9P-zqd"/>
+                    <constraint firstItem="lyH-cK-5qF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GDx-MK-tFo"/>
+                    <constraint firstItem="EZ1-vk-ba6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IUc-t9-BAX"/>
+                    <constraint firstAttribute="trailing" secondItem="Nry-g0-WRV" secondAttribute="trailing" id="Qlg-l3-VRl"/>
+                    <constraint firstAttribute="bottom" secondItem="Nry-g0-WRV" secondAttribute="bottom" id="bGj-LK-HR8"/>
+                    <constraint firstAttribute="trailing" secondItem="lyH-cK-5qF" secondAttribute="trailing" constant="15" id="jdC-Xz-8MC"/>
+                    <constraint firstItem="Nry-g0-WRV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zWT-lW-6d6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addMoreClassButton" destination="Nry-g0-WRV" id="Nib-Ki-2ea"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_home_question" width="63" height="63"/>
+    </resources>
+</document>

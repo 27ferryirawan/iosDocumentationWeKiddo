@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubjectTeacherDetailViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="6tC-gb-1Cy" id="aKt-k7-m8J"/>
+                <outlet property="tableView" destination="SQH-5i-rxd" id="2CP-jl-P1T"/>
+                <outlet property="titleLabel" destination="czh-Wf-lvq" id="OPs-Zh-NsU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level X - Biology" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czh-Wf-lvq">
+                    <rect key="frame" x="10" y="54" width="394" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="E9t-iJ-9uW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tC-gb-1Cy">
+                    <rect key="frame" x="10" y="89" width="394" height="763"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SQH-5i-rxd">
+                            <rect key="frame" x="2" y="2" width="390" height="759"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="XNS-QH-5xJ"/>
+                                <outlet property="delegate" destination="-1" id="XUH-bd-LI9"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="SQH-5i-rxd" secondAttribute="trailing" constant="2" id="Dz1-TT-YIp"/>
+                        <constraint firstAttribute="bottom" secondItem="SQH-5i-rxd" secondAttribute="bottom" constant="2" id="O3W-dD-cdf"/>
+                        <constraint firstItem="SQH-5i-rxd" firstAttribute="top" secondItem="6tC-gb-1Cy" secondAttribute="top" constant="2" id="RGf-p0-QTf"/>
+                        <constraint firstItem="SQH-5i-rxd" firstAttribute="leading" secondItem="6tC-gb-1Cy" secondAttribute="leading" constant="2" id="cbu-0u-LHL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="czh-Wf-lvq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="7HQ-KO-gPv"/>
+                <constraint firstItem="czh-Wf-lvq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="U7k-nv-XTP"/>
+                <constraint firstItem="6tC-gb-1Cy" firstAttribute="leading" secondItem="czh-Wf-lvq" secondAttribute="leading" id="XG4-no-AoV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6tC-gb-1Cy" secondAttribute="bottom" constant="10" id="YUV-DT-Jkx"/>
+                <constraint firstItem="6tC-gb-1Cy" firstAttribute="width" secondItem="czh-Wf-lvq" secondAttribute="width" id="cWt-8a-90z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="czh-Wf-lvq" secondAttribute="trailing" constant="10" id="e2x-JL-sFF"/>
+                <constraint firstItem="6tC-gb-1Cy" firstAttribute="top" secondItem="czh-Wf-lvq" secondAttribute="bottom" constant="10" id="geh-Tp-wpY"/>
+                <constraint firstItem="6tC-gb-1Cy" firstAttribute="trailing" secondItem="czh-Wf-lvq" secondAttribute="trailing" id="mOd-41-Abm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

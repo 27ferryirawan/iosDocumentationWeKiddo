@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UniversityListViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <connections>
+                <outlet property="regionButton" destination="UeH-yf-sf4" id="tIM-WH-c9f"/>
+                <outlet property="tableView" destination="Zns-CL-CSd" id="KXh-CG-rAE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oRl-yM-Wai">
+                    <rect key="frame" x="0.0" y="44" width="414" height="55"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeH-yf-sf4">
+                            <rect key="frame" x="20" y="7.5" width="374" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="rVn-tB-OAr"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="All Region">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="UeH-yf-sf4" firstAttribute="centerY" secondItem="oRl-yM-Wai" secondAttribute="centerY" id="0bF-bS-gcE"/>
+                        <constraint firstItem="UeH-yf-sf4" firstAttribute="centerX" secondItem="oRl-yM-Wai" secondAttribute="centerX" id="68A-5F-oZ0"/>
+                        <constraint firstItem="UeH-yf-sf4" firstAttribute="leading" secondItem="oRl-yM-Wai" secondAttribute="leading" constant="20" id="Ksv-qm-kqQ"/>
+                        <constraint firstAttribute="trailing" secondItem="UeH-yf-sf4" secondAttribute="trailing" constant="20" id="XTU-ro-pWq"/>
+                        <constraint firstAttribute="height" constant="55" id="iY3-02-8RM"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zns-CL-CSd">
+                    <rect key="frame" x="0.0" y="99" width="414" height="763"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="2c6-YF-gLC"/>
+                        <outlet property="delegate" destination="-1" id="37W-KI-j9Z"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zns-CL-CSd" secondAttribute="trailing" id="3OI-Qt-ppZ"/>
+                <constraint firstItem="oRl-yM-Wai" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9m6-DZ-voo"/>
+                <constraint firstItem="oRl-yM-Wai" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ah9-nL-LiX"/>
+                <constraint firstItem="Zns-CL-CSd" firstAttribute="top" secondItem="oRl-yM-Wai" secondAttribute="bottom" id="E0j-kk-p11"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oRl-yM-Wai" secondAttribute="trailing" id="Nor-7y-tdo"/>
+                <constraint firstItem="Zns-CL-CSd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TnI-qN-VOu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Zns-CL-CSd" secondAttribute="bottom" id="okl-ko-EXW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

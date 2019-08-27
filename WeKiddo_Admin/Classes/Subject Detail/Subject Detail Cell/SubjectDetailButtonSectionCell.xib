@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectDetailButtonSectionCellID" rowHeight="65" id="KGk-i7-Jjw" customClass="SubjectDetailButtonSectionCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="due-Ni-ah8">
+                        <rect key="frame" x="15" y="5" width="290" height="44"/>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="0GA-dU-I2n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <state key="normal" title="SEE MORE ASSIGNMENT(s)">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmh-y8-USI">
+                        <rect key="frame" x="15" y="59" width="290" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="v7j-Gt-sFq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="due-Ni-ah8" secondAttribute="trailing" constant="15" id="AwS-uD-ilB"/>
+                    <constraint firstItem="due-Ni-ah8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="EQ0-G8-fdh"/>
+                    <constraint firstItem="due-Ni-ah8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="KEO-Vm-P7O"/>
+                    <constraint firstItem="Zmh-y8-USI" firstAttribute="trailing" secondItem="due-Ni-ah8" secondAttribute="trailing" id="T6a-w0-wr2"/>
+                    <constraint firstItem="Zmh-y8-USI" firstAttribute="top" secondItem="due-Ni-ah8" secondAttribute="bottom" constant="10" id="ZO4-nj-eF2"/>
+                    <constraint firstItem="Zmh-y8-USI" firstAttribute="leading" secondItem="due-Ni-ah8" secondAttribute="leading" id="o7A-Af-dz2"/>
+                    <constraint firstItem="Zmh-y8-USI" firstAttribute="width" secondItem="due-Ni-ah8" secondAttribute="width" id="ygI-3e-EVU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonSection" destination="due-Ni-ah8" id="mHY-bl-Q62"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="39.174107142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

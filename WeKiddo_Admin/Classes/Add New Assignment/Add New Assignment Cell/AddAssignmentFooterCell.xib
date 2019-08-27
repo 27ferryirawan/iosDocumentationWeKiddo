@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addAssignmentFooterCellID" rowHeight="140" id="KGk-i7-Jjw" customClass="AddAssignmentFooterCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_approval" translatesAutoresizingMaskIntoConstraints="NO" id="tMV-Ea-alM">
+                        <rect key="frame" x="30" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="DpC-8e-Wtf"/>
+                            <constraint firstAttribute="width" constant="25" id="O3I-FD-uQe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gn-jE-bhX">
+                        <rect key="frame" x="65" y="15.5" width="225" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1b-1e-6Kz">
+                        <rect key="frame" x="30" y="7.5" width="260" height="30"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nE-vZ-yH0">
+                        <rect key="frame" x="0.0" y="95.5" width="320" height="44"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="gTh-8A-tc0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="SAVE">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="9nE-vZ-yH0" secondAttribute="bottom" id="383-Cv-XyZ"/>
+                    <constraint firstAttribute="trailing" secondItem="F1b-1e-6Kz" secondAttribute="trailing" constant="30" id="Dpn-hm-cfv"/>
+                    <constraint firstItem="5Gn-jE-bhX" firstAttribute="centerY" secondItem="tMV-Ea-alM" secondAttribute="centerY" id="IQ8-Qu-28n"/>
+                    <constraint firstItem="5Gn-jE-bhX" firstAttribute="leading" secondItem="tMV-Ea-alM" secondAttribute="trailing" constant="10" id="NCA-Yq-apr"/>
+                    <constraint firstItem="F1b-1e-6Kz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="PRu-Av-syI"/>
+                    <constraint firstAttribute="trailing" secondItem="5Gn-jE-bhX" secondAttribute="trailing" constant="30" id="XPA-Yt-404"/>
+                    <constraint firstItem="F1b-1e-6Kz" firstAttribute="centerY" secondItem="tMV-Ea-alM" secondAttribute="centerY" id="bDl-bW-1cJ"/>
+                    <constraint firstItem="tMV-Ea-alM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hDW-TU-f0C"/>
+                    <constraint firstAttribute="trailing" secondItem="9nE-vZ-yH0" secondAttribute="trailing" id="qnk-MM-DQY"/>
+                    <constraint firstItem="9nE-vZ-yH0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uEX-U3-j1z"/>
+                    <constraint firstItem="tMV-Ea-alM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="yeQ-mQ-Ve2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addClassButton" destination="F1b-1e-6Kz" id="niz-xp-gtr"/>
+                <outlet property="saveButton" destination="9nE-vZ-yH0" id="Hac-ty-bir"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="184.82142857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_approval" width="549" height="549"/>
+    </resources>
+</document>

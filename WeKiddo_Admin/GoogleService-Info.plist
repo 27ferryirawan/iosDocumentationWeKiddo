@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>18250050801-bfa06e2rft5fkf7v39pcf49hjplj41t7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.18250050801-bfa06e2rft5fkf7v39pcf49hjplj41t7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>18250050801-c4e0oke0aji567q0d0kl4ge4k41375si.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAph-2JlKvsUEPSAg5jzaGiCwmCcTz_5tU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>18250050801</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.apps.WekiddoSchool</string>
+	<key>PROJECT_ID</key>
+	<string>wekiddo-eccbd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wekiddo-eccbd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:18250050801:ios:a0f9a3c08e0ec7dc</string>
+	<key>DATABASE_URL</key>
+	<string>https://wekiddo-eccbd.firebaseio.com</string>
+</dict>
+</plist>

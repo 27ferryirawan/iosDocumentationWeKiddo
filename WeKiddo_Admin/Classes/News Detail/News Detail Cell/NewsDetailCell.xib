@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsDetailCell" rowHeight="425" id="KGk-i7-Jjw" customClass="NewsDetailCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="424.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_image" translatesAutoresizingMaskIntoConstraints="NO" id="RY1-jJ-Qrj">
+                        <rect key="frame" x="16" y="11" width="288" height="180"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="180" id="QCz-MH-MMo"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Program Indonesia Pintar Beri Harapan Anak Seorang Petani" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCJ-XN-hdr">
+                        <rect key="frame" x="16" y="199" width="288" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 Feb 2019 12.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-PP-d1F">
+                        <rect key="frame" x="16" y="236" width="288" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="KLP-nj-2Nb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uif-yI-QvE">
+                        <rect key="frame" x="16" y="264" width="288" height="150"/>
+                        <mutableString key="text">Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat.Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat. Program Indonesia Pintar (PIP) yang merupakan salah satu program prioritas Kementrian Pendidikan dan Kebudayaan yang salah satu penerimanya adalah Maya Rosa, siswi kelas 4 SMPN 4 , kabupaten sukabumi jawa barat.</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesSpacing">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uif-yI-QvE" firstAttribute="top" secondItem="gdo-PP-d1F" secondAttribute="bottom" constant="8" id="3Xb-Q8-9OH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RY1-jJ-Qrj" secondAttribute="trailing" id="4iK-uj-W4X"/>
+                    <constraint firstItem="UCJ-XN-hdr" firstAttribute="width" secondItem="RY1-jJ-Qrj" secondAttribute="width" id="7fg-rC-okh"/>
+                    <constraint firstItem="gdo-PP-d1F" firstAttribute="width" secondItem="UCJ-XN-hdr" secondAttribute="width" id="Awz-RF-ebN"/>
+                    <constraint firstItem="gdo-PP-d1F" firstAttribute="top" secondItem="UCJ-XN-hdr" secondAttribute="bottom" constant="8" id="Doc-lO-bEc"/>
+                    <constraint firstItem="UCJ-XN-hdr" firstAttribute="top" secondItem="RY1-jJ-Qrj" secondAttribute="bottom" constant="8" id="Jng-fW-Ozz"/>
+                    <constraint firstItem="UCJ-XN-hdr" firstAttribute="trailing" secondItem="RY1-jJ-Qrj" secondAttribute="trailing" id="RbN-ci-0Nz"/>
+                    <constraint firstItem="gdo-PP-d1F" firstAttribute="leading" secondItem="UCJ-XN-hdr" secondAttribute="leading" id="Utt-lw-BWf"/>
+                    <constraint firstItem="RY1-jJ-Qrj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XMF-7y-YAH"/>
+                    <constraint firstItem="RY1-jJ-Qrj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="YTo-7b-ww3"/>
+                    <constraint firstItem="uif-yI-QvE" firstAttribute="leading" secondItem="gdo-PP-d1F" secondAttribute="leading" id="aYg-m6-w4E"/>
+                    <constraint firstItem="uif-yI-QvE" firstAttribute="trailing" secondItem="gdo-PP-d1F" secondAttribute="trailing" id="bgR-dO-aIW"/>
+                    <constraint firstItem="UCJ-XN-hdr" firstAttribute="leading" secondItem="RY1-jJ-Qrj" secondAttribute="leading" id="f9E-OC-5s8"/>
+                    <constraint firstItem="uif-yI-QvE" firstAttribute="width" secondItem="gdo-PP-d1F" secondAttribute="width" id="fpa-YT-VLg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="uif-yI-QvE" secondAttribute="bottom" id="mUe-fZ-4nr"/>
+                    <constraint firstItem="gdo-PP-d1F" firstAttribute="trailing" secondItem="UCJ-XN-hdr" secondAttribute="trailing" id="yYa-cY-bvv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="137.59999999999999" y="325.18740629685158"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sample_image" width="1244" height="801"/>
+    </resources>
+</document>

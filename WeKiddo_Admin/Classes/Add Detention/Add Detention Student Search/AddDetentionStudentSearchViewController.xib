@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddDetentionStudentSearchViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="addStudentButton" destination="2rL-Pi-I5a" id="8V7-NW-dKR"/>
+                <outlet property="searchBar" destination="WC1-PY-hOR" id="Wtr-g9-93C"/>
+                <outlet property="tableView" destination="nu8-e4-xG9" id="fBQ-Pb-ES6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Student" translatesAutoresizingMaskIntoConstraints="NO" id="WC1-PY-hOR">
+                    <rect key="frame" x="10" y="44" width="394" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="OKq-19-Ulc"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="ikK-67-bgf"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nu8-e4-xG9">
+                    <rect key="frame" x="0.0" y="100" width="414" height="718"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="HTk-cM-Q1S"/>
+                        <outlet property="delegate" destination="-1" id="H2Q-53-bXt"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rL-Pi-I5a">
+                    <rect key="frame" x="20" y="818" width="374" height="44"/>
+                    <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ZcK-1G-bW1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="ADD STUDENT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="2rL-Pi-I5a" secondAttribute="bottom" id="0Sr-c3-FJY"/>
+                <constraint firstItem="WC1-PY-hOR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="1Ux-9u-GXw"/>
+                <constraint firstItem="WC1-PY-hOR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="86R-EN-7nh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nu8-e4-xG9" secondAttribute="trailing" id="V5b-jO-pfS"/>
+                <constraint firstItem="nu8-e4-xG9" firstAttribute="top" secondItem="WC1-PY-hOR" secondAttribute="bottom" constant="1" id="Yyq-8B-vvU"/>
+                <constraint firstItem="2rL-Pi-I5a" firstAttribute="top" secondItem="nu8-e4-xG9" secondAttribute="bottom" id="g9c-hw-vNf"/>
+                <constraint firstItem="nu8-e4-xG9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hDg-EB-Fk4"/>
+                <constraint firstAttribute="trailing" secondItem="WC1-PY-hOR" secondAttribute="trailing" constant="10" id="hcN-7j-GsC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2rL-Pi-I5a" secondAttribute="trailing" constant="20" id="kNv-Ob-B6M"/>
+                <constraint firstItem="2rL-Pi-I5a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="x85-jY-7eK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="examDetailCellID" rowHeight="290" id="KGk-i7-Jjw" customClass="ExamDetailCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="289.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 08 Mey 2019 - 10.00 AM | BIOLOGY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3g-Bi-2NU">
+                        <rect key="frame" x="10" y="10" width="300" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="RHp-NU-yM9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUMAN ANATOMY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kO8-S1-ChH">
+                        <rect key="frame" x="10" y="40" width="300" height="30"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                        <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : Daily Exam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-Pc-eu3">
+                        <rect key="frame" x="10" y="75" width="300" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class : X IPA A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP0-G1-RyK">
+                        <rect key="frame" x="10" y="96" width="300" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB7-56-b0k">
+                        <rect key="frame" x="10" y="127" width="300" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sessions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-01-Dtw">
+                        <rect key="frame" x="10" y="157" width="300" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="R3g-Bi-2NU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6JZ-rM-XGV"/>
+                    <constraint firstItem="eP0-G1-RyK" firstAttribute="trailing" secondItem="jdp-Pc-eu3" secondAttribute="trailing" id="9Ig-YT-6gh"/>
+                    <constraint firstItem="sB7-56-b0k" firstAttribute="width" secondItem="eP0-G1-RyK" secondAttribute="width" id="BMZ-sT-Ucm"/>
+                    <constraint firstItem="eP0-G1-RyK" firstAttribute="width" secondItem="jdp-Pc-eu3" secondAttribute="width" id="Etd-87-9qo"/>
+                    <constraint firstItem="eP0-G1-RyK" firstAttribute="leading" secondItem="jdp-Pc-eu3" secondAttribute="leading" id="Mud-QI-rqN"/>
+                    <constraint firstItem="l2N-01-Dtw" firstAttribute="leading" secondItem="sB7-56-b0k" secondAttribute="leading" id="NPz-Jm-aKC"/>
+                    <constraint firstItem="sB7-56-b0k" firstAttribute="trailing" secondItem="eP0-G1-RyK" secondAttribute="trailing" id="RJy-OF-QeI"/>
+                    <constraint firstItem="R3g-Bi-2NU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="TN9-2i-Wuq"/>
+                    <constraint firstItem="eP0-G1-RyK" firstAttribute="top" secondItem="jdp-Pc-eu3" secondAttribute="bottom" constant="7.5" id="W0E-07-xxQ"/>
+                    <constraint firstItem="sB7-56-b0k" firstAttribute="leading" secondItem="eP0-G1-RyK" secondAttribute="leading" id="WuO-D2-LWD"/>
+                    <constraint firstAttribute="trailing" secondItem="R3g-Bi-2NU" secondAttribute="trailing" constant="10" id="X9a-yf-c1B"/>
+                    <constraint firstItem="sB7-56-b0k" firstAttribute="top" secondItem="eP0-G1-RyK" secondAttribute="bottom" constant="17.5" id="c6J-dH-acR"/>
+                    <constraint firstItem="kO8-S1-ChH" firstAttribute="top" secondItem="R3g-Bi-2NU" secondAttribute="bottom" constant="5" id="dBB-up-1t1"/>
+                    <constraint firstItem="kO8-S1-ChH" firstAttribute="width" secondItem="R3g-Bi-2NU" secondAttribute="width" id="f3F-t3-SCM"/>
+                    <constraint firstItem="jdp-Pc-eu3" firstAttribute="top" secondItem="kO8-S1-ChH" secondAttribute="bottom" constant="5" id="jGC-bC-tTl"/>
+                    <constraint firstItem="l2N-01-Dtw" firstAttribute="width" secondItem="sB7-56-b0k" secondAttribute="width" id="llk-VW-kbN"/>
+                    <constraint firstItem="kO8-S1-ChH" firstAttribute="leading" secondItem="R3g-Bi-2NU" secondAttribute="leading" id="nhA-wx-Ayx"/>
+                    <constraint firstItem="jdp-Pc-eu3" firstAttribute="leading" secondItem="kO8-S1-ChH" secondAttribute="leading" id="oAr-KX-WZ4"/>
+                    <constraint firstItem="l2N-01-Dtw" firstAttribute="trailing" secondItem="sB7-56-b0k" secondAttribute="trailing" id="qV2-1P-TYM"/>
+                    <constraint firstItem="l2N-01-Dtw" firstAttribute="top" secondItem="sB7-56-b0k" secondAttribute="bottom" constant="30" id="rMp-Fd-VjP"/>
+                    <constraint firstItem="jdp-Pc-eu3" firstAttribute="width" secondItem="kO8-S1-ChH" secondAttribute="width" id="shY-p4-Ruc"/>
+                    <constraint firstItem="jdp-Pc-eu3" firstAttribute="trailing" secondItem="kO8-S1-ChH" secondAttribute="trailing" id="v9w-wy-dwQ"/>
+                    <constraint firstItem="kO8-S1-ChH" firstAttribute="trailing" secondItem="R3g-Bi-2NU" secondAttribute="trailing" id="wri-42-Lnz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="examDateLabel" destination="R3g-Bi-2NU" id="Q5c-Em-E6f"/>
+                <outlet property="examDescLabel" destination="eP0-G1-RyK" id="Xd1-Yt-3Lj"/>
+                <outlet property="examTopicLabel" destination="kO8-S1-ChH" id="hlv-fA-08A"/>
+                <outlet property="examTypeLabel" destination="jdp-Pc-eu3" id="YmT-Oj-YE0"/>
+            </connections>
+            <point key="canvasLocation" x="-37.681159420289859" y="87.723214285714278"/>
+        </tableViewCell>
+    </objects>
+</document>

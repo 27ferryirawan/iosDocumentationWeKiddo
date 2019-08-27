@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubjectTeacherViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="classButton" destination="wJz-js-SfQ" id="0s5-Bg-aA1"/>
+                <outlet property="classViewActive" destination="Fzm-QK-YLX" id="LM0-0P-R3u"/>
+                <outlet property="subjectButton" destination="QWI-pQ-Axs" id="E7A-s3-H85"/>
+                <outlet property="subjectViewActive" destination="Szt-3u-nYD" id="fE0-cL-b2x"/>
+                <outlet property="tableView" destination="ItR-aY-KSG" id="k3O-jE-1on"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWI-pQ-Axs">
+                    <rect key="frame" x="5" y="44" width="181.66666666666666" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="rHx-pD-59P"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="By Subject">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJz-js-SfQ">
+                    <rect key="frame" x="188.66666666666663" y="44" width="181.33333333333337" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="W6T-cH-SpQ"/>
+                    </constraints>
+                    <state key="normal" title="By Class">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6B-wz-MSG">
+                    <rect key="frame" x="5" y="88" width="365" height="1"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="uD4-gz-eYo"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szt-3u-nYD">
+                    <rect key="frame" x="5" y="88" width="181.66666666666666" height="2"/>
+                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="JtF-PO-jfL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fzm-QK-YLX">
+                    <rect key="frame" x="188.66666666666663" y="88" width="181.33333333333337" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="4cU-lO-vDS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-ed-1d4">
+                    <rect key="frame" x="187.66666666666666" y="44" width="1" height="44"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="b8e-JN-LvH"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ItR-aY-KSG">
+                    <rect key="frame" x="0.0" y="89" width="375" height="689"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8HM-2Q-ixh"/>
+                        <outlet property="delegate" destination="-1" id="2iX-kn-on0"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="V6B-wz-MSG" firstAttribute="leading" secondItem="QWI-pQ-Axs" secondAttribute="leading" id="05k-Ok-NXK"/>
+                <constraint firstItem="Szt-3u-nYD" firstAttribute="trailing" secondItem="QWI-pQ-Axs" secondAttribute="trailing" id="2xQ-SC-O7A"/>
+                <constraint firstItem="QWI-pQ-Axs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3HN-fo-YS6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ItR-aY-KSG" secondAttribute="bottom" id="5c3-4r-wjI"/>
+                <constraint firstItem="xPJ-ed-1d4" firstAttribute="leading" secondItem="QWI-pQ-Axs" secondAttribute="trailing" constant="1" id="5fV-Kv-hIk"/>
+                <constraint firstItem="Fzm-QK-YLX" firstAttribute="leading" secondItem="wJz-js-SfQ" secondAttribute="leading" id="8a4-uO-deB"/>
+                <constraint firstItem="Fzm-QK-YLX" firstAttribute="trailing" secondItem="wJz-js-SfQ" secondAttribute="trailing" id="8gD-TX-qtd"/>
+                <constraint firstItem="V6B-wz-MSG" firstAttribute="top" secondItem="QWI-pQ-Axs" secondAttribute="bottom" id="9m5-Ew-dPL"/>
+                <constraint firstItem="xPJ-ed-1d4" firstAttribute="centerY" secondItem="QWI-pQ-Axs" secondAttribute="centerY" id="F2p-0O-8Mo"/>
+                <constraint firstItem="Szt-3u-nYD" firstAttribute="leading" secondItem="QWI-pQ-Axs" secondAttribute="leading" id="H7z-GV-vsO"/>
+                <constraint firstItem="xPJ-ed-1d4" firstAttribute="height" secondItem="QWI-pQ-Axs" secondAttribute="height" id="N2I-fu-xoz"/>
+                <constraint firstItem="Szt-3u-nYD" firstAttribute="width" secondItem="QWI-pQ-Axs" secondAttribute="width" id="Nwk-1z-4eH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ItR-aY-KSG" secondAttribute="trailing" id="Pa3-UE-u9o"/>
+                <constraint firstItem="wJz-js-SfQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RV5-Tf-fUM"/>
+                <constraint firstItem="Fzm-QK-YLX" firstAttribute="width" secondItem="wJz-js-SfQ" secondAttribute="width" id="SG4-DU-YSj"/>
+                <constraint firstItem="Szt-3u-nYD" firstAttribute="top" secondItem="QWI-pQ-Axs" secondAttribute="bottom" id="W48-bx-KfJ"/>
+                <constraint firstItem="ItR-aY-KSG" firstAttribute="top" secondItem="V6B-wz-MSG" secondAttribute="bottom" id="X08-tR-HT9"/>
+                <constraint firstItem="wJz-js-SfQ" firstAttribute="leading" secondItem="QWI-pQ-Axs" secondAttribute="trailing" constant="2" id="bAl-zB-D5n"/>
+                <constraint firstItem="Fzm-QK-YLX" firstAttribute="top" secondItem="wJz-js-SfQ" secondAttribute="bottom" id="cTG-JI-TX5"/>
+                <constraint firstItem="QWI-pQ-Axs" firstAttribute="width" secondItem="wJz-js-SfQ" secondAttribute="width" id="cZC-Bh-ykf"/>
+                <constraint firstItem="V6B-wz-MSG" firstAttribute="trailing" secondItem="wJz-js-SfQ" secondAttribute="trailing" id="cgd-dF-e5o"/>
+                <constraint firstItem="ItR-aY-KSG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fUG-fe-gUt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wJz-js-SfQ" secondAttribute="trailing" constant="5" id="gXp-eu-1Uc"/>
+                <constraint firstItem="QWI-pQ-Axs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="jNJ-CD-Gjw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+        </view>
+    </objects>
+</document>

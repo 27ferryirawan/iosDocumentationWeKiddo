@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="examContentCell" id="ia2-uh-ihw" customClass="ExamContentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ia2-uh-ihw" id="PCH-Gu-67I">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-NS-Ks2">
+                        <rect key="frame" x="13" y="5" width="294" height="55.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 08 Mey 2019 - 11.00 AM  | MATH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vm-hg-gNt">
+                        <rect key="frame" x="50" y="15" width="240" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="xVc-bh-wy7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigonometry" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZL2-u6-rkZ">
+                        <rect key="frame" x="50" y="29" width="257" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="bV9-mA-kxF"/>
+                            <constraint firstAttribute="width" constant="257" id="dnu-DH-jzG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <color key="textColor" red="0.058823529409999999" green="0.32156862749999998" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBB-dX-Gg2">
+                        <rect key="frame" x="23" y="28" width="10" height="10"/>
+                        <color key="backgroundColor" red="0.2274509804" green="0.44705882349999998" blue="0.6588235294" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="9qS-HZ-jyJ"/>
+                            <constraint firstAttribute="width" constant="10" id="NAY-po-gQc"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-xS-mow">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LPy-NS-Ks2" firstAttribute="leading" secondItem="PCH-Gu-67I" secondAttribute="leading" constant="13" id="1Uu-MG-NEF"/>
+                    <constraint firstItem="LPy-NS-Ks2" firstAttribute="leading" secondItem="MBB-dX-Gg2" secondAttribute="trailing" constant="-20" id="2Xc-L4-Zyz"/>
+                    <constraint firstItem="MBB-dX-Gg2" firstAttribute="centerY" secondItem="LPy-NS-Ks2" secondAttribute="centerY" id="7Vd-Jy-6Xw"/>
+                    <constraint firstItem="7Ei-xS-mow" firstAttribute="leading" secondItem="PCH-Gu-67I" secondAttribute="leading" id="8QC-DB-x5g"/>
+                    <constraint firstItem="LPy-NS-Ks2" firstAttribute="centerX" secondItem="PCH-Gu-67I" secondAttribute="centerX" id="Dxy-Nw-8dK"/>
+                    <constraint firstItem="LPy-NS-Ks2" firstAttribute="top" secondItem="9Vm-hg-gNt" secondAttribute="bottom" constant="-25" id="Fte-wW-Njp"/>
+                    <constraint firstAttribute="trailing" secondItem="7Ei-xS-mow" secondAttribute="trailing" id="L3h-1h-H4f"/>
+                    <constraint firstItem="LPy-NS-Ks2" firstAttribute="top" secondItem="PCH-Gu-67I" secondAttribute="top" constant="5" id="LHk-68-79R"/>
+                    <constraint firstItem="ZL2-u6-rkZ" firstAttribute="top" secondItem="9Vm-hg-gNt" secondAttribute="bottom" constant="-1" id="NkK-LA-123"/>
+                    <constraint firstItem="LPy-NS-Ks2" firstAttribute="centerY" secondItem="PCH-Gu-67I" secondAttribute="centerY" id="WjI-n3-QSc"/>
+                    <constraint firstAttribute="bottom" secondItem="LPy-NS-Ks2" secondAttribute="bottom" constant="5" id="X3J-xO-XdV"/>
+                    <constraint firstAttribute="bottom" secondItem="7Ei-xS-mow" secondAttribute="bottom" id="ZTZ-8l-fVc"/>
+                    <constraint firstItem="ZL2-u6-rkZ" firstAttribute="top" secondItem="LPy-NS-Ks2" secondAttribute="bottom" constant="-31.5" id="c76-Ic-N6y"/>
+                    <constraint firstAttribute="trailing" secondItem="LPy-NS-Ks2" secondAttribute="trailing" constant="13" id="iNl-Vc-JIS"/>
+                    <constraint firstItem="9Vm-hg-gNt" firstAttribute="leading" secondItem="ZL2-u6-rkZ" secondAttribute="leading" id="kOb-kD-eEO"/>
+                    <constraint firstItem="9Vm-hg-gNt" firstAttribute="leading" secondItem="MBB-dX-Gg2" secondAttribute="trailing" constant="17" id="llD-OD-41N"/>
+                    <constraint firstItem="ZL2-u6-rkZ" firstAttribute="leading" secondItem="MBB-dX-Gg2" secondAttribute="trailing" constant="17" id="ybu-QP-hbf"/>
+                    <constraint firstItem="7Ei-xS-mow" firstAttribute="top" secondItem="PCH-Gu-67I" secondAttribute="top" id="zXa-hI-XeC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="dJg-cT-I73"/>
+            <connections>
+                <outlet property="examButton" destination="7Ei-xS-mow" id="WY0-qF-M23"/>
+                <outlet property="examContent" destination="ZL2-u6-rkZ" id="GfK-AY-VAS"/>
+                <outlet property="examDate" destination="9Vm-hg-gNt" id="xGJ-0g-Gnc"/>
+                <outlet property="examList" destination="LPy-NS-Ks2" id="oXl-ea-iyi"/>
+                <outlet property="roundedSquare" destination="MBB-dX-Gg2" id="hYL-el-MiA"/>
+            </connections>
+            <point key="canvasLocation" x="100.00000000000001" y="45.535714285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

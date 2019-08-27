@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdminEventListViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="addEventButton" destination="SMh-Q1-8eW" id="h3f-b5-mXY"/>
+                <outlet property="tableView" destination="Idl-98-fAj" id="5FI-63-3D4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Idl-98-fAj">
+                    <rect key="frame" x="0.0" y="44" width="414" height="763"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zmF-Fi-8lz"/>
+                        <outlet property="delegate" destination="-1" id="QFf-1L-4OT"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMh-Q1-8eW">
+                    <rect key="frame" x="0.0" y="807" width="414" height="55"/>
+                    <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="OtC-S7-zYm"/>
+                    </constraints>
+                    <state key="normal" title="ADD EVENT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SMh-Q1-8eW" secondAttribute="trailing" id="2kM-8i-mgI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Idl-98-fAj" secondAttribute="trailing" id="5UO-MO-DMD"/>
+                <constraint firstItem="Idl-98-fAj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="I87-wr-oDc"/>
+                <constraint firstItem="SMh-Q1-8eW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="SzV-k1-Mhu"/>
+                <constraint firstItem="Idl-98-fAj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mdM-ZX-MDC"/>
+                <constraint firstItem="SMh-Q1-8eW" firstAttribute="top" secondItem="Idl-98-fAj" secondAttribute="bottom" id="q6x-UE-AhF"/>
+                <constraint firstItem="SMh-Q1-8eW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ssA-C3-Zdf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+        </view>
+    </objects>
+</document>

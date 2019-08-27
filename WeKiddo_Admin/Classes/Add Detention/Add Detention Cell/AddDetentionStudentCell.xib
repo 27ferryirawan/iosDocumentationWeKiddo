@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addDetentionStudentCellID" rowHeight="88" id="G1E-iN-FT4" customClass="AddDetentionStudentCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G1E-iN-FT4" id="d1K-sS-Kau">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-uS-3HC">
+                        <rect key="frame" x="10" y="5.5" width="300" height="77"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="nYq-GK-olJ">
+                                <rect key="frame" x="10" y="11" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="bb1-JH-HyZ"/>
+                                    <constraint firstAttribute="height" constant="55" id="dZX-kI-yVU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ferry Irawan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn9-YT-VEF">
+                                <rect key="frame" x="73" y="18" width="82.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IX A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJW-v1-kl8">
+                                <rect key="frame" x="73" y="41" width="21.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udb-3h-Kyj">
+                                <rect key="frame" x="248.5" y="28.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Dbm-Il-ORA"/>
+                                    <constraint firstAttribute="width" constant="20" id="P5C-fr-eUy"/>
+                                </constraints>
+                                <state key="normal" image="icon_more"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="77" id="5S3-cX-mhL"/>
+                            <constraint firstAttribute="trailing" secondItem="Udb-3h-Kyj" secondAttribute="trailing" constant="31.5" id="Igw-9j-0d6"/>
+                            <constraint firstItem="VJW-v1-kl8" firstAttribute="leading" secondItem="Wn9-YT-VEF" secondAttribute="leading" id="Kyv-Rn-NZL"/>
+                            <constraint firstItem="Wn9-YT-VEF" firstAttribute="top" secondItem="kxc-uS-3HC" secondAttribute="top" constant="18" id="VdO-gc-U6g"/>
+                            <constraint firstItem="nYq-GK-olJ" firstAttribute="leading" secondItem="kxc-uS-3HC" secondAttribute="leading" constant="10" id="f1w-PI-nO9"/>
+                            <constraint firstItem="Udb-3h-Kyj" firstAttribute="centerY" secondItem="nYq-GK-olJ" secondAttribute="centerY" id="k4T-Iz-bvg"/>
+                            <constraint firstItem="nYq-GK-olJ" firstAttribute="centerY" secondItem="kxc-uS-3HC" secondAttribute="centerY" id="pOb-Hh-Mhc"/>
+                            <constraint firstItem="VJW-v1-kl8" firstAttribute="top" secondItem="Wn9-YT-VEF" secondAttribute="bottom" constant="6" id="wIQ-sw-Gr3"/>
+                            <constraint firstItem="Wn9-YT-VEF" firstAttribute="leading" secondItem="nYq-GK-olJ" secondAttribute="trailing" constant="8" id="xMx-gm-aU6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kxc-uS-3HC" secondAttribute="trailing" constant="10" id="A6R-3x-oxO"/>
+                    <constraint firstItem="kxc-uS-3HC" firstAttribute="leading" secondItem="d1K-sS-Kau" secondAttribute="leading" constant="10" id="Jwk-UV-Sqb"/>
+                    <constraint firstItem="kxc-uS-3HC" firstAttribute="centerY" secondItem="d1K-sS-Kau" secondAttribute="centerY" id="WtU-Fz-CJh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="SfB-N2-VHs"/>
+            <connections>
+                <outlet property="bgView" destination="kxc-uS-3HC" id="EBR-TO-d0P"/>
+                <outlet property="deleteButton" destination="Udb-3h-Kyj" id="yPZ-lP-xmy"/>
+                <outlet property="studentClass" destination="VJW-v1-kl8" id="rUJ-lD-Q8t"/>
+                <outlet property="studentImage" destination="nYq-GK-olJ" id="40L-7N-CuS"/>
+                <outlet property="studentName" destination="Wn9-YT-VEF" id="JX1-Fm-Oex"/>
+            </connections>
+            <point key="canvasLocation" x="-141" y="293"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_more" width="20" height="20"/>
+        <image name="profile" width="400" height="252"/>
+    </resources>
+</document>

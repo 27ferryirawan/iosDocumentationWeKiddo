@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addAssignmentClassCellID" rowHeight="177" id="KGk-i7-Jjw" customClass="AddAssignmentClassCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg4-ec-s6x">
+                        <rect key="frame" x="20" y="7.5" width="280" height="125"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwm-vO-S8D">
+                                <rect key="frame" x="10" y="10" width="260" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDe-Ii-FrA">
+                                <rect key="frame" x="10" y="29.5" width="260" height="29"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Select Class">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WU-tO-bDm">
+                                <rect key="frame" x="10" y="68.5" width="260" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u49-bN-HyK">
+                                <rect key="frame" x="10" y="88.5" width="230" height="29"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Select Date">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFY-em-5hG">
+                                <rect key="frame" x="241" y="88.5" width="29" height="29"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="WRm-6P-Bk1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u49-bN-HyK" firstAttribute="top" secondItem="3WU-tO-bDm" secondAttribute="bottom" constant="5" id="2SJ-mA-9GR"/>
+                            <constraint firstItem="IDe-Ii-FrA" firstAttribute="top" secondItem="Nwm-vO-S8D" secondAttribute="bottom" constant="5" id="5Ch-jP-XUK"/>
+                            <constraint firstAttribute="trailing" secondItem="Nwm-vO-S8D" secondAttribute="trailing" constant="10" id="Dnr-AU-h7N"/>
+                            <constraint firstItem="gFY-em-5hG" firstAttribute="trailing" secondItem="IDe-Ii-FrA" secondAttribute="trailing" id="HcF-0b-y3o"/>
+                            <constraint firstItem="Nwm-vO-S8D" firstAttribute="leading" secondItem="vg4-ec-s6x" secondAttribute="leading" constant="10" id="Huu-eq-TXB"/>
+                            <constraint firstItem="3WU-tO-bDm" firstAttribute="top" secondItem="IDe-Ii-FrA" secondAttribute="bottom" constant="10" id="L6R-yg-uLM"/>
+                            <constraint firstItem="Nwm-vO-S8D" firstAttribute="top" secondItem="vg4-ec-s6x" secondAttribute="top" constant="10" id="Lwa-av-TiB"/>
+                            <constraint firstItem="gFY-em-5hG" firstAttribute="leading" secondItem="u49-bN-HyK" secondAttribute="trailing" constant="1" id="Slw-fT-4Bb"/>
+                            <constraint firstItem="IDe-Ii-FrA" firstAttribute="leading" secondItem="Nwm-vO-S8D" secondAttribute="leading" id="Sq4-Ix-IE7"/>
+                            <constraint firstItem="IDe-Ii-FrA" firstAttribute="width" secondItem="Nwm-vO-S8D" secondAttribute="width" id="adY-KM-ugd"/>
+                            <constraint firstItem="3WU-tO-bDm" firstAttribute="width" secondItem="IDe-Ii-FrA" secondAttribute="width" id="adr-9r-90D"/>
+                            <constraint firstItem="u49-bN-HyK" firstAttribute="leading" secondItem="3WU-tO-bDm" secondAttribute="leading" id="edu-kc-9fG"/>
+                            <constraint firstItem="IDe-Ii-FrA" firstAttribute="trailing" secondItem="Nwm-vO-S8D" secondAttribute="trailing" id="fOR-jA-Z1c"/>
+                            <constraint firstItem="gFY-em-5hG" firstAttribute="centerY" secondItem="u49-bN-HyK" secondAttribute="centerY" id="hQH-g7-Qbe"/>
+                            <constraint firstAttribute="height" constant="125" id="jP3-EI-BPg"/>
+                            <constraint firstItem="3WU-tO-bDm" firstAttribute="trailing" secondItem="IDe-Ii-FrA" secondAttribute="trailing" id="upy-Gw-M8b"/>
+                            <constraint firstItem="3WU-tO-bDm" firstAttribute="leading" secondItem="IDe-Ii-FrA" secondAttribute="leading" id="uux-Di-gZ8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vg4-ec-s6x" secondAttribute="trailing" constant="20" id="QE7-wW-LAb"/>
+                    <constraint firstItem="vg4-ec-s6x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="g5n-Qn-LjA"/>
+                    <constraint firstItem="vg4-ec-s6x" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jgc-Zx-Hlr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="vg4-ec-s6x" id="OJ0-cU-xGP"/>
+                <outlet property="classPickerButton" destination="IDe-Ii-FrA" id="pwc-MR-hbm"/>
+                <outlet property="datePickerButton" destination="u49-bN-HyK" id="ejQ-mS-adq"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="197.20982142857142"/>
+        </tableViewCell>
+    </objects>
+</document>

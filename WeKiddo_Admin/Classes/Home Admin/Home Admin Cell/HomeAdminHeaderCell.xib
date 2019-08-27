@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeAdminHeaderCellID" rowHeight="142" id="KGk-i7-Jjw" customClass="HomeAdminHeaderCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Ferry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSz-HB-02Q">
+                        <rect key="frame" x="10" y="0.0" width="300" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a11-0Q-Xup">
+                        <rect key="frame" x="10" y="19.5" width="300" height="100"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBy-0D-4zU">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeKiddoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9zi-YR-T3l">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9zi-YR-T3l" secondAttribute="bottom" id="5Af-HF-Yg2"/>
+                                    <constraint firstItem="9zi-YR-T3l" firstAttribute="leading" secondItem="YBy-0D-4zU" secondAttribute="leading" id="JoX-rb-Avn"/>
+                                    <constraint firstAttribute="trailing" secondItem="9zi-YR-T3l" secondAttribute="trailing" id="Spg-Cr-SHo"/>
+                                    <constraint firstItem="9zi-YR-T3l" firstAttribute="top" secondItem="YBy-0D-4zU" secondAttribute="top" id="bu8-l0-GHm"/>
+                                    <constraint firstAttribute="width" constant="100" id="gts-IZ-KxM"/>
+                                    <constraint firstAttribute="height" constant="100" id="hgP-zF-jQJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY2-jI-10O">
+                                <rect key="frame" x="102" y="26.5" width="196" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gandhi Memorial School" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wR-Sb-wU1">
+                                <rect key="frame" x="102" y="41" width="196" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aY2-jI-10O" firstAttribute="top" secondItem="a11-0Q-Xup" secondAttribute="top" constant="26.5" id="5bA-eV-sal"/>
+                            <constraint firstItem="2wR-Sb-wU1" firstAttribute="top" secondItem="aY2-jI-10O" secondAttribute="bottom" constant="1" id="BoQ-Ju-klP"/>
+                            <constraint firstItem="YBy-0D-4zU" firstAttribute="top" secondItem="a11-0Q-Xup" secondAttribute="top" id="Def-7q-HEm"/>
+                            <constraint firstItem="2wR-Sb-wU1" firstAttribute="trailing" secondItem="aY2-jI-10O" secondAttribute="trailing" id="GPJ-MA-K07"/>
+                            <constraint firstItem="2wR-Sb-wU1" firstAttribute="leading" secondItem="aY2-jI-10O" secondAttribute="leading" id="J1R-EC-FEI"/>
+                            <constraint firstItem="YBy-0D-4zU" firstAttribute="centerY" secondItem="a11-0Q-Xup" secondAttribute="centerY" id="eXk-Sf-9hA"/>
+                            <constraint firstAttribute="trailing" secondItem="aY2-jI-10O" secondAttribute="trailing" constant="2" id="euu-ED-QMA"/>
+                            <constraint firstItem="YBy-0D-4zU" firstAttribute="leading" secondItem="a11-0Q-Xup" secondAttribute="leading" id="ir4-Ro-21u"/>
+                            <constraint firstItem="2wR-Sb-wU1" firstAttribute="width" secondItem="aY2-jI-10O" secondAttribute="width" id="m5A-2I-2AO"/>
+                            <constraint firstItem="aY2-jI-10O" firstAttribute="leading" secondItem="YBy-0D-4zU" secondAttribute="trailing" constant="2" id="rYX-vX-Gox"/>
+                            <constraint firstAttribute="bottom" secondItem="YBy-0D-4zU" secondAttribute="bottom" id="vXf-6h-GNP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vSz-HB-02Q" secondAttribute="trailing" constant="10" id="225-RH-2vq"/>
+                    <constraint firstItem="a11-0Q-Xup" firstAttribute="top" secondItem="vSz-HB-02Q" secondAttribute="bottom" id="HfN-eF-xLt"/>
+                    <constraint firstItem="vSz-HB-02Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ke1-oL-rtF"/>
+                    <constraint firstItem="a11-0Q-Xup" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ccm-Ha-HKn"/>
+                    <constraint firstAttribute="trailing" secondItem="a11-0Q-Xup" secondAttribute="trailing" constant="10" id="rB1-LM-Nv3"/>
+                    <constraint firstAttribute="bottom" secondItem="a11-0Q-Xup" secondAttribute="bottom" id="rka-8j-52G"/>
+                    <constraint firstItem="vSz-HB-02Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tjU-kA-a76"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="a11-0Q-Xup" id="M1P-gT-NbI"/>
+                <outlet property="contentImage" destination="9zi-YR-T3l" id="OvL-LM-mgR"/>
+                <outlet property="nameLabel" destination="vSz-HB-02Q" id="f6Z-TU-cD6"/>
+                <outlet property="schoolLabel" destination="2wR-Sb-wU1" id="xZS-Oc-WrZ"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="185.49107142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="WeKiddoLogo" width="406" height="410"/>
+    </resources>
+</document>

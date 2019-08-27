@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="assignmentSectionCell" rowHeight="112" id="KGk-i7-Jjw" customClass="AssignmentSectionCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-09-mCJ" customClass="ButtonLeftSpace" customModule="WeKiddo_School_School" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="300" height="44"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="6B8-ti-W9Q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Select Subject">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxi-oP-Ee7" customClass="ButtonLeftSpace" customModule="WeKiddo_School_School" customModuleProvider="target">
+                        <rect key="frame" x="10" y="59" width="300" height="44"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="GnF-sK-t7m"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Select Class">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_green_check" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-iP-TRE">
+                        <rect key="frame" x="284" y="71" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="vWY-HJ-yL5"/>
+                            <constraint firstAttribute="width" constant="20" id="yyT-XG-6ie"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_green_check" translatesAutoresizingMaskIntoConstraints="NO" id="qzT-sA-cQe">
+                        <rect key="frame" x="284" y="22" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="JxV-1T-wDf"/>
+                            <constraint firstAttribute="width" constant="20" id="mK9-Np-ln5"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sjz-iP-TRE" firstAttribute="width" secondItem="qzT-sA-cQe" secondAttribute="width" id="0Hk-3j-qd2"/>
+                    <constraint firstItem="sjz-iP-TRE" firstAttribute="height" secondItem="qzT-sA-cQe" secondAttribute="height" id="1qC-s5-0bV"/>
+                    <constraint firstItem="cxi-oP-Ee7" firstAttribute="top" secondItem="Gf8-09-mCJ" secondAttribute="bottom" constant="5" id="A5P-YJ-bab"/>
+                    <constraint firstItem="qzT-sA-cQe" firstAttribute="centerY" secondItem="Gf8-09-mCJ" secondAttribute="centerY" id="VAq-dH-c3J"/>
+                    <constraint firstItem="Gf8-09-mCJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ykz-eb-kEJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Gf8-09-mCJ" secondAttribute="trailing" constant="10" id="eQ2-l3-azh"/>
+                    <constraint firstItem="sjz-iP-TRE" firstAttribute="centerY" secondItem="cxi-oP-Ee7" secondAttribute="centerY" id="nyz-yM-NTG"/>
+                    <constraint firstItem="Gf8-09-mCJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="p9F-RA-iYJ"/>
+                    <constraint firstItem="cxi-oP-Ee7" firstAttribute="leading" secondItem="Gf8-09-mCJ" secondAttribute="leading" id="pb2-Xn-e20"/>
+                    <constraint firstAttribute="trailing" secondItem="sjz-iP-TRE" secondAttribute="trailing" constant="16" id="tcc-aw-t3i"/>
+                    <constraint firstAttribute="trailing" secondItem="qzT-sA-cQe" secondAttribute="trailing" constant="16" id="tmf-F5-wHU"/>
+                    <constraint firstItem="cxi-oP-Ee7" firstAttribute="width" secondItem="Gf8-09-mCJ" secondAttribute="width" id="uZy-ox-I1a"/>
+                    <constraint firstItem="cxi-oP-Ee7" firstAttribute="trailing" secondItem="Gf8-09-mCJ" secondAttribute="trailing" id="wAg-qP-C2d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="classButton" destination="cxi-oP-Ee7" id="1sR-E1-xhT"/>
+                <outlet property="subjectButton" destination="Gf8-09-mCJ" id="1o4-Hq-ab5"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="187.1064467766117"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_green_check" width="273" height="275"/>
+    </resources>
+</document>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Helper/Network Services/ACRequest.swift"
+            timestampString = "588585326.238127"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "POST_SIGNIN(tokenDevice:phone:password:userAgent:successCompletion:failCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static WeKiddo_Admin.ACRequest.POST_SIGNIN(tokenDevice: Swift.String, phone: Swift.String, password: Swift.String, userAgent: Swift.String, successCompletion: (WeKiddo_Admin.LoginModel) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
+                  timestampString = "588585329.603091"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1153">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Any) -&gt; () in static WeKiddo_Admin.ACRequest.POST_SIGNIN(tokenDevice: Swift.String, phone: Swift.String, password: Swift.String, userAgent: Swift.String, successCompletion: (WeKiddo_Admin.LoginModel) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
+                  timestampString = "588585329.605077"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "258">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

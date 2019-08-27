@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="assignmentButtonCell" id="KGk-i7-Jjw" customClass="assignmentButtonCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeC-eT-soB">
+                        <rect key="frame" x="12" y="7" width="296" height="44"/>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.66666666666666663" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="cwk-BB-R7B"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <state key="normal" title="SEE MORE ASSIGNMENT(s)">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-rN-s3E">
+                        <rect key="frame" x="12" y="66" width="296" height="1"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="x6p-ni-hel"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9x5-rN-s3E" firstAttribute="top" secondItem="aeC-eT-soB" secondAttribute="bottom" constant="15" id="59E-xe-0m4"/>
+                    <constraint firstItem="aeC-eT-soB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="Gr2-cl-bL9"/>
+                    <constraint firstItem="9x5-rN-s3E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="HaS-GA-6e0"/>
+                    <constraint firstAttribute="trailing" secondItem="aeC-eT-soB" secondAttribute="trailing" constant="12" id="LKV-gs-fqF"/>
+                    <constraint firstItem="9x5-rN-s3E" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="M9b-6O-auv"/>
+                    <constraint firstAttribute="trailing" secondItem="9x5-rN-s3E" secondAttribute="trailing" constant="12" id="SJ2-IG-9qd"/>
+                    <constraint firstItem="aeC-eT-soB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="eV9-yA-84Q"/>
+                    <constraint firstAttribute="bottom" secondItem="9x5-rN-s3E" secondAttribute="bottom" constant="15.5" id="ha0-XP-5uA"/>
+                    <constraint firstItem="aeC-eT-soB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="s1b-FU-Lnq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="seeMoreAssignmentBtn" destination="aeC-eT-soB" id="14q-C6-FSz"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

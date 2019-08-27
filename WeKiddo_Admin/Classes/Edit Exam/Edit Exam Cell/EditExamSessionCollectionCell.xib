@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editExamSessionCollectionCellID" id="fuO-tf-eIX" customClass="EditExamSessionCollectionCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circumference" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-ie-HsU">
+                        <rect key="frame" x="5" y="5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="QAj-3O-bi2"/>
+                            <constraint firstAttribute="width" constant="20" id="eMQ-O7-EMX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session 10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jS-vD-UGc">
+                        <rect key="frame" x="30" y="8.5" width="65" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdd-mp-K7k">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="yyF-9X-eJP" firstAttribute="trailing" secondItem="6jS-vD-UGc" secondAttribute="trailing" constant="5" id="6MG-F8-mf3"/>
+                <constraint firstItem="6jS-vD-UGc" firstAttribute="leading" secondItem="c5g-ie-HsU" secondAttribute="trailing" constant="5" id="DNm-Ir-W8e"/>
+                <constraint firstItem="rdd-mp-K7k" firstAttribute="top" secondItem="fuO-tf-eIX" secondAttribute="top" id="L0D-5T-4Pi"/>
+                <constraint firstAttribute="trailing" secondItem="rdd-mp-K7k" secondAttribute="trailing" id="OED-nq-n1Z"/>
+                <constraint firstAttribute="bottom" secondItem="rdd-mp-K7k" secondAttribute="bottom" id="Sho-rU-w7U"/>
+                <constraint firstItem="c5g-ie-HsU" firstAttribute="centerY" secondItem="fuO-tf-eIX" secondAttribute="centerY" id="V0q-kr-bzG"/>
+                <constraint firstItem="6jS-vD-UGc" firstAttribute="centerY" secondItem="c5g-ie-HsU" secondAttribute="centerY" id="ZmG-6Y-JXh"/>
+                <constraint firstItem="c5g-ie-HsU" firstAttribute="leading" secondItem="fuO-tf-eIX" secondAttribute="leading" constant="5" id="b9V-op-QFV"/>
+                <constraint firstItem="rdd-mp-K7k" firstAttribute="leading" secondItem="fuO-tf-eIX" secondAttribute="leading" id="pJL-BN-rnw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="yyF-9X-eJP"/>
+            <connections>
+                <outlet property="sessionButton" destination="rdd-mp-K7k" id="AG4-uf-4QI"/>
+                <outlet property="sessionImageStatus" destination="c5g-ie-HsU" id="qD5-op-nIW"/>
+                <outlet property="sessionLabel" destination="6jS-vD-UGc" id="mGo-hg-VxR"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="circumference" width="512" height="512"/>
+    </resources>
+</document>

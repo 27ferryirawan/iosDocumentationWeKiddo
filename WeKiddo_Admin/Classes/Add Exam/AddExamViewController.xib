@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddExamViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="ktT-4w-qf2" id="gSs-1k-toR"/>
+                <outlet property="saveButton" destination="iGD-ve-5K9" id="eTo-9E-a8A"/>
+                <outlet property="tableView" destination="xM8-Zp-zyP" id="n5H-Hn-K4B"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGD-ve-5K9">
+                    <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                    <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="lCz-zH-QMJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktT-4w-qf2">
+                    <rect key="frame" x="5" y="49" width="404" height="764"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xM8-Zp-zyP">
+                            <rect key="frame" x="2" y="2" width="400" height="760"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="pOs-QY-t08"/>
+                                <outlet property="delegate" destination="-1" id="xWB-rg-4Hd"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xM8-Zp-zyP" firstAttribute="leading" secondItem="ktT-4w-qf2" secondAttribute="leading" constant="2" id="Gmw-4R-xxh"/>
+                        <constraint firstAttribute="trailing" secondItem="xM8-Zp-zyP" secondAttribute="trailing" constant="2" id="O3Y-oO-daK"/>
+                        <constraint firstItem="xM8-Zp-zyP" firstAttribute="top" secondItem="ktT-4w-qf2" secondAttribute="top" constant="2" id="T2S-vg-cAN"/>
+                        <constraint firstAttribute="bottom" secondItem="xM8-Zp-zyP" secondAttribute="bottom" constant="2" id="yFf-dz-OwC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ktT-4w-qf2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="3Ed-OI-3gU"/>
+                <constraint firstItem="iGD-ve-5K9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Qf-n6-3PD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iGD-ve-5K9" secondAttribute="bottom" id="GFV-mH-1iy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iGD-ve-5K9" secondAttribute="trailing" id="HOj-NA-CSU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ktT-4w-qf2" secondAttribute="trailing" constant="5" id="KCG-K0-FWq"/>
+                <constraint firstItem="iGD-ve-5K9" firstAttribute="top" secondItem="ktT-4w-qf2" secondAttribute="bottom" constant="5" id="edO-3w-kgG"/>
+                <constraint firstItem="ktT-4w-qf2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="lmV-CL-Y63"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

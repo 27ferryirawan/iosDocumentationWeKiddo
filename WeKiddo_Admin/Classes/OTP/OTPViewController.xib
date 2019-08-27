@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTPViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <connections>
+                <outlet property="availableLabel" destination="UQE-Wq-IIl" id="sw9-Q1-bSZ"/>
+                <outlet property="fieldFiveTxt" destination="AiA-je-Bor" id="sw9-a7-HAk"/>
+                <outlet property="fieldFourTxt" destination="Vhw-ac-eXy" id="Ct6-1n-k6b"/>
+                <outlet property="fieldOneTxt" destination="pab-dq-l4e" id="MO8-Gq-FZ4"/>
+                <outlet property="fieldSixTxt" destination="ZVG-aX-avA" id="a1b-Ko-9SK"/>
+                <outlet property="fieldThreeTxt" destination="zQV-b3-hqM" id="enD-9o-13f"/>
+                <outlet property="fieldTwoTxt" destination="djc-if-drf" id="rH7-Ab-M3s"/>
+                <outlet property="resendPinBtn" destination="vtG-aB-JaT" id="K5e-UQ-nme"/>
+                <outlet property="secondLabel" destination="Yo0-Tu-rtY" id="gHk-wB-I9T"/>
+                <outlet property="verifyBtn" destination="Wpg-C4-dJL" id="Ns4-M6-tjJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please input 4 digit pin, we sent to you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQE-Wq-IIl">
+                    <rect key="frame" x="74.000000000000014" y="74" width="232.33333333333337" height="14.333333333333329"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pab-dq-l4e">
+                    <rect key="frame" x="19.999999999999996" y="119.33333333333331" width="45.666666666666657" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="P5I-XZ-mNI"/>
+                        <constraint firstAttribute="height" constant="40" id="sJG-c8-RZ4"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0ko-2F-viB"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djc-if-drf">
+                    <rect key="frame" x="76.666666666666671" y="119.33333333333331" width="45.666666666666671" height="40"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="BQv-Al-dT1"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQV-b3-hqM">
+                    <rect key="frame" x="133.33333333333331" y="119.33333333333331" width="46" height="40"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="qCX-Nb-mSo"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhw-ac-eXy">
+                    <rect key="frame" x="190.33333333333331" y="119.33333333333331" width="45.666666666666657" height="40"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="zTm-9t-ab6"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-je-Bor">
+                    <rect key="frame" x="246.99999999999997" y="119.33333333333331" width="45.666666666666657" height="40"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="p2E-Ce-B6e"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVG-aX-avA">
+                    <rect key="frame" x="302.66666666666669" y="119.33333333333331" width="45.666666666666686" height="40"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="OVL-8Y-7SX"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpg-C4-dJL">
+                    <rect key="frame" x="20" y="190.33333333333334" width="328.33333333333331" height="44"/>
+                    <color key="backgroundColor" red="0.1803921568627451" green="0.66666666666666663" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="z53-eZ-mm1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Verify">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="verify:" destination="-1" eventType="touchUpInside" id="8le-Qq-zuF"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available for resend 6 digit pin in" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJA-1Z-781">
+                    <rect key="frame" x="20" y="259.33333333333331" width="200" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="K3d-WU-3ft"/>
+                        <constraint firstAttribute="width" constant="200" id="xqM-6b-lZd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtG-aB-JaT">
+                    <rect key="frame" x="20" y="297.33333333333331" width="328.33333333333331" height="44"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="oci-4Y-zhV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" title="Resend Pin">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="resendPin:" destination="-1" eventType="touchUpInside" id="XRs-lV-VCU"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 Seconds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo0-Tu-rtY">
+                    <rect key="frame" x="225.00000000000003" y="259.33333333333331" width="123.33333333333334" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="8NW-9t-ov0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="linesSpacing">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zQV-b3-hqM" firstAttribute="width" secondItem="djc-if-drf" secondAttribute="width" id="1Wm-mz-cp8"/>
+                <constraint firstItem="djc-if-drf" firstAttribute="height" secondItem="pab-dq-l4e" secondAttribute="height" id="3vh-0Y-yZb"/>
+                <constraint firstItem="AiA-je-Bor" firstAttribute="leading" secondItem="Vhw-ac-eXy" secondAttribute="trailing" constant="11" id="4KP-V6-L9x"/>
+                <constraint firstItem="UQE-Wq-IIl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="74.000000000000014" id="4jJ-w9-0fR"/>
+                <constraint firstItem="Wpg-C4-dJL" firstAttribute="leading" secondItem="pab-dq-l4e" secondAttribute="leading" id="7ln-4L-sEH"/>
+                <constraint firstItem="zQV-b3-hqM" firstAttribute="height" secondItem="djc-if-drf" secondAttribute="height" id="8Rl-H2-l6q"/>
+                <constraint firstItem="djc-if-drf" firstAttribute="leading" secondItem="pab-dq-l4e" secondAttribute="trailing" constant="11" id="D2x-lf-CW6"/>
+                <constraint firstItem="ZVG-aX-avA" firstAttribute="width" secondItem="AiA-je-Bor" secondAttribute="width" id="F7A-Lv-eQu"/>
+                <constraint firstItem="ZVG-aX-avA" firstAttribute="leading" secondItem="AiA-je-Bor" secondAttribute="trailing" constant="10" id="G1b-Kw-g1Z"/>
+                <constraint firstItem="Vhw-ac-eXy" firstAttribute="leading" secondItem="zQV-b3-hqM" secondAttribute="trailing" constant="11" id="Gl5-M6-INW"/>
+                <constraint firstItem="djc-if-drf" firstAttribute="width" secondItem="pab-dq-l4e" secondAttribute="width" id="HE3-VU-6C5"/>
+                <constraint firstItem="AiA-je-Bor" firstAttribute="centerY" secondItem="Vhw-ac-eXy" secondAttribute="centerY" id="JPV-yN-9Ki"/>
+                <constraint firstItem="Yo0-Tu-rtY" firstAttribute="centerY" secondItem="gJA-1Z-781" secondAttribute="centerY" id="O71-CC-31f"/>
+                <constraint firstItem="Vhw-ac-eXy" firstAttribute="height" secondItem="zQV-b3-hqM" secondAttribute="height" id="OMm-vG-DI3"/>
+                <constraint firstItem="Wpg-C4-dJL" firstAttribute="top" secondItem="djc-if-drf" secondAttribute="bottom" constant="31" id="Oq6-e9-bUz"/>
+                <constraint firstItem="pab-dq-l4e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="PNw-Ov-ALp"/>
+                <constraint firstItem="gJA-1Z-781" firstAttribute="top" secondItem="Wpg-C4-dJL" secondAttribute="bottom" constant="25" id="Pq5-LG-FPH"/>
+                <constraint firstItem="ZVG-aX-avA" firstAttribute="centerY" secondItem="AiA-je-Bor" secondAttribute="centerY" id="Q6N-oe-ni5"/>
+                <constraint firstItem="UQE-Wq-IIl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="VJG-57-oPJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZVG-aX-avA" secondAttribute="trailing" constant="20" id="bdh-Cy-qhP"/>
+                <constraint firstItem="vtG-aB-JaT" firstAttribute="leading" secondItem="gJA-1Z-781" secondAttribute="leading" id="hUZ-gb-UtC"/>
+                <constraint firstItem="Yo0-Tu-rtY" firstAttribute="leading" secondItem="gJA-1Z-781" secondAttribute="trailing" constant="5" id="haD-FS-C4A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UQE-Wq-IIl" secondAttribute="trailing" constant="61.999999999999943" id="jgI-Am-Q2T"/>
+                <constraint firstItem="djc-if-drf" firstAttribute="centerY" secondItem="pab-dq-l4e" secondAttribute="centerY" id="liA-Oh-5MM"/>
+                <constraint firstItem="zQV-b3-hqM" firstAttribute="leading" secondItem="djc-if-drf" secondAttribute="trailing" constant="11" id="m6J-au-cOe"/>
+                <constraint firstItem="vtG-aB-JaT" firstAttribute="width" secondItem="Wpg-C4-dJL" secondAttribute="width" id="mJY-wr-A1e"/>
+                <constraint firstItem="vtG-aB-JaT" firstAttribute="top" secondItem="gJA-1Z-781" secondAttribute="bottom" id="mOv-MD-adN"/>
+                <constraint firstItem="pab-dq-l4e" firstAttribute="top" secondItem="UQE-Wq-IIl" secondAttribute="bottom" constant="31" id="rGg-bI-9rr"/>
+                <constraint firstItem="Yo0-Tu-rtY" firstAttribute="trailing" secondItem="Wpg-C4-dJL" secondAttribute="trailing" id="rhs-YL-YEX"/>
+                <constraint firstItem="AiA-je-Bor" firstAttribute="width" secondItem="Vhw-ac-eXy" secondAttribute="width" id="tVE-8B-TEs"/>
+                <constraint firstItem="AiA-je-Bor" firstAttribute="height" secondItem="Vhw-ac-eXy" secondAttribute="height" id="tkl-hc-BXi"/>
+                <constraint firstItem="ZVG-aX-avA" firstAttribute="height" secondItem="AiA-je-Bor" secondAttribute="height" id="uEg-2I-WIv"/>
+                <constraint firstItem="gJA-1Z-781" firstAttribute="leading" secondItem="Wpg-C4-dJL" secondAttribute="leading" id="ubM-1A-IEH"/>
+                <constraint firstItem="zQV-b3-hqM" firstAttribute="centerY" secondItem="djc-if-drf" secondAttribute="centerY" id="wom-2H-td6"/>
+                <constraint firstItem="Vhw-ac-eXy" firstAttribute="width" secondItem="zQV-b3-hqM" secondAttribute="width" id="xCK-SJ-cV3"/>
+                <constraint firstItem="Wpg-C4-dJL" firstAttribute="trailing" secondItem="ZVG-aX-avA" secondAttribute="trailing" id="xJQ-om-kXS"/>
+                <constraint firstItem="Vhw-ac-eXy" firstAttribute="centerY" secondItem="zQV-b3-hqM" secondAttribute="centerY" id="xdM-9d-hpj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="48.799999999999997" y="35.467980295566505"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectTeacherDetailExamCellID" rowHeight="207" id="KGk-i7-Jjw" customClass="SubjectTeacherDetailExamCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="219.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7i-Wk-S8K">
+                        <rect key="frame" x="15" y="0.0" width="290" height="155.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set As Exam : Yes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-jy-MBf">
+                                <rect key="frame" x="10" y="5" width="270" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : Daily Exam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4D-25-qbJ">
+                                <rect key="frame" x="10" y="24.5" width="270" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAV-Q2-vhE">
+                                <rect key="frame" x="10" y="44" width="270" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onb-30-NI5">
+                                <rect key="frame" x="10" y="64" width="270" height="72"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac feugiat sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed aliquet turpis sed</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="onb-30-NI5" firstAttribute="leading" secondItem="EAV-Q2-vhE" secondAttribute="leading" id="2KA-Gf-N9c"/>
+                            <constraint firstItem="A4D-25-qbJ" firstAttribute="leading" secondItem="UQ5-jy-MBf" secondAttribute="leading" id="4lj-Q7-wip"/>
+                            <constraint firstItem="EAV-Q2-vhE" firstAttribute="top" secondItem="A4D-25-qbJ" secondAttribute="bottom" constant="5" id="F5w-1c-Znz"/>
+                            <constraint firstItem="A4D-25-qbJ" firstAttribute="trailing" secondItem="UQ5-jy-MBf" secondAttribute="trailing" id="TFz-x2-4Rq"/>
+                            <constraint firstItem="onb-30-NI5" firstAttribute="width" secondItem="EAV-Q2-vhE" secondAttribute="width" id="ZFn-WZ-WqQ"/>
+                            <constraint firstItem="A4D-25-qbJ" firstAttribute="width" secondItem="UQ5-jy-MBf" secondAttribute="width" id="ZtD-sz-G4E"/>
+                            <constraint firstItem="UQ5-jy-MBf" firstAttribute="top" secondItem="c7i-Wk-S8K" secondAttribute="top" constant="5" id="bJ5-Uh-AF5"/>
+                            <constraint firstItem="EAV-Q2-vhE" firstAttribute="trailing" secondItem="A4D-25-qbJ" secondAttribute="trailing" id="fHP-z5-HXO"/>
+                            <constraint firstItem="onb-30-NI5" firstAttribute="trailing" secondItem="EAV-Q2-vhE" secondAttribute="trailing" id="fvv-Jf-HFe"/>
+                            <constraint firstItem="EAV-Q2-vhE" firstAttribute="width" secondItem="A4D-25-qbJ" secondAttribute="width" id="gqC-Se-eXr"/>
+                            <constraint firstItem="A4D-25-qbJ" firstAttribute="top" secondItem="UQ5-jy-MBf" secondAttribute="bottom" constant="5" id="m8P-7e-Cz3"/>
+                            <constraint firstItem="onb-30-NI5" firstAttribute="top" secondItem="EAV-Q2-vhE" secondAttribute="bottom" constant="5" id="oTF-Cp-dC0"/>
+                            <constraint firstAttribute="trailing" secondItem="UQ5-jy-MBf" secondAttribute="trailing" constant="10" id="sRc-3M-t2q"/>
+                            <constraint firstItem="UQ5-jy-MBf" firstAttribute="leading" secondItem="c7i-Wk-S8K" secondAttribute="leading" constant="10" id="yGi-53-Mkb"/>
+                            <constraint firstItem="EAV-Q2-vhE" firstAttribute="leading" secondItem="A4D-25-qbJ" secondAttribute="leading" id="zpD-d7-Co0"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ5-Bs-Z2N">
+                        <rect key="frame" x="15" y="165.5" width="290" height="44"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="EEI-sk-ghv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Edit Topic">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uQ5-Bs-Z2N" firstAttribute="trailing" secondItem="c7i-Wk-S8K" secondAttribute="trailing" id="2La-S1-TTR"/>
+                    <constraint firstItem="c7i-Wk-S8K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K3v-4G-i3Q"/>
+                    <constraint firstItem="uQ5-Bs-Z2N" firstAttribute="width" secondItem="c7i-Wk-S8K" secondAttribute="width" id="P61-cI-sJr"/>
+                    <constraint firstItem="c7i-Wk-S8K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="huw-U7-MZH"/>
+                    <constraint firstAttribute="bottom" secondItem="uQ5-Bs-Z2N" secondAttribute="bottom" constant="10" id="jLH-EI-3cg"/>
+                    <constraint firstItem="uQ5-Bs-Z2N" firstAttribute="top" secondItem="c7i-Wk-S8K" secondAttribute="bottom" constant="10" id="q9l-lt-ZtT"/>
+                    <constraint firstAttribute="trailing" secondItem="c7i-Wk-S8K" secondAttribute="trailing" constant="15" id="sFI-J0-G7f"/>
+                    <constraint firstItem="uQ5-Bs-Z2N" firstAttribute="leading" secondItem="c7i-Wk-S8K" secondAttribute="leading" id="teH-xK-eWi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="c7i-Wk-S8K" id="hcE-k6-dVv"/>
+                <outlet property="descLabel" destination="onb-30-NI5" id="p7Q-GF-rso"/>
+                <outlet property="editButton" destination="uQ5-Bs-Z2N" id="JLV-Uo-R4D"/>
+                <outlet property="setAsExamLabel" destination="UQ5-jy-MBf" id="A2x-yC-rqR"/>
+                <outlet property="typeExamLabel" destination="A4D-25-qbJ" id="saS-gu-QLK"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="206.91964285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

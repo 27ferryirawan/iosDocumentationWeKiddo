@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectTeacherByClassContentCellID" id="KGk-i7-Jjw" customClass="SubjectTeacherByClassContentCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-KP-u5R">
+                        <rect key="frame" x="10" y="0.0" width="300" height="54.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 Juni 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-Eg-w8E">
+                                <rect key="frame" x="10" y="10" width="81" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic7-qX-Okf">
+                                <rect key="frame" x="10" y="27" width="81" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-1W-Jnu">
+                                <rect key="frame" x="116" y="5.5" width="179" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ag4-BF-D9D"/>
+                                </constraints>
+                                <state key="normal" title="Select Topic">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ic7-qX-Okf" firstAttribute="leading" secondItem="lSe-Eg-w8E" secondAttribute="leading" id="C3z-mt-2fA"/>
+                            <constraint firstAttribute="trailing" secondItem="CZQ-1W-Jnu" secondAttribute="trailing" constant="5" id="D7I-68-dA3"/>
+                            <constraint firstItem="lSe-Eg-w8E" firstAttribute="leading" secondItem="WDe-KP-u5R" secondAttribute="leading" constant="10" id="UDE-Oc-9tE"/>
+                            <constraint firstItem="lSe-Eg-w8E" firstAttribute="top" secondItem="WDe-KP-u5R" secondAttribute="top" constant="10" id="fcM-kx-VTF"/>
+                            <constraint firstItem="CZQ-1W-Jnu" firstAttribute="centerY" secondItem="WDe-KP-u5R" secondAttribute="centerY" id="gPJ-8n-rMh"/>
+                            <constraint firstItem="ic7-qX-Okf" firstAttribute="top" secondItem="lSe-Eg-w8E" secondAttribute="bottom" id="mcn-49-VHb"/>
+                            <constraint firstItem="CZQ-1W-Jnu" firstAttribute="leading" secondItem="lSe-Eg-w8E" secondAttribute="trailing" constant="25" id="oqk-ZF-YVL"/>
+                            <constraint firstItem="ic7-qX-Okf" firstAttribute="width" secondItem="lSe-Eg-w8E" secondAttribute="width" id="tHQ-lz-Kea"/>
+                            <constraint firstItem="ic7-qX-Okf" firstAttribute="trailing" secondItem="lSe-Eg-w8E" secondAttribute="trailing" id="znG-EV-IA5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WDe-KP-u5R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EEU-lE-NIg"/>
+                    <constraint firstItem="WDe-KP-u5R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="KBn-L3-vlk"/>
+                    <constraint firstAttribute="trailing" secondItem="WDe-KP-u5R" secondAttribute="trailing" constant="10" id="VIn-NB-Ujp"/>
+                    <constraint firstAttribute="bottom" secondItem="WDe-KP-u5R" secondAttribute="bottom" id="h4j-NM-Icb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="WDe-KP-u5R" id="Prg-QG-2Hw"/>
+                <outlet property="dateLabel" destination="lSe-Eg-w8E" id="TjL-8k-Kbi"/>
+                <outlet property="selectButton" destination="CZQ-1W-Jnu" id="FzN-7i-JEx"/>
+                <outlet property="shiftLabel" destination="ic7-qX-Okf" id="Nyo-Zc-Ihk"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

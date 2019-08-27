@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="AgencyCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="83.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psK-ip-kQI">
+                        <rect key="frame" x="13" y="6" width="294" height="71"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Scholarship" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgA-b8-wcS">
+                                <rect key="frame" x="122" y="25" width="128.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_image" translatesAutoresizingMaskIntoConstraints="NO" id="QGF-xi-y2F">
+                                <rect key="frame" x="8" y="3.5" width="93" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Dfh-Pw-6Sp"/>
+                                    <constraint firstAttribute="width" constant="93" id="OoA-NJ-IyB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QGF-xi-y2F" firstAttribute="top" secondItem="psK-ip-kQI" secondAttribute="top" constant="3.5" id="4Rn-Hr-bZa"/>
+                            <constraint firstAttribute="bottom" secondItem="QGF-xi-y2F" secondAttribute="bottom" constant="3.5" id="5oW-vW-rzt"/>
+                            <constraint firstItem="QGF-xi-y2F" firstAttribute="centerY" secondItem="psK-ip-kQI" secondAttribute="centerY" id="ET9-J2-Yed"/>
+                            <constraint firstItem="XgA-b8-wcS" firstAttribute="centerY" secondItem="psK-ip-kQI" secondAttribute="centerY" id="Jkz-Qx-Fvd"/>
+                            <constraint firstItem="XgA-b8-wcS" firstAttribute="leading" secondItem="QGF-xi-y2F" secondAttribute="trailing" constant="21" id="ZYV-Tv-Bfi"/>
+                            <constraint firstItem="QGF-xi-y2F" firstAttribute="leading" secondItem="psK-ip-kQI" secondAttribute="leading" constant="8" id="qmI-0g-STI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="psK-ip-kQI" secondAttribute="trailing" constant="13" id="0nq-jn-JNc"/>
+                    <constraint firstAttribute="bottom" secondItem="psK-ip-kQI" secondAttribute="bottom" constant="6.5" id="Zfz-oi-yhc"/>
+                    <constraint firstItem="psK-ip-kQI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="hmn-me-1jd"/>
+                    <constraint firstItem="psK-ip-kQI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="ith-BL-5Rs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="agencyImage" destination="QGF-xi-y2F" id="2Sd-dK-h3U"/>
+                <outlet property="agencyList" destination="psK-ip-kQI" id="i32-I2-IRb"/>
+                <outlet property="agencyNameLbl" destination="XgA-b8-wcS" id="Xvc-Qw-h31"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="69.642857142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sample_image" width="1244" height="801"/>
+    </resources>
+</document>

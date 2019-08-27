@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="nearbyCourseMoreCell" id="gTV-IL-0wX" customClass="NearbyCourseMoreCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="shz-tu-hxP">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="0K5-f1-Co0"/>
+                            <constraint firstAttribute="height" constant="100" id="CFS-JO-myv"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_location" translatesAutoresizingMaskIntoConstraints="NO" id="eKW-aH-bQn">
+                        <rect key="frame" x="20" y="129.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="2uF-yf-r1j"/>
+                            <constraint firstAttribute="height" constant="15" id="j6h-dK-AaR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English First" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZz-zD-58Y">
+                        <rect key="frame" x="0.0" y="110" width="100" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3,4 Km" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-te-a5C">
+                        <rect key="frame" x="39" y="129.5" width="61" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="shz-tu-hxP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BKh-1W-vZP"/>
+                <constraint firstItem="hZg-te-a5C" firstAttribute="trailing" secondItem="jZz-zD-58Y" secondAttribute="trailing" id="CTd-Na-GJD"/>
+                <constraint firstItem="hZg-te-a5C" firstAttribute="top" secondItem="jZz-zD-58Y" secondAttribute="bottom" constant="5" id="G5g-3P-uAr"/>
+                <constraint firstAttribute="trailing" secondItem="jZz-zD-58Y" secondAttribute="trailing" id="JnE-VA-uQ8"/>
+                <constraint firstItem="hZg-te-a5C" firstAttribute="leading" secondItem="eKW-aH-bQn" secondAttribute="trailing" constant="4" id="VDn-wR-gdC"/>
+                <constraint firstItem="jZz-zD-58Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bVS-9D-BVl"/>
+                <constraint firstItem="shz-tu-hxP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="glA-WC-CuX"/>
+                <constraint firstItem="eKW-aH-bQn" firstAttribute="top" secondItem="jZz-zD-58Y" secondAttribute="bottom" constant="5" id="kFs-rz-Y5i"/>
+                <constraint firstItem="jZz-zD-58Y" firstAttribute="top" secondItem="shz-tu-hxP" secondAttribute="bottom" constant="10" id="vBk-9r-wD7"/>
+                <constraint firstItem="eKW-aH-bQn" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="vzv-Of-vfi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="contentDistanceLabel" destination="hZg-te-a5C" id="6g1-3g-WmG"/>
+                <outlet property="contentImage" destination="shz-tu-hxP" id="m3j-fF-rKD"/>
+                <outlet property="contentLabel" destination="jZz-zD-58Y" id="Bsk-7Y-kdF"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_location" width="64" height="64"/>
+    </resources>
+</document>

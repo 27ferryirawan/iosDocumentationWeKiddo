@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="examDetailFooterCellID" rowHeight="172" id="KGk-i7-Jjw" customClass="ExamDetailFooterCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="171.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wny-Hv-moE">
+                        <rect key="frame" x="10" y="10" width="300" height="44"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="0VB-bh-wuM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Add Score">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeL-gb-czj">
+                        <rect key="frame" x="10" y="64" width="300" height="44"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="U95-zt-OBy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Edit Exam">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-n6-gzJ">
+                        <rect key="frame" x="10" y="118" width="300" height="44"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="LhG-Y1-sXD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Close Exam">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ghe-n6-gzJ" firstAttribute="width" secondItem="oeL-gb-czj" secondAttribute="width" id="1Nt-bd-d7a"/>
+                    <constraint firstItem="oeL-gb-czj" firstAttribute="leading" secondItem="wny-Hv-moE" secondAttribute="leading" id="4ng-TK-8lA"/>
+                    <constraint firstItem="Ghe-n6-gzJ" firstAttribute="top" secondItem="oeL-gb-czj" secondAttribute="bottom" constant="10" id="K57-2c-TDN"/>
+                    <constraint firstItem="oeL-gb-czj" firstAttribute="top" secondItem="wny-Hv-moE" secondAttribute="bottom" constant="10" id="MMJ-zO-m3W"/>
+                    <constraint firstItem="Ghe-n6-gzJ" firstAttribute="trailing" secondItem="oeL-gb-czj" secondAttribute="trailing" id="Odv-Iv-g64"/>
+                    <constraint firstItem="wny-Hv-moE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Plo-RK-RPd"/>
+                    <constraint firstItem="wny-Hv-moE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Y4T-H9-ATa"/>
+                    <constraint firstItem="oeL-gb-czj" firstAttribute="trailing" secondItem="wny-Hv-moE" secondAttribute="trailing" id="ck6-91-jQh"/>
+                    <constraint firstItem="oeL-gb-czj" firstAttribute="width" secondItem="wny-Hv-moE" secondAttribute="width" id="ebb-Sq-S5z"/>
+                    <constraint firstItem="Ghe-n6-gzJ" firstAttribute="leading" secondItem="oeL-gb-czj" secondAttribute="leading" id="jzd-BS-zmP"/>
+                    <constraint firstAttribute="trailing" secondItem="wny-Hv-moE" secondAttribute="trailing" constant="10" id="wRy-WJ-weT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addScoreButton" destination="wny-Hv-moE" id="B9y-R2-UnO"/>
+                <outlet property="closeExamButton" destination="Ghe-n6-gzJ" id="0Zm-FL-pKt"/>
+                <outlet property="editExamButton" destination="oeL-gb-czj" id="d1J-C4-qDf"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="195.53571428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

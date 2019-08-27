@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" id="KGk-i7-Jjw" customClass="ScheduleCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="41.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdU-Yv-aqw">
+                        <rect key="frame" x="1" y="4.5" width="318" height="33"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08.00 - 09.00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWN-uJ-PEB">
+                                <rect key="frame" x="10" y="8" width="123" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="QD1-13-jay"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATHEMATIC" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze1-K6-sWl">
+                                <rect key="frame" x="185" y="8" width="123" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.66666666666666663" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ze1-K6-sWl" firstAttribute="width" secondItem="WWN-uJ-PEB" secondAttribute="width" id="MgZ-6l-a80"/>
+                            <constraint firstAttribute="width" constant="318" id="NYV-PJ-lee"/>
+                            <constraint firstItem="Ze1-K6-sWl" firstAttribute="centerY" secondItem="IdU-Yv-aqw" secondAttribute="centerY" id="Ogu-im-D85"/>
+                            <constraint firstAttribute="trailing" secondItem="Ze1-K6-sWl" secondAttribute="trailing" constant="10" id="OxK-Nh-PR6"/>
+                            <constraint firstItem="WWN-uJ-PEB" firstAttribute="centerY" secondItem="IdU-Yv-aqw" secondAttribute="centerY" id="Pnl-0A-PpT"/>
+                            <constraint firstAttribute="height" constant="33" id="moK-eU-kzL"/>
+                            <constraint firstItem="WWN-uJ-PEB" firstAttribute="leading" secondItem="IdU-Yv-aqw" secondAttribute="leading" constant="10" id="pE0-8j-YQZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IdU-Yv-aqw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ahl-Xz-Vw1"/>
+                    <constraint firstItem="IdU-Yv-aqw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="Jw7-dI-dlH"/>
+                    <constraint firstAttribute="trailing" secondItem="IdU-Yv-aqw" secondAttribute="trailing" constant="1" id="TQs-Hz-cVu"/>
+                    <constraint firstItem="IdU-Yv-aqw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="l86-Hj-yq5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="scheduleList" destination="IdU-Yv-aqw" id="Ywm-nu-uck"/>
+                <outlet property="scheduleTimeLbl" destination="WWN-uJ-PEB" id="lbb-hr-zzB"/>
+                <outlet property="subjectLbl" destination="Ze1-K6-sWl" id="aIJ-re-TBZ"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="107.94602698650675"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="announcementBannerImageCell" id="gTV-IL-0wX" customClass="AnnouncementBannerImageCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food_background" translatesAutoresizingMaskIntoConstraints="NO" id="0H8-UE-KJd">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="200"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="0H8-UE-KJd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="62c-l2-Nba"/>
+                <constraint firstAttribute="bottom" secondItem="0H8-UE-KJd" secondAttribute="bottom" id="Hql-RJ-zBw"/>
+                <constraint firstItem="0H8-UE-KJd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cgc-aE-RvI"/>
+                <constraint firstAttribute="trailing" secondItem="0H8-UE-KJd" secondAttribute="trailing" id="kWz-lw-cb4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="contentImage" destination="0H8-UE-KJd" id="0Ld-Pp-wnJ"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="food_background" width="375" height="178"/>
+    </resources>
+</document>

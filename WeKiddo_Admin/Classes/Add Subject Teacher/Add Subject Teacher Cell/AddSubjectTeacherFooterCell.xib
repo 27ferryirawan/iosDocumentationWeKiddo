@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addSubjectTeacherFooterCellID" rowHeight="256" id="KGk-i7-Jjw" customClass="AddSubjectTeacherFooterCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="255.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set As Exam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xd-w1-Vtw">
+                        <rect key="frame" x="10" y="10" width="74.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="UcG-Zo-Fxp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHW-sT-9fO">
+                        <rect key="frame" x="114.5" y="7" width="51" height="31"/>
+                        <connections>
+                            <action selector="setIsExam:" destination="KGk-i7-Jjw" eventType="valueChanged" id="1jH-TS-vq5"/>
+                        </connections>
+                    </switch>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="640-SK-jRK">
+                        <rect key="frame" x="10" y="43" width="300" height="44"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="oan-qk-S3J"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Exam Type">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PqB-ym-raf">
+                        <rect key="frame" x="10" y="95" width="300" height="100"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="NHA-Bg-dcQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Description"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="jCp-Wx-KWc"/>
+                        </connections>
+                    </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97e-va-B69">
+                        <rect key="frame" x="10" y="205" width="300" height="44"/>
+                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="R2o-a3-7fc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Save">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="97e-va-B69" firstAttribute="top" secondItem="PqB-ym-raf" secondAttribute="bottom" constant="10" id="0eC-go-IZa"/>
+                    <constraint firstItem="PqB-ym-raf" firstAttribute="top" secondItem="640-SK-jRK" secondAttribute="bottom" constant="8" id="4vS-fH-a8l"/>
+                    <constraint firstItem="ZHW-sT-9fO" firstAttribute="leading" secondItem="4xd-w1-Vtw" secondAttribute="trailing" constant="30" id="Bnv-5K-zdY"/>
+                    <constraint firstItem="4xd-w1-Vtw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="IcJ-0A-heA"/>
+                    <constraint firstItem="640-SK-jRK" firstAttribute="leading" secondItem="4xd-w1-Vtw" secondAttribute="leading" id="KYn-33-YZQ"/>
+                    <constraint firstItem="640-SK-jRK" firstAttribute="top" secondItem="ZHW-sT-9fO" secondAttribute="bottom" constant="5" id="KeI-Uo-aRG"/>
+                    <constraint firstItem="97e-va-B69" firstAttribute="leading" secondItem="PqB-ym-raf" secondAttribute="leading" id="O4t-0c-OVr"/>
+                    <constraint firstItem="4xd-w1-Vtw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="SYY-Yc-Auf"/>
+                    <constraint firstItem="PqB-ym-raf" firstAttribute="trailing" secondItem="640-SK-jRK" secondAttribute="trailing" id="TGw-1C-lqb"/>
+                    <constraint firstAttribute="trailing" secondItem="640-SK-jRK" secondAttribute="trailing" constant="10" id="UBp-Gx-EqO"/>
+                    <constraint firstItem="ZHW-sT-9fO" firstAttribute="centerY" secondItem="4xd-w1-Vtw" secondAttribute="centerY" id="fNR-VB-phq"/>
+                    <constraint firstItem="97e-va-B69" firstAttribute="trailing" secondItem="PqB-ym-raf" secondAttribute="trailing" id="lz9-kn-63r"/>
+                    <constraint firstItem="PqB-ym-raf" firstAttribute="width" secondItem="640-SK-jRK" secondAttribute="width" id="tC1-GK-pnh"/>
+                    <constraint firstItem="97e-va-B69" firstAttribute="width" secondItem="PqB-ym-raf" secondAttribute="width" id="xTf-Sq-LoU"/>
+                    <constraint firstItem="PqB-ym-raf" firstAttribute="leading" secondItem="640-SK-jRK" secondAttribute="leading" id="xeA-5X-Slr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="examButton" destination="640-SK-jRK" id="uux-Q6-cXt"/>
+                <outlet property="examDescription" destination="PqB-ym-raf" id="RAI-gy-x4D"/>
+                <outlet property="saveButton" destination="97e-va-B69" id="0JH-XS-tqa"/>
+                <outlet property="switchExamButton" destination="ZHW-sT-9fO" id="Dcd-0Y-ao8"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="223.66071428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="examScoreStudentCellID" id="KGk-i7-Jjw" customClass="ExamScoreStudentCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JU3-oA-vag">
+                        <rect key="frame" x="10" y="11" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="6up-bS-xT7"/>
+                            <constraint firstAttribute="width" constant="44" id="OyF-e1-8EM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zein Rezky Chandra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm4-Gl-0St">
+                        <rect key="frame" x="59" y="11" width="107.5" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="107.5" id="FdH-Mk-ij0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHb-FI-EgL">
+                        <rect key="frame" x="266" y="11" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="1dK-y8-dBF"/>
+                            <constraint firstAttribute="width" constant="44" id="D56-Dx-ftc"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="kSO-EH-mFg"/>
+                        </connections>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mW-pt-JuS">
+                        <rect key="frame" x="192" y="11" width="44" height="44"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="aHb-FI-EgL" secondAttribute="trailing" constant="10" id="5wv-F0-PSA"/>
+                    <constraint firstItem="Xm4-Gl-0St" firstAttribute="centerY" secondItem="JU3-oA-vag" secondAttribute="centerY" id="7Lz-SX-OFa"/>
+                    <constraint firstItem="aHb-FI-EgL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9GZ-v0-4oP"/>
+                    <constraint firstItem="1mW-pt-JuS" firstAttribute="width" secondItem="aHb-FI-EgL" secondAttribute="width" id="Dje-bK-R4a"/>
+                    <constraint firstItem="1mW-pt-JuS" firstAttribute="centerY" secondItem="aHb-FI-EgL" secondAttribute="centerY" id="JdX-Al-7FJ"/>
+                    <constraint firstItem="JU3-oA-vag" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MsT-4V-lzA"/>
+                    <constraint firstItem="1mW-pt-JuS" firstAttribute="height" secondItem="aHb-FI-EgL" secondAttribute="height" id="U7h-VP-15a"/>
+                    <constraint firstItem="aHb-FI-EgL" firstAttribute="leading" secondItem="1mW-pt-JuS" secondAttribute="trailing" constant="30" id="VEX-uc-c8z"/>
+                    <constraint firstItem="JU3-oA-vag" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZIr-PV-WUb"/>
+                    <constraint firstItem="Xm4-Gl-0St" firstAttribute="leading" secondItem="JU3-oA-vag" secondAttribute="trailing" constant="5" id="dj7-eo-Tmn"/>
+                    <constraint firstItem="Xm4-Gl-0St" firstAttribute="height" secondItem="JU3-oA-vag" secondAttribute="height" id="yHp-Jf-pCN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="studentImage" destination="JU3-oA-vag" id="Tt5-3L-Buu"/>
+                <outlet property="studentName" destination="Xm4-Gl-0St" id="Yg5-ql-VnC"/>
+                <outlet property="studentScorePassGradeLabel" destination="1mW-pt-JuS" id="rE2-kj-w4U"/>
+                <outlet property="studentScoreRadianLabel" destination="aHb-FI-EgL" id="m1Y-yf-7jl"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="universityDetailRepresentativeCell" rowHeight="110" id="KGk-i7-Jjw" customClass="UniversityDetailRepresentativeCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banda Aceh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-On-qb9">
+                        <rect key="frame" x="10" y="10" width="300" height="14.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rendi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AA-LI-uFo">
+                        <rect key="frame" x="10" y="36" width="300" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEZ-Tz-hyF">
+                        <rect key="frame" x="10" y="55.5" width="300" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="qy8-Df-Jmk"/>
+                        </constraints>
+                        <string key="text">HP : 085260233345 (Rendy)</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail : georendy@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxL-6p-MOS">
+                        <rect key="frame" x="10" y="80.5" width="300" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1AA-LI-uFo" firstAttribute="top" secondItem="c7R-On-qb9" secondAttribute="bottom" constant="11.5" id="2VC-MF-IJ3"/>
+                    <constraint firstItem="sEZ-Tz-hyF" firstAttribute="top" secondItem="1AA-LI-uFo" secondAttribute="bottom" constant="5" id="2qH-5W-6iV"/>
+                    <constraint firstItem="sEZ-Tz-hyF" firstAttribute="trailing" secondItem="1AA-LI-uFo" secondAttribute="trailing" id="6Cb-Se-dx0"/>
+                    <constraint firstItem="c7R-On-qb9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6cf-7z-t5x"/>
+                    <constraint firstItem="UxL-6p-MOS" firstAttribute="height" secondItem="sEZ-Tz-hyF" secondAttribute="height" id="8iD-s3-6Ds"/>
+                    <constraint firstItem="UxL-6p-MOS" firstAttribute="leading" secondItem="sEZ-Tz-hyF" secondAttribute="leading" id="8in-IB-qEC"/>
+                    <constraint firstItem="c7R-On-qb9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ChF-AP-M56"/>
+                    <constraint firstItem="sEZ-Tz-hyF" firstAttribute="leading" secondItem="1AA-LI-uFo" secondAttribute="leading" id="J4B-dK-v98"/>
+                    <constraint firstItem="UxL-6p-MOS" firstAttribute="width" secondItem="sEZ-Tz-hyF" secondAttribute="width" id="O2y-Wf-iOH"/>
+                    <constraint firstItem="UxL-6p-MOS" firstAttribute="top" secondItem="sEZ-Tz-hyF" secondAttribute="bottom" constant="5" id="Oih-7o-hwQ"/>
+                    <constraint firstItem="1AA-LI-uFo" firstAttribute="trailing" secondItem="c7R-On-qb9" secondAttribute="trailing" id="gl1-6N-gE0"/>
+                    <constraint firstItem="sEZ-Tz-hyF" firstAttribute="width" secondItem="1AA-LI-uFo" secondAttribute="width" id="huL-of-vRc"/>
+                    <constraint firstItem="1AA-LI-uFo" firstAttribute="leading" secondItem="c7R-On-qb9" secondAttribute="leading" id="iiX-Gp-xXN"/>
+                    <constraint firstItem="UxL-6p-MOS" firstAttribute="trailing" secondItem="sEZ-Tz-hyF" secondAttribute="trailing" id="lQx-YO-Sxv"/>
+                    <constraint firstAttribute="trailing" secondItem="c7R-On-qb9" secondAttribute="trailing" constant="10" id="v0V-XU-MkV"/>
+                    <constraint firstItem="1AA-LI-uFo" firstAttribute="width" secondItem="c7R-On-qb9" secondAttribute="width" id="wex-AJ-cJZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="137.68115942028987" y="174.77678571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

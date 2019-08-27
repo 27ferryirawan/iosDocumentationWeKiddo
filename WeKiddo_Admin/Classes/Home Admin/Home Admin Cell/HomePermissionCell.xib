@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homePermissionCellID" id="s5F-xp-9qq" customClass="HomePermissionCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s5F-xp-9qq" id="cXg-Ja-EoZ">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsq-Cf-gV6">
+                        <rect key="frame" x="10" y="5.5" width="300" height="77"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wcp-pn-z4M">
+                                <rect key="frame" x="10" y="16" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="i2v-je-K2X"/>
+                                    <constraint firstAttribute="height" constant="45" id="vIX-h7-xbB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ferry Irawan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdP-46-RNT">
+                                <rect key="frame" x="74" y="19" width="86.5" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIS 12345678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNy-R7-xQ2">
+                                <rect key="frame" x="74" y="35.5" width="86.5" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbW-lt-hEl">
+                                <rect key="frame" x="210" y="17" width="80" height="26"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holiday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPi-k0-Z4h">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UPi-k0-Z4h" secondAttribute="trailing" id="C1k-9m-35U"/>
+                                    <constraint firstItem="UPi-k0-Z4h" firstAttribute="top" secondItem="SbW-lt-hEl" secondAttribute="top" id="DBR-Lj-kmf"/>
+                                    <constraint firstAttribute="height" constant="26" id="EDS-os-75H"/>
+                                    <constraint firstAttribute="width" constant="80" id="TSf-ev-OaA"/>
+                                    <constraint firstAttribute="bottom" secondItem="UPi-k0-Z4h" secondAttribute="bottom" id="kuS-io-IWN"/>
+                                    <constraint firstItem="UPi-k0-Z4h" firstAttribute="leading" secondItem="SbW-lt-hEl" secondAttribute="leading" id="nAm-8N-pEa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 Feb 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-Bw-NON">
+                                <rect key="frame" x="210" y="47.5" width="80" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIS 12345678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSW-KS-p41">
+                                <rect key="frame" x="74" y="50" width="86.5" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cSW-KS-p41" firstAttribute="top" secondItem="CNy-R7-xQ2" secondAttribute="bottom" constant="-0.5" id="0Sc-y3-oAj"/>
+                            <constraint firstItem="Wcp-pn-z4M" firstAttribute="centerY" secondItem="xsq-Cf-gV6" secondAttribute="centerY" id="2Pl-lt-KbT"/>
+                            <constraint firstItem="DSe-Bw-NON" firstAttribute="leading" secondItem="SbW-lt-hEl" secondAttribute="leading" id="46C-Xd-Qam"/>
+                            <constraint firstItem="Wcp-pn-z4M" firstAttribute="leading" secondItem="xsq-Cf-gV6" secondAttribute="leading" constant="10" id="BPx-Fd-0xD"/>
+                            <constraint firstItem="CNy-R7-xQ2" firstAttribute="leading" secondItem="BdP-46-RNT" secondAttribute="leading" id="EuB-4O-Jmp"/>
+                            <constraint firstItem="cSW-KS-p41" firstAttribute="trailing" secondItem="CNy-R7-xQ2" secondAttribute="trailing" id="Mgj-5z-h5f"/>
+                            <constraint firstItem="CNy-R7-xQ2" firstAttribute="top" secondItem="BdP-46-RNT" secondAttribute="bottom" constant="-0.5" id="MwE-X3-dPC"/>
+                            <constraint firstItem="DSe-Bw-NON" firstAttribute="width" secondItem="SbW-lt-hEl" secondAttribute="width" id="Q3b-IH-huK"/>
+                            <constraint firstItem="DSe-Bw-NON" firstAttribute="top" secondItem="SbW-lt-hEl" secondAttribute="bottom" constant="4.5" id="T0T-Nv-oV0"/>
+                            <constraint firstItem="BdP-46-RNT" firstAttribute="top" secondItem="xsq-Cf-gV6" secondAttribute="top" constant="19" id="U9C-cW-aBO"/>
+                            <constraint firstAttribute="height" constant="77" id="ZWE-AX-CK8"/>
+                            <constraint firstItem="CNy-R7-xQ2" firstAttribute="trailing" secondItem="BdP-46-RNT" secondAttribute="trailing" id="Zv7-Vw-SLd"/>
+                            <constraint firstItem="SbW-lt-hEl" firstAttribute="top" secondItem="xsq-Cf-gV6" secondAttribute="top" constant="17" id="aKJ-YT-3es"/>
+                            <constraint firstItem="cSW-KS-p41" firstAttribute="leading" secondItem="CNy-R7-xQ2" secondAttribute="leading" id="cVc-VQ-oSw"/>
+                            <constraint firstItem="DSe-Bw-NON" firstAttribute="trailing" secondItem="SbW-lt-hEl" secondAttribute="trailing" id="kZm-Gx-PP8"/>
+                            <constraint firstAttribute="trailing" secondItem="SbW-lt-hEl" secondAttribute="trailing" constant="10" id="o4V-ms-ILN"/>
+                            <constraint firstItem="BdP-46-RNT" firstAttribute="leading" secondItem="Wcp-pn-z4M" secondAttribute="trailing" constant="19" id="raq-jO-sJp"/>
+                            <constraint firstItem="CNy-R7-xQ2" firstAttribute="width" secondItem="BdP-46-RNT" secondAttribute="width" id="uWL-yl-WmJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xsq-Cf-gV6" firstAttribute="centerY" secondItem="cXg-Ja-EoZ" secondAttribute="centerY" id="KIu-KZ-3ma"/>
+                    <constraint firstAttribute="trailing" secondItem="xsq-Cf-gV6" secondAttribute="trailing" constant="10" id="X3g-aI-lmm"/>
+                    <constraint firstItem="xsq-Cf-gV6" firstAttribute="leading" secondItem="cXg-Ja-EoZ" secondAttribute="leading" constant="10" id="bt2-kF-4m5"/>
+                    <constraint firstItem="xsq-Cf-gV6" firstAttribute="centerX" secondItem="cXg-Ja-EoZ" secondAttribute="centerX" id="yhw-jI-PPl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="SnL-6j-f5h"/>
+            <connections>
+                <outlet property="bgView" destination="xsq-Cf-gV6" id="As1-CD-Sve"/>
+                <outlet property="classLabel" destination="CNy-R7-xQ2" id="Jnj-yO-cqz"/>
+                <outlet property="contentImage" destination="Wcp-pn-z4M" id="Ewa-Ah-Fi4"/>
+                <outlet property="dateLabel" destination="DSe-Bw-NON" id="KdY-tN-8Vs"/>
+                <outlet property="descLabel" destination="cSW-KS-p41" id="SQm-0l-dZu"/>
+                <outlet property="nameLabel" destination="BdP-46-RNT" id="O7y-rr-0IF"/>
+                <outlet property="permissionLabel" destination="UPi-k0-Z4h" id="PSa-0t-ONd"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
