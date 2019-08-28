@@ -129,15 +129,20 @@ class ViewController: UIViewController {
                 ACData.LOGINDATA = loginData
                 SVProgressHUD.dismiss()
 
-                ACRequest.POST_DASHBOARD(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess:ACData.LOGINDATA.accessToken, successCompletion: { (dashboardData) in
-                    ACData.DASHBOARDDATA = dashboardData
-                    SVProgressHUD.dismiss()
-                    self.passwordTxt.resignFirstResponder()
-                    let appDelegate = UIApplication.shared.delegate as? AppDelegate
-                    appDelegate?.goToHome()
-                }, failCompletion: { (message) in
-                    SVProgressHUD.dismiss()
-                })
+                if ACData.LOGINDATA.dashboardSchoolMenu.count != 0 {
+                    guard let schoolIndexZero = ACData.LOGINDATA.dashboardSchoolMenu[0].school_id, let yearIndexZero = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+                        return
+                    }
+                    ACRequest.POST_DASHBOARD(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: schoolIndexZero, yearID: yearIndexZero, tokenAccess:ACData.LOGINDATA.accessToken, successCompletion: { (dashboardData) in
+                        ACData.DASHBOARDDATA = dashboardData
+                        SVProgressHUD.dismiss()
+                        self.passwordTxt.resignFirstResponder()
+                        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                        appDelegate?.goToHome()
+                    }, failCompletion: { (message) in
+                        SVProgressHUD.dismiss()
+                    })
+                }
 
             }) { (message) in
                 SVProgressHUD.dismiss()

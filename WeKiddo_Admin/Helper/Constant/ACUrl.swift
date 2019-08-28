@@ -18,7 +18,8 @@ class ACUrl: NSObject {
     
     // LOGIN
     static let PARENT_LOGIN = PARENT_APP + "auth/login" // [POST] token_device, phone, password, user_agent
-    static let PARENT_DASHBOARD = PARENT_APP + "user/dashboard" // [POST] user_id, role
+    static let PARENT_FORGOT_PASSWORD = PARENT_APP + "auth/forgetPassword" // [POST] phone, password
+    static let PARENT_DASHBOARD = PARENT_APP + "home/dashboard" // [POST] user_id, role
     static let TEACHER_GET_ATTENDANCE = PARENT_APP + "user/attendance" // [POST] user_id, role
     static let TEACHER_GET_DETAIL_ATTENDANCE = PARENT_APP + "user/attendanceDetail" // [POST] user_id, role, school_session_id
     static let TEACHER_GET_PERMISSION = PARENT_APP + "user/permissionRequest" // [POST] user_id, role
@@ -67,7 +68,7 @@ class ACUrl: NSObject {
     static let POST_ADD_TEACHER_ON_DUTY_PERMISSION = PARENT_APP + "teacher-on-duty/update-student-absence" // [POST] child_id, school_id, year_id, user_id, role, reason, desc
     static let POST_ANNOUNCEMENT_ADD = PARENT_APP + "announcement/add" // [POST] user_id, role, school_id, year_id, announcement_id, announcement_title, announcement_desc, banner_list, content_list, video_list, level, class, childs, additionals, start_date, end_date
     static let PARENT = PARENT_APP + "getParent?" // [GET] child_id=
-    static let PARENT_CHECK_PHONE = PARENT_APP + "user/checkPhone" // [POST] user_id, role, school_id, year_id, phone
+    static let PARENT_CHECK_PHONE = PARENT_APP + "auth/checkPhone" // [POST] user_id, role, school_id, year_id, phone
     static let PARENT_SET_NEW_PASSWORD = PARENT_APP + "profile/change-password" // [POST] user_id, role, school_id, year_id, new_password, phone
     static let ADMIN_GET_MORE_EVENTS = PARENT_APP + "event-monitoring/more-event" // [POST] user_id, school_id, role, year_id
     static let ADMIN_GET_DETAIL_EVENT = PARENT_APP + "event-monitoring/detail-event" // [POST] user_id, school_id, role, year_id, event_id

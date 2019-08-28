@@ -23,8 +23,8 @@ class AssignmentViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        ACData.ASSIGNMENTLIST.assignmentPickerClass.removeAll()
-        ACData.ASSIGNMENTLIST.assignmentPickerSubject.removeAll()
+//        ACData.ASSIGNMENTLIST.assignmentPickerClass.removeAll()
+//        ACData.ASSIGNMENTLIST.assignmentPickerSubject.removeAll()
     }
     func configNavigation() {
         detectAdaptiveClass()

@@ -27,7 +27,7 @@ class HomeRoomDueDateAssignmentCell: UITableViewCell {
             bgView.setBorderShadow(color:  UIColor.gray, shadowRadius: 3.0, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
-    var assignObj: DashboardModelAssignment? {
+    var assignObj: DashboardModelAbsentCheckList? {
         didSet {
             cellConfig()
         }
@@ -41,23 +41,23 @@ class HomeRoomDueDateAssignmentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func fetchDetail() {
-        guard let obj = assignObj else { return }
-        ACRequest.POST_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: obj.assignment_id, classID: obj.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDetailData) in
-            ACData.ASSIGNMENTDETAILDATA = assignmentDetailData
-            SVProgressHUD.dismiss()
-            self.delegate?.toDetailAssignment()
-        }) { (message) in
-            SVProgressHUD.dismiss()
-        }
+//        guard let obj = assignObj else { return }
+//        ACRequest.POST_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: obj.assignment_id, classID: obj.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDetailData) in
+//            ACData.ASSIGNMENTDETAILDATA = assignmentDetailData
+//            SVProgressHUD.dismiss()
+//            self.delegate?.toDetailAssignment()
+//        }) { (message) in
+//            SVProgressHUD.dismiss()
+//        }
     }
     func cellConfig() {
-        guard let obj = assignObj else { return }
-        subjectLabel.text = obj.subject_name
-        topicLabel.text = obj.subject_session
+//        guard let obj = assignObj else { return }
+//        subjectLabel.text = obj.subject_name
+//        topicLabel.text = obj.subject_session
 //        classLabel.text = obj.
-        dateNumberLabel.text = "\(getDay(time: obj.assignment_due_date))"
-        dateMonthLabel.text = "\(getMonth(time: obj.assignment_due_date))"
-        dateDayLabel.text = "\(getWeekDay(time: obj.assignment_due_date))"
+//        dateNumberLabel.text = "\(getDay(time: obj.assignment_due_date))"
+//        dateMonthLabel.text = "\(getMonth(time: obj.assignment_due_date))"
+//        dateDayLabel.text = "\(getWeekDay(time: obj.assignment_due_date))"
     }
 }
 

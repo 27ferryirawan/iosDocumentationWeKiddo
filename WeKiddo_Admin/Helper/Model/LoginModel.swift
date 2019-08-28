@@ -16,6 +16,7 @@ class LoginModel: NSObject {
     var expiredAt = ""
     var role = ""
     var school_id = ""
+    var dashboardSchoolMenu = [DashboardSchoolMenu]()
     var dashboardMenu = [DashboardModelMenu]()
     var dashboardCategoryFeature = [DashboardCategoryFeature]()
     var dashboardCatgoryOthers = [DashboardCategoryOthers]()
@@ -43,6 +44,23 @@ class LoginModel: NSObject {
             d.objectMapping(json: data)
             dashboardCatgoryOthers.append(d)
         }
+        for data in json["data"]["school_list"].arrayValue {
+            let d = DashboardSchoolMenu()
+            d.objectMapping(json: data)
+            dashboardSchoolMenu.append(d)
+        }
+    }
+}
+
+class DashboardSchoolMenu: NSObject {
+    var year_id: String?
+    var school_id: String?
+    var school_name: String?
+    
+    func objectMapping(json: JSON) {
+        year_id = json["year_id"].stringValue
+        school_id = json["school_id"].stringValue
+        school_name = json["school_name"].stringValue
     }
 }
 

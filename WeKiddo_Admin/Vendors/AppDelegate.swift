@@ -147,7 +147,6 @@ import UserNotifications
         let assignmentViewController = AssignmentViewController(nibName: "AssignmentViewController", bundle: nil)
         let othersViewController = OthersViewController(nibName: "OthersViewController", bundle: nil)
         let subjectListViewController = SubjectListViewController(nibName: "SubjectListViewController", bundle: nil)
-        let eventApprovalViewController = AdminEventListViewController(nibName: "AdminEventListViewController", bundle: nil)
         let examViewController = ExamViewController(nibName: "ExamViewController", bundle: nil)
 //        let questionViewController = QuestionsViewController(nibName: "QuestionsViewController", bundle: nil)
 //        let approvalViewController = ApprovalViewController(nibName: "ApprovalViewController", bundle: nil)
@@ -170,7 +169,6 @@ import UserNotifications
         let announcement = UINavigationController(rootViewController: announcementViewController)
         let more = UINavigationController(rootViewController: othersViewController)
         let subjectList = UINavigationController(rootViewController: subjectListViewController)
-        let eventApproval = UINavigationController(rootViewController: eventApprovalViewController)
         let examSchedule = UINavigationController(rootViewController: examViewController)
 //        let nearbyCourse = UINavigationController(rootViewController: nearbyCourseController)
 //        let user = UINavigationController(rootViewController: userViewController)
@@ -185,16 +183,15 @@ import UserNotifications
 
         let menuDictionary: [String: UINavigationController] =
             [
-                "34": announcement,
+                "69": announcement,
                 "36": attendances,
                 "37": permission,
                 "38": detention,
                 "42": latePayment,
-                "43": assignment,
+                "68": assignment,
                 "47": subjectList, //subjectTopic
-                "51": dashboard,
-                "35": eventApproval,
-                "41": examSchedule, // -> DEVELOPMEMNT PHASE 1
+                "71": dashboard,
+                "70": examSchedule, // -> DEVELOPMEMNT PHASE 1
                 //                "26": schoolProfile,
                 //                "27": user,
                 //                "28": subject,
@@ -280,23 +277,23 @@ import UserNotifications
         detentionViewController.tabBarItem = detentionTab
         // ASSIGNMENT
         let assignmentTab = UITabBarItem(
-            title: menuName["43"],
+            title: menuName["68"],
             image: UIImage(named:"tabbar_assigment"),
             selectedImage: UIImage(named:"tabbar_assigment")
         )
         assignmentTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         assignmentViewController.tabBarItem = assignmentTab
-        // EVENT MONITORING
-        let eventMonitoringTab = UITabBarItem(
-            title: menuName["35"],
+        // ANNOUNCEMENT
+        let announcementTab = UITabBarItem(
+            title: menuName["69"],
             image: UIImage(named:"tabbar_assigment"),
             selectedImage: UIImage(named:"tabbar_assigment")
         )
-        eventMonitoringTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
-        eventApprovalViewController.tabBarItem = eventMonitoringTab
+        announcementTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
+        announcementViewController.tabBarItem = announcementTab
         // HOMEROOM ADMIN
         let homeAdminTab = UITabBarItem(
-            title: menuName["51"],
+            title: menuName["71"],
             image: UIImage(named:"tabbar_home"),
             selectedImage: UIImage(named:"tabbar_home")
         )
@@ -304,7 +301,7 @@ import UserNotifications
         homeViewController.tabBarItem = homeAdminTab
         // Exam Schedule
         let examScheduleTab = UITabBarItem(
-            title: menuName["41"],
+            title: menuName["70"],
             image: UIImage(named:"tabbar_home"),
             selectedImage: UIImage(named:"tabbar_home")
         )

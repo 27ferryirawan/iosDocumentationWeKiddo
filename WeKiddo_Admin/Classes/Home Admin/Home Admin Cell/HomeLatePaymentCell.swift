@@ -28,7 +28,7 @@ class HomeLatePaymentCell: UITableViewCell {
             bgView.setBorderShadow(color:  UIColor.gray, shadowRadius: 3.0, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
-    var detailObj: DashboardModelLatePayment? {
+    var detailObj: DashboardModelSessionCheckList? {
         didSet {
             cellConfig()
         }
@@ -42,7 +42,7 @@ class HomeLatePaymentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func goToDetail() {
-        guard let obj = detailObj else { return }
+//        guard let obj = detailObj else { return }
 //        ACRequest.POST_LATE_PAYMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, childPaymentID: obj.child_payment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (detailData) in
 //            ACData.LATEPAYMENTDETAILDATA = detailData
 //            SVProgressHUD.dismiss()
@@ -60,11 +60,11 @@ class HomeLatePaymentCell: UITableViewCell {
 //            placeholderImage: UIImage(named: "WeKiddoLogo"),
 //            options: .refreshCached
 //        )
-        nameLabel.text = obj.child_name
-        classLabel.text = obj.school_class
-        dayLabel.text = "\(getDay(time: obj.due_date))"
-        monthLabel.text = "\(getMonth(time: obj.due_date))"
-        yearLabel.text = "\(getYear(time: obj.due_date))"
+//        nameLabel.text = obj.child_name
+//        classLabel.text = obj.school_class
+//        dayLabel.text = "\(getDay(time: obj.due_date))"
+//        monthLabel.text = "\(getMonth(time: obj.due_date))"
+//        yearLabel.text = "\(getYear(time: obj.due_date))"
     }
 }
 
