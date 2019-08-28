@@ -10,11 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeRoomViewController" customModule="WeKiddo_School_School" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeRoomViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
             <connections>
-                <outlet property="closeDetentionButton" destination="zft-9K-kbk" id="Mec-Le-mdZ"/>
-                <outlet property="detentionReason" destination="Xub-d4-hSR" id="3vo-S0-xWo"/>
-                <outlet property="detentionView" destination="dV1-g0-QDX" id="dgU-lN-LXr"/>
                 <outlet property="grayAreaBtn" destination="NQM-u0-Ijx" id="IDl-rY-kdF"/>
                 <outlet property="tableView" destination="Rtx-hH-kUr" id="3Og-ni-a5i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -36,49 +33,6 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQM-u0-Ijx">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dV1-g0-QDX">
-                    <rect key="frame" x="57" y="353" width="300" height="200"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-hY-YuD">
-                            <rect key="frame" x="100" y="40" width="100" height="17"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="LnY-zy-JqG"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telat lebih dari 30 menit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xub-d4-hSR">
-                            <rect key="frame" x="20" y="87" width="260" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zft-9K-kbk">
-                            <rect key="frame" x="100" y="131" width="100" height="29"/>
-                            <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="9cC-Ia-cxl"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="Close">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Xub-d4-hSR" secondAttribute="trailing" constant="20" id="Bxj-NN-E8N"/>
-                        <constraint firstItem="dEr-hY-YuD" firstAttribute="top" secondItem="dV1-g0-QDX" secondAttribute="top" constant="40" id="HUj-4c-iXZ"/>
-                        <constraint firstItem="Xub-d4-hSR" firstAttribute="top" secondItem="dEr-hY-YuD" secondAttribute="bottom" constant="30" id="IMQ-eD-jk1"/>
-                        <constraint firstAttribute="height" constant="200" id="OJf-yx-aHb"/>
-                        <constraint firstItem="Xub-d4-hSR" firstAttribute="leading" secondItem="dV1-g0-QDX" secondAttribute="leading" constant="20" id="ede-nJ-nRu"/>
-                        <constraint firstItem="dEr-hY-YuD" firstAttribute="centerX" secondItem="dV1-g0-QDX" secondAttribute="centerX" id="iLt-Kr-YOz"/>
-                        <constraint firstItem="zft-9K-kbk" firstAttribute="centerX" secondItem="dV1-g0-QDX" secondAttribute="centerX" id="o6C-OV-EDg"/>
-                        <constraint firstAttribute="width" constant="300" id="qkb-Rv-FMz"/>
-                        <constraint firstItem="zft-9K-kbk" firstAttribute="top" secondItem="Xub-d4-hSR" secondAttribute="bottom" constant="27" id="rYK-kB-bdy"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -86,12 +40,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Rtx-hH-kUr" secondAttribute="bottom" id="Bcc-ws-nDT"/>
                 <constraint firstItem="NQM-u0-Ijx" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Dg2-tt-g83"/>
                 <constraint firstItem="NQM-u0-Ijx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jba-0e-oMN"/>
-                <constraint firstItem="dV1-g0-QDX" firstAttribute="centerY" secondItem="NQM-u0-Ijx" secondAttribute="centerY" id="VWq-Eq-K3P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rtx-hH-kUr" secondAttribute="trailing" id="Xiq-ro-esi"/>
                 <constraint firstItem="Rtx-hH-kUr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dtR-av-d9r"/>
                 <constraint firstItem="NQM-u0-Ijx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fEM-mE-XUU"/>
                 <constraint firstItem="NQM-u0-Ijx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fXW-BP-Odb"/>
-                <constraint firstItem="dV1-g0-QDX" firstAttribute="centerX" secondItem="NQM-u0-Ijx" secondAttribute="centerX" id="tKS-bE-TFZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

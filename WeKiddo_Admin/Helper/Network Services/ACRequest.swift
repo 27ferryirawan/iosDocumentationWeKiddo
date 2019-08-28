@@ -24,6 +24,34 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void){
         let parameters:Parameters = [
             "token_device":tokenDevice,
+            "phone":"6281274164293",
+            "password":"12345",
+            "user_agent":"ios"
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_LOGIN)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print("loginjson: \(json)")
+            if(json["status"] == "success") {
+                let user = LoginModel()
+                user.objectMapping(json: json)
+                successCompletion(user)
+            } else {
+                failCompletion(json["message"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_FORGOT(
+        tokenDevice:String,
+        phone:String,
+        password:String,
+        userAgent:String,
+        successCompletion:@escaping (LoginModel) -> Void,
+        failCompletion:@escaping (String) -> Void){
+        let parameters:Parameters = [
+            "token_device":tokenDevice,
             "phone":phone,
             "password":password,
             "user_agent":"ios"
@@ -53,7 +81,6 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID
         ]

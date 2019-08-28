@@ -19,7 +19,6 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nisLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    var isClass = Bool()
     weak var delegate: HomeRoomSpecialAttentionCellDelegate?
     @IBOutlet weak var subjectScoreView: UIView!{
         didSet{
@@ -31,12 +30,7 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
             bgView.setBorderShadow(color:  UIColor.gray, shadowRadius: 3.0, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
-    var detailSubjectObj: DashboardModelSpecialAttentionSubject? {
-        didSet {
-            cellConfigSubject()
-        }
-    }
-    var detailClassObj: DashboardModelSpecialAttentionClass? {
+    var detailClassObj: DashboardModelTaskList? {
         didSet {
             cellConfigClass()
         }
@@ -49,40 +43,20 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func toDetail() {
-        if isClass {
-            guard let obj = detailClassObj else { return }
-            ACRequest.POST_SPECIAL_ATTENTION_DETAIL_BY_CLASS(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, classID: obj.school_class_id, childID: obj.child_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
-                SVProgressHUD.dismiss()
-                ACData.SPECIALATTENTIONBYCLASSDETAILDATA = jsonDatas
-                self.delegate?.toDetailSpecialAttention(isClass: self.isClass)
-            }) { (message) in
-                SVProgressHUD.dismiss()
-                ACAlert.show(message: message)
-            }
-        } else {
-            guard let obj = detailSubjectObj else { return }
-            ACRequest.POST_SPECIAL_ATTENTION_DETAIL_BY_SUBJECT(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, subjectID: obj.subject_id, childID: obj.child_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
-                SVProgressHUD.dismiss()
-                ACData.SPECIALATTENTIONBYSUBJECTDETAILDATA = jsonDatas
-                self.delegate?.toDetailSpecialAttention(isClass: self.isClass)
-            }) { (message) in
-                SVProgressHUD.dismiss()
-                ACAlert.show(message: message)
-            }
-        }
-    }
-    func cellConfigSubject() {
-        guard let obj = detailSubjectObj else { return }
-        nameLabel.text = obj.child_name
-        nisLabel.text = obj.child_nis
-        scoreLabel.text = obj.score
-        isClass = false
+//        guard let obj = detailClassObj else { return }
+//        ACRequest.POST_SPECIAL_ATTENTION_DETAIL_BY_CLASS(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, classID: obj.school_class_id, childID: obj.child_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
+//            SVProgressHUD.dismiss()
+//            ACData.SPECIALATTENTIONBYCLASSDETAILDATA = jsonDatas
+//            self.delegate?.toDetailSpecialAttention(isClass: self.isClass)
+//        }) { (message) in
+//            SVProgressHUD.dismiss()
+//            ACAlert.show(message: message)
+//        }
     }
     func cellConfigClass() {
-        guard let obj = detailClassObj else { return }
-        nameLabel.text = obj.child_name
-        nisLabel.text = obj.child_nis
-        scoreLabel.text = obj.score
-        isClass = true
+//        guard let obj = detailClassObj else { return }
+//        nameLabel.text = obj.child_name
+//        nisLabel.text = obj.child_nis
+//        scoreLabel.text = obj.score
     }
 }

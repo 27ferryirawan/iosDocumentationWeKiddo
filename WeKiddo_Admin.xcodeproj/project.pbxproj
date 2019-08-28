@@ -161,8 +161,6 @@
 		E61BEE99226F583E00A533B3 /* ScoreSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61BEE97226F583E00A533B3 /* ScoreSummaryCell.xib */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
-		E624D101227B5843001220E9 /* RecentAnnouncementSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FF227B5843001220E9 /* RecentAnnouncementSectionCell.swift */; };
-		E624D102227B5843001220E9 /* RecentAnnouncementSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D100227B5843001220E9 /* RecentAnnouncementSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
 		E624D10B227B58B9001220E9 /* AgencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D109227B58B9001220E9 /* AgencyViewController.xib */; };
 		E624D10E227B58C1001220E9 /* AgencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D10C227B58C1001220E9 /* AgencyCell.swift */; };
@@ -209,34 +207,16 @@
 		E62F864C22F0469700CE355E /* SpecialAttentionDetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62F864A22F0469700CE355E /* SpecialAttentionDetailContentCell.swift */; };
 		E62F864D22F0469700CE355E /* SpecialAttentionDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62F864B22F0469700CE355E /* SpecialAttentionDetailContentCell.xib */; };
 		E6396A50228D3F18007A01E6 /* AssignmentModulModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396A4F228D3F18007A01E6 /* AssignmentModulModel.swift */; };
-		E6396FB722B614C900C928E5 /* HomeEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FB522B614C900C928E5 /* HomeEventCell.swift */; };
-		E6396FB822B614C900C928E5 /* HomeEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FB622B614C900C928E5 /* HomeEventCell.xib */; };
-		E6396FBB22B61B3800C928E5 /* HomeEventSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FB922B61B3800C928E5 /* HomeEventSectionCell.swift */; };
-		E6396FBC22B61B3800C928E5 /* HomeEventSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FBA22B61B3800C928E5 /* HomeEventSectionCell.xib */; };
 		E6396FBF22B61EC200C928E5 /* HomeButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FBD22B61EC200C928E5 /* HomeButtonCell.swift */; };
 		E6396FC022B61EC200C928E5 /* HomeButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FBE22B61EC200C928E5 /* HomeButtonCell.xib */; };
 		E6396FC322B61F4100C928E5 /* HomeLatePaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FC122B61F4100C928E5 /* HomeLatePaymentCell.swift */; };
 		E6396FC422B61F4100C928E5 /* HomeLatePaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FC222B61F4100C928E5 /* HomeLatePaymentCell.xib */; };
-		E6396FC722B630BC00C928E5 /* HomePermissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FC522B630BC00C928E5 /* HomePermissionCell.swift */; };
-		E6396FC822B630BC00C928E5 /* HomePermissionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FC622B630BC00C928E5 /* HomePermissionCell.xib */; };
-		E6396FCB22B6325000C928E5 /* HomeAdminHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FC922B6325000C928E5 /* HomeAdminHeaderCell.swift */; };
-		E6396FCC22B6325000C928E5 /* HomeAdminHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FCA22B6325000C928E5 /* HomeAdminHeaderCell.xib */; };
-		E6396FD422B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FD222B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.swift */; };
-		E6396FD522B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FD322B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.xib */; };
 		E6396FD822B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FD622B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.swift */; };
 		E6396FD922B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FD722B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.xib */; };
 		E6396FDC22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FDA22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.swift */; };
 		E6396FDD22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FDB22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.xib */; };
-		E6396FE022B6629900C928E5 /* HomeRoomPermissionRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FDE22B6629900C928E5 /* HomeRoomPermissionRequestCell.swift */; };
-		E6396FE122B6629900C928E5 /* HomeRoomPermissionRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FDF22B6629900C928E5 /* HomeRoomPermissionRequestCell.xib */; };
-		E6396FE422B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FE222B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.swift */; };
-		E6396FE522B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FE322B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.xib */; };
-		E6396FE822B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FE622B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.swift */; };
-		E6396FE922B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FE722B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.xib */; };
 		E6396FEC22B6652900C928E5 /* HomeRoomSpecialAttentionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FEA22B6652900C928E5 /* HomeRoomSpecialAttentionCell.swift */; };
 		E6396FED22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FEB22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib */; };
-		E6396FF022B6662100C928E5 /* HomeRoomDetentionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FEE22B6662100C928E5 /* HomeRoomDetentionCell.swift */; };
-		E6396FF122B6662100C928E5 /* HomeRoomDetentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FEF22B6662100C928E5 /* HomeRoomDetentionCell.xib */; };
 		E6396FF522B67C0800C928E5 /* LatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FF322B67C0800C928E5 /* LatePaymentViewController.swift */; };
 		E6396FF622B67C0800C928E5 /* LatePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6396FF422B67C0800C928E5 /* LatePaymentViewController.xib */; };
 		E6396FFA22B67C4200C928E5 /* LatePaymentContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6396FF822B67C4200C928E5 /* LatePaymentContentCell.swift */; };
@@ -487,10 +467,6 @@
 		E68CBAB122B7A6CF00DFD45E /* AddAnnouncementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68CBAAF22B7A6CF00DFD45E /* AddAnnouncementViewController.xib */; };
 		E68CBAB522B7A71400DFD45E /* AddAnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68CBAB322B7A71400DFD45E /* AddAnnouncementCell.swift */; };
 		E68CBAB622B7A71400DFD45E /* AddAnnouncementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68CBAB422B7A71400DFD45E /* AddAnnouncementCell.xib */; };
-		E69383AE22A6DC9800456CA0 /* ExamSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383AC22A6DC9800456CA0 /* ExamSectionCell.swift */; };
-		E69383AF22A6DC9800456CA0 /* ExamSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69383AD22A6DC9800456CA0 /* ExamSectionCell.xib */; };
-		E69383B222A6DD1B00456CA0 /* ExamContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383B022A6DD1B00456CA0 /* ExamContentCell.swift */; };
-		E69383B322A6DD1B00456CA0 /* ExamContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E69383B122A6DD1B00456CA0 /* ExamContentCell.xib */; };
 		E69383B522A6DFE600456CA0 /* ExamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69383B422A6DFE600456CA0 /* ExamsModel.swift */; };
 		E694F2BA22B1084400467F3C /* SearchSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694F2B822B1084400467F3C /* SearchSectionCell.swift */; };
 		E694F2BB22B1084400467F3C /* SearchSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E694F2B922B1084400467F3C /* SearchSectionCell.xib */; };
@@ -540,8 +516,6 @@
 		E699F5D222DE421400775758 /* CurrentSessionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E699F5D022DE421400775758 /* CurrentSessionListViewController.xib */; };
 		E699F5D422DE958000775758 /* SubjectTopicBySubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699F5D322DE958000775758 /* SubjectTopicBySubjectModel.swift */; };
 		E699F5D622DE9D5800775758 /* AdminEventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699F5D522DE9D5800775758 /* AdminEventListModel.swift */; };
-		E699F5DA22DE9ED400775758 /* AdminEventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699F5D822DE9ED400775758 /* AdminEventListViewController.swift */; };
-		E699F5DB22DE9ED400775758 /* AdminEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E699F5D922DE9ED400775758 /* AdminEventListViewController.xib */; };
 		E699F5E222DEDA2C00775758 /* LatePaymentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699F5E122DEDA2C00775758 /* LatePaymentListModel.swift */; };
 		E699F5E622DF146600775758 /* LatePaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699F5E422DF146600775758 /* LatePaymentDetailViewController.swift */; };
 		E699F5E722DF146600775758 /* LatePaymentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E699F5E522DF146600775758 /* LatePaymentDetailViewController.xib */; };
@@ -607,24 +581,6 @@
 		E6ADFE0D2280827B004FEF49 /* SessionMenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */; };
 		E6ADFE1422811F1C004FEF49 /* DismissCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE1222811F1C004FEF49 /* DismissCell.swift */; };
 		E6ADFE1522811F1C004FEF49 /* DismissCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6ADFE1322811F1C004FEF49 /* DismissCell.xib */; };
-		E6BA198B2266282400FD246B /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19892266282400FD246B /* AssignmentCell.swift */; };
-		E6BA198C2266282400FD246B /* AssignmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA198A2266282400FD246B /* AssignmentCell.xib */; };
-		E6BA198F22662CB500FD246B /* assignmentButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA198D22662CB500FD246B /* assignmentButtonCell.swift */; };
-		E6BA199022662CB500FD246B /* assignmentButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA198E22662CB500FD246B /* assignmentButtonCell.xib */; };
-		E6BA199322662D4F00FD246B /* AnnouncementSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA199122662D4F00FD246B /* AnnouncementSectionCell.swift */; };
-		E6BA199422662D4F00FD246B /* AnnouncementSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA199222662D4F00FD246B /* AnnouncementSectionCell.xib */; };
-		E6BA199722662E8E00FD246B /* AnnouncementContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA199522662E8E00FD246B /* AnnouncementContentCell.swift */; };
-		E6BA199822662E8E00FD246B /* AnnouncementContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA199622662E8E00FD246B /* AnnouncementContentCell.xib */; };
-		E6BA199B2266312500FD246B /* AnnouncementSwiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19992266312500FD246B /* AnnouncementSwiftCell.swift */; };
-		E6BA199C2266312500FD246B /* AnnouncementSwiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA199A2266312500FD246B /* AnnouncementSwiftCell.xib */; };
-		E6BA19A0226631B000FD246B /* ScheduleRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA199E226631B000FD246B /* ScheduleRoomTableViewCell.swift */; };
-		E6BA19A1226631B000FD246B /* ScheduleRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA199F226631B000FD246B /* ScheduleRoomTableViewCell.xib */; };
-		E6BA19A42266AFEE00FD246B /* ScheduleCourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19A22266AFEE00FD246B /* ScheduleCourceCell.swift */; };
-		E6BA19A52266AFEE00FD246B /* ScheduleCourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19A32266AFEE00FD246B /* ScheduleCourceCell.xib */; };
-		E6BA19A82266B1BD00FD246B /* CourseSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19A62266B1BD00FD246B /* CourseSectionCell.swift */; };
-		E6BA19A92266B1BD00FD246B /* CourseSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19A72266B1BD00FD246B /* CourseSectionCell.xib */; };
-		E6BA19AC2266B23F00FD246B /* FooterContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19AA2266B23F00FD246B /* FooterContentCell.swift */; };
-		E6BA19AD2266B23F00FD246B /* FooterContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19AB2266B23F00FD246B /* FooterContentCell.xib */; };
 		E6BA19B12266D0E900FD246B /* NotificationSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19AF2266D0E900FD246B /* NotificationSectionCell.swift */; };
 		E6BA19B22266D0E900FD246B /* NotificationSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19B02266D0E900FD246B /* NotificationSectionCell.xib */; };
 		E6BA19B52266D29300FD246B /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19B32266D29300FD246B /* NotificationCell.swift */; };
@@ -633,10 +589,6 @@
 		E6BA19BB2266DA2E00FD246B /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19B92266DA2E00FD246B /* NotificationDetailViewController.xib */; };
 		E6BA19BF2266E3D000FD246B /* NotificationHeaderGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19BD2266E3D000FD246B /* NotificationHeaderGalleryCell.swift */; };
 		E6BA19C02266E3D000FD246B /* NotificationHeaderGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19BE2266E3D000FD246B /* NotificationHeaderGalleryCell.xib */; };
-		E6BA19E22268138100FD246B /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19E02268138100FD246B /* MenuCollectionCell.swift */; };
-		E6BA19E32268138100FD246B /* MenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19E12268138100FD246B /* MenuCollectionCell.xib */; };
-		E6BA19E62268139700FD246B /* NewsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19E42268139700FD246B /* NewsCollectionCell.swift */; };
-		E6BA19E72268139700FD246B /* NewsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19E52268139700FD246B /* NewsCollectionCell.xib */; };
 		E6BA19EB2268D16400FD246B /* NotificationDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19E92268D16400FD246B /* NotificationDetailCollectionCell.swift */; };
 		E6BA19EC2268D16400FD246B /* NotificationDetailCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BA19EA2268D16400FD246B /* NotificationDetailCollectionCell.xib */; };
 		E6BA19F0226956A900FD246B /* HomeGeneralDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA19EF226956A900FD246B /* HomeGeneralDataModel.swift */; };
@@ -660,8 +612,6 @@
 		E6D39C00225F570E00831511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D39BFF225F570E00831511 /* Assets.xcassets */; };
 		E6D39C03225F570E00831511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C01225F570E00831511 /* LaunchScreen.storyboard */; };
 		E6D39C0C225F940000831511 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C0B225F940000831511 /* ViewController.xib */; };
-		E6D39C15225F970200831511 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C13225F970200831511 /* HomeViewController.swift */; };
-		E6D39C16225F970200831511 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C14225F970200831511 /* HomeViewController.xib */; };
 		E6D39C19225F974800831511 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C17225F974800831511 /* CalendarViewController.swift */; };
 		E6D39C1A225F974800831511 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C18225F974800831511 /* CalendarViewController.xib */; };
 		E6D39C1D225F97DE00831511 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C1B225F97DE00831511 /* ScoreViewController.swift */; };
@@ -700,12 +650,8 @@
 		E6D39C672262216700831511 /* CreateNewPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C652262216700831511 /* CreateNewPasswordViewController.xib */; };
 		E6D39C692264DCB700831511 /* ACScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C682264DCB700831511 /* ACScrollViewExtension.swift */; };
 		E6D39C6B2264DCE200831511 /* ACTextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C6A2264DCE200831511 /* ACTextfieldExtension.swift */; };
-		E6D39C702264EF6C00831511 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C6E2264EF6C00831511 /* TableViewCell.swift */; };
-		E6D39C712264EF6C00831511 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C6F2264EF6C00831511 /* TableViewCell.xib */; };
 		E6D39C752264F2C300831511 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C732264F2C300831511 /* NotificationViewController.swift */; };
 		E6D39C762264F2C300831511 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C742264F2C300831511 /* NotificationViewController.xib */; };
-		E6D39C792265A00500831511 /* homeUpcommingAssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39C772265A00500831511 /* homeUpcommingAssignmentCell.swift */; };
-		E6D39C7A2265A00500831511 /* homeUpcommingAssignmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D39C782265A00500831511 /* homeUpcommingAssignmentCell.xib */; };
 		E6DAA898229C1AE500820CC2 /* AttendanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DAA897229C1AE500820CC2 /* AttendanceModel.swift */; };
 		E6DB0B1622B7E9B200758AB2 /* HomeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DB0B1422B7E9B200758AB2 /* HomeRoomViewController.swift */; };
 		E6DB0B1722B7E9B200758AB2 /* HomeRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6DB0B1522B7E9B200758AB2 /* HomeRoomViewController.xib */; };
@@ -952,8 +898,6 @@
 		E61BEE97226F583E00A533B3 /* ScoreSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreSummaryCell.xib; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
-		E624D0FF227B5843001220E9 /* RecentAnnouncementSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentAnnouncementSectionCell.swift; sourceTree = "<group>"; };
-		E624D100227B5843001220E9 /* RecentAnnouncementSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentAnnouncementSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
 		E624D109227B58B9001220E9 /* AgencyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AgencyViewController.xib; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.xib; sourceTree = SOURCE_ROOT; };
 		E624D10C227B58C1001220E9 /* AgencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyCell.swift; path = "WeKiddo_Admin/Classes/Agency/Agency Cell/AgencyCell.swift"; sourceTree = SOURCE_ROOT; };
@@ -1000,34 +944,16 @@
 		E62F864A22F0469700CE355E /* SpecialAttentionDetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialAttentionDetailContentCell.swift; sourceTree = "<group>"; };
 		E62F864B22F0469700CE355E /* SpecialAttentionDetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialAttentionDetailContentCell.xib; sourceTree = "<group>"; };
 		E6396A4F228D3F18007A01E6 /* AssignmentModulModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentModulModel.swift; sourceTree = "<group>"; };
-		E6396FB522B614C900C928E5 /* HomeEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventCell.swift; sourceTree = "<group>"; };
-		E6396FB622B614C900C928E5 /* HomeEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEventCell.xib; sourceTree = "<group>"; };
-		E6396FB922B61B3800C928E5 /* HomeEventSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventSectionCell.swift; sourceTree = "<group>"; };
-		E6396FBA22B61B3800C928E5 /* HomeEventSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEventSectionCell.xib; sourceTree = "<group>"; };
 		E6396FBD22B61EC200C928E5 /* HomeButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonCell.swift; sourceTree = "<group>"; };
 		E6396FBE22B61EC200C928E5 /* HomeButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeButtonCell.xib; sourceTree = "<group>"; };
 		E6396FC122B61F4100C928E5 /* HomeLatePaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLatePaymentCell.swift; sourceTree = "<group>"; };
 		E6396FC222B61F4100C928E5 /* HomeLatePaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLatePaymentCell.xib; sourceTree = "<group>"; };
-		E6396FC522B630BC00C928E5 /* HomePermissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePermissionCell.swift; sourceTree = "<group>"; };
-		E6396FC622B630BC00C928E5 /* HomePermissionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePermissionCell.xib; sourceTree = "<group>"; };
-		E6396FC922B6325000C928E5 /* HomeAdminHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdminHeaderCell.swift; sourceTree = "<group>"; };
-		E6396FCA22B6325000C928E5 /* HomeAdminHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeAdminHeaderCell.xib; sourceTree = "<group>"; };
-		E6396FD222B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomUpcomingSessionCell.swift; sourceTree = "<group>"; };
-		E6396FD322B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomUpcomingSessionCell.xib; sourceTree = "<group>"; };
 		E6396FD622B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomUpcomingSessionSectionCell.swift; sourceTree = "<group>"; };
 		E6396FD722B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomUpcomingSessionSectionCell.xib; sourceTree = "<group>"; };
 		E6396FDA22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomDueDateAssignmentCell.swift; sourceTree = "<group>"; };
 		E6396FDB22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomDueDateAssignmentCell.xib; sourceTree = "<group>"; };
-		E6396FDE22B6629900C928E5 /* HomeRoomPermissionRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomPermissionRequestCell.swift; sourceTree = "<group>"; };
-		E6396FDF22B6629900C928E5 /* HomeRoomPermissionRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomPermissionRequestCell.xib; sourceTree = "<group>"; };
-		E6396FE222B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomCurrentClassSubjectCell.swift; sourceTree = "<group>"; };
-		E6396FE322B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomCurrentClassSubjectCell.xib; sourceTree = "<group>"; };
-		E6396FE622B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomCurrentClassStudentCell.swift; sourceTree = "<group>"; };
-		E6396FE722B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomCurrentClassStudentCell.xib; sourceTree = "<group>"; };
 		E6396FEA22B6652900C928E5 /* HomeRoomSpecialAttentionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomSpecialAttentionCell.swift; sourceTree = "<group>"; };
 		E6396FEB22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomSpecialAttentionCell.xib; sourceTree = "<group>"; };
-		E6396FEE22B6662100C928E5 /* HomeRoomDetentionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomDetentionCell.swift; sourceTree = "<group>"; };
-		E6396FEF22B6662100C928E5 /* HomeRoomDetentionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomDetentionCell.xib; sourceTree = "<group>"; };
 		E6396FF322B67C0800C928E5 /* LatePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatePaymentViewController.swift; sourceTree = "<group>"; };
 		E6396FF422B67C0800C928E5 /* LatePaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatePaymentViewController.xib; sourceTree = "<group>"; };
 		E6396FF822B67C4200C928E5 /* LatePaymentContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatePaymentContentCell.swift; sourceTree = "<group>"; };
@@ -1279,10 +1205,6 @@
 		E68CBAAF22B7A6CF00DFD45E /* AddAnnouncementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAnnouncementViewController.xib; sourceTree = "<group>"; };
 		E68CBAB322B7A71400DFD45E /* AddAnnouncementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementCell.swift; sourceTree = "<group>"; };
 		E68CBAB422B7A71400DFD45E /* AddAnnouncementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAnnouncementCell.xib; sourceTree = "<group>"; };
-		E69383AC22A6DC9800456CA0 /* ExamSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSectionCell.swift; sourceTree = "<group>"; };
-		E69383AD22A6DC9800456CA0 /* ExamSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamSectionCell.xib; sourceTree = "<group>"; };
-		E69383B022A6DD1B00456CA0 /* ExamContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamContentCell.swift; sourceTree = "<group>"; };
-		E69383B122A6DD1B00456CA0 /* ExamContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamContentCell.xib; sourceTree = "<group>"; };
 		E69383B422A6DFE600456CA0 /* ExamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamsModel.swift; sourceTree = "<group>"; };
 		E694F2B822B1084400467F3C /* SearchSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionCell.swift; sourceTree = "<group>"; };
 		E694F2B922B1084400467F3C /* SearchSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSectionCell.xib; sourceTree = "<group>"; };
@@ -1332,8 +1254,6 @@
 		E699F5D022DE421400775758 /* CurrentSessionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentSessionListViewController.xib; sourceTree = "<group>"; };
 		E699F5D322DE958000775758 /* SubjectTopicBySubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTopicBySubjectModel.swift; sourceTree = "<group>"; };
 		E699F5D522DE9D5800775758 /* AdminEventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventListModel.swift; sourceTree = "<group>"; };
-		E699F5D822DE9ED400775758 /* AdminEventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminEventListViewController.swift; sourceTree = "<group>"; };
-		E699F5D922DE9ED400775758 /* AdminEventListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminEventListViewController.xib; sourceTree = "<group>"; };
 		E699F5E122DEDA2C00775758 /* LatePaymentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatePaymentListModel.swift; sourceTree = "<group>"; };
 		E699F5E422DF146600775758 /* LatePaymentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatePaymentDetailViewController.swift; sourceTree = "<group>"; };
 		E699F5E522DF146600775758 /* LatePaymentDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatePaymentDetailViewController.xib; sourceTree = "<group>"; };
@@ -1400,24 +1320,6 @@
 		E6ADFE0E22811ED5004FEF49 /* CustomBorderShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderShadow.swift; sourceTree = "<group>"; };
 		E6ADFE1222811F1C004FEF49 /* DismissCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissCell.swift; sourceTree = "<group>"; };
 		E6ADFE1322811F1C004FEF49 /* DismissCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DismissCell.xib; sourceTree = "<group>"; };
-		E6BA19892266282400FD246B /* AssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
-		E6BA198A2266282400FD246B /* AssignmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentCell.xib; sourceTree = "<group>"; };
-		E6BA198D22662CB500FD246B /* assignmentButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignmentButtonCell.swift; sourceTree = "<group>"; };
-		E6BA198E22662CB500FD246B /* assignmentButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = assignmentButtonCell.xib; sourceTree = "<group>"; };
-		E6BA199122662D4F00FD246B /* AnnouncementSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementSectionCell.swift; sourceTree = "<group>"; };
-		E6BA199222662D4F00FD246B /* AnnouncementSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementSectionCell.xib; sourceTree = "<group>"; };
-		E6BA199522662E8E00FD246B /* AnnouncementContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementContentCell.swift; sourceTree = "<group>"; };
-		E6BA199622662E8E00FD246B /* AnnouncementContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementContentCell.xib; sourceTree = "<group>"; };
-		E6BA19992266312500FD246B /* AnnouncementSwiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementSwiftCell.swift; sourceTree = "<group>"; };
-		E6BA199A2266312500FD246B /* AnnouncementSwiftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementSwiftCell.xib; sourceTree = "<group>"; };
-		E6BA199E226631B000FD246B /* ScheduleRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRoomTableViewCell.swift; sourceTree = "<group>"; };
-		E6BA199F226631B000FD246B /* ScheduleRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleRoomTableViewCell.xib; sourceTree = "<group>"; };
-		E6BA19A22266AFEE00FD246B /* ScheduleCourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCourceCell.swift; sourceTree = "<group>"; };
-		E6BA19A32266AFEE00FD246B /* ScheduleCourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCourceCell.xib; sourceTree = "<group>"; };
-		E6BA19A62266B1BD00FD246B /* CourseSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSectionCell.swift; sourceTree = "<group>"; };
-		E6BA19A72266B1BD00FD246B /* CourseSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseSectionCell.xib; sourceTree = "<group>"; };
-		E6BA19AA2266B23F00FD246B /* FooterContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterContentCell.swift; sourceTree = "<group>"; };
-		E6BA19AB2266B23F00FD246B /* FooterContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterContentCell.xib; sourceTree = "<group>"; };
 		E6BA19AF2266D0E900FD246B /* NotificationSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSectionCell.swift; sourceTree = "<group>"; };
 		E6BA19B02266D0E900FD246B /* NotificationSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationSectionCell.xib; sourceTree = "<group>"; };
 		E6BA19B32266D29300FD246B /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
@@ -1426,10 +1328,6 @@
 		E6BA19B92266DA2E00FD246B /* NotificationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailViewController.xib; sourceTree = "<group>"; };
 		E6BA19BD2266E3D000FD246B /* NotificationHeaderGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHeaderGalleryCell.swift; sourceTree = "<group>"; };
 		E6BA19BE2266E3D000FD246B /* NotificationHeaderGalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationHeaderGalleryCell.xib; sourceTree = "<group>"; };
-		E6BA19E02268138100FD246B /* MenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
-		E6BA19E12268138100FD246B /* MenuCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionCell.xib; sourceTree = "<group>"; };
-		E6BA19E42268139700FD246B /* NewsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionCell.swift; sourceTree = "<group>"; };
-		E6BA19E52268139700FD246B /* NewsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionCell.xib; sourceTree = "<group>"; };
 		E6BA19E92268D16400FD246B /* NotificationDetailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailCollectionCell.swift; sourceTree = "<group>"; };
 		E6BA19EA2268D16400FD246B /* NotificationDetailCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailCollectionCell.xib; sourceTree = "<group>"; };
 		E6BA19EF226956A900FD246B /* HomeGeneralDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGeneralDataModel.swift; sourceTree = "<group>"; };
@@ -1455,8 +1353,6 @@
 		E6D39C02225F570E00831511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6D39C04225F570E00831511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D39C0B225F940000831511 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		E6D39C13225F970200831511 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E6D39C14225F970200831511 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E6D39C17225F974800831511 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E6D39C18225F974800831511 /* CalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		E6D39C1B225F97DE00831511 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -1495,12 +1391,8 @@
 		E6D39C652262216700831511 /* CreateNewPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewPasswordViewController.xib; sourceTree = "<group>"; };
 		E6D39C682264DCB700831511 /* ACScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACScrollViewExtension.swift; sourceTree = "<group>"; };
 		E6D39C6A2264DCE200831511 /* ACTextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACTextfieldExtension.swift; sourceTree = "<group>"; };
-		E6D39C6E2264EF6C00831511 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		E6D39C6F2264EF6C00831511 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		E6D39C732264F2C300831511 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E6D39C742264F2C300831511 /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
-		E6D39C772265A00500831511 /* homeUpcommingAssignmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeUpcommingAssignmentCell.swift; sourceTree = "<group>"; };
-		E6D39C782265A00500831511 /* homeUpcommingAssignmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = homeUpcommingAssignmentCell.xib; sourceTree = "<group>"; };
 		E6DAA897229C1AE500820CC2 /* AttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceModel.swift; sourceTree = "<group>"; };
 		E6DB0B1422B7E9B200758AB2 /* HomeRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoomViewController.swift; sourceTree = "<group>"; };
 		E6DB0B1522B7E9B200758AB2 /* HomeRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRoomViewController.xib; sourceTree = "<group>"; };
@@ -2239,21 +2131,11 @@
 		E6396FB422B6123C00C928E5 /* Home Admin Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E6396FB522B614C900C928E5 /* HomeEventCell.swift */,
-				E6396FB622B614C900C928E5 /* HomeEventCell.xib */,
-				E6396FB922B61B3800C928E5 /* HomeEventSectionCell.swift */,
-				E6396FBA22B61B3800C928E5 /* HomeEventSectionCell.xib */,
 				E65BF66522CCA74400C57FEF /* MAPPER.swift */,
 				E6396FBD22B61EC200C928E5 /* HomeButtonCell.swift */,
 				E6396FBE22B61EC200C928E5 /* HomeButtonCell.xib */,
 				E6396FC122B61F4100C928E5 /* HomeLatePaymentCell.swift */,
 				E6396FC222B61F4100C928E5 /* HomeLatePaymentCell.xib */,
-				E6396FC522B630BC00C928E5 /* HomePermissionCell.swift */,
-				E6396FC622B630BC00C928E5 /* HomePermissionCell.xib */,
-				E6396FC922B6325000C928E5 /* HomeAdminHeaderCell.swift */,
-				E6396FCA22B6325000C928E5 /* HomeAdminHeaderCell.xib */,
-				E6BA19AA2266B23F00FD246B /* FooterContentCell.swift */,
-				E6BA19AB2266B23F00FD246B /* FooterContentCell.xib */,
 			);
 			path = "Home Admin Cell";
 			sourceTree = "<group>";
@@ -2261,22 +2143,12 @@
 		E6396FCD22B6408300C928E5 /* Home Room Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E6396FD222B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.swift */,
-				E6396FD322B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.xib */,
 				E6396FD622B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.swift */,
 				E6396FD722B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.xib */,
 				E6396FDA22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.swift */,
 				E6396FDB22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.xib */,
-				E6396FDE22B6629900C928E5 /* HomeRoomPermissionRequestCell.swift */,
-				E6396FDF22B6629900C928E5 /* HomeRoomPermissionRequestCell.xib */,
-				E6396FE222B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.swift */,
-				E6396FE322B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.xib */,
-				E6396FE622B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.swift */,
-				E6396FE722B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.xib */,
 				E6396FEA22B6652900C928E5 /* HomeRoomSpecialAttentionCell.swift */,
 				E6396FEB22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib */,
-				E6396FEE22B6662100C928E5 /* HomeRoomDetentionCell.swift */,
-				E6396FEF22B6662100C928E5 /* HomeRoomDetentionCell.xib */,
 				E6DB0B1822B7EE7300758AB2 /* HomeRoomHeaderCell.swift */,
 				E6DB0B1922B7EE7300758AB2 /* HomeRoomHeaderCell.xib */,
 			);
@@ -3030,15 +2902,6 @@
 			path = "Current Class List";
 			sourceTree = "<group>";
 		};
-		E699F5D722DE9EBF00775758 /* Admin Event List */ = {
-			isa = PBXGroup;
-			children = (
-				E699F5D822DE9ED400775758 /* AdminEventListViewController.swift */,
-				E699F5D922DE9ED400775758 /* AdminEventListViewController.xib */,
-			);
-			path = "Admin Event List";
-			sourceTree = "<group>";
-		};
 		E699F5E322DF142A00775758 /* Late Payment Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -3243,17 +3106,6 @@
 			path = "Notification Detail Cell";
 			sourceTree = "<group>";
 		};
-		E6BA19DF2268132D00FD246B /* Home Collection Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E6BA19E02268138100FD246B /* MenuCollectionCell.swift */,
-				E6BA19E12268138100FD246B /* MenuCollectionCell.xib */,
-				E6BA19E42268139700FD246B /* NewsCollectionCell.swift */,
-				E6BA19E52268139700FD246B /* NewsCollectionCell.xib */,
-			);
-			path = "Home Collection Cell";
-			sourceTree = "<group>";
-		};
 		E6BA19E82268D13100FD246B /* Notification Detail Collection Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3364,7 +3216,6 @@
 				E66C5ECE22E7F7CC00AD186C /* Exam Score */,
 				E66C5EB322E2102F00AD186C /* Subject Teacher By Class */,
 				E699F5E322DF142A00775758 /* Late Payment Detail */,
-				E699F5D722DE9EBF00775758 /* Admin Event List */,
 				E699F5CE22DE41F300775758 /* Current Class List */,
 				E699F5C222DE2FEA00775758 /* Upcoming Session List */,
 				BE14C8CE22D8739C00ADC95D /* Teacher on Duty */,
@@ -3442,9 +3293,6 @@
 				E6DB0B1322B7E98A00758AB2 /* Home Room */,
 				E6396FCD22B6408300C928E5 /* Home Room Cell */,
 				E6396FB422B6123C00C928E5 /* Home Admin Cell */,
-				E6D39C6D2264EF5500831511 /* Home Cell */,
-				E6D39C13225F970200831511 /* HomeViewController.swift */,
-				E6D39C14225F970200831511 /* HomeViewController.xib */,
 			);
 			path = "Home Admin";
 			sourceTree = "<group>";
@@ -3674,40 +3522,6 @@
 				E6D39C652262216700831511 /* CreateNewPasswordViewController.xib */,
 			);
 			path = "Create New Password";
-			sourceTree = "<group>";
-		};
-		E6D39C6D2264EF5500831511 /* Home Cell */ = {
-			isa = PBXGroup;
-			children = (
-				E6BA19DF2268132D00FD246B /* Home Collection Cell */,
-				E624D0FF227B5843001220E9 /* RecentAnnouncementSectionCell.swift */,
-				E624D100227B5843001220E9 /* RecentAnnouncementSectionCell.xib */,
-				E6D39C6E2264EF6C00831511 /* TableViewCell.swift */,
-				E6D39C6F2264EF6C00831511 /* TableViewCell.xib */,
-				E6D39C772265A00500831511 /* homeUpcommingAssignmentCell.swift */,
-				E6D39C782265A00500831511 /* homeUpcommingAssignmentCell.xib */,
-				E6BA19892266282400FD246B /* AssignmentCell.swift */,
-				E6BA198A2266282400FD246B /* AssignmentCell.xib */,
-				E6BA198D22662CB500FD246B /* assignmentButtonCell.swift */,
-				E6BA198E22662CB500FD246B /* assignmentButtonCell.xib */,
-				E6BA199122662D4F00FD246B /* AnnouncementSectionCell.swift */,
-				E6BA199222662D4F00FD246B /* AnnouncementSectionCell.xib */,
-				E6BA199522662E8E00FD246B /* AnnouncementContentCell.swift */,
-				E6BA199622662E8E00FD246B /* AnnouncementContentCell.xib */,
-				E6BA19992266312500FD246B /* AnnouncementSwiftCell.swift */,
-				E6BA199A2266312500FD246B /* AnnouncementSwiftCell.xib */,
-				E6BA199E226631B000FD246B /* ScheduleRoomTableViewCell.swift */,
-				E6BA199F226631B000FD246B /* ScheduleRoomTableViewCell.xib */,
-				E6BA19A22266AFEE00FD246B /* ScheduleCourceCell.swift */,
-				E6BA19A32266AFEE00FD246B /* ScheduleCourceCell.xib */,
-				E6BA19A62266B1BD00FD246B /* CourseSectionCell.swift */,
-				E6BA19A72266B1BD00FD246B /* CourseSectionCell.xib */,
-				E69383AC22A6DC9800456CA0 /* ExamSectionCell.swift */,
-				E69383AD22A6DC9800456CA0 /* ExamSectionCell.xib */,
-				E69383B022A6DD1B00456CA0 /* ExamContentCell.swift */,
-				E69383B122A6DD1B00456CA0 /* ExamContentCell.xib */,
-			);
-			path = "Home Cell";
 			sourceTree = "<group>";
 		};
 		E6D39C722264F2AE00831511 /* Notification */ = {
@@ -4009,27 +3823,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6BA19AD2266B23F00FD246B /* FooterContentCell.xib in Resources */,
-				E6396FD522B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.xib in Resources */,
 				E6F427F32296E03900DB4250 /* UniversityCell.xib in Resources */,
 				E63D841622D5EBAE005F07B4 /* AddAnnouncementHeaderCell.xib in Resources */,
 				E6416F3722EE0F6A00ACDCD6 /* SearchLocationViewController.xib in Resources */,
 				E6F427E122968BA700DB4250 /* CareerDetailCell.xib in Resources */,
 				E6416F2022ECD60800ACDCD6 /* EditEventFooterCell.xib in Resources */,
-				E6396FB822B614C900C928E5 /* HomeEventCell.xib in Resources */,
 				E600B48822AFBB7B007E7C58 /* SubjectDetailButtonSectionCell.xib in Resources */,
 				E6F427EE2296A37C00DB4250 /* UniversityListViewController.xib in Resources */,
 				BE35E47C229BEBCC004BD16B /* LoginInfoViewController.xib in Resources */,
 				E68CBAAC22B7A3A900DFD45E /* AnnouncementAddNewButtonCell.xib in Resources */,
-				E6BA198C2266282400FD246B /* AssignmentCell.xib in Resources */,
-				E6396FC822B630BC00C928E5 /* HomePermissionCell.xib in Resources */,
 				E69AC7F222891314000284A1 /* OtherCollectionCell.xib in Resources */,
 				E63D83F822D4C140005F07B4 /* AddDetentionStudentCell.xib in Resources */,
 				E61A97CB226E0BE10003E89F /* next.png in Resources */,
 				E682D69E22D8DE3400214F4E /* SubjectTeacherSectionCell.xib in Resources */,
 				E6961031227F384B0000FC92 /* ApprovalViewController.xib in Resources */,
-				E6BA19A52266AFEE00FD246B /* ScheduleCourceCell.xib in Resources */,
-				E6396FE922B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.xib in Resources */,
 				E6416F0622EB538100ACDCD6 /* AddExamSessionCell.xib in Resources */,
 				E66C5EDB22E7FB1C00AD186C /* ExamScoreStudentCell.xib in Resources */,
 				E6F4282722984E5500DB4250 /* CourseDetailFooterCell.xib in Resources */,
@@ -4059,7 +3866,6 @@
 				E65BF68322CF824600C57FEF /* AddNewAssignmentViewController.xib in Resources */,
 				E63D83FC22D4C3E1005F07B4 /* AddDetentionFooterCell.xib in Resources */,
 				E626B6AE22C380FF00FF660A /* CollectionReusableView.xib in Resources */,
-				E6BA19E72268139700FD246B /* NewsCollectionCell.xib in Resources */,
 				E699F5FC22E1BFC000775758 /* ExamDetailSectionCell.xib in Resources */,
 				E699F5B422DCE32A00775758 /* EditProfileParentViewController.xib in Resources */,
 				E62F864922F0459600CE355E /* SpecialAttentionDetailSectionCell.xib in Resources */,
@@ -4080,11 +3886,9 @@
 				E6F7CA5A22F801F7008DDFF4 /* SpecialAttentionDetailByClassViewController.xib in Resources */,
 				BE8FF8A8229DB89000EC6557 /* IntorductionCell.xib in Resources */,
 				E6E3E191228B23B400AF9310 /* MedicalRecordViewController.xib in Resources */,
-				E6396FBC22B61B3800C928E5 /* HomeEventSectionCell.xib in Resources */,
 				E6E3E160228B0E8C00AF9310 /* FutureContentCell.xib in Resources */,
 				E682D6B422D9DBED00214F4E /* SubjectTeacherListCell.xib in Resources */,
 				E624D10F227B58C1001220E9 /* AgencyCell.xib in Resources */,
-				E6D39C712264EF6C00831511 /* TableViewCell.xib in Resources */,
 				BE14C8D222D874B100ADC95D /* TeacherOnDutyViewController.xib in Resources */,
 				E6BA19BB2266DA2E00FD246B /* NotificationDetailViewController.xib in Resources */,
 				E63D83A622D0F057005F07B4 /* AssignmentScoreHeaderCell.xib in Resources */,
@@ -4099,7 +3903,6 @@
 				E6961017227D1A270000FC92 /* PermissionViewController.xib in Resources */,
 				E66C5EC022E2170200AD186C /* SubjectTeacherByClassContentCell.xib in Resources */,
 				E643A6CE22F10FBB00E88E1F /* FeedbackViewController.xib in Resources */,
-				E69383B322A6DD1B00456CA0 /* ExamContentCell.xib in Resources */,
 				E600B45F22AE7A10007E7C58 /* AttachmentContentCell.xib in Resources */,
 				E6961036227F38910000FC92 /* ApprovalSectionCell.xib in Resources */,
 				E6D39C5D2261B91100831511 /* ForgotViewController.xib in Resources */,
@@ -4129,7 +3932,6 @@
 				E626B69C22C34D1600FF660A /* SubjectListCell.xib in Resources */,
 				E69AC81022894075000284A1 /* NearbyHeaderCollectionCell.xib in Resources */,
 				E6D39C622261CCAD00831511 /* OTPViewController.xib in Resources */,
-				E6BA19A1226631B000FD246B /* ScheduleRoomTableViewCell.xib in Resources */,
 				E6DB0B1722B7E9B200758AB2 /* HomeRoomViewController.xib in Resources */,
 				E6961052228076E00000FC92 /* SessionDetailCell.xib in Resources */,
 				BE0030F922A507200050B48E /* MoreSchoolCollectionCell.xib in Resources */,
@@ -4141,7 +3943,6 @@
 				E626B6C822C5291100FF660A /* AttendanceUserCell.xib in Resources */,
 				E6A50BEA226C9E2000359D78 /* AnnouncementBannerImageCell.xib in Resources */,
 				E694F2C322B109DC00467F3C /* SearchSessionCell.xib in Resources */,
-				E6396FF122B6662100C928E5 /* HomeRoomDetentionCell.xib in Resources */,
 				E600B47422AFAAD2007E7C58 /* SubjectDetailHeaderCell.xib in Resources */,
 				E643A6D322F1115500E88E1F /* FeedbackCell.xib in Resources */,
 				E682D6B922D9E39400214F4E /* SubjectTeacherDetailViewController.xib in Resources */,
@@ -4181,7 +3982,6 @@
 				BE2F585222AC3A4300103CD7 /* StudentProfileViewController.xib in Resources */,
 				E66C5F0F22E9706C00AD186C /* EditExamSessionCollectionCell.xib in Resources */,
 				E66C5F0122E8E2D500AD186C /* EditExamSectionCell.xib in Resources */,
-				E69383AF22A6DC9800456CA0 /* ExamSectionCell.xib in Resources */,
 				E6416EFE22EA145A00ACDCD6 /* AddExamAddMoreClassCell.xib in Resources */,
 				BE744D7D22A3AF9D007E4027 /* VideoCollectionCell.xib in Resources */,
 				E600B43E22AC397B007E7C58 /* SchoolDetailBannerCell.xib in Resources */,
@@ -4191,7 +3991,6 @@
 				E6416F3222ECDF3E00ACDCD6 /* EditPaymentFooterCell.xib in Resources */,
 				E62F863722F03C2300CE355E /* CurrentClassListHeaderCell.xib in Resources */,
 				E69AC818228968CE000284A1 /* NearbyContentCollectionCell.xib in Resources */,
-				E6D39C7A2265A00500831511 /* homeUpcommingAssignmentCell.xib in Resources */,
 				BE2FF57222AABFC300003E1A /* PrivacyPolicyViewController.xib in Resources */,
 				E65BF67A22CF71A100C57FEF /* AssignmentDetailClassCell.xib in Resources */,
 				E699F5C622DE300600775758 /* UpcomingSessionListViewController.xib in Resources */,
@@ -4204,7 +4003,6 @@
 				E699F60422E1C13F00775758 /* ExamDetailRemediScheduleCell.xib in Resources */,
 				E682D6D222DA03A600214F4E /* SubjectTeacherDetailExamCell.xib in Resources */,
 				E6A50BB6226B6D4800359D78 /* AssignmentViewController.xib in Resources */,
-				E6BA19A92266B1BD00FD246B /* CourseSectionCell.xib in Resources */,
 				E699F5C122DD88A900775758 /* EditProfileFooterCell.xib in Resources */,
 				E61A97C7226E0BE10003E89F /* previous.png in Resources */,
 				BE068AA522AD0DDB00BC2799 /* AddCalendarCell.xib in Resources */,
@@ -4224,7 +4022,6 @@
 				E600B42522AB7BE1007E7C58 /* ExamDetailViewController.xib in Resources */,
 				E66C5EFD22E8D83D00AD186C /* EditExamTopCell.xib in Resources */,
 				E600B48422AFB967007E7C58 /* SubjectDetailQuestionCell.xib in Resources */,
-				E624D102227B5843001220E9 /* RecentAnnouncementSectionCell.xib in Resources */,
 				E62F864D22F0469700CE355E /* SpecialAttentionDetailContentCell.xib in Resources */,
 				E66C5F0522E8E43200AD186C /* EditExamRelatedCell.xib in Resources */,
 				E6E3E16E228B157100AF9310 /* CompetitionCell.xib in Resources */,
@@ -4239,17 +4036,13 @@
 				E682D6C622D9FE7200214F4E /* SubjectTeacherDetailClassCell.xib in Resources */,
 				E6961028227F2DAE0000FC92 /* PermissionContentCell.xib in Resources */,
 				E6396FED22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib in Resources */,
-				E6BA199422662D4F00FD246B /* AnnouncementSectionCell.xib in Resources */,
 				E6396FFB22B67C4200C928E5 /* LatePaymentContentCell.xib in Resources */,
 				E6ADFE0D2280827B004FEF49 /* SessionMenuCollectionCell.xib in Resources */,
 				E69AC7A92281C1A0000284A1 /* AssignmentDetailViewController.xib in Resources */,
 				E6F428132297C98600DB4250 /* CompetitionDetailCell.xib in Resources */,
-				E6396FCC22B6325000C928E5 /* HomeAdminHeaderCell.xib in Resources */,
 				E699F5B922DCE34300775758 /* EditProfileParentCell.xib in Resources */,
 				E682D6BE22D9E51D00214F4E /* SubjectTeacherDetailHeaderCell.xib in Resources */,
-				E6BA199822662E8E00FD246B /* AnnouncementContentCell.xib in Resources */,
 				E6F427FD2296E7EF00DB4250 /* UniversityDetailCell.xib in Resources */,
-				E699F5DB22DE9ED400775758 /* AdminEventListViewController.xib in Resources */,
 				E6416EF622EA11AA00ACDCD6 /* AddExamFooterCell.xib in Resources */,
 				E6F427DC22968AEF00DB4250 /* CareerDetailViewController.xib in Resources */,
 				E694F2BF22B108D600467F3C /* SearchAssignmentCell.xib in Resources */,
@@ -4264,7 +4057,6 @@
 				E6961048227FD9150000FC92 /* QuestionAddNewCell.xib in Resources */,
 				E63D83C122D3BC94005F07B4 /* AdministrationCell.xib in Resources */,
 				E66C5ED222E7F7F400AD186C /* ExamScoreViewController.xib in Resources */,
-				E6BA199022662CB500FD246B /* assignmentButtonCell.xib in Resources */,
 				E6BA19B62266D29300FD246B /* NotificationCell.xib in Resources */,
 				E61A97CA226E0BE10003E89F /* next@2x.png in Resources */,
 				E600B41C22AA48E2007E7C58 /* AllExamSectionCell.xib in Resources */,
@@ -4283,7 +4075,6 @@
 				E6BC3CCF22EF199C00B080A1 /* SpecialAttentionListCell.xib in Resources */,
 				E6D39C00225F570E00831511 /* Assets.xcassets in Resources */,
 				E682D6F422DAE70F00214F4E /* AddSubjectTeacherClassSelectedCell.xib in Resources */,
-				E6396FE122B6629900C928E5 /* HomeRoomPermissionRequestCell.xib in Resources */,
 				E6416F1C22ECD33300ACDCD6 /* EditEventDescCell.xib in Resources */,
 				E600B46F22AFA611007E7C58 /* SubjectDetailViewController.xib in Resources */,
 				E624D130227C987C001220E9 /* NewsDetailCell.xib in Resources */,
@@ -4311,7 +4102,6 @@
 				BE2B00582282ADB100CA2310 /* QuestionSectionCell.xib in Resources */,
 				E624D126227C873C001220E9 /* NewsContentCell.xib in Resources */,
 				BE2FF58522ABDA9F00003E1A /* ParentProfileCell.xib in Resources */,
-				E6BA19E32268138100FD246B /* MenuCollectionCell.xib in Resources */,
 				E65BF68822CF849A00C57FEF /* AddAssignmentTopCell.xib in Resources */,
 				E66C5EB722E2105400AD186C /* SubjectTeacherByClassViewController.xib in Resources */,
 				E6EAB9102292F8240032B975 /* SubjectGraphicPerformanceCell.xib in Resources */,
@@ -4334,11 +4124,8 @@
 				BE8FF8B3229DBB7700EC6557 /* RegisterCell.xib in Resources */,
 				E699F5F822E1BEE800775758 /* ExamDetailSessionCell.xib in Resources */,
 				BE2A9D022295701400D93FC9 /* OnboardingCollectionCell.xib in Resources */,
-				E6BA199C2266312500FD246B /* AnnouncementSwiftCell.xib in Resources */,
 				E626B6C322C5211700FF660A /* AttendanceDetailViewController.xib in Resources */,
-				E6396FE522B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.xib in Resources */,
 				E64C669622CA37B400783D51 /* PermissionRequestAttachmentCell.xib in Resources */,
-				E6D39C16225F970200831511 /* HomeViewController.xib in Resources */,
 				E682D6FC22DAEA6000214F4E /* AddSubjectTeacherAttachmentCell.xib in Resources */,
 				E696104D2280766E0000FC92 /* SessionDetailViewController.xib in Resources */,
 			);
@@ -4467,7 +4254,6 @@
 				E69AC7B422829315000284A1 /* TabbarsMenuModel.swift in Sources */,
 				E6D39C692264DCB700831511 /* ACScrollViewExtension.swift in Sources */,
 				E6D39C35225FA23B00831511 /* ACUrl.swift in Sources */,
-				E6BA19E22268138100FD246B /* MenuCollectionCell.swift in Sources */,
 				E6396FEC22B6652900C928E5 /* HomeRoomSpecialAttentionCell.swift in Sources */,
 				E6E3E163228B0EE400AF9310 /* FutureCollectionCell.swift in Sources */,
 				E682D68B22D7809B00214F4E /* VideoMediaCollectionCell.swift in Sources */,
@@ -4478,12 +4264,10 @@
 				E624D113227B58D6001220E9 /* AssignmentSectionCell.swift in Sources */,
 				BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */,
 				E682D6A522D9002100214F4E /* SubjectTeacherRowCell.swift in Sources */,
-				E6396FE822B6643D00C928E5 /* HomeRoomCurrentClassStudentCell.swift in Sources */,
 				E62F863F22F0414500CE355E /* SpecialAttentionDetailViewController.swift in Sources */,
 				E6D39C4D225FA27200831511 /* AddressModel.swift in Sources */,
 				E6416EF922EA12F000ACDCD6 /* AddExamClassCell.swift in Sources */,
 				E6E3E16D228B157100AF9310 /* CompetitionCell.swift in Sources */,
-				E69383AE22A6DC9800456CA0 /* ExamSectionCell.swift in Sources */,
 				E600B48322AFB967007E7C58 /* SubjectDetailQuestionCell.swift in Sources */,
 				E6416F0E22ECC6FE00ACDCD6 /* EditEventMonitoringViewController.swift in Sources */,
 				E61BEE98226F583E00A533B3 /* ScoreSummaryCell.swift in Sources */,
@@ -4529,13 +4313,10 @@
 				E66C5EE122E82C6A00AD186C /* ExamRemedyScoreListModel.swift in Sources */,
 				E61A97BF226E0BD60003E89F /* MonthView.swift in Sources */,
 				BEA7B6B122DDF8E500A4B124 /* TeacherOnDutyChildListModel.swift in Sources */,
-				E6396FCB22B6325000C928E5 /* HomeAdminHeaderCell.swift in Sources */,
 				E66C5EE522E8A64F00AD186C /* AddScoreExamViewController.swift in Sources */,
 				E600B41B22AA48E2007E7C58 /* AllExamSectionCell.swift in Sources */,
-				E6396FBB22B61B3800C928E5 /* HomeEventSectionCell.swift in Sources */,
 				E66C5EBB22E2162B00AD186C /* SubjectTeacherByClassHeaderCell.swift in Sources */,
 				E6F427DB22968AEF00DB4250 /* CareerDetailViewController.swift in Sources */,
-				E6BA19A82266B1BD00FD246B /* CourseSectionCell.swift in Sources */,
 				E694F2BE22B108D600467F3C /* SearchAssignmentCell.swift in Sources */,
 				E69383B522A6DFE600456CA0 /* ExamsModel.swift in Sources */,
 				E63D83C022D3BC94005F07B4 /* AdministrationCell.swift in Sources */,
@@ -4547,7 +4328,6 @@
 				E662277922C1169B0060079E /* SubjectViewController.swift in Sources */,
 				E6961043227FD7530000FC92 /* QuestionContentCell.swift in Sources */,
 				E6416F3A22EE168600ACDCD6 /* SearchLocationCell.swift in Sources */,
-				E6BA19A42266AFEE00FD246B /* ScheduleCourceCell.swift in Sources */,
 				E63D83FB22D4C3E1005F07B4 /* AddDetentionFooterCell.swift in Sources */,
 				E600B40A22A9EFC8007E7C58 /* ScoreModel.swift in Sources */,
 				E68CBAB522B7A71400DFD45E /* AddAnnouncementCell.swift in Sources */,
@@ -4557,20 +4337,17 @@
 				E6D39C612261CCAD00831511 /* OTPViewController.swift in Sources */,
 				E6F7CA1D22F3F481008DDFF4 /* CurrentClassHeaderView.swift in Sources */,
 				E6DAA898229C1AE500820CC2 /* AttendanceModel.swift in Sources */,
-				E624D101227B5843001220E9 /* RecentAnnouncementSectionCell.swift in Sources */,
 				E6396FBF22B61EC200C928E5 /* HomeButtonCell.swift in Sources */,
 				BE068AA822AD262400BC2799 /* AddNewEventCell.swift in Sources */,
 				E6F428122297C98600DB4250 /* CompetitionDetailCell.swift in Sources */,
 				E6D39C58225FA37B00831511 /* Border+View.swift in Sources */,
 				BE54A53C229045AD00162552 /* AsynchronusImage.swift in Sources */,
-				E699F5DA22DE9ED400775758 /* AdminEventListViewController.swift in Sources */,
 				E6396A50228D3F18007A01E6 /* AssignmentModulModel.swift in Sources */,
 				E66C5EEA22E8A8EE00AD186C /* AddScoreExamHeaderCell.swift in Sources */,
 				E6F427D122964C8A00DB4250 /* CalendarAgendaModel.swift in Sources */,
 				E682D6EB22DAE55C00214F4E /* AddSubjectTeacherSectionCell.swift in Sources */,
 				E6D39C51225FA27200831511 /* ProductModel.swift in Sources */,
 				E699F5FB22E1BFC000775758 /* ExamDetailSectionCell.swift in Sources */,
-				E6396FC722B630BC00C928E5 /* HomePermissionCell.swift in Sources */,
 				E639700322B6839E00C928E5 /* AddLatePaymentViewController.swift in Sources */,
 				E624D12A227C94F3001220E9 /* NewsDetailViewController.swift in Sources */,
 				E682D68022D61F8400214F4E /* AttachmentBannerModel.swift in Sources */,
@@ -4617,7 +4394,6 @@
 				E65BF67922CF71A100C57FEF /* AssignmentDetailClassCell.swift in Sources */,
 				E6F7CA2122F40CBE008DDFF4 /* CurrentClassListModel.swift in Sources */,
 				BE54A53E2290502500162552 /* MedicalModel.swift in Sources */,
-				E6396FB722B614C900C928E5 /* HomeEventCell.swift in Sources */,
 				E66C5ECC22E795BF00AD186C /* ExamDetailRemediStudentCell.swift in Sources */,
 				E694F2BA22B1084400467F3C /* SearchSectionCell.swift in Sources */,
 				E6EAB90F2292F8240032B975 /* SubjectGraphicPerformanceCell.swift in Sources */,
@@ -4679,9 +4455,7 @@
 				E626B6A922C3577700FF660A /* UserProfileCollectionCell.swift in Sources */,
 				E6BA19F42269602600FD246B /* AnnouncementModel.swift in Sources */,
 				E6D39C4F225FA27200831511 /* TransactionHistory.swift in Sources */,
-				E6BA19E62268139700FD246B /* NewsCollectionCell.swift in Sources */,
 				E6F427F22296E03900DB4250 /* UniversityCell.swift in Sources */,
-				E6396FF022B6662100C928E5 /* HomeRoomDetentionCell.swift in Sources */,
 				E62F864422F043E400CE355E /* SpecialAttentionDetailHeaderCell.swift in Sources */,
 				E6726E3022A654EC0024F1BD /* ApprovalModel.swift in Sources */,
 				E6BFA11C22749A4800E90803 /* DotCALayer.swift in Sources */,
@@ -4711,7 +4485,6 @@
 				E6863F8A229DAA59003C4F1F /* NearbyCourseMoreCell.swift in Sources */,
 				E60FF4C7226AC8DE0086D8B8 /* ScheduleCell.swift in Sources */,
 				E64C669922CA38DA00783D51 /* PermissionRequestFooterCell.swift in Sources */,
-				E6D39C792265A00500831511 /* homeUpcommingAssignmentCell.swift in Sources */,
 				E699F5D122DE421400775758 /* CurrentSessionListViewController.swift in Sources */,
 				E624D121227C866E001220E9 /* NewsHeaderCell.swift in Sources */,
 				E65BF67D22CF730700C57FEF /* AssignmentDetailFooterCell.swift in Sources */,
@@ -4734,11 +4507,9 @@
 				BE4EB43922984BFD00FA6117 /* OnboardingViewController.swift in Sources */,
 				E6BFA11E22749A4800E90803 /* CurveAlgorithm.swift in Sources */,
 				E6F4281E2298471100DB4250 /* CourseDetailCell.swift in Sources */,
-				E6D39C702264EF6C00831511 /* TableViewCell.swift in Sources */,
 				E6A50BCE226C181300359D78 /* AnnouncementSubjectCell.swift in Sources */,
 				E639700822B6843200C928E5 /* AddLatePaymentFormCell.swift in Sources */,
 				E69AC7B12281CB81000284A1 /* AssignmentDetailViewCollectionCell.swift in Sources */,
-				E6BA198B2266282400FD246B /* AssignmentCell.swift in Sources */,
 				E6D39C31225FA1A500831511 /* ACAlert.swift in Sources */,
 				E6BC3CC922EF195A00B080A1 /* SpecialAttentionListViewController.swift in Sources */,
 				E6A50BD3226C253B00359D78 /* AnnouncementDetailViewController.swift in Sources */,
@@ -4757,10 +4528,8 @@
 				E64C668C22C9F1CF00783D51 /* PermissionRequestDetailViewController.swift in Sources */,
 				E62F863622F03C2300CE355E /* CurrentClassListHeaderCell.swift in Sources */,
 				E6416EEC22EA079E00ACDCD6 /* AddExamViewController.swift in Sources */,
-				E6BA198F22662CB500FD246B /* assignmentButtonCell.swift in Sources */,
 				E66C5F0822E8E5B600AD186C /* EditExamRemediScheduleCell.swift in Sources */,
 				E6D39BF9225F570B00831511 /* AppDelegate.swift in Sources */,
-				E6BA199322662D4F00FD246B /* AnnouncementSectionCell.swift in Sources */,
 				E626B6BD22C4F28B00FF660A /* AttendanceDetailModel.swift in Sources */,
 				BE8FEF2622A25B1E00BDF240 /* AnnouncementDetailFooterCell.swift in Sources */,
 				E65BF67522CF6D8C00C57FEF /* AssignmentDetailMenuCell.swift in Sources */,
@@ -4786,7 +4555,6 @@
 				E6416F2D22ECDD0A00ACDCD6 /* EditPaymentStudentCell.swift in Sources */,
 				E6A50BBA226B6D8E00359D78 /* AssignmentSubjectCell.swift in Sources */,
 				E60FF4D4226AEE570086D8B8 /* NotificationDetailVideoCell.swift in Sources */,
-				E6BA19A0226631B000FD246B /* ScheduleRoomTableViewCell.swift in Sources */,
 				E6F427F72296E71500DB4250 /* UniversityDetailViewController.swift in Sources */,
 				E6F427C42294325200DB4250 /* PermissionDataModel.swift in Sources */,
 				E696104C2280766E0000FC92 /* SessionDetailViewController.swift in Sources */,
@@ -4794,7 +4562,6 @@
 				E65BF68722CF849A00C57FEF /* AddAssignmentTopCell.swift in Sources */,
 				E60FF4CC226ADDE60086D8B8 /* AgendaTopicCell.swift in Sources */,
 				E6961051228076E00000FC92 /* SessionDetailCell.swift in Sources */,
-				E6BA199B2266312500FD246B /* AnnouncementSwiftCell.swift in Sources */,
 				E682D70722DCA81900214F4E /* ParentProfileSubjectAndClassCell.swift in Sources */,
 				E6F427C222942CA200DB4250 /* PermissionModel.swift in Sources */,
 				E6F427CA2294509400DB4250 /* NearbyModel.swift in Sources */,
@@ -4810,7 +4577,6 @@
 				E6E3E156228B08A500AF9310 /* FuturePlanViewController.swift in Sources */,
 				E699F5EB22DF156500775758 /* LatePaymentDetailCell.swift in Sources */,
 				E6863F9C22A24428003C4F1F /* CourseListModel.swift in Sources */,
-				E6396FE422B6633B00C928E5 /* HomeRoomCurrentClassSubjectCell.swift in Sources */,
 				E682D6B322D9DBED00214F4E /* SubjectTeacherListCell.swift in Sources */,
 				E6D39C47225FA27200831511 /* VoucherModel.swift in Sources */,
 				E662277022C106000060079E /* DashboardModel.swift in Sources */,
@@ -4829,12 +4595,10 @@
 				E6416EF122EA0F2A00ACDCD6 /* AddExamCell.swift in Sources */,
 				E6D39C54225FA30300831511 /* ACData.swift in Sources */,
 				E6961047227FD9150000FC92 /* QuestionAddNewCell.swift in Sources */,
-				E6BA19AC2266B23F00FD246B /* FooterContentCell.swift in Sources */,
 				E63D840022D4CAF7005F07B4 /* AddDetentionStudentSearchViewController.swift in Sources */,
 				E6D39C57225FA37B00831511 /* CustomBorder.swift in Sources */,
 				E6BFA1202275C65700E90803 /* Double.swift in Sources */,
 				E662277E22C11F480060079E /* ClassroomViewController.swift in Sources */,
-				E69383B222A6DD1B00456CA0 /* ExamContentCell.swift in Sources */,
 				E626B69B22C34D1600FF660A /* SubjectListCell.swift in Sources */,
 				E66C5ED122E7F7F400AD186C /* ExamScoreViewController.swift in Sources */,
 				E600B43D22AC397B007E7C58 /* SchoolDetailBannerCell.swift in Sources */,
@@ -4852,7 +4616,6 @@
 				BE744D7C22A3AF9D007E4027 /* VideoCollectionCell.swift in Sources */,
 				E600B47B22AFAF13007E7C58 /* SubjectDetailUpcommingSessionCell.swift in Sources */,
 				E699F5EE22DF285C00775758 /* LatePaymentDetailModel.swift in Sources */,
-				E6396FE022B6629900C928E5 /* HomeRoomPermissionRequestCell.swift in Sources */,
 				E624D11C227C8483001220E9 /* NewsViewController.swift in Sources */,
 				E682D6DF22DA508700214F4E /* AddSubjectTeacherHeaderCell.swift in Sources */,
 				E600B46A22AF4614007E7C58 /* SubjectDetailModel.swift in Sources */,
@@ -4863,7 +4626,6 @@
 				BE2B00572282ADB100CA2310 /* QuestionSectionCell.swift in Sources */,
 				E600B43922ABCD76007E7C58 /* AddNewPermissionCell.swift in Sources */,
 				E682D6F722DAE80800214F4E /* AddSubjectTeacherAttachmentVoiceButtonCell.swift in Sources */,
-				E6BA199722662E8E00FD246B /* AnnouncementContentCell.swift in Sources */,
 				E682D6FF22DAEBA100214F4E /* AddSubjectTeacherFooterCell.swift in Sources */,
 				E63D83C522D46954005F07B4 /* DetentionSectionCell.swift in Sources */,
 				E6396FDC22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.swift in Sources */,
@@ -4880,7 +4642,6 @@
 				E6D39C4B225FA27200831511 /* ChatModel.swift in Sources */,
 				E6A50BB5226B6D4800359D78 /* AssignmentViewController.swift in Sources */,
 				E6D39C50225FA27200831511 /* NewsModel.swift in Sources */,
-				E6D39C15225F970200831511 /* HomeViewController.swift in Sources */,
 				E64C668722C9E26000783D51 /* TeacherApprovalViewController.swift in Sources */,
 				E6F427E622969DBA00DB4250 /* CareerUniversityMajorCell.swift in Sources */,
 				BEE7E1F9228598CE005D5CC7 /* AnnouncementAllCell.swift in Sources */,
@@ -4903,7 +4664,6 @@
 				E600B46E22AFA611007E7C58 /* SubjectDetailViewController.swift in Sources */,
 				E6A50BE9226C9E2000359D78 /* AnnouncementBannerImageCell.swift in Sources */,
 				E682D6BD22D9E51D00214F4E /* SubjectTeacherDetailHeaderCell.swift in Sources */,
-				E6396FD422B65EBF00C928E5 /* HomeRoomUpcomingSessionCell.swift in Sources */,
 				E600B41E22AB64CE007E7C58 /* ApprovalDetailModel.swift in Sources */,
 				E69AC7BA22829469000284A1 /* MenuCategorySettingModel.swift in Sources */,
 				E694F2C522B10A6B00467F3C /* SearchModel.swift in Sources */,

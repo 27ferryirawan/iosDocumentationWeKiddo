@@ -10,13 +10,9 @@ import UIKit
 import SVProgressHUD
 
 protocol HomeButtonCellDelegate: class {
-    func toAssignmentList()
-    func toPermissionList()
-    func toDetentionList()
-    func toEventList()
-    func toLatePaymentList()
-    func toSpecialAttentionList()
-    func toCurrentClassList()
+    func toTaskList()
+    func toAbsentCheckList()
+    func toSessionCheckList()
 }
 
 class HomeButtonCell: UITableViewCell {
@@ -27,14 +23,9 @@ class HomeButtonCell: UITableViewCell {
             buttonSection.clipsToBounds = true
         }
     }
-    private var isAssignment = Bool()
-    private var isPermission = Bool()
-    private var isCurrentClass = Bool()
-    private var isSpecialAttentionByClass = Bool()
-    private var isSpecialAttentionBySubject = Bool()
-    private var isDetention = Bool()
-    private var isEvent = Bool()
-    private var isLatePayment = Bool()
+    private var isTaskList = Bool()
+    private var isAbsentCheckList = Bool()
+    private var isSessionChecList = Bool()
     weak var delegate: HomeButtonCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -98,37 +89,16 @@ class HomeButtonCell: UITableViewCell {
         }
         */
     }
-    func cellHomeroomConfig(isAssignment: Bool, isPermission: Bool, isCurrentClass: Bool, isSpecialAttentionByClass: Bool, isSpecialAttentionBySubject: Bool, isDetention: Bool) {
-        if isAssignment {
-            buttonSection.setTitle("SEE MORE ASSIGNMENT(s)", for: .normal)
-            self.isAssignment = isAssignment
-        } else if isPermission {
-            buttonSection.setTitle("SEE MORE PERMISSION REQUEST", for: .normal)
-            self.isPermission = isPermission
-        } else if isCurrentClass {
-            buttonSection.setTitle("SEE MORE", for: .normal)
-            self.isCurrentClass = isCurrentClass
-        } else if isSpecialAttentionByClass {
-            self.isSpecialAttentionByClass = isSpecialAttentionByClass
-            buttonSection.setTitle("SEE MORE", for: .normal)
-        } else if isSpecialAttentionBySubject {
-            self.isSpecialAttentionBySubject = isSpecialAttentionBySubject
-            buttonSection.setTitle("SEE MORE", for: .normal)
-        } else if isDetention {
-            self.isDetention = isDetention
-            buttonSection.setTitle("SEE MORE", for: .normal)
-        }
-    }
-    func cellConfig(isEvent: Bool, isLatePayment: Bool, isPermission: Bool) {
-        if isEvent {
-            self.isEvent = isEvent
-            buttonSection.setTitle("MORE EVENT", for: .normal)
-        } else if isLatePayment {
-            self.isLatePayment = isLatePayment
-             buttonSection.setTitle("SEE ALL LATE PAYMENT", for: .normal)
-        } else if isPermission {
-            self.isPermission = isPermission
-            buttonSection.setTitle("SEE ALL PERMISSION REQUEST", for: .normal)
+    func cellHomeroomConfig(isTaskList: Bool, isAbsentCheckList: Bool, isSessionCheckList: Bool) {
+        if isTaskList {
+            buttonSection.setTitle("SEE All(s)", for: .normal)
+            self.isTaskList = isTaskList
+        } else if isAbsentCheckList {
+            buttonSection.setTitle("SEE ALL(s)", for: .normal)
+            self.isAbsentCheckList = isAbsentCheckList
+        } else {
+            self.isSessionChecList = isSessionCheckList
+            buttonSection.setTitle("SEE ALL(s)", for: .normal)
         }
     }
 }

@@ -21,40 +21,23 @@ class HomeRoomViewController: UIViewController {
         case header
         case upcomingSession(UpComingType)
         case homeButton(HomeButtonType)
-        case dashboardDetention
-        case dashboardSpecialAttentionClass
-        case dashboardSpecialAttentionSubject
-        case dashboardPermissionRequest
-        case dashboardAssignment
-        case dashboardCurrentClassSession
-        case footer
-        case currentClassSubject
+        case dashboardTaskList
+        case dashboardAbsentCheckList
+        case dashboardSessionCheckList
         
         enum UpComingType {
-            case assignment
-            case permission
-            case specialAttentionByClass
-            case specialAttentionBySubject
-            case detention
+            case taskList
+            case absentCheckList
+            case sessionCheckList
         }
         
         enum HomeButtonType {
-            case assignment
-            case permission
-            case currentClass
-            case specialAttentionByClass
-            case specialAttentionBySubject
-            case detention
+            case taskList
+            case absentCheckList
+            case sessionCheckList
         }
     }
     
-    @IBOutlet weak var closeDetentionButton: UIButton!
-    @IBOutlet weak var detentionReason: UILabel!
-    @IBOutlet weak var detentionView: UIView! {
-        didSet {
-            detentionView.setBorderShadow(color: .lightGray, shadowRadius: 2.0, shadowOpactiy: 1.0, shadowOffsetWidth: 2, shadowOffsetHeight: 2)
-        }
-    }
     @IBOutlet weak var tableView: UITableView!
     private var sections = [HomeRoomSection]()
     private var isDetentionViewDisplayed = false
@@ -65,14 +48,11 @@ class HomeRoomViewController: UIViewController {
         configNavigation()
         configTable()
         configureSections()
-        updateView()
         grayAreaBtn.addTarget(self, action: #selector(displayGrayArea), for: .touchUpInside)
     }
     
     @objc func displayGrayArea(){
         grayAreaBtn.isHidden = true
-        detentionView.isHidden = true
-        isDetentionViewDisplayed = true
     }
     
     func configNavigation() {
@@ -81,21 +61,12 @@ class HomeRoomViewController: UIViewController {
     }
     
     func configTable() {
-        closeDetentionButton.addTarget(self, action: #selector(closeDetentionView), for: .touchUpInside)
         tableView.register(UINib(nibName: "HomeRoomHeaderCell", bundle: nil), forCellReuseIdentifier: "homeRoomHeaderCellID")
         tableView.register(UINib(nibName: "HomeRoomUpcomingSessionSectionCell", bundle: nil), forCellReuseIdentifier: "homeRoomUpcomingSessionSectionCellID")
         tableView.register(UINib(nibName: "HomeButtonCell", bundle: nil), forCellReuseIdentifier: "homeButtonCellID")
         tableView.register(UINib(nibName: "HomeRoomDueDateAssignmentCell", bundle: nil), forCellReuseIdentifier: "homeRoomDueDateAssignmentCellID")
-        tableView.register(UINib(nibName: "HomeRoomPermissionRequestCell", bundle: nil), forCellReuseIdentifier: "homeRoomPermissionRequestCellID")
-        tableView.register(UINib(nibName: "HomeRoomCurrentClassSubjectCell", bundle: nil), forCellReuseIdentifier: "homeRoomCurrentClassSubjectCellID")
-        tableView.register(UINib(nibName: "HomeRoomCurrentClassStudentCell", bundle: nil), forCellReuseIdentifier: "homeRoomCurrentClassStudentCellID")
         tableView.register(UINib(nibName: "HomeRoomSpecialAttentionCell", bundle: nil), forCellReuseIdentifier: "homeRoomSpecialAttentionCellID")
-        tableView.register(UINib(nibName: "HomeRoomDetentionCell", bundle: nil), forCellReuseIdentifier: "homeRoomDetentionCellID")
-        tableView.register(UINib(nibName: "FooterContentCell", bundle: nil), forCellReuseIdentifier: "footerContentCell")
-    }
-    @objc func closeDetentionView() {
-        isDetentionViewDisplayed = false
-        updateView()
+        tableView.register(UINib(nibName: "HomeLatePaymentCell", bundle: nil), forCellReuseIdentifier: "homeLatePaymentCellID")
     }
 }
 
@@ -105,38 +76,26 @@ extension HomeRoomViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch sections[section] {
-        case .header, .upcomingSession, .homeButton, .footer, .currentClassSubject:
+        case .header, .upcomingSession, .homeButton:
             return 1
-        case .dashboardDetention:
-            return ACData.DASHBOARDDATA.dashboardDetention.count
-        case .dashboardPermissionRequest:
-            return ACData.DASHBOARDDATA.dashboardPermissionRequest.count
-        case .dashboardSpecialAttentionClass:
-            return ACData.DASHBOARDDATA.dashboardSpecialAttentionClass.count
-        case .dashboardAssignment:
-            return ACData.DASHBOARDDATA.dashboardAssignment.count
-        case .dashboardCurrentClassSession:
-            return ACData.DASHBOARDDATA.dashboarCurrentClassSession.count
-        case .dashboardSpecialAttentionSubject:
-            return ACData.DASHBOARDDATA.dashboardSpecialAttentionSubject.count
+        case .dashboardTaskList:
+            return ACData.DASHBOARDDATA.dashboardTaskList.count
+        case .dashboardAbsentCheckList:
+            return ACData.DASHBOARDDATA.dashboardAbsentCheckList.count
+        case .dashboardSessionCheckList:
+            return ACData.DASHBOARDDATA.dashboardSessionCheckList.count
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch sections[indexPath.section] {
         case .header:
-            return 291
+            return 195
         case .upcomingSession:
             return 33
-        case .dashboardDetention, .dashboardSpecialAttentionClass, .dashboardCurrentClassSession, .dashboardSpecialAttentionSubject:
-            return 88
-        case .dashboardPermissionRequest, .dashboardAssignment:
+        case .dashboardTaskList, .dashboardAbsentCheckList, .dashboardSessionCheckList:
             return 66
         case .homeButton:
             return 55
-        case .footer:
-            return 228
-        case .currentClassSubject:
-            return 85
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -149,121 +108,79 @@ extension HomeRoomViewController: UITableViewDataSource, UITableViewDelegate {
         case .upcomingSession(let type):
             let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomUpcomingSessionSectionCellID", for: indexPath) as? HomeRoomUpcomingSessionSectionCell)!
             
-            var isAssignment = false
-            var isPermission = false
-            var isSpecialAttentionByClass = false
-            var isSpecialAttentionBySubject = false
-            var isDetention = false
+            var isTaskList = false
+            var isAbsentCheckList = false
+            var isSessionCheckList = false
             
             switch type {
-            case .assignment:
-                isAssignment = true
-            case .detention:
-                isDetention = true
-            case .permission:
-                isPermission = true
-            case .specialAttentionByClass:
-                isSpecialAttentionByClass = true
-            case .specialAttentionBySubject:
-                isSpecialAttentionBySubject = true
+            case .taskList:
+                isTaskList = true
+            case .absentCheckList:
+                isAbsentCheckList = true
+            case .sessionCheckList:
+                isSessionCheckList = true
             }
             
             cell.config(
-                isAssignment: isAssignment,
-                isPermission: isPermission,
-                isSpecialAttentionByClass: isSpecialAttentionByClass,
-                isSpecialAttentionBySubject: isSpecialAttentionBySubject,
-                isDetention: isDetention
+                isTaskList: isTaskList,
+                isAbsentCheckList: isAbsentCheckList,
+                isSessionCheckList: isSessionCheckList
             )
             return cell
-        case .dashboardSpecialAttentionClass:
+        case .dashboardTaskList:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomSpecialAttentionCellID", for: indexPath) as? HomeRoomSpecialAttentionCell)!
-            cell.detailClassObj = ACData.DASHBOARDDATA.dashboardSpecialAttentionClass[indexPath.row]
+            cell.detailClassObj = ACData.DASHBOARDDATA.dashboardTaskList[indexPath.row]
             cell.delegate = self
             return cell
-        case .dashboardSpecialAttentionSubject:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomSpecialAttentionCellID", for: indexPath) as? HomeRoomSpecialAttentionCell)!
-            cell.detailSubjectObj = ACData.DASHBOARDDATA.dashboardSpecialAttentionSubject[indexPath.row]
-            cell.delegate = self
+        case .dashboardSessionCheckList:
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "homeLatePaymentCellID", for: indexPath) as? HomeLatePaymentCell)!
             return cell
-        case .dashboardPermissionRequest:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomPermissionRequestCellID", for: indexPath) as? HomeRoomPermissionRequestCell)!
-            cell.permissionObj = ACData.DASHBOARDDATA.dashboardPermissionRequest[indexPath.row]
-            cell.delegate = self
-            return cell
-        case .dashboardAssignment:
+        case .dashboardAbsentCheckList:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomDueDateAssignmentCellID", for: indexPath) as? HomeRoomDueDateAssignmentCell)!
-            cell.assignObj = ACData.DASHBOARDDATA.dashboardAssignment[indexPath.row]
+            cell.assignObj = ACData.DASHBOARDDATA.dashboardAbsentCheckList[indexPath.row]
             cell.delegate = self
-            return cell
-        case .dashboardDetention:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomDetentionCellID", for: indexPath) as? HomeRoomDetentionCell)!
-            cell.detentObj = ACData.DASHBOARDDATA.dashboardDetention[indexPath.row]
-            cell.delegate = self
-            return cell
-        case .dashboardCurrentClassSession:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomCurrentClassStudentCellID", for: indexPath) as? HomeRoomCurrentClassStudentCell)!
-            cell.studentObj = ACData.DASHBOARDDATA.dashboarCurrentClassSession[indexPath.row]
-            return cell
-        case .currentClassSubject:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomCurrentClassSubjectCellID", for: indexPath) as? HomeRoomCurrentClassSubjectCell)!
-            cell.currentObj = ACData.DASHBOARDDATA
             return cell
         case .homeButton(let type):
             let cell = (tableView.dequeueReusableCell(withIdentifier: "homeButtonCellID", for: indexPath) as? HomeButtonCell)!
             
-            var isAssignment = false
-            var isPermission = false
-            var isSpecialAttentionByClass = false
-            var isSpecialAttentionBySubject = false
-            var isDetention = false
-            var isCurrentClass = false
-            
+            var isTaskList = false
+            var isAbsentCheckList = false
+            var isSessionCheckList = false
+
             switch type {
-            case .assignment:
-                isAssignment = true
+            case .taskList:
+                isTaskList = true
                 cell.buttonSection.tag = 0
-            case .detention:
-                isDetention = true
-                cell.buttonSection.tag = 5
-            case .permission:
-                isPermission = true
+            case .absentCheckList:
+                isAbsentCheckList = true
                 cell.buttonSection.tag = 1
-            case .specialAttentionByClass:
-                isSpecialAttentionByClass = true
-                cell.buttonSection.tag = 4
-            case .specialAttentionBySubject:
-                isSpecialAttentionBySubject = true
-                cell.buttonSection.tag = 3
-            case .currentClass:
-                isCurrentClass = true
+            case .sessionCheckList:
+                isSessionCheckList = true
                 cell.buttonSection.tag = 2
             }
             
             cell.cellHomeroomConfig(
-                isAssignment: isAssignment,
-                isPermission: isPermission,
-                isCurrentClass: isCurrentClass,
-                isSpecialAttentionByClass: isSpecialAttentionByClass,
-                isSpecialAttentionBySubject: isSpecialAttentionBySubject,
-                isDetention: isDetention
+                isTaskList: isTaskList,
+                isAbsentCheckList: isAbsentCheckList,
+                isSessionCheckList: isSessionCheckList
             )
+            
             cell.buttonSection.addTarget(self, action: #selector(toDetail), for: .touchUpInside)
-            cell.delegate = self
-            return cell
-        case .footer:
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "footerContentCell", for: indexPath) as? FooterContentCell)!
             cell.delegate = self
             return cell
         }
     }
 }
 
-extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignmentCellDelegate, HomeRoomPermissionRequestCellDelegate, HomeRoomHeaderCellDelegate, FooterHomeDelegate, HomeRoomSpecialAttentionCellDelegate, HomeRoomDetentionCellDelegate {
-    func showDetentionReason(withReason: String) {
-        reason = withReason
-        isDetentionViewDisplayed = true
-        updateView()
+extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignmentCellDelegate, HomeRoomHeaderCellDelegate, HomeRoomSpecialAttentionCellDelegate {
+    func toTaskList() {
+        
+    }
+    func toAbsentCheckList() {
+        
+    }
+    func toSessionCheckList() {
+        
     }
     func toDetailSpecialAttention(isClass: Bool) {
         print("isClass: \(isClass)")
@@ -277,51 +194,15 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
-    func toLatePaymentList() {
-        
-    }
-    func goToNews() {
-        let newsVC = NewsViewController()
-        self.navigationController?.pushViewController(newsVC, animated: true)
-    }
-    func goToNewsDetail(urlString: String?) {
-        guard let newsURL = urlString else {
-            return
-        }
-        let newsDetailVC = NewsDetailViewController()
-        newsDetailVC.stringURL = newsURL
-        self.navigationController?.pushViewController(newsDetailVC, animated: true)
-    }
     func toSessionDetail() {
         
     }
-    func toEventList() {
+    func toSeeMoreSession() {
         
-    }
-    func toAssignmentList() {
-    }
-    func toPermissionList() {
-    }
-    func toDetentionList() {
-        let detentionVC = DetentionViewController()
-        self.navigationController?.pushViewController(detentionVC, animated: true)
     }
     func toDetailAssignment() {
         let assignmentDetailVC = AssignmentDetailViewController()
         self.navigationController?.pushViewController(assignmentDetailVC, animated: true)
-    }
-    func toDetailPermission() {
-        let permissionDetailVC = PermissionRequestDetailViewController()
-        self.navigationController?.pushViewController(permissionDetailVC, animated: true)
-    }
-    func toSeeMoreSession() {
-        let upcomingListVC = UpcomingSessionListViewController()
-        self.navigationController?.pushViewController(upcomingListVC, animated: true)
-    }
-    func toSpecialAttentionList() {
-        //TODO: DIRECT TO SPECIAL ATTENTION VIEWCONTROLLER
-    }
-    func toCurrentClassList() {
     }
     @objc func toDetail(sender: UIButton) {
         if sender.tag == 0 {
@@ -375,48 +256,20 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
 private extension HomeRoomViewController {
     func configureSections() {
         sections.append(.header)
-        if !ACData.DASHBOARDDATA.dashboardAssignment.isEmpty {
-            sections.append(.upcomingSession(.assignment))
-            sections.append(.dashboardAssignment)
-            sections.append(.homeButton(.assignment))
+        if !ACData.DASHBOARDDATA.dashboardTaskList.isEmpty {
+            sections.append(.upcomingSession(.taskList))
+            sections.append(.dashboardTaskList)
+            sections.append(.homeButton(.taskList))
         }
-        if !ACData.DASHBOARDDATA.dashboardPermissionRequest.isEmpty {
-            sections.append(.upcomingSession(.permission))
-            sections.append(.dashboardPermissionRequest)
-            sections.append(.homeButton(.permission))
+        if !ACData.DASHBOARDDATA.dashboardAbsentCheckList.isEmpty {
+            sections.append(.upcomingSession(.absentCheckList))
+            sections.append(.dashboardAbsentCheckList)
+            sections.append(.homeButton(.absentCheckList))
         }
-        if !ACData.DASHBOARDDATA.dashboarCurrentClassSession.isEmpty {
-            sections.append(.currentClassSubject)
-            sections.append(.dashboardPermissionRequest)
-            sections.append(.homeButton(.currentClass))
-        }
-        if !ACData.DASHBOARDDATA.dashboardSpecialAttentionClass.isEmpty {
-            sections.append(.upcomingSession(.specialAttentionByClass))
-            sections.append(.dashboardSpecialAttentionClass)
-            sections.append(.homeButton(.specialAttentionByClass))
-        }
-        if !ACData.DASHBOARDDATA.dashboardSpecialAttentionSubject.isEmpty {
-            sections.append(.upcomingSession(.specialAttentionBySubject))
-            sections.append(.dashboardSpecialAttentionSubject)
-            sections.append(.homeButton(.specialAttentionBySubject))
-        }
-        if !ACData.DASHBOARDDATA.dashboardDetention.isEmpty {
-            sections.append(.upcomingSession(.detention))
-            sections.append(.dashboardDetention)
-            sections.append(.homeButton(.detention))
-        }
-        sections.append(.footer)
-    }
-    func updateView() {
-        if isDetentionViewDisplayed {
-            grayAreaBtn.isHidden = false
-            detentionView.isHidden = false
-            isDetentionViewDisplayed = false
-            detentionReason.text = reason
-        } else {
-            grayAreaBtn.isHidden = true
-            detentionView.isHidden = true
-            isDetentionViewDisplayed = true
+        if !ACData.DASHBOARDDATA.dashboardSessionCheckList.isEmpty {
+            sections.append(.upcomingSession(.sessionCheckList))
+            sections.append(.dashboardSessionCheckList)
+            sections.append(.homeButton(.sessionCheckList))
         }
     }
 }

@@ -127,10 +127,6 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
 //                self.navigationController?.pushViewController(assignmentVC, animated: true)
 //                let assignmentVC = AssignmentViewController()
 //                self.navigationController?.pushViewController(assignmentVC, animated: true)
-
-            case "35":
-                let eventVC = AdminEventListViewController()
-                self.navigationController?.pushViewController(eventVC, animated: true)
             case "47":
                 let subjectVC = SubjectTeacherViewController()
                 self.navigationController?.pushViewController(subjectVC, animated: true)
