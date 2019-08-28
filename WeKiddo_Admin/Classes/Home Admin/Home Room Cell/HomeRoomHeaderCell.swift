@@ -67,7 +67,7 @@ class HomeRoomHeaderCell: UITableViewCell {
     }
     @objc func showSchoolPicker() {
         ActionSheetStringPicker.show(
-            withTitle: "Select Your Kids",
+            withTitle: "Select School",
             rows: schools,
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
