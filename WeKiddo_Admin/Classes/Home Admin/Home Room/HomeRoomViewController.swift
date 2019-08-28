@@ -89,7 +89,7 @@ extension HomeRoomViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch sections[indexPath.section] {
         case .header:
-            return 291
+            return 195
         case .upcomingSession:
             return 33
         case .dashboardTaskList, .dashboardAbsentCheckList, .dashboardSessionCheckList:
