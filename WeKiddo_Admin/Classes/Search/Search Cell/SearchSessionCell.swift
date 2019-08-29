@@ -21,7 +21,7 @@ class SearchSessionCell: UITableViewCell {
     @IBOutlet weak var topicLable: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
-    var assignmentObjc: AssignmentListContentModel?{
+    var assignmentObjc: SubjectSearchUpcomingAssignment?{
         didSet{
             cellDataSet()
         }

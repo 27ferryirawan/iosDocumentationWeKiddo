@@ -14,6 +14,7 @@ protocol AddAssignmentTopCellDelegate: class {
     func reloadAtIndex()
     func subjectSelected(withValue: String)
     func chapterSelected(withValue: String)
+    func teacherSelected(withValue: String)
     func assignmentSelected(withValue: Int)
     func noteFilled(withValue: String)
 }
@@ -27,11 +28,14 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet weak var homeworkButton: UIButton!
     @IBOutlet weak var topicPickerButton: UIButton!
     @IBOutlet weak var subjectPickerButton: UIButton!
+    @IBOutlet weak var teacherPickerButton: UIButton!
     var isHomeWork = Bool()
     var isFromEdit = Bool()
     var subjectName = [String]()
     var chapterID = ""
+    var teacherID = ""
     var topicName = [String]()
+    var teacherName = [String]()
     var subjectObj: SubjectModel? {
         didSet {
             cellConfig()
@@ -48,6 +52,7 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
         homeworkButton.addTarget(self, action: #selector(homeworkSelected), for: .touchUpInside)
         projectButton.addTarget(self, action: #selector(projectSelected), for: .touchUpInside)
         topicPickerButton.addTarget(self, action: #selector(showTopicPicker), for: .touchUpInside)
+        teacherPickerButton.addTarget(self, action: #selector(showTeacherPicker), for: .touchUpInside)
         self.topicPickerButton.setTitle("Select Topic", for: .normal)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -128,6 +133,29 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
                 }
                 
                 self.delegate?.chapterSelected(withValue: self.chapterID)
+                self.delegate?.reloadAtIndex()
+                //                let subjectID = ACData.SUBJECTDATA[indexes].subject_id
+                //                self.fetchData(index: subjectID)
+        },
+            cancel: { ActionMultipleStringCancelBlock in return },
+            origin:UIApplication.shared.keyWindow
+        )
+    }
+    @objc func showTeacherPicker() {
+        ActionSheetStringPicker.show(
+            withTitle: "Select Teacher",
+            rows: teacherName,
+            initialSelection: 0,
+            doneBlock: { picker, indexes, values in
+                guard let selectedValue = values else { return }
+                self.topicPickerButton.setTitle("\(selectedValue)", for: .normal)
+                if self.isFromEdit {
+                    self.teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList[indexes].teacher_id
+                } else {
+                    self.teacherID = ACData.CHAPTERDATA.chapter_list[indexes].chapter_id
+                }
+                
+                self.delegate?.teacherSelected(withValue: self.teacherID)
                 self.delegate?.reloadAtIndex()
                 //                let subjectID = ACData.SUBJECTDATA[indexes].subject_id
                 //                self.fetchData(index: subjectID)

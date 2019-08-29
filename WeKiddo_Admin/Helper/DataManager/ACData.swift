@@ -29,6 +29,8 @@ struct ACData {
     static var MOREMENU = [MoreMenuModel]()
     static var ASSIGNMENT = [AssignmentModel]()
     static var ASSIGNMENTLIST: AssignmentListModel!
+    static var ASSIGNMENTTEACHERLIST : AssignmentTeacherListModel!
+    static var ASSIGNMENTTEACHERLISTALL : AssignmentTeacherListAllModel!
     static var ASSIGNMENTMODULMODEL = [AssignmentModulModel]()
     static var SESSIONS = [SessionsModel]()
     static var SESSIONDETAIL: SessionDetailModel!

@@ -1768,27 +1768,56 @@ class ACRequest: NSObject {
     
     static func POST_ASSIGNMENT_LIST(
         userId:String,
-        role:String,
-        subjectID:String,
-        classID:String,
+        schoolId:String,
+        yearId:String,
+        school_user_id:String,
         tokenAccess:String,
         successCompletion:@escaping (AssignmentListModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
-            "subject_id":subjectID,
-            "class_id":classID
+            "schoolId":schoolId,
+            "yearId":yearId,
+            "school_user_id":school_user_id
         ]
         print(parameters)
         print(tokenAccess)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_ASSIGNMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
                 let detail = AssignmentListModel()
+                detail.objectMapping(json: json)
+                successCompletion(detail)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ASSIGNMENT_TEACHER_LIST(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (AssignmentTeacherListAllModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "schoolId":schoolId,
+            "yearId":yearId
+        ]
+        print(parameters)
+        print(tokenAccess)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_TEACHER_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success"){
+                let detail = AssignmentTeacherListAllModel()
                 detail.objectMapping(json: json)
                 successCompletion(detail)
             } else {

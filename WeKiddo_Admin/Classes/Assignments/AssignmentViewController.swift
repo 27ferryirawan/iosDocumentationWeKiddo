@@ -14,6 +14,7 @@ class AssignmentViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addNewButton: UIButton!
     var assignmentListCount = 0
+    var teacherListCount = 0
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,18 @@ class AssignmentViewController: UIViewController {
         }
     }
     func fetchData() {
-        ACRequest.POST_ASSIGNMENT_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, subjectID: "", classID: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDatas) in
+        ACRequest.POST_ASSIGNMENT_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.school_id, yearId: ACData.LOGINDATA.year_id, school_user_id: ACData.LOGINDATA.school_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDatas) in
             ACData.ASSIGNMENTLIST = assignmentDatas
             self.assignmentListCount = ACData.ASSIGNMENTLIST.assignmentList.count
+            SVProgressHUD.dismiss()
+            self.tableView.reloadData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+        }
+        
+        ACRequest.POST_ASSIGNMENT_TEACHER_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.school_id, yearId: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (teacherList) in
+            ACData.ASSIGNMENTTEACHERLISTALL = teacherList
+            self.teacherListCount = teacherList.assignmentTeacherList.count
             SVProgressHUD.dismiss()
             self.tableView.reloadData()
         }) { (message) in
@@ -66,10 +76,10 @@ class AssignmentViewController: UIViewController {
 
 extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return ACData.ASSIGNMENTLIST.assignmentList.count + 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + assignmentListCount
+        return 1 + ACData.ASSIGNMENTLIST.assignmentList[section + 1].assignment.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
@@ -82,13 +92,13 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentSectionCell", for: indexPath) as? AssignmentSectionCell)!
-            cell.object = ACData.ASSIGNMENTLIST
+            cell.object = ACData.ASSIGNMENTTEACHERLISTALL
             cell.delegate = self
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentSubjectCell", for: indexPath) as? AssignmentSubjectCell)!
             cell.delegate = self
-            cell.assignmentObjc = ACData.ASSIGNMENTLIST.assignmentList[indexPath.row-1]
+            cell.assignmentObjc = ACData.ASSIGNMENTLIST.assignmentList[indexPath.section + 1].assignment[indexPath.row-1]
             return cell
         }
     }
@@ -101,6 +111,9 @@ extension AssignmentViewController: AssignmentListCellDelegate, AssignmentSectio
     }
     func reloadTable() {
         self.assignmentListCount = ACData.ASSIGNMENTLIST.assignmentList.count
+        self.tableView.reloadData()
+    }
+    func filterTeacher(with teacherID: String) {
         self.tableView.reloadData()
     }
 }
