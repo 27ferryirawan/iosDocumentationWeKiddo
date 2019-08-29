@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3FEBF08904857890DE491CD2 /* Pods_WeKiddo_Admin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF280DA1C1AD957810E4AA91 /* Pods_WeKiddo_Admin.framework */; };
+		664419122316C5520006F277 /* AssignmentTeacherListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419112316C5520006F277 /* AssignmentTeacherListModel.swift */; };
+		664419142316D3350006F277 /* AssignmentSubjectListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419132316D3350006F277 /* AssignmentSubjectListModel.swift */; };
+		664419162316D5840006F277 /* AssignmentChapterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419152316D5840006F277 /* AssignmentChapterListModel.swift */; };
+		664419182316D68E0006F277 /* AssignmentEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419172316D68E0006F277 /* AssignmentEditModel.swift */; };
+		6644191A2316DB9E0006F277 /* AssignmentAttachmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419192316DB9E0006F277 /* AssignmentAttachmentListModel.swift */; };
+		6644191C2316DE0E0006F277 /* AssignmentScoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */; };
 		BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */; };
 		BE0030EF22A505BC0050B48E /* MoreSchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */; };
 		BE0030F322A506250050B48E /* MoreSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030F122A506250050B48E /* MoreSchoolCell.swift */; };
@@ -743,6 +749,12 @@
 
 /* Begin PBXFileReference section */
 		18A1CC62F1BE6F0BE6C33442 /* Pods-WeKiddo_Admin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeKiddo_Admin.release.xcconfig"; path = "Target Support Files/Pods-WeKiddo_Admin/Pods-WeKiddo_Admin.release.xcconfig"; sourceTree = "<group>"; };
+		664419112316C5520006F277 /* AssignmentTeacherListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTeacherListModel.swift; sourceTree = "<group>"; };
+		664419132316D3350006F277 /* AssignmentSubjectListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentSubjectListModel.swift; sourceTree = "<group>"; };
+		664419152316D5840006F277 /* AssignmentChapterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentChapterListModel.swift; sourceTree = "<group>"; };
+		664419172316D68E0006F277 /* AssignmentEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentEditModel.swift; sourceTree = "<group>"; };
+		664419192316DB9E0006F277 /* AssignmentAttachmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentAttachmentListModel.swift; sourceTree = "<group>"; };
+		6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentScoreListModel.swift; sourceTree = "<group>"; };
 		983F76DCBFB61B18F25DE145 /* Pods-WeKiddo_Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeKiddo_Admin.debug.xcconfig"; path = "Target Support Files/Pods-WeKiddo_Admin/Pods-WeKiddo_Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSchoolViewController.swift; sourceTree = "<group>"; };
 		BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreSchoolViewController.xib; sourceTree = "<group>"; };
@@ -3468,6 +3480,12 @@
 				E6F7CA5222F74BC1008DDFF4 /* SpecialAttentionByClassListModel.swift */,
 				E6F7CA5422F754D7008DDFF4 /* SpecialAttentionBySubjectDetailModel.swift */,
 				E6F7CA6422F80A53008DDFF4 /* SpecialAttentionByClassDetailModel.swift */,
+				664419112316C5520006F277 /* AssignmentTeacherListModel.swift */,
+				664419132316D3350006F277 /* AssignmentSubjectListModel.swift */,
+				664419152316D5840006F277 /* AssignmentChapterListModel.swift */,
+				664419172316D68E0006F277 /* AssignmentEditModel.swift */,
+				664419192316DB9E0006F277 /* AssignmentAttachmentListModel.swift */,
+				6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4324,6 +4342,7 @@
 				E6F427CC229465E600DB4250 /* ParentNewsModel.swift in Sources */,
 				E6F427FC2296E7EF00DB4250 /* UniversityDetailCell.swift in Sources */,
 				E68CBAB022B7A6CF00DFD45E /* AddAnnouncementViewController.swift in Sources */,
+				664419122316C5520006F277 /* AssignmentTeacherListModel.swift in Sources */,
 				E682D70322DBA47000214F4E /* AddSubjectTeacherSectionAttachmentCell.swift in Sources */,
 				E662277922C1169B0060079E /* SubjectViewController.swift in Sources */,
 				E6961043227FD7530000FC92 /* QuestionContentCell.swift in Sources */,
@@ -4435,6 +4454,7 @@
 				E6F427C82294494600DB4250 /* CompetitionCategoryModel.swift in Sources */,
 				E600B44E22AE6532007E7C58 /* StudentNoteModel.swift in Sources */,
 				E624D10E227B58C1001220E9 /* AgencyCell.swift in Sources */,
+				6644191A2316DB9E0006F277 /* AssignmentAttachmentListModel.swift in Sources */,
 				E63D83AD22D0F172005F07B4 /* AssignmentScoreFooterCell.swift in Sources */,
 				E6E93153227807E50040A975 /* ChildModel.swift in Sources */,
 				E6D39C4E225FA27200831511 /* UserModel.swift in Sources */,
@@ -4506,6 +4526,7 @@
 				E6F427E32296945700DB4250 /* CareerDetailModel.swift in Sources */,
 				BE4EB43922984BFD00FA6117 /* OnboardingViewController.swift in Sources */,
 				E6BFA11E22749A4800E90803 /* CurveAlgorithm.swift in Sources */,
+				664419162316D5840006F277 /* AssignmentChapterListModel.swift in Sources */,
 				E6F4281E2298471100DB4250 /* CourseDetailCell.swift in Sources */,
 				E6A50BCE226C181300359D78 /* AnnouncementSubjectCell.swift in Sources */,
 				E639700822B6843200C928E5 /* AddLatePaymentFormCell.swift in Sources */,
@@ -4545,6 +4566,7 @@
 				E69AC80F22894075000284A1 /* NearbyHeaderCollectionCell.swift in Sources */,
 				BE35E483229C5BCC004BD16B /* SchoolModel.swift in Sources */,
 				E6E3E168228B128A00AF9310 /* CompetitionViewController.swift in Sources */,
+				664419182316D68E0006F277 /* AssignmentEditModel.swift in Sources */,
 				E6D39C45225FA27200831511 /* GeneralOrderSetting.swift in Sources */,
 				E6D39C4C225FA27200831511 /* AboutUsModel.swift in Sources */,
 				E69AC7AD2281C21D000284A1 /* AssignmentDetailViewCell.swift in Sources */,
@@ -4636,6 +4658,7 @@
 				E6F7CA5E22F8025C008DDFF4 /* SpecialAttentionByClassDetailHeaderCell.swift in Sources */,
 				E66C5EFC22E8D83D00AD186C /* EditExamTopCell.swift in Sources */,
 				E682D6B822D9E39400214F4E /* SubjectTeacherDetailViewController.swift in Sources */,
+				6644191C2316DE0E0006F277 /* AssignmentScoreListModel.swift in Sources */,
 				E626B6C722C5291100FF660A /* AttendanceUserCell.swift in Sources */,
 				E6D39C5C2261B91100831511 /* ForgotViewController.swift in Sources */,
 				E69AC80B22893DB6000284A1 /* NearbyHeaderCell.swift in Sources */,
@@ -4650,6 +4673,7 @@
 				E62F864C22F0469700CE355E /* SpecialAttentionDetailContentCell.swift in Sources */,
 				E626B6BA22C4D2E200FF660A /* OthersCollectionReusableView.swift in Sources */,
 				E6BA19BF2266E3D000FD246B /* NotificationHeaderGalleryCell.swift in Sources */,
+				664419142316D3350006F277 /* AssignmentSubjectListModel.swift in Sources */,
 				E6F42800229702E900DB4250 /* UniversityDetailRepresentativeCell.swift in Sources */,
 				E6416F3622EE0F6A00ACDCD6 /* SearchLocationViewController.swift in Sources */,
 				BE8FEF3022A27B0200BDF240 /* ApprovalDetailFooterCell.swift in Sources */,
