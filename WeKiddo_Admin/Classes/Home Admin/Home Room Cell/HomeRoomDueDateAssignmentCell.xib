@@ -40,28 +40,28 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-aI-JMZ">
-                                <rect key="frame" x="65" y="3" width="170" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="65" y="3" width="165" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Human Anatomy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hka-t2-968">
-                                <rect key="frame" x="65" y="13.5" width="170" height="28"/>
+                                <rect key="frame" x="65" y="16" width="165" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="oC8-3n-lIv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Science 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xA-cg-dqH">
-                                <rect key="frame" x="65" y="36.5" width="170" height="14.5"/>
+                                <rect key="frame" x="65" y="39" width="165" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vj-ZX-4pL">
-                                <rect key="frame" x="240" y="12.5" width="60" height="30"/>
+                                <rect key="frame" x="235" y="12.5" width="60" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNV-T3-oXa">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
@@ -85,7 +85,7 @@
                         <constraints>
                             <constraint firstItem="hka-t2-968" firstAttribute="width" secondItem="6Hc-aI-JMZ" secondAttribute="width" id="0Es-D8-1qa"/>
                             <constraint firstItem="5xA-cg-dqH" firstAttribute="top" secondItem="6Hc-aI-JMZ" secondAttribute="bottom" constant="19" id="9Vw-0M-YCi"/>
-                            <constraint firstAttribute="trailing" secondItem="0vj-ZX-4pL" secondAttribute="trailing" id="9Xl-44-djH"/>
+                            <constraint firstAttribute="trailing" secondItem="0vj-ZX-4pL" secondAttribute="trailing" constant="5" id="9Xl-44-djH"/>
                             <constraint firstItem="6Hc-aI-JMZ" firstAttribute="top" secondItem="sY8-gq-ht2" secondAttribute="top" constant="3" id="H6R-4p-omE"/>
                             <constraint firstItem="0vj-ZX-4pL" firstAttribute="leading" secondItem="6Hc-aI-JMZ" secondAttribute="trailing" constant="5" id="H7V-WT-Vct"/>
                             <constraint firstItem="5xA-cg-dqH" firstAttribute="trailing" secondItem="hka-t2-968" secondAttribute="trailing" id="Lm2-vE-LGc"/>
@@ -117,9 +117,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="avatarImage" destination="tWW-Og-nLy" id="wF7-3o-nvu"/>
                 <outlet property="bgView" destination="H2p-sc-9uM" id="LjV-mS-n9v"/>
                 <outlet property="classLabel" destination="5xA-cg-dqH" id="plZ-nO-dXB"/>
                 <outlet property="contentButton" destination="iRu-G2-9c2" id="O9w-Ds-OWC"/>
+                <outlet property="statusLabel" destination="aNV-T3-oXa" id="ULH-6o-cPO"/>
+                <outlet property="statusView" destination="0vj-ZX-4pL" id="hwj-aQ-mzR"/>
                 <outlet property="subjectLabel" destination="6Hc-aI-JMZ" id="8WI-pS-sWn"/>
                 <outlet property="topicLabel" destination="hka-t2-968" id="5X1-1f-rXW"/>
             </connections>

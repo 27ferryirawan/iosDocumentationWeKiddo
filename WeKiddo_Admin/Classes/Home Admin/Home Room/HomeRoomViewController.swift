@@ -11,12 +11,6 @@ import SVProgressHUD
 
 class HomeRoomViewController: UIViewController {
     
-    @IBOutlet weak var grayAreaBtn: UIButton!{
-        didSet{
-            grayAreaBtn.isHidden = true
-            grayAreaBtn.backgroundColor = UIColor(displayP3Red: 102/255, green: 102/255, blue: 102/255, alpha: 0.8)
-        }
-    }
     enum HomeRoomSection {
         case header
         case upcomingSession(UpComingType)
@@ -48,11 +42,6 @@ class HomeRoomViewController: UIViewController {
         configNavigation()
         configTable()
         configureSections()
-        grayAreaBtn.addTarget(self, action: #selector(displayGrayArea), for: .touchUpInside)
-    }
-    
-    @objc func displayGrayArea(){
-        grayAreaBtn.isHidden = true
     }
     
     func configNavigation() {
@@ -200,15 +189,21 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
     func toSeeMoreSession() {
         
     }
+    func refreshData() {
+        self.tableView.reloadData()
+    }
     func toDetailAssignment() {
         let assignmentDetailVC = AssignmentDetailViewController()
         self.navigationController?.pushViewController(assignmentDetailVC, animated: true)
     }
     @objc func toDetail(sender: UIButton) {
         if sender.tag == 0 {
-            let assignmentVC = AssignmentViewController()
-            //        assignmentVC.assignmentListCount = ACData.ASSIGNMENTLIST.assignmentList.count
-            self.navigationController?.pushViewController(assignmentVC, animated: true)
+            ACRequest.POST_TASKLIST_MORE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultData) in
+                SVProgressHUD.dismiss()
+            }) { (message) in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: message)
+            }
         } else if sender.tag == 1 {
             let permissionVC = PermissionViewController()
             self.navigationController?.pushViewController(permissionVC, animated: true)
@@ -222,33 +217,6 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
                 SVProgressHUD.dismiss()
                 ACAlert.show(message: message)
             }
-        } else if sender.tag == 3 {
-            ACData.SPECIALATTENTIONBYSUBJECTDATA.removeAll()
-            ACRequest.POST_TEACHER_SPECIAL_ATTENTION_BY_SUBJECT(userId: ACData.LOGINDATA.userID, schoolID: ACData.LOGINDATA.school_id, role: ACData.LOGINDATA.role, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
-                SVProgressHUD.dismiss()
-                ACData.SPECIALATTENTIONBYSUBJECTDATA = jsonDatas
-                let specialAttentionVC = SpecialAttentionListViewController()
-                specialAttentionVC.isClass = false
-                self.navigationController?.pushViewController(specialAttentionVC, animated: true)
-            }) { (message) in
-                SVProgressHUD.dismiss()
-                ACAlert.show(message: message)
-            }
-        } else if sender.tag == 4 {
-            ACData.SPECIALATTENTIONBYCLASSDATA.removeAll()
-            ACRequest.POST_TEACHER_SPECIAL_ATTENTION_BY_CLASS(userId: ACData.LOGINDATA.userID, schoolID: ACData.LOGINDATA.school_id, role: ACData.LOGINDATA.role, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
-                SVProgressHUD.dismiss()
-                ACData.SPECIALATTENTIONBYCLASSDATA = jsonDatas
-                let specialAttentionVC = SpecialAttentionListViewController()
-                specialAttentionVC.isClass = true
-                self.navigationController?.pushViewController(specialAttentionVC, animated: true)
-            }) { (message) in
-                SVProgressHUD.dismiss()
-                ACAlert.show(message: message)
-            }
-        } else if sender.tag == 5 {
-            let detentionVC = DetentionViewController()
-            self.navigationController?.pushViewController(detentionVC, animated: true)
         }
     }
 }

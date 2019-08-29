@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import SDWebImage
 
 protocol HomeRoomDueDateAssignmentCellDelegate: class {
     func toDetailAssignment()
@@ -15,13 +16,13 @@ protocol HomeRoomDueDateAssignmentCellDelegate: class {
 
 class HomeRoomDueDateAssignmentCell: UITableViewCell {
 
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var contentButton: UIButton!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var topicLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
-    @IBOutlet weak var dateMonthLabel: UILabel!
-    @IBOutlet weak var dateDayLabel: UILabel!
-    @IBOutlet weak var dateNumberLabel: UILabel!
     @IBOutlet weak var bgView: UIView! {
         didSet {
             bgView.setBorderShadow(color:  UIColor.gray, shadowRadius: 3.0, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
@@ -51,13 +52,22 @@ class HomeRoomDueDateAssignmentCell: UITableViewCell {
 //        }
     }
     func cellConfig() {
-//        guard let obj = assignObj else { return }
-//        subjectLabel.text = obj.subject_name
-//        topicLabel.text = obj.subject_session
-//        classLabel.text = obj.
-//        dateNumberLabel.text = "\(getDay(time: obj.assignment_due_date))"
-//        dateMonthLabel.text = "\(getMonth(time: obj.assignment_due_date))"
-//        dateDayLabel.text = "\(getWeekDay(time: obj.assignment_due_date))"
+        guard let obj = assignObj else { return }
+        subjectLabel.text = obj.child_name
+        topicLabel.text = obj.child_nis
+        classLabel.text = obj.school_class
+        if obj.status_absence == 0 {
+            statusView.backgroundColor = .red
+            statusLabel.text = "Check In"
+        } else {
+            statusView.backgroundColor = .white
+            statusLabel.text = "Check Out"
+        }
+        avatarImage.sd_setImage(
+            with: URL(string: (obj.child_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
     }
 }
 

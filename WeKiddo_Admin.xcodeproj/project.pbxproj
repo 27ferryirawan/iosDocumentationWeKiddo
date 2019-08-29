@@ -577,6 +577,11 @@
 		E6A50BEE226C9E8000359D78 /* AnnouncementImageGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A50BEC226C9E8000359D78 /* AnnouncementImageGalleryCell.xib */; };
 		E6A50BF1226C9EC100359D78 /* AnnouncementVideoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A50BEF226C9EC100359D78 /* AnnouncementVideoCollectionCell.swift */; };
 		E6A50BF2226C9EC100359D78 /* AnnouncementVideoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A50BF0226C9EC100359D78 /* AnnouncementVideoCollectionCell.xib */; };
+		E6AAC3A32316DCFB0084ED93 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3A22316DCFB0084ED93 /* TaskListModel.swift */; };
+		E6AAC3A72316EEA40084ED93 /* SchoolMonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3A52316EEA40084ED93 /* SchoolMonitoringViewController.swift */; };
+		E6AAC3A82316EEA40084ED93 /* SchoolMonitoringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3A62316EEA40084ED93 /* SchoolMonitoringViewController.xib */; };
+		E6AAC3AC2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3AA2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift */; };
+		E6AAC3AD2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3AB2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib */; };
 		E6ADFE0C2280827B004FEF49 /* SessionMenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE0A2280827B004FEF49 /* SessionMenuCollectionCell.swift */; };
 		E6ADFE0D2280827B004FEF49 /* SessionMenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */; };
 		E6ADFE1422811F1C004FEF49 /* DismissCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE1222811F1C004FEF49 /* DismissCell.swift */; };
@@ -1315,6 +1320,11 @@
 		E6A50BEC226C9E8000359D78 /* AnnouncementImageGalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementImageGalleryCell.xib; sourceTree = "<group>"; };
 		E6A50BEF226C9EC100359D78 /* AnnouncementVideoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementVideoCollectionCell.swift; sourceTree = "<group>"; };
 		E6A50BF0226C9EC100359D78 /* AnnouncementVideoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementVideoCollectionCell.xib; sourceTree = "<group>"; };
+		E6AAC3A22316DCFB0084ED93 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
+		E6AAC3A52316EEA40084ED93 /* SchoolMonitoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMonitoringViewController.swift; sourceTree = "<group>"; };
+		E6AAC3A62316EEA40084ED93 /* SchoolMonitoringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolMonitoringViewController.xib; sourceTree = "<group>"; };
+		E6AAC3AA2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMonitoringHeaderCell.swift; sourceTree = "<group>"; };
+		E6AAC3AB2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolMonitoringHeaderCell.xib; sourceTree = "<group>"; };
 		E6ADFE0A2280827B004FEF49 /* SessionMenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMenuCollectionCell.swift; sourceTree = "<group>"; };
 		E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionMenuCollectionCell.xib; sourceTree = "<group>"; };
 		E6ADFE0E22811ED5004FEF49 /* CustomBorderShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderShadow.swift; sourceTree = "<group>"; };
@@ -3069,6 +3079,25 @@
 			path = "Announcement Detail Collection Cell";
 			sourceTree = "<group>";
 		};
+		E6AAC3A42316EE870084ED93 /* School Monitoring */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3A92316F05A0084ED93 /* School Monitoring Cell */,
+				E6AAC3A52316EEA40084ED93 /* SchoolMonitoringViewController.swift */,
+				E6AAC3A62316EEA40084ED93 /* SchoolMonitoringViewController.xib */,
+			);
+			path = "School Monitoring";
+			sourceTree = "<group>";
+		};
+		E6AAC3A92316F05A0084ED93 /* School Monitoring Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3AA2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift */,
+				E6AAC3AB2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib */,
+			);
+			path = "School Monitoring Cell";
+			sourceTree = "<group>";
+		};
 		E6BA19AE2266D0D000FD246B /* Notification Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3204,6 +3233,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E6AAC3A42316EE870084ED93 /* School Monitoring */,
 				E6F7CA5622F801D8008DDFF4 /* Special Attention Detail By Class */,
 				E643A6CA22F10FA800E88E1F /* Feedback */,
 				E62F863C22F0413000CE355E /* Special Attention Detail */,
@@ -3468,6 +3498,7 @@
 				E6F7CA5222F74BC1008DDFF4 /* SpecialAttentionByClassListModel.swift */,
 				E6F7CA5422F754D7008DDFF4 /* SpecialAttentionBySubjectDetailModel.swift */,
 				E6F7CA6422F80A53008DDFF4 /* SpecialAttentionByClassDetailModel.swift */,
+				E6AAC3A22316DCFB0084ED93 /* TaskListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4091,6 +4122,8 @@
 				E699F5F222E01AEC00775758 /* AddLatePaymentStudentCell.xib in Resources */,
 				E60FF4C8226AC8DE0086D8B8 /* ScheduleCell.xib in Resources */,
 				BE2FF58022ABDA4600003E1A /* ParentProfileViewController.xib in Resources */,
+				E6AAC3AD2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib in Resources */,
+				E6AAC3A82316EEA40084ED93 /* SchoolMonitoringViewController.xib in Resources */,
 				E6416F2522ECDB0400ACDCD6 /* EditPaymentViewController.xib in Resources */,
 				E6416F0A22EC6E5900ACDCD6 /* EventMonitoringTotalParticipantCell.xib in Resources */,
 				E600B44C22AE61F9007E7C58 /* StudentsNoteCell.xib in Resources */,
@@ -4282,6 +4315,7 @@
 				E61A97BD226E0BD60003E89F /* WeekdaysView.swift in Sources */,
 				E699F5CA22DE306F00775758 /* UpcomingSessionListCell.swift in Sources */,
 				E69AC7B822829420000284A1 /* MenuCategoryOthersModel.swift in Sources */,
+				E6AAC3AC2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift in Sources */,
 				BE14C8DB22D8776D00ADC95D /* StudentCollectionViewCell.swift in Sources */,
 				E6D39C19225F974800831511 /* CalendarViewController.swift in Sources */,
 				E63D841122D5EA29005F07B4 /* AddAnnouncementDescCell.swift in Sources */,
@@ -4358,6 +4392,7 @@
 				BE2CF4BB22E33CBB0088CEEB /* TeacherOnDutyViewController.swift in Sources */,
 				E6F427E022968BA700DB4250 /* CareerDetailCell.swift in Sources */,
 				E63D83C922D469DF005F07B4 /* DetentionContentCell.swift in Sources */,
+				E6AAC3A32316DCFB0084ED93 /* TaskListModel.swift in Sources */,
 				E600B45E22AE7A10007E7C58 /* AttachmentContentCell.swift in Sources */,
 				E60FF4D0226AEE470086D8B8 /* NotificationDetailImageGalleryCell.swift in Sources */,
 				E699F5D422DE958000775758 /* SubjectTopicBySubjectModel.swift in Sources */,
@@ -4652,6 +4687,7 @@
 				E6BA19BF2266E3D000FD246B /* NotificationHeaderGalleryCell.swift in Sources */,
 				E6F42800229702E900DB4250 /* UniversityDetailRepresentativeCell.swift in Sources */,
 				E6416F3622EE0F6A00ACDCD6 /* SearchLocationViewController.swift in Sources */,
+				E6AAC3A72316EEA40084ED93 /* SchoolMonitoringViewController.swift in Sources */,
 				BE8FEF3022A27B0200BDF240 /* ApprovalDetailFooterCell.swift in Sources */,
 				E66C5EDE22E7FC4F00AD186C /* ExamScoreFooterCell.swift in Sources */,
 				E6961030227F384B0000FC92 /* ApprovalViewController.swift in Sources */,

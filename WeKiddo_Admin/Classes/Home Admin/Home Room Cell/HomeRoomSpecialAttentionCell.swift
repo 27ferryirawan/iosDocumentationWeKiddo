@@ -16,7 +16,6 @@ protocol HomeRoomSpecialAttentionCellDelegate: class {
 class HomeRoomSpecialAttentionCell: UITableViewCell {
     
     @IBOutlet weak var contentButton: UIButton!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nisLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     weak var delegate: HomeRoomSpecialAttentionCellDelegate?
@@ -43,7 +42,7 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func toDetail() {
-//        guard let obj = detailClassObj else { return }
+        guard let obj = detailClassObj else { return }
 //        ACRequest.POST_SPECIAL_ATTENTION_DETAIL_BY_CLASS(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, classID: obj.school_class_id, childID: obj.child_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
 //            SVProgressHUD.dismiss()
 //            ACData.SPECIALATTENTIONBYCLASSDETAILDATA = jsonDatas
@@ -54,9 +53,34 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
 //        }
     }
     func cellConfigClass() {
-//        guard let obj = detailClassObj else { return }
-//        nameLabel.text = obj.child_name
-//        nisLabel.text = obj.child_nis
-//        scoreLabel.text = obj.score
+        guard let obj = detailClassObj else { return }
+        nameLabel.text = obj.title
+        nisLabel.text = getMonth(time: obj.task_date)
+        if obj.status == 0 {
+            subjectScoreView.backgroundColor = .red
+        } else {
+            subjectScoreView.backgroundColor = .white
+        }
     }
 }
+
+extension HomeRoomSpecialAttentionCell {
+    func getMonth(time: String) -> String {
+        // Convert from string to date first
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: time) else {
+            return ""
+        }
+        // then convert date to string again
+        let dateFormatterResult = DateFormatter()
+        dateFormatterResult.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatterResult.locale = NSLocale.current
+        dateFormatterResult.dateFormat = "dd MMM yyyy"
+        let stringDate = dateFormatterResult.string(from: date)
+        return stringDate
+    }
+}
+

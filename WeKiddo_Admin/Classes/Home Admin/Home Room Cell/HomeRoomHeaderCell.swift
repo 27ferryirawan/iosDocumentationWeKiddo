@@ -14,6 +14,7 @@ import ActionSheetPicker_3_0
 protocol HomeRoomHeaderCellDelegate: class {
     func toSessionDetail()
     func toSeeMoreSession()
+    func refreshData()
 }
 
 class HomeRoomHeaderCell: UITableViewCell {
@@ -71,17 +72,25 @@ class HomeRoomHeaderCell: UITableViewCell {
             rows: schools,
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
-                guard let schoolID = ACData.LOGINDATA.dashboardSchoolMenu[indexes].school_id, let schoolName = values else {
+                guard let schoolID = ACData.LOGINDATA.dashboardSchoolMenu[indexes].school_id, let yearId = ACData.LOGINDATA.dashboardSchoolMenu[indexes].year_id else {
                     return
                 }
-                self.getSchoolData(schoolID: schoolID)
+                self.getSchoolData(schoolID: schoolID, yearID: yearId)
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
         )
     }
-    func getSchoolData(schoolID: String) {
-        
+    func getSchoolData(schoolID: String, yearID: String) {
+        ACRequest.POST_DASHBOARD(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: schoolID, yearID: yearID, tokenAccess:ACData.LOGINDATA.accessToken, successCompletion: { (dashboardData) in
+            ACData.DASHBOARDDATA = dashboardData
+            SVProgressHUD.dismiss()
+            DispatchQueue.main.async {
+                self.delegate?.refreshData()
+            }
+        }, failCompletion: { (message) in
+            SVProgressHUD.dismiss()
+        })
     }
 }
 

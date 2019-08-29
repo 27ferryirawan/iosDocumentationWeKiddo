@@ -20,6 +20,7 @@ class ACUrl: NSObject {
     static let PARENT_LOGIN = PARENT_APP + "auth/login" // [POST] token_device, phone, password, user_agent
     static let PARENT_FORGOT_PASSWORD = PARENT_APP + "auth/forgetPassword" // [POST] phone, password
     static let PARENT_DASHBOARD = PARENT_APP + "home/dashboard" // [POST] user_id, role
+    static let PARENT_TASKLIST_MORE = PARENT_APP + "home/tasklist-more" // [POST] user_id, school_id, year_id
     static let TEACHER_GET_ATTENDANCE = PARENT_APP + "user/attendance" // [POST] user_id, role
     static let TEACHER_GET_DETAIL_ATTENDANCE = PARENT_APP + "user/attendanceDetail" // [POST] user_id, role, school_session_id
     static let TEACHER_GET_PERMISSION = PARENT_APP + "user/permissionRequest" // [POST] user_id, role

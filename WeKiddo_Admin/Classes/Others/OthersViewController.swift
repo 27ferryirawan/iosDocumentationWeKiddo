@@ -88,9 +88,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
         if indexPath.section == 0 {
             let menu = ACData.LOGINDATA.dashboardCategoryFeature[indexPath.row].menu_id
             switch menu {
-            case "34":
-                let announcementVC = AnnouncementViewController()
-                self.navigationController?.pushViewController(announcementVC, animated: true)
+            case "72":
+                let monitoringVC = SchoolMonitoringViewController()
+                self.navigationController?.pushViewController(monitoringVC, animated: true)
             case "42":
                 let latePaymentVC = LatePaymentViewController()
                 self.navigationController?.pushViewController(latePaymentVC, animated: true)

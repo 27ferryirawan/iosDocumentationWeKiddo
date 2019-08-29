@@ -100,6 +100,32 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_TASKLIST_MORE(
+        userId:String,
+        role:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([TaskListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_TASKLIST_MORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_EXAM_TYPE_LIST(
         userId:String,
         role:String,

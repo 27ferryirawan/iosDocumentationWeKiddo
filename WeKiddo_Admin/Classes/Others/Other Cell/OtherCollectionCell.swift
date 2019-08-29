@@ -13,32 +13,16 @@ class OtherCollectionCell: UICollectionViewCell {
     @IBOutlet weak var featuredLabel: UILabel!
     @IBOutlet weak var featuredImage: UIImageView!
     var imageIconOthers = [
-                        //                "26": schoolProfile,
-                        //                "27": user,
-                        //                "28": subject,
-                        //                "29": classRoom,
-                        //                "31": classSchedule,
-                        //                "33": joinClass,
-                        "34": "ic_announcment",
-                        "35": "eventApproval",
-                        "36": "ic_attendance",
-                        "37": "ic_permission",
-                        "38": "ic_detention",
-                        //                "39": notification,
-                        //                "40": news,
-                        "41": "ic_detention", // -> DEVELOPMEMNT PHASE 1
-                        "42": "ic_detention",
-                        "43": "ic_ass",
-                        //                "44": food,
-                        //                "45": fosterParent,
-                        //                "46": teacherAttendance,
-                        "47": "ic_subjectTop", //subjectTopic
-                        //                "48": assignmentChat,
-                        //                "49": calendar,
-                        "50": "ic_teacher_on_duty", // -> DEVELOPMEMNT PHASE 1
-                        "51": "adminDashboard",
-                        "52": "dashboardHomeRoom",
-                        "53": "dashboardTeacher",
+                        "69": "ic_announcment",
+                        "68": "ic_assignment",
+                        "70": "ic_examSch",
+                        "72": "ic_permission",
+                        "58": "ic_parent_profile",
+                        "59": "ic_parent_profile",
+                        "60": "ic_class_room",
+                        "61": "ic_ticket",
+                        "62": "ic_sop",
+                        "63": "ic_teacher_on_duty"
                     ]
     override func awakeFromNib() {
         super.awakeFromNib()
