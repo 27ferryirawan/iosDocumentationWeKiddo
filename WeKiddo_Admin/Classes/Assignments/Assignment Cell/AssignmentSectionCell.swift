@@ -12,7 +12,7 @@ import SVProgressHUD
 
 protocol AssignmentSectionCellDelegate: class {
     func reloadTable()
-    func filterTeacher(with teacherID: String)
+    func teacherSelected(with teacherID: String)
 }
 
 class AssignmentSectionCell: UITableViewCell {
@@ -37,6 +37,7 @@ class AssignmentSectionCell: UITableViewCell {
     }
     func cellConfig() {
         guard let obj = object else { return }
+        teacherName.removeAll()
         for item in obj.assignmentTeacherList {
             teacherName.append(item.teacher_name)
         }
@@ -51,7 +52,7 @@ class AssignmentSectionCell: UITableViewCell {
                 guard let value = values as? String else { return }
                 self.subjectButton.setTitle(value, for: .normal)
                 self.teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList[indexes].teacher_id
-                self.delegate?.filterTeacher(with: self.teacherID)
+                self.delegate?.teacherSelected(with: self.teacherID)
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow

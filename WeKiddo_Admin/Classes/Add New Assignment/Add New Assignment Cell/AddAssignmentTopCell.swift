@@ -31,14 +31,25 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet weak var teacherPickerButton: UIButton!
     var isHomeWork = Bool()
     var isFromEdit = Bool()
-    var subjectName = [String]()
     var chapterID = ""
     var teacherID = ""
-    var topicName = [String]()
+    var subjectID = ""
+    var chapterName = [String]()
     var teacherName = [String]()
-    var subjectObj: SubjectModel? {
+    var subjectName = [String]()
+    var subjectObj: AssignmentSubjectListModel? {
         didSet {
-            cellConfig()
+            cellConfigSubject()
+        }
+    }
+    var teacherObj: AssignmentTeacherListModel? {
+        didSet {
+            cellConfigTeacher()
+        }
+    }
+    var chapterObj: AssignmentChapterListModel? {
+        didSet {
+            cellConfigChapter()
         }
     }
     var detailSubjectEdit: AssignmentDetailEditModel? {
@@ -51,9 +62,6 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         homeworkButton.addTarget(self, action: #selector(homeworkSelected), for: .touchUpInside)
         projectButton.addTarget(self, action: #selector(projectSelected), for: .touchUpInside)
-        topicPickerButton.addTarget(self, action: #selector(showTopicPicker), for: .touchUpInside)
-        teacherPickerButton.addTarget(self, action: #selector(showTeacherPicker), for: .touchUpInside)
-        self.topicPickerButton.setTitle("Select Topic", for: .normal)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -61,9 +69,9 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
     func cellEditConfig() {
         subjectPickerButton.setTitle(ACData.ASSIGNMENTDETAILEDITDATA.subject_name, for: .normal)
         topicPickerButton.setTitle(ACData.ASSIGNMENTDETAILDATA.chapter_name, for: .normal)
-        topicName.removeAll()
+        chapterName.removeAll()
         for index in ACData.ASSIGNMENTDETAILEDITDATA.schoolChapter {
-            self.topicName.append(index.chapter_name)
+            self.chapterName.append(index.chapter_name)
         }
         if ACData.ASSIGNMENTDETAILEDITDATA.assignment_type == "1" {
             homeworkStatusImage.image = UIImage(named: "radio-on-button")
@@ -78,16 +86,37 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
         }
         notesText.text = ACData.ASSIGNMENTDETAILEDITDATA.note
     }
-    func cellConfig() {
-        //        if !isFromEdit {
-        for index in ACData.SUBJECTDATA {
-            subjectName.append(index.subject_name)
+    func cellConfigSubject() {
+        guard let list = subjectObj?.subjectList else {return}
+        subjectName.removeAll()
+        for item in list{
+            subjectName.append(item.subject_name)
         }
         subjectPickerButton.addTarget(self, action: #selector(showSubjectPicker), for: .touchUpInside)
         subjectPickerButton.isUserInteractionEnabled = true
-        //        } else {
-        //
-        //        }
+        self.subjectPickerButton.setTitle("Select Subject", for: .normal)
+    }
+    func cellConfigTeacher() {
+        guard let list = teacherObj?.assignmentTeacherList else {return}
+        teacherName.removeAll()
+        self.teacherID = list.first?.teacher_id ?? ""
+        self.teacherPickerButton.setTitle(list.first?.teacher_name ?? "", for: .normal)
+        self.fetchSubjectList()
+        for item in list{
+            teacherName.append(item.teacher_name)
+        }
+        teacherPickerButton.addTarget(self, action: #selector(showTeacherPicker), for: .touchUpInside)
+        teacherPickerButton.isUserInteractionEnabled = true
+    }
+    func cellConfigChapter() {
+        guard let list = chapterObj?.chapterList else {return}
+        chapterName.removeAll()
+        for item in list {
+            chapterName.append(item.chapter_name)
+        }
+        topicPickerButton.addTarget(self, action: #selector(showTopicPicker), for: .touchUpInside)
+        topicPickerButton.isUserInteractionEnabled = true
+        self.topicPickerButton.setTitle("Select Topic", for: .normal)
     }
     @objc func homeworkSelected() {
         print("homework")
@@ -110,9 +139,9 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
                 self.subjectPickerButton.setTitle(self.subjectName[indexes], for: .normal)
-                let subjectID = ACData.SUBJECTDATA[indexes].subject_id
-                self.fetchData(index: subjectID)
+                let subjectID = self.subjectObj?.subjectList[indexes].subject_id ?? ""
                 self.delegate?.subjectSelected(withValue: subjectID)
+                self.fetchChapterList()
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
@@ -121,7 +150,7 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
     @objc func showTopicPicker() {
         ActionSheetStringPicker.show(
             withTitle: "Select Topic",
-            rows: topicName,
+            rows: chapterName,
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
                 guard let selectedValue = values else { return }
@@ -129,13 +158,9 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
                 if self.isFromEdit {
                     self.chapterID = ACData.ASSIGNMENTDETAILEDITDATA.schoolChapter[indexes].chapter_id
                 } else {
-                    self.chapterID = ACData.CHAPTERDATA.chapter_list[indexes].chapter_id
+                    self.chapterID = self.chapterObj?.chapterList[indexes].chapter_id ?? ""
                 }
-                
                 self.delegate?.chapterSelected(withValue: self.chapterID)
-                self.delegate?.reloadAtIndex()
-                //                let subjectID = ACData.SUBJECTDATA[indexes].subject_id
-                //                self.fetchData(index: subjectID)
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
@@ -148,29 +173,38 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
                 guard let selectedValue = values else { return }
-                self.topicPickerButton.setTitle("\(selectedValue)", for: .normal)
+                self.teacherPickerButton.setTitle("\(selectedValue)", for: .normal)
                 if self.isFromEdit {
                     self.teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList[indexes].teacher_id
                 } else {
-                    self.teacherID = ACData.CHAPTERDATA.chapter_list[indexes].chapter_id
+                    self.teacherID = self.teacherObj?.assignmentTeacherList[indexes].teacher_id ?? ""
                 }
-                
+                self.fetchSubjectList()
                 self.delegate?.teacherSelected(withValue: self.teacherID)
-                self.delegate?.reloadAtIndex()
-                //                let subjectID = ACData.SUBJECTDATA[indexes].subject_id
-                //                self.fetchData(index: subjectID)
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
         )
     }
-    func fetchData(index: String) {
-        topicName.removeAll()
-        ACRequest.POST_CHAPTER_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, subjectID: index, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (chapterData) in
-            ACData.CHAPTERDATA = chapterData
-            for index in ACData.CHAPTERDATA.chapter_list {
-                self.topicName.append(index.chapter_name)
-            }
+    func fetchSubjectList(){
+        //TODO: Change Value for school ID and yearID
+        self.subjectID = ""
+        self.subjectPickerButton.setTitle("Select Subject", for: .normal)
+        ACRequest.POST_ASSIGNMENT_GET_SUBJECT(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "",school_user_id: self.teacherID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (subjectList) in
+            ACData.ASSIGNMENTSUBJECTLIST = subjectList
+            self.subjectObj = subjectList
+            SVProgressHUD.dismiss()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+        }
+    }
+    func fetchChapterList(){
+        //TODO: Change Value for school ID and yearID
+        self.chapterID = ""
+        self.topicPickerButton.setTitle("Select Topic", for: .normal)
+        ACRequest.POST_ASSIGNMENT_GET_CHAPTER_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "",school_user_id: self.teacherID, subject_id: self.subjectID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (chapterList) in
+            ACData.ASSIGNMENTCHAPTERLIST = chapterList
+            self.chapterObj = chapterList
             SVProgressHUD.dismiss()
         }) { (message) in
             SVProgressHUD.dismiss()

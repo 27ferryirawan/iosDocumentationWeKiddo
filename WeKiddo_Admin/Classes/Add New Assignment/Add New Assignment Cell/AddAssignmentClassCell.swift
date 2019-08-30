@@ -32,7 +32,7 @@ class AddAssignmentClassCell: UITableViewCell {
             cellEditConfig()
         }
     }
-    var obj: ChapterModel? {
+    var obj: AssignmentSubjectListModel? {
         didSet {
             cellConfig()
         }
@@ -48,9 +48,10 @@ class AddAssignmentClassCell: UITableViewCell {
     }
     func cellConfig() {
         isFromEdit = false
+        guard let list = obj?.classList else {return}
         className.removeAll()
-        for index in obj!.class_list {
-            className.append(index.school_class)
+        for item in list {
+            className.append(item.school_class)
         }
     }
     func cellEditConfig() {
@@ -88,7 +89,7 @@ class AddAssignmentClassCell: UITableViewCell {
                             self.classPickerButton.setTitle("\(value)", for: .normal)
                             self.delegate?.classSelected(atIndex: self.indexArray, value: classID)
                         } else {
-                            let classID = ACData.CHAPTERDATA.class_list[indexes].school_class_id
+                            let classID = ACData.ASSIGNMENTSUBJECTLIST.classList[indexes].school_class_id
                             self.classPickerButton.setTitle("\(value)", for: .normal)
                             self.delegate?.classSelected(atIndex: self.indexArray, value: classID)
                         }
