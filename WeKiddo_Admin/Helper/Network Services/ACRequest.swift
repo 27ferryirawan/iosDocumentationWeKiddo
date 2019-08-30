@@ -1987,19 +1987,19 @@ class ACRequest: NSObject {
     
     static func POST_ATTACHMENT_ASSIGNMENT_DETAIL(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
         tokenAccess:String,
         successCompletion:@escaping (AttachmentModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "assign_id":assignID
         ]
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ATTACHMENT_ASSIGNMENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_ATTACHMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){

@@ -50,7 +50,9 @@ extension AssignmentDetailMenuCell: UICollectionViewDelegate, UICollectionViewDa
         }
         if indexPath.row == 0 {
 //            ACData.ATTACHMENTDATA.removeAll()
-            ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: obj.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
+            // TODO: Change Value of Teacher ID
+            guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == assignmentObj?.teacher_name ?? ""})?.teacher_id else { return }
+            ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, assignID: obj.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
                 SVProgressHUD.dismiss()
                 ACData.ATTACHMENTDATA = datas
                 self.delegate?.toAttachment()

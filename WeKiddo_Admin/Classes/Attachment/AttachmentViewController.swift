@@ -395,13 +395,14 @@ extension AttachmentViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension AttachmentViewController: AttachmentContentCellDelegate {
     func refreshData() {
-        ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
-            SVProgressHUD.dismiss()
-            ACData.ATTACHMENTDATA = datas
-            self.tableView.reloadData()
-        }) { (message) in
-            SVProgressHUD.dismiss()
-        }
+    
+//        ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
+//            SVProgressHUD.dismiss()
+//            ACData.ATTACHMENTDATA = datas
+//            self.tableView.reloadData()
+//        }) { (message) in
+//            SVProgressHUD.dismiss()
+//        }
     }
     func previewImage(withURL: String) {
         fileURL = withURL
