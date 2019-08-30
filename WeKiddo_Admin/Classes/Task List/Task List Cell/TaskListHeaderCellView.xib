@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="e7g-DF-Z8a" customClass="TaskListHeaderCellView" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="33"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-is-ljN">
+                    <rect key="frame" x="10" y="4" width="150" height="25"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu, 10 Aug 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucg-UJ-gv6">
+                            <rect key="frame" x="20" y="0.0" width="110" height="25"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="8En-y6-bix"/>
+                        <constraint firstItem="Ucg-UJ-gv6" firstAttribute="top" secondItem="0OT-is-ljN" secondAttribute="top" id="aGH-Ro-vaG"/>
+                        <constraint firstAttribute="width" constant="150" id="azB-bp-2qN"/>
+                        <constraint firstAttribute="trailing" secondItem="Ucg-UJ-gv6" secondAttribute="trailing" constant="20" id="e54-8f-pxK"/>
+                        <constraint firstItem="Ucg-UJ-gv6" firstAttribute="leading" secondItem="0OT-is-ljN" secondAttribute="leading" constant="20" id="m0I-ut-Tz5"/>
+                        <constraint firstAttribute="bottom" secondItem="Ucg-UJ-gv6" secondAttribute="bottom" id="y2z-fx-lQt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="0OT-is-ljN" firstAttribute="leading" secondItem="UYK-7o-cn7" secondAttribute="leading" constant="10" id="Rxg-5C-tfy"/>
+                <constraint firstItem="0OT-is-ljN" firstAttribute="centerY" secondItem="e7g-DF-Z8a" secondAttribute="centerY" id="ujU-LR-Leu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="UYK-7o-cn7"/>
+            <connections>
+                <outlet property="dateLabel" destination="Ucg-UJ-gv6" id="PSO-IM-OHb"/>
+                <outlet property="dateView" destination="0OT-is-ljN" id="7RB-9g-RXB"/>
+            </connections>
+            <point key="canvasLocation" x="-28.985507246376812" y="-347.87946428571428"/>
+        </view>
+    </objects>
+</document>

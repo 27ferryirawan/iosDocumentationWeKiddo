@@ -20,6 +20,11 @@ class TaskListDetailCell: UITableViewCell {
             bgView.setBorderShadow(color: UIColor.lightGray, shadowRadius: 3.0, shadowOpactiy: 1.0, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
+    var detailTaskObj: TaskListDetailModel? {
+        didSet {
+            cellConfigDetail()
+        }
+    }
     var detailObj: DashboardModelTaskList? {
         didSet {
             cellConfig()
@@ -37,6 +42,12 @@ class TaskListDetailCell: UITableViewCell {
     }
     func cellConfig() {
         guard let obj = detailObj else { return }
+        titleText.text = obj.title
+        dateLabel.text = getMonth(time: obj.task_date)
+        descText.text = obj.desc
+    }
+    func cellConfigDetail() {
+        guard let obj = detailTaskObj else { return }
         titleText.text = obj.title
         dateLabel.text = getMonth(time: obj.task_date)
         descText.text = obj.desc

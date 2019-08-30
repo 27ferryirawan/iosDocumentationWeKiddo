@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AbsenceDetailViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
             <connections>
+                <outlet property="checkInConfirmationView" destination="TpA-x6-LRz" id="ZcF-Pl-2th"/>
+                <outlet property="closeConfirmationButton" destination="FN0-nS-CRq" id="VBt-yD-SEo"/>
+                <outlet property="submitConfirmationButton" destination="ivT-0B-H0h" id="kP8-Ep-6Vw"/>
                 <outlet property="tableView" destination="wzE-gp-Vmh" id="trb-Zm-qBN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,15 +32,86 @@
                         <outlet property="delegate" destination="-1" id="3Bi-63-JH4"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TpA-x6-LRz">
+                    <rect key="frame" x="20" y="104" width="374" height="200"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-Wa-UJ4">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaK-eJ-Usg">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-nS-CRq">
+                                    <rect key="frame" x="334" y="7" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="Osi-TE-jXs"/>
+                                        <constraint firstAttribute="height" constant="30" id="UX9-aI-dzb"/>
+                                    </constraints>
+                                    <state key="normal" image="icon_red_cross"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="FN0-nS-CRq" secondAttribute="trailing" constant="10" id="ALb-fK-urC"/>
+                                <constraint firstAttribute="bottom" secondItem="kaK-eJ-Usg" secondAttribute="bottom" id="Ls0-bE-ABr"/>
+                                <constraint firstItem="kaK-eJ-Usg" firstAttribute="leading" secondItem="8vu-Wa-UJ4" secondAttribute="leading" id="TOA-zV-y3b"/>
+                                <constraint firstAttribute="trailing" secondItem="kaK-eJ-Usg" secondAttribute="trailing" id="cID-Lg-xq8"/>
+                                <constraint firstAttribute="height" constant="44" id="fh9-6q-XcY"/>
+                                <constraint firstItem="FN0-nS-CRq" firstAttribute="centerY" secondItem="8vu-Wa-UJ4" secondAttribute="centerY" id="lwq-Ix-J2i"/>
+                                <constraint firstItem="kaK-eJ-Usg" firstAttribute="top" secondItem="8vu-Wa-UJ4" secondAttribute="top" id="nDk-mX-KCi"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivT-0B-H0h">
+                            <rect key="frame" x="20" y="128.5" width="334" height="44"/>
+                            <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="1PY-hb-n5i"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Yes">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure want to check in?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vn-pL-00I">
+                            <rect key="frame" x="20" y="74" width="334" height="14.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9vn-pL-00I" secondAttribute="trailing" constant="20" id="4ps-XD-BFx"/>
+                        <constraint firstAttribute="height" constant="200" id="ABB-tJ-SIV"/>
+                        <constraint firstItem="8vu-Wa-UJ4" firstAttribute="leading" secondItem="TpA-x6-LRz" secondAttribute="leading" id="YwW-ot-yZI"/>
+                        <constraint firstItem="ivT-0B-H0h" firstAttribute="trailing" secondItem="9vn-pL-00I" secondAttribute="trailing" id="abZ-fb-f9a"/>
+                        <constraint firstItem="ivT-0B-H0h" firstAttribute="leading" secondItem="9vn-pL-00I" secondAttribute="leading" id="ec6-uw-X6F"/>
+                        <constraint firstItem="9vn-pL-00I" firstAttribute="top" secondItem="kaK-eJ-Usg" secondAttribute="bottom" constant="30" id="hpQ-jr-EWt"/>
+                        <constraint firstItem="8vu-Wa-UJ4" firstAttribute="top" secondItem="TpA-x6-LRz" secondAttribute="top" id="jzN-1A-hvg"/>
+                        <constraint firstItem="ivT-0B-H0h" firstAttribute="top" secondItem="9vn-pL-00I" secondAttribute="bottom" constant="40" id="vWv-gS-Da8"/>
+                        <constraint firstItem="9vn-pL-00I" firstAttribute="leading" secondItem="TpA-x6-LRz" secondAttribute="leading" constant="20" id="xr4-qg-Bhf"/>
+                        <constraint firstAttribute="trailing" secondItem="8vu-Wa-UJ4" secondAttribute="trailing" id="z8f-wO-iWE"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="TpA-x6-LRz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="CDJ-kQ-L6Y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TpA-x6-LRz" secondAttribute="trailing" constant="20" id="Pgf-oK-1gu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wzE-gp-Vmh" secondAttribute="bottom" id="Rdv-sR-x9s"/>
                 <constraint firstItem="wzE-gp-Vmh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Y8A-HL-6zf"/>
                 <constraint firstItem="wzE-gp-Vmh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cG7-LQ-hlx"/>
+                <constraint firstItem="TpA-x6-LRz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wHl-nM-a5A"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wzE-gp-Vmh" secondAttribute="trailing" id="zHI-Nn-TlV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_red_cross" width="64" height="64"/>
+    </resources>
 </document>

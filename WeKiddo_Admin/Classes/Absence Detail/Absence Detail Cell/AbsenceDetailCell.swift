@@ -10,6 +10,10 @@ import UIKit
 import ActionSheetPicker_3_0
 import SDWebImage
 
+protocol AbsenceDetailCellDelegate: class {
+    func confirmProcees()
+}
+
 class AbsenceDetailCell: UITableViewCell {
 
     @IBOutlet weak var minuteButtonPicker: UIButton!
@@ -55,6 +59,7 @@ class AbsenceDetailCell: UITableViewCell {
             cellConfig()
         }
     }
+    weak var delegate: AbsenceDetailCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         checkInButton.addTarget(self, action: #selector(checkInSubmit), for: .touchUpInside)
@@ -81,7 +86,7 @@ class AbsenceDetailCell: UITableViewCell {
         }
     }
     @objc func checkInSubmit() {
-        
+        self.delegate?.confirmProcees()
     }
     @objc func showReason() {
         ActionSheetStringPicker.show(

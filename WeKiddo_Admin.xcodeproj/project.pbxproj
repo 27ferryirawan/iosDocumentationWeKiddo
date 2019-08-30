@@ -591,6 +591,12 @@
 		E6AAC3BE2318E9F60084ED93 /* AbsenceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3BC2318E9F60084ED93 /* AbsenceDetailViewController.xib */; };
 		E6AAC3C22318EA5D0084ED93 /* AbsenceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3C02318EA5D0084ED93 /* AbsenceDetailCell.swift */; };
 		E6AAC3C32318EA5D0084ED93 /* AbsenceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3C12318EA5D0084ED93 /* AbsenceDetailCell.xib */; };
+		E6AAC3C72318FF1D0084ED93 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3C52318FF1D0084ED93 /* TaskListViewController.swift */; };
+		E6AAC3C82318FF1D0084ED93 /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3C62318FF1D0084ED93 /* TaskListViewController.xib */; };
+		E6AAC3CC2318FF8C0084ED93 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3CA2318FF8C0084ED93 /* TaskListCell.swift */; };
+		E6AAC3CD2318FF8C0084ED93 /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3CB2318FF8C0084ED93 /* TaskListCell.xib */; };
+		E6AAC3CF2318FFF10084ED93 /* TaskListHeaderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3CE2318FFF10084ED93 /* TaskListHeaderCellView.swift */; };
+		E6AAC3D1231900110084ED93 /* TaskListHeaderCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3D0231900110084ED93 /* TaskListHeaderCellView.xib */; };
 		E6ADFE0C2280827B004FEF49 /* SessionMenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE0A2280827B004FEF49 /* SessionMenuCollectionCell.swift */; };
 		E6ADFE0D2280827B004FEF49 /* SessionMenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */; };
 		E6ADFE1422811F1C004FEF49 /* DismissCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE1222811F1C004FEF49 /* DismissCell.swift */; };
@@ -1343,6 +1349,12 @@
 		E6AAC3BC2318E9F60084ED93 /* AbsenceDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbsenceDetailViewController.xib; sourceTree = "<group>"; };
 		E6AAC3C02318EA5D0084ED93 /* AbsenceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceDetailCell.swift; sourceTree = "<group>"; };
 		E6AAC3C12318EA5D0084ED93 /* AbsenceDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbsenceDetailCell.xib; sourceTree = "<group>"; };
+		E6AAC3C52318FF1D0084ED93 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		E6AAC3C62318FF1D0084ED93 /* TaskListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListViewController.xib; sourceTree = "<group>"; };
+		E6AAC3CA2318FF8C0084ED93 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		E6AAC3CB2318FF8C0084ED93 /* TaskListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
+		E6AAC3CE2318FFF10084ED93 /* TaskListHeaderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListHeaderCellView.swift; sourceTree = "<group>"; };
+		E6AAC3D0231900110084ED93 /* TaskListHeaderCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListHeaderCellView.xib; sourceTree = "<group>"; };
 		E6ADFE0A2280827B004FEF49 /* SessionMenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMenuCollectionCell.swift; sourceTree = "<group>"; };
 		E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionMenuCollectionCell.xib; sourceTree = "<group>"; };
 		E6ADFE0E22811ED5004FEF49 /* CustomBorderShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderShadow.swift; sourceTree = "<group>"; };
@@ -3154,6 +3166,27 @@
 			path = "Absence Detail Cell";
 			sourceTree = "<group>";
 		};
+		E6AAC3C42318FEFF0084ED93 /* Task List */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3C92318FF610084ED93 /* Task List Cell */,
+				E6AAC3C52318FF1D0084ED93 /* TaskListViewController.swift */,
+				E6AAC3C62318FF1D0084ED93 /* TaskListViewController.xib */,
+			);
+			path = "Task List";
+			sourceTree = "<group>";
+		};
+		E6AAC3C92318FF610084ED93 /* Task List Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3CA2318FF8C0084ED93 /* TaskListCell.swift */,
+				E6AAC3CB2318FF8C0084ED93 /* TaskListCell.xib */,
+				E6AAC3CE2318FFF10084ED93 /* TaskListHeaderCellView.swift */,
+				E6AAC3D0231900110084ED93 /* TaskListHeaderCellView.xib */,
+			);
+			path = "Task List Cell";
+			sourceTree = "<group>";
+		};
 		E6BA19AE2266D0D000FD246B /* Notification Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3289,6 +3322,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E6AAC3C42318FEFF0084ED93 /* Task List */,
 				E6AAC3BA2318E9E20084ED93 /* Absence Detail */,
 				E6AAC3AE2318DBF10084ED93 /* Task List Detail */,
 				E6AAC3A42316EE870084ED93 /* School Monitoring */,
@@ -4082,6 +4116,7 @@
 				E639700422B6839E00C928E5 /* AddLatePaymentViewController.xib in Resources */,
 				E699F5BD22DD729900775758 /* EditProfileSubjectCell.xib in Resources */,
 				E6416F3222ECDF3E00ACDCD6 /* EditPaymentFooterCell.xib in Resources */,
+				E6AAC3C82318FF1D0084ED93 /* TaskListViewController.xib in Resources */,
 				E62F863722F03C2300CE355E /* CurrentClassListHeaderCell.xib in Resources */,
 				E69AC818228968CE000284A1 /* NearbyContentCollectionCell.xib in Resources */,
 				BE2FF57222AABFC300003E1A /* PrivacyPolicyViewController.xib in Resources */,
@@ -4124,6 +4159,7 @@
 				E65BF69022CF9E5800C57FEF /* AddAssignmentFooterCell.xib in Resources */,
 				E624D12B227C94F3001220E9 /* NewsDetailViewController.xib in Resources */,
 				E600B44722AE6162007E7C58 /* StudentsNoteViewController.xib in Resources */,
+				E6AAC3D1231900110084ED93 /* TaskListHeaderCellView.xib in Resources */,
 				E61BEE99226F583E00A533B3 /* ScoreSummaryCell.xib in Resources */,
 				E64C668D22C9F1CF00783D51 /* PermissionRequestDetailViewController.xib in Resources */,
 				E682D68C22D7809B00214F4E /* VideoMediaCollectionCell.xib in Resources */,
@@ -4189,6 +4225,7 @@
 				E6AAC3A82316EEA40084ED93 /* SchoolMonitoringViewController.xib in Resources */,
 				E6416F2522ECDB0400ACDCD6 /* EditPaymentViewController.xib in Resources */,
 				E6416F0A22EC6E5900ACDCD6 /* EventMonitoringTotalParticipantCell.xib in Resources */,
+				E6AAC3CD2318FF8C0084ED93 /* TaskListCell.xib in Resources */,
 				E600B44C22AE61F9007E7C58 /* StudentsNoteCell.xib in Resources */,
 				E61A97C8226E0BE10003E89F /* previous@2x.png in Resources */,
 				E6A50BEE226C9E8000359D78 /* AnnouncementImageGalleryCell.xib in Resources */,
@@ -4640,6 +4677,7 @@
 				BE068AA422AD0DDB00BC2799 /* AddCalendarCell.swift in Sources */,
 				E682D6D522DA4AB300214F4E /* SubjectTeacherDetailFooterCell.swift in Sources */,
 				E600B46122AE7D63007E7C58 /* AttachmentModel.swift in Sources */,
+				E6AAC3C72318FF1D0084ED93 /* TaskListViewController.swift in Sources */,
 				E6961027227F2DAE0000FC92 /* PermissionContentCell.swift in Sources */,
 				BE2FF57122AABFC300003E1A /* PrivacyPolicyViewController.swift in Sources */,
 				BE2FF57F22ABDA4600003E1A /* ParentProfileViewController.swift in Sources */,
@@ -4656,6 +4694,7 @@
 				E6416F2D22ECDD0A00ACDCD6 /* EditPaymentStudentCell.swift in Sources */,
 				E6A50BBA226B6D8E00359D78 /* AssignmentSubjectCell.swift in Sources */,
 				E60FF4D4226AEE570086D8B8 /* NotificationDetailVideoCell.swift in Sources */,
+				E6AAC3CC2318FF8C0084ED93 /* TaskListCell.swift in Sources */,
 				E6F427F72296E71500DB4250 /* UniversityDetailViewController.swift in Sources */,
 				E6AAC3B62318DC9F0084ED93 /* TaskListDetailCell.swift in Sources */,
 				E6F427C42294325200DB4250 /* PermissionDataModel.swift in Sources */,
@@ -4750,6 +4789,7 @@
 				BEE7E1F9228598CE005D5CC7 /* AnnouncementAllCell.swift in Sources */,
 				E600B47722AFADC5007E7C58 /* SubjectDetailSectionCell.swift in Sources */,
 				E6416F1B22ECD33300ACDCD6 /* EditEventDescCell.swift in Sources */,
+				E6AAC3CF2318FFF10084ED93 /* TaskListHeaderCellView.swift in Sources */,
 				E62F864C22F0469700CE355E /* SpecialAttentionDetailContentCell.swift in Sources */,
 				E626B6BA22C4D2E200FF660A /* OthersCollectionReusableView.swift in Sources */,
 				E6BA19BF2266E3D000FD246B /* NotificationHeaderGalleryCell.swift in Sources */,

@@ -117,9 +117,22 @@ class ACRequest: NSObject {
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
         ACAPI.POST(url: "\(ACUrl.PARENT_TASKLIST_MORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.TASKLISTDATA
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
+                if let data = json["data"]["tasklist_more"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = TaskListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no late payment")
+                    }
+                }
+                successCompletion(tasklists)
             } else {
                 failCompletion(json["status"].stringValue)
             }

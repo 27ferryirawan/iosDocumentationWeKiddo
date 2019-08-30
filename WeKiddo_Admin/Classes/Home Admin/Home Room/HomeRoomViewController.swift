@@ -175,6 +175,7 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
     func toDetailSpecialAttention(withIndex: Int) {
         let taskListDetailVC = TaskListDetailViewController()
         taskListDetailVC.indexObject = withIndex
+        taskListDetailVC.fromDashboard = true
         self.navigationController?.pushViewController(taskListDetailVC, animated: true)
     }
     func toSessionDetail() {
@@ -192,8 +193,13 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
     }
     @objc func toDetail(sender: UIButton) {
         if sender.tag == 0 {
-            ACRequest.POST_TASKLIST_MORE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultData) in
+            ACRequest.POST_TASKLIST_MORE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultData) in
+                ACData.TASKLISTDATA = resultData
                 SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    let tasklistVC = TaskListViewController()
+                    self.navigationController?.pushViewController(tasklistVC, animated: true)
+                }
             }) { (message) in
                 SVProgressHUD.dismiss()
                 ACAlert.show(message: message)

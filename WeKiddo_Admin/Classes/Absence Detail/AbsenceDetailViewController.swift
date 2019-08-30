@@ -10,11 +10,23 @@ import UIKit
 
 class AbsenceDetailViewController: UIViewController {
 
+    @IBOutlet weak var submitConfirmationButton: UIButton!
+    @IBOutlet weak var closeConfirmationButton: UIButton!
+    @IBOutlet weak var checkInConfirmationView: UIView! {
+        didSet {
+            checkInConfirmationView.layer.cornerRadius = 5.0
+            checkInConfirmationView.layer.borderWidth = 1.0
+            checkInConfirmationView.layer.borderColor = UIColor.lightGray.cgColor
+            checkInConfirmationView.layer.masksToBounds = true
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
+    var isConfirmationViewDisplayed = false
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
         configTable()
+        updateView()
     }
     func configNavigation() {
         detectAdaptiveClass()
@@ -22,6 +34,22 @@ class AbsenceDetailViewController: UIViewController {
     }
     func configTable() {
         tableView.register(UINib(nibName: "AbsenceDetailCell", bundle: nil), forCellReuseIdentifier: "absenceDetailCellID")
+        closeConfirmationButton.addTarget(self, action: #selector(closeConfirmView), for: .touchUpInside)
+        submitConfirmationButton.addTarget(self, action: #selector(submitConfirmationAction), for: .touchUpInside)
+    }
+    func updateView() {
+        if isConfirmationViewDisplayed {
+            checkInConfirmationView.isHidden = false
+        } else {
+            checkInConfirmationView.isHidden = true
+        }
+    }
+    @objc func closeConfirmView() {
+        isConfirmationViewDisplayed = false
+        updateView()
+    }
+    @objc func submitConfirmationAction() {
+        
     }
 }
 
@@ -38,6 +66,14 @@ extension AbsenceDetailViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "absenceDetailCellID", for: indexPath) as? AbsenceDetailCell)!
         cell.detailAbsence = ACData.ABSENCEDETAILMODEL
+        cell.delegate = self
         return cell
+    }
+}
+
+extension AbsenceDetailViewController: AbsenceDetailCellDelegate {
+    func confirmProcees() {
+        isConfirmationViewDisplayed = true
+        updateView()
     }
 }

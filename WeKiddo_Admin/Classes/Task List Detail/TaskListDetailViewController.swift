@@ -12,6 +12,8 @@ class TaskListDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var indexObject: Int!
+    var fromDashboard = Bool()
+    var object: TaskListDetailModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
@@ -38,7 +40,11 @@ extension TaskListDetailViewController: UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "taskListDetailCellID", for: indexPath) as? TaskListDetailCell)!
-        cell.detailObj = ACData.DASHBOARDDATA.dashboardTaskList[indexObject]
+        if fromDashboard {
+            cell.detailObj = ACData.DASHBOARDDATA.dashboardTaskList[indexObject]
+        } else {
+            cell.detailTaskObj = object
+        }
         return cell
     }
 }
