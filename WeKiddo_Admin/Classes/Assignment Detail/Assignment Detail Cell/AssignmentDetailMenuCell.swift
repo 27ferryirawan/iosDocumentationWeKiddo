@@ -65,7 +65,14 @@ extension AssignmentDetailMenuCell: UICollectionViewDelegate, UICollectionViewDa
 //                SVProgressHUD.dismiss()
 //            }
         } else {
-            ACRequest.POST_SCORE_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: obj.assignment_id, classID: obj.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (scoreDatas) in
+            ACRequest.POST_SCORE_LIST(
+                //TODO : Change value of school_user_id, school_id, year_id
+                userId: ACData.LOGINDATA.userID,
+                school_user_id: ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == obj.teacher_name})?.teacher_id ?? "",
+                school_id: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+                year_id: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+                assignID: obj.assignment_id,
+                classID: obj.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (scoreDatas) in
                 ACData.SCORELISTDATA = scoreDatas
                 SVProgressHUD.dismiss()
                 self.delegate?.toScore()

@@ -1972,7 +1972,7 @@ class ACRequest: NSObject {
         print(tokenAccess)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_SUBJECT_CLASS)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_CHAPTER)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
@@ -2014,7 +2014,7 @@ class ACRequest: NSObject {
     
     static func POST_ASSIGNMENT_DETAIL(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
         classID:String,
         tokenAccess:String,
@@ -2022,13 +2022,13 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "assign_id":assignID,
             "class_id":classID
         ]
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_ASSIGNMENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             if(json["status"] == "success"){
                 let detail = AssignmentDetailModel()
@@ -2105,7 +2105,9 @@ class ACRequest: NSObject {
     
     static func POST_SCORE_LIST(
         userId:String,
-        role:String,
+        school_user_id:String,
+        school_id:String,
+        year_id:String,
         assignID:String,
         classID:String,
         tokenAccess:String,
@@ -2113,14 +2115,16 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
+            "school_id":school_id,
+            "year_id":year_id,
             "assign_id":assignID,
             "class_id":classID
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_SCORES)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_SCORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){

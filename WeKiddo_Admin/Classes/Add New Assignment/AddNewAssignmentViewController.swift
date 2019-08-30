@@ -43,7 +43,7 @@ class AddNewAssignmentViewController: UIViewController {
     }
     func fetchTeacherList(){
         //TODO: Change Value for school ID and yearID
-        ACRequest.POST_ASSIGNMENT_GET_TEACHER(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (teacherList) in
+        ACRequest.POST_ASSIGNMENT_GET_TEACHER(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (teacherList) in
             ACData.ASSIGNMENTTEACHERLIST = teacherList
             self.teacherListCount = teacherList.assignmentTeacherList.count
             self.teacherID = teacherList.assignmentTeacherList.first?.teacher_id ?? ""
@@ -189,11 +189,14 @@ extension AddNewAssignmentViewController: AddAssignmentFooterCellDelegate, AddAs
         let jsonData = newaddOn.data(using: .utf8)!
         let jsonO = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         let parameters: Parameters = [
+            "user_id":ACData.LOGINDATA.userID,
+            "school_user_id":teacherID,
+            "school_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "subject_id":isFromEdit ? ACData.ASSIGNMENTDETAILEDITDATA.subject_id : subjectID,
             "chapter_id":isFromEdit ? ACData.ASSIGNMENTDETAILEDITDATA.chapter_id : chapterID,
             "assignment_type":isFromEdit ? ACData.ASSIGNMENTDETAILEDITDATA.assignment_type : assignmentType,
             "assignment_id":isFromEdit ? ACData.ASSIGNMENTDETAILEDITDATA.assignment_id : assignmentID,
-            "user_id":ACData.LOGINDATA.userID,
             "note":note,
             "school_class":jsonO
         ]

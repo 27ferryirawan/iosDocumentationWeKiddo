@@ -42,7 +42,7 @@ class AssignmentSubjectCell: UITableViewCell {
     }
     @objc func goToDetail() {
         guard let obj = assignmentObjc else { return }
-        ACRequest.POST_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: obj.assignment_id, classID: obj.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDetailData) in
+        ACRequest.POST_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, school_user_id: obj.teacher_id, assignID: obj.assignment_id, classID: obj.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDetailData) in
             ACData.ASSIGNMENTDETAILDATA = assignmentDetailData
             SVProgressHUD.dismiss()
             self.delegate?.goToDetail()

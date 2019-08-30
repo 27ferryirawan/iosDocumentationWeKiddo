@@ -41,7 +41,7 @@ class AssignmentViewController: UIViewController {
     }
     func fetchTeacher() {
         //TODO: Change value for school ID and yearID
-        ACRequest.POST_ASSIGNMENT_TEACHER_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (teacherList) in
+        ACRequest.POST_ASSIGNMENT_TEACHER_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (teacherList) in
             ACData.ASSIGNMENTTEACHERLISTALL = teacherList
             self.teacherListCount = teacherList.assignmentTeacherList.count
             self.teacherID = teacherList.assignmentTeacherList.first?.teacher_id ?? ""
@@ -52,7 +52,7 @@ class AssignmentViewController: UIViewController {
     }
     func fetchAssignment() {
         //TODO: Change value for school ID and yearID
-        ACRequest.POST_ASSIGNMENT_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "", school_user_id: self.teacherID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDatas) in
+        ACRequest.POST_ASSIGNMENT_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "", school_user_id: self.teacherID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDatas) in
             ACData.ASSIGNMENTLIST = assignmentDatas
             self.assignmentListCount = ACData.ASSIGNMENTLIST.assignmentList.count
             SVProgressHUD.dismiss()
