@@ -64,6 +64,7 @@ class AssignmentViewController: UIViewController {
     func configTable() {
         tableView.register(UINib(nibName: "AssignmentSectionCell", bundle: nil), forCellReuseIdentifier: "assignmentSectionCell")
         tableView.register(UINib(nibName: "AssignmentSubjectCell", bundle: nil), forCellReuseIdentifier: "assignmentSubjectCell")
+        tableView.register(UINib(nibName: "AssignmentTeacherCell", bundle: nil), forCellReuseIdentifier: "assignmentTeacherCell")
         tableView.dataSource = self
         tableView.delegate = self
         addNewButton.addTarget(self, action: #selector(addNewAction), for: .touchUpInside)
@@ -102,11 +103,15 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
         return 1 + ACData.ASSIGNMENTLIST.assignmentList[section-1].assignment.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0{
             return 66
-        }
-        else{
-            return 66
+        } else {
+            if indexPath.row == 0 {
+                return 44
+            }
+            else{
+                return 66
+            }
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,7 +122,16 @@ extension AssignmentViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             if indexPath.row == 0{
-                return UITableViewCell()
+                let cell = tableView.dequeueReusableCell(withIdentifier: "assignmentTeacherCell") as! AssignmentTeacherCell
+                if teacherID == "ALL"{
+                    let object = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList[indexPath.section]
+                    cell.objTeacher = object
+                } else {
+                    if let object = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_id == self.teacherID}) {
+                        cell.objTeacher = object
+                    }
+                }
+                return cell
             }
             let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentSubjectCell", for: indexPath) as? AssignmentSubjectCell)!
             cell.delegate = self
