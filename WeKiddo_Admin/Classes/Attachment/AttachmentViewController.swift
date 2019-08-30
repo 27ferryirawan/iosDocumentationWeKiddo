@@ -209,8 +209,10 @@ class AttachmentViewController: UIViewController, UIImagePickerControllerDelegat
 //        }
     }
     @objc func uploadAction() {
+        // TODO: Change value of teacherID
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else {return}
         if isUploadImage {
-            ACRequest.POST_ADD_NEW_ATTACHMENT(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: assignID, mediaType: self.mediaType, mediaFile: self.mediaFile, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+            ACRequest.POST_ADD_NEW_ATTACHMENT(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, assignID: assignID, mediaType: self.mediaType, mediaFile: self.mediaFile, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
                 SVProgressHUD.dismiss()
                 ACAlert.show(message: status)
             }) { (message) in
@@ -218,10 +220,9 @@ class AttachmentViewController: UIViewController, UIImagePickerControllerDelegat
                 ACAlert.show(message: message)
             }
         } else {
-            
             let parameter: Parameters = [
                 "user_id": ACData.LOGINDATA.userID,
-                "role": ACData.LOGINDATA.role,
+                "school_user_id": teacherID,
                 "assign_id": assignID,
                 "media_type": "MT6"
             ]
@@ -395,14 +396,14 @@ extension AttachmentViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension AttachmentViewController: AttachmentContentCellDelegate {
     func refreshData() {
-    
-//        ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
-//            SVProgressHUD.dismiss()
-//            ACData.ATTACHMENTDATA = datas
-//            self.tableView.reloadData()
-//        }) { (message) in
-//            SVProgressHUD.dismiss()
-//        }
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else {return}
+        ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
+            SVProgressHUD.dismiss()
+            ACData.ATTACHMENTDATA = datas
+            self.tableView.reloadData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+        }
     }
     func previewImage(withURL: String) {
         fileURL = withURL
