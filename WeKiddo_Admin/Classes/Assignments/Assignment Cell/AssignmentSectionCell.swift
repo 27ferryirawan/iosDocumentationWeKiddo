@@ -12,25 +12,24 @@ import SVProgressHUD
 
 protocol AssignmentSectionCellDelegate: class {
     func reloadTable()
+    func teacherSelected(with teacherID: String)
 }
 
 class AssignmentSectionCell: UITableViewCell {
 
     @IBOutlet weak var classButton: UIButton!
     @IBOutlet weak var subjectButton: UIButton!
-    var classID = ""
-    var subjectID = ""
-    var className = [String]()
-    var subjectName = [String]()
+    var teacherID = ""
+    var teacherName = [String]()
     weak var delegate: AssignmentSectionCellDelegate?
-    var object: AssignmentListModel? {
+    var object: AssignmentTeacherListAllModel? {
         didSet {
             cellConfig()
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        classButton.addTarget(self, action: #selector(showClassPicker), for: .touchUpInside)
+//        classButton.addTarget(self, action: #selector(showClassPicker), for: .touchUpInside)
         subjectButton.addTarget(self, action: #selector(showSubjectPicker), for: .touchUpInside)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,59 +37,25 @@ class AssignmentSectionCell: UITableViewCell {
     }
     func cellConfig() {
         guard let obj = object else { return }
-        for item in obj.assignmentPickerSubject {
-            subjectName.append(item.subject_name)
-        }
-        for item in obj.assignmentPickerClass {
-            className.append(item.school_class)
+        teacherName.removeAll()
+        for item in obj.assignmentTeacherList {
+            teacherName.append(item.teacher_name)
         }
     }
-    @objc func showClassPicker() {
-        ActionSheetStringPicker.show(
-            withTitle: "- Select Class -",
-            rows: className,
-            initialSelection: 0,
-            doneBlock: { picker, indexes, values in
-                guard let value = values as? String else { return }
-                self.classButton.setTitle(value, for: .normal)
-                self.classID = ACData.ASSIGNMENTLIST.assignmentPickerClass[indexes].school_class_id
-                self.fetchUpdateData(withSubjectID: self.subjectID, withClassID: self.classID)
-        },
-            cancel: { ActionMultipleStringCancelBlock in return },
-            origin:UIApplication.shared.keyWindow
-        )
-    }
+
     @objc func showSubjectPicker() {
         ActionSheetStringPicker.show(
             withTitle: "- Select Subject -",
-            rows: subjectName,
+            rows: teacherName,
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
                 guard let value = values as? String else { return }
                 self.subjectButton.setTitle(value, for: .normal)
-                self.subjectID = ACData.ASSIGNMENTLIST.assignmentPickerSubject[indexes].subject_id
-                self.fetchUpdateData(withSubjectID: self.subjectID, withClassID: self.classID)
+                self.teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList[indexes].teacher_id
+                self.delegate?.teacherSelected(with: self.teacherID)
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
         )
-    }
-    func fetchUpdateData(withSubjectID: String, withClassID: String) {
-        print("subject: \(withSubjectID), class: \(withClassID)")
-        if ACData.EXAMLISTDATA != nil {
-            ACData.EXAMLISTDATA.exam_subject_list.removeAll()
-            ACData.EXAMLISTDATA.exam_level_list.removeAll()
-            ACData.EXAMLISTDATA.exam_list.removeAll()
-        }
-        subjectName.removeAll()
-        className.removeAll()
-        ACRequest.POST_ASSIGNMENT_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, subjectID: self.subjectID, classID: self.classID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (assignmentDatas) in
-            ACData.ASSIGNMENTLIST = assignmentDatas
-            SVProgressHUD.dismiss()
-            self.delegate?.reloadTable()
-        }) { (message) in
-            SVProgressHUD.dismiss()
-        }
-
     }
 }

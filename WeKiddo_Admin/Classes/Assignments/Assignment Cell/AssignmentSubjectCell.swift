@@ -27,7 +27,7 @@ class AssignmentSubjectCell: UITableViewCell {
             assignmentList.setBorderShadow(color: UIColor.gray, shadowRadius: 5, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
-    var assignmentObjc: AssignmentContentModel? {
+    var assignmentObjc: AssignmentListContentModel? {
         didSet {
             cellDataSet()
         }

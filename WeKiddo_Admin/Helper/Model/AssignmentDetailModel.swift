@@ -11,14 +11,15 @@ import SwiftyJSON
 
 class AssignmentDetailModel: NSObject {
     var assignment_id = ""
+    var school_class_id = ""
+    var subject_name = ""
     var assignment_image = ""
+    var assignment_type = ""
     var chapter_name = ""
     var created_at = ""
     var note = ""
-    var subject_name = ""
     var teacher_name = ""
-    var assignment_type = ""
-    var school_class_id = ""
+    var status = 0
     var school_class_list = [AssignmentDetailSchoolClassModel]()
     
     func objectMapping(json: JSON) {
@@ -31,6 +32,7 @@ class AssignmentDetailModel: NSObject {
         school_class_id = json["data"]["assignment_detail"]["school_class_id"].stringValue
         subject_name = json["data"]["assignment_detail"]["subject_name"].stringValue
         teacher_name = json["data"]["assignment_detail"]["teacher_name"].stringValue
+        status = json["data"]["assignment_detail"]["status"].intValue
         for data in json["data"]["assignment_detail"]["school_class_list"].arrayValue {
             let d = AssignmentDetailSchoolClassModel()
             d.objectMapping(json: data)

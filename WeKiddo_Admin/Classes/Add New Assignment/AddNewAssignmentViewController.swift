@@ -16,15 +16,18 @@ class AddNewAssignmentViewController: UIViewController {
     var classCount = 1
     var subjectID = ""
     var chapterID = ""
+    var teacherID = ""
     var assignmentType = 1
     var assignmentID = ""
     var note = ""
     var isFromEdit = Bool()
+    var teacherListCount = 0
     var selectedClassObject = [ClassModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
         configTable()
+        fetchData()
         if isFromEdit {
             classCount = ACData.ASSIGNMENTDETAILEDITDATA.school_class_list.count
             for item in ACData.ASSIGNMENTDETAILEDITDATA.school_class_list {
@@ -33,6 +36,21 @@ class AddNewAssignmentViewController: UIViewController {
         } else {
             classCount = 1
             selectedClassObject.append(ClassModel(schoolClass: "0", dueDate: "0"))
+        }
+    }
+    func fetchData(){
+        fetchTeacherList()
+    }
+    func fetchTeacherList(){
+        //TODO: Change Value for school ID and yearID
+        ACRequest.POST_ASSIGNMENT_GET_TEACHER(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (teacherList) in
+            ACData.ASSIGNMENTTEACHERLIST = teacherList
+            self.teacherListCount = teacherList.assignmentTeacherList.count
+            self.teacherID = teacherList.assignmentTeacherList.first?.teacher_id ?? ""
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
+        }) { (message) in
+            SVProgressHUD.dismiss()
         }
     }
     func configNavigation() {
@@ -59,7 +77,7 @@ extension AddNewAssignmentViewController: UITableViewDataSource, UITableViewDele
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 384
+            return 467
         } else if indexPath.row <= classCount {
             return 140
         } else {
@@ -70,7 +88,7 @@ extension AddNewAssignmentViewController: UITableViewDataSource, UITableViewDele
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "addAssignmentTopCellID", for: indexPath) as? AddAssignmentTopCell)!
             cell.isFromEdit = self.isFromEdit
-            cell.subjectObj = ACData.SUBJECTDATA[indexPath.row]
+            cell.teacherObj = ACData.ASSIGNMENTTEACHERLIST
             if isFromEdit {
                 cell.detailSubjectEdit = ACData.ASSIGNMENTDETAILEDITDATA
             }
@@ -83,8 +101,8 @@ extension AddNewAssignmentViewController: UITableViewDataSource, UITableViewDele
             if isFromEdit {
                 cell.editObj = ACData.ASSIGNMENTDETAILEDITDATA
             } else {
-                if ACData.CHAPTERDATA != nil {
-                    cell.obj = ACData.CHAPTERDATA
+                if ACData.ASSIGNMENTSUBJECTLIST != nil {
+                    cell.obj = ACData.ASSIGNMENTSUBJECTLIST
                 } else {
                     // do nothing
                 }
@@ -103,14 +121,20 @@ extension AddNewAssignmentViewController: AddAssignmentFooterCellDelegate, AddAs
     func subjectSelected(withValue: String) {
         print("subject: \(withValue)")
         subjectID = withValue
-        selectedClassObject.removeAll()
-        selectedClassObject.append(ClassModel(schoolClass: "0", dueDate: "0"))
-        classCount = 1
-        tableView.reloadData()
+        let items = tableView.numberOfRows(inSection: 0)
+        var indexPaths = [IndexPath]()
+        for i in 1...items - 1 {
+            indexPaths.append(IndexPath(row: i, section: 0))
+        }
+        self.tableView.reloadRows(at: indexPaths, with: .none)
     }
     func chapterSelected(withValue: String) {
         print("chapter: \(withValue)")
         chapterID = withValue
+    }
+    func teacherSelected(withValue: String) {
+        print("teacher: \(withValue)")
+        teacherID = withValue
     }
     func assignmentSelected(withValue: Int) {
         print("assignmentType: \(withValue)")
@@ -130,7 +154,7 @@ extension AddNewAssignmentViewController: AddAssignmentFooterCellDelegate, AddAs
                 ACAlert.show(message: "Can not add more class")
             }
         } else {
-            if classCount < ACData.CHAPTERDATA.class_list.count {
+            if classCount < ACData.ASSIGNMENTSUBJECTLIST.classList.count {
                 classCount += counter
                 selectedClassObject.append(ClassModel(schoolClass: "1", dueDate: "1"))
                 tableView.reloadData()

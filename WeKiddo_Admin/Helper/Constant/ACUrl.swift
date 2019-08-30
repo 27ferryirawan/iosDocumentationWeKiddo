@@ -302,4 +302,22 @@ class ACUrl: NSObject {
     
     // NOTIFICATION
     static let PARENT_GET_NOTIFICATION_LIST = PARENT_APP + "notification/parent?" // [GET] parent_id
+    
+    // MARK: - ADMINISTRATOR
+    
+    // ASSIGNMENT
+    static let ADMIN_GET_ASSIGNMENT_LIST = PARENT_APP + "assignment/list" //[GET] user_id, school_id, year_id, school_user_id
+    static let ADMIN_GET_ASSIGNMENT_TEACHER_LIST = PARENT_APP + "assignment/teacher-list" //[GET] school_id, user_id, year_id
+    static let ADMIN_GET_ASSIGNMENT_DETAIL = PARENT_APP + "assignment/detail" //[GET] user_id, school_user_id, assign_id, class_id
+    static let ADMIN_GET_ASSIGNMENT_GET_TEACHER = PARENT_APP + "assignment/get-teacher" //[GET] user_id, school_id, year_id
+    static let ADMIN_GET_ASSIGNMENT_GET_SUBJECT_CLASS = PARENT_APP + "assignment/get-subject-class" //[GET] user_id, school_user_id, school_id, year_id
+    static let ADMIN_GET_ASSIGNMENT_GET_CHAPTER = PARENT_APP + "assignment/get-chapter"//[GET] user_id, school_user_id, school_id, year_id, subject_id
+    static let ADMIN_GET_ASSIGNMENT_EDIT = PARENT_APP + "assignment/edit"//[GET] user_id, school_user_id, school_id, year_id, assign_id
+    static let ADMIN_GET_ASSIGNMENT_GET_ATTACHMENT = PARENT_APP + "assignment/get-attachment" //[GET] user_id, school_user_id, assign_id
+    static let ADMIN_POST_ASSIGNMENT_SAVE = PARENT_APP + "assignment/save" //[POST] user_id, school_user_id, school_id, year_id, assignment_id, subject_id, chapter_id, assignmentType, note, school_class{ school_class_id, due_date}
+    static let ADMIN_POST_ASSIGNMENT_SAVE_ATTACHMENT = PARENT_APP + "assignment/save-attachment"//[POST]
+    static let ADMIN_POST_ASSIGNMENT_DELETE_ATTACHMENT = PARENT_APP + "assignment/delete-attachment"//[POST] user_id, school_user_id, attachment_id
+    static let ADMIN_GET_ASSIGNMENT_GET_SCORE = PARENT_APP + "assignment/get-score"//[GET] user_id, school_user_id, assign_id, school_id, year_id, class_id
+    static let ADMIN_POST_ASSIGNMENT_SAVE_SCORE = PARENT_APP + "assignment/save-score"//[POST]
+    static let ADMIN_POST_ASSIGNMENT_CLOSE = PARENT_APP + "assignment/close"
 }
