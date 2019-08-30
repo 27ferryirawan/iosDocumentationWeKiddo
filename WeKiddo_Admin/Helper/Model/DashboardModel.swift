@@ -13,6 +13,7 @@ class DashboardModel: NSObject {
     var home_profile_school_name = ""
     var home_profile_school_logo = ""
     var home_profile_school_grade = ""
+    var home_profile_school_id = ""
     var home_profile_admin_name = ""
     var home_absent_count = 0
     var home_tasklist_count = 0
@@ -25,6 +26,7 @@ class DashboardModel: NSObject {
     func objectMapping(json: JSON) {
         home_profile_school_name = json["data"]["school_info"]["school_name"].stringValue
         home_profile_school_logo = json["data"]["school_info"]["school_logo"].stringValue
+        home_profile_school_id = json["data"]["school_info"]["school_id"].stringValue
         home_profile_school_grade = json["data"]["school_info"]["school_grade"].stringValue
         home_profile_admin_name = json["data"]["school_info"]["user_name"].stringValue
 

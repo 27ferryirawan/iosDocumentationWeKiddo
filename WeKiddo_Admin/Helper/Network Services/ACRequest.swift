@@ -89,7 +89,7 @@ class ACRequest: NSObject {
                                     "Authorization":"Bearer \(tokenAccess)"]
         ACAPI.POST(url: "\(ACUrl.PARENT_DASHBOARD)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
-            print(json)
+            print("json dashboard: \(json)")
             if(json["status"] == "success") {
                 let dashboard = DashboardModel()
                 dashboard.objectMapping(json: json)
@@ -117,6 +117,33 @@ class ACRequest: NSObject {
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
         ACAPI.POST(url: "\(ACUrl.PARENT_TASKLIST_MORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ABSENCE_DETAIL(
+        userId:String,
+        childID:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (AbsenceDetailModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "child_id":childID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ABSENCE_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {

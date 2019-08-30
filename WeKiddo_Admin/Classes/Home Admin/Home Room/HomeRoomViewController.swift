@@ -118,6 +118,7 @@ extension HomeRoomViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case .dashboardTaskList:
             let cell = (tableView.dequeueReusableCell(withIdentifier: "homeRoomSpecialAttentionCellID", for: indexPath) as? HomeRoomSpecialAttentionCell)!
+            cell.indexObject = indexPath.row
             cell.detailClassObj = ACData.DASHBOARDDATA.dashboardTaskList[indexPath.row]
             cell.delegate = self
             return cell
@@ -171,17 +172,10 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
     func toSessionCheckList() {
         
     }
-    func toDetailSpecialAttention(isClass: Bool) {
-        print("isClass: \(isClass)")
-        if isClass {
-            let detailVC = SpecialAttentionDetailByClassViewController()
-            detailVC.specialAttentionArray = ACData.SPECIALATTENTIONBYCLASSDETAILDATA.score_list.count
-            self.navigationController?.pushViewController(detailVC, animated: true)
-        } else {
-            let detailVC = SpecialAttentionDetailViewController()
-            detailVC.specialAttentionArray = ACData.SPECIALATTENTIONBYSUBJECTDETAILDATA.score_list.count
-            self.navigationController?.pushViewController(detailVC, animated: true)
-        }
+    func toDetailSpecialAttention(withIndex: Int) {
+        let taskListDetailVC = TaskListDetailViewController()
+        taskListDetailVC.indexObject = withIndex
+        self.navigationController?.pushViewController(taskListDetailVC, animated: true)
     }
     func toSessionDetail() {
         
@@ -193,12 +187,12 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
         self.tableView.reloadData()
     }
     func toDetailAssignment() {
-        let assignmentDetailVC = AssignmentDetailViewController()
-        self.navigationController?.pushViewController(assignmentDetailVC, animated: true)
+        let detailAbsenceVC = AbsenceDetailViewController()
+        self.navigationController?.pushViewController(detailAbsenceVC, animated: true)
     }
     @objc func toDetail(sender: UIButton) {
         if sender.tag == 0 {
-            ACRequest.POST_TASKLIST_MORE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultData) in
+            ACRequest.POST_TASKLIST_MORE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultData) in
                 SVProgressHUD.dismiss()
             }) { (message) in
                 SVProgressHUD.dismiss()

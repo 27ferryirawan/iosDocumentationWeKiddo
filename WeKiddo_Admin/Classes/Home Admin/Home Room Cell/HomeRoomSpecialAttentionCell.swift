@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 
 protocol HomeRoomSpecialAttentionCellDelegate: class {
-    func toDetailSpecialAttention(isClass: Bool)
+    func toDetailSpecialAttention(withIndex: Int)
 }
 
 class HomeRoomSpecialAttentionCell: UITableViewCell {
@@ -19,8 +19,9 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
     @IBOutlet weak var nisLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     weak var delegate: HomeRoomSpecialAttentionCellDelegate?
-    @IBOutlet weak var subjectScoreView: UIView!{
-        didSet{
+    var indexObject: Int!
+    @IBOutlet weak var subjectScoreView: UIView! {
+        didSet {
             subjectScoreView.layer.cornerRadius = subjectScoreView.frame.size.width/2
         }
     }
@@ -42,15 +43,7 @@ class HomeRoomSpecialAttentionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func toDetail() {
-        guard let obj = detailClassObj else { return }
-//        ACRequest.POST_SPECIAL_ATTENTION_DETAIL_BY_CLASS(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, classID: obj.school_class_id, childID: obj.child_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
-//            SVProgressHUD.dismiss()
-//            ACData.SPECIALATTENTIONBYCLASSDETAILDATA = jsonDatas
-//            self.delegate?.toDetailSpecialAttention(isClass: self.isClass)
-//        }) { (message) in
-//            SVProgressHUD.dismiss()
-//            ACAlert.show(message: message)
-//        }
+        self.delegate?.toDetailSpecialAttention(withIndex: indexObject)
     }
     func cellConfigClass() {
         guard let obj = detailClassObj else { return }

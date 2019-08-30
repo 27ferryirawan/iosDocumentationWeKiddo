@@ -582,6 +582,15 @@
 		E6AAC3A82316EEA40084ED93 /* SchoolMonitoringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3A62316EEA40084ED93 /* SchoolMonitoringViewController.xib */; };
 		E6AAC3AC2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3AA2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift */; };
 		E6AAC3AD2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3AB2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib */; };
+		E6AAC3B12318DC040084ED93 /* TaskListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3AF2318DC040084ED93 /* TaskListDetailViewController.swift */; };
+		E6AAC3B22318DC040084ED93 /* TaskListDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3B02318DC040084ED93 /* TaskListDetailViewController.xib */; };
+		E6AAC3B62318DC9F0084ED93 /* TaskListDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3B42318DC9F0084ED93 /* TaskListDetailCell.swift */; };
+		E6AAC3B72318DC9F0084ED93 /* TaskListDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3B52318DC9F0084ED93 /* TaskListDetailCell.xib */; };
+		E6AAC3B92318E76F0084ED93 /* AbsenceDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3B82318E76F0084ED93 /* AbsenceDetailModel.swift */; };
+		E6AAC3BD2318E9F60084ED93 /* AbsenceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3BB2318E9F60084ED93 /* AbsenceDetailViewController.swift */; };
+		E6AAC3BE2318E9F60084ED93 /* AbsenceDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3BC2318E9F60084ED93 /* AbsenceDetailViewController.xib */; };
+		E6AAC3C22318EA5D0084ED93 /* AbsenceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAC3C02318EA5D0084ED93 /* AbsenceDetailCell.swift */; };
+		E6AAC3C32318EA5D0084ED93 /* AbsenceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AAC3C12318EA5D0084ED93 /* AbsenceDetailCell.xib */; };
 		E6ADFE0C2280827B004FEF49 /* SessionMenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE0A2280827B004FEF49 /* SessionMenuCollectionCell.swift */; };
 		E6ADFE0D2280827B004FEF49 /* SessionMenuCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */; };
 		E6ADFE1422811F1C004FEF49 /* DismissCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ADFE1222811F1C004FEF49 /* DismissCell.swift */; };
@@ -1325,6 +1334,15 @@
 		E6AAC3A62316EEA40084ED93 /* SchoolMonitoringViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolMonitoringViewController.xib; sourceTree = "<group>"; };
 		E6AAC3AA2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMonitoringHeaderCell.swift; sourceTree = "<group>"; };
 		E6AAC3AB2316F0780084ED93 /* SchoolMonitoringHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolMonitoringHeaderCell.xib; sourceTree = "<group>"; };
+		E6AAC3AF2318DC040084ED93 /* TaskListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListDetailViewController.swift; sourceTree = "<group>"; };
+		E6AAC3B02318DC040084ED93 /* TaskListDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListDetailViewController.xib; sourceTree = "<group>"; };
+		E6AAC3B42318DC9F0084ED93 /* TaskListDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListDetailCell.swift; sourceTree = "<group>"; };
+		E6AAC3B52318DC9F0084ED93 /* TaskListDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListDetailCell.xib; sourceTree = "<group>"; };
+		E6AAC3B82318E76F0084ED93 /* AbsenceDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceDetailModel.swift; sourceTree = "<group>"; };
+		E6AAC3BB2318E9F60084ED93 /* AbsenceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceDetailViewController.swift; sourceTree = "<group>"; };
+		E6AAC3BC2318E9F60084ED93 /* AbsenceDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbsenceDetailViewController.xib; sourceTree = "<group>"; };
+		E6AAC3C02318EA5D0084ED93 /* AbsenceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsenceDetailCell.swift; sourceTree = "<group>"; };
+		E6AAC3C12318EA5D0084ED93 /* AbsenceDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbsenceDetailCell.xib; sourceTree = "<group>"; };
 		E6ADFE0A2280827B004FEF49 /* SessionMenuCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMenuCollectionCell.swift; sourceTree = "<group>"; };
 		E6ADFE0B2280827B004FEF49 /* SessionMenuCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionMenuCollectionCell.xib; sourceTree = "<group>"; };
 		E6ADFE0E22811ED5004FEF49 /* CustomBorderShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderShadow.swift; sourceTree = "<group>"; };
@@ -3098,6 +3116,44 @@
 			path = "School Monitoring Cell";
 			sourceTree = "<group>";
 		};
+		E6AAC3AE2318DBF10084ED93 /* Task List Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3B32318DC860084ED93 /* Task List Detail Cell */,
+				E6AAC3AF2318DC040084ED93 /* TaskListDetailViewController.swift */,
+				E6AAC3B02318DC040084ED93 /* TaskListDetailViewController.xib */,
+			);
+			path = "Task List Detail";
+			sourceTree = "<group>";
+		};
+		E6AAC3B32318DC860084ED93 /* Task List Detail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3B42318DC9F0084ED93 /* TaskListDetailCell.swift */,
+				E6AAC3B52318DC9F0084ED93 /* TaskListDetailCell.xib */,
+			);
+			path = "Task List Detail Cell";
+			sourceTree = "<group>";
+		};
+		E6AAC3BA2318E9E20084ED93 /* Absence Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3BF2318EA440084ED93 /* Absence Detail Cell */,
+				E6AAC3BB2318E9F60084ED93 /* AbsenceDetailViewController.swift */,
+				E6AAC3BC2318E9F60084ED93 /* AbsenceDetailViewController.xib */,
+			);
+			path = "Absence Detail";
+			sourceTree = "<group>";
+		};
+		E6AAC3BF2318EA440084ED93 /* Absence Detail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6AAC3C02318EA5D0084ED93 /* AbsenceDetailCell.swift */,
+				E6AAC3C12318EA5D0084ED93 /* AbsenceDetailCell.xib */,
+			);
+			path = "Absence Detail Cell";
+			sourceTree = "<group>";
+		};
 		E6BA19AE2266D0D000FD246B /* Notification Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3233,6 +3289,8 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E6AAC3BA2318E9E20084ED93 /* Absence Detail */,
+				E6AAC3AE2318DBF10084ED93 /* Task List Detail */,
 				E6AAC3A42316EE870084ED93 /* School Monitoring */,
 				E6F7CA5622F801D8008DDFF4 /* Special Attention Detail By Class */,
 				E643A6CA22F10FA800E88E1F /* Feedback */,
@@ -3499,6 +3557,7 @@
 				E6F7CA5422F754D7008DDFF4 /* SpecialAttentionBySubjectDetailModel.swift */,
 				E6F7CA6422F80A53008DDFF4 /* SpecialAttentionByClassDetailModel.swift */,
 				E6AAC3A22316DCFB0084ED93 /* TaskListModel.swift */,
+				E6AAC3B82318E76F0084ED93 /* AbsenceDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3866,10 +3925,12 @@
 				E69AC7F222891314000284A1 /* OtherCollectionCell.xib in Resources */,
 				E63D83F822D4C140005F07B4 /* AddDetentionStudentCell.xib in Resources */,
 				E61A97CB226E0BE10003E89F /* next.png in Resources */,
+				E6AAC3B72318DC9F0084ED93 /* TaskListDetailCell.xib in Resources */,
 				E682D69E22D8DE3400214F4E /* SubjectTeacherSectionCell.xib in Resources */,
 				E6961031227F384B0000FC92 /* ApprovalViewController.xib in Resources */,
 				E6416F0622EB538100ACDCD6 /* AddExamSessionCell.xib in Resources */,
 				E66C5EDB22E7FB1C00AD186C /* ExamScoreStudentCell.xib in Resources */,
+				E6AAC3B22318DC040084ED93 /* TaskListDetailViewController.xib in Resources */,
 				E6F4282722984E5500DB4250 /* CourseDetailFooterCell.xib in Resources */,
 				E682D6E422DA52F100214F4E /* AddSubjectTeacherSessionCell.xib in Resources */,
 				E600B47C22AFAF13007E7C58 /* SubjectDetailUpcommingSessionCell.xib in Resources */,
@@ -3976,6 +4037,7 @@
 				E694F2C322B109DC00467F3C /* SearchSessionCell.xib in Resources */,
 				E600B47422AFAAD2007E7C58 /* SubjectDetailHeaderCell.xib in Resources */,
 				E643A6D322F1115500E88E1F /* FeedbackCell.xib in Resources */,
+				E6AAC3C32318EA5D0084ED93 /* AbsenceDetailCell.xib in Resources */,
 				E682D6B922D9E39400214F4E /* SubjectTeacherDetailViewController.xib in Resources */,
 				E6863F86229DA9EE003C4F1F /* NearbyCourseMoreViewController.xib in Resources */,
 				E68CBAB622B7A71400DFD45E /* AddAnnouncementCell.xib in Resources */,
@@ -4049,6 +4111,7 @@
 				E6961044227FD7530000FC92 /* QuestionContentCell.xib in Resources */,
 				E66C5EBC22E2162B00AD186C /* SubjectTeacherByClassHeaderCell.xib in Resources */,
 				E6416F1422ECC9BA00ACDCD6 /* EditEventTopCell.xib in Resources */,
+				E6AAC3BE2318E9F60084ED93 /* AbsenceDetailViewController.xib in Resources */,
 				E65BF68C22CF8B4D00C57FEF /* AddAssignmentClassCell.xib in Resources */,
 				E600B42522AB7BE1007E7C58 /* ExamDetailViewController.xib in Resources */,
 				E66C5EFD22E8D83D00AD186C /* EditExamTopCell.xib in Resources */,
@@ -4332,6 +4395,7 @@
 				E6416F1322ECC9BA00ACDCD6 /* EditEventTopCell.swift in Sources */,
 				E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */,
 				E63D83A922D0F0BB005F07B4 /* AssignmentScoreStudentCell.swift in Sources */,
+				E6AAC3B12318DC040084ED93 /* TaskListDetailViewController.swift in Sources */,
 				E682D6C122D9EAF500214F4E /* SubjectTeacherDetailSessionCell.swift in Sources */,
 				E6416F0922EC6E5900ACDCD6 /* EventMonitoringTotalParticipantCell.swift in Sources */,
 				E66C5EF722E8D3D600AD186C /* EditExamViewController.swift in Sources */,
@@ -4403,6 +4467,7 @@
 				E62F863A22F03DDF00CE355E /* CurrentClassStudentCell.swift in Sources */,
 				E696103E227F3D470000FC92 /* QuestionsViewController.swift in Sources */,
 				E6F427C6229441CC00DB4250 /* CompetitionModel.swift in Sources */,
+				E6AAC3C22318EA5D0084ED93 /* AbsenceDetailCell.swift in Sources */,
 				E6F7CA5922F801F7008DDFF4 /* SpecialAttentionDetailByClassViewController.swift in Sources */,
 				E63D83F722D4C140005F07B4 /* AddDetentionStudentCell.swift in Sources */,
 				E63D83CC22D4741A005F07B4 /* DetentionModel.swift in Sources */,
@@ -4531,6 +4596,7 @@
 				E699F5FF22E1C02F00775758 /* ExamDetailRelatedExamCell.swift in Sources */,
 				E6416F0222EB460B00ACDCD6 /* ExamMajorModel.swift in Sources */,
 				E69AC7FE228937C7000284A1 /* NearbyViewController.swift in Sources */,
+				E6AAC3BD2318E9F60084ED93 /* AbsenceDetailViewController.swift in Sources */,
 				E6D39C49225FA27200831511 /* TransactionDetailModel.swift in Sources */,
 				E6416EF522EA11AA00ACDCD6 /* AddExamFooterCell.swift in Sources */,
 				E600B48B22AFBCAA007E7C58 /* SubjectDetailPerformanceCell.swift in Sources */,
@@ -4591,6 +4657,7 @@
 				E6A50BBA226B6D8E00359D78 /* AssignmentSubjectCell.swift in Sources */,
 				E60FF4D4226AEE570086D8B8 /* NotificationDetailVideoCell.swift in Sources */,
 				E6F427F72296E71500DB4250 /* UniversityDetailViewController.swift in Sources */,
+				E6AAC3B62318DC9F0084ED93 /* TaskListDetailCell.swift in Sources */,
 				E6F427C42294325200DB4250 /* PermissionDataModel.swift in Sources */,
 				E696104C2280766E0000FC92 /* SessionDetailViewController.swift in Sources */,
 				E600B45A22AE764E007E7C58 /* AttachmentCell.swift in Sources */,
@@ -4620,6 +4687,7 @@
 				E63D839C22D09BAB005F07B4 /* ChapterModel.swift in Sources */,
 				E626B6B222C3852200FF660A /* ClassroomHeaderCell.swift in Sources */,
 				E6416F1F22ECD60800ACDCD6 /* EditEventFooterCell.swift in Sources */,
+				E6AAC3B92318E76F0084ED93 /* AbsenceDetailModel.swift in Sources */,
 				E6BC3CCE22EF199C00B080A1 /* SpecialAttentionListCell.swift in Sources */,
 				BE2F585122AC3A4300103CD7 /* StudentProfileViewController.swift in Sources */,
 				E63D83BD22D32003005F07B4 /* AssignmentDetailEditModel.swift in Sources */,

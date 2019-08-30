@@ -108,5 +108,6 @@ struct ACData {
     static var SUBJECTTEACHERDETAILMODEL: SubjectTeacherDetailModel!
     static var SPECIALATTENTIONBYSUBJECTDETAILDATA: SpecialAttentionBySubjectDetailModel!
     static var SPECIALATTENTIONBYCLASSDETAILDATA: SpecialAttentionByClassDetailModel!
+    static var ABSENCEDETAILMODEL: AbsenceDetailModel!
 //    static var STUDENTLISTSCOREADDNEW: !
 }
