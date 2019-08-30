@@ -2144,7 +2144,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.SAVE_ASSIGNMENT)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_SAVE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
