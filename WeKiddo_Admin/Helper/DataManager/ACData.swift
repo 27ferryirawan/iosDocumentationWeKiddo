@@ -94,6 +94,7 @@ struct ACData {
     static var LATEPAYMENTDETAILDATA: LatePaymentDetailModel!
     static var SUBJECTTEACHERBYSUBJECT = [SubjectTopicBySubjectModel]()
     static var SUBJECTTEACHERBYCLASS = [SubjectTopicByClassModel]()
+    static var HISTORYLIST : HistoryModel!
     static var SUBJECTTEACHERCHAPTERLISTDATA: SubjectTeacherChapterListModel!
 //    static var SUBJECTTEACHERCHAPTERLISTDATA = [SubjectTeacherChapterListModel]()
     static var TEACHERONDUTYPICKERDATA : TeacherOnDutyChildListPickerModel!

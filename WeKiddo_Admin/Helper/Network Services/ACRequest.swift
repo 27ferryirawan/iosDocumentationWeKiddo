@@ -3798,6 +3798,33 @@ class ACRequest: NSObject {
         })
     }
     
+    
+    static func POST_HISTORY_LIST(
+        userId:String,
+        page:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (HistoryModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "page":page
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        
+        ACAPI.POST(url: "\(ACUrl.POST_HISOTRY_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let historyData = HistoryModel()
+                historyData.objectMapping(json: json)
+                successCompletion(historyData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_DELETE_SUBJECT_EDIT_PROFILE(
         userID:String,
         role:String,

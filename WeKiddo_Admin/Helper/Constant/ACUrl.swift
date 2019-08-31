@@ -32,7 +32,7 @@ class ACUrl: NSObject {
     static let SEARCH_PERMISSION = PARENT_APP + "user/searchPermission" // [POST] user_id, role, key
     static let SEE_MORE_UPCOMING_SESSION = PARENT_APP + "user/currentSessionMore" // [POST] user_id, role, school_id, year_id, page
     
-    // PERMISSION RULES
+    // PERMISSION RULESF
     /*
      Permission status :
      0 = Pending
@@ -54,6 +54,7 @@ class ACUrl: NSObject {
     static let POST_ATTACHMENT_ASSIGNMENT_LIST = PARENT_APP + "user/attachmentList" // [POST] user_id, role, assign_id
     static let POST_ADD_ATTACHMENT = PARENT_APP + "user/assignmentAttachment" // [POST] user_id, role, assign_id, media_type, media_file
     static let POST_CLOSE_ASSIGNMENT = PARENT_APP + "user/assignmentClose" // [POST] user_id, role, assign_id, class_id
+    static let POST_HISOTRY_LIST = PARENT_APP + "history/list" // [POST] user_id, page
     static let POST_DELETE_ASSIGNMENT_ATTACHMENT = PARENT_APP + "user/deleteAssignmentAttachment" // [POST] user_id, role, attachment_id
     static let POST_GET_ASSIGNMENT_DETAIL_FOR_EDIT = PARENT_APP + "user/assignmentEdit" // [POST] user_id, role, assign_id
     static let POST_DETENTION_LIST = PARENT_APP + "user/detentionList" // [POST] user_id, role, school_id, year_id

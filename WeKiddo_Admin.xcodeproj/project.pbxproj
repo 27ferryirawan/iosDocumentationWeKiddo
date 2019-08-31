@@ -63,8 +63,13 @@
 		BE54A53A22903F3600162552 /* AgencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54A53922903F3600162552 /* AgencyModel.swift */; };
 		BE54A53C229045AD00162552 /* AsynchronusImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54A53B229045AD00162552 /* AsynchronusImage.swift */; };
 		BE54A53E2290502500162552 /* MedicalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54A53D2290502500162552 /* MedicalModel.swift */; };
+		BE636DB2231A547800F0F06E /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE636DB1231A547800F0F06E /* HistoryModel.swift */; };
 		BE744D7C22A3AF9D007E4027 /* VideoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE744D7A22A3AF9D007E4027 /* VideoCollectionCell.swift */; };
 		BE744D7D22A3AF9D007E4027 /* VideoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE744D7B22A3AF9D007E4027 /* VideoCollectionCell.xib */; };
+		BE7C6B80231A33B900F67E19 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C6B7E231A33B900F67E19 /* HistoryViewController.swift */; };
+		BE7C6B81231A33B900F67E19 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7C6B7F231A33B900F67E19 /* HistoryViewController.xib */; };
+		BE7C6B85231A33D600F67E19 /* HistoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C6B83231A33D600F67E19 /* HistoryListCell.swift */; };
+		BE7C6B86231A33D600F67E19 /* HistoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7C6B84231A33D600F67E19 /* HistoryListCell.xib */; };
 		BE8FEF2222A259BF00BDF240 /* TitleDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FEF2022A259BF00BDF240 /* TitleDescriptionCell.swift */; };
 		BE8FEF2322A259BF00BDF240 /* TitleDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8FEF2122A259BF00BDF240 /* TitleDescriptionCell.xib */; };
 		BE8FEF2622A25B1E00BDF240 /* AnnouncementDetailFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8FEF2422A25B1E00BDF240 /* AnnouncementDetailFooterCell.swift */; };
@@ -825,8 +830,13 @@
 		BE54A53922903F3600162552 /* AgencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyModel.swift; sourceTree = "<group>"; };
 		BE54A53B229045AD00162552 /* AsynchronusImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronusImage.swift; sourceTree = "<group>"; };
 		BE54A53D2290502500162552 /* MedicalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalModel.swift; sourceTree = "<group>"; };
+		BE636DB1231A547800F0F06E /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		BE744D7A22A3AF9D007E4027 /* VideoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionCell.swift; sourceTree = "<group>"; };
 		BE744D7B22A3AF9D007E4027 /* VideoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionCell.xib; sourceTree = "<group>"; };
+		BE7C6B7E231A33B900F67E19 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		BE7C6B7F231A33B900F67E19 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		BE7C6B83231A33D600F67E19 /* HistoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListCell.swift; sourceTree = "<group>"; };
+		BE7C6B84231A33D600F67E19 /* HistoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryListCell.xib; sourceTree = "<group>"; };
 		BE8FEF2022A259BF00BDF240 /* TitleDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDescriptionCell.swift; sourceTree = "<group>"; };
 		BE8FEF2122A259BF00BDF240 /* TitleDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleDescriptionCell.xib; sourceTree = "<group>"; };
 		BE8FEF2422A25B1E00BDF240 /* AnnouncementDetailFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailFooterCell.swift; sourceTree = "<group>"; };
@@ -1764,6 +1774,25 @@
 				E600B43C22AC397B007E7C58 /* SchoolDetailBannerCell.xib */,
 			);
 			path = "School Detail Collection Cell";
+			sourceTree = "<group>";
+		};
+		BE7C6B7D231A339D00F67E19 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C6B82231A33BE00F67E19 /* History Cell */,
+				BE7C6B7E231A33B900F67E19 /* HistoryViewController.swift */,
+				BE7C6B7F231A33B900F67E19 /* HistoryViewController.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		BE7C6B82231A33BE00F67E19 /* History Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C6B83231A33D600F67E19 /* HistoryListCell.swift */,
+				BE7C6B84231A33D600F67E19 /* HistoryListCell.xib */,
+			);
+			path = "History Cell";
 			sourceTree = "<group>";
 		};
 		BE8FF8A4229DB7EF00EC6557 /* Login Info Collection Cell */ = {
@@ -3334,6 +3363,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE7C6B7D231A339D00F67E19 /* History */,
 				E6AAC3C42318FEFF0084ED93 /* Task List */,
 				E6AAC3BA2318E9E20084ED93 /* Absence Detail */,
 				E6AAC3AE2318DBF10084ED93 /* Task List Detail */,
@@ -3577,6 +3607,7 @@
 				E63D839B22D09BAB005F07B4 /* ChapterModel.swift */,
 				E63D83AF22D0FEC2005F07B4 /* ScoreListModel.swift */,
 				BEA7B6B022DDF8E500A4B124 /* TeacherOnDutyChildListModel.swift */,
+				BE636DB1231A547800F0F06E /* HistoryModel.swift */,
 				E63D83CB22D4741A005F07B4 /* DetentionModel.swift */,
 				E63D83BC22D32003005F07B4 /* AssignmentDetailEditModel.swift */,
 				E63D840B22D4DDAC005F07B4 /* StudentSearchModel.swift */,
@@ -4033,6 +4064,7 @@
 				E6E3E160228B0E8C00AF9310 /* FutureContentCell.xib in Resources */,
 				E682D6B422D9DBED00214F4E /* SubjectTeacherListCell.xib in Resources */,
 				E624D10F227B58C1001220E9 /* AgencyCell.xib in Resources */,
+				BE7C6B81231A33B900F67E19 /* HistoryViewController.xib in Resources */,
 				BE14C8D222D874B100ADC95D /* TeacherOnDutyViewController.xib in Resources */,
 				E6BA19BB2266DA2E00FD246B /* NotificationDetailViewController.xib in Resources */,
 				E63D83A622D0F057005F07B4 /* AssignmentScoreHeaderCell.xib in Resources */,
@@ -4194,6 +4226,7 @@
 				E6416EF622EA11AA00ACDCD6 /* AddExamFooterCell.xib in Resources */,
 				E6F427DC22968AEF00DB4250 /* CareerDetailViewController.xib in Resources */,
 				E694F2BF22B108D600467F3C /* SearchAssignmentCell.xib in Resources */,
+				BE7C6B86231A33D600F67E19 /* HistoryListCell.xib in Resources */,
 				BE8FEF2722A25B1E00BDF240 /* AnnouncementDetailFooterCell.xib in Resources */,
 				E63D83BB22D2DEBC005F07B4 /* AssignmentDetailFooterCell.xib in Resources */,
 				E600B48C22AFBCAA007E7C58 /* SubjectDetailPerformanceCell.xib in Resources */,
@@ -4407,6 +4440,7 @@
 				E6D39C35225FA23B00831511 /* ACUrl.swift in Sources */,
 				E6396FEC22B6652900C928E5 /* HomeRoomSpecialAttentionCell.swift in Sources */,
 				E6E3E163228B0EE400AF9310 /* FutureCollectionCell.swift in Sources */,
+				BE7C6B85231A33D600F67E19 /* HistoryListCell.swift in Sources */,
 				E682D68B22D7809B00214F4E /* VideoMediaCollectionCell.swift in Sources */,
 				E66C5EF222E8AE1C00AD186C /* AddScoreExamFooterCell.swift in Sources */,
 				E6BA19BA2266DA2E00FD246B /* NotificationDetailViewController.swift in Sources */,
@@ -4439,6 +4473,7 @@
 				E63D841122D5EA29005F07B4 /* AddAnnouncementDescCell.swift in Sources */,
 				E6726E1F22A2EF690024F1BD /* AssignmentDetailModel.swift in Sources */,
 				E6BA19B52266D29300FD246B /* NotificationCell.swift in Sources */,
+				BE636DB2231A547800F0F06E /* HistoryModel.swift in Sources */,
 				E6396FF522B67C0800C928E5 /* LatePaymentViewController.swift in Sources */,
 				BE1DB57922E85FDC00BB1770 /* TextViewLeftSpace.swift in Sources */,
 				BE8FF8B2229DBB7700EC6557 /* RegisterCell.swift in Sources */,
@@ -4663,6 +4698,7 @@
 				E65BF68F22CF9E5800C57FEF /* AddAssignmentFooterCell.swift in Sources */,
 				E6F427E32296945700DB4250 /* CareerDetailModel.swift in Sources */,
 				BE4EB43922984BFD00FA6117 /* OnboardingViewController.swift in Sources */,
+				BE7C6B80231A33B900F67E19 /* HistoryViewController.swift in Sources */,
 				E6BFA11E22749A4800E90803 /* CurveAlgorithm.swift in Sources */,
 				664419162316D5840006F277 /* AssignmentChapterListModel.swift in Sources */,
 				E6F4281E2298471100DB4250 /* CourseDetailCell.swift in Sources */,

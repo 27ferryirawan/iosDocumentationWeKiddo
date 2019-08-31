@@ -139,9 +139,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             switch menu {
             case "54":
                 fetchProfileData()
-            case "57":
-                let feedbackVC = FeedbackViewController()
-                self.navigationController?.pushViewController(feedbackVC, animated: true)
+            case "65":
+                let historyVC = HistoryViewController()
+                self.navigationController?.pushViewController(historyVC, animated: true)
             case "55":
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.synchronize()
