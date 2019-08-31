@@ -139,6 +139,45 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ABSENCE_MORE(
+        userId:String,
+        role:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([AbsenceListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ABSENCE_MORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var absenceLists = ACData.ABSENCELISTMODEL
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["absent_checklist"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let absenceList = AbsenceListModel()
+                            absenceList.objectMapping(json: jsonValue)
+                            absenceLists.append(absenceList)
+                        }
+                    } else {
+                        failCompletion("Have no late payment")
+                    }
+                }
+                successCompletion(absenceLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_ABSENCE_DETAIL(
         userId:String,
         childID:String,
@@ -160,6 +199,45 @@ class ACRequest: NSObject {
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
+                let detailAbsence = AbsenceDetailModel()
+                detailAbsence.objectMapping(json: json)
+                successCompletion(detailAbsence)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_SAVE_ABSENCE(
+        userId:String,
+        childID:String,
+        schoolID:String,
+        yearID:String,
+        absenceTime:String,
+        statusAbsence:Int,
+        reason:String,
+        desc:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "child_id":childID,
+            "absence_time":absenceTime,
+            "status_absence":statusAbsence,
+            "reason":reason,
+            "desc":desc,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_SAVE_ABSENCE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
             } else {
                 failCompletion(json["status"].stringValue)
             }

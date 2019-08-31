@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AbsenceDetailViewController: UIViewController {
 
@@ -21,6 +22,11 @@ class AbsenceDetailViewController: UIViewController {
         }
     }
     @IBOutlet weak var tableView: UITableView!
+    var childID = ""
+    var absenceTime = ""
+    var statusAbsence = 0
+    var reasonID = ""
+    var reasonDesc = ""
     var isConfirmationViewDisplayed = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +55,15 @@ class AbsenceDetailViewController: UIViewController {
         updateView()
     }
     @objc func submitConfirmationAction() {
-        
+        ACRequest.POST_SAVE_ABSENCE(userId: ACData.LOGINDATA.userID, childID: childID, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, absenceTime: absenceTime, statusAbsence: statusAbsence, reason: reasonID, desc: reasonDesc, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: result)
+//            isConfirmationViewDisplayed = true
+//            updateView()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }
 
@@ -61,7 +75,7 @@ extension AbsenceDetailViewController: UITableViewDataSource, UITableViewDelegat
         return 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 405
+        return 415
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "absenceDetailCellID", for: indexPath) as? AbsenceDetailCell)!
@@ -72,7 +86,12 @@ extension AbsenceDetailViewController: UITableViewDataSource, UITableViewDelegat
 }
 
 extension AbsenceDetailViewController: AbsenceDetailCellDelegate {
-    func confirmProcees() {
+    func confirmProcees(withChildID: String, withAbsenceTime: String, withStatusAbsence: Int, withReason: String, withDesc: String) {
+        childID = withChildID
+        absenceTime = withAbsenceTime
+        statusAbsence = withStatusAbsence
+        reasonID = withReason
+        reasonDesc = withDesc
         isConfirmationViewDisplayed = true
         updateView()
     }

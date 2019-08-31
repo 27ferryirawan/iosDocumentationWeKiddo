@@ -11,13 +11,17 @@ import ActionSheetPicker_3_0
 import SDWebImage
 
 protocol AbsenceDetailCellDelegate: class {
-    func confirmProcees()
+    func confirmProcees(withChildID: String, withAbsenceTime: String, withStatusAbsence: Int, withReason: String, withDesc: String)
 }
 
 class AbsenceDetailCell: UITableViewCell {
 
     @IBOutlet weak var minuteButtonPicker: UIButton!
     @IBOutlet weak var hourButtonPicker: UIButton!
+    var placeholderLabel = UILabel()
+    var selectedReason = ""
+    var reasonDesc = ""
+    var selectedAbsenceTime = ""
     @IBOutlet weak var checkInButton: UIButton! {
         didSet {
             checkInButton.layer.cornerRadius = 5.0
@@ -84,9 +88,13 @@ class AbsenceDetailCell: UITableViewCell {
         } else {
             absenceStatus.text = "Check In"
         }
+        for item in obj.reasons {
+            reason.append(item.reason_desc)
+        }
     }
     @objc func checkInSubmit() {
-        self.delegate?.confirmProcees()
+        guard let obj = detailAbsence else { return }
+        self.delegate?.confirmProcees(withChildID: obj.child_id, withAbsenceTime: selectedAbsenceTime, withStatusAbsence: obj.status_absence, withReason: self.selectedReason, withDesc: reasonDesc)
     }
     @objc func showReason() {
         ActionSheetStringPicker.show(
@@ -95,7 +103,12 @@ class AbsenceDetailCell: UITableViewCell {
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
                 guard let value = values as? String else { return }
-                self.reasonPickerButton.setTitle(value, for: .normal)
+                print(value)
+                guard let obj = self.detailAbsence else { return }
+                self.selectedReason = obj.reasons[indexes].reason_id
+                DispatchQueue.main.async {
+                    self.reasonPickerButton.setTitle("  \(value)", for: .normal)
+                }
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
@@ -108,12 +121,50 @@ class AbsenceDetailCell: UITableViewCell {
             selectedDate: Date(),
             doneBlock: { picker, selectedDate, origin in
                 let dateFormatter = DateFormatter()
+                let hourFormatter = DateFormatter()
+                let minuteFormatter = DateFormatter()
                 let locale = Locale(identifier: "id")
-                dateFormatter.dateFormat = "HH:mm"
+                dateFormatter.dateFormat = "HH:mm:ss"
+                hourFormatter.dateFormat = "HH"
+                minuteFormatter.dateFormat = "mm"
                 dateFormatter.locale = locale
+                hourFormatter.locale = locale
+                minuteFormatter.locale = locale
                 let selectedDates = dateFormatter.string(from: selectedDate as! Date)
-                print(selectedDates)
+                self.selectedAbsenceTime = selectedDates
+                let selectedHour = hourFormatter.string(from: selectedDate as! Date)
+                let selectedMinute = minuteFormatter.string(from: selectedDate as! Date)
+                self.hourButtonPicker.setTitle(selectedHour, for: .normal)
+                self.minuteButtonPicker.setTitle(selectedMinute, for: .normal)
         }, cancel: nil, origin: self)
 
     }
+}
+
+extension AbsenceDetailCell: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            reasonDesc = text
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        reasonDesc = textView.text!
+        if textView.text.isEmpty {
+            textView.text = "Reason"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel.isHidden = !reasonText.text.isEmpty
+    }
+
 }
