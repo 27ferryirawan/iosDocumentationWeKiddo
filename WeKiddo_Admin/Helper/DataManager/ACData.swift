@@ -73,6 +73,8 @@ struct ACData {
     static var EXAMTEACHERLISTALL : ExamTeacherListAll!
     static var EXAMTEACHERLIST: ExamTeacherList!
     static var EXAMLISTADMIN : ExamListModel!
+    static var EXAMSUBJECTLIST : ExamSubjectListModel!
+    static var EXAMLEVELLIST : ExamLevelListModel!
     static var SCOREDATA = [ScoreModel]()
     static var SCORESUMMARYDATA = [ScoreSummaryModel]()
     static var PARENTPROFILEDATA: ParentProfileModel!
@@ -106,8 +108,8 @@ struct ACData {
     static var SUBJECTTEACHERDATAVOICENOTEMODEL = [SubjectTeacherVoiceNotesArrayModel]()
     static var EXAMREMEDYSCORELISTDATA: ExamRemedyScoreListModel!
     static var EXAMEDITDATA: ExamEditModel!
-    static var EXAMTYPELISTDATA: ExamTypeModel!
-    static var EXAMMAJORLISTDATA: ExamMajorModel!
+    static var EXAMCLASSDATA: ExamMajorModel!
+    static var EXAMSESSIONDATA: ExamMajorModel!
     static var EVENTCOUNTDATA: EventCountModel!
     static var SPECIALATTENTIONBYSUBJECTDATA = [SpecialAttentionBySubjectListModel]()
     static var SPECIALATTENTIONBYCLASSDATA = [SpecialAttentionByClassListModel]()

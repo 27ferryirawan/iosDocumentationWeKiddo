@@ -9,31 +9,44 @@
 import Foundation
 import SwiftyJSON
 
-class ExamTypeModel: NSObject {
-    var exam_type = [ExamTypeListModel]()
-    var exam_subject = [ExamSubjectListModel]()
-    var exam_level = [ExamLevelListModel]()
+class ExamSubjectListModel: NSObject {
+    var typeList = [ExamTypeContentModel]()
+    var subjectList = [ExamSubjectContentModel]()
     
     func objectMapping(json: JSON) {
         for data in json["data"]["list"]["subject"].arrayValue {
-            let d = ExamSubjectListModel()
+            let d = ExamSubjectContentModel()
             d.objectMapping(json: data)
-            exam_subject.append(d)
+            subjectList.append(d)
         }
         for data in json["data"]["list"]["exam_type"].arrayValue {
-            let d = ExamTypeListModel()
+            let d = ExamTypeContentModel()
             d.objectMapping(json: data)
-            exam_type.append(d)
-        }
-        for data in json["data"]["list"]["level"].arrayValue {
-            let d = ExamLevelListModel()
-            d.objectMapping(json: data)
-            exam_level.append(d)
+            typeList.append(d)
         }
     }
 }
 
-class ExamTypeListModel: NSObject {
+class ExamLevelListModel: NSObject {
+    var levelList = [ExamLevelContentModel]()
+    var majorList = [ExamMajorContentModel]()
+    
+    func objectMapping(json: JSON){
+        for data in json["data"]["list"]["level_list"].arrayValue {
+            let d = ExamLevelContentModel()
+            d.objectMapping(json: data)
+            levelList.append(d)
+        }
+        for data in json["data"]["list"]["major_list"].arrayValue {
+            let d = ExamMajorContentModel()
+            d.objectMapping(json: data)
+            majorList.append(d)
+        }
+    }
+    
+}
+
+class ExamTypeContentModel: NSObject {
     var exam_type_id = ""
     var exam_type_name = ""
     
@@ -43,7 +56,17 @@ class ExamTypeListModel: NSObject {
     }
 }
 
-class ExamLevelListModel: NSObject {
+class ExamMajorContentModel : NSObject{
+    var school_major_id = ""
+    var school_major = ""
+    
+    func objectMapping(json: JSON) {
+        school_major_id = json["school_major_id"].stringValue
+        school_major = json["school_major"].stringValue
+    }
+}
+
+class ExamLevelContentModel: NSObject {
     var school_level = ""
     var school_level_id = ""
     
@@ -53,7 +76,7 @@ class ExamLevelListModel: NSObject {
     }
 }
 
-class ExamSubjectListModel: NSObject {
+class ExamSubjectContentModel: NSObject {
     var subject_name = ""
     var subject_id = ""
     

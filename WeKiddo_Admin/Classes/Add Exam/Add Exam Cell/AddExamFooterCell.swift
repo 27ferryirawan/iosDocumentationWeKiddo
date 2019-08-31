@@ -123,7 +123,7 @@ extension AddExamFooterCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "addExamSessionCellID", for: indexPath) as? AddExamSessionCell)!
 //        cell.sessionSelected = self.sessionSelected
-        if sessionSelected.contains(where: {$0.weekAt == currentWeek && $0.sessionAt == ACData.EXAMMAJORLISTDATA.week_session[selectedIndex].sessions[indexPath.row].session_count}) {
+        if sessionSelected.contains(where: {$0.weekAt == currentWeek && $0.sessionAt == ACData.EXAMSESSIONDATA.week_session[selectedIndex].sessions[indexPath.row].session_count}) {
             cell.sessionImageStatus.image = UIImage(named: "radio-on-button")
             print(sessionSelected)
         } else {

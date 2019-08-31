@@ -27,6 +27,7 @@ class AddExamViewController: UIViewController {
     var examSubjectID = ""
     var examLevelID = ""
     var examMajorID = ""
+    var examTeacherID = ""
     var selectedSessionArray = [ExamSessionSelectedModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +41,28 @@ class AddExamViewController: UIViewController {
     }
     func fetchData() {
         classSelectedArray.append("")
-        ACRequest.POST_EXAM_TYPE_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
-            SVProgressHUD.dismiss()
-            ACData.EXAMTYPELISTDATA = jsonDatas
-            self.tableView.reloadData()
+        //TODO : Change Value of schoolID and YearID
+        ACRequest.POST_GET_EXAM_TEACHER_LIST(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            tokenAccess: ACData.LOGINDATA.accessToken,
+            successCompletion: { (data) in
+                ACData.EXAMTEACHERLIST = data
+                self.tableView.reloadData()
+                 SVProgressHUD.dismiss()
         }) { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)
         }
+//        ACRequest.POST_EXAM_TYPE_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
+//            SVProgressHUD.dismiss()
+//            ACData.EXAMTYPELISTDATA = jsonDatas
+//            self.tableView.reloadData()
+//        }) { (message) in
+//            SVProgressHUD.dismiss()
+//            ACAlert.show(message: message)
+//        }
     }
     func configTable() {
         tableView.register(UINib(nibName: "AddExamCell", bundle: nil), forCellReuseIdentifier: "addExamCellID")
@@ -102,11 +117,12 @@ class AddExamViewController: UIViewController {
         
         print("schoolId: \(ACData.LOGINDATA.school_id), userId: \(ACData.LOGINDATA.userID), role: \(ACData.LOGINDATA.role), yearId: \(ACData.LOGINDATA.year_id), examID: \(""), examTitle: \(examTitle), examDesc: \(examDesc), examTypeID: \(examTypeID), subjectID: \(examSubjectID), class: \(jsonClass), session: \(jsonSession)")
         
+        //TODO : Change value of school_id and year_id
         let parameters: Parameters = [
-            "school_id":ACData.LOGINDATA.school_id,
-            "year_id":ACData.LOGINDATA.year_id,
+            "school_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
+            "school_user_id":examTeacherID,
             "exam_id":"",
             "exam_title":examTitle,
             "exam_desc":examDesc,
@@ -135,7 +151,7 @@ extension AddExamViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 414
+            return 473
         } else if indexPath.row < 1 + classCount {
             return 65
         } else if indexPath.row == 1 + classCount {
@@ -147,13 +163,15 @@ extension AddExamViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "addExamCellID", for: indexPath) as? AddExamCell)!
-            cell.detailObj = ACData.EXAMTYPELISTDATA
+            cell.teacherObj = ACData.EXAMTEACHERLIST
             cell.delegate = self
             return cell
         } else if indexPath.row < 1 + classCount {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "addExamClassCellID", for: indexPath) as? AddExamClassCell)!
             cell.indexCell = indexPath.row - 1
-            cell.detailObj = ACData.EXAMMAJORLISTDATA
+            if ACData.EXAMCLASSDATA != nil{
+                cell.detailObj = ACData.EXAMCLASSDATA
+            }
             cell.delegate = self
             return cell
         } else if indexPath.row == 1 + classCount {
@@ -162,7 +180,9 @@ extension AddExamViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "addExamFooterCellID", for: indexPath) as? AddExamFooterCell)!
-            cell.detailObj = ACData.EXAMMAJORLISTDATA
+            if ACData.EXAMSESSIONDATA != nil {
+                cell.detailObj = ACData.EXAMSESSIONDATA
+            }
             cell.delegate = self
             return cell
         }
@@ -198,6 +218,7 @@ extension AddExamViewController: AddExamCellDelegate, AddExamClassCellDelegate, 
     func subjectSelectedWithValue(value: String) {
         print(value)
         examSubjectID = value
+        shouldFetchClassAndSession()
     }
     
     func typeSelectedWithValue(value: String) {
@@ -207,12 +228,75 @@ extension AddExamViewController: AddExamCellDelegate, AddExamClassCellDelegate, 
     
     func levelSelectedWithValue(value: String) {
         print(value)
+        examLevelID = value
+        
+        shouldFetchClassAndSession()
+    }
+    
+    func teacherSelected(with value: String) {
+        examTeacherID = value
     }
     
     func majorSelectedWithValue(value: String) {
         print(value)
         tableView.reloadData()
-//        tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: UITableView.RowAnimation.none)
+    }
+    
+    func shouldFetchClassAndSession(){
+        //TODO : Change Value of SchoolID and YearID
+        if !examLevelID.isEmpty{
+            ACRequest.POST_GET_EXAM_GET_CLASS(
+                userID: ACData.LOGINDATA.userID,
+                schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+                yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+                school_user_id: self.examTeacherID,
+                subjectID: self.examSubjectID,
+                levelID: self.examLevelID,
+                tokenAccess: ACData.LOGINDATA.accessToken,
+                successCompletion: { (data) in
+                    SVProgressHUD.dismiss()
+                    ACData.EXAMCLASSDATA = data
+                    
+                    let lastScrollOffset = self.tableView.contentOffset
+                    let cellCount = self.tableView.numberOfRows(inSection: 0)
+                    var indexPaths = [IndexPath]()
+                    for i in 1...cellCount - 2{
+                        indexPaths.append(IndexPath(row: i, section: 0))
+                    }
+                    self.tableView.reloadRows(at: indexPaths, with: .none)
+                    DispatchQueue.main.async {
+                        self.view.layoutIfNeeded()
+                        self.tableView.setContentOffset(lastScrollOffset, animated: false)
+                    }
+            }) { (message) in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: message)
+            }
+        }
+        
+        //TODO : Change Value of SchoolID and YearID
+        ACRequest.POST_GET_EXAM_GET_WEEK(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            school_user_id: self.examTeacherID,
+            subjectID: self.examSubjectID,
+            tokenAccess: ACData.LOGINDATA.accessToken,
+            successCompletion: { (data) in
+                SVProgressHUD.dismiss()
+                ACData.EXAMSESSIONDATA = data
+                
+                let lastScrollOffset = self.tableView.contentOffset
+                let cellCount = self.tableView.numberOfRows(inSection: 0)
+                self.tableView.reloadRows(at: [IndexPath(item: cellCount - 1, section: 0)], with: .none)
+                DispatchQueue.main.async {
+                    self.view.layoutIfNeeded()
+                    self.tableView.setContentOffset(lastScrollOffset, animated: false)
+                }
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }
 

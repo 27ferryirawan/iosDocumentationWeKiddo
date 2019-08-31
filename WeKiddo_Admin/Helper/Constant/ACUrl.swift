@@ -340,4 +340,9 @@ class ACUrl: NSObject {
     static let ADMIN_GET_EXAM_LIST = PARENT_APP + "exam/list"
     static let ADMIN_GET_EXAM_TEACHER_LIST = PARENT_APP + "exam/get-teacher"
     static let ADMIN_GET_EXAM_TEACHER_LIST_ALL = PARENT_APP + "exam/teacher-list"
+    static let ADMIN_GET_EXAM_GET_SUBJECT = PARENT_APP + "exam/get-subject"
+    static let ADMIN_GET_EXAM_GET_LEVEL = PARENT_APP + "exam/get-level"
+    static let ADMIN_GET_EXAM_GET_CLASS = PARENT_APP + "exam/get-class"
+    static let ADMIN_GET_EXAM_GET_WEEK = PARENT_APP + "exam/get-week"
+    static let ADMIN_POST_EXAM_SAVE = PARENT_APP + "exam/save"
 }
