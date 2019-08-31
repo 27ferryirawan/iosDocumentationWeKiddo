@@ -318,6 +318,74 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_TASKLIST_ADMIN_NEW(
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([TaskListAdminModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_TASKLIST_ADMIN_NEW)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasksAdminNew = ACData.TASKLISTADMINNEWDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["task_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let taskNew = TaskListAdminModel()
+                            taskNew.objectMapping(json: jsonValue)
+                            tasksAdminNew.append(taskNew)
+                        }
+                    } else {
+                        failCompletion("No data available")
+                    }
+                }
+                successCompletion(tasksAdminNew)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_TASKLIST_ADMIN_HISTORY(
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([TaskListAdminHistoryModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_TASKLIST_ADMIN_HISTORY)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasksAdminHistory = ACData.TASKLISTADMINHISTORYDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["task_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let taskHistory = TaskListAdminHistoryModel()
+                            taskHistory.objectMapping(json: jsonValue)
+                            tasksAdminHistory.append(taskHistory)
+                        }
+                    } else {
+                        failCompletion("No data available")
+                    }
+                }
+                successCompletion(tasksAdminHistory)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_ABSENCE_DETAIL(
         userId:String,
         childID:String,

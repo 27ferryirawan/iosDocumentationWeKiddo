@@ -91,9 +91,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             case "72":
                 let monitoringVC = SchoolMonitoringViewController()
                 self.navigationController?.pushViewController(monitoringVC, animated: true)
-            case "42":
-                let latePaymentVC = LatePaymentViewController()
-                self.navigationController?.pushViewController(latePaymentVC, animated: true)
+            case "63":
+                let tasklistAdminVC = TaskListAdminViewController()
+                self.navigationController?.pushViewController(tasklistAdminVC, animated: true)
             case "36":
                 let attendanceVC = AttendancesViewController()
                 self.navigationController?.pushViewController(attendanceVC, animated: true)
@@ -154,110 +154,3 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
         }
     }
 }
-
-/*
-extension OthersViewController: FeaturedDelegate, OthersDelegate, SettingsDelegate {
-    func goToChangeLanguage() {
-        
-    }
-    func goToParentProfile() {
-        let parentProfileVC = ParentProfileViewController()
-        self.navigationController?.pushViewController(parentProfileVC, animated: true)
-    }
-    func goToStudentProfile() {
-        let studentProfileVC = StudentProfileViewController()
-        self.navigationController?.pushViewController(studentProfileVC, animated: true)
-    }
-    func goToLogOut() {
-        ACData.EXAMDATA.removeAll()
-        ACData.ANNOUNCEMENT.removeAll()
-        ACData.ASSIGNMENT.removeAll()
-        ACData.SESSIONS.removeAll()
-        ACData.COURSELISTDATA.removeAll()
-        ACData.NEWSCONTENT.removeAll()
-        ACData.TABBARMENUDATA.removeAll()
-        ACData.CHILDCONTENT.removeAll()
-        ACData.MENUCATEGORYOTHERSDATA.removeAll()
-        ACData.MENUCATEGORYFEATUREDATA.removeAll()
-        ACData.MENUCATEGORYSETTINGDATA.removeAll()
-        let mainViewController = ViewController()
-        let navController = UINavigationController(rootViewController: mainViewController)
-        UIApplication.shared.keyWindow?.rootViewController = navController
-    }
-    
-    // OTHERS
-    func goToSubject() {
-        let subjectVC = SubjectListViewController()
-        self.navigationController?.pushViewController(subjectVC, animated: true)
-    }
-    func goToParentChat() {
-        
-    }
-    func goToAssignment() {
-        let assignmentVC = AssignmentViewController()
-        self.navigationController?.pushViewController(assignmentVC, animated: true)
-    }
-    func goToApproval() {
-        let approvalVC = ApprovalViewController()
-        self.navigationController?.pushViewController(approvalVC, animated: true)
-    }
-    func goToScore() {
-        
-    }
-    func goToQuestion() {
-        let questionVC = QuestionsViewController()
-        self.navigationController?.pushViewController(questionVC, animated: true)
-    }
-    func goToPermission() {
-        let permissionVC = PermissionViewController()
-        self.navigationController?.pushViewController(permissionVC, animated: true)
-    }
-    func goToAnnouncement() {
-        let announcementVC = AnnouncementViewController()
-        self.navigationController?.pushViewController(announcementVC, animated: true)
-    }
-    func goToDownload() {
-        
-    }
-    func goToTransaction() {
-        
-    }
-    func goToNews() {
-        let newsVC = NewsViewController()
-        self.navigationController?.pushViewController(newsVC, animated: true)
-    }
-    
-    func goToAgency() {
-        let agencyVC = AgencyViewController()
-        self.navigationController?.pushViewController(agencyVC, animated: true)
-    }
-    
-    func goToFosterParent() {
-        
-    }
-    
-    func goToCalendar() {
-        let calendarVC = CalendarViewController()
-        self.navigationController?.pushViewController(calendarVC, animated: true)
-    }
-    
-    
-    // FEATURED
-    func goToNearby() {
-        let nearbyVC = NearbyViewController()
-        self.navigationController?.pushViewController(nearbyVC, animated: true)
-    }
-    func goToFuture() {
-        let futureVC = FuturePlanViewController()
-        self.navigationController?.pushViewController(futureVC, animated: true)
-    }
-    func goToCompetition() {
-        let competitionVC = CompetitionViewController()
-        self.navigationController?.pushViewController(competitionVC, animated: true)
-    }
-    func goToMedical() {
-        let medicalVC = MedicalRecordViewController()
-        self.navigationController?.pushViewController(medicalVC, animated: true)
-    }
-}
-*/
