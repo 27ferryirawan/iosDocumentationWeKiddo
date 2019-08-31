@@ -59,4 +59,25 @@ extension SchoolMonitoringViewController: SchoolMonitoringHeaderCellDelegate {
     func refreshData() {
         self.tableView.reloadData()
     }
+    func toStudentList() {
+        let studentListVC = SchoolMonitoringUserListViewController()
+        studentListVC.isStudent = true
+        studentListVC.isParent = false
+        studentListVC.isTeacher = false
+        self.navigationController?.pushViewController(studentListVC, animated: true)
+    }
+    func toParentList() {
+        let studentListVC = SchoolMonitoringUserListViewController()
+        studentListVC.isStudent = false
+        studentListVC.isParent = true
+        studentListVC.isTeacher = false
+        self.navigationController?.pushViewController(studentListVC, animated: true)
+    }
+    func toTeacherList() {
+        let studentListVC = SchoolMonitoringUserListViewController()
+        studentListVC.isStudent = false
+        studentListVC.isParent = false
+        studentListVC.isTeacher = true
+        self.navigationController?.pushViewController(studentListVC, animated: true)
+    }
 }

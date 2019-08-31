@@ -12,6 +12,9 @@ import ActionSheetPicker_3_0
 
 protocol SchoolMonitoringHeaderCellDelegate: class {
     func refreshData()
+    func toStudentList()
+    func toParentList()
+    func toTeacherList()
 }
 
 class SchoolMonitoringHeaderCell: UITableViewCell {
@@ -175,7 +178,9 @@ class SchoolMonitoringHeaderCell: UITableViewCell {
             
         }
         ACRequest.POST_SCHOOL_TOTAL_STUDENT(userId: ACData.LOGINDATA.userID, schoolID: school_ID, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.TOTALSTUDENTDATA = result
             SVProgressHUD.dismiss()
+            self.delegate?.toStudentList()
         }) { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)
@@ -188,7 +193,9 @@ class SchoolMonitoringHeaderCell: UITableViewCell {
             
         }
         ACRequest.POST_SCHOOL_TOTAL_PARENT(userId: ACData.LOGINDATA.userID, schoolID: school_ID, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.TOTALPARENTDATA = result
             SVProgressHUD.dismiss()
+            self.delegate?.toParentList()
         }) { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)
@@ -201,7 +208,9 @@ class SchoolMonitoringHeaderCell: UITableViewCell {
             
         }
         ACRequest.POST_SCHOOL_TOTAL_TEACHER(userId: ACData.LOGINDATA.userID, schoolID: school_ID, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.TOTALTEACHERDATA = result
             SVProgressHUD.dismiss()
+            self.delegate?.toTeacherList()
         }) { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)
