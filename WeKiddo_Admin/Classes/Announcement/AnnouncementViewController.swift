@@ -34,7 +34,11 @@ class AnnouncementViewController: UIViewController {
     }
     func fetchData() {
         ACData.ANNOUNCEMENTLISTDATA.removeAll()
-        ACRequest.GET_ANNOUNCEMENT_DATA(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (announcementDatas) in
+        ACRequest.GET_ANNOUNCEMENT_DATA(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (announcementDatas) in
             SVProgressHUD.dismiss()
             ACData.ANNOUNCEMENTLISTDATA = announcementDatas
             self.tableView.reloadData()

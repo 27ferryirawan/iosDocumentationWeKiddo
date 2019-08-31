@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AnnouncementDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var btDeleteNo: UIButton!
+    @IBOutlet weak var btDeleteYes: UIButton!
+    @IBOutlet weak var btClosePopUp: UIButton!
+    
     var mediaArray = [AnnouncementDetailMediasModel]()
     var videoArray = [AnnouncementDetailMediasModel]()
 
@@ -18,11 +24,23 @@ class AnnouncementDetailViewController: UIViewController {
         super.viewDidLoad()
         configNavigation()
         configTable()
+        configView()
         print("tuki: \(ACData.ANNOUNCEMENTDETAILDATA.field.count)")
     }
     func configNavigation() {
         detectAdaptiveClass()
         backStyleNavigationController(pageTitle: "Announcement", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
+    }
+    func configView(){
+        deleteView.isHidden = true
+        deleteView.layer.cornerRadius = 10
+        deleteView.layer.borderColor = UIColor.black.cgColor
+        deleteView.layer.borderWidth = 1
+        
+        btDeleteNo.addTarget(self, action: #selector(dismissDeleteView(_:)), for: .touchUpInside)
+        btClosePopUp.addTarget(self, action: #selector(dismissDeleteView(_:)), for: .touchUpInside)
+        btDeleteYes.addTarget(self, action: #selector(deleteAnnouncement(_:)), for: .touchUpInside)
+        
     }
     func configTable() {
         tableView.register(UINib(nibName: "AnnouncementDetailCell", bundle: nil), forCellReuseIdentifier: "announcementDetailCell")
@@ -39,6 +57,25 @@ class AnnouncementDetailViewController: UIViewController {
             if mediaObj.media_type_id == "MT2" {
                 mediaArray.append(mediaObj)
             }
+        }
+    }
+    
+    @objc func dismissDeleteView(_ sender: UIButton){
+        self.deleteView.isHidden = true
+    }
+    
+    @objc func deleteAnnouncement(_ sender: UIButton){
+        guard let obj = ACData.ANNOUNCEMENTDETAILDATA else {return}
+        ACRequest.POST_ANNOUNCEMENT_DELETE(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            announcementID: obj.school_announcement_id,
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { () in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: "Delete Success", viewController: self)
+        }) { (message) in
+            SVProgressHUD.dismiss()
         }
     }
 }
@@ -97,5 +134,9 @@ extension AnnouncementDetailViewController: AnnouncementDetailCellDelegate, Anno
         let editAnncVC = AddAnnouncementViewController()
         editAnncVC.isFromEdit = true
         self.navigationController?.pushViewController(editAnncVC, animated: true)
+    }
+    
+    func showDeleteAlert() {
+        deleteView.isHidden = false
     }
 }

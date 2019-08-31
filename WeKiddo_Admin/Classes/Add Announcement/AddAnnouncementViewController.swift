@@ -9,8 +9,16 @@
 import UIKit
 import SVProgressHUD
 import Alamofire
+import SDWebImage
 
 class AddAnnouncementViewController: UIViewController {
+    
+    @IBOutlet weak var popUpRemoveStudent: UIView!
+    @IBOutlet weak var ivStudentAvatar: UIImageView!
+    @IBOutlet weak var lbStudentName: UILabel!
+    @IBOutlet weak var lbStudentNIS: UILabel!
+    @IBOutlet weak var btPopUpCancel: UIButton!
+    @IBOutlet weak var btPopUpRemove: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
     var isFromEdit = Bool()
@@ -27,11 +35,13 @@ class AddAnnouncementViewController: UIViewController {
     var announcementDescText = ""
     var startDate = ""
     var endDate = ""
+    var childID = ""
     var studentSelected = [StudentSearchSelected]()
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
         configTable()
+        configPopUpRemove()
     }
     func configNavigation() {
         detectAdaptiveClass()
@@ -41,6 +51,38 @@ class AddAnnouncementViewController: UIViewController {
         tableView.register(UINib(nibName: "AddAnnouncementCell", bundle: nil), forCellReuseIdentifier: "addAnnouncementCellID")
         tableView.register(UINib(nibName: "AddAnnouncementDescCell", bundle: nil), forCellReuseIdentifier: "addAnnouncementDescCellID")
         tableView.register(UINib(nibName: "AddAnnouncementHeaderCell", bundle: nil), forCellReuseIdentifier: "addAnnouncementHeaderCellID")
+    }
+    func configPopUpRemove(){
+        popUpRemoveStudent.isHidden = true
+        popUpRemoveStudent.layer.cornerRadius = 10
+        popUpRemoveStudent.layer.borderWidth = 1
+        popUpRemoveStudent.layer.borderColor = UIColor.black.cgColor
+        
+        btPopUpCancel.addTarget(self, action: #selector(dismissPopUp(_:)), for: .touchUpInside)
+        btPopUpRemove.addTarget(self, action: #selector(removeStudent(_:)), for: .touchUpInside)
+    }
+    
+    @objc func dismissPopUp(_ sender: UIButton){
+        popUpRemoveStudent.isHidden = true
+    }
+    @objc func removeStudent(_ sender: UIButton){
+        //TODO : Change value of schoolID, yearID, and announcementIDx
+        ACRequest.POST_ANNOUNCEMENT_REMOVE_STUDENT(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            announcementID: ACData.ANNOUNCEMENTDETAILDATA.school_announcement_id,
+            childID: self.childID,
+            accessToken: ACData.LOGINDATA.accessToken,
+            successCompletion: {
+                SVProgressHUD.dismiss()
+                if let index = self.studentSelected.firstIndex(where: {$0.child_id == self.childID}){
+                   self.studentSelected.remove(at: index)
+                }
+                self.childID = ""
+        }) { (message) in
+            SVProgressHUD.dismiss()
+        }
     }
 }
 
@@ -79,6 +121,7 @@ extension AddAnnouncementViewController: UITableViewDataSource, UITableViewDeleg
             cell.pictureCollection.reloadData()
             cell.videoCollection.reloadData()
             cell.studentCollection.reloadData()
+            cell.isFromEdit = isFromEdit
             cell.delegate = self
             return cell
         }
@@ -217,11 +260,12 @@ extension AddAnnouncementViewController: AddAnnouncementHeaderCellDelegate, AddA
         let jsonAdditionalData = newAdditionalAddOn.data(using: .utf8)!
         let jsonAdditional = try! JSONSerialization.jsonObject(with: jsonAdditionalData, options: .allowFragments)
         
+        //TODO : Change Value of schoolID and yearID
+        
         let parameters: Parameters = [
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
-            "school_id":ACData.LOGINDATA.school_id,
-            "year_id":ACData.LOGINDATA.year_id,
+            "school_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "announcement_id":"",
             "announcement_title":titleHeader,
             "announcement_desc":announcementDescText,
@@ -309,6 +353,17 @@ extension AddAnnouncementViewController: AddAnnouncementHeaderCellDelegate, AddA
         }
         print(selectedDescription)
     }
+    func didTapStudent(with obj: StudentSearchSelected) {
+        popUpRemoveStudent.isHidden = false
+        self.childID = obj.child_id
+        lbStudentName.text = obj.child_name
+        lbStudentNIS.text = obj.child_nis
+        ivStudentAvatar.sd_setImage(
+            with: URL(string: (obj.child_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+    }
 }
 
 extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -319,7 +374,9 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
         actionsheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction)in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
             } else {
                 print("Camera is Not Available")
             }
@@ -327,7 +384,9 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
         actionsheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction)in
             imagePickerController.sourceType = .savedPhotosAlbum
             imagePickerController.mediaTypes = ["public.image", "public.movie"]
-            self.present(imagePickerController, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(imagePickerController, animated: true, completion: nil)
+            }
         }))
         actionsheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionsheet,animated: true, completion: nil)
@@ -361,11 +420,11 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
         picker.dismiss(animated: true, completion: nil)
     }
     func uploadVideo(withURL: Data) {
+        //TODO : Change value of schoolID and yearID
         let parameter: Parameters = [
             "user_id": ACData.LOGINDATA.userID,
-            "role": ACData.LOGINDATA.role,
-            "school_id": ACData.LOGINDATA.school_id,
-            "year_id": ACData.LOGINDATA.year_id,
+            "school_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "media_type": mediaType
         ]
         print(parameter)
@@ -382,10 +441,10 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
     }
     func uploadAttachment(withImage: UIImage) {
         let parameter: Parameters = [
+            //TODO: Change value of SchoolID and yearID
             "user_id": ACData.LOGINDATA.userID,
-            "role": ACData.LOGINDATA.role,
-            "school_id": ACData.LOGINDATA.school_id,
-            "year_id": ACData.LOGINDATA.year_id,
+            "school_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "media_type": mediaType
         ]
         if isBanner {

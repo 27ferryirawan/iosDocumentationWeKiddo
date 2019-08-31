@@ -18,6 +18,7 @@ protocol AddAnnouncementHeaderCellDelegate: class {
     func classSelected(withValue: String)
     func toSearchStudentPage(withStudentsLists: [StudentSearchSelected])
     func addAnnouncement()
+    func didTapStudent(with obj: StudentSearchSelected)
 }
 
 class AddAnnouncementHeaderCell: UITableViewCell {
@@ -51,6 +52,7 @@ class AddAnnouncementHeaderCell: UITableViewCell {
     var className = [String]()
     var levelID = ""
     var classID = ""
+    var isFromEdit : Bool = false
     var studentLists = [StudentSearchSelected]()
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -110,7 +112,13 @@ class AddAnnouncementHeaderCell: UITableViewCell {
     func fetchClass(withLevel: String) {
         className.removeAll()
         ACData.ANNOUNCEMENTCLASSDATA.removeAll()
-        ACRequest.GET_ANNOUNCEMENT_CLASS_DATA(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, levelID: levelID, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (classDatas) in
+        //TODO: Change Value of schoolID and yearID
+        ACRequest.GET_ANNOUNCEMENT_CLASS_DATA(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            levelID: levelID,
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (classDatas) in
             ACData.ANNOUNCEMENTCLASSDATA = classDatas
             SVProgressHUD.dismiss()
             self.classPickerButton.isUserInteractionEnabled = true
@@ -173,6 +181,13 @@ extension AddAnnouncementHeaderCell: UICollectionViewDelegate, UICollectionViewD
             let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "addStudentCollectionCellID", for: indexPath) as? AddStudentCollectionCell)!
             cell.objDetail = studentLists[indexPath.row]
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if isFromEdit{
+            let obj = studentLists[indexPath.row]
+            delegate?.didTapStudent(with: obj)
         }
     }
 }

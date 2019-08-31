@@ -133,7 +133,11 @@ extension NotificationDetailViewController: NotificationHeaderCellDelegate, Appr
     }
     func toEditEvent() {
         ACData.ANNOUNCEMENTLEVELLISTDATA.removeAll()
-        ACRequest.GET_ANNOUNCEMENT_LEVEL_DATA(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (levelDatas) in
+        ACRequest.GET_ANNOUNCEMENT_LEVEL_DATA(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? ""
+            , accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (levelDatas) in
             SVProgressHUD.dismiss()
             ACData.ANNOUNCEMENTLEVELLISTDATA = levelDatas
             let editVC = EditEventMonitoringViewController()
