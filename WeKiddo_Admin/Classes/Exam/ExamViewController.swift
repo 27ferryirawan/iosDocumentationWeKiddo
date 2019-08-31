@@ -43,7 +43,14 @@ class ExamViewController: UIViewController {
 //            ACData.EXAMLISTDATA.exam_level_list.removeAll()
 //            ACData.EXAMLISTDATA.exam_list.removeAll()
 //        }
-        ACRequest.GET_EXAM_LIST(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, levelID: "", subjectID: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
+        ACRequest.GET_EXAM_LIST(
+            userID: ACData.LOGINDATA.userID,
+            role: ACData.LOGINDATA.role,
+            schoolID: ACData.LOGINDATA.school_id,
+            yearID: ACData.LOGINDATA.year_id,
+            levelID: "",
+            subjectID: "",
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
             SVProgressHUD.dismiss()
             ACData.EXAMLISTDATA = jsonDatas
             self.listCount = ACData.EXAMLISTDATA.exam_list.count
@@ -63,7 +70,7 @@ extension ExamViewController: UITableViewDataSource, UITableViewDelegate {
         return 1 + listCount
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 112 : 77
+        return indexPath.row == 0 ? 56 : 77
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
