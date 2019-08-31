@@ -127,9 +127,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
 //                self.navigationController?.pushViewController(assignmentVC, animated: true)
 //                let assignmentVC = AssignmentViewController()
 //                self.navigationController?.pushViewController(assignmentVC, animated: true)
-            case "47":
-                let subjectVC = SubjectTeacherViewController()
-                self.navigationController?.pushViewController(subjectVC, animated: true)
+            case "60":
+                let classVC = ClassroomViewController()
+                self.navigationController?.pushViewController(classVC, animated: true)
             case "51" : self.tabBarController?.selectedIndex = 0
             default:
                 self.tabBarController?.selectedIndex = 0

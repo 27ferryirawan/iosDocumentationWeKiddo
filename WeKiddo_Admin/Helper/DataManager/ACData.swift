@@ -25,6 +25,7 @@ struct ACData {
     static var ANNOUNCEMENTLISTDATA = [AnnouncementListModel]()
     static var ANNOUNCEMENTLEVELLISTDATA = [AnnouncementLevelListModel]()
     static var AGENCY = [AgencyModel]()
+    static var CLASSROOM = [ClassroomModel]()
     static var MEDICAL = [MedicalModel]()
     static var MOREMENU = [MoreMenuModel]()
     static var ASSIGNMENT = [AssignmentModel]()
@@ -95,6 +96,7 @@ struct ACData {
     static var SUBJECTTEACHERBYSUBJECT = [SubjectTopicBySubjectModel]()
     static var SUBJECTTEACHERBYCLASS = [SubjectTopicByClassModel]()
     static var HISTORYLIST : HistoryModel!
+    static var CLASSROOMDASH : ClassroomDashModel!
     static var SUBJECTTEACHERCHAPTERLISTDATA: SubjectTeacherChapterListModel!
 //    static var SUBJECTTEACHERCHAPTERLISTDATA = [SubjectTeacherChapterListModel]()
     static var TEACHERONDUTYPICKERDATA : TeacherOnDutyChildListPickerModel!

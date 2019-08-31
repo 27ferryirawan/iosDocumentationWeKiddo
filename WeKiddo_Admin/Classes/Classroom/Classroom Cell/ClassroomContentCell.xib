@@ -59,11 +59,7 @@
                         <constraints>
                             <constraint firstItem="Ax5-pQ-geQ" firstAttribute="centerY" secondItem="6e3-Oi-m8B" secondAttribute="centerY" id="4hN-oy-Woe"/>
                             <constraint firstItem="UJM-zF-ZdI" firstAttribute="width" secondItem="LPQ-5M-8uu" secondAttribute="width" constant="3.5" id="6pA-vE-QL3"/>
-                            <constraint firstItem="6e3-Oi-m8B" firstAttribute="centerY" secondItem="a65-PV-9aD" secondAttribute="centerY" id="8yo-Uo-HXO"/>
                             <constraint firstItem="UJM-zF-ZdI" firstAttribute="trailing" secondItem="LPQ-5M-8uu" secondAttribute="trailing" constant="3.5" id="Aa8-ZY-Xgz"/>
-                            <constraint firstItem="6e3-Oi-m8B" firstAttribute="leading" secondItem="a65-PV-9aD" secondAttribute="leading" constant="15" id="KAW-4g-6eJ"/>
-                            <constraint firstItem="LPQ-5M-8uu" firstAttribute="top" secondItem="a65-PV-9aD" secondAttribute="top" constant="10" id="ORX-Jp-eaf"/>
-                            <constraint firstAttribute="trailing" secondItem="LPQ-5M-8uu" secondAttribute="trailing" constant="11.5" id="Phf-cE-h7l"/>
                             <constraint firstItem="LPQ-5M-8uu" firstAttribute="leading" secondItem="ck2-w4-HnJ" secondAttribute="trailing" constant="5" id="VS9-Aa-lvs"/>
                             <constraint firstItem="UJM-zF-ZdI" firstAttribute="top" secondItem="LPQ-5M-8uu" secondAttribute="bottom" constant="1" id="WPx-oW-9qq"/>
                             <constraint firstItem="Ax5-pQ-geQ" firstAttribute="leading" secondItem="6e3-Oi-m8B" secondAttribute="trailing" constant="10" id="mWy-er-1jd"/>
@@ -71,15 +67,17 @@
                         </constraints>
                     </view>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="a65-PV-9aD" secondAttribute="trailing" constant="10" id="M9x-Hc-r02"/>
-                    <constraint firstItem="a65-PV-9aD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VGh-O3-PrJ"/>
-                    <constraint firstItem="a65-PV-9aD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nsk-az-Kgo"/>
-                    <constraint firstItem="a65-PV-9aD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rgB-Gq-xrr"/>
-                    <constraint firstItem="a65-PV-9aD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="v0h-uS-Bqd"/>
-                    <constraint firstAttribute="bottom" secondItem="a65-PV-9aD" secondAttribute="bottom" id="wVh-HP-abw"/>
-                </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="a65-PV-9aD" secondAttribute="bottom" constant="0.5" id="3hH-Bx-Qo2"/>
+                <constraint firstItem="6e3-Oi-m8B" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="25" id="APV-1y-QMf"/>
+                <constraint firstItem="6e3-Oi-m8B" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="Eco-nP-O7U"/>
+                <constraint firstItem="a65-PV-9aD" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="10" id="IDU-2I-wip"/>
+                <constraint firstItem="LPQ-5M-8uu" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="10" id="YPZ-q4-ZRj"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="LPQ-5M-8uu" secondAttribute="trailing" constant="21.5" id="Yf2-3G-uNP"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="a65-PV-9aD" secondAttribute="trailing" constant="10" id="fhu-OO-asO"/>
+                <constraint firstItem="a65-PV-9aD" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="hA3-ZH-zVy"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bgView" destination="a65-PV-9aD" id="dSa-Nr-fhW"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hex
 
 class HistoryListCell: UITableViewCell {
 
@@ -16,7 +17,7 @@ class HistoryListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor(hex: "#EEEEEE")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,7 +53,7 @@ extension HistoryListCell {
         let dateFormatterResult = DateFormatter()
         dateFormatterResult.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatterResult.locale = NSLocale.current
-        dateFormatterResult.dateFormat = "yyyy-MM-dd h.mm a"
+        dateFormatterResult.dateFormat = "yyyy/MM/dd h.mm a"
         let stringDate = dateFormatterResult.string(from: date)
         return stringDate
     }

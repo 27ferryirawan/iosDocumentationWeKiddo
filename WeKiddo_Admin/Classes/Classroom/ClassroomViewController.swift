@@ -27,25 +27,27 @@ class ClassroomViewController: UIViewController {
     func configTable() {
         tableView.register(UINib(nibName: "ClassroomHeaderCell", bundle: nil), forCellReuseIdentifier: "classroomHeaderCellID")
         tableView.register(UINib(nibName: "ClassroomContentCell", bundle: nil), forCellReuseIdentifier: "classroomContentCellID")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
 extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return ACData.CLASSROOMDASH.class_list.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return ""
         } else {
-            return "Class \(section)"
+            return "Level \(ACData.CLASSROOMDASH.class_list[section].school_level)"
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
-            return 3
+            return ACData.CLASSROOMDASH.class_list[section].classes.count
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,12 +60,19 @@ extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "classroomHeaderCellID", for: indexPath) as? ClassroomHeaderCell)!
-            
+            cell.detailObj = ACData.CLASSROOMDASH
+            cell.delegate = self
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "classroomContentCellID", for: indexPath) as? ClassroomContentCell)!
-            
+            cell.classObjc = ACData.CLASSROOMDASH.class_list[indexPath.section].classes[indexPath.row]
             return cell
         }
+    }
+}
+extension ClassroomViewController : ClassroomDelegate{
+    
+    func refreshData() {
+        self.tableView.reloadData()
     }
 }
