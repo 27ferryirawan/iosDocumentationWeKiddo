@@ -13,6 +13,7 @@ protocol AnnouncementDetailFooterDelegate: class {
     func previewImage(withImageURL: String)
     func playVideo(withURL: String)
     func toEditAnnouncementPage()
+    func showDeleteAlert()
 }
 
 class AnnouncementDetailFooterCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -56,11 +57,18 @@ class AnnouncementDetailFooterCell: UITableViewCell, UICollectionViewDelegate, U
     func cellConfig() {
     }
     @objc func deleteAnnouncement() {
-        
+        delegate?.showDeleteAlert()
+        //TODO : Change Value of schoolID and YearID
     }
     @objc func editAnnouncement() {
+        //TODO : Change Value of schoolID and YearID
         guard let obj = detailObj else { return }
-        ACRequest.GET_ANNOUNCEMENT_DETAIL_FOR_EDIT(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, announcementID: obj.school_announcement_id, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (detailEdit) in
+        ACRequest.GET_ANNOUNCEMENT_DETAIL_FOR_EDIT(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            announcementID: obj.school_announcement_id,
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (detailEdit) in
             ACData.ANNOUNCEMENTEDITDETAILDATA = detailEdit
             SVProgressHUD.dismiss()
             self.delegate?.toEditAnnouncementPage()

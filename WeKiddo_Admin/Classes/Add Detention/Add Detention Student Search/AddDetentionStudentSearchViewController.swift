@@ -147,7 +147,13 @@ extension AddDetentionStudentSearchViewController: UISearchBarDelegate {
                     }
                 }
             } else {
-                ACRequest.POST_ANNOUNCEMENT_SEARCH_STUDENT_LISTS(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, classID: self.classID, keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
+                //TODO : Change Value of SchoolID and YearID
+                ACRequest.POST_ANNOUNCEMENT_SEARCH_STUDENT_LISTS(
+                    userId: ACData.LOGINDATA.userID,
+                    schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+                    yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+                    classID: self.classID,
+                    keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
                     ACData.STUDENTSEARCHDATA = resultDatas
                     self.studentResult = ACData.STUDENTSEARCHDATA.count
                     SVProgressHUD.dismiss()

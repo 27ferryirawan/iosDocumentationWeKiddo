@@ -52,7 +52,13 @@ class AnnouncementSubjectCell: UITableViewCell {
         guard let obj = announcementObjc else {
             return
         }
-        ACRequest.GET_ANNOUNCEMENT_DETAIL(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, announcementID: obj.school_announcement_id, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (announcementDetaildata) in
+        //TODO : Change Value of SchoolID and YearID
+        ACRequest.GET_ANNOUNCEMENT_DETAIL(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            announcementID: obj.school_announcement_id,
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (announcementDetaildata) in
             SVProgressHUD.dismiss()
             ACData.ANNOUNCEMENTDETAILDATA = announcementDetaildata
             self.delegate?.goToAnnouncementDetail()

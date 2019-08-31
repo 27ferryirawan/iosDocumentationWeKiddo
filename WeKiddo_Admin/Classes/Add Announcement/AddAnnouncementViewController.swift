@@ -320,7 +320,9 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
         actionsheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction)in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
             } else {
                 print("Camera is Not Available")
             }
@@ -328,7 +330,9 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
         actionsheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction)in
             imagePickerController.sourceType = .savedPhotosAlbum
             imagePickerController.mediaTypes = ["public.image", "public.movie"]
-            self.present(imagePickerController, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(imagePickerController, animated: true, completion: nil)
+            }
         }))
         actionsheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionsheet,animated: true, completion: nil)

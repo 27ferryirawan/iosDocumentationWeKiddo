@@ -1538,7 +1538,6 @@ class ACRequest: NSObject {
     
     static func POST_ANNOUNCEMENT_SEARCH_STUDENT_LISTS(
         userId:String,
-        role:String,
         schoolID:String,
         yearID:String,
         classID:String,
@@ -1548,7 +1547,6 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID,
             "class_id":classID,
@@ -1557,7 +1555,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ANNOUNCEMENT_SEARCH_STUDENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ANNOUNCEMENT_SEARCH_STUDENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             var searchModels = ACData.STUDENTSEARCHDATA
             print(json)
@@ -2799,7 +2797,6 @@ class ACRequest: NSObject {
     
     static func GET_ANNOUNCEMENT_DETAIL(
         userID:String,
-        role:String,
         schoolID:String,
         yearID:String,
         announcementID:String,
@@ -2808,7 +2805,6 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID,
             "announcement_id":announcementID
@@ -2816,7 +2812,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(accessToken)"]
-        ACAPI.POST(url: ACUrl.PARENT_GET_ANNOUNCEMENT_DETAIL, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: ACUrl.ADMIN_GET_ANNOUNCEMENT_DETAIL, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if json["status"] == "success" {
@@ -2831,7 +2827,6 @@ class ACRequest: NSObject {
     
     static func GET_ANNOUNCEMENT_DETAIL_FOR_EDIT(
         userID:String,
-        role:String,
         schoolID:String,
         yearID:String,
         announcementID:String,
@@ -2840,7 +2835,6 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID,
             "announcement_id":announcementID
@@ -2848,13 +2842,41 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(accessToken)"]
-        ACAPI.POST(url: ACUrl.POST_GET_ANNOUNCEMENT_DETAIL_FOR_EDIT, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: ACUrl.ADMIN_GET_ANNOUNCEMENT_EDIT, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if json["status"] == "success" {
                 let detail = AnnouncementEditDetail()
                 detail.objectMapping(json: json)
                 successCompletion(detail)
+            } else {
+                failCompletion(json["message"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ANNOUNCEMENT_DELETE(
+        userID:String,
+        schoolID:String,
+        yearID:String,
+        announcementID:String,
+        accessToken:String,
+        successCompletion:@escaping () -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userID,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "announcement_id":announcementID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(accessToken)"]
+        ACAPI.POST(url: ACUrl.ADMIN_POST_ANNOUNCEMENT_DELETE, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if json["status"] == "success" {
+                successCompletion()
             } else {
                 failCompletion(json["message"].stringValue)
             }
