@@ -217,11 +217,12 @@ extension AddAnnouncementViewController: AddAnnouncementHeaderCellDelegate, AddA
         let jsonAdditionalData = newAdditionalAddOn.data(using: .utf8)!
         let jsonAdditional = try! JSONSerialization.jsonObject(with: jsonAdditionalData, options: .allowFragments)
         
+        //TODO : Change Value of schoolID and yearID
+        
         let parameters: Parameters = [
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
-            "school_id":ACData.LOGINDATA.school_id,
-            "year_id":ACData.LOGINDATA.year_id,
+            "school_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "announcement_id":"",
             "announcement_title":titleHeader,
             "announcement_desc":announcementDescText,
@@ -361,11 +362,11 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
         picker.dismiss(animated: true, completion: nil)
     }
     func uploadVideo(withURL: Data) {
+        //TODO : Change value of schoolID and yearID
         let parameter: Parameters = [
             "user_id": ACData.LOGINDATA.userID,
-            "role": ACData.LOGINDATA.role,
-            "school_id": ACData.LOGINDATA.school_id,
-            "year_id": ACData.LOGINDATA.year_id,
+            "school_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "media_type": mediaType
         ]
         print(parameter)
@@ -382,10 +383,10 @@ extension AddAnnouncementViewController: UIImagePickerControllerDelegate, UINavi
     }
     func uploadAttachment(withImage: UIImage) {
         let parameter: Parameters = [
+            //TODO: Change value of SchoolID and yearID
             "user_id": ACData.LOGINDATA.userID,
-            "role": ACData.LOGINDATA.role,
-            "school_id": ACData.LOGINDATA.school_id,
-            "year_id": ACData.LOGINDATA.year_id,
+            "school_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id": ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "media_type": mediaType
         ]
         if isBanner {

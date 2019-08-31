@@ -1244,7 +1244,7 @@ class ACRequest: NSObject {
         let headers:HTTPHeaders = ["Content-Type":"multipart/form-data; boundary=null",
                                    "Authorization":"Bearer \(tokenAccess)"]
         if let takenFile = file {
-            ACAPI.POST_WITH_UPLOAD_VIDEO(url: "\(ACUrl.POST_UPLOAD_ATTACHMENT_MEDIA_ANNOUNCEMENT)", parameter: parameters, file: takenFile, fileName: fileName, fileParameter: fileParameter, mimeType: "video/mov", showHUD: true, header: headers) { (jsonData) in
+            ACAPI.POST_WITH_UPLOAD_VIDEO(url: "\(ACUrl.ADMIN_POST_ANNOUNCEMENT_UPLOAD_MEDIA)", parameter: parameters, file: takenFile, fileName: fileName, fileParameter: fileParameter, mimeType: "video/mov", showHUD: true, header: headers) { (jsonData) in
                 let jsonValue = JSON(jsonData)
                 var attachmentModels = ACData.ATTACHMENTVIDEOMEDIADATA
                 print(jsonValue)
@@ -1588,7 +1588,7 @@ class ACRequest: NSObject {
         print(params)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ANNOUNCEMENT_ADD)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ANNOUNCEMENT_ADD)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -2487,7 +2487,6 @@ class ACRequest: NSObject {
     
     static func GET_ANNOUNCEMENT_DATA(
         userID:String,
-        role:String,
         schoolID:String,
         yearID:String,
         accessToken:String,
@@ -2495,14 +2494,13 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(accessToken)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ANNOUNCEMENT_LISTS)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ANNOUNCEMENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             var announcementModels = ACData.ANNOUNCEMENTLISTDATA
             print(json)
@@ -2527,7 +2525,6 @@ class ACRequest: NSObject {
     
     static func GET_ANNOUNCEMENT_LEVEL_DATA(
         userID:String,
-        role:String,
         schoolID:String,
         yearID:String,
         accessToken:String,
@@ -2535,14 +2532,13 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(accessToken)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ADD_ANNOUNCEMENT_LEVEL_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ANNOUNCEMENT_LEVELLIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             var announcementModels = ACData.ANNOUNCEMENTLEVELLISTDATA
             print(json)
@@ -2567,7 +2563,6 @@ class ACRequest: NSObject {
     
     static func GET_ANNOUNCEMENT_CLASS_DATA(
         userID:String,
-        role:String,
         schoolID:String,
         yearID:String,
         levelID:String,
@@ -2576,7 +2571,6 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
-            "role":role,
             "school_id":schoolID,
             "year_id":yearID,
             "level_id":levelID
@@ -2584,7 +2578,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(accessToken)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ADD_ANNOUNCEMENT_CLASS_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ANNOUNCEMENT_CLASSLIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             var announcementModels = ACData.ANNOUNCEMENTCLASSDATA
             print(json)
@@ -2617,7 +2611,7 @@ class ACRequest: NSObject {
         failCompletion: @escaping (String) -> Void) {
         let headers:HTTPHeaders = ["Content-Type":"multipart/form-data; boundary=null",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST_WITH_IMAGE(url: "\(ACUrl.POST_UPLOAD_ATTACHMENT_MEDIA_ANNOUNCEMENT)", parameter: parameters, imageFile: file, imageFileName: fileName, imageParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
+        ACAPI.POST_WITH_IMAGE(url: "\(ACUrl.ADMIN_POST_ANNOUNCEMENT_UPLOAD_MEDIA)", parameter: parameters, imageFile: file, imageFileName: fileName, imageParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
             let jsonValue = JSON(jsonData)
             var attachmentModels = ACData.ATTACHMENTBANNERDATA
             print(jsonValue)
@@ -2718,7 +2712,7 @@ class ACRequest: NSObject {
         failCompletion: @escaping (String) -> Void) {
         let headers:HTTPHeaders = ["Content-Type":"multipart/form-data; boundary=null",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST_WITH_IMAGE(url: "\(ACUrl.POST_UPLOAD_ATTACHMENT_MEDIA_ANNOUNCEMENT)", parameter: parameters, imageFile: file, imageFileName: fileName, imageParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
+        ACAPI.POST_WITH_IMAGE(url: "\(ACUrl.ADMIN_POST_ANNOUNCEMENT_UPLOAD_MEDIA)", parameter: parameters, imageFile: file, imageFileName: fileName, imageParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
             let jsonValue = JSON(jsonData)
             var attachmentModels = ACData.ATTACHMENTIMAGEMEDIADATA
             print(jsonValue)

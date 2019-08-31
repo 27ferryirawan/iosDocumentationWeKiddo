@@ -320,4 +320,12 @@ class ACUrl: NSObject {
     static let ADMIN_GET_ASSIGNMENT_GET_SCORE = PARENT_APP + "assignment/get-score"//[GET] user_id, school_user_id, assign_id, school_id, year_id, class_id
     static let ADMIN_POST_ASSIGNMENT_SAVE_SCORE = PARENT_APP + "assignment/save-score"//[POST]
     static let ADMIN_POST_ASSIGNMENT_CLOSE = PARENT_APP + "assignment/close"
+    
+    
+    //ANNOUNCEMENT
+    static let ADMIN_GET_ANNOUNCEMENT_LIST = PARENT_APP + "announcement/list"
+    static let ADMIN_GET_ANNOUNCEMENT_LEVELLIST = PARENT_APP + "announcement/levelList"
+    static let ADMIN_GET_ANNOUNCEMENT_CLASSLIST = PARENT_APP + "announcement/classList"
+    static let ADMIN_POST_ANNOUNCEMENT_ADD = PARENT_APP + "announcement/add"
+    static let ADMIN_POST_ANNOUNCEMENT_UPLOAD_MEDIA = PARENT_APP + "announcement/uploadMedia"
 }

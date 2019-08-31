@@ -142,7 +142,12 @@ class EditEventFooterCell: UITableViewCell {
     func fetchClass(withLevel: String) {
         className.removeAll()
         ACData.ANNOUNCEMENTCLASSDATA.removeAll()
-        ACRequest.GET_ANNOUNCEMENT_CLASS_DATA(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, levelID: levelID, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (classDatas) in
+        ACRequest.GET_ANNOUNCEMENT_CLASS_DATA(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            levelID: levelID,
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (classDatas) in
             ACData.ANNOUNCEMENTCLASSDATA = classDatas
             SVProgressHUD.dismiss()
             self.classPickerButton.isUserInteractionEnabled = true

@@ -25,7 +25,12 @@ class AnnouncementAddNewButtonCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func toAddAnnouncement() {
-        ACRequest.GET_ANNOUNCEMENT_LEVEL_DATA(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (levelDatas) in
+        //TODO : Change value of schoolId and yearID
+        ACRequest.GET_ANNOUNCEMENT_LEVEL_DATA(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            accessToken: ACData.LOGINDATA.accessToken, successCompletion: { (levelDatas) in
             SVProgressHUD.dismiss()
             ACData.ANNOUNCEMENTLEVELLISTDATA = levelDatas
             self.delegate?.toAddAnnouncementPage()
