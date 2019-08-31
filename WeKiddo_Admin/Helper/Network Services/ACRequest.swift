@@ -1206,7 +1206,7 @@ class ACRequest: NSObject {
     
     static func POST_ADD_NEW_ATTACHMENT(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
         mediaType:String,
         mediaFile:String,
@@ -1215,7 +1215,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "assign_id":assignID,
             "media_type":mediaType,
             "media_file":mediaFile
@@ -1223,7 +1223,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ADD_ATTACHMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_SAVE_ATTACHMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -1245,7 +1245,7 @@ class ACRequest: NSObject {
         let headers:HTTPHeaders = ["Content-Type":"multipart/form-data; boundary=null",
                                    "Authorization":"Bearer \(tokenAccess)"]
         if let takenFile = file {
-            ACAPI.POST_WITH_UPLOAD_IMAGE(url: "\(ACUrl.POST_ADD_ATTACHMENT)", parameter: parameters, file: takenFile, fileName: fileName, fileParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
+            ACAPI.POST_WITH_UPLOAD_IMAGE(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_SAVE_ATTACHMENT)", parameter: parameters, file: takenFile, fileName: fileName, fileParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
                 let json = JSON(jsonData)
                 print(json)
                 if(json["status"] == "success") {
@@ -1340,7 +1340,7 @@ class ACRequest: NSObject {
     
     static func POST_ASSIGNMENT_CLOSE(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
         classID:String,
         tokenAccess:String,
@@ -1348,14 +1348,14 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "assign_id":assignID,
             "class_id":classID
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_CLOSE_ASSIGNMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_CLOSE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -1368,20 +1368,20 @@ class ACRequest: NSObject {
     
     static func POST_DELETE_ATTACHMENT_ASSIGNMENT(
         userId:String,
-        role:String,
+        school_user_id:String,
         attachmentID:Int,
         tokenAccess:String,
         successCompletion:@escaping (String) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "attachment_id":attachmentID
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_DELETE_ASSIGNMENT_ATTACHMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_DELETE_ATTACHMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -1394,20 +1394,24 @@ class ACRequest: NSObject {
     
     static func POST_DETAIL_ASSIGNMENT_FOR_EDIT(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
+        school_id:String,
+        year_id:String,
         tokenAccess:String,
         successCompletion:@escaping (AssignmentDetailEditModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
-            "assign_id":assignID
+            "school_user_id":school_user_id,
+            "assign_id":assignID,
+            "school_id":school_id,
+            "year_id":year_id
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_GET_ASSIGNMENT_DETAIL_FOR_EDIT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_EDIT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -2050,7 +2054,7 @@ class ACRequest: NSObject {
         print(tokenAccess)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_SUBJECT_CLASS)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_CHAPTER)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
@@ -2065,19 +2069,20 @@ class ACRequest: NSObject {
     
     static func POST_ATTACHMENT_ASSIGNMENT_DETAIL(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
         tokenAccess:String,
         successCompletion:@escaping (AttachmentModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "assign_id":assignID
         ]
+        print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_ATTACHMENT_ASSIGNMENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_ATTACHMENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
@@ -2092,7 +2097,7 @@ class ACRequest: NSObject {
     
     static func POST_ASSIGNMENT_DETAIL(
         userId:String,
-        role:String,
+        school_user_id:String,
         assignID:String,
         classID:String,
         tokenAccess:String,
@@ -2100,13 +2105,13 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "assign_id":assignID,
             "class_id":classID
         ]
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_ASSIGNMENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             if(json["status"] == "success"){
                 let detail = AssignmentDetailModel()
@@ -2120,23 +2125,27 @@ class ACRequest: NSObject {
     
     static func POST_SUBJECT_LIST(
         userId:String,
-        role:String,
+        school_user_id:String,
+        school_id:String,
+        year_id:String,
         tokenAccess:String,
         successCompletion:@escaping ([SubjectModel]) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role
+            "school_user_id":school_user_id,
+            "school_id":school_id,
+            "year_id":year_id
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_SUBJECT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_SUBJECT_CLASS)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             var subjectModels = ACData.SUBJECTDATA
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
-                if let data = json["data"]["subject_list"].array {
+                if let data = json["data"]["subject_class_list"]["subject_list"].array {
                     if data.count > 0 {
                         for jsonValue in data {
                             let subjectModel = SubjectModel()
@@ -2183,7 +2192,9 @@ class ACRequest: NSObject {
     
     static func POST_SCORE_LIST(
         userId:String,
-        role:String,
+        school_user_id:String,
+        school_id:String,
+        year_id:String,
         assignID:String,
         classID:String,
         tokenAccess:String,
@@ -2191,14 +2202,16 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
+            "school_id":school_id,
+            "year_id":year_id,
             "assign_id":assignID,
             "class_id":classID
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_SCORES)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_ASSIGNMENT_GET_SCORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
@@ -2218,7 +2231,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.SAVE_ASSIGNMENT)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_SAVE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
@@ -2254,7 +2267,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.POST_UPDATE_SCORE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_ASSIGNMENT_SAVE_SCORE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){

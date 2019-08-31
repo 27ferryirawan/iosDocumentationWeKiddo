@@ -97,7 +97,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-on-button" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-yo-joS">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circumference" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-yo-joS">
                         <rect key="frame" x="20" y="252.5" width="15" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="LxY-rp-Yox"/>
@@ -250,6 +250,5 @@
     <resources>
         <image name="circumference" width="512" height="512"/>
         <image name="icon_arrow_subject_list" width="100" height="100"/>
-        <image name="radio-on-button" width="512" height="512"/>
     </resources>
 </document>

@@ -138,9 +138,10 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
             rows: subjectName,
             initialSelection: 0,
             doneBlock: { picker, indexes, values in
-                self.subjectPickerButton.setTitle(self.subjectName[indexes], for: .normal)
-                let subjectID = self.subjectObj?.subjectList[indexes].subject_id ?? ""
-                self.delegate?.subjectSelected(withValue: subjectID)
+                guard let selectedValue = values as? String else {return}
+                self.subjectPickerButton.setTitle(selectedValue, for: .normal)
+                self.subjectID = self.subjectObj?.subjectList[indexes].subject_id ?? ""
+                self.delegate?.subjectSelected(withValue: self.subjectID)
                 self.fetchChapterList()
         },
             cancel: { ActionMultipleStringCancelBlock in return },
@@ -190,7 +191,7 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
         //TODO: Change Value for school ID and yearID
         self.subjectID = ""
         self.subjectPickerButton.setTitle("Select Subject", for: .normal)
-        ACRequest.POST_ASSIGNMENT_GET_SUBJECT(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "",school_user_id: self.teacherID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (subjectList) in
+        ACRequest.POST_ASSIGNMENT_GET_SUBJECT(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",school_user_id: self.teacherID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (subjectList) in
             ACData.ASSIGNMENTSUBJECTLIST = subjectList
             self.subjectObj = subjectList
             SVProgressHUD.dismiss()
@@ -202,7 +203,7 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
         //TODO: Change Value for school ID and yearID
         self.chapterID = ""
         self.topicPickerButton.setTitle("Select Topic", for: .normal)
-        ACRequest.POST_ASSIGNMENT_GET_CHAPTER_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.first?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.first?.year_id ?? "",school_user_id: self.teacherID, subject_id: self.subjectID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (chapterList) in
+        ACRequest.POST_ASSIGNMENT_GET_CHAPTER_LIST(userId: ACData.LOGINDATA.userID, schoolId: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "", yearId: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",school_user_id: self.teacherID, subject_id: self.subjectID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (chapterList) in
             ACData.ASSIGNMENTCHAPTERLIST = chapterList
             self.chapterObj = chapterList
             SVProgressHUD.dismiss()
@@ -211,11 +212,12 @@ class AddAssignmentTopCell: UITableViewCell, UITextViewDelegate {
         }
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if (text == "\n") {
+        guard let currentText = (textView.text as NSString?)?.replacingCharacters(in: range, with: text) else {return true}
+        if (currentText == "\n") {
             textView.resignFirstResponder()
             return false
         }
-        self.delegate?.noteFilled(withValue: textView.text!)
+        self.delegate?.noteFilled(withValue: currentText)
         return true
     }
     func textViewDidBeginEditing(_ textView: UITextView) {

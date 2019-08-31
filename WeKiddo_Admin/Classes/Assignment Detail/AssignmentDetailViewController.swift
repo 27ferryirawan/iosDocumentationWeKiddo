@@ -59,7 +59,8 @@ class AssignmentDetailViewController: UIViewController {
         updateView()
     }
     @objc func closeAction() {
-        ACRequest.POST_ASSIGNMENT_CLOSE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, classID: ACData.ASSIGNMENTDETAILDATA.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name ==  ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else { return }
+        ACRequest.POST_ASSIGNMENT_CLOSE(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, classID: ACData.ASSIGNMENTDETAILDATA.school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: status)
         }) { (message) in
@@ -124,7 +125,13 @@ extension AssignmentDetailViewController: AssignmentDetailMenuCellDelegate, Assi
         updateView()
     }
     func editAction() {
-        ACRequest.POST_SUBJECT_LIST(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (subjectDatas) in
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name ==  ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else { return }
+        ACRequest.POST_SUBJECT_LIST(
+            userId: ACData.LOGINDATA.userID,
+            school_user_id: teacherID,
+            school_id: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            year_id: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (subjectDatas) in
             ACData.SUBJECTDATA = subjectDatas
             SVProgressHUD.dismiss()
             let addNewVC = AddNewAssignmentViewController()

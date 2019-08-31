@@ -42,6 +42,7 @@ class AttachmentViewController: UIViewController, UIImagePickerControllerDelegat
     var mediaType = ""
     var mediaFile = ""
     var fileURL = ""
+    var imageUrl:URL?
     var isUploadImage = Bool()
     
     @IBOutlet weak var addFileLabel: UILabel!
@@ -163,10 +164,14 @@ class AttachmentViewController: UIViewController, UIImagePickerControllerDelegat
         guard let selectedImage = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        let newImage = selectedImage.resizeImage(30.0, opaque: false)
-        let imageData = newImage.pngData()!
-        let imageStr = imageData.base64EncodedString()
-        mediaFile = imageStr
+        guard let url = info[.imageURL] as? URL else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        self.imageUrl = url
+//        let newImage = selectedImage.resizeImage(30.0, opaque: false)
+//        let imageData = newImage.pngData()!
+//        let imageStr = imageData.base64EncodedString()
+//        mediaFile = imageStr
         attachmentImage.image = selectedImage
         picker.dismiss(animated: true, completion: nil)
     }
@@ -209,19 +214,39 @@ class AttachmentViewController: UIViewController, UIImagePickerControllerDelegat
 //        }
     }
     @objc func uploadAction() {
+        // TODO: Change value of teacherID
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else {return}
         if isUploadImage {
-            ACRequest.POST_ADD_NEW_ATTACHMENT(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: assignID, mediaType: self.mediaType, mediaFile: self.mediaFile, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
-                SVProgressHUD.dismiss()
-                ACAlert.show(message: status)
-            }) { (message) in
-                SVProgressHUD.dismiss()
-                ACAlert.show(message: message)
-            }
-        } else {
-            
+//            ACRequest.POST_ADD_NEW_ATTACHMENT(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, assignID: assignID, mediaType: self.mediaType, mediaFile: self.mediaFile, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+//                SVProgressHUD.dismiss()
+//                ACAlert.show(message: status)
+//            }) { (message) in
+//                SVProgressHUD.dismiss()
+//                ACAlert.show(message: message)
+//            }
             let parameter: Parameters = [
                 "user_id": ACData.LOGINDATA.userID,
-                "role": ACData.LOGINDATA.role,
+                "school_user_id": teacherID,
+                "assign_id": assignID,
+                "media_type": "MT4"
+            ]
+            if let url = self.imageUrl{
+                ACRequest.POST_ADD_NEW_ATTACHMENT_FILE(parameters: parameter, file: url, fileName: "media_file", fileParameter: "media_file", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+                    SVProgressHUD.dismiss()
+                    ACAlert.show(message: status)
+                }) { (message) in
+                    SVProgressHUD.dismiss()
+                    ACAlert.show(message: message)
+                }
+            }
+            else
+            {
+                ACAlert.show(message: "Audio file is missing.")
+            }
+        } else {
+            let parameter: Parameters = [
+                "user_id": ACData.LOGINDATA.userID,
+                "school_user_id": teacherID,
                 "assign_id": assignID,
                 "media_type": "MT6"
             ]
@@ -395,7 +420,8 @@ extension AttachmentViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension AttachmentViewController: AttachmentContentCellDelegate {
     func refreshData() {
-        ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else {return}
+        ACRequest.POST_ATTACHMENT_ASSIGNMENT_DETAIL(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, assignID: ACData.ASSIGNMENTDETAILDATA.assignment_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
             SVProgressHUD.dismiss()
             ACData.ATTACHMENTDATA = datas
             self.tableView.reloadData()

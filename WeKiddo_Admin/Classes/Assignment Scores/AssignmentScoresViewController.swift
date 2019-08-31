@@ -85,6 +85,7 @@ extension AssignmentScoresViewController: AssignmentScoreStudentCellDelegate, As
         print(studentModel.count)
     }
     func submitAction() {
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name ==  ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else { return }
         for index in studentModel {
             print(index.childID)
         }
@@ -102,13 +103,15 @@ extension AssignmentScoresViewController: AssignmentScoreStudentCellDelegate, As
             i += 1
         }
         addOn += "]"
-        
+        //TODO : Change value of teacherID, schoolID, and yearID
         let newaddOn = addOn.replacingOccurrences(of: "\\", with: "")
         let jsonData = newaddOn.data(using: .utf8)!
         let jsonO = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         let parameters: Parameters = [
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
+            "school_user_id":teacherID,
+            "school_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            "year_id":ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             "assign_id":ACData.SCORELISTDATA.assignment_id,
             "class_id":ACData.SCORELISTDATA.school_class_id,
             "student_list":jsonO

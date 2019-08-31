@@ -14,6 +14,8 @@
 		664419182316D68E0006F277 /* AssignmentEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419172316D68E0006F277 /* AssignmentEditModel.swift */; };
 		6644191A2316DB9E0006F277 /* AssignmentAttachmentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664419192316DB9E0006F277 /* AssignmentAttachmentListModel.swift */; };
 		6644191C2316DE0E0006F277 /* AssignmentScoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */; };
+		66485D102319795600593AAD /* AssignmentTeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D0E2319795600593AAD /* AssignmentTeacherCell.swift */; };
+		66485D112319795600593AAD /* AssignmentTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66485D0F2319795600593AAD /* AssignmentTeacherCell.xib */; };
 		BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */; };
 		BE0030EF22A505BC0050B48E /* MoreSchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */; };
 		BE0030F322A506250050B48E /* MoreSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030F122A506250050B48E /* MoreSchoolCell.swift */; };
@@ -782,6 +784,8 @@
 		664419172316D68E0006F277 /* AssignmentEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentEditModel.swift; sourceTree = "<group>"; };
 		664419192316DB9E0006F277 /* AssignmentAttachmentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentAttachmentListModel.swift; sourceTree = "<group>"; };
 		6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentScoreListModel.swift; sourceTree = "<group>"; };
+		66485D0E2319795600593AAD /* AssignmentTeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTeacherCell.swift; sourceTree = "<group>"; };
+		66485D0F2319795600593AAD /* AssignmentTeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentTeacherCell.xib; sourceTree = "<group>"; };
 		983F76DCBFB61B18F25DE145 /* Pods-WeKiddo_Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeKiddo_Admin.debug.xcconfig"; path = "Target Support Files/Pods-WeKiddo_Admin/Pods-WeKiddo_Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSchoolViewController.swift; sourceTree = "<group>"; };
 		BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreSchoolViewController.xib; sourceTree = "<group>"; };
@@ -3092,6 +3096,8 @@
 				E624D110227B58D6001220E9 /* AssignmentSectionCell.xib */,
 				E6A50BB8226B6D8E00359D78 /* AssignmentSubjectCell.swift */,
 				E6A50BB9226B6D8E00359D78 /* AssignmentSubjectCell.xib */,
+				66485D0E2319795600593AAD /* AssignmentTeacherCell.swift */,
+				66485D0F2319795600593AAD /* AssignmentTeacherCell.xib */,
 			);
 			path = "Assignment Cell";
 			sourceTree = "<group>";
@@ -4111,6 +4117,7 @@
 				E6396FC422B61F4100C928E5 /* HomeLatePaymentCell.xib in Resources */,
 				E63D83AA22D0F0BB005F07B4 /* AssignmentScoreStudentCell.xib in Resources */,
 				E626B69C22C34D1600FF660A /* SubjectListCell.xib in Resources */,
+				66485D112319795600593AAD /* AssignmentTeacherCell.xib in Resources */,
 				E69AC81022894075000284A1 /* NearbyHeaderCollectionCell.xib in Resources */,
 				E6D39C622261CCAD00831511 /* OTPViewController.xib in Resources */,
 				E6DB0B1722B7E9B200758AB2 /* HomeRoomViewController.xib in Resources */,
@@ -4613,6 +4620,7 @@
 				E699F5F722E1BEE800775758 /* ExamDetailSessionCell.swift in Sources */,
 				E6D39C2E225FA1A500831511 /* ACColor.swift in Sources */,
 				BE2E962722D0F8B90089E8D1 /* TextFieldSpace.swift in Sources */,
+				66485D102319795600593AAD /* AssignmentTeacherCell.swift in Sources */,
 				E699F60322E1C13F00775758 /* ExamDetailRemediScheduleCell.swift in Sources */,
 				E6D39C4A225FA27200831511 /* AllBoolean.swift in Sources */,
 				E6863F8F229E2E2E003C4F1F /* NearbyCourseMoreModel.swift in Sources */,

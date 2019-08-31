@@ -69,7 +69,10 @@ class AttachmentContentCell: UITableViewCell {
             guard let obj = voiceObj else { return }
             attachID = obj.media_id
         }
-        ACRequest.POST_DELETE_ATTACHMENT_ASSIGNMENT(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, attachmentID: attachID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+        
+        // TODO: Change value of teacherID
+        guard let teacherID = ACData.ASSIGNMENTTEACHERLISTALL.assignmentTeacherList.first(where: {$0.teacher_name == ACData.ASSIGNMENTDETAILDATA.teacher_name})?.teacher_id else {return}
+        ACRequest.POST_DELETE_ATTACHMENT_ASSIGNMENT(userId: ACData.LOGINDATA.userID, school_user_id: teacherID, attachmentID: attachID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
             SVProgressHUD.dismiss()
             self.delegate?.refreshData()
         }) { (message) in
