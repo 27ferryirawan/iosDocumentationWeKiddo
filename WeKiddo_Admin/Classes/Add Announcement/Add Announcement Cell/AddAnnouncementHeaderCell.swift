@@ -18,6 +18,7 @@ protocol AddAnnouncementHeaderCellDelegate: class {
     func classSelected(withValue: String)
     func toSearchStudentPage(withStudentsLists: [StudentSearchSelected])
     func addAnnouncement()
+    func didTapStudent(with obj: StudentSearchSelected)
 }
 
 class AddAnnouncementHeaderCell: UITableViewCell {
@@ -51,6 +52,7 @@ class AddAnnouncementHeaderCell: UITableViewCell {
     var className = [String]()
     var levelID = ""
     var classID = ""
+    var isFromEdit : Bool = false
     var studentLists = [StudentSearchSelected]()
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -179,6 +181,13 @@ extension AddAnnouncementHeaderCell: UICollectionViewDelegate, UICollectionViewD
             let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "addStudentCollectionCellID", for: indexPath) as? AddStudentCollectionCell)!
             cell.objDetail = studentLists[indexPath.row]
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if isFromEdit{
+            let obj = studentLists[indexPath.row]
+            delegate?.didTapStudent(with: obj)
         }
     }
 }

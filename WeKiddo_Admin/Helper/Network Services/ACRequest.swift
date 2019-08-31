@@ -2961,6 +2961,36 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ANNOUNCEMENT_REMOVE_STUDENT(
+        userID:String,
+        schoolID:String,
+        yearID:String,
+        announcementID:String,
+        childID: String,
+        accessToken:String,
+        successCompletion:@escaping () -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userID,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "announcement_id":announcementID,
+            "child_id":childID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(accessToken)"]
+        ACAPI.POST(url: ACUrl.ADMIN_POST_ANNOUNCEMENT_REMOVE_STUDENT, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if json["status"] == "success" {
+                successCompletion()
+            } else {
+                failCompletion(json["message"].stringValue)
+            }
+        }
+    }
+    
     static func GET_SUBJECT_DETAIL(
         subjectID:String,
         childID:String,

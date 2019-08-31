@@ -9,8 +9,16 @@
 import UIKit
 import SVProgressHUD
 import Alamofire
+import SDWebImage
 
 class AddAnnouncementViewController: UIViewController {
+    
+    @IBOutlet weak var popUpRemoveStudent: UIView!
+    @IBOutlet weak var ivStudentAvatar: UIImageView!
+    @IBOutlet weak var lbStudentName: UILabel!
+    @IBOutlet weak var lbStudentNIS: UILabel!
+    @IBOutlet weak var btPopUpCancel: UIButton!
+    @IBOutlet weak var btPopUpRemove: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
     var isFromEdit = Bool()
@@ -27,11 +35,13 @@ class AddAnnouncementViewController: UIViewController {
     var announcementDescText = ""
     var startDate = ""
     var endDate = ""
+    var childID = ""
     var studentSelected = [StudentSearchSelected]()
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
         configTable()
+        configPopUpRemove()
     }
     func configNavigation() {
         detectAdaptiveClass()
@@ -41,6 +51,38 @@ class AddAnnouncementViewController: UIViewController {
         tableView.register(UINib(nibName: "AddAnnouncementCell", bundle: nil), forCellReuseIdentifier: "addAnnouncementCellID")
         tableView.register(UINib(nibName: "AddAnnouncementDescCell", bundle: nil), forCellReuseIdentifier: "addAnnouncementDescCellID")
         tableView.register(UINib(nibName: "AddAnnouncementHeaderCell", bundle: nil), forCellReuseIdentifier: "addAnnouncementHeaderCellID")
+    }
+    func configPopUpRemove(){
+        popUpRemoveStudent.isHidden = true
+        popUpRemoveStudent.layer.cornerRadius = 10
+        popUpRemoveStudent.layer.borderWidth = 1
+        popUpRemoveStudent.layer.borderColor = UIColor.black.cgColor
+        
+        btPopUpCancel.addTarget(self, action: #selector(dismissPopUp(_:)), for: .touchUpInside)
+        btPopUpRemove.addTarget(self, action: #selector(removeStudent(_:)), for: .touchUpInside)
+    }
+    
+    @objc func dismissPopUp(_ sender: UIButton){
+        popUpRemoveStudent.isHidden = true
+    }
+    @objc func removeStudent(_ sender: UIButton){
+        //TODO : Change value of schoolID, yearID, and announcementIDx
+        ACRequest.POST_ANNOUNCEMENT_REMOVE_STUDENT(
+            userID: ACData.LOGINDATA.userID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            announcementID: ACData.ANNOUNCEMENTDETAILDATA.school_announcement_id,
+            childID: self.childID,
+            accessToken: ACData.LOGINDATA.accessToken,
+            successCompletion: {
+                SVProgressHUD.dismiss()
+                if let index = self.studentSelected.firstIndex(where: {$0.child_id == self.childID}){
+                   self.studentSelected.remove(at: index)
+                }
+                self.childID = ""
+        }) { (message) in
+            SVProgressHUD.dismiss()
+        }
     }
 }
 
@@ -79,6 +121,7 @@ extension AddAnnouncementViewController: UITableViewDataSource, UITableViewDeleg
             cell.pictureCollection.reloadData()
             cell.videoCollection.reloadData()
             cell.studentCollection.reloadData()
+            cell.isFromEdit = isFromEdit
             cell.delegate = self
             return cell
         }
@@ -309,6 +352,17 @@ extension AddAnnouncementViewController: AddAnnouncementHeaderCellDelegate, AddA
             self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
         print(selectedDescription)
+    }
+    func didTapStudent(with obj: StudentSearchSelected) {
+        popUpRemoveStudent.isHidden = false
+        self.childID = obj.child_id
+        lbStudentName.text = obj.child_name
+        lbStudentNIS.text = obj.child_nis
+        ivStudentAvatar.sd_setImage(
+            with: URL(string: (obj.child_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
     }
 }
 
