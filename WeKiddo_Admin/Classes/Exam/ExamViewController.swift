@@ -14,6 +14,7 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var addExamButtin: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var listCount = 0
+    var teacherID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
@@ -31,6 +32,7 @@ class ExamViewController: UIViewController {
     func configTable() {
         tableView.register(UINib(nibName: "ExamCell", bundle: nil), forCellReuseIdentifier: "examCellID")
         tableView.register(UINib(nibName: "AllExamSectionCell", bundle: nil), forCellReuseIdentifier: "allExamSectionCellID")
+        tableView.register(UINib(nibName: "ExamTeacherCell", bundle: nil), forCellReuseIdentifier: "examTeacherCell")
         addExamButtin.addTarget(self, action: #selector(addExamAction), for: .touchUpInside)
     }
     @objc func addExamAction() {
@@ -43,51 +45,96 @@ class ExamViewController: UIViewController {
 //            ACData.EXAMLISTDATA.exam_level_list.removeAll()
 //            ACData.EXAMLISTDATA.exam_list.removeAll()
 //        }
-        ACRequest.GET_EXAM_LIST(
+        //TODO : Change value of schoolID and YearID
+        ACRequest.POST_GET_EXAM_TEACHER_LIST_ALL(
             userID: ACData.LOGINDATA.userID,
-            role: ACData.LOGINDATA.role,
-            schoolID: ACData.LOGINDATA.school_id,
-            yearID: ACData.LOGINDATA.year_id,
-            levelID: "",
-            subjectID: "",
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
             SVProgressHUD.dismiss()
-            ACData.EXAMLISTDATA = jsonDatas
-            self.listCount = ACData.EXAMLISTDATA.exam_list.count
+            ACData.EXAMTEACHERLISTALL = jsonDatas
+            self.listCount = ACData.EXAMTEACHERLISTALL.teacherList.count
             self.tableView.reloadData()
-        }) { (message) in
+        }, failCompletion: { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)
-        }
+        })
     }
 }
 
 extension ExamViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if ACData.EXAMTEACHERLISTALL == nil{
+            return 1
+        } else if !teacherID.isEmpty {
+            return 2
+        }
+        return ACData.EXAMTEACHERLISTALL.teacherList.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + listCount
+        if section == 0{
+            return 1
+        }
+        var itemsCount = 0
+        if ACData.EXAMLISTADMIN != nil{
+            if ACData.EXAMLISTADMIN.examList.count > section - 1{
+                itemsCount = ACData.EXAMLISTADMIN.examList[section - 1].exams.count
+            }
+        }
+        return 1 + itemsCount
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row == 0 ? 56 : 77
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.section == 0{
             let cell = (tableView.dequeueReusableCell(withIdentifier: "allExamSectionCellID", for: indexPath) as? AllExamSectionCell)!
-            cell.objectSubject = ACData.EXAMLISTDATA
+            cell.objTeacher = ACData.EXAMTEACHERLISTALL
             cell.delegate = self
             return cell
         } else {
-            let cell = (tableView.dequeueReusableCell(withIdentifier: "examCellID", for: indexPath) as? ExamCell)!
-            cell.delegate = self
-            cell.examObj = ACData.EXAMLISTDATA.exam_list[indexPath.row-1]
-            return cell
+            if indexPath.row == 0 {
+                if ACData.EXAMLISTADMIN != nil, ACData.EXAMLISTADMIN.examList.count > indexPath.section - 1{
+                    let cell = (tableView.dequeueReusableCell(withIdentifier: "examTeacherCell", for: indexPath) as? ExamTeacherCell)!
+                    cell.objExam = ACData.EXAMLISTADMIN.examList[indexPath.section-1]
+                    return cell
+                } else {
+                    return UITableViewCell()
+                }
+            } else {
+                let cell = (tableView.dequeueReusableCell(withIdentifier: "examCellID", for: indexPath) as? ExamCell)!
+                cell.delegate = self
+                if ACData.EXAMLISTADMIN != nil,
+                    ACData.EXAMLISTADMIN.examList.count > indexPath.section - 1,
+                    ACData.EXAMLISTADMIN.examList[indexPath.section-1].exams.count > indexPath.row - 1{
+                    cell.examObj = ACData.EXAMLISTADMIN.examList[indexPath.section-1].exams[indexPath.row-1]
+                }
+                return cell
+            }
         }
     }
 }
 
 extension ExamViewController: ExamCellDelegate, AllExamSectionCellDelegate {
+    func didSelectTeacher(with value: String) {
+        //TODO : Change value of schoolID and YearID
+        self.teacherID = value
+        ACRequest.GET_EXAM_LIST(
+            userID: ACData.LOGINDATA.userID,
+            school_user_id: self.teacherID,
+            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID:  ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            tokenAccess: ACData.LOGINDATA.accessToken,
+            successCompletion: { (data) in
+                ACData.EXAMLISTADMIN = data
+                SVProgressHUD.dismiss()
+                self.tableView.reloadData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: "Your internet connection have a problem")
+        }
+    }
+    
     func toExamDetail(withExamDetailIndex: String) {
         let examDetailVC = ExamDetailViewController()
         examDetailVC.examDetailIndex = withExamDetailIndex
@@ -97,4 +144,6 @@ extension ExamViewController: ExamCellDelegate, AllExamSectionCellDelegate {
         listCount = ACData.EXAMLISTDATA.exam_list.count
         self.tableView.reloadData()
     }
+    
+    
 }

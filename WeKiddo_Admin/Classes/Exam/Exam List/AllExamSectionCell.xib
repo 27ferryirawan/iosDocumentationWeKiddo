@@ -55,7 +55,7 @@
             <viewLayoutGuide key="safeArea" id="stT-3a-HwU"/>
             <connections>
                 <outlet property="classButton" destination="DhL-hw-ikx" id="EsM-VV-8go"/>
-                <outlet property="subjectButton" destination="uXV-F2-8M8" id="C5n-Mp-fQO"/>
+                <outlet property="teacherButton" destination="uXV-F2-8M8" id="dPB-vl-iQC"/>
             </connections>
             <point key="canvasLocation" x="-196" y="-23"/>
         </tableViewCell>

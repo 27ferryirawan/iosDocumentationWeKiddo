@@ -25,7 +25,7 @@ class ExamCell: UITableViewCell {
     @IBOutlet weak var examDate: UILabel!
     @IBOutlet weak var examChapter: UILabel!
     
-    var examObj: ExamListExamModel? {
+    var examObj: ExamContentModel? {
         didSet {
             cellConfig()
         }
@@ -42,9 +42,9 @@ class ExamCell: UITableViewCell {
         guard let obj = examObj else {
             return
         }
-        examTopic.text = "\(obj.chapter_name) (\(obj.score_type_name))"
+        examTopic.text = "\(obj.exam_title) (\(obj.exam_type_name))"
         examDate.text = "\(convertDate(time: obj.session_date)) - \(convertTime(time: obj.start_time)) AM"
-        examChapter.text = "\(obj.school_class) - \(obj.subject_name) - \(obj.chapter_name)"
+        examChapter.text = "\(obj.school_class) - \(obj.subject_name) - \(obj.session_text)"
     }
     @objc func goToExamDetail() {
         guard let obj = examObj else {

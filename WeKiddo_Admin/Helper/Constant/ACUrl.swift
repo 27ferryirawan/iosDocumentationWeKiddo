@@ -335,4 +335,9 @@ class ACUrl: NSObject {
     static let ADMIN_GET_ANNOUNCEMENT_EDIT = PARENT_APP + "announcement/edit"
     static let ADMIN_POST_ANNOUNCEMENT_DELETE = PARENT_APP + "announcement/delete"
     static let ADMIN_POST_ANNOUNCEMENT_REMOVE_STUDENT = PARENT_APP + "announcement/removeStudent"
+    
+    //EXAM
+    static let ADMIN_GET_EXAM_LIST = PARENT_APP + "exam/list"
+    static let ADMIN_GET_EXAM_TEACHER_LIST = PARENT_APP + "exam/get-teacher"
+    static let ADMIN_GET_EXAM_TEACHER_LIST_ALL = PARENT_APP + "exam/teacher-list"
 }

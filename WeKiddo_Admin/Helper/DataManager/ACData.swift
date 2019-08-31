@@ -70,6 +70,9 @@ struct ACData {
     static var EXAMDATA = [ExamsModel]()
     static var EXAMLISTDATA: ExamListDataModel!
     static var EXAMDETAILDATA: ExamDetailModel!
+    static var EXAMTEACHERLISTALL : ExamTeacherListAll!
+    static var EXAMTEACHERLIST: ExamTeacherList!
+    static var EXAMLISTADMIN : ExamListModel!
     static var SCOREDATA = [ScoreModel]()
     static var SCORESUMMARYDATA = [ScoreSummaryModel]()
     static var PARENTPROFILEDATA: ParentProfileModel!
