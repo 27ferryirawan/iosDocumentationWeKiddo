@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class AbsenceDetailModel: NSObject {
     var child_id = ""
+    var year_id = ""
     var child_name = ""
     var child_nis = ""
     var child_image = ""
@@ -27,6 +28,7 @@ class AbsenceDetailModel: NSObject {
         school_class_id = json["data"]["info"]["absence_detail"]["school_class_id"].stringValue
         school_class = json["data"]["info"]["absence_detail"]["school_class"].stringValue
         status_absence = json["data"]["info"]["absence_detail"]["status_absence"].intValue
+        year_id = json["data"]["info"]["absence_detail"]["year_id"].stringValue
         
         for data in json["data"]["info"]["reason_list"].arrayValue {
             let d = AbsenceDetailReasonModel()

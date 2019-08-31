@@ -43,7 +43,7 @@ class HomeRoomDueDateAssignmentCell: UITableViewCell {
     }
     @objc func fetchDetail() {
         guard let obj = assignObj else { return }
-        ACRequest.POST_ABSENCE_DETAIL(userId: ACData.LOGINDATA.userID, childID: obj.child_id, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (data) in
+        ACRequest.POST_ABSENCE_DETAIL(userId: ACData.LOGINDATA.userID, childID: obj.child_id, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (data) in
             ACData.ABSENCEDETAILMODEL = data
             SVProgressHUD.dismiss()
             self.delegate?.toDetailAssignment()

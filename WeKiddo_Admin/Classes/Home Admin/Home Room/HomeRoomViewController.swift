@@ -205,8 +205,17 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
                 ACAlert.show(message: message)
             }
         } else if sender.tag == 1 {
-            let permissionVC = PermissionViewController()
-            self.navigationController?.pushViewController(permissionVC, animated: true)
+            ACRequest.POST_ABSENCE_MORE(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+                ACData.ABSENCELISTMODEL = result
+                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    let absenceListVC = AbsenceListViewController()
+                    self.navigationController?.pushViewController(absenceListVC, animated: true)
+                }
+            }) { (message) in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: message)
+            }
         } else if sender.tag == 2 {
             ACRequest.POST_CURRENT_SESSION_MORE(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
                 SVProgressHUD.dismiss()
