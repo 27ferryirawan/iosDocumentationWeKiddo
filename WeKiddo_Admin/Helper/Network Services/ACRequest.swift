@@ -177,6 +177,107 @@ class ACRequest: NSObject {
             }
         }
     }
+
+    static func POST_SCHOOL_MONITORING(
+        userId:String,
+        schoolID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (SchoolMonitoringModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_SCHOOL_MONITORING)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let monitoring = SchoolMonitoringModel()
+                monitoring.objectMapping(json: json)
+                successCompletion(monitoring)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_SCHOOL_TOTAL_STUDENT(
+        userId:String,
+        schoolID:String,
+        page:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (SchoolMonitoringModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "page":page
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_SCHOOL_MONITORING_TOTAL_STUDENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_SCHOOL_TOTAL_PARENT(
+        userId:String,
+        schoolID:String,
+        page:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (SchoolMonitoringModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "page":page
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_SCHOOL_MONITORING_TOTAL_PARENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+
+    static func POST_SCHOOL_TOTAL_TEACHER(
+        userId:String,
+        schoolID:String,
+        page:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (SchoolMonitoringModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "page":page
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_SCHOOL_MONITORING_TOTAL_SCHOOL_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
     
     static func POST_ABSENCE_DETAIL(
         userId:String,

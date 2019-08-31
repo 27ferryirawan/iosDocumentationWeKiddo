@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="schoolMonitoringContentUserListCellID" id="KGk-i7-Jjw" customClass="SchoolMonitoringContentUserListCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BF7-Gl-Nq3">
+                        <rect key="frame" x="10" y="5.5" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="Cuw-vb-Gnt"/>
+                            <constraint firstAttribute="height" constant="55" id="xSj-aM-Tgy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zein Rezky Chandra" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qj-NA-ic0">
+                        <rect key="frame" x="73" y="26" width="107.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 August 2019 12.00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnN-gA-KJi">
+                        <rect key="frame" x="194" y="19" width="116" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIl-qn-8XE">
+                        <rect key="frame" x="247.5" y="35" width="62.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UnN-gA-KJi" secondAttribute="trailing" constant="10" id="FI8-Lq-cgP"/>
+                    <constraint firstItem="BF7-Gl-Nq3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GMj-Nn-ZFf"/>
+                    <constraint firstItem="2qj-NA-ic0" firstAttribute="leading" secondItem="BF7-Gl-Nq3" secondAttribute="trailing" constant="8" id="KFZ-T3-PaW"/>
+                    <constraint firstItem="UnN-gA-KJi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="N4U-92-YsR"/>
+                    <constraint firstItem="vIl-qn-8XE" firstAttribute="top" secondItem="UnN-gA-KJi" secondAttribute="bottom" constant="2.5" id="RT0-cl-JnE"/>
+                    <constraint firstItem="vIl-qn-8XE" firstAttribute="trailing" secondItem="UnN-gA-KJi" secondAttribute="trailing" id="hVl-Zk-5W7"/>
+                    <constraint firstItem="2qj-NA-ic0" firstAttribute="centerY" secondItem="BF7-Gl-Nq3" secondAttribute="centerY" id="mKi-gK-JHM"/>
+                    <constraint firstItem="BF7-Gl-Nq3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nnJ-iI-WJV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentDate" destination="UnN-gA-KJi" id="icH-fA-yry"/>
+                <outlet property="contentDay" destination="vIl-qn-8XE" id="46O-Ub-8kg"/>
+                <outlet property="contentImage" destination="BF7-Gl-Nq3" id="VKG-Hg-4s1"/>
+                <outlet property="contentName" destination="2qj-NA-ic0" id="SiB-0y-oeA"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

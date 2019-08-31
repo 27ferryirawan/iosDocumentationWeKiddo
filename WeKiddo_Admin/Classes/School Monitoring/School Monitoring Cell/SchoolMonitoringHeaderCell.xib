@@ -640,6 +640,9 @@
                 <outlet property="checkOutView" destination="rky-iQ-R95" id="ttv-HX-8SU"/>
                 <outlet property="headerInfoView" destination="vEg-Oe-yPw" id="IWr-3f-NpD"/>
                 <outlet property="middleView" destination="ZXK-xD-w7Y" id="P9Z-JG-idK"/>
+                <outlet property="pendingAnnouncementLabel" destination="ng6-66-c51" id="wpu-ih-nbR"/>
+                <outlet property="pendingAssignmentLabel" destination="x1m-ks-6Da" id="DPQ-Uh-epO"/>
+                <outlet property="pendingExamLabel" destination="Jyd-5t-ib0" id="uGg-Ap-SzL"/>
                 <outlet property="schoolAnnouncementView" destination="10T-Hd-fX3" id="cRu-Sd-tao"/>
                 <outlet property="schoolAssignmentView" destination="rya-ga-M4u" id="FCJ-fj-0gy"/>
                 <outlet property="schoolDescLabel" destination="L7Q-YZ-Jlp" id="ykz-Rr-fFo"/>
@@ -649,6 +652,9 @@
                 <outlet property="schoolPicker" destination="3Ln-yI-ISz" id="gtm-EJ-uxL"/>
                 <outlet property="schoolTotalDownloadView" destination="6Fx-Ww-a8d" id="SXW-LV-QXj"/>
                 <outlet property="schoolTotalView" destination="1vf-LS-4YI" id="P6e-uM-DEJ"/>
+                <outlet property="totalAnnouncementLabel" destination="3Mo-2B-UFl" id="rDq-ns-keF"/>
+                <outlet property="totalAssignmentLabel" destination="KNi-Ff-8sF" id="MjK-eA-Rwm"/>
+                <outlet property="totalExamLabel" destination="cH5-PI-7OP" id="ewM-2j-tL9"/>
                 <outlet property="totalParentButton" destination="63t-Cw-wJx" id="Wax-fB-XiQ"/>
                 <outlet property="totalParentDownloadButton" destination="b3N-vK-2JE" id="uG9-ph-zgG"/>
                 <outlet property="totalParentDownloadLabel" destination="egh-n5-YX8" id="FWn-7P-bAR"/>

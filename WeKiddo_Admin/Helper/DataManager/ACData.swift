@@ -115,5 +115,6 @@ struct ACData {
     static var ABSENCEDETAILMODEL: AbsenceDetailModel!
     static var TASKLISTDATA = [TaskListModel]()
     static var ABSENCELISTMODEL = [AbsenceListModel]()
+    static var SCHOOLMONITORINGDATA: SchoolMonitoringModel!
 //    static var STUDENTLISTSCOREADDNEW: !
 }

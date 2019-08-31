@@ -25,6 +25,10 @@ class ACUrl: NSObject {
     static let PARENT_ABSENCE_DETAIL = PARENT_APP + "home/absence-detail" // [POST] user_id, school_id, child_id, year_id
     static let PARENT_SAVE_ABSENCE = PARENT_APP + "home/save-absence" // [POST] user_id, school_id, child_id, absence_time, status_absence, reason, desc, year_id
     static let PARENT_ABSENCE_MORE = PARENT_APP + "home/absence-more" // [POST] user_id, school_id, year_id
+    static let PARENT_SCHOOL_MONITORING = PARENT_APP + "school-monitoring/school-monitoring" // [POST] user_id, school_id
+    static let PARENT_SCHOOL_MONITORING_TOTAL_STUDENT_LIST = PARENT_APP + "school-monitoring/log-list-student" // [POST] user_id, school_id, page
+    static let PARENT_SCHOOL_MONITORING_TOTAL_PARENT_LIST = PARENT_APP + "school-monitoring/log-list-parent" // [POST] user_id, school_id, page
+    static let PARENT_SCHOOL_MONITORING_TOTAL_SCHOOL_LIST = PARENT_APP + "school-monitoring/log-list-teacher" // [POST] user_id, school_id, page
     static let TEACHER_GET_DETAIL_ATTENDANCE = PARENT_APP + "user/attendanceDetail" // [POST] user_id, role, school_session_id
     static let TEACHER_GET_PERMISSION = PARENT_APP + "user/permissionRequest" // [POST] user_id, role
     static let TEACHER_UPDATE_STUDENT_ATTENDANCE_STATUS = PARENT_APP + "user/attendanceStudent" // [POST] user_id, role, school_session_id, child_id, is_attend, attendance_type, note

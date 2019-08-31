@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import SVProgressHUD
+import ActionSheetPicker_3_0
+
+protocol SchoolMonitoringHeaderCellDelegate: class {
+    func refreshData()
+}
 
 class SchoolMonitoringHeaderCell: UITableViewCell {
     
+    @IBOutlet weak var pendingExamLabel: UILabel!
+    @IBOutlet weak var totalExamLabel: UILabel!
+    @IBOutlet weak var pendingAnnouncementLabel: UILabel!
+    @IBOutlet weak var totalAnnouncementLabel: UILabel!
+    @IBOutlet weak var pendingAssignmentLabel: UILabel!
+    @IBOutlet weak var totalAssignmentLabel: UILabel!
     @IBOutlet weak var schoolExamView: UIView! {
         didSet {
             schoolExamView.layer.borderColor = UIColor.lightGray.cgColor
@@ -138,15 +150,117 @@ class SchoolMonitoringHeaderCell: UITableViewCell {
         }
     }
     @IBOutlet weak var schoolPicker: UIButton!
+    var detailObj: SchoolMonitoringModel? {
+        didSet {
+            cellConfig()
+        }
+    }
+    var school_ID = ""
+    weak var delegate: SchoolMonitoringHeaderCellDelegate?
+    var schoolNames = [String]()
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        schoolPicker.addTarget(self, action: #selector(showSchoolPicker), for: .touchUpInside)
+        totalStudentButton.addTarget(self, action: #selector(fetchStudentList), for: .touchUpInside)
+        totalParentButton.addTarget(self, action: #selector(fetchParentList), for: .touchUpInside)
+        totalSchoolUserButton.addTarget(self, action: #selector(fetchSchoolTeacherList), for: .touchUpInside)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
+    @objc func fetchStudentList() {
+        if school_ID == "" {
+            school_ID = ACData.LOGINDATA.dashboardSchoolMenu[0].school_id!
+        } else {
+            
+        }
+        ACRequest.POST_SCHOOL_TOTAL_STUDENT(userId: ACData.LOGINDATA.userID, schoolID: school_ID, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    @objc func fetchParentList()  {
+        if school_ID == "" {
+            school_ID = ACData.LOGINDATA.dashboardSchoolMenu[0].school_id!
+        } else {
+            
+        }
+        ACRequest.POST_SCHOOL_TOTAL_PARENT(userId: ACData.LOGINDATA.userID, schoolID: school_ID, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    @objc func fetchSchoolTeacherList() {
+        if school_ID == "" {
+            school_ID = ACData.LOGINDATA.dashboardSchoolMenu[0].school_id!
+        } else {
+            
+        }
+        ACRequest.POST_SCHOOL_TOTAL_TEACHER(userId: ACData.LOGINDATA.userID, schoolID: school_ID, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    @objc func showSchoolPicker() {
+        ActionSheetStringPicker.show(
+            withTitle: "- Select School -",
+            rows: schoolNames,
+            initialSelection: 0,
+            doneBlock: { picker, indexes, values in
+                guard let value = values as? String else { return }
+                self.schoolPicker.setTitle(value, for: .normal)
+                guard let schoolID = ACData.LOGINDATA.dashboardSchoolMenu[indexes].school_id, let yearID = ACData.LOGINDATA.dashboardSchoolMenu[indexes].year_id else {
+                    return
+                }
+                self.school_ID = schoolID
+                self.fetchData(withSchoolID: schoolID, withYearID: yearID)
+        },
+            cancel: { ActionMultipleStringCancelBlock in return },
+            origin:UIApplication.shared.keyWindow
+        )
+    }
+    func fetchData(withSchoolID: String, withYearID: String) {
+        ACRequest.POST_SCHOOL_MONITORING(userId: ACData.LOGINDATA.userID, schoolID: withSchoolID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.SCHOOLMONITORINGDATA = result
+            SVProgressHUD.dismiss()
+            self.delegate?.refreshData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        schoolImage.sd_setImage(
+            with: URL(string: (obj.school_logo)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+        schoolNameLabel.text = obj.school_grade
+        schoolDescLabel.text = obj.school_name
+        totalStudentLabel.text = "\(obj.student_total_user)"
+        totalStudentDownloadLabel.text = "\(obj.student_total_download)"
+        totalParentLabel.text = "\(obj.parent_total_user)"
+        totalParentDownloadLabel.text = "\(obj.parent_total_download)"
+        checkInLabel.text = "\(obj.attendance_clock_in)"
+        checkOutLabel.text = "\(obj.attendance_clock_out)"
+        totalSchoolUserLabel.text = "\(obj.school_total_user)"
+        totalSchoolUserDownloadLabel.text = "\(obj.school_total_download)"
+        totalAssignmentLabel.text = "\(obj.total_assignment)"
+        pendingAssignmentLabel.text = "\(obj.pending_assignment)"
+        totalAnnouncementLabel.text = "\(obj.total_announcement)"
+        pendingAnnouncementLabel.text = "\(obj.pending_announcement)"
+        totalExamLabel.text = "\(obj.total_exam)"
+        pendingExamLabel.text = "\(obj.pending_exam)"
+        schoolNames.removeAll()
+        for item in ACData.LOGINDATA.dashboardSchoolMenu {
+            schoolNames.append(item.school_name!)
+        }
+    }
 }

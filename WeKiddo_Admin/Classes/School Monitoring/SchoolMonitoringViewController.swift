@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SchoolMonitoringViewController: UIViewController {
 
@@ -14,11 +15,22 @@ class SchoolMonitoringViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
+        fetchData()
         configTable()
     }
     func configNavigation() {
         detectAdaptiveClass()
         backStyleNavigationController(pageTitle: "School Monitoring", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
+    }
+    func fetchData() {
+        ACRequest.POST_SCHOOL_MONITORING(userId: ACData.LOGINDATA.userID, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.SCHOOLMONITORINGDATA = result
+            SVProgressHUD.dismiss()
+            self.tableView.reloadData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
     func configTable() {
         tableView.register(UINib(nibName: "SchoolMonitoringHeaderCell", bundle: nil), forCellReuseIdentifier: "schoolMonitoringHeaderCellID")
@@ -37,6 +49,14 @@ extension SchoolMonitoringViewController: UITableViewDataSource, UITableViewDele
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "schoolMonitoringHeaderCellID", for: indexPath) as? SchoolMonitoringHeaderCell)!
+        cell.detailObj = ACData.SCHOOLMONITORINGDATA
+        cell.delegate = self
         return cell
+    }
+}
+
+extension SchoolMonitoringViewController: SchoolMonitoringHeaderCellDelegate {
+    func refreshData() {
+        self.tableView.reloadData()
     }
 }
