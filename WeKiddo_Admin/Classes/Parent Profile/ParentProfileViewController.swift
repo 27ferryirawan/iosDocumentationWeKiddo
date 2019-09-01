@@ -45,13 +45,13 @@ extension ParentProfileViewController : UITableViewDelegate, UITableViewDataSour
         } else if indexPath.row == 1 + subjectCount {
             return 80
         } else {
-            return 33
+            return 60
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "parentProfileCellID", for: indexPath) as? ParentProfileCell)!
-            cell.detailObj = ACData.PARENTPROFILEDATA
+            cell.detailObj = ACData.ADMINPROFILEDATA
             return cell
         } else if indexPath.row == 1 + subjectCount {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "parentProfileFooterCellID", for: indexPath) as? ParentProfileFooterCell)!
@@ -59,7 +59,7 @@ extension ParentProfileViewController : UITableViewDelegate, UITableViewDataSour
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "parentProfileSubjectAndClassCellID", for: indexPath) as? ParentProfileSubjectAndClassCell)!
-            cell.detailObj = ACData.PARENTPROFILEDATA.subject_class[indexPath.row - 1]
+            cell.detailObj = ACData.ADMINPROFILEDATA.assignSchool[indexPath.row - 1]
             return cell
         }
     }

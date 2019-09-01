@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import SVProgressHUD
 import ActionSheetPicker_3_0
+import Alamofire
 
 protocol EditProfileParentViewControllerDelegate: class {
     func refreshData()
@@ -57,6 +58,9 @@ class EditProfileParentViewController: UIViewController {
     var updatedEmail = ""
     var updatedTelphone = ""
     var updatedPosition = ""
+    var updatedGender = ""
+    var updatedDob = ""
+    var updatedAvatar = ""
     weak var delegate: EditProfileParentViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,12 +90,11 @@ class EditProfileParentViewController: UIViewController {
         selectSubmitButton.addTarget(self, action: #selector(submitNewSubject), for: .touchUpInside)
     }
     func fetchData() {
-        ACRequest.POST_TEACHER_PROFILE(userId: ACData.LOGINDATA.userID, schoolID: ACData.LOGINDATA.school_id, role: ACData.LOGINDATA.role, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (profileData) in
-            ACData.PARENTPROFILEDATA = profileData
+        ACRequest.POST_ADMIN_PROFILE(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (profileData) in
             SVProgressHUD.dismiss()
-            self.subjectCount = ACData.PARENTPROFILEDATA.subject_class.count
+            ACData.ADMINPROFILEDATA = profileData
+            self.subjectCount = ACData.ADMINPROFILEDATA.assignSchool.count
             self.isAddNewSubjectView = false
-            self.updateAndPopulateView()
             self.tableViuew.setContentOffset(.zero, animated: true)
             self.tableViuew.reloadData()
             self.tableViuew.layoutIfNeeded()
@@ -179,6 +182,8 @@ extension EditProfileParentViewController : UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 678
+        } else if indexPath.row != 1 + subjectCount{
+            return 60
         } else {
             return 44
         }
@@ -186,21 +191,18 @@ extension EditProfileParentViewController : UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "editProfileParentCell", for: indexPath) as? EditProfileParentCell)!
-            cell.detailObj = ACData.PARENTPROFILEDATA
+            cell.detailObj = ACData.ADMINPROFILEDATA
             cell.delegate = self
             return cell
         } else {
             if indexPath.row != 1 + subjectCount {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "editProfileSubjectCellID", for: indexPath) as? EditProfileSubjectCell)!
-                cell.detailObj = ACData.PARENTPROFILEDATA.subject_class[indexPath.row - 1]
+                cell.detailObj = ACData.ADMINPROFILEDATA.assignSchool[indexPath.row - 1]
                 cell.delegate = self
                 return cell
             } else {
                 let cell = (tableView.dequeueReusableCell(withIdentifier: "editProfileFooterCellID", for: indexPath) as? EditProfileFooterCell)!
-                cell.address = updatedAddress
-                cell.telphone = updatedTelphone
-                cell.email = updatedEmail
-                cell.position = updatedPosition
+                cell.delegate = self
                 return cell
             }
         }
@@ -208,14 +210,58 @@ extension EditProfileParentViewController : UITableViewDelegate, UITableViewData
 }
 
 extension EditProfileParentViewController: EditProfileParentDelegate, OTPViewControllerDelegate, EditProfileSubjectCellDelegate, EditProfileFooterCellDelegate {
+    func didTapSave() {
+        if updatedAddress == "" {
+            updatedAddress = ACData.ADMINPROFILEDATA.address
+        }
+        if updatedTelphone == "" {
+            updatedTelphone = ACData.ADMINPROFILEDATA.phone
+        }
+        if updatedEmail == "" {
+            updatedEmail = ACData.ADMINPROFILEDATA.email
+        }
+        if updatedPosition == "" {
+            updatedPosition = ACData.ADMINPROFILEDATA.admin_pos_id
+        }
+        if updatedGender == ""{
+            updatedGender = ACData.ADMINPROFILEDATA.gender
+        }
+        if updatedDob == ""{
+            updatedDob = ACData.ADMINPROFILEDATA.admin_dob
+        }
+        if let selectedImage = UserDefaults.standard.string(forKey: "SelectedImageFile") {
+            if selectedImage != "" {
+                updatedAvatar = selectedImage
+            }
+        }
+        let parameters:Parameters = [
+            "user_id": ACData.ADMINPROFILEDATA.admin_id,
+            "name": ACData.ADMINPROFILEDATA.name,
+            "address": updatedAddress,
+            "phone": updatedTelphone,
+            "email": updatedEmail,
+            "gender": updatedGender,
+            "photo": updatedAvatar,
+            "admin_pos_id": updatedPosition,
+            "admin_dob":updatedDob
+        ]
+        
+        ACRequest.POST_SAVE_NEW_PROFILE(
+            param: parameters,
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: status)
+                self.fetchData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    
     func autoRefreshPrevActivity() {
         fetchData()
     }
     func deleteAction() {
-        fetchData()
-    }
-    func editProfileFinish(withMessage: String) {
-        ACAlert.show(message: withMessage)
         fetchData()
     }
     func dismisView() {
@@ -240,6 +286,14 @@ extension EditProfileParentViewController: EditProfileParentDelegate, OTPViewCon
     func positionFilled(withID: String) {
         print("position index: \(withID)")
         updatedPosition = withID
+    }
+    func dobFilled(withDob: String) {
+        print("Dob: \(withDob)")
+        updatedDob = withDob
+    }
+    func genderFilled(withGender: String) {
+        print("Gender: \(withGender)")
+        updatedGender = withGender
     }
     func showImagePicker() {
         let imagePickerController = UIImagePickerController()

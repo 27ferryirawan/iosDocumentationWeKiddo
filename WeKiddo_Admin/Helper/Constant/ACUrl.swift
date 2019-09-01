@@ -355,4 +355,10 @@ class ACUrl: NSObject {
     static let ADMIN_POST_EXAM_CLOSE = PARENT_APP + "exam/close"
     static let ADMIN_POST_EXAM_SAVE_REMEDY = PARENT_APP + "exam/save-remedy"
     static let ADMIN_POST_EXAM_SAVE_SCORE = PARENT_APP + "exam/save-score"
+    
+    //ADMIN PROFILE
+    static let ADMIN_GET_PROFILE_ADMIN = PARENT_APP + "admin-profile/get-admin-profile"
+    static let ADMIN_POST_UPDATE_PROFILE_ADMIN = PARENT_APP + "admin-profile/update-admin-profile"
+    static let ADMIN_GET_CHECK_PHONE = PARENT_APP + "admin-profile/check-phone-admin"
+    static let ADMIN_POST_UPDATE_PASSWORD_ADMIN = PARENT_APP + "admin-profile/update-password-admin"
 }

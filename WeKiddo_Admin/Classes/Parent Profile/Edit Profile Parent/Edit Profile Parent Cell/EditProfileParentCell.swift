@@ -18,6 +18,8 @@ protocol EditProfileParentDelegate: class {
     func phoneFilled(withString: String)
     func emailFilled(withEmail: String)
     func positionFilled(withID: String)
+    func genderFilled(withGender: String)
+    func dobFilled(withDob: String)
 }
 
 class EditProfileParentCell: UITableViewCell {
@@ -49,7 +51,6 @@ class EditProfileParentCell: UITableViewCell {
     @IBOutlet weak var genderButton: UIButton!
     @IBOutlet weak var positionButton: UIButton!
     @IBOutlet weak var dobButton: UIButton!
-    @IBOutlet weak var addSubjectButton: UIButton!
     
     @IBOutlet weak var changePasswordBtn: UIButton! {
         didSet {
@@ -68,10 +69,16 @@ class EditProfileParentCell: UITableViewCell {
         }
     }
     weak var delegate: EditProfileParentDelegate?
+    var detailObj: AdminProfileModel? {
+        didSet {
+            cellDataSet()
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         changeAvatarButton.addTarget(self, action: #selector(changeAvatar), for: .touchUpInside)
-        addSubjectButton.addTarget(self, action: #selector(addSubjectAction), for: .touchUpInside)
         positionButton.addTarget(self, action: #selector(showPositionPicker), for: .touchUpInside)
         genderButton.addTarget(self, action: #selector(showGenderPicker), for: .touchUpInside)
         dobButton.addTarget(self, action: #selector(showDatePicker), for: .touchUpInside)
@@ -92,11 +99,6 @@ class EditProfileParentCell: UITableViewCell {
     }
     @objc func dismissKeyboard(on: UIButton){
         self.endEditing(true)
-    }
-    var detailObj: ParentProfileModel? {
-        didSet {
-            cellDataSet()
-        }
     }
     @objc func showPositionPicker() {
         ActionSheetStringPicker.show(
@@ -120,6 +122,7 @@ class EditProfileParentCell: UITableViewCell {
             doneBlock: { picker, indexes, values in
                 guard let value = values as? String else { return }
                 self.genderButton.setTitle(value, for: .normal)
+                self.delegate?.genderFilled(withGender: value)
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
@@ -141,6 +144,7 @@ class EditProfileParentCell: UITableViewCell {
                 let selectedDates = dateFormatter.string(from: selectedDate as! Date)
                 let choosenDate = dateFormatter2.string(from: selectedDate as! Date)
                 self.dobButton.setTitle(selectedDates, for: .normal)
+                self.delegate?.dobFilled(withDob: selectedDates)
 //                self.delegate?.dateSelected(atIndex: self.indexArray, value: choosenDate)
         }, cancel: nil, origin: self)
     }
@@ -160,29 +164,32 @@ class EditProfileParentCell: UITableViewCell {
                 self.profileImage.image = decodedimage
             } else {
                 self.profileImage.sd_setImage(
-                    with: URL(string: (obj.teacher_image)),
+                    with: URL(string: (obj.admin_photo)),
                     placeholderImage: UIImage(named: "WeKiddoLogo"),
                     options: .refreshCached
                 )
             }
         } else {
             self.profileImage.sd_setImage(
-                with: URL(string: (obj.teacher_image)),
+                with: URL(string: (obj.admin_photo)),
                 placeholderImage: UIImage(named: "WeKiddoLogo"),
                 options: .refreshCached
             )
         }
         //        self.titleLabel.text = title
-        self.nameLbl.text = obj.teacher_name
-        self.nipLabel.text = obj.nuptk
-        self.addressLabel.text = obj.teacher_address
-        self.emailLabel.text = obj.teacher_email
-        self.positionButton.setTitle(obj.teacher_position, for: .normal)
+        self.nameLbl.text = obj.name
+        self.nipLabel.text = ""
+        self.addressLabel.text = obj.address
+        self.emailLabel.text = obj.email
+        self.positionButton.setTitle(obj.admin_pos_name, for: .normal)
         self.genderButton.setTitle(obj.gender, for: .normal)
-        self.dobButton.setTitle(obj.teacher_dob, for: .normal)
-        countryCode = String(obj.teacher_phone.prefix(2))
-        self.countryLabel.text = String(obj.teacher_phone.prefix(2))
-        self.phoneLabel.text = String(obj.teacher_phone.dropFirst(2))
+        self.dobButton.setTitle(obj.admin_dob, for: .normal)
+        countryCode = String(obj.phone.prefix(2))
+        self.countryLabel.text = String(obj.phone.prefix(2))
+        self.phoneLabel.text = String(obj.phone.dropFirst(2))
+        
+        positionArray.removeAll()
+        positionArray = obj.posList.map({$0.admin_pos_name})
     }
     @IBAction func changeProfile(_ sender: UIButton) {
         if let chosedImage = UserDefaults.standard.string(forKey: "ParentSelectedImageFile") {
@@ -191,7 +198,7 @@ class EditProfileParentCell: UITableViewCell {
         guard let obj = detailObj else {
             return
         }
-        if obj.teacher_phone != phoneLabel.text! {
+        if obj.phone != phoneLabel.text! {
             print(phoneLabel.text!)
 //            self.delegate?.requestOTPVerification(parentID: ACData.USER.parent_id, parentName: nameLbl.text!, parentPhone: phoneLbl.text!, parentEmail: emailLbl.text!, parentAddress: addressLbl.text!, parentOccupation: occupationLbl.text!, parentCompany: companyLbl.text!, parentPosition: positionLbl.text!, parentImage: base64String)
         } else {

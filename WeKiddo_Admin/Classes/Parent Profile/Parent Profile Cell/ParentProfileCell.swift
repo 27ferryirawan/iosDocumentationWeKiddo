@@ -32,7 +32,7 @@ class ParentProfileCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    var detailObj: ParentProfileModel? {
+    var detailObj: AdminProfileModel? {
         didSet {
             cellDataSet()
         }
@@ -41,17 +41,17 @@ class ParentProfileCell: UITableViewCell {
         guard let obj = detailObj else {
             return
         }
-        self.teacherName.text = ": \(obj.teacher_name)"
-        self.userNIP.text = obj.nuptk
-        self.userName.text = obj.teacher_name
-        self.emailLabel.text = ": \(obj.teacher_email)"
-        self.addressLabel.text = ": \(obj.teacher_address)"
-        self.positionLabel.text = ": \(obj.teacher_position)"
-        self.phoneLable.text = ": \(obj.teacher_phone)"
+        self.teacherName.text = ": \(obj.name)"
+        self.userNIP.text = ""
+        self.userName.text = obj.name
+        self.emailLabel.text = ": \(obj.email)"
+        self.addressLabel.text = ": \(obj.address)"
+        self.positionLabel.text = ": \(obj.admin_pos_name)"
+        self.phoneLable.text = ": \(obj.phone)"
         self.genderLabel.text = ": \(obj.gender)"
-        self.dobLabel.text = ": \(obj.teacher_dob)"
+        self.dobLabel.text = ": \(obj.admin_dob)"
         self.profileImage.sd_setImage(
-            with: URL(string: (obj.teacher_image)),
+            with: URL(string: (obj.admin_photo)),
             placeholderImage: UIImage(named: "WeKiddoLogo"),
             options: .refreshCached
         )

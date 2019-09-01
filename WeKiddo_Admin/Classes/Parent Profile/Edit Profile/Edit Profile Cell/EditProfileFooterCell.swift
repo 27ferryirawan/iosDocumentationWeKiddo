@@ -10,18 +10,13 @@ import UIKit
 import SVProgressHUD
 
 protocol EditProfileFooterCellDelegate: class {
-    func editProfileFinish(withMessage: String)
+    func didTapSave()
 }
 
 class EditProfileFooterCell: UITableViewCell {
 
     @IBOutlet weak var saveButton: UIButton!
     weak var delegate: EditProfileFooterCellDelegate?
-    var address = ""
-    var telphone = ""
-    var email = ""
-    var position = ""
-    var teacherImage = ""
     override func awakeFromNib() {
         super.awakeFromNib()
         saveButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
@@ -30,31 +25,6 @@ class EditProfileFooterCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func saveProfile() {
-        print("Address: \(address), Telephone: \(telphone), Email: \(email), Position: \(position)")
-        if address == "" {
-            address = ACData.PARENTPROFILEDATA.teacher_address
-        }
-        if telphone == "" {
-            telphone = ACData.PARENTPROFILEDATA.teacher_phone
-        }
-        if email == "" {
-            email = ACData.PARENTPROFILEDATA.teacher_email
-        }
-        if position == "" {
-            position = ACData.PARENTPROFILEDATA.teacher_position
-        }
-        if let selectedImage = UserDefaults.standard.string(forKey: "SelectedImageFile") {
-            if selectedImage != "" {
-                teacherImage = selectedImage
-            }
-        }
-
-        ACRequest.POST_SAVE_NEW_PROFILE(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, teacherAddress: address, teacherPhone: telphone, teacherEmail: email, position: position, teacherImage: teacherImage, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
-            SVProgressHUD.dismiss()
-            self.delegate?.editProfileFinish(withMessage: "Success")
-        }) { (message) in
-            SVProgressHUD.dismiss()
-            ACAlert.show(message: message)
-        }
+        self.delegate?.didTapSave()
     }
 }

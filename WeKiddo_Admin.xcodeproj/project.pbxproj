@@ -20,6 +20,7 @@
 		66485D15231A79B000593AAD /* ExamListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D14231A79B000593AAD /* ExamListModel.swift */; };
 		66485D18231A833C00593AAD /* ExamTeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D16231A833C00593AAD /* ExamTeacherCell.swift */; };
 		66485D19231A833C00593AAD /* ExamTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66485D17231A833C00593AAD /* ExamTeacherCell.xib */; };
+		66CE15D0231B76B700DC3612 /* AdminProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */; };
 		BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */; };
 		BE0030EF22A505BC0050B48E /* MoreSchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */; };
 		BE0030F322A506250050B48E /* MoreSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030F122A506250050B48E /* MoreSchoolCell.swift */; };
@@ -794,6 +795,7 @@
 		66485D14231A79B000593AAD /* ExamListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListModel.swift; sourceTree = "<group>"; };
 		66485D16231A833C00593AAD /* ExamTeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTeacherCell.swift; sourceTree = "<group>"; };
 		66485D17231A833C00593AAD /* ExamTeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTeacherCell.xib; sourceTree = "<group>"; };
+		66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileModel.swift; sourceTree = "<group>"; };
 		983F76DCBFB61B18F25DE145 /* Pods-WeKiddo_Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeKiddo_Admin.debug.xcconfig"; path = "Target Support Files/Pods-WeKiddo_Admin/Pods-WeKiddo_Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSchoolViewController.swift; sourceTree = "<group>"; };
 		BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreSchoolViewController.xib; sourceTree = "<group>"; };
@@ -3665,6 +3667,7 @@
 				E689B71C23197E6200DAEFFF /* AbsenceListModel.swift */,
 				66485D12231A713600593AAD /* ExamTeacherList.swift */,
 				66485D14231A79B000593AAD /* ExamListModel.swift */,
+				66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4629,6 +4632,7 @@
 				E6F7CA6222F80538008DDFF4 /* SpecialAttentionDetailByClassContentCell.swift in Sources */,
 				E6F427D322965CA100DB4250 /* FuturePlanAcademyModel.swift in Sources */,
 				E62F864822F0459600CE355E /* SpecialAttentionDetailSectionCell.swift in Sources */,
+				66CE15D0231B76B700DC3612 /* AdminProfileModel.swift in Sources */,
 				E6F4282222984D9A00DB4250 /* CourseDetailListCell.swift in Sources */,
 				E699F5F722E1BEE800775758 /* ExamDetailSessionCell.swift in Sources */,
 				E6D39C2E225FA1A500831511 /* ACColor.swift in Sources */,

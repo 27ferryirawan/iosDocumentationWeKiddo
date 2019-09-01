@@ -917,6 +917,30 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ADMIN_PROFILE(
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (AdminProfileModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_PROFILE_ADMIN)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let dashboard = AdminProfileModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_TEACHER_SPECIAL_ATTENTION_BY_SUBJECT(
         userId:String,
         schoolID:String,
@@ -4048,24 +4072,20 @@ class ACRequest: NSObject {
     }
     
     static func POST_FORGOT_CHECK_PHONE(
-        userID:String,
-        role:String,
-        schoolID:String,
-        yearID:String,
         phone:String,
         tokenAccess:String,
-        successCompletion:@escaping (Bool) -> Void,
+        successCompletion:@escaping (message) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "phone":phone
         ]
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json"]
-        ACAPI.POST(url: ACUrl.PARENT_CHECK_PHONE, parameter: parameters, header: headers, showHUD: true, completion: {jsonData in
+        ACAPI.POST(url: ACUrl.ADMIN_GET_CHECK_PHONE, parameter: parameters, header: headers, showHUD: true, completion: {jsonData in
             let json = JSON(jsonData)
             print(json)
             if json["status"] == "success" {
-                successCompletion(json["is_registered"].boolValue)
+                successCompletion(json["status"].stringValue)
             } else {
                 failCompletion("Phone is not registered")
             }
@@ -4074,29 +4094,23 @@ class ACRequest: NSObject {
 
     static func POST_FORGOT_SET_NEW(
         userID:String,
-        role:String,
-        schoolID:String,
-        yearID:String,
         newPass:String,
         phone:String,
         tokenAccess:String,
-        successCompletion:@escaping (Bool) -> Void,
+        successCompletion:@escaping (String) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
-            "role":role,
-            "school_id":schoolID,
-            "year_id":yearID,
-            "new_password":newPass,
+            "password":newPass,
             "phone":phone
         ]
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: ACUrl.PARENT_SET_NEW_PASSWORD, parameter: parameters, header: headers, showHUD: true, completion: {jsonData in
+        ACAPI.POST(url: ACUrl.ADMIN_POST_UPDATE_PASSWORD_ADMIN, parameter: parameters, header: headers, showHUD: true, completion: {jsonData in
             let json = JSON(jsonData)
             print(json)
             if json["status"] == "success" {
-                successCompletion(json["is_success"].boolValue)
+                successCompletion(json["status"].stringValue)
             } else {
                 failCompletion("Something went wrong, please try again.")
             }
@@ -4164,37 +4178,18 @@ class ACRequest: NSObject {
     }
     
     static func POST_SAVE_NEW_PROFILE(
-        userID:String,
-        role:String,
-        schoolID:String,
-        yearID:String,
-        teacherAddress:String,
-        teacherPhone:String,
-        teacherEmail:String,
-        position:String,
-        teacherImage:String,
+        param:Parameters,
         tokenAccess:String,
-        successCompletion:@escaping (Bool) -> Void,
+        successCompletion:@escaping (String) -> Void,
         failCompletion:@escaping (String) -> Void) {
-        let parameters:Parameters = [
-            "user_id":userID,
-            "role":role,
-            "school_id":schoolID,
-            "year_id":yearID,
-            "teacher_address":teacherAddress,
-            "teacher_phone":teacherPhone,
-            "teacher_email":teacherEmail,
-            "position":position,
-            "teacher_image":teacherImage
-        ]
-        print(parameters)
+        print("parameters : \(param)")
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: ACUrl.SAVE_UPDATED_PROFILE, parameter: parameters, header: headers, showHUD: true, completion: {jsonData in
+        ACAPI.POST(url: ACUrl.ADMIN_POST_UPDATE_PROFILE_ADMIN, parameter: param, header: headers, showHUD: true, completion: {jsonData in
             let json = JSON(jsonData)
             print("add new return: \(json)")
             if json["status"] == "success" {
-                successCompletion(json["is_success"].boolValue)
+                successCompletion(json["status"].stringValue)
             } else {
                 failCompletion("Something went wrong, please try again.")
             }

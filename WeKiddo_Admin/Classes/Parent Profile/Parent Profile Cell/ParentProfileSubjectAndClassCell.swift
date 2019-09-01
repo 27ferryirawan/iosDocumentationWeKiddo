@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class ParentProfileSubjectAndClassCell: UITableViewCell {
 
+    @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var bgView: UIView! {
         didSet {
@@ -19,7 +22,7 @@ class ParentProfileSubjectAndClassCell: UITableViewCell {
             bgView.layer.borderWidth = 0.5
         }
     }
-    var detailObj: ProfileSubjectClassModel? {
+    var detailObj: AdminAssignSchoolModel? {
         didSet {
             cellConfig()
         }
@@ -32,6 +35,8 @@ class ParentProfileSubjectAndClassCell: UITableViewCell {
     }
     func cellConfig() {
         guard let obj = detailObj else { return }
-        contentLabel.text = "\(obj.subject_name) - \(obj.school_class)"
+        ivAvatar.layer.cornerRadius = ivAvatar.frame.width / 2
+        ivAvatar.sd_setImage(with: URL(string: obj.school_logo), completed: nil)
+        contentLabel.text = "\(obj.school_name)"
     }
 }

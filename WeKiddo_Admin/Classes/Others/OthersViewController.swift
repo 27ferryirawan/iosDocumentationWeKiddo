@@ -32,14 +32,15 @@ class OthersViewController: UIViewController {
         collectionView.register(UINib(nibName: "OthersCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "othersCollectionReusableView")
     }
     func fetchProfileData() {
-        ACRequest.POST_TEACHER_PROFILE(userId: ACData.LOGINDATA.userID, schoolID: ACData.LOGINDATA.school_id, role: ACData.LOGINDATA.role, yearID: ACData.LOGINDATA.year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (profileData) in
-            ACData.PARENTPROFILEDATA = profileData
+        ACRequest.POST_ADMIN_PROFILE(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (data) in
             SVProgressHUD.dismiss()
+            ACData.ADMINPROFILEDATA = data
             let profileVC = ParentProfileViewController()
-            profileVC.subjectCount = ACData.PARENTPROFILEDATA.subject_class.count
+            profileVC.subjectCount = ACData.ADMINPROFILEDATA.assignSchool.count
             self.navigationController?.pushViewController(profileVC, animated: true)
         }) { (message) in
             SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
         }
     }
 }
@@ -137,7 +138,7 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
         } else {
             let menu = ACData.LOGINDATA.dashboardCatgoryOthers[indexPath.row].menu_id
             switch menu {
-            case "54":
+            case "66":
                 fetchProfileData()
             case "57":
                 let feedbackVC = FeedbackViewController()
