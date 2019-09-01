@@ -4074,7 +4074,7 @@ class ACRequest: NSObject {
     static func POST_FORGOT_CHECK_PHONE(
         phone:String,
         tokenAccess:String,
-        successCompletion:@escaping (message) -> Void,
+        successCompletion:@escaping (Bool) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "phone":phone
@@ -4085,7 +4085,7 @@ class ACRequest: NSObject {
             let json = JSON(jsonData)
             print(json)
             if json["status"] == "success" {
-                successCompletion(json["status"].stringValue)
+                successCompletion(json["is_registered"].boolValue)
             } else {
                 failCompletion("Phone is not registered")
             }
@@ -4097,7 +4097,7 @@ class ACRequest: NSObject {
         newPass:String,
         phone:String,
         tokenAccess:String,
-        successCompletion:@escaping (String) -> Void,
+        successCompletion:@escaping (Bool) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userID,
@@ -4110,7 +4110,7 @@ class ACRequest: NSObject {
             let json = JSON(jsonData)
             print(json)
             if json["status"] == "success" {
-                successCompletion(json["status"].stringValue)
+                successCompletion(true)
             } else {
                 failCompletion("Something went wrong, please try again.")
             }

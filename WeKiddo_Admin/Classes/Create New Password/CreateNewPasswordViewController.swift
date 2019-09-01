@@ -36,9 +36,6 @@ class CreateNewPasswordViewController: UIViewController {
         if newPass == confirmPass {
             ACRequest.POST_FORGOT_SET_NEW(
                 userID: ACData.LOGINDATA.userID,
-                role: ACData.LOGINDATA.role,
-                schoolID: ACData.LOGINDATA.school_id,
-                yearID: ACData.LOGINDATA.year_id,
                 newPass: newPass,
                 phone: phoneNumber,
                 tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
