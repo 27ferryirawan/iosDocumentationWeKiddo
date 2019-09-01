@@ -240,6 +240,7 @@ extension ExamDetailViewController: ExamDetailRemediScheduleCellDelegate, AddDet
         searchVC.isFromEventPayment = false
         searchVC.examSchoolRemedyID = examDetailIndex
         searchVC.examRemedyID = withRemediID
+        searchVC.classID = ACData.EXAMDETAILDATA.school_class_id
         let navVC = UINavigationController(rootViewController: searchVC)
         self.navigationController?.present(navVC, animated: true, completion: nil)
     }
