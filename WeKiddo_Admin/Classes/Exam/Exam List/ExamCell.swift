@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 
 protocol ExamCellDelegate: class {
-    func toExamDetail(withExamDetailIndex: String)
+    func toExamDetail(with examID: String)
 }
 
 class ExamCell: UITableViewCell {
@@ -47,17 +47,8 @@ class ExamCell: UITableViewCell {
         examChapter.text = "\(obj.school_class) - \(obj.subject_name) - \(obj.session_text)"
     }
     @objc func goToExamDetail() {
-        guard let obj = examObj else {
-            return
-        }
-        ACRequest.GET_EXAM_DETAIL(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, examID: obj.school_session_exam_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (detailData) in
-            SVProgressHUD.dismiss()
-            ACData.EXAMDETAILDATA = detailData
-            self.delegate?.toExamDetail(withExamDetailIndex: obj.school_session_exam_id)
-        }) { (message) in
-            SVProgressHUD.dismiss()
-            ACAlert.show(message: message)
-        }
+        guard let obj = examObj else { return }
+        delegate?.toExamDetail(with: obj.school_session_exam_id)
     }
 }
 

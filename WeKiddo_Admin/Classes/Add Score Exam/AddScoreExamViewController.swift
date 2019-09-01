@@ -106,7 +106,7 @@ extension AddScoreExamViewController: AddScoreExamStudentScoreCellDelegate, AddS
         let jsonO = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         let parameters: Parameters = [
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
+            "school_user_id":ACData.EXAMDETAILDATA.teacher.teacher_id,
             "exam_id":ACData.EXAMREMEDYSCORELISTDATA.school_session_exam_id,
             "chapter_id":ACData.EXAMREMEDYSCORELISTDATA.chapter_id,
             "class_id":ACData.EXAMREMEDYSCORELISTDATA.school_class_id,

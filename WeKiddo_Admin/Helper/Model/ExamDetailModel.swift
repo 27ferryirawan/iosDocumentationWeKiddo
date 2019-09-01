@@ -26,6 +26,7 @@ class ExamDetailModel: NSObject {
     var sessions = [ExamDetailSessionsModel]()
     var remedy = [ExamDetailRemedyModel]()
     var related = [ExamDetailRelatedModel]()
+    var teacher = ExamDetailTeacherModel()
     
     func objectMapping(json: JSON) {
         start_time = json["data"]["exam_detail"]["start_time"].stringValue
@@ -56,6 +57,9 @@ class ExamDetailModel: NSObject {
             d.objectMapping(json: data)
             related.append(d)
         }
+        let objTeacher = ExamDetailTeacherModel()
+        objTeacher.objectMapping(json: json["data"]["exam_detail"]["teacher"])
+        teacher = objTeacher
     }
 }
 
@@ -131,5 +135,17 @@ class StudentsRemedyModel: NSObject {
         child_name = json["child_name"].stringValue
         child_image = json["child_image"].stringValue
         child_nis = json["child_nis"].stringValue
+    }
+}
+
+class ExamDetailTeacherModel: NSObject{
+    var teacher_id = ""
+    var teacher_name = ""
+    var teacher_image = ""
+    
+    func objectMapping(json: JSON){
+        teacher_id = json["teacher_id"].stringValue
+        teacher_name = json["teacher_name"].stringValue
+        teacher_image = json["teacher_image"].stringValue
     }
 }

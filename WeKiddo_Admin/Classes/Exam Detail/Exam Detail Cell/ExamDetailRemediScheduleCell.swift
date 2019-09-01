@@ -12,6 +12,7 @@ import SVProgressHUD
 protocol ExamDetailRemediScheduleCellDelegate: class {
     func toEdit(withRemediID: String)
     func toAddStudent(withRemediID: String)
+    func didSelectStudent(with obj: StudentsRemedyModel, examID: String)
 }
 
 class ExamDetailRemediScheduleCell: UITableViewCell {
@@ -21,6 +22,7 @@ class ExamDetailRemediScheduleCell: UITableViewCell {
     @IBOutlet weak var remediNumberLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
     var indexRow = 0
+    var teacherID = ""
     weak var delegate: ExamDetailRemediScheduleCellDelegate?
     var detailObj: ExamDetailRemedyModel? {
         didSet {
@@ -67,8 +69,16 @@ class ExamDetailRemediScheduleCell: UITableViewCell {
         remediNumberLabel.text = "\(obj.title)"
     }
     @objc func editScoreAction() {
+        //TODO: Change Value of SchoolID and YearID
         guard let obj = detailObj else { return }
-        ACRequest.GET_EXAM_REMEDY_SCORE_LIST(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, schoolClassID: ACData.EXAMDETAILDATA.school_class_id, examRemedyID: obj.exam_remedy_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
+        ACRequest.GET_EXAM_REMEDY_SCORE_LIST(
+            userID: ACData.LOGINDATA.userID,
+            school_user_id: teacherID,
+            schoolID: "SCHOOL10",//ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: "YEAR1",//ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            schoolClassID: ACData.EXAMDETAILDATA.school_class_id,
+            examRemedyID: obj.exam_remedy_id,
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (datas) in
             SVProgressHUD.dismiss()
             ACData.EXAMREMEDYSCORELISTDATA = datas
             self.delegate?.toEdit(withRemediID: obj.exam_remedy_id)
@@ -99,6 +109,11 @@ extension ExamDetailRemediScheduleCell : UICollectionViewDelegate, UICollectionV
         //        cell.configCell(index: indexPath.row)
         //        cell.delegate = self
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let obj = detailObj else { return }
+        delegate?.didSelectStudent(with: obj.students[indexPath.row], examID: obj.exam_remedy_id)
     }
 }
 

@@ -48,8 +48,8 @@ class ExamViewController: UIViewController {
         //TODO : Change value of schoolID and YearID
         ACRequest.POST_GET_EXAM_TEACHER_LIST_ALL(
             userID: ACData.LOGINDATA.userID,
-            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
-            yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            schoolID: "SCHOOL10", //ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: "YEAR1", //ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
             SVProgressHUD.dismiss()
             ACData.EXAMTEACHERLISTALL = jsonDatas
@@ -122,8 +122,8 @@ extension ExamViewController: ExamCellDelegate, AllExamSectionCellDelegate {
         ACRequest.GET_EXAM_LIST(
             userID: ACData.LOGINDATA.userID,
             school_user_id: self.teacherID,
-            schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
-            yearID:  ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            schoolID: "SCHOOL10", //ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID:  "YEAR1",//ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
             tokenAccess: ACData.LOGINDATA.accessToken,
             successCompletion: { (data) in
                 ACData.EXAMLISTADMIN = data
@@ -135,10 +135,28 @@ extension ExamViewController: ExamCellDelegate, AllExamSectionCellDelegate {
         }
     }
     
-    func toExamDetail(withExamDetailIndex: String) {
-        let examDetailVC = ExamDetailViewController()
-        examDetailVC.examDetailIndex = withExamDetailIndex
-        self.navigationController?.pushViewController(examDetailVC, animated: true)
+    func toExamDetail(with examID: String) {
+        
+        //TODO : Change Value of schoolID and YearID
+        ACRequest.GET_EXAM_DETAIL(
+            userID: ACData.LOGINDATA.userID,
+            school_user_id: teacherID,
+            schoolID: "SCHOOL10",//ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: "YEAR1",//ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            examID: examID,
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (detailData) in
+                SVProgressHUD.dismiss()
+                ACData.EXAMDETAILDATA = detailData
+                let examDetailVC = ExamDetailViewController()
+                examDetailVC.examDetailIndex = examID
+                examDetailVC.teacherID = self.teacherID
+                self.navigationController?.pushViewController(examDetailVC, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+        
+        
     }
     func reloadTable() {
         listCount = ACData.EXAMLISTDATA.exam_list.count

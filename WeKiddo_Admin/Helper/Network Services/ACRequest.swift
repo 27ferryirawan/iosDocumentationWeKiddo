@@ -352,7 +352,7 @@ class ACRequest: NSObject {
     
     static func POST_STUDENT_LIST_SCORE_ADD_NEW(
         userId:String,
-        role:String,
+        school_user_id:String,
         schoolID:String,
         yearID:String,
         schoolClassID:String,
@@ -362,7 +362,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "school_id":schoolID,
             "year_id":yearID,
             "school_class_id":schoolClassID,
@@ -371,7 +371,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_GET_LIST_STUDENT_FOR_ADD_NEW_SCORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_EXAM_GET_SCORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -386,7 +386,7 @@ class ACRequest: NSObject {
     
     static func POST_GET_DATA_FOR_EDIT_EXAM(
         userId:String,
-        role:String,
+        school_user_id:String,
         schoolID:String,
         yearID:String,
         examID:String,
@@ -396,7 +396,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "school_id":schoolID,
             "year_id":yearID,
             "exam_id":examID,
@@ -405,7 +405,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_GET_DATA_FOR_EDIT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_EXAM_EDIT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -420,7 +420,7 @@ class ACRequest: NSObject {
     
     static func POST_EXAM_ADD_REMEDY(
         userId:String,
-        role:String,
+        school_user_id:String,
         schoolID:String,
         yearID:String,
         examRemedyID:String,
@@ -433,7 +433,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "school_id":schoolID,
             "year_id":yearID,
             "exam_remedy_id":examRemedyID,
@@ -445,7 +445,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_ADD_REMEDY)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_EXAM_SAVE_REMEDY)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -458,7 +458,7 @@ class ACRequest: NSObject {
     
     static func POST_EXAM_CLOSE(
         userId:String,
-        role:String,
+        school_user_id:String,
         schoolID:String,
         yearID:String,
         examID:String,
@@ -467,7 +467,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
-            "role":role,
+            "school_user_id":school_user_id,
             "school_id":schoolID,
             "year_id":yearID,
             "exam_id":examID
@@ -475,7 +475,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_CLOSE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_EXAM_CLOSE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -532,7 +532,7 @@ class ACRequest: NSObject {
         print(params)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_UPDATE_EXAM_SCORE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_EXAM_SAVE_SCORE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -551,7 +551,7 @@ class ACRequest: NSObject {
         print(params)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_UPDATE_REMEDI_SCORE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_EXAM_SAVE_REMEDY_SCORE)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -570,7 +570,7 @@ class ACRequest: NSObject {
         print(params)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.EXAM_ADD_REMEDY_STUDENT)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_EXAM_ADD_REMEDY_STUDENT)", parameter: params, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
@@ -2332,6 +2332,24 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_EXAM_REMOVE_STUDENT(
+        params: Parameters,
+        tokenAccess:String,
+        successCompletion:@escaping () -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_POST_EXAM_REMOVE_STUDENT)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success"){
+                successCompletion()
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_GET_EXAM_GET_LEVEL(
         userID:String,
         schoolID:String,
@@ -2462,7 +2480,7 @@ class ACRequest: NSObject {
     
     static func GET_EXAM_DETAIL(
         userID:String,
-        role:String,
+        school_user_id:String,
         schoolID:String,
         yearID:String,
         examID:String,
@@ -2471,7 +2489,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userID,
-            "role":role,
+            "school_user_id":school_user_id,
             "school_id":schoolID,
             "year_id":yearID,
             "exam_id":examID
@@ -2479,7 +2497,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_EXAM_SCHEDULE_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_EXAM_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){
@@ -2494,7 +2512,7 @@ class ACRequest: NSObject {
     
     static func GET_EXAM_REMEDY_SCORE_LIST(
         userID:String,
-        role:String,
+        school_user_id:String,
         schoolID:String,
         yearID:String,
         schoolClassID:String,
@@ -2504,7 +2522,7 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void) {
         let parameters: Parameters = [
             "user_id":userID,
-            "role":role,
+            "school_user_id":school_user_id,
             "school_id":schoolID,
             "year_id":yearID,
             "school_class_id":schoolClassID,
@@ -2513,7 +2531,7 @@ class ACRequest: NSObject {
         print(parameters)
         let headers:HTTPHeaders = ["Content-Type":"application/json",
                                    "Authorization":"Bearer \(tokenAccess)"]
-        ACAPI.POST(url: "\(ACUrl.GET_EXAM_SCORE_REMEDY)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+        ACAPI.POST(url: "\(ACUrl.ADMIN_GET_EXAM_REMEDY_SCORE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success"){

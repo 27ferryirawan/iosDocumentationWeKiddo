@@ -98,7 +98,7 @@ extension ExamScoreViewController: ExamScoreStudentCellDelegate, ExamScoreFooter
         let jsonO = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
         let parameters: Parameters = [
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
+            "school_user_id":ACData.EXAMDETAILDATA.teacher.teacher_id,
             "exam_remedy_id":remediID,
             "chapter_id":ACData.EXAMREMEDYSCORELISTDATA.chapter_id,
             "class_id":ACData.EXAMREMEDYSCORELISTDATA.school_class_id,
