@@ -143,7 +143,7 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             case "57":
                 let feedbackVC = FeedbackViewController()
                 self.navigationController?.pushViewController(feedbackVC, animated: true)
-            case "55":
+            case "67":
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.synchronize()
                 let mainViewController = ViewController()
