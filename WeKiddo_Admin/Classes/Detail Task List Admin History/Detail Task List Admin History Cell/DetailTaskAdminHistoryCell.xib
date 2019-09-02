@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailTaskAdminHistoryCellID" rowHeight="119" id="KGk-i7-Jjw" customClass="DetailTaskAdminHistoryCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05 Aug 2019 12.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcF-vr-r2m">
+                        <rect key="frame" x="15" y="10" width="290" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKj-MZ-1Zd">
+                        <rect key="frame" x="15" y="32" width="290" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="yVz-SE-7fR"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assign To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-Tm-Tx7">
+                        <rect key="frame" x="15" y="92" width="290" height="15"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kcF-vr-r2m" secondAttribute="trailing" constant="15" id="14D-SF-XxI"/>
+                    <constraint firstItem="o4C-Tm-Tx7" firstAttribute="leading" secondItem="RKj-MZ-1Zd" secondAttribute="leading" id="RYq-Cx-Jv1"/>
+                    <constraint firstItem="RKj-MZ-1Zd" firstAttribute="trailing" secondItem="kcF-vr-r2m" secondAttribute="trailing" id="TQI-WT-u37"/>
+                    <constraint firstItem="RKj-MZ-1Zd" firstAttribute="leading" secondItem="kcF-vr-r2m" secondAttribute="leading" id="cEu-VB-Ya4"/>
+                    <constraint firstItem="o4C-Tm-Tx7" firstAttribute="trailing" secondItem="RKj-MZ-1Zd" secondAttribute="trailing" id="kop-3J-U6t"/>
+                    <constraint firstItem="kcF-vr-r2m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="m6w-Df-F2U"/>
+                    <constraint firstItem="RKj-MZ-1Zd" firstAttribute="top" secondItem="kcF-vr-r2m" secondAttribute="bottom" constant="7.5" id="oPX-S6-Vmn"/>
+                    <constraint firstItem="o4C-Tm-Tx7" firstAttribute="top" secondItem="RKj-MZ-1Zd" secondAttribute="bottom" constant="16" id="qpo-xt-jB4"/>
+                    <constraint firstItem="kcF-vr-r2m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="zGQ-BA-bFG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentText" destination="RKj-MZ-1Zd" id="8gN-dk-ZVA"/>
+                <outlet property="dateLabel" destination="kcF-vr-r2m" id="L3Z-I2-b7i"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="177.79017857142856"/>
+        </tableViewCell>
+    </objects>
+</document>

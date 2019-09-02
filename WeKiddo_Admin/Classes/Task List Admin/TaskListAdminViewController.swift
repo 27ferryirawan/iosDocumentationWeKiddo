@@ -104,9 +104,11 @@ extension TaskListAdminViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isNew {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "taskListAdminCellID", for: indexPath) as? TaskListAdminCell)!
+            cell.isHistory = false
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "taskListAdminCellID", for: indexPath) as? TaskListAdminCell)!
+            cell.isHistory = true
             return cell
         }
     }

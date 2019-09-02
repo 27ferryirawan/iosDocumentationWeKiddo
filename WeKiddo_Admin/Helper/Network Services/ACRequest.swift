@@ -766,6 +766,32 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ADMIN_DETAIL_TASK(
+        userId:String,
+        taskID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (ExamRemedyScoreListModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "task_id":taskID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADMIN_DETAIL_HISTORY_TASK)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+//                let dashboard = ExamRemedyScoreListModel()
+//                dashboard.objectMapping(json: json)
+//                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_ADD_NEW_PAYMENT_LATE(
         params:Parameters,
         tokenAccess:String,

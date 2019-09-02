@@ -672,6 +672,14 @@
 		E6C63A9F231CDE4300367DE4 /* AdminListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */; };
 		E6C63AA2231CFDC900367DE4 /* AdminMemberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AA0231CFDC900367DE4 /* AdminMemberCollectionCell.swift */; };
 		E6C63AA3231CFDC900367DE4 /* AdminMemberCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AA1231CFDC900367DE4 /* AdminMemberCollectionCell.xib */; };
+		E6C63AA7231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AA5231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.swift */; };
+		E6C63AA8231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AA6231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.xib */; };
+		E6C63AAC231D234900367DE4 /* DetailTaskAdminHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AAA231D234900367DE4 /* DetailTaskAdminHistoryCell.swift */; };
+		E6C63AAD231D234900367DE4 /* DetailTaskAdminHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AAB231D234900367DE4 /* DetailTaskAdminHistoryCell.xib */; };
+		E6C63AB0231D27CC00367DE4 /* DetailTaskAdminGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AAE231D27CC00367DE4 /* DetailTaskAdminGroupCell.swift */; };
+		E6C63AB1231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AAF231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib */; };
+		E6C63AB4231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AB2231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift */; };
+		E6C63AB5231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AB3231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib */; };
 		E6D39BF9225F570B00831511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39BF8225F570B00831511 /* AppDelegate.swift */; };
 		E6D39BFB225F570B00831511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39BFA225F570B00831511 /* ViewController.swift */; };
 		E6D39C00225F570E00831511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D39BFF225F570E00831511 /* Assets.xcassets */; };
@@ -1476,6 +1484,14 @@
 		E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminListModel.swift; sourceTree = "<group>"; };
 		E6C63AA0231CFDC900367DE4 /* AdminMemberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMemberCollectionCell.swift; sourceTree = "<group>"; };
 		E6C63AA1231CFDC900367DE4 /* AdminMemberCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminMemberCollectionCell.xib; sourceTree = "<group>"; };
+		E6C63AA5231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoryTaskListAdminViewController.swift; sourceTree = "<group>"; };
+		E6C63AA6231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHistoryTaskListAdminViewController.xib; sourceTree = "<group>"; };
+		E6C63AAA231D234900367DE4 /* DetailTaskAdminHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskAdminHistoryCell.swift; sourceTree = "<group>"; };
+		E6C63AAB231D234900367DE4 /* DetailTaskAdminHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTaskAdminHistoryCell.xib; sourceTree = "<group>"; };
+		E6C63AAE231D27CC00367DE4 /* DetailTaskAdminGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskAdminGroupCell.swift; sourceTree = "<group>"; };
+		E6C63AAF231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTaskAdminGroupCell.xib; sourceTree = "<group>"; };
+		E6C63AB2231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskAdminGroupCollectionCell.swift; sourceTree = "<group>"; };
+		E6C63AB3231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTaskAdminGroupCollectionCell.xib; sourceTree = "<group>"; };
 		E6D39BF5225F570B00831511 /* WeKiddo_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeKiddo_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D39BF8225F570B00831511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D39BFA225F570B00831511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -3447,6 +3463,29 @@
 			path = "Chart Library";
 			sourceTree = "<group>";
 		};
+		E6C63AA4231D228200367DE4 /* Detail Task List Admin History */ = {
+			isa = PBXGroup;
+			children = (
+				E6C63AA9231D232F00367DE4 /* Detail Task List Admin History Cell */,
+				E6C63AA5231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.swift */,
+				E6C63AA6231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.xib */,
+			);
+			path = "Detail Task List Admin History";
+			sourceTree = "<group>";
+		};
+		E6C63AA9231D232F00367DE4 /* Detail Task List Admin History Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6C63AAA231D234900367DE4 /* DetailTaskAdminHistoryCell.swift */,
+				E6C63AAB231D234900367DE4 /* DetailTaskAdminHistoryCell.xib */,
+				E6C63AAE231D27CC00367DE4 /* DetailTaskAdminGroupCell.swift */,
+				E6C63AAF231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib */,
+				E6C63AB2231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift */,
+				E6C63AB3231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib */,
+			);
+			path = "Detail Task List Admin History Cell";
+			sourceTree = "<group>";
+		};
 		E6D39BEC225F570B00831511 = {
 			isa = PBXGroup;
 			children = (
@@ -3503,6 +3542,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E6C63AA4231D228200367DE4 /* Detail Task List Admin History */,
 				E689B749231AEEB400DAEFFF /* Add New Task Admin */,
 				E689B73E231AE43600DAEFFF /* Task List Admin */,
 				E689B71E2319834700DAEFFF /* Absence List */,
@@ -4323,6 +4363,7 @@
 				E6416F3222ECDF3E00ACDCD6 /* EditPaymentFooterCell.xib in Resources */,
 				E6AAC3C82318FF1D0084ED93 /* TaskListViewController.xib in Resources */,
 				E62F863722F03C2300CE355E /* CurrentClassListHeaderCell.xib in Resources */,
+				E6C63AB1231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib in Resources */,
 				E689B747231AE53300DAEFFF /* TaskListAdminCell.xib in Resources */,
 				E69AC818228968CE000284A1 /* NearbyContentCollectionCell.xib in Resources */,
 				BE2FF57222AABFC300003E1A /* PrivacyPolicyViewController.xib in Resources */,
@@ -4330,6 +4371,7 @@
 				E699F5C622DE300600775758 /* UpcomingSessionListViewController.xib in Resources */,
 				E62F863B22F03DDF00CE355E /* CurrentClassStudentCell.xib in Resources */,
 				E682D6CA22D9FF6E00214F4E /* SubjectTeacherDetailClassContentCell.xib in Resources */,
+				E6C63AB5231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib in Resources */,
 				E6D39C672262216700831511 /* CreateNewPasswordViewController.xib in Resources */,
 				E6F42801229702E900DB4250 /* UniversityDetailRepresentativeCell.xib in Resources */,
 				E699F5D222DE421400775758 /* CurrentSessionListViewController.xib in Resources */,
@@ -4359,6 +4401,7 @@
 				E66C5EFD22E8D83D00AD186C /* EditExamTopCell.xib in Resources */,
 				E600B48422AFB967007E7C58 /* SubjectDetailQuestionCell.xib in Resources */,
 				E689B74D231AEECD00DAEFFF /* AddNewTaskAdminViewController.xib in Resources */,
+				E6C63AAD231D234900367DE4 /* DetailTaskAdminHistoryCell.xib in Resources */,
 				E62F864D22F0469700CE355E /* SpecialAttentionDetailContentCell.xib in Resources */,
 				E66C5F0522E8E43200AD186C /* EditExamRelatedCell.xib in Resources */,
 				E6E3E16E228B157100AF9310 /* CompetitionCell.xib in Resources */,
@@ -4381,6 +4424,7 @@
 				E699F5B922DCE34300775758 /* EditProfileParentCell.xib in Resources */,
 				E689B7272319922B00DAEFFF /* AbsenceListCell.xib in Resources */,
 				E682D6BE22D9E51D00214F4E /* SubjectTeacherDetailHeaderCell.xib in Resources */,
+				E6C63AA8231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.xib in Resources */,
 				E6F427FD2296E7EF00DB4250 /* UniversityDetailCell.xib in Resources */,
 				E6416EF622EA11AA00ACDCD6 /* AddExamFooterCell.xib in Resources */,
 				E6F427DC22968AEF00DB4250 /* CareerDetailViewController.xib in Resources */,
@@ -4810,6 +4854,7 @@
 				E6C63AA2231CFDC900367DE4 /* AdminMemberCollectionCell.swift in Sources */,
 				BE8FEF2C22A278BC00BDF240 /* ApprovalTitleDescriptionCell.swift in Sources */,
 				E66C5EC222E2282900AD186C /* SubjectTeacherByClassSessionListModel.swift in Sources */,
+				E6C63AB4231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift in Sources */,
 				E66C5EC422E35B3E00AD186C /* SubjectTeacherParamModel.swift in Sources */,
 				E6416F1722ECD2A000ACDCD6 /* EditEventBannerCollectionCell.swift in Sources */,
 				E600B49022B0DFF3007E7C58 /* SearchViewController.swift in Sources */,
@@ -4871,6 +4916,7 @@
 				E624D125227C873B001220E9 /* NewsContentCell.swift in Sources */,
 				E6396FD822B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.swift in Sources */,
 				E65BF68F22CF9E5800C57FEF /* AddAssignmentFooterCell.swift in Sources */,
+				E6C63AB0231D27CC00367DE4 /* DetailTaskAdminGroupCell.swift in Sources */,
 				E6F427E32296945700DB4250 /* CareerDetailModel.swift in Sources */,
 				BE4EB43922984BFD00FA6117 /* OnboardingViewController.swift in Sources */,
 				E6BFA11E22749A4800E90803 /* CurveAlgorithm.swift in Sources */,
@@ -4981,10 +5027,12 @@
 				E626B69B22C34D1600FF660A /* SubjectListCell.swift in Sources */,
 				E66C5ED122E7F7F400AD186C /* ExamScoreViewController.swift in Sources */,
 				E600B43D22AC397B007E7C58 /* SchoolDetailBannerCell.swift in Sources */,
+				E6C63AAC231D234900367DE4 /* DetailTaskAdminHistoryCell.swift in Sources */,
 				E689B72D231A467200DAEFFF /* SchoolMonitoringModel.swift in Sources */,
 				E63D83EE22D4BB2D005F07B4 /* AddDetentionViewController.swift in Sources */,
 				E699F5B322DCE32A00775758 /* EditProfileParentViewController.swift in Sources */,
 				E64C669522CA37B400783D51 /* PermissionRequestAttachmentCell.swift in Sources */,
+				E6C63AA7231D22A000367DE4 /* DetailHistoryTaskListAdminViewController.swift in Sources */,
 				E682D6AE22D9DB5F00214F4E /* SubjectTeacherListViewController.swift in Sources */,
 				BE35E480229C5760004BD16B /* LoginInfoCollectionCell.swift in Sources */,
 				E69AC7F122891314000284A1 /* OtherCollectionCell.swift in Sources */,

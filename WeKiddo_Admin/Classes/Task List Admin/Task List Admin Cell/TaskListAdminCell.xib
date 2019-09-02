@@ -56,12 +56,15 @@
                             <constraint firstItem="NuE-eN-RS0" firstAttribute="top" secondItem="0Dw-CD-f2W" secondAttribute="bottom" constant="4.5" id="u3r-Og-4Kx"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-Yo-SKS">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-Yo-SKS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="fLk-Yo-SKS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Klj-mp-uRz"/>
+                    <constraint firstItem="fLk-Yo-SKS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PnQ-7k-kKX"/>
+                    <constraint firstAttribute="bottom" secondItem="fLk-Yo-SKS" secondAttribute="bottom" id="ZAX-F0-aGw"/>
+                    <constraint firstAttribute="trailing" secondItem="fLk-Yo-SKS" secondAttribute="trailing" id="dKa-G1-2rT"/>
                     <constraint firstItem="SBR-Zh-oE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="hQN-My-xDI"/>
                     <constraint firstAttribute="trailing" secondItem="SBR-Zh-oE1" secondAttribute="trailing" constant="10" id="jSk-Wn-Igs"/>
                     <constraint firstItem="SBR-Zh-oE1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zUn-vs-yYc"/>

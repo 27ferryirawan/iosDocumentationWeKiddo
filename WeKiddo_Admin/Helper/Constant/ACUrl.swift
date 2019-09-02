@@ -33,6 +33,7 @@ class ACUrl: NSObject {
     static let PARENT_TASKLIST_ADMIN_HISTORY = PARENT_APP + "task/history-task-list" // [POST] user_id
     static let PARENT_ADMIN_LIST = PARENT_APP + "task/get-admin-list" // [POST] user_id
     static let PARENT_ADMIN_SAVE_NEW_TASK = PARENT_APP + "task/save-task" // [POST] user_id, task_id, title, description, task_date, admin_list(admin_id)
+    static let PARENT_ADMIN_DETAIL_HISTORY_TASK = PARENT_APP + "task/detail-task" // [POST] user_id, task_id
     static let TEACHER_GET_DETAIL_ATTENDANCE = PARENT_APP + "user/attendanceDetail" // [POST] user_id, role, school_session_id
     static let TEACHER_GET_PERMISSION = PARENT_APP + "user/permissionRequest" // [POST] user_id, role
     static let TEACHER_UPDATE_STUDENT_ATTENDANCE_STATUS = PARENT_APP + "user/attendanceStudent" // [POST] user_id, role, school_session_id, child_id, is_attend, attendance_type, note

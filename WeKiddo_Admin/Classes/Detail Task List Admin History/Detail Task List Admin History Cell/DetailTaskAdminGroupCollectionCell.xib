@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailTaskAdminGroupCollectionCellID" id="gTV-IL-0wX" customClass="DetailTaskAdminGroupCollectionCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="33"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="33"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eQ-0d-hUw">
+                        <rect key="frame" x="5" y="9" width="15" height="15"/>
+                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Ia5-Jn-3zl"/>
+                            <constraint firstAttribute="height" constant="15" id="jB3-Uj-klO"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triyono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR3-qQ-sLJ">
+                        <rect key="frame" x="22" y="9.5" width="76" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="OR3-qQ-sLJ" firstAttribute="leading" secondItem="6eQ-0d-hUw" secondAttribute="trailing" constant="2" id="1hZ-R5-cZX"/>
+                <constraint firstItem="OR3-qQ-sLJ" firstAttribute="centerY" secondItem="6eQ-0d-hUw" secondAttribute="centerY" id="YbZ-Xh-679"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="OR3-qQ-sLJ" secondAttribute="trailing" constant="2" id="ldC-dF-ocf"/>
+                <constraint firstItem="6eQ-0d-hUw" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ykh-1c-A1D"/>
+                <constraint firstItem="6eQ-0d-hUw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="zI8-dS-kD4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="adminName" destination="OR3-qQ-sLJ" id="nX8-Sj-dsJ"/>
+                <outlet property="adminView" destination="6eQ-0d-hUw" id="lkZ-mL-BoA"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

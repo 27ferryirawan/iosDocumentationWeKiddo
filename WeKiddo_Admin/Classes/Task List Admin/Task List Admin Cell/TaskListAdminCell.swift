@@ -20,6 +20,7 @@ class TaskListAdminCell: UITableViewCell {
     @IBOutlet weak var taskLabel: UILabel!
     weak var delegate: TaskListAdminCellDelegate?
     var indexObject: Int!
+    var isHistory = Bool()
     @IBOutlet weak var taskStatusView: UIView! {
         didSet {
             taskStatusView.layer.cornerRadius = taskStatusView.frame.size.width/2
@@ -43,7 +44,16 @@ class TaskListAdminCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func toDetail() {
-        self.delegate?.toDetailTask(withIndex: indexObject)
+        guard let obj = detailClassObj else { return }
+        if isHistory {
+            ACRequest.POST_ADMIN_DETAIL_TASK(userId: ACData.LOGINDATA.userID, taskID: obj.task_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+                SVProgressHUD.dismiss()
+            }) { (message) in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: message)
+            }
+        }
+//        self.delegate?.toDetailTask(withIndex: indexObject)
     }
     func cellConfigClass() {
         guard let obj = detailClassObj else { return }

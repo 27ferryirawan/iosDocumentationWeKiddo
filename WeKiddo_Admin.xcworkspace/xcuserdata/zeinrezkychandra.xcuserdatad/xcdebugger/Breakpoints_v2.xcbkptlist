@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeKiddo_Admin/Helper/Network Services/ACRequest.swift"
-            timestampString = "588831464.3317831"
+            timestampString = "589114640.889371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -26,12 +26,12 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "588585329.603091"
+                  timestampString = "589115126.4327821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
                   endingLineNumber = "33"
-                  offsetFromSymbolStart = "1153">
+                  offsetFromSymbolStart = "1121">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,60 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "588585329.605077"
+                  timestampString = "589115126.434453"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
                   offsetFromSymbolStart = "258">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Classes/Task List Admin/Task List Admin Cell/TaskListAdminCell.swift"
+            timestampString = "589115126.048174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "toDetail()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeKiddo_Admin.TaskListAdminCell.toDetail() -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Classes/Task%20List%20Admin/Task%20List%20Admin%20Cell/TaskListAdminCell.swift"
+                  timestampString = "589115126.438749"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (WeKiddo_Admin.ExamRemedyScoreListModel) -&gt; () in WeKiddo_Admin.TaskListAdminCell.toDetail() -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Classes/Task%20List%20Admin/Task%20List%20Admin%20Cell/TaskListAdminCell.swift"
+                  timestampString = "589115126.440589"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
