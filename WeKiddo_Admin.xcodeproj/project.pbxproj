@@ -492,6 +492,8 @@
 		E689B74D231AEECD00DAEFFF /* AddNewTaskAdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E689B74B231AEECD00DAEFFF /* AddNewTaskAdminViewController.xib */; };
 		E689B750231AF46D00DAEFFF /* TaskListAdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E689B74F231AF46D00DAEFFF /* TaskListAdminModel.swift */; };
 		E689B752231AF4CF00DAEFFF /* TaskListAdminHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E689B751231AF4CF00DAEFFF /* TaskListAdminHistoryModel.swift */; };
+		E689B755231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E689B753231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.swift */; };
+		E689B756231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E689B754231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.xib */; };
 		E68CBAAB22B7A3A900DFD45E /* AnnouncementAddNewButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68CBAA922B7A3A900DFD45E /* AnnouncementAddNewButtonCell.swift */; };
 		E68CBAAC22B7A3A900DFD45E /* AnnouncementAddNewButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68CBAAA22B7A3A900DFD45E /* AnnouncementAddNewButtonCell.xib */; };
 		E68CBAB022B7A6CF00DFD45E /* AddAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68CBAAE22B7A6CF00DFD45E /* AddAnnouncementViewController.swift */; };
@@ -1281,6 +1283,8 @@
 		E689B74B231AEECD00DAEFFF /* AddNewTaskAdminViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewTaskAdminViewController.xib; sourceTree = "<group>"; };
 		E689B74F231AF46D00DAEFFF /* TaskListAdminModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAdminModel.swift; sourceTree = "<group>"; };
 		E689B751231AF4CF00DAEFFF /* TaskListAdminHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAdminHistoryModel.swift; sourceTree = "<group>"; };
+		E689B753231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskAdminHeaderCell.swift; sourceTree = "<group>"; };
+		E689B754231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewTaskAdminHeaderCell.xib; sourceTree = "<group>"; };
 		E68CBAA922B7A3A900DFD45E /* AnnouncementAddNewButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementAddNewButtonCell.swift; sourceTree = "<group>"; };
 		E68CBAAA22B7A3A900DFD45E /* AnnouncementAddNewButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnouncementAddNewButtonCell.xib; sourceTree = "<group>"; };
 		E68CBAAE22B7A6CF00DFD45E /* AddAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnouncementViewController.swift; sourceTree = "<group>"; };
@@ -2896,6 +2900,8 @@
 		E689B74E231AF22600DAEFFF /* Add New Task Admin Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E689B753231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.swift */,
+				E689B754231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.xib */,
 			);
 			path = "Add New Task Admin Cell";
 			sourceTree = "<group>";
@@ -4299,6 +4305,7 @@
 				E6BA19EC2268D16400FD246B /* NotificationDetailCollectionCell.xib in Resources */,
 				E694F2C922B1447800467F3C /* SearchNoDataCell.xib in Resources */,
 				BE14C8D722D8750800ADC95D /* TeacherOnDutyCell.xib in Resources */,
+				E689B756231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.xib in Resources */,
 				BEE7E1FA228598CE005D5CC7 /* AnnouncementAllCell.xib in Resources */,
 				E6E3E15C228B0C3500AF9310 /* FutureHeaderCell.xib in Resources */,
 				E682D68822D77F7A00214F4E /* ImageMediaCollectionCell.xib in Resources */,
@@ -4860,6 +4867,7 @@
 				E6961027227F2DAE0000FC92 /* PermissionContentCell.swift in Sources */,
 				BE2FF57122AABFC300003E1A /* PrivacyPolicyViewController.swift in Sources */,
 				BE2FF57F22ABDA4600003E1A /* ParentProfileViewController.swift in Sources */,
+				E689B755231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.swift in Sources */,
 				E69AC80F22894075000284A1 /* NearbyHeaderCollectionCell.swift in Sources */,
 				E689B741231AE44B00DAEFFF /* TaskListAdminViewController.swift in Sources */,
 				BE35E483229C5BCC004BD16B /* SchoolModel.swift in Sources */,
