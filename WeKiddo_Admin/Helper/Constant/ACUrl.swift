@@ -341,4 +341,30 @@ class ACUrl: NSObject {
     static let ADMIN_GET_ANNOUNCEMENT_EDIT = PARENT_APP + "announcement/edit"
     static let ADMIN_POST_ANNOUNCEMENT_DELETE = PARENT_APP + "announcement/delete"
     static let ADMIN_POST_ANNOUNCEMENT_REMOVE_STUDENT = PARENT_APP + "announcement/removeStudent"
+    
+    //EXAM
+    static let ADMIN_GET_EXAM_LIST = PARENT_APP + "exam/list"
+    static let ADMIN_GET_EXAM_DETAIL = PARENT_APP + "exam/detail"
+    static let ADMIN_GET_EXAM_TEACHER_LIST = PARENT_APP + "exam/get-teacher"
+    static let ADMIN_GET_EXAM_TEACHER_LIST_ALL = PARENT_APP + "exam/teacher-list"
+    static let ADMIN_GET_EXAM_GET_SUBJECT = PARENT_APP + "exam/get-subject"
+    static let ADMIN_GET_EXAM_GET_LEVEL = PARENT_APP + "exam/get-level"
+    static let ADMIN_GET_EXAM_GET_CLASS = PARENT_APP + "exam/get-class"
+    static let ADMIN_GET_EXAM_GET_WEEK = PARENT_APP + "exam/get-week"
+    static let ADMIN_POST_EXAM_SAVE = PARENT_APP + "exam/save"
+    static let ADMIN_GET_EXAM_REMEDY_SCORE = PARENT_APP + "exam/get-remedy_score"
+    static let ADMIN_POST_EXAM_SAVE_REMEDY_SCORE = PARENT_APP + "exam/save-remedy_score"
+    static let ADMIN_POST_EXAM_ADD_REMEDY_STUDENT = PARENT_APP + "exam/add-student-remedy"
+    static let ADMIN_POST_EXAM_REMOVE_STUDENT = PARENT_APP + "exam/remove-student-remedy"
+    static let ADMIN_GET_EXAM_GET_SCORE = PARENT_APP + "exam/get-score"
+    static let ADMIN_GET_EXAM_EDIT = PARENT_APP + "exam/edit"
+    static let ADMIN_POST_EXAM_CLOSE = PARENT_APP + "exam/close"
+    static let ADMIN_POST_EXAM_SAVE_REMEDY = PARENT_APP + "exam/save-remedy"
+    static let ADMIN_POST_EXAM_SAVE_SCORE = PARENT_APP + "exam/save-score"
+    
+    //ADMIN PROFILE
+    static let ADMIN_GET_PROFILE_ADMIN = PARENT_APP + "admin-profile/get-admin-profile"
+    static let ADMIN_POST_UPDATE_PROFILE_ADMIN = PARENT_APP + "admin-profile/update-admin-profile"
+    static let ADMIN_GET_CHECK_PHONE = PARENT_APP + "admin-profile/check-phone-admin"
+    static let ADMIN_POST_UPDATE_PASSWORD_ADMIN = PARENT_APP + "admin-profile/update-password-admin"
 }

@@ -90,7 +90,18 @@ class EditExamViewController: UIViewController {
         saveRemediData()
     }
     func saveRemediData() {
-        ACRequest.POST_EXAM_ADD_REMEDY(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, examRemedyID: examRemediID, title: remediTitleText.text!, remedyDate: examRemediDate, remarks: remediDescText.text!, examID: ACData.EXAMEDITDATA.school_session_exam_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+        //TODO: Change value of schoolID and yearID
+        ACRequest.POST_EXAM_ADD_REMEDY(
+            userId: ACData.LOGINDATA.userID,
+            school_user_id: ACData.EXAMEDITDATA.teacher_id,
+            schoolID: "SCHOOL10",//ACData.LOGINDATA.school_id,
+            yearID: "YEAR1",//ACData.LOGINDATA.year_id,
+            examRemedyID: examRemediID,
+            title: remediTitleText.text!,
+            remedyDate: examRemediDate,
+            remarks: remediDescText.text!,
+            examID: ACData.EXAMEDITDATA.school_session_exam_id,
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: status)
         }) { (message) in
@@ -167,12 +178,12 @@ class EditExamViewController: UIViewController {
         } else {
             
         }
-        
+        //TODO: Change value of SchoolID and YearID
         let parameters: Parameters = [
-            "school_id":ACData.LOGINDATA.school_id,
-            "year_id":ACData.LOGINDATA.year_id,
+            "school_id":"SCHOOL10",//ACData.LOGINDATA.school_id,
+            "year_id":"YEAR1",//ACData.LOGINDATA.year_id,
             "user_id":ACData.LOGINDATA.userID,
-            "role":ACData.LOGINDATA.role,
+            "school_user_id":ACData.EXAMEDITDATA.teacher_id,
             "exam_id":ACData.EXAMEDITDATA.school_session_exam_id,
             "exam_title":examTitle,
             "exam_desc":examDesc,

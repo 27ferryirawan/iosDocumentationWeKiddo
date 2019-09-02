@@ -15,17 +15,17 @@ class ExamMajorModel: NSObject {
     var week_session = [ExamClassWeekSessionModel]()
     
     func objectMapping(json: JSON) {
-        for data in json["data"]["list"]["class"].arrayValue {
+        for data in json["data"]["class_list"].arrayValue {
             let d = ExamClassListModel()
             d.objectMapping(json: data)
             exam_class.append(d)
         }
-        for data in json["data"]["list"]["major"].arrayValue {
+        for data in json["data"]["major"].arrayValue {
             let d = ExamMajorListModel()
             d.objectMapping(json: data)
             exam_major.append(d)
         }
-        for data in json["data"]["list"]["week_session"].arrayValue {
+        for data in json["data"]["week_session"].arrayValue {
             let d = ExamClassWeekSessionModel()
             d.objectMapping(json: data)
             week_session.append(d)

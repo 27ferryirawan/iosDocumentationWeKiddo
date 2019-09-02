@@ -12,25 +12,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allExamSectionCellID" rowHeight="112" id="7bl-nq-JgQ" customClass="AllExamSectionCell" customModule="WeKiddo_School_School" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allExamSectionCellID" rowHeight="112" id="7bl-nq-JgQ" customClass="AllExamSectionCell" customModule="WeKiddo_Admin" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bl-nq-JgQ" id="vnv-g4-RW2">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-F2-8M8" customClass="ButtonLeftSpace" customModule="WeKiddo_School_School" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXV-F2-8M8" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="300" height="44"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="6Fk-qw-BE4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="Select Level">
+                        <state key="normal" title="Select Teacher">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhL-hw-ikx" customClass="ButtonLeftSpace" customModule="WeKiddo_School_School" customModuleProvider="target">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhL-hw-ikx" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
                         <rect key="frame" x="10" y="59" width="300" height="44"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -55,7 +55,7 @@
             <viewLayoutGuide key="safeArea" id="stT-3a-HwU"/>
             <connections>
                 <outlet property="classButton" destination="DhL-hw-ikx" id="EsM-VV-8go"/>
-                <outlet property="subjectButton" destination="uXV-F2-8M8" id="C5n-Mp-fQO"/>
+                <outlet property="teacherButton" destination="uXV-F2-8M8" id="dPB-vl-iQC"/>
             </connections>
             <point key="canvasLocation" x="-196" y="-23"/>
         </tableViewCell>

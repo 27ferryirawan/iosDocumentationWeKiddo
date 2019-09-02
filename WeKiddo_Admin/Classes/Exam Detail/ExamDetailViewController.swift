@@ -8,15 +8,32 @@
 
 import UIKit
 import SVProgressHUD
+import SDWebImage
+import Alamofire
 
 class ExamDetailViewController: UIViewController {
 
+    @IBOutlet weak var removeView: UIView!
+    @IBOutlet weak var btClosePopUp: UIButton!
+    @IBOutlet weak var ivAvatarStudent: UIImageView!
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbNis: UILabel!
+    @IBOutlet weak var btRemoveStudent: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
     var sessionDataCount = 0
     var relatedExamCount = 0
     var examDetailIndex = ""
+    var teacherID = ""
     var remediScheduleCount = 0
     var sessionSelectedCount = 0
+    
+    var selectedRemedyID = ""
+    var studentObj: StudentsRemedyModel?{
+        didSet{
+            removePopUpConfig()
+        }
+    }
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,11 +42,65 @@ class ExamDetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        removeView.isHidden = true
         configNavigation()
         configTable()
     }
+    func removePopUpConfig(){
+        removeView.isHidden = false
+        removeView.layer.cornerRadius = 10
+        removeView.layer.borderColor = UIColor.black.cgColor
+        removeView.layer.borderWidth = 1
+        
+        guard let obj = studentObj else { return }
+        btClosePopUp.addTarget(self, action: #selector(closePopUp), for: .touchUpInside)
+        btRemoveStudent.addTarget(self, action: #selector(removeStudent), for: .touchUpInside)
+        ivAvatarStudent.sd_setImage(with: URL(string: obj.child_image), placeholderImage: nil, options: .refreshCached)
+        lbName.text = obj.child_name
+        lbNis.text = obj.child_nis
+    }
+    
+    @objc func closePopUp(){
+        removeView.isHidden = true
+        studentObj = nil
+        self.selectedRemedyID = ""
+    }
+    
+    @objc func removeStudent(){
+        guard let obj = studentObj else { return }
+        //TODO: Change value of schoolID and YearID
+        let parameters: Parameters = [
+            "user_id":ACData.LOGINDATA.userID,
+            "school_id":"SCHOOL10",
+            "year_id":"YEAR1",
+            "school_user_id":ACData.EXAMDETAILDATA.teacher.teacher_id,
+            "exam_remedy_id":selectedRemedyID,
+            "child_id": obj.child_id
+        ]
+        
+        ACRequest.POST_EXAM_REMOVE_STUDENT(params: parameters, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: {
+            SVProgressHUD.dismiss()
+            self.removeView.isHidden = true
+            self.studentObj = nil
+            self.selectedRemedyID = ""
+        }) { (message) in
+            ACAlert.show(message: message)
+            SVProgressHUD.dismiss()
+            self.removeView.isHidden = true
+            self.studentObj = nil
+            self.selectedRemedyID = ""
+        }
+    }
+    
     func fetchData() {
-        ACRequest.GET_EXAM_DETAIL(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, examID: examDetailIndex, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (detailData) in
+        //TODO : Change value of schoolID and yearID
+        ACRequest.GET_EXAM_DETAIL(
+            userID: ACData.LOGINDATA.userID,
+            school_user_id: teacherID,
+            schoolID: "SCHOOL10",//ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+            yearID: "YEAR1",//ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+            examID: examDetailIndex,
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (detailData) in
             SVProgressHUD.dismiss()
             ACData.EXAMDETAILDATA = detailData
             self.populateData()
@@ -106,7 +177,7 @@ extension ExamDetailViewController: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.section == 2 + sessionDataCount {
             return 200
         } else {
-            return 172
+            return 242
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,6 +197,7 @@ extension ExamDetailViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "examDetailRemediScheduleCellID", for: indexPath) as? ExamDetailRemediScheduleCell)!
             cell.indexRow = indexPath.row + 1
             cell.detailObj = ACData.EXAMDETAILDATA.remedy[indexPath.row]
+            cell.teacherID = teacherID
             cell.delegate = self
             return cell
         } else {
@@ -168,7 +240,12 @@ extension ExamDetailViewController: ExamDetailRemediScheduleCellDelegate, AddDet
         searchVC.isFromEventPayment = false
         searchVC.examSchoolRemedyID = examDetailIndex
         searchVC.examRemedyID = withRemediID
+        searchVC.classID = ACData.EXAMDETAILDATA.school_class_id
         let navVC = UINavigationController(rootViewController: searchVC)
         self.navigationController?.present(navVC, animated: true, completion: nil)
-    }    
+    }
+    func didSelectStudent(with obj: StudentsRemedyModel, examID: String) {
+        studentObj = obj
+        selectedRemedyID = examID
+    }
 }

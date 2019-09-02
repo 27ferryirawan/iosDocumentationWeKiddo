@@ -28,6 +28,7 @@ class EditExamTopCell: UITableViewCell {
             examSessionBgView.layer.masksToBounds = true
         }
     }
+    @IBOutlet weak var examTeacherButton: UIButton!
     @IBOutlet weak var examClassButton: UIButton!
     @IBOutlet weak var examMajorButton: UIButton!
     @IBOutlet weak var examLevelButton: UIButton!
@@ -63,6 +64,7 @@ class EditExamTopCell: UITableViewCell {
         examSubjectButton.setTitle(obj.subject_name, for: .normal)
         examLevelButton.setTitle(obj.school_level, for: .normal)
         examMajorButton.setTitle(obj.school_major, for: .normal)
+        examTeacherButton.setTitle(obj.examTeacher.first(where: {$0.teacher_id == obj.teacher_id})?.teacher_name, for: .normal)
 //        if obj.examClass.count != 0 {
 //            examClassButton.setTitle(obj.examClass[0].school_class, for: .normal)
 //        }

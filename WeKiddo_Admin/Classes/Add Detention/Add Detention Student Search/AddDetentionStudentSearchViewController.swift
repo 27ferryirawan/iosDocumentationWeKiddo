@@ -77,11 +77,12 @@ class AddDetentionStudentSearchViewController: UIViewController {
             let newaddOn = addOn.replacingOccurrences(of: "\\", with: "")
             let jsonData = newaddOn.data(using: .utf8)!
             let jsonO = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+            //TODO : Change value of schoolID and yearID
             let parameters: Parameters = [
                 "user_id":ACData.LOGINDATA.userID,
-                "role":ACData.LOGINDATA.role,
-                "school_id":ACData.LOGINDATA.school_id,
-                "year_id":ACData.LOGINDATA.year_id,
+                "school_user_id":ACData.EXAMDETAILDATA.teacher.teacher_id,
+                "school_id":"SCHOOL10",//ACData.LOGINDATA.school_id,
+                "year_id":"YEAR1",//ACData.LOGINDATA.year_id,
                 "exam_remedy_id":examRemedyID,
                 "childs":jsonO
             ]
@@ -124,41 +125,29 @@ extension AddDetentionStudentSearchViewController: UISearchBarDelegate {
         if searchBar.text!.count > 2 {
             studentResult = 0
             ACData.STUDENTSEARCHDATA.removeAll()
-            if !isFromAnnouncement {
-                if isFromEventPayment {
-                    ACRequest.POST_SEARCH_STUDENT_LISTS_AT_EVENT(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, eventID: ACData.APPROVALDETAILDATA.event_id, targetID: ACData.APPROVALDETAILDATA.school_class_id, keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
-                        ACData.STUDENTSEARCHDATA = resultDatas
-                        self.studentResult = ACData.STUDENTSEARCHDATA.count
-                        SVProgressHUD.dismiss()
-                        self.tableView.isHidden = false
-                        self.tableView.reloadData()
-                    }) { (message) in
-                        SVProgressHUD.dismiss()
-                    }
-                } else {
-                    ACRequest.POST_SEARCH_STUDENT_LISTS(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
-                        ACData.STUDENTSEARCHDATA = resultDatas
-                        self.studentResult = ACData.STUDENTSEARCHDATA.count
-                        SVProgressHUD.dismiss()
-                        self.tableView.isHidden = false
-                        self.tableView.reloadData()
-                    }) { (message) in
-                        SVProgressHUD.dismiss()
-                    }
-                }
-            } else {
-                //TODO : Change Value of SchoolID and YearID
-                ACRequest.POST_ANNOUNCEMENT_SEARCH_STUDENT_LISTS(
-                    userId: ACData.LOGINDATA.userID,
-                    schoolID: ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
-                    yearID: ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
-                    classID: self.classID,
-                    keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
+            if isFromEventPayment {
+                ACRequest.POST_SEARCH_STUDENT_LISTS_AT_EVENT(userId: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, eventID: ACData.APPROVALDETAILDATA.event_id, targetID: ACData.APPROVALDETAILDATA.school_class_id, keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
                     ACData.STUDENTSEARCHDATA = resultDatas
                     self.studentResult = ACData.STUDENTSEARCHDATA.count
                     SVProgressHUD.dismiss()
                     self.tableView.isHidden = false
                     self.tableView.reloadData()
+                }) { (message) in
+                    SVProgressHUD.dismiss()
+                }
+            } else {
+                //TODO : Change Value of SchoolID and YearID
+                ACRequest.POST_ANNOUNCEMENT_SEARCH_STUDENT_LISTS(
+                    userId: ACData.LOGINDATA.userID,
+                    schoolID: "SCHOOL10",//ACData.LOGINDATA.dashboardSchoolMenu.last?.school_id ?? "",
+                    yearID: "YEAR1",//ACData.LOGINDATA.dashboardSchoolMenu.last?.year_id ?? "",
+                    classID: self.classID,
+                    keyword: searchBar.text!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (resultDatas) in
+                        ACData.STUDENTSEARCHDATA = resultDatas
+                        self.studentResult = ACData.STUDENTSEARCHDATA.count
+                        SVProgressHUD.dismiss()
+                        self.tableView.isHidden = false
+                        self.tableView.reloadData()
                 }) { (message) in
                     SVProgressHUD.dismiss()
                 }

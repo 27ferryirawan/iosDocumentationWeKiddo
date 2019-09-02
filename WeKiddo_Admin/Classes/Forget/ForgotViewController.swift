@@ -52,7 +52,9 @@ class ForgotViewController: UIViewController {
     @IBAction func submitProcess(_ sender: UIButton) {
         let phone = "\(txtPhoneCode.text!)\(txtPhoneNumber.text!)"
         let newCode = phone.replacingOccurrences(of: "+", with: "")
-        ACRequest.POST_FORGOT_CHECK_PHONE(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, phone: newCode, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+        ACRequest.POST_FORGOT_CHECK_PHONE(
+            phone: newCode,
+            tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
             SVProgressHUD.dismiss()
             if status {
                 PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil) { (verificationID, error) in

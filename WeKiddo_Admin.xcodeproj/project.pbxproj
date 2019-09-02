@@ -16,6 +16,11 @@
 		6644191C2316DE0E0006F277 /* AssignmentScoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */; };
 		66485D102319795600593AAD /* AssignmentTeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D0E2319795600593AAD /* AssignmentTeacherCell.swift */; };
 		66485D112319795600593AAD /* AssignmentTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66485D0F2319795600593AAD /* AssignmentTeacherCell.xib */; };
+		66485D13231A713600593AAD /* ExamTeacherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D12231A713600593AAD /* ExamTeacherList.swift */; };
+		66485D15231A79B000593AAD /* ExamListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D14231A79B000593AAD /* ExamListModel.swift */; };
+		66485D18231A833C00593AAD /* ExamTeacherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66485D16231A833C00593AAD /* ExamTeacherCell.swift */; };
+		66485D19231A833C00593AAD /* ExamTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66485D17231A833C00593AAD /* ExamTeacherCell.xib */; };
+		66CE15D0231B76B700DC3612 /* AdminProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */; };
 		BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */; };
 		BE0030EF22A505BC0050B48E /* MoreSchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */; };
 		BE0030F322A506250050B48E /* MoreSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0030F122A506250050B48E /* MoreSchoolCell.swift */; };
@@ -804,6 +809,11 @@
 		6644191B2316DE0E0006F277 /* AssignmentScoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentScoreListModel.swift; sourceTree = "<group>"; };
 		66485D0E2319795600593AAD /* AssignmentTeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTeacherCell.swift; sourceTree = "<group>"; };
 		66485D0F2319795600593AAD /* AssignmentTeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentTeacherCell.xib; sourceTree = "<group>"; };
+		66485D12231A713600593AAD /* ExamTeacherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTeacherList.swift; sourceTree = "<group>"; };
+		66485D14231A79B000593AAD /* ExamListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamListModel.swift; sourceTree = "<group>"; };
+		66485D16231A833C00593AAD /* ExamTeacherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTeacherCell.swift; sourceTree = "<group>"; };
+		66485D17231A833C00593AAD /* ExamTeacherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTeacherCell.xib; sourceTree = "<group>"; };
+		66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProfileModel.swift; sourceTree = "<group>"; };
 		983F76DCBFB61B18F25DE145 /* Pods-WeKiddo_Admin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeKiddo_Admin.debug.xcconfig"; path = "Target Support Files/Pods-WeKiddo_Admin/Pods-WeKiddo_Admin.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0030EC22A505BC0050B48E /* MoreSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSchoolViewController.swift; sourceTree = "<group>"; };
 		BE0030ED22A505BC0050B48E /* MoreSchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreSchoolViewController.xib; sourceTree = "<group>"; };
@@ -1846,6 +1856,8 @@
 				E600B41222AA4513007E7C58 /* ExamCell.xib */,
 				E600B41922AA48E2007E7C58 /* AllExamSectionCell.swift */,
 				E600B41A22AA48E2007E7C58 /* AllExamSectionCell.xib */,
+				66485D16231A833C00593AAD /* ExamTeacherCell.swift */,
+				66485D17231A833C00593AAD /* ExamTeacherCell.xib */,
 			);
 			path = "Exam List";
 			sourceTree = "<group>";
@@ -3755,6 +3767,9 @@
 				E689B73C231AC25200DAEFFF /* TotalStudentModel.swift */,
 				E689B74F231AF46D00DAEFFF /* TaskListAdminModel.swift */,
 				E689B751231AF4CF00DAEFFF /* TaskListAdminHistoryModel.swift */,
+				66485D12231A713600593AAD /* ExamTeacherList.swift */,
+				66485D14231A79B000593AAD /* ExamListModel.swift */,
+				66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4241,6 +4256,7 @@
 				E6863F86229DA9EE003C4F1F /* NearbyCourseMoreViewController.xib in Resources */,
 				E68CBAB622B7A71400DFD45E /* AddAnnouncementCell.xib in Resources */,
 				E69AC7FF228937C7000284A1 /* NearbyViewController.xib in Resources */,
+				66485D19231A833C00593AAD /* ExamTeacherCell.xib in Resources */,
 				E682D6CE22DA028200214F4E /* SubjectTeacherDetailAttachmentCell.xib in Resources */,
 				E626B6B322C3852200FF660A /* ClassroomHeaderCell.xib in Resources */,
 				E600B49122B0DFF3007E7C58 /* SearchViewController.xib in Resources */,
@@ -4728,6 +4744,7 @@
 				E6F7CA6222F80538008DDFF4 /* SpecialAttentionDetailByClassContentCell.swift in Sources */,
 				E6F427D322965CA100DB4250 /* FuturePlanAcademyModel.swift in Sources */,
 				E62F864822F0459600CE355E /* SpecialAttentionDetailSectionCell.swift in Sources */,
+				66CE15D0231B76B700DC3612 /* AdminProfileModel.swift in Sources */,
 				E6F4282222984D9A00DB4250 /* CourseDetailListCell.swift in Sources */,
 				E699F5F722E1BEE800775758 /* ExamDetailSessionCell.swift in Sources */,
 				E6D39C2E225FA1A500831511 /* ACColor.swift in Sources */,
@@ -4791,6 +4808,7 @@
 				E68CBAAB22B7A3A900DFD45E /* AnnouncementAddNewButtonCell.swift in Sources */,
 				BE8FF8AE229DB9EC00EC6557 /* SchoolCell.swift in Sources */,
 				E63D840922D4D2B3005F07B4 /* AddDetentionStudentSearchCell.swift in Sources */,
+				66485D13231A713600593AAD /* ExamTeacherList.swift in Sources */,
 				E694F2C822B1447800467F3C /* SearchNoDataCell.swift in Sources */,
 				E600B44B22AE61F9007E7C58 /* StudentsNoteCell.swift in Sources */,
 				E61A97BE226E0BD60003E89F /* CalenderView.swift in Sources */,
@@ -4855,6 +4873,7 @@
 				E66C5F0822E8E5B600AD186C /* EditExamRemediScheduleCell.swift in Sources */,
 				E6D39BF9225F570B00831511 /* AppDelegate.swift in Sources */,
 				E626B6BD22C4F28B00FF660A /* AttendanceDetailModel.swift in Sources */,
+				66485D15231A79B000593AAD /* ExamListModel.swift in Sources */,
 				BE8FEF2622A25B1E00BDF240 /* AnnouncementDetailFooterCell.swift in Sources */,
 				E65BF67522CF6D8C00C57FEF /* AssignmentDetailMenuCell.swift in Sources */,
 				E6F7CA2322F4268F008DDFF4 /* SubjectTeacherDetailModel.swift in Sources */,
@@ -4961,6 +4980,7 @@
 				E682D6F722DAE80800214F4E /* AddSubjectTeacherAttachmentVoiceButtonCell.swift in Sources */,
 				E682D6FF22DAEBA100214F4E /* AddSubjectTeacherFooterCell.swift in Sources */,
 				E63D83C522D46954005F07B4 /* DetentionSectionCell.swift in Sources */,
+				66485D18231A833C00593AAD /* ExamTeacherCell.swift in Sources */,
 				E6396FDC22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.swift in Sources */,
 				E63D840E22D5DB45005F07B4 /* AnnouncementLevelListModel.swift in Sources */,
 				E626B6AD22C380FF00FF660A /* CollectionReusableView.swift in Sources */,
