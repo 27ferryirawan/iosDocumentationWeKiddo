@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Alamofire
 
 class AddNewTaskAdminViewController: UIViewController {
 
@@ -16,6 +18,9 @@ class AddNewTaskAdminViewController: UIViewController {
             bgView.setBorderShadow(color: UIColor.lightGray, shadowRadius: 3.0, shadowOpactiy: 1.0, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
+    var adminSelectedArray = [String]()
+    var titleTask = ""
+    var dateTask = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
@@ -43,7 +48,7 @@ extension AddNewTaskAdminViewController: UITableViewDataSource, UITableViewDeleg
         if indexPath.row == 0 {
             return 179
         } else if indexPath.row <= ACData.ADMINLISTDATA.count {
-            return 167
+            return 180
         } else {
             return 44
         }
@@ -57,20 +62,62 @@ extension AddNewTaskAdminViewController: UITableViewDataSource, UITableViewDeleg
             let cell = (tableView.dequeueReusableCell(withIdentifier: "addNewTaskAdminAssigneeCellID", for: indexPath) as? AddNewTaskAdminAssigneeCell)!
             cell.indexCurrent = indexPath.row - 1
             cell.detailObj = ACData.ADMINLISTDATA[indexPath.row - 1]
+            cell.delegate = self
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "addNewTaskAdminSubmitButtonCellID", for: indexPath) as? AddNewTaskAdminSubmitButtonCell)!
+            cell.delegate = self
             return cell
         }
     }
 }
 
-extension AddNewTaskAdminViewController: AddNewTaskAdminHeaderCellDelegate {
+extension AddNewTaskAdminViewController: AddNewTaskAdminHeaderCellDelegate, AddNewTaskAdminAssigneeCellDelegate, AddNewTaskAdminSubmitButtonCellDelegate {
     func dateFilled(withDate: String) {
         print("Selected Date: \(withDate)")
+        dateTask = withDate
     }
-    
     func descFilled(withDesc: String) {
         print("Description: \(withDesc)")
+        titleTask = withDesc
+    }
+    func groupSelectedAdmin(adminSelected: [String]) {
+        adminSelectedArray = adminSelected
+    }
+    func saveAction() {
+        var addTaskOn = "["
+        
+        if adminSelectedArray.count != 0 {
+            var i = 0
+            for data in adminSelectedArray {
+                if i > 0 {
+                    addTaskOn += ","
+                }
+                addTaskOn += "{"
+                addTaskOn += "\"admin_id\":\"\(data)\""
+                addTaskOn += "}"
+                
+                i += 1
+            }
+        }
+        addTaskOn += "]"
+        
+        let newAddTaskOn = addTaskOn.replacingOccurrences(of: "\\", with: "")
+        let jsonTaskData = newAddTaskOn.data(using: .utf8)!
+        let jsonTask = try! JSONSerialization.jsonObject(with: jsonTaskData, options: .allowFragments)
+        
+        let parameters: Parameters = [
+            "user_id":ACData.LOGINDATA.userID,
+            "title":titleTask,
+            "date":dateTask,
+            "admin_list":jsonTask
+        ]
+        ACRequest.POST_ADD_NEW_TASK(params: parameters, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: result)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }

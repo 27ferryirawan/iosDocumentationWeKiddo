@@ -12,9 +12,17 @@ class AdminMemberCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var adminName: UILabel!
     @IBOutlet weak var buttonStatus: UIButton!
+    var detailObj: AdminListMemberModel? {
+        didSet {
+            cellConfig()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        adminName.text = obj.admin_name
+    }
 }

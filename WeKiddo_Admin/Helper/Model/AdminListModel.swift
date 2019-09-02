@@ -35,3 +35,13 @@ class AdminListMemberModel : NSObject {
     }
 }
 
+class SelectedAdminListMemberModel : NSObject {
+    var group_At = ""
+    var member_At = ""
+    
+    init(groupAt: String, memberAt: String) {
+        self.group_At = groupAt
+        self.member_At = memberAt
+    }
+}
+

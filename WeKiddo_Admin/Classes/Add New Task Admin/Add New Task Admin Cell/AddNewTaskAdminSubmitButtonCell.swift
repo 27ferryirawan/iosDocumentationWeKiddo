@@ -9,9 +9,14 @@
 import UIKit
 import SVProgressHUD
 
+protocol AddNewTaskAdminSubmitButtonCellDelegate: class {
+    func saveAction()
+}
+
 class AddNewTaskAdminSubmitButtonCell: UITableViewCell {
 
     @IBOutlet weak var saveButton: UIButton!
+    weak var delegate: AddNewTaskAdminSubmitButtonCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         saveButton.addTarget(self, action: #selector(saveProcess), for: .touchUpInside)
@@ -20,6 +25,6 @@ class AddNewTaskAdminSubmitButtonCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func saveProcess() {
-        // TODO: POST POST_ADD_NEW_TASK
+        self.delegate?.saveAction()
     }
 }
