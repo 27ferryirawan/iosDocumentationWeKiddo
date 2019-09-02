@@ -128,5 +128,6 @@ struct ACData {
     static var TASKLISTADMINHISTORYDATA = [TaskListAdminHistoryModel]()
     static var ADMINPROFILEDATA: AdminProfileModel!
     static var ADMINLISTDATA = [AdminListModel]()
+    static var DETAILTASKADMINDATA: DetailTaskAdminModel!
 //    static var STUDENTLISTSCOREADDNEW: !
 }

@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeKiddo_Admin/Classes/Task List Admin/Task List Admin Cell/TaskListAdminCell.swift"
-            timestampString = "589115126.048174"
+            timestampString = "589128454.085776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "toDetail()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "toDetailContent()"
             landmarkType = "7">
             <Locations>
                <Location

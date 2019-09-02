@@ -17,9 +17,17 @@ class DetailTaskAdminGroupCollectionCell: UICollectionViewCell {
             adminView.layer.masksToBounds = true
         }
     }
+    var detailObj: DetailTaskAdminAssigneeMemberModel? {
+        didSet {
+            cellConfig()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        adminName.text = obj.admin_pos_name
+    }
 }

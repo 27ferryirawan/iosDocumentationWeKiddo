@@ -770,7 +770,7 @@ class ACRequest: NSObject {
         userId:String,
         taskID:String,
         tokenAccess:String,
-        successCompletion:@escaping (ExamRemedyScoreListModel) -> Void,
+        successCompletion:@escaping (DetailTaskAdminModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
         let parameters:Parameters = [
             "user_id":userId,
@@ -783,9 +783,9 @@ class ACRequest: NSObject {
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
-//                let dashboard = ExamRemedyScoreListModel()
-//                dashboard.objectMapping(json: json)
-//                successCompletion(dashboard)
+                let detailData = DetailTaskAdminModel()
+                detailData.objectMapping(json: json)
+                successCompletion(detailData)
             } else {
                 failCompletion(json["status"].stringValue)
             }

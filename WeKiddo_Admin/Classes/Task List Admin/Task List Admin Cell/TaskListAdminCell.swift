@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 
 protocol TaskListAdminCellDelegate: class {
-    func toDetailTask(withIndex: Int)
+    func toDetailTask()
 }
 
 class TaskListAdminCell: UITableViewCell {
@@ -31,39 +31,40 @@ class TaskListAdminCell: UITableViewCell {
             bgView.setBorderShadow(color:  UIColor.gray, shadowRadius: 3.0, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
-    var detailClassObj: DashboardModelTaskList? {
+    var detailClassObj: TaskListAdminHistoryModel? {
         didSet {
             cellConfigClass()
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentButton.addTarget(self, action: #selector(toDetail), for: .touchUpInside)
+        contentButton.addTarget(self, action: #selector(toDetailContent), for: .touchUpInside)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    @objc func toDetail() {
-        guard let obj = detailClassObj else { return }
+    @objc func toDetailContent() {
         if isHistory {
+            guard let obj = detailClassObj else { return }
             ACRequest.POST_ADMIN_DETAIL_TASK(userId: ACData.LOGINDATA.userID, taskID: obj.task_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+                ACData.DETAILTASKADMINDATA = result
                 SVProgressHUD.dismiss()
+                self.delegate?.toDetailTask()
             }) { (message) in
                 SVProgressHUD.dismiss()
                 ACAlert.show(message: message)
             }
         }
-//        self.delegate?.toDetailTask(withIndex: indexObject)
     }
     func cellConfigClass() {
         guard let obj = detailClassObj else { return }
         taskLabel.text = obj.title
         dateLabel.text = getMonth(time: obj.task_date)
-        if obj.status == 0 {
-            taskStatusView.backgroundColor = .red
-        } else {
-            taskStatusView.backgroundColor = .white
-        }
+//        if obj.status == 0 {
+//            taskStatusView.backgroundColor = .red
+//        } else {
+//            taskStatusView.backgroundColor = .white
+//        }
     }
 }
 

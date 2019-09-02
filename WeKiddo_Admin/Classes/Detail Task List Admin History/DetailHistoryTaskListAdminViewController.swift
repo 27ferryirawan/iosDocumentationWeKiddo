@@ -36,7 +36,7 @@ extension DetailHistoryTaskListAdminViewController: UITableViewDataSource, UITab
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + 2
+        return 1 + ACData.DETAILTASKADMINDATA.assigne_admin.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
@@ -48,9 +48,12 @@ extension DetailHistoryTaskListAdminViewController: UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "detailTaskAdminHistoryCellID", for: indexPath) as? DetailTaskAdminHistoryCell)!
+            cell.detailObj = ACData.DETAILTASKADMINDATA
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "detailTaskAdminGroupCellID", for: indexPath) as? DetailTaskAdminGroupCell)!
+            cell.currentIndex = indexPath.row - 1
+            cell.detailObj = ACData.DETAILTASKADMINDATA.assigne_admin[indexPath.row-1]
             return cell
         }
     }

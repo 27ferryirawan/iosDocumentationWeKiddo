@@ -20,10 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWF-eB-67K">
-                        <rect key="frame" x="15" y="5" width="290" height="44"/>
+                        <rect key="frame" x="5" y="5" width="310" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTH-78-pFT">
-                                <rect key="frame" x="10" y="0.0" width="270" height="44"/>
+                                <rect key="frame" x="10" y="0.0" width="290" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -39,13 +39,13 @@
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-sp-8e3">
-                        <rect key="frame" x="15" y="55" width="290" height="90"/>
+                        <rect key="frame" x="5" y="55" width="310" height="90"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="iL9-5p-QAp"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lrd-35-2b4">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Lrd-35-2b4">
+                            <size key="itemSize" width="120" height="33"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -58,16 +58,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="R1E-sp-8e3" firstAttribute="trailing" secondItem="BWF-eB-67K" secondAttribute="trailing" id="5VB-s6-pZ8"/>
-                    <constraint firstItem="BWF-eB-67K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9z6-WI-85Q"/>
+                    <constraint firstItem="BWF-eB-67K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="9z6-WI-85Q"/>
                     <constraint firstItem="BWF-eB-67K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="H0P-Jx-Rfk"/>
                     <constraint firstItem="R1E-sp-8e3" firstAttribute="leading" secondItem="BWF-eB-67K" secondAttribute="leading" id="vBk-lI-DB2"/>
                     <constraint firstItem="R1E-sp-8e3" firstAttribute="top" secondItem="BWF-eB-67K" secondAttribute="bottom" constant="6" id="z9r-jv-wuc"/>
-                    <constraint firstAttribute="trailing" secondItem="BWF-eB-67K" secondAttribute="trailing" constant="15" id="zM8-fa-W7A"/>
+                    <constraint firstAttribute="trailing" secondItem="BWF-eB-67K" secondAttribute="trailing" constant="5" id="zM8-fa-W7A"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="adminCollection" destination="R1E-sp-8e3" id="Zyq-qq-BvA"/>
+                <outlet property="adminName" destination="iTH-78-pFT" id="Mam-bo-IQU"/>
             </connections>
             <point key="canvasLocation" x="134.78260869565219" y="177.12053571428569"/>
         </tableViewCell>

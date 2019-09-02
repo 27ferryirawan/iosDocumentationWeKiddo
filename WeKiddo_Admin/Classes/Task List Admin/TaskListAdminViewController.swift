@@ -109,7 +109,16 @@ extension TaskListAdminViewController: UITableViewDataSource, UITableViewDelegat
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "taskListAdminCellID", for: indexPath) as? TaskListAdminCell)!
             cell.isHistory = true
+            cell.detailClassObj = ACData.TASKLISTADMINHISTORYDATA[indexPath.row]
+            cell.delegate = self
             return cell
         }
+    }
+}
+
+extension TaskListAdminViewController: TaskListAdminCellDelegate {
+    func toDetailTask() {
+        let detailVC = DetailHistoryTaskListAdminViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

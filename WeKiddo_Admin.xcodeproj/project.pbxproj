@@ -680,6 +680,7 @@
 		E6C63AB1231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AAF231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib */; };
 		E6C63AB4231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AB2231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift */; };
 		E6C63AB5231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AB3231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib */; };
+		E6C63AB7231D67D800367DE4 /* DetailTaskAdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AB6231D67D800367DE4 /* DetailTaskAdminModel.swift */; };
 		E6D39BF9225F570B00831511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39BF8225F570B00831511 /* AppDelegate.swift */; };
 		E6D39BFB225F570B00831511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39BFA225F570B00831511 /* ViewController.swift */; };
 		E6D39C00225F570E00831511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D39BFF225F570E00831511 /* Assets.xcassets */; };
@@ -1492,6 +1493,7 @@
 		E6C63AAF231D27CC00367DE4 /* DetailTaskAdminGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTaskAdminGroupCell.xib; sourceTree = "<group>"; };
 		E6C63AB2231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskAdminGroupCollectionCell.swift; sourceTree = "<group>"; };
 		E6C63AB3231D287C00367DE4 /* DetailTaskAdminGroupCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTaskAdminGroupCollectionCell.xib; sourceTree = "<group>"; };
+		E6C63AB6231D67D800367DE4 /* DetailTaskAdminModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskAdminModel.swift; sourceTree = "<group>"; };
 		E6D39BF5225F570B00831511 /* WeKiddo_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeKiddo_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D39BF8225F570B00831511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D39BFA225F570B00831511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -3831,6 +3833,7 @@
 				66485D14231A79B000593AAD /* ExamListModel.swift */,
 				66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */,
 				E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */,
+				E6C63AB6231D67D800367DE4 /* DetailTaskAdminModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4929,6 +4932,7 @@
 				E6BC3CC922EF195A00B080A1 /* SpecialAttentionListViewController.swift in Sources */,
 				E6A50BD3226C253B00359D78 /* AnnouncementDetailViewController.swift in Sources */,
 				E6726E2C22A5842B0024F1BD /* SchoolDetailModel.swift in Sources */,
+				E6C63AB7231D67D800367DE4 /* DetailTaskAdminModel.swift in Sources */,
 				E63D83A522D0F057005F07B4 /* AssignmentScoreHeaderCell.swift in Sources */,
 				E699F5B822DCE34300775758 /* EditProfileParentCell.swift in Sources */,
 				E6F42819229846AC00DB4250 /* CourseDetailViewController.swift in Sources */,
