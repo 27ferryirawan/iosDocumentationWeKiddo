@@ -386,6 +386,59 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ADMIN_LIST(
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([AdminListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADMIN_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var adminLists = ACData.ADMINLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["admin_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let adminList = AdminListModel()
+                            adminList.objectMapping(json: jsonValue)
+                            adminLists.append(adminList)
+                        }
+                    } else {
+                        failCompletion("No data available")
+                    }
+                }
+                successCompletion(adminLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ADD_NEW_TASK(
+        params:Parameters,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        print(params)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADMIN_SAVE_NEW_TASK)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_ABSENCE_DETAIL(
         userId:String,
         childID:String,

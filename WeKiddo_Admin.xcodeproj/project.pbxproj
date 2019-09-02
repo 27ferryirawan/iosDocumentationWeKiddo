@@ -665,6 +665,13 @@
 		E6BFA1422275F51000E90803 /* CurrentSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFA1412275F51000E90803 /* CurrentSessionModel.swift */; };
 		E6BFA1442275FAAB00E90803 /* MoreMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFA1432275FAAB00E90803 /* MoreMenuModel.swift */; };
 		E6C26C96228D18EA008A1F4B /* AnnouncementMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C26C95228D18EA008A1F4B /* AnnouncementMediaModel.swift */; };
+		E6C63A98231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63A96231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.swift */; };
+		E6C63A99231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63A97231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.xib */; };
+		E6C63A9C231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63A9A231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.swift */; };
+		E6C63A9D231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63A9B231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.xib */; };
+		E6C63A9F231CDE4300367DE4 /* AdminListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */; };
+		E6C63AA2231CFDC900367DE4 /* AdminMemberCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C63AA0231CFDC900367DE4 /* AdminMemberCollectionCell.swift */; };
+		E6C63AA3231CFDC900367DE4 /* AdminMemberCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6C63AA1231CFDC900367DE4 /* AdminMemberCollectionCell.xib */; };
 		E6D39BF9225F570B00831511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39BF8225F570B00831511 /* AppDelegate.swift */; };
 		E6D39BFB225F570B00831511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39BFA225F570B00831511 /* ViewController.swift */; };
 		E6D39C00225F570E00831511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D39BFF225F570E00831511 /* Assets.xcassets */; };
@@ -1462,6 +1469,13 @@
 		E6BFA1412275F51000E90803 /* CurrentSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionModel.swift; sourceTree = "<group>"; };
 		E6BFA1432275FAAB00E90803 /* MoreMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreMenuModel.swift; sourceTree = "<group>"; };
 		E6C26C95228D18EA008A1F4B /* AnnouncementMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementMediaModel.swift; sourceTree = "<group>"; };
+		E6C63A96231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskAdminAssigneeCell.swift; sourceTree = "<group>"; };
+		E6C63A97231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewTaskAdminAssigneeCell.xib; sourceTree = "<group>"; };
+		E6C63A9A231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskAdminSubmitButtonCell.swift; sourceTree = "<group>"; };
+		E6C63A9B231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewTaskAdminSubmitButtonCell.xib; sourceTree = "<group>"; };
+		E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminListModel.swift; sourceTree = "<group>"; };
+		E6C63AA0231CFDC900367DE4 /* AdminMemberCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMemberCollectionCell.swift; sourceTree = "<group>"; };
+		E6C63AA1231CFDC900367DE4 /* AdminMemberCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminMemberCollectionCell.xib; sourceTree = "<group>"; };
 		E6D39BF5225F570B00831511 /* WeKiddo_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeKiddo_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D39BF8225F570B00831511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D39BFA225F570B00831511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -2914,6 +2928,12 @@
 			children = (
 				E689B753231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.swift */,
 				E689B754231BF66700DAEFFF /* AddNewTaskAdminHeaderCell.xib */,
+				E6C63A96231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.swift */,
+				E6C63A97231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.xib */,
+				E6C63A9A231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.swift */,
+				E6C63A9B231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.xib */,
+				E6C63AA0231CFDC900367DE4 /* AdminMemberCollectionCell.swift */,
+				E6C63AA1231CFDC900367DE4 /* AdminMemberCollectionCell.xib */,
 			);
 			path = "Add New Task Admin Cell";
 			sourceTree = "<group>";
@@ -3770,6 +3790,7 @@
 				66485D12231A713600593AAD /* ExamTeacherList.swift */,
 				66485D14231A79B000593AAD /* ExamListModel.swift */,
 				66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */,
+				E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4260,6 +4281,7 @@
 				E682D6CE22DA028200214F4E /* SubjectTeacherDetailAttachmentCell.xib in Resources */,
 				E626B6B322C3852200FF660A /* ClassroomHeaderCell.xib in Resources */,
 				E600B49122B0DFF3007E7C58 /* SearchViewController.xib in Resources */,
+				E6C63A99231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.xib in Resources */,
 				E6A50BD9226C25B800359D78 /* AnnouncementDetailCell.xib in Resources */,
 				E6416F1822ECD2A000ACDCD6 /* EditEventBannerCollectionCell.xib in Resources */,
 				E64C668822C9E26000783D51 /* TeacherApprovalViewController.xib in Resources */,
@@ -4295,6 +4317,7 @@
 				BE744D7D22A3AF9D007E4027 /* VideoCollectionCell.xib in Resources */,
 				E600B43E22AC397B007E7C58 /* SchoolDetailBannerCell.xib in Resources */,
 				E682D70422DBA47000214F4E /* AddSubjectTeacherSectionAttachmentCell.xib in Resources */,
+				E6C63AA3231CFDC900367DE4 /* AdminMemberCollectionCell.xib in Resources */,
 				E639700422B6839E00C928E5 /* AddLatePaymentViewController.xib in Resources */,
 				E699F5BD22DD729900775758 /* EditProfileSubjectCell.xib in Resources */,
 				E6416F3222ECDF3E00ACDCD6 /* EditPaymentFooterCell.xib in Resources */,
@@ -4407,6 +4430,7 @@
 				E600B45B22AE764E007E7C58 /* AttachmentCell.xib in Resources */,
 				E6863F93229EFD78003C4F1F /* SchoolHeaderCell.xib in Resources */,
 				E689B72B231A302F00DAEFFF /* AbsenceListCollectionCell.xib in Resources */,
+				E6C63A9D231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.xib in Resources */,
 				E699F5F222E01AEC00775758 /* AddLatePaymentStudentCell.xib in Resources */,
 				E60FF4C8226AC8DE0086D8B8 /* ScheduleCell.xib in Resources */,
 				BE2FF58022ABDA4600003E1A /* ParentProfileViewController.xib in Resources */,
@@ -4672,6 +4696,7 @@
 				E6F428122297C98600DB4250 /* CompetitionDetailCell.swift in Sources */,
 				E6D39C58225FA37B00831511 /* Border+View.swift in Sources */,
 				BE54A53C229045AD00162552 /* AsynchronusImage.swift in Sources */,
+				E6C63A9C231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.swift in Sources */,
 				E6396A50228D3F18007A01E6 /* AssignmentModulModel.swift in Sources */,
 				E66C5EEA22E8A8EE00AD186C /* AddScoreExamHeaderCell.swift in Sources */,
 				E6F427D122964C8A00DB4250 /* CalendarAgendaModel.swift in Sources */,
@@ -4710,9 +4735,11 @@
 				E6D39C1D225F97DE00831511 /* ScoreViewController.swift in Sources */,
 				E624D12F227C987C001220E9 /* NewsDetailCell.swift in Sources */,
 				BE2F584622AC28DB00103CD7 /* ParentProfileModel.swift in Sources */,
+				E6C63A98231CD63400367DE4 /* AddNewTaskAdminAssigneeCell.swift in Sources */,
 				E69AC7A82281C1A0000284A1 /* AssignmentDetailViewController.swift in Sources */,
 				E66C5EB622E2105400AD186C /* SubjectTeacherByClassViewController.swift in Sources */,
 				E64C669122C9F21D00783D51 /* PermissionRequestDetailCell.swift in Sources */,
+				E6C63A9F231CDE4300367DE4 /* AdminListModel.swift in Sources */,
 				E6D39C662262216700831511 /* CreateNewPasswordViewController.swift in Sources */,
 				E600B42022AB6CD0007E7C58 /* ExamDetailModel.swift in Sources */,
 				E61BEE94226F583000A533B3 /* ScoreNewCell.swift in Sources */,
@@ -4780,6 +4807,7 @@
 				E6F427CE2295B1BE00DB4250 /* CalendarModel.swift in Sources */,
 				E600B43422ABCD20007E7C58 /* AddNewPermissionViewController.swift in Sources */,
 				E60FF4C3226AC8D20086D8B8 /* TopicCell.swift in Sources */,
+				E6C63AA2231CFDC900367DE4 /* AdminMemberCollectionCell.swift in Sources */,
 				BE8FEF2C22A278BC00BDF240 /* ApprovalTitleDescriptionCell.swift in Sources */,
 				E66C5EC222E2282900AD186C /* SubjectTeacherByClassSessionListModel.swift in Sources */,
 				E66C5EC422E35B3E00AD186C /* SubjectTeacherParamModel.swift in Sources */,

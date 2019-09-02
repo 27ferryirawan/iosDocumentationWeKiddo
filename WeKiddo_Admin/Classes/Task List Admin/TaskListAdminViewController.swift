@@ -39,7 +39,7 @@ class TaskListAdminViewController: UIViewController {
         addNewButton.addTarget(self, action: #selector(addNewTask), for: .touchUpInside)
     }
     @objc func addNewTask() {
-        
+        fetchListAdmin()
     }
     @objc func newClicked() {
         newViewActive.backgroundColor = ACColor.MAIN
@@ -72,6 +72,18 @@ class TaskListAdminViewController: UIViewController {
             ACData.TASKLISTADMINHISTORYDATA = results
             SVProgressHUD.dismiss()
             self.tableView.reloadData()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    func fetchListAdmin() {
+        ACData.ADMINLISTDATA.removeAll()
+        ACRequest.POST_ADMIN_LIST(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            ACData.ADMINLISTDATA = results
+            SVProgressHUD.dismiss()
+            let addNewVc = AddNewTaskAdminViewController()
+            self.navigationController?.pushViewController(addNewVc, animated: true)
         }) { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)

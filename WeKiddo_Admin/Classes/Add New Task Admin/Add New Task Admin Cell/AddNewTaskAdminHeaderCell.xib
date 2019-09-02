@@ -12,27 +12,79 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="247" id="KGk-i7-Jjw" customClass="AddNewTaskAdminHeaderCell" customModule="WeKiddo_Admin" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addNewTaskAdminHeaderCellID" rowHeight="179" id="KGk-i7-Jjw" customClass="AddNewTaskAdminHeaderCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="246.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="178.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geq-ts-2dB">
-                        <rect key="frame" x="15" y="20" width="56" height="14.5"/>
+                        <rect key="frame" x="15" y="20" width="65" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="715-ek-Jay">
+                        <rect key="frame" x="90" y="5.5" width="175" height="44"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="Select Date">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_more" translatesAutoresizingMaskIntoConstraints="NO" id="P3u-V4-7c7">
+                        <rect key="frame" x="266" y="5.5" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="GNQ-dt-80F"/>
+                            <constraint firstAttribute="height" constant="44" id="eq2-e1-w3O"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lek-Zo-yAs">
+                        <rect key="frame" x="15" y="88" width="65" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fzs-Ek-9sq">
+                        <rect key="frame" x="90" y="64.5" width="220" height="100"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="df0-YI-rjg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="EzE-Lo-f38"/>
+                        </connections>
+                    </textView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="P3u-V4-7c7" secondAttribute="trailing" constant="10" id="63k-IB-f4C"/>
+                    <constraint firstItem="715-ek-Jay" firstAttribute="height" secondItem="P3u-V4-7c7" secondAttribute="height" id="JTs-ML-B8x"/>
                     <constraint firstItem="geq-ts-2dB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="LzV-pD-ysk"/>
+                    <constraint firstItem="P3u-V4-7c7" firstAttribute="leading" secondItem="715-ek-Jay" secondAttribute="trailing" constant="1" id="NkL-XT-BdS"/>
+                    <constraint firstItem="Lek-Zo-yAs" firstAttribute="leading" secondItem="geq-ts-2dB" secondAttribute="leading" id="PZZ-0n-nZw"/>
+                    <constraint firstItem="P3u-V4-7c7" firstAttribute="centerY" secondItem="geq-ts-2dB" secondAttribute="centerY" id="YRV-JW-ba9"/>
+                    <constraint firstItem="Lek-Zo-yAs" firstAttribute="trailing" secondItem="geq-ts-2dB" secondAttribute="trailing" id="ZCH-cN-oMI"/>
+                    <constraint firstItem="Lek-Zo-yAs" firstAttribute="top" secondItem="geq-ts-2dB" secondAttribute="bottom" constant="53.5" id="aEg-eg-SMH"/>
+                    <constraint firstItem="fzs-Ek-9sq" firstAttribute="leading" secondItem="715-ek-Jay" secondAttribute="leading" id="aPb-YE-ErE"/>
                     <constraint firstItem="geq-ts-2dB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fVm-23-QsK"/>
+                    <constraint firstItem="fzs-Ek-9sq" firstAttribute="top" secondItem="P3u-V4-7c7" secondAttribute="bottom" constant="15" id="gF3-I1-0hi"/>
+                    <constraint firstItem="fzs-Ek-9sq" firstAttribute="trailing" secondItem="P3u-V4-7c7" secondAttribute="trailing" id="ri9-t8-0pC"/>
+                    <constraint firstItem="715-ek-Jay" firstAttribute="centerY" secondItem="P3u-V4-7c7" secondAttribute="centerY" id="s12-zz-P9J"/>
+                    <constraint firstItem="715-ek-Jay" firstAttribute="leading" secondItem="geq-ts-2dB" secondAttribute="trailing" constant="10" id="trp-KJ-ecT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.68115942028987" y="220.64732142857142"/>
+            <connections>
+                <outlet property="taskDateButton" destination="715-ek-Jay" id="EdR-kf-yDY"/>
+                <outlet property="taskDescription" destination="fzs-Ek-9sq" id="OyQ-rk-GXd"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="197.87946428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_more" width="1283" height="1037"/>
+    </resources>
 </document>
