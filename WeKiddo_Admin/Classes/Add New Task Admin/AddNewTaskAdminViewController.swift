@@ -108,8 +108,10 @@ extension AddNewTaskAdminViewController: AddNewTaskAdminHeaderCellDelegate, AddN
         
         let parameters: Parameters = [
             "user_id":ACData.LOGINDATA.userID,
+            "task_id":"",
             "title":titleTask,
-            "date":dateTask,
+            "description":titleTask,
+            "task_date":dateTask,
             "admin_list":jsonTask
         ]
         ACRequest.POST_ADD_NEW_TASK(params: parameters, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
