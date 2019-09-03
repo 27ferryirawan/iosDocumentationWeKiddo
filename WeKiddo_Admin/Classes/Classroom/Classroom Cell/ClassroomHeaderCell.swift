@@ -11,7 +11,8 @@ import ActionSheetPicker_3_0
 import SVProgressHUD
 
 protocol ClassroomDelegate : class {
-    func refreshData()
+    func refreshData(levelCount : Int, levelName : [String], classLevelCount : [Int])
+    func firstPickerClass() -> String
 }
 
 class ClassroomHeaderCell: UITableViewCell {
@@ -20,12 +21,15 @@ class ClassroomHeaderCell: UITableViewCell {
     @IBOutlet weak var schoolNameLbl: UILabel!
     @IBOutlet weak var schoolGradeLbl: UILabel!
     @IBOutlet weak var schoolLogoImg: UIImageView!
+    var selectedSch : String?
+    var levelCount = 0
+    var levelName = [String]()
+    var classLevelCount = [Int]()
     
     weak var delegate : ClassroomDelegate?
     var schools: [String] = []
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,6 +42,7 @@ class ClassroomHeaderCell: UITableViewCell {
     var detailObj : ClassroomDashModel?{
         didSet{
             cellConfig()
+            schoolPicker.setTitle(self.delegate?.firstPickerClass(), for: .normal)
         }
     }
     
@@ -50,6 +55,10 @@ class ClassroomHeaderCell: UITableViewCell {
             placeholderImage: UIImage(named: "WeKiddoLogo"),
             options: .refreshCached
         )
+        schools.removeAll()
+        for value in ACData.LOGINDATA.dashboardSchoolMenu {
+            schools.append(value.school_name!)
+        }
         self.schoolPicker.addTarget(self, action: #selector(showSchoolPicker), for: .touchUpInside)
     }
     
@@ -69,12 +78,17 @@ class ClassroomHeaderCell: UITableViewCell {
         )
     }
     func getSchoolData(schoolID: String, yearID: String) {
+        ACData.CLASSROOMDASH.classroom_class_list.removeAll()
         ACRequest.POST_CLASSROOM_DASH(userId: ACData.LOGINDATA.userID, schoolId: schoolID, yearId: yearID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classList) in
             ACData.CLASSROOMDASH = classList
-            print("asd \(ACData.CLASSROOMDASH.class_list.count)")
             SVProgressHUD.dismiss()
             DispatchQueue.main.async {
-                self.delegate?.refreshData()
+                self.levelCount = ACData.CLASSROOMDASH.classroom_class_list.count
+                for indexes in ACData.CLASSROOMDASH.classroom_class_list {
+                    self.levelName.append(indexes.school_level)
+                    self.classLevelCount.append(indexes.classroom_classes.count)
+                }
+                self.delegate?.refreshData(levelCount: self.levelCount, levelName: self.levelName, classLevelCount: self.classLevelCount)
             }
         }) { (message) in
             SVProgressHUD.dismiss()

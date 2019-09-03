@@ -15,17 +15,17 @@ class ClassroomDashModel : NSObject{
     var school_name = ""
     var school_logo = ""
     var school_grade = ""
-    var class_list = [ClassListModel]()
+    var classroom_class_list = [ClassListModel]()
     
     func objcMapping(json : JSON){
-        school_id = json["data"]["class_detail"]["school_id"].stringValue
-        school_name = json["data"]["class_detail"]["school_name"].stringValue
-        school_logo = json["data"]["class_detail"]["school_logo"].stringValue
-        school_grade = json["data"]["class_detail"]["school_grade"].stringValue
-        for data in json["data"]["class_list"].arrayValue{
+        school_id = json["data"]["list_classroom"]["class_detail"]["school_id"].stringValue
+        school_name = json["data"]["list_classroom"]["class_detail"]["school_name"].stringValue
+        school_logo = json["data"]["list_classroom"]["class_detail"]["school_logo"].stringValue
+        school_grade = json["data"]["list_classroom"]["class_detail"]["school_grade"].stringValue
+        for data in json["data"]["list_classroom"]["class_list"].arrayValue{
             let d = ClassListModel()
             d.objcMapping(json: data)
-            class_list.append(d)
+            classroom_class_list.append(d)
         }
     }
 }
@@ -34,19 +34,18 @@ class ClassListModel : NSObject{
     var school_level_id = ""
     var school_level = ""
     var school_major_id = ""
-    var classes = [ClassroomClassesModel]()
+    var classroom_classes = [ClassroomClassesModel]()
     
     func objcMapping(json : JSON){
         school_level_id = json["school_level_id"].stringValue
         school_level = json["school_level"].stringValue
         school_major_id = json["school_major_id"].stringValue
-        for data in json["data"]["class_list"]["classes"].arrayValue{
+        for data in json["classes"].arrayValue{
             let d = ClassroomClassesModel()
             d.objcMapping(json: data)
-            classes.append(d)
+            classroom_classes.append(d)
         }
     }
-    
 }
 
 class ClassroomClassesModel : NSObject{
