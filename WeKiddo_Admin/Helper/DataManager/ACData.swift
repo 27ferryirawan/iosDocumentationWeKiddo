@@ -129,5 +129,7 @@ struct ACData {
     static var ADMINPROFILEDATA: AdminProfileModel!
     static var ADMINLISTDATA = [AdminListModel]()
     static var DETAILTASKADMINDATA: DetailTaskAdminModel!
+    static var TICKETPENDINGDATA = [TicketPendingModel]()
+    static var DETAILTICKETDATA: DetailTicketModel!
 //    static var STUDENTLISTSCOREADDNEW: !
 }

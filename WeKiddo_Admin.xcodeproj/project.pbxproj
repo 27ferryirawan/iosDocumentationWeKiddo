@@ -172,6 +172,22 @@
 		E61BEE95226F583000A533B3 /* ScoreNewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61BEE93226F583000A533B3 /* ScoreNewCell.xib */; };
 		E61BEE98226F583E00A533B3 /* ScoreSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BEE96226F583E00A533B3 /* ScoreSummaryCell.swift */; };
 		E61BEE99226F583E00A533B3 /* ScoreSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61BEE97226F583E00A533B3 /* ScoreSummaryCell.xib */; };
+		E61E3AD0231E4A720016E13D /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3ACE231E4A720016E13D /* TicketViewController.swift */; };
+		E61E3AD1231E4A720016E13D /* TicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3ACF231E4A720016E13D /* TicketViewController.xib */; };
+		E61E3AD5231E55FA0016E13D /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AD3231E55FA0016E13D /* TicketCell.swift */; };
+		E61E3AD6231E55FA0016E13D /* TicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AD4231E55FA0016E13D /* TicketCell.xib */; };
+		E61E3AD8231E694A0016E13D /* TicketPendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AD7231E694A0016E13D /* TicketPendingModel.swift */; };
+		E61E3ADA231E6EC50016E13D /* DetaliTicketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AD9231E6EC50016E13D /* DetaliTicketModel.swift */; };
+		E61E3ADE231E71A10016E13D /* DetailTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3ADC231E71A10016E13D /* DetailTicketViewController.swift */; };
+		E61E3ADF231E71A10016E13D /* DetailTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3ADD231E71A10016E13D /* DetailTicketViewController.xib */; };
+		E61E3AE3231E71F40016E13D /* DetailTicketContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AE1231E71F40016E13D /* DetailTicketContentCell.swift */; };
+		E61E3AE4231E71F40016E13D /* DetailTicketContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AE2231E71F40016E13D /* DetailTicketContentCell.xib */; };
+		E61E3AE7231F257B0016E13D /* SenderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AE5231F257B0016E13D /* SenderCollectionCell.swift */; };
+		E61E3AE8231F257B0016E13D /* SenderCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AE6231F257B0016E13D /* SenderCollectionCell.xib */; };
+		E61E3AEB231F26640016E13D /* ReceiverCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AE9231F26640016E13D /* ReceiverCollectionCell.swift */; };
+		E61E3AEC231F26640016E13D /* ReceiverCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AEA231F26640016E13D /* ReceiverCollectionCell.xib */; };
+		E61E3AEF231F26D10016E13D /* AlbumCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AED231F26D10016E13D /* AlbumCollectionCell.swift */; };
+		E61E3AF0231F26D10016E13D /* AlbumCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AEE231F26D10016E13D /* AlbumCollectionCell.xib */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
@@ -983,6 +999,22 @@
 		E61BEE93226F583000A533B3 /* ScoreNewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreNewCell.xib; sourceTree = "<group>"; };
 		E61BEE96226F583E00A533B3 /* ScoreSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSummaryCell.swift; sourceTree = "<group>"; };
 		E61BEE97226F583E00A533B3 /* ScoreSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreSummaryCell.xib; sourceTree = "<group>"; };
+		E61E3ACE231E4A720016E13D /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		E61E3ACF231E4A720016E13D /* TicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketViewController.xib; sourceTree = "<group>"; };
+		E61E3AD3231E55FA0016E13D /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
+		E61E3AD4231E55FA0016E13D /* TicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketCell.xib; sourceTree = "<group>"; };
+		E61E3AD7231E694A0016E13D /* TicketPendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPendingModel.swift; sourceTree = "<group>"; };
+		E61E3AD9231E6EC50016E13D /* DetaliTicketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliTicketModel.swift; sourceTree = "<group>"; };
+		E61E3ADC231E71A10016E13D /* DetailTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketViewController.swift; sourceTree = "<group>"; };
+		E61E3ADD231E71A10016E13D /* DetailTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTicketViewController.xib; sourceTree = "<group>"; };
+		E61E3AE1231E71F40016E13D /* DetailTicketContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketContentCell.swift; sourceTree = "<group>"; };
+		E61E3AE2231E71F40016E13D /* DetailTicketContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTicketContentCell.xib; sourceTree = "<group>"; };
+		E61E3AE5231F257B0016E13D /* SenderCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderCollectionCell.swift; sourceTree = "<group>"; };
+		E61E3AE6231F257B0016E13D /* SenderCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderCollectionCell.xib; sourceTree = "<group>"; };
+		E61E3AE9231F26640016E13D /* ReceiverCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverCollectionCell.swift; sourceTree = "<group>"; };
+		E61E3AEA231F26640016E13D /* ReceiverCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiverCollectionCell.xib; sourceTree = "<group>"; };
+		E61E3AED231F26D10016E13D /* AlbumCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionCell.swift; sourceTree = "<group>"; };
+		E61E3AEE231F26D10016E13D /* AlbumCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionCell.xib; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -2122,6 +2154,50 @@
 				E61BEE97226F583E00A533B3 /* ScoreSummaryCell.xib */,
 			);
 			path = "Score Cell";
+			sourceTree = "<group>";
+		};
+		E61E3ACD231E4A560016E13D /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3AD2231E55DE0016E13D /* Ticket Cell */,
+				E61E3ACE231E4A720016E13D /* TicketViewController.swift */,
+				E61E3ACF231E4A720016E13D /* TicketViewController.xib */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		E61E3AD2231E55DE0016E13D /* Ticket Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3AD3231E55FA0016E13D /* TicketCell.swift */,
+				E61E3AD4231E55FA0016E13D /* TicketCell.xib */,
+			);
+			path = "Ticket Cell";
+			sourceTree = "<group>";
+		};
+		E61E3ADB231E718E0016E13D /* Detail Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3AE0231E71DB0016E13D /* Detail Ticket Cell */,
+				E61E3ADC231E71A10016E13D /* DetailTicketViewController.swift */,
+				E61E3ADD231E71A10016E13D /* DetailTicketViewController.xib */,
+			);
+			path = "Detail Ticket";
+			sourceTree = "<group>";
+		};
+		E61E3AE0231E71DB0016E13D /* Detail Ticket Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3AE1231E71F40016E13D /* DetailTicketContentCell.swift */,
+				E61E3AE2231E71F40016E13D /* DetailTicketContentCell.xib */,
+				E61E3AE5231F257B0016E13D /* SenderCollectionCell.swift */,
+				E61E3AE6231F257B0016E13D /* SenderCollectionCell.xib */,
+				E61E3AE9231F26640016E13D /* ReceiverCollectionCell.swift */,
+				E61E3AEA231F26640016E13D /* ReceiverCollectionCell.xib */,
+				E61E3AED231F26D10016E13D /* AlbumCollectionCell.swift */,
+				E61E3AEE231F26D10016E13D /* AlbumCollectionCell.xib */,
+			);
+			path = "Detail Ticket Cell";
 			sourceTree = "<group>";
 		};
 		E624D106227B5890001220E9 /* Agency */ = {
@@ -3544,6 +3620,8 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E61E3ADB231E718E0016E13D /* Detail Ticket */,
+				E61E3ACD231E4A560016E13D /* Ticket */,
 				E6C63AA4231D228200367DE4 /* Detail Task List Admin History */,
 				E689B749231AEEB400DAEFFF /* Add New Task Admin */,
 				E689B73E231AE43600DAEFFF /* Task List Admin */,
@@ -3834,6 +3912,8 @@
 				66CE15CF231B76B700DC3612 /* AdminProfileModel.swift */,
 				E6C63A9E231CDE4300367DE4 /* AdminListModel.swift */,
 				E6C63AB6231D67D800367DE4 /* DetailTaskAdminModel.swift */,
+				E61E3AD7231E694A0016E13D /* TicketPendingModel.swift */,
+				E61E3AD9231E6EC50016E13D /* DetaliTicketModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4227,12 +4307,14 @@
 				E60FF4D1226AEE470086D8B8 /* NotificationDetailImageGalleryCell.xib in Resources */,
 				E600B46622AF26A3007E7C58 /* VideoPlayerViewController.xib in Resources */,
 				E61A97C6226E0BE10003E89F /* previous@3x.png in Resources */,
+				E61E3AE8231F257B0016E13D /* SenderCollectionCell.xib in Resources */,
 				E682D70822DCA81900214F4E /* ParentProfileSubjectAndClassCell.xib in Resources */,
 				E60FF4DA226AFCCA0086D8B8 /* AttendancesViewController.xib in Resources */,
 				E6396FDD22B661A400C928E5 /* HomeRoomDueDateAssignmentCell.xib in Resources */,
 				E682D6F822DAE80800214F4E /* AddSubjectTeacherAttachmentVoiceButtonCell.xib in Resources */,
 				E600B47822AFADC5007E7C58 /* SubjectDetailSectionCell.xib in Resources */,
 				E65BF68322CF824600C57FEF /* AddNewAssignmentViewController.xib in Resources */,
+				E61E3AE4231E71F40016E13D /* DetailTicketContentCell.xib in Resources */,
 				E63D83FC22D4C3E1005F07B4 /* AddDetentionFooterCell.xib in Resources */,
 				E626B6AE22C380FF00FF660A /* CollectionReusableView.xib in Resources */,
 				E699F5FC22E1BFC000775758 /* ExamDetailSectionCell.xib in Resources */,
@@ -4279,6 +4361,7 @@
 				E6416F2E22ECDD0A00ACDCD6 /* EditPaymentStudentCell.xib in Resources */,
 				E624D122227C866E001220E9 /* NewsHeaderCell.xib in Resources */,
 				E6D39C03225F570E00831511 /* LaunchScreen.storyboard in Resources */,
+				E61E3AD6231E55FA0016E13D /* TicketCell.xib in Resources */,
 				E699F60822E1EB8700775758 /* ExamDetailFooterCell.xib in Resources */,
 				E66C5EF322E8AE1C00AD186C /* AddScoreExamFooterCell.xib in Resources */,
 				E66C5F0922E8E5B600AD186C /* EditExamRemediScheduleCell.xib in Resources */,
@@ -4303,6 +4386,7 @@
 				E69AC81022894075000284A1 /* NearbyHeaderCollectionCell.xib in Resources */,
 				E6D39C622261CCAD00831511 /* OTPViewController.xib in Resources */,
 				E6DB0B1722B7E9B200758AB2 /* HomeRoomViewController.xib in Resources */,
+				E61E3AD1231E4A720016E13D /* TicketViewController.xib in Resources */,
 				E6961052228076E00000FC92 /* SessionDetailCell.xib in Resources */,
 				BE0030F922A507200050B48E /* MoreSchoolCollectionCell.xib in Resources */,
 				E6EAB9072292EFB90032B975 /* SubjectListViewController.xib in Resources */,
@@ -4331,6 +4415,7 @@
 				E6D39C1E225F97DE00831511 /* ScoreViewController.xib in Resources */,
 				E696103F227F3D470000FC92 /* QuestionsViewController.xib in Resources */,
 				E61BEE95226F583000A533B3 /* ScoreNewCell.xib in Resources */,
+				E61E3AEC231F26640016E13D /* ReceiverCollectionCell.xib in Resources */,
 				E6396FF622B67C0800C928E5 /* LatePaymentViewController.xib in Resources */,
 				E6BA19C02266E3D000FD246B /* NotificationHeaderGalleryCell.xib in Resources */,
 				E600B48022AFB2A1007E7C58 /* SubjectDetailUpcommingAssignmentCell.xib in Resources */,
@@ -4384,6 +4469,7 @@
 				E6A50BB6226B6D4800359D78 /* AssignmentViewController.xib in Resources */,
 				E699F5C122DD88A900775758 /* EditProfileFooterCell.xib in Resources */,
 				E61A97C7226E0BE10003E89F /* previous.png in Resources */,
+				E61E3ADF231E71A10016E13D /* DetailTicketViewController.xib in Resources */,
 				BE068AA522AD0DDB00BC2799 /* AddCalendarCell.xib in Resources */,
 				E6E3E157228B08A500AF9310 /* FuturePlanViewController.xib in Resources */,
 				E6BA19EC2268D16400FD246B /* NotificationDetailCollectionCell.xib in Resources */,
@@ -4436,6 +4522,7 @@
 				E63D83BB22D2DEBC005F07B4 /* AssignmentDetailFooterCell.xib in Resources */,
 				E600B48C22AFBCAA007E7C58 /* SubjectDetailPerformanceCell.xib in Resources */,
 				E6A50BCF226C181300359D78 /* AnnouncementSubjectCell.xib in Resources */,
+				E61E3AF0231F26D10016E13D /* AlbumCollectionCell.xib in Resources */,
 				E68CBAB122B7A6CF00DFD45E /* AddAnnouncementViewController.xib in Resources */,
 				E699F5EC22DF156500775758 /* LatePaymentDetailCell.xib in Resources */,
 				E69AC7B22281CB81000284A1 /* AssignmentDetailViewCollectionCell.xib in Resources */,
@@ -4661,6 +4748,7 @@
 				BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */,
 				E689B731231A9DDE00DAEFFF /* SchoolMonitoringUserListViewController.swift in Sources */,
 				E682D6A522D9002100214F4E /* SubjectTeacherRowCell.swift in Sources */,
+				E61E3AE7231F257B0016E13D /* SenderCollectionCell.swift in Sources */,
 				E62F863F22F0414500CE355E /* SpecialAttentionDetailViewController.swift in Sources */,
 				E6D39C4D225FA27200831511 /* AddressModel.swift in Sources */,
 				E6416EF922EA12F000ACDCD6 /* AddExamClassCell.swift in Sources */,
@@ -4792,6 +4880,7 @@
 				E61BEE94226F583000A533B3 /* ScoreNewCell.swift in Sources */,
 				E65BF68222CF824600C57FEF /* AddNewAssignmentViewController.swift in Sources */,
 				E682D6E322DA52F100214F4E /* AddSubjectTeacherSessionCell.swift in Sources */,
+				E61E3AD5231E55FA0016E13D /* TicketCell.swift in Sources */,
 				E600B47322AFAAD2007E7C58 /* SubjectDetailHeaderCell.swift in Sources */,
 				E6416EFD22EA145A00ACDCD6 /* AddExamAddMoreClassCell.swift in Sources */,
 				E69AC7B6228293B1000284A1 /* MenuCategoryFeaturesModel.swift in Sources */,
@@ -4834,6 +4923,7 @@
 				E643A6D222F1115500E88E1F /* FeedbackCell.swift in Sources */,
 				E6F428042297045200DB4250 /* UniversityDetailFooterCell.swift in Sources */,
 				E6F428292298650600DB4250 /* CourseDetailModel.swift in Sources */,
+				E61E3AD8231E694A0016E13D /* TicketPendingModel.swift in Sources */,
 				E6416F2422ECDB0400ACDCD6 /* EditPaymentViewController.swift in Sources */,
 				E682D6CD22DA028200214F4E /* SubjectTeacherDetailAttachmentCell.swift in Sources */,
 				E6BA19F0226956A900FD246B /* HomeGeneralDataModel.swift in Sources */,
@@ -4843,6 +4933,7 @@
 				E6BFA11D22749A4800E90803 /* LineChart.swift in Sources */,
 				E6A50BA8226B486F00359D78 /* AttendanceSubjectCell.swift in Sources */,
 				E6A50BF1226C9EC100359D78 /* AnnouncementVideoCollectionCell.swift in Sources */,
+				E61E3ADE231E71A10016E13D /* DetailTicketViewController.swift in Sources */,
 				E6F427C82294494600DB4250 /* CompetitionCategoryModel.swift in Sources */,
 				E600B44E22AE6532007E7C58 /* StudentNoteModel.swift in Sources */,
 				E624D10E227B58C1001220E9 /* AgencyCell.swift in Sources */,
@@ -4898,6 +4989,7 @@
 				E600B42922AB7C91007E7C58 /* ExamDetailCell.swift in Sources */,
 				E682D6C922D9FF6E00214F4E /* SubjectTeacherDetailClassContentCell.swift in Sources */,
 				E6863F8A229DAA59003C4F1F /* NearbyCourseMoreCell.swift in Sources */,
+				E61E3AE3231E71F40016E13D /* DetailTicketContentCell.swift in Sources */,
 				E60FF4C7226AC8DE0086D8B8 /* ScheduleCell.swift in Sources */,
 				E64C669922CA38DA00783D51 /* PermissionRequestFooterCell.swift in Sources */,
 				E699F5D122DE421400775758 /* CurrentSessionListViewController.swift in Sources */,
@@ -4914,9 +5006,11 @@
 				E6AAC3BD2318E9F60084ED93 /* AbsenceDetailViewController.swift in Sources */,
 				E6D39C49225FA27200831511 /* TransactionDetailModel.swift in Sources */,
 				E6416EF522EA11AA00ACDCD6 /* AddExamFooterCell.swift in Sources */,
+				E61E3AEB231F26640016E13D /* ReceiverCollectionCell.swift in Sources */,
 				E600B48B22AFBCAA007E7C58 /* SubjectDetailPerformanceCell.swift in Sources */,
 				E6D39C752264F2C300831511 /* NotificationViewController.swift in Sources */,
 				E624D125227C873B001220E9 /* NewsContentCell.swift in Sources */,
+				E61E3AEF231F26D10016E13D /* AlbumCollectionCell.swift in Sources */,
 				E6396FD822B6611300C928E5 /* HomeRoomUpcomingSessionSectionCell.swift in Sources */,
 				E65BF68F22CF9E5800C57FEF /* AddAssignmentFooterCell.swift in Sources */,
 				E6C63AB0231D27CC00367DE4 /* DetailTaskAdminGroupCell.swift in Sources */,
@@ -5079,6 +5173,7 @@
 				E6A50BB5226B6D4800359D78 /* AssignmentViewController.swift in Sources */,
 				E6D39C50225FA27200831511 /* NewsModel.swift in Sources */,
 				E64C668722C9E26000783D51 /* TeacherApprovalViewController.swift in Sources */,
+				E61E3ADA231E6EC50016E13D /* DetaliTicketModel.swift in Sources */,
 				E6F427E622969DBA00DB4250 /* CareerUniversityMajorCell.swift in Sources */,
 				BEE7E1F9228598CE005D5CC7 /* AnnouncementAllCell.swift in Sources */,
 				E600B47722AFADC5007E7C58 /* SubjectDetailSectionCell.swift in Sources */,
@@ -5093,6 +5188,7 @@
 				E6416F3622EE0F6A00ACDCD6 /* SearchLocationViewController.swift in Sources */,
 				E6AAC3A72316EEA40084ED93 /* SchoolMonitoringViewController.swift in Sources */,
 				BE8FEF3022A27B0200BDF240 /* ApprovalDetailFooterCell.swift in Sources */,
+				E61E3AD0231E4A720016E13D /* TicketViewController.swift in Sources */,
 				E66C5EDE22E7FC4F00AD186C /* ExamScoreFooterCell.swift in Sources */,
 				E6961030227F384B0000FC92 /* ApprovalViewController.swift in Sources */,
 				E6D39C2F225FA1A500831511 /* ACNotificationCenter.swift in Sources */,

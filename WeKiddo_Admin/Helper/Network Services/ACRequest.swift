@@ -579,6 +579,82 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_PENDING_TICKET(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([TicketPendingModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADMIN_GET_PENDING_TICKET)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var pendingTickets = ACData.TICKETPENDINGDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success"){
+                if let data = json["data"]["list_ticket"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let pendingTicket = TicketPendingModel()
+                            pendingTicket.objectMapping(json: jsonValue)
+                            pendingTickets.append(pendingTicket)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(pendingTickets)
+            } else {
+                failCompletion(json["message"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_HISTORY_TICKET(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([TicketPendingModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADMIN_GET_HISTORY_TICKET)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var pendingTickets = ACData.TICKETPENDINGDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success"){
+                if let data = json["data"]["list_ticket"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let pendingTicket = TicketPendingModel()
+                            pendingTicket.objectMapping(json: jsonValue)
+                            pendingTickets.append(pendingTicket)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(pendingTickets)
+            } else {
+                failCompletion(json["message"].stringValue)
+            }
+        }
+    }
+    
     static func POST_LATE_PAYMENT_DETAIL(
         userId:String,
         role:String,
@@ -605,6 +681,36 @@ class ACRequest: NSObject {
                 let dashboard = LatePaymentDetailModel()
                 dashboard.objectMapping(json: json)
                 successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_TICKET_DETAIL(
+        userId:String,
+        ticketID:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (DetailTicketModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "ticket_id":ticketID,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADMIN_GET_DETAIL_TICKET)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let detailData = DetailTicketModel()
+                detailData.objectMapping(json: json)
+                successCompletion(detailData)
             } else {
                 failCompletion(json["status"].stringValue)
             }

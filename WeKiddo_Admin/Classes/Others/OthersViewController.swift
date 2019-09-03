@@ -98,9 +98,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             case "36":
                 let attendanceVC = AttendancesViewController()
                 self.navigationController?.pushViewController(attendanceVC, animated: true)
-            case "50":
-                let teacherDutyVC = TeacherOnDutyViewController()
-                self.navigationController?.pushViewController(teacherDutyVC, animated: true)
+            case "61":
+                let ticketVC = TicketViewController()
+                self.navigationController?.pushViewController(ticketVC, animated: true)
             case "37":
 //                let latePaymentVC = LatePaymentViewController()
 //                self.navigationController?.pushViewController(latePaymentVC, animated: true)
