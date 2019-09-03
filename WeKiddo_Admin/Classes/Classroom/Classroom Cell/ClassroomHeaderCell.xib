@@ -19,8 +19,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="177.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRj-kc-BgD" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xRj-kc-BgD" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
                         <rect key="frame" x="10" y="13.5" width="300" height="30"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <state key="normal">
+                            <attributedString key="attributedTitle"/>
+                        </state>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-Ci-Jsd">
                         <rect key="frame" x="22.5" y="60.5" width="287.5" height="100"/>

@@ -60,6 +60,10 @@
 		BE36B166227DEC7C00A2F7B9 /* CustomBorderShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36B165227DEC7C00A2F7B9 /* CustomBorderShadow.swift */; };
 		BE4C9ADF231AD81000A88217 /* ClassroomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C9ADE231AD81000A88217 /* ClassroomModel.swift */; };
 		BE4C9AE1231AE07E00A88217 /* ClassroomDashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C9AE0231AE07E00A88217 /* ClassroomDashModel.swift */; };
+		BE4C9CA6231E651B00C36BD2 /* ClassroomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C9CA4231E651B00C36BD2 /* ClassroomDetailViewController.swift */; };
+		BE4C9CA7231E651B00C36BD2 /* ClassroomDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4C9CA5231E651B00C36BD2 /* ClassroomDetailViewController.xib */; };
+		BE4C9CAB231E6EF100C36BD2 /* ClassroomChildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4C9CA9231E6EF100C36BD2 /* ClassroomChildCell.swift */; };
+		BE4C9CAC231E6EF100C36BD2 /* ClassroomChildCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4C9CAA231E6EF100C36BD2 /* ClassroomChildCell.xib */; };
 		BE4EB43922984BFD00FA6117 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4EB43722984BFD00FA6117 /* OnboardingViewController.swift */; };
 		BE4EB43A22984BFD00FA6117 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4EB43822984BFD00FA6117 /* OnboardingViewController.xib */; };
 		BE54A53A22903F3600162552 /* AgencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE54A53922903F3600162552 /* AgencyModel.swift */; };
@@ -829,6 +833,10 @@
 		BE36B165227DEC7C00A2F7B9 /* CustomBorderShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBorderShadow.swift; sourceTree = "<group>"; };
 		BE4C9ADE231AD81000A88217 /* ClassroomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomModel.swift; sourceTree = "<group>"; };
 		BE4C9AE0231AE07E00A88217 /* ClassroomDashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomDashModel.swift; sourceTree = "<group>"; };
+		BE4C9CA4231E651B00C36BD2 /* ClassroomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomDetailViewController.swift; sourceTree = "<group>"; };
+		BE4C9CA5231E651B00C36BD2 /* ClassroomDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassroomDetailViewController.xib; sourceTree = "<group>"; };
+		BE4C9CA9231E6EF100C36BD2 /* ClassroomChildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomChildCell.swift; sourceTree = "<group>"; };
+		BE4C9CAA231E6EF100C36BD2 /* ClassroomChildCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassroomChildCell.xib; sourceTree = "<group>"; };
 		BE4EB43722984BFD00FA6117 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE4EB43822984BFD00FA6117 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		BE54A53922903F3600162552 /* AgencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyModel.swift; sourceTree = "<group>"; };
@@ -1767,6 +1775,25 @@
 				BE8FF8B1229DBB7700EC6557 /* RegisterCell.xib */,
 			);
 			path = "Login Info Cell";
+			sourceTree = "<group>";
+		};
+		BE4C9CA3231E64F300C36BD2 /* Classroom Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BE4C9CA8231E6E9400C36BD2 /* Classroom Cell */,
+				BE4C9CA4231E651B00C36BD2 /* ClassroomDetailViewController.swift */,
+				BE4C9CA5231E651B00C36BD2 /* ClassroomDetailViewController.xib */,
+			);
+			path = "Classroom Detail";
+			sourceTree = "<group>";
+		};
+		BE4C9CA8231E6E9400C36BD2 /* Classroom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BE4C9CA9231E6EF100C36BD2 /* ClassroomChildCell.swift */,
+				BE4C9CAA231E6EF100C36BD2 /* ClassroomChildCell.xib */,
+			);
+			path = "Classroom Cell";
 			sourceTree = "<group>";
 		};
 		BE744D7922A3AF69007E4027 /* School Detail Collection Cell */ = {
@@ -3367,6 +3394,9 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E662277B22C11F370060079E /* Classroom */,
+				BE4C9CA3231E64F300C36BD2 /* Classroom Detail */,
+				E626B6BF22C520F100FF660A /* Attendances Detail */,
 				BE7C6B7D231A339D00F67E19 /* History */,
 				E6AAC3C42318FEFF0084ED93 /* Task List */,
 				E6AAC3BA2318E9E20084ED93 /* Absence Detail */,
@@ -3398,8 +3428,6 @@
 				E65BF67F22CF822C00C57FEF /* Add New Assignment */,
 				E64C668922C9F1B800783D51 /* Permission Request Detail */,
 				E67EC15E22C9E22A009DFDE1 /* Teacher Approval */,
-				E626B6BF22C520F100FF660A /* Attendances Detail */,
-				E662277B22C11F370060079E /* Classroom */,
 				E662277622C1168A0060079E /* Subject */,
 				E662277122C115010060079E /* User */,
 				E68CBAAD22B7A6B700DFD45E /* Add Announcement */,
@@ -4098,6 +4126,7 @@
 				BE0030EF22A505BC0050B48E /* MoreSchoolViewController.xib in Resources */,
 				BE14C8DC22D8776D00ADC95D /* StudentCollectionViewCell.xib in Resources */,
 				E6F7CA6322F80538008DDFF4 /* SpecialAttentionDetailByClassContentCell.xib in Resources */,
+				BE4C9CAC231E6EF100C36BD2 /* ClassroomChildCell.xib in Resources */,
 				E6416EED22EA079E00ACDCD6 /* AddExamViewController.xib in Resources */,
 				E694F2BB22B1084400467F3C /* SearchSectionCell.xib in Resources */,
 				E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */,
@@ -4174,6 +4203,7 @@
 				E6416F3222ECDF3E00ACDCD6 /* EditPaymentFooterCell.xib in Resources */,
 				E6AAC3C82318FF1D0084ED93 /* TaskListViewController.xib in Resources */,
 				E62F863722F03C2300CE355E /* CurrentClassListHeaderCell.xib in Resources */,
+				BE4C9CA7231E651B00C36BD2 /* ClassroomDetailViewController.xib in Resources */,
 				E69AC818228968CE000284A1 /* NearbyContentCollectionCell.xib in Resources */,
 				BE2FF57222AABFC300003E1A /* PrivacyPolicyViewController.xib in Resources */,
 				E65BF67A22CF71A100C57FEF /* AssignmentDetailClassCell.xib in Resources */,
@@ -4455,6 +4485,7 @@
 				E624D113227B58D6001220E9 /* AssignmentSectionCell.swift in Sources */,
 				BE0030EE22A505BC0050B48E /* MoreSchoolViewController.swift in Sources */,
 				E682D6A522D9002100214F4E /* SubjectTeacherRowCell.swift in Sources */,
+				BE4C9CA6231E651B00C36BD2 /* ClassroomDetailViewController.swift in Sources */,
 				E62F863F22F0414500CE355E /* SpecialAttentionDetailViewController.swift in Sources */,
 				E6D39C4D225FA27200831511 /* AddressModel.swift in Sources */,
 				E6416EF922EA12F000ACDCD6 /* AddExamClassCell.swift in Sources */,
@@ -4718,6 +4749,7 @@
 				E63D83A522D0F057005F07B4 /* AssignmentScoreHeaderCell.swift in Sources */,
 				E699F5B822DCE34300775758 /* EditProfileParentCell.swift in Sources */,
 				E6F42819229846AC00DB4250 /* CourseDetailViewController.swift in Sources */,
+				BE4C9CAB231E6EF100C36BD2 /* ClassroomChildCell.swift in Sources */,
 				E60FF4D9226AFCCA0086D8B8 /* AttendancesViewController.swift in Sources */,
 				BE2FF58422ABDA9F00003E1A /* ParentProfileCell.swift in Sources */,
 				E600B44622AE6162007E7C58 /* StudentsNoteViewController.swift in Sources */,

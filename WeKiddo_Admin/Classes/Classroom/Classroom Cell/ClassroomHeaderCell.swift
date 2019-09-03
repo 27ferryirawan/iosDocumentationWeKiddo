@@ -13,6 +13,7 @@ import SVProgressHUD
 protocol ClassroomDelegate : class {
     func refreshData(levelCount : Int, levelName : [String], classLevelCount : [Int])
     func firstPickerClass() -> String
+    func selectedSchool(schoolName : String)
 }
 
 class ClassroomHeaderCell: UITableViewCell {
@@ -30,19 +31,22 @@ class ClassroomHeaderCell: UITableViewCell {
     var schools: [String] = []
     override func awakeFromNib() {
         super.awakeFromNib()
+        schoolPicker.setTitle(self.delegate?.firstPickerClass(), for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-    @IBOutlet weak var schoolPicker: ButtonLeftSpace!
+    @IBOutlet weak var schoolPicker: ButtonLeftSpace!{
+        didSet{
+            schoolPicker.setTitleColor(.black, for: .normal)
+        }
+    }
     var detailObj : ClassroomDashModel?{
         didSet{
             cellConfig()
-            schoolPicker.setTitle(self.delegate?.firstPickerClass(), for: .normal)
         }
     }
     
@@ -71,6 +75,8 @@ class ClassroomHeaderCell: UITableViewCell {
                 guard let schoolID = ACData.LOGINDATA.dashboardSchoolMenu[indexes].school_id, let yearId = ACData.LOGINDATA.dashboardSchoolMenu[indexes].year_id else {
                     return
                 }
+                self.schoolPicker.setTitle(self.schools[indexes], for: .normal)
+                self.delegate?.selectedSchool(schoolName: self.schools[indexes])
                 self.getSchoolData(schoolID: schoolID, yearID: yearId)
         },
             cancel: { ActionMultipleStringCancelBlock in return },

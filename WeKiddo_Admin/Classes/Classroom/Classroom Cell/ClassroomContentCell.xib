@@ -54,6 +54,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyh-eW-n7W">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="54.5"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -62,7 +65,11 @@
                             <constraint firstItem="UJM-zF-ZdI" firstAttribute="trailing" secondItem="LPQ-5M-8uu" secondAttribute="trailing" constant="3.5" id="Aa8-ZY-Xgz"/>
                             <constraint firstItem="LPQ-5M-8uu" firstAttribute="leading" secondItem="ck2-w4-HnJ" secondAttribute="trailing" constant="5" id="VS9-Aa-lvs"/>
                             <constraint firstItem="UJM-zF-ZdI" firstAttribute="top" secondItem="LPQ-5M-8uu" secondAttribute="bottom" constant="1" id="WPx-oW-9qq"/>
+                            <constraint firstItem="Fyh-eW-n7W" firstAttribute="top" secondItem="a65-PV-9aD" secondAttribute="top" id="bTL-r4-N23"/>
+                            <constraint firstItem="Fyh-eW-n7W" firstAttribute="leading" secondItem="a65-PV-9aD" secondAttribute="leading" id="hkQ-S5-fKg"/>
+                            <constraint firstAttribute="trailing" secondItem="Fyh-eW-n7W" secondAttribute="trailing" id="iKv-XT-uWD"/>
                             <constraint firstItem="Ax5-pQ-geQ" firstAttribute="leading" secondItem="6e3-Oi-m8B" secondAttribute="trailing" constant="10" id="mWy-er-1jd"/>
+                            <constraint firstAttribute="bottom" secondItem="Fyh-eW-n7W" secondAttribute="bottom" id="qeQ-ec-anb"/>
                             <constraint firstItem="ck2-w4-HnJ" firstAttribute="centerY" secondItem="LPQ-5M-8uu" secondAttribute="centerY" id="zcY-QK-Inj"/>
                         </constraints>
                     </view>
@@ -84,6 +91,7 @@
                 <outlet property="classLabel" destination="Ax5-pQ-geQ" id="Yku-Fk-Ata"/>
                 <outlet property="studentLabel" destination="UJM-zF-ZdI" id="6sr-ST-6ua"/>
                 <outlet property="teacherLabel" destination="LPQ-5M-8uu" id="RAT-fP-pEf"/>
+                <outlet property="toDetailBtn" destination="Fyh-eW-n7W" id="czx-hz-UNn"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="35.825892857142854"/>
         </tableViewCell>

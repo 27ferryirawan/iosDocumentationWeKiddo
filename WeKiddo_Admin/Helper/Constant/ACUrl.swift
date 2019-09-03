@@ -56,6 +56,7 @@ class ACUrl: NSObject {
     static let POST_CLOSE_ASSIGNMENT = PARENT_APP + "user/assignmentClose" // [POST] user_id, role, assign_id, class_id
     static let POST_HISOTRY_LIST = PARENT_APP + "history/list" // [POST] user_id, page
     static let POST_CLASSROOM_CLASS_LIST = PARENT_APP + "classroom-admin/get-class" // [POST] user_id, school_id, year_id
+    static let POST_CLASSROOM_DETAIL = PARENT_APP + "classroom-admin/detail-classroom" // [POST] user_id, school_class_id, year_id
     
     static let POST_CLASSROOM_DASHBOARD = PARENT_APP + "classroom-admin/school-class-list" // [POST] user_id, school_id, year_id
     static let POST_DELETE_ASSIGNMENT_ATTACHMENT = PARENT_APP + "user/deleteAssignmentAttachment" // [POST] user_id, role, attachment_id

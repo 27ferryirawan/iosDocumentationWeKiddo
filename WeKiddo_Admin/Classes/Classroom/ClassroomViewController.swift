@@ -16,6 +16,7 @@ class ClassroomViewController: UIViewController {
     var levelCount = 0
     var levelName = [String]()
     var classLevelCount = [Int]()
+    var selectedSchool:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
@@ -46,20 +47,14 @@ class ClassroomViewController: UIViewController {
             schools.append(value.school_name!)
         }
         firstSelectedSchool = schools[0]
+        selectedSchool = firstSelectedSchool
         ACRequest.POST_CLASSROOM_DASH(userId: ACData.LOGINDATA.userID, schoolId: schoolID, yearId: yearId, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classList) in
             ACData.CLASSROOMDASH = classList
-            print("\(ACData.CLASSROOMDASH.classroom_class_list.count)")
             SVProgressHUD.dismiss()
             self.levelCount = ACData.CLASSROOMDASH.classroom_class_list.count
             for indexes in ACData.CLASSROOMDASH.classroom_class_list {
                 self.levelName.append(indexes.school_level)
                 self.classLevelCount.append(indexes.classroom_classes.count)
-            }
-            for all in self.levelName{
-                print(all)
-            }
-            for all in self.classLevelCount{
-                print(all)
             }
             self.tableView.reloadData()
         }) { (message) in
@@ -67,7 +62,6 @@ class ClassroomViewController: UIViewController {
         }
     }
 }
-
 extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         print(levelCount)
@@ -77,8 +71,6 @@ extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             return ""
         } else {
-            print(section)
-            print("LEVEL NAME : \(levelName[section-1])")
             return "Level \(levelName[section-1])"
         }
     }
@@ -107,18 +99,27 @@ extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "classroomContentCellID", for: indexPath) as? ClassroomContentCell)!
             cell.classObjc = ACData.CLASSROOMDASH.classroom_class_list[indexPath.section-1].classroom_classes[indexPath.row]
+            cell.delegate = self
             return cell
         }
     }
 }
-extension ClassroomViewController : ClassroomDelegate{
-    func firstPickerClass() -> String {
+extension ClassroomViewController : ClassroomDelegate, ClassroomContentDelegate{
+    func selectedSchool(schoolName: String){
+        selectedSchool = schoolName
+    }
+    func firstPickerClass() -> String{
         return firstSelectedSchool!
     }
-    func refreshData(levelCount: Int, levelName: [String], classLevelCount: [Int]) {
+    func refreshData(levelCount: Int, levelName: [String], classLevelCount: [Int]){
         self.levelCount = levelCount
         self.levelName = levelName
         self.classLevelCount = classLevelCount
         self.tableView.reloadData()
+    }
+    func toDetail(){
+        let ClassroomDetailVC = ClassroomDetailViewController()
+        ClassroomDetailVC.schoolName = selectedSchool!
+        self.navigationController?.pushViewController(ClassroomDetailVC, animated: true)
     }
 }
