@@ -101,7 +101,7 @@ struct ACData {
     static var SUBJECTTEACHERBYSUBJECT = [SubjectTopicBySubjectModel]()
     static var SUBJECTTEACHERBYCLASS = [SubjectTopicByClassModel]()
     static var HISTORYLIST : HistoryModel!
-    static var CLASSROOMDASH : ClassroomDashModel!
+    static var CLASSROOMDASH: ClassroomDashModel!
     static var SUBJECTTEACHERCHAPTERLISTDATA: SubjectTeacherChapterListModel!
 //    static var SUBJECTTEACHERCHAPTERLISTDATA = [SubjectTeacherChapterListModel]()
     static var TEACHERONDUTYPICKERDATA : TeacherOnDutyChildListPickerModel!
@@ -134,5 +134,6 @@ struct ACData {
     static var DETAILTASKADMINDATA: DetailTaskAdminModel!
     static var TICKETPENDINGDATA = [TicketPendingModel]()
     static var DETAILTICKETDATA: DetailTicketModel!
+    static var CLASSROOMDETAILDATA : ClassroomModel!
 //    static var STUDENTLISTSCOREADDNEW: !
 }

@@ -4563,6 +4563,33 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_CLASSROOM_DETAIL(
+        userId:String,
+        school_class_id:String,
+        yearId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (ClassroomModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_class_id":school_class_id,
+            "year_id":yearId
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_CLASSROOM_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let classroomData = ClassroomModel()
+                classroomData.objcMapping(json: json)
+                successCompletion(classroomData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_CLASSROOM_CLASS_LIST(
         userId:String,
         schoolId:String,
