@@ -128,9 +128,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
 //                self.navigationController?.pushViewController(assignmentVC, animated: true)
 //                let assignmentVC = AssignmentViewController()
 //                self.navigationController?.pushViewController(assignmentVC, animated: true)
-            case "47":
-                let subjectVC = SubjectTeacherViewController()
-                self.navigationController?.pushViewController(subjectVC, animated: true)
+            case "60":
+                let classVC = ClassroomViewController()
+                self.navigationController?.pushViewController(classVC, animated: true)
             case "51" : self.tabBarController?.selectedIndex = 0
             default:
                 self.tabBarController?.selectedIndex = 0
@@ -143,7 +143,10 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             case "57":
                 let feedbackVC = FeedbackViewController()
                 self.navigationController?.pushViewController(feedbackVC, animated: true)
-            case "67":
+            case "65":
+                let historyVC = HistoryViewController()
+                self.navigationController?.pushViewController(historyVC, animated: true)
+            case "55":
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.synchronize()
                 let mainViewController = ViewController()

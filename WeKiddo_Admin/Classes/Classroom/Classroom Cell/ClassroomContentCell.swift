@@ -25,4 +25,16 @@ class ClassroomContentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var classObjc : ClassroomClassesModel?{
+        didSet{
+            cellDataSet()
+        }
+    }
+    
+    func cellDataSet(){
+        guard let obj = classObjc else { return }
+        studentLabel.text = "\(obj.countStudent)"
+        teacherLabel.text = obj.teacher_name
+        classLabel.text = obj.school_class
+    }
 }

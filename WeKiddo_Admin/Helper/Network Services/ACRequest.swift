@@ -4510,6 +4510,96 @@ class ACRequest: NSObject {
         })
     }
     
+    
+    static func POST_HISTORY_LIST(
+        userId:String,
+        page:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (HistoryModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "page":page
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_HISOTRY_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let historyData = HistoryModel()
+                historyData.objectMapping(json: json)
+                successCompletion(historyData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_CLASSROOM_DASH(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (ClassroomDashModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_CLASSROOM_DASHBOARD)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let classroomDashData = ClassroomDashModel()
+                classroomDashData.objcMapping(json: json)
+                successCompletion(classroomDashData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_CLASSROOM_CLASS_LIST(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([ClassroomModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_CLASSROOM_CLASS_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var classList = ACData.CLASSROOM
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_class"].array{
+                    if data.count > 0{
+                        for jsonValue in data{
+                            let classR = ClassroomModel()
+                            classR.objcMapping(json: jsonValue)
+                            classList.append(classR)
+                        }
+                    } else {
+                        failCompletion("Have No Class")
+                    }
+                    successCompletion(classList)
+                }
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_DELETE_SUBJECT_EDIT_PROFILE(
         userID:String,
         role:String,
