@@ -21,14 +21,14 @@ class DetailTicketModel: NSObject {
     var chat = [DetailTicketChatModel]()
     
     func objectMapping(json:JSON){
-        response_time = json["data"]["ticket"]["ticket_detail"].stringValue
-        ticket_type = json["data"]["ticket"]["ticket_type"].intValue
-        ticket_id = json["data"]["ticket"]["ticket_id"].stringValue
-        title = json["data"]["ticket"]["title"].stringValue
-        created_at = json["data"]["ticket"]["created_at"].stringValue
-        desc = json["data"]["ticket"]["description"].stringValue
-        response_msg = json["data"]["ticket"]["response_msg"].stringValue
-        status = json["data"]["ticket"]["status"].intValue
+        response_time = json["data"]["ticket"]["ticket_detail"]["response_time"].stringValue
+        ticket_type = json["data"]["ticket"]["ticket_detail"]["ticket_type"].intValue
+        ticket_id = json["data"]["ticket"]["ticket_detail"]["ticket_id"].stringValue
+        title = json["data"]["ticket"]["ticket_detail"]["title"].stringValue
+        created_at = json["data"]["ticket"]["ticket_detail"]["created_at"].stringValue
+        desc = json["data"]["ticket"]["ticket_detail"]["description"].stringValue
+        response_msg = json["data"]["ticket"]["ticket_detail"]["response_msg"].stringValue
+        status = json["data"]["ticket"]["ticket_detail"]["status"].intValue
         
         for data in json["data"]["ticket"]["chat"].arrayValue{
             let d = DetailTicketChatModel()

@@ -10,9 +10,18 @@ import UIKit
 
 class SenderCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var contentText: UITextField!
+    var detailObj: DetailTicketChatModel? {
+        didSet {
+            cellConfig()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        contentText.text = obj.chat_msg
+    }
 }

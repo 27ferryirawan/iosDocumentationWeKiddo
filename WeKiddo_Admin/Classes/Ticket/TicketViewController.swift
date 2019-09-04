@@ -111,7 +111,7 @@ extension TicketViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension TicketViewController: TicketCellDelegate {
     func toTicketDetail() {
-        let detailVC = DetailTicketContentCell()
+        let detailVC = DetailTicketViewController()
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

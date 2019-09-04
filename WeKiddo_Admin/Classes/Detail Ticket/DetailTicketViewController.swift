@@ -37,7 +37,7 @@ extension DetailTicketViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "detailTicketContentCellID", for: indexPath) as? DetailTicketContentCell)!
-
+        cell.detailObj = ACData.DETAILTICKETDATA
         return cell
     }
 }

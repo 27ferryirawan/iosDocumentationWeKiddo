@@ -199,6 +199,10 @@
 		E61E3AEC231F26640016E13D /* ReceiverCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AEA231F26640016E13D /* ReceiverCollectionCell.xib */; };
 		E61E3AEF231F26D10016E13D /* AlbumCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AED231F26D10016E13D /* AlbumCollectionCell.swift */; };
 		E61E3AF0231F26D10016E13D /* AlbumCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AEE231F26D10016E13D /* AlbumCollectionCell.xib */; };
+		E61E3AFA231FD1820016E13D /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AF8231FD1820016E13D /* AddTicketViewController.swift */; };
+		E61E3AFB231FD1820016E13D /* AddTicketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AF9231FD1820016E13D /* AddTicketViewController.xib */; };
+		E61E3AFF231FD9A50016E13D /* AddTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3AFD231FD9A50016E13D /* AddTicketCell.swift */; };
+		E61E3B00231FD9A50016E13D /* AddTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3AFE231FD9A50016E13D /* AddTicketCell.xib */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
@@ -1037,6 +1041,10 @@
 		E61E3AEA231F26640016E13D /* ReceiverCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiverCollectionCell.xib; sourceTree = "<group>"; };
 		E61E3AED231F26D10016E13D /* AlbumCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionCell.swift; sourceTree = "<group>"; };
 		E61E3AEE231F26D10016E13D /* AlbumCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionCell.xib; sourceTree = "<group>"; };
+		E61E3AF8231FD1820016E13D /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
+		E61E3AF9231FD1820016E13D /* AddTicketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTicketViewController.xib; sourceTree = "<group>"; };
+		E61E3AFD231FD9A50016E13D /* AddTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketCell.swift; sourceTree = "<group>"; };
+		E61E3AFE231FD9A50016E13D /* AddTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTicketCell.xib; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -2258,6 +2266,25 @@
 				E61E3AEE231F26D10016E13D /* AlbumCollectionCell.xib */,
 			);
 			path = "Detail Ticket Cell";
+			sourceTree = "<group>";
+		};
+		E61E3AF7231FD0F00016E13D /* Add Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3AFC231FD98F0016E13D /* Add Ticket Cell */,
+				E61E3AF8231FD1820016E13D /* AddTicketViewController.swift */,
+				E61E3AF9231FD1820016E13D /* AddTicketViewController.xib */,
+			);
+			path = "Add Ticket";
+			sourceTree = "<group>";
+		};
+		E61E3AFC231FD98F0016E13D /* Add Ticket Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3AFD231FD9A50016E13D /* AddTicketCell.swift */,
+				E61E3AFE231FD9A50016E13D /* AddTicketCell.xib */,
+			);
+			path = "Add Ticket Cell";
 			sourceTree = "<group>";
 		};
 		E624D106227B5890001220E9 /* Agency */ = {
@@ -3680,6 +3707,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E61E3AF7231FD0F00016E13D /* Add Ticket */,
 				E61E3ADB231E718E0016E13D /* Detail Ticket */,
 				E61E3ACD231E4A560016E13D /* Ticket */,
 				E6C63AA4231D228200367DE4 /* Detail Task List Admin History */,
@@ -4336,6 +4364,7 @@
 			files = (
 				E6F427F32296E03900DB4250 /* UniversityCell.xib in Resources */,
 				E63D841622D5EBAE005F07B4 /* AddAnnouncementHeaderCell.xib in Resources */,
+				E61E3AFB231FD1820016E13D /* AddTicketViewController.xib in Resources */,
 				E6416F3722EE0F6A00ACDCD6 /* SearchLocationViewController.xib in Resources */,
 				E6F427E122968BA700DB4250 /* CareerDetailCell.xib in Resources */,
 				E6416F2022ECD60800ACDCD6 /* EditEventFooterCell.xib in Resources */,
@@ -4366,6 +4395,7 @@
 				E6A50BBB226B6D8E00359D78 /* AssignmentSubjectCell.xib in Resources */,
 				E682D6E822DA55AC00214F4E /* AddSubjectTeacherAddMoreSessionCell.xib in Resources */,
 				E689B742231AE44B00DAEFFF /* TaskListAdminViewController.xib in Resources */,
+				E61E3B00231FD9A50016E13D /* AddTicketCell.xib in Resources */,
 				E624D11D227C8483001220E9 /* NewsViewController.xib in Resources */,
 				E66C5ED722E7F8BD00AD186C /* ExamScoreHeaderCell.xib in Resources */,
 				E6D39C22225F985000831511 /* OthersViewController.xib in Resources */,
@@ -4932,6 +4962,7 @@
 				E696103E227F3D470000FC92 /* QuestionsViewController.swift in Sources */,
 				E6F427C6229441CC00DB4250 /* CompetitionModel.swift in Sources */,
 				E6AAC3C22318EA5D0084ED93 /* AbsenceDetailCell.swift in Sources */,
+				E61E3AFA231FD1820016E13D /* AddTicketViewController.swift in Sources */,
 				E6F7CA5922F801F7008DDFF4 /* SpecialAttentionDetailByClassViewController.swift in Sources */,
 				E63D83F722D4C140005F07B4 /* AddDetentionStudentCell.swift in Sources */,
 				E63D83CC22D4741A005F07B4 /* DetentionModel.swift in Sources */,
@@ -5053,6 +5084,7 @@
 				E61A97BE226E0BD60003E89F /* CalenderView.swift in Sources */,
 				E600B44222AD28AC007E7C58 /* SubjectListModel.swift in Sources */,
 				E600B47F22AFB2A1007E7C58 /* SubjectDetailUpcommingAssignmentCell.swift in Sources */,
+				E61E3AFF231FD9A50016E13D /* AddTicketCell.swift in Sources */,
 				E6E3E190228B23B400AF9310 /* MedicalRecordViewController.swift in Sources */,
 				E6BA19F22269600200FD246B /* AssignmentModel.swift in Sources */,
 				E63D83A022D0EED1005F07B4 /* AssignmentScoresViewController.swift in Sources */,
