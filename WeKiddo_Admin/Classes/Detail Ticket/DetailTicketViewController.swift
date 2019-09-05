@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DetailTicketViewController: UIViewController {
 
@@ -38,6 +39,23 @@ extension DetailTicketViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "detailTicketContentCellID", for: indexPath) as? DetailTicketContentCell)!
         cell.detailObj = ACData.DETAILTICKETDATA
+        cell.delegate = self
         return cell
+    }
+}
+
+extension DetailTicketViewController: DetailTicketContentCellDelegate {
+    func refreshTable() {
+        fetchDetail()
+    }
+    func fetchDetail() {
+        ACRequest.POST_TICKET_DETAIL(userId: ACData.LOGINDATA.userID, ticketID: ACData.DETAILTICKETDATA.ticket_id, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.DETAILTICKETDATA = result
+            SVProgressHUD.dismiss()
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.none)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }

@@ -770,6 +770,36 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_TICKET_SEND_MESSAGE(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        ticketID:String,
+        chatMessage:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "ticket_id":ticketID,
+            "chat_msg":chatMessage
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_TICKET_SEND_MESSAGE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_GET_DATA_FOR_EDIT_EXAM(
         userId:String,
         school_user_id:String,
@@ -3300,6 +3330,31 @@ class ACRequest: NSObject {
                 attacmentModel.objectMapping(json: jsonValue)
                 attachmentModels.append(attacmentModel)
                 successCompletion(attachmentModels)
+            } else {
+                failCompletion(jsonValue["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_UPLOAD_NEW_ATTACHMENT_TICKET(
+        parameters: Parameters,
+        file:UIImage,
+        fileName:String,
+        fileParameter:String,
+        tokenAccess:String,
+        successCompletion: @escaping (Any) -> Void,
+        failCompletion: @escaping (String) -> Void) {
+        let headers:HTTPHeaders = ["Content-Type":"multipart/form-data; boundary=null",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        print("\(ACUrl.PARENT_TICKET_UPLOAD_MEDIA)")
+        ACAPI.POST_WITH_IMAGE(url: "\(ACUrl.PARENT_TICKET_UPLOAD_MEDIA)", parameter: parameters, imageFile: file, imageFileName: fileName, imageParameter: fileParameter, showHUD: true, header: headers) { (jsonData) in
+            let jsonValue = JSON(jsonData)
+            print(jsonValue)
+            if(jsonValue["status"] == "success") {
+//                let attacmentModel = AttachmentBannerModel()
+//                attacmentModel.objectMapping(json: jsonValue)
+//                attachmentModels.append(attacmentModel)
+                successCompletion(jsonData)
             } else {
                 failCompletion(jsonValue["status"].stringValue)
             }

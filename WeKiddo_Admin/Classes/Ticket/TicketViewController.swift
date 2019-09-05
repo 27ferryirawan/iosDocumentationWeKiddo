@@ -39,7 +39,8 @@ class TicketViewController: UIViewController {
         addNewButton.addTarget(self, action: #selector(addNewTask), for: .touchUpInside)
     }
     @objc func addNewTask() {
-        fetchListAdmin()
+        let addVC = AddTicketViewController()
+        self.navigationController?.pushViewController(addVC, animated: true)
     }
     @objc func pendingClicked() {
         pendingViewActive.backgroundColor = ACColor.MAIN
@@ -72,18 +73,6 @@ class TicketViewController: UIViewController {
             ACData.TICKETPENDINGDATA = results
             SVProgressHUD.dismiss()
             self.tableView.reloadData()
-        }) { (message) in
-            SVProgressHUD.dismiss()
-            ACAlert.show(message: message)
-        }
-    }
-    func fetchListAdmin() {
-        ACData.ADMINLISTDATA.removeAll()
-        ACRequest.POST_ADMIN_LIST(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
-            ACData.ADMINLISTDATA = results
-            SVProgressHUD.dismiss()
-            let addNewVc = AddNewTaskAdminViewController()
-            self.navigationController?.pushViewController(addNewVc, animated: true)
         }) { (message) in
             SVProgressHUD.dismiss()
             ACAlert.show(message: message)

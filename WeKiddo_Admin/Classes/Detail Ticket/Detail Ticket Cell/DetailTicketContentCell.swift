@@ -8,10 +8,17 @@
 
 import UIKit
 import SDWebImage
+import SVProgressHUD
+
+protocol DetailTicketContentCellDelegate: class {
+    func refreshTable()
+}
 
 class DetailTicketContentCell: UITableViewCell {
 
     var isFromSender = Bool()
+    var chatMessage = ""
+    weak var delegate: DetailTicketContentCellDelegate?
     @IBOutlet weak var sendMessageButton: UIButton!
     @IBOutlet weak var textMessage: UITextField!
     @IBOutlet weak var sendMessageView: UIView! {
@@ -61,7 +68,18 @@ class DetailTicketContentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @objc func sendMessageAction() {
-        
+        self.textMessage.text = ""
+        guard let obj = detailObj else { return }
+        ACRequest.POST_TICKET_SEND_MESSAGE(userId: ACData.LOGINDATA.userID, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, ticketID: obj.ticket_id, chatMessage: chatMessage, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+            if result == "success" {
+                self.delegate?.refreshTable()
+            } else {
+            }
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
     func cellConfig() {
         guard let obj = detailObj else { return }
@@ -78,7 +96,7 @@ class DetailTicketContentCell: UITableViewCell {
 extension DetailTicketContentCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == photoAlbumCollection {
-            return 3
+            return ACData.DETAILTICKETDATA.medias.count
         } else {
             return ACData.DETAILTICKETDATA.chat.count
         }
@@ -86,6 +104,7 @@ extension DetailTicketContentCell: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == photoAlbumCollection {
             let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "albumCollectionCellID", for: indexPath) as? AlbumCollectionCell)!
+            cell.detailObj = ACData.DETAILTICKETDATA.medias[indexPath.row]
             return cell
         } else {
             if ACData.LOGINDATA.userID == ACData.DETAILTICKETDATA.chat[indexPath.row].sender_id {
@@ -102,8 +121,16 @@ extension DetailTicketContentCell: UICollectionViewDataSource, UICollectionViewD
 }
 
 extension DetailTicketContentCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        chatMessage = textField.text!
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        chatMessage = textField.text!
+        return true
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        chatMessage = textField.text!
         return true
     }
 }

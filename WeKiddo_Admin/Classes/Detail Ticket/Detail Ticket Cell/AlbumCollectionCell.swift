@@ -10,9 +10,22 @@ import UIKit
 
 class AlbumCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var contentImage: UIImageView!
+    var detailObj: DetailTicketMediaModel? {
+        didSet {
+            cellConfig()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        contentImage.sd_setImage(
+            with: URL(string: (obj.url)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+    }
 }

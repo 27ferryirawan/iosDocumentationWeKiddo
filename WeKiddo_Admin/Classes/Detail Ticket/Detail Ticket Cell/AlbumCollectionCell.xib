@@ -31,6 +31,9 @@
                 <constraint firstItem="0r0-ok-ddS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mXV-p8-4SC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="contentImage" destination="0r0-ok-ddS" id="Qu0-Vo-fqp"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

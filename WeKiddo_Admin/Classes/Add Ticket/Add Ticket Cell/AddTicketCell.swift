@@ -9,6 +9,14 @@
 import UIKit
 import ActionSheetPicker_3_0
 
+protocol AddTicketCellDelegate: class {
+    func openImageAttachment()
+    func saveNewTicket(withMediaArray: [TicketMediaModel])
+    func titleFilledWithString(value: String)
+    func typeFilledWithValue(value: String)
+    func descriptionFilledWithValue(value: String)
+}
+
 class AddTicketCell: UITableViewCell {
 
     @IBOutlet weak var saveButton: UIButton!
@@ -19,7 +27,15 @@ class AddTicketCell: UITableViewCell {
     @IBOutlet weak var titleText: UITextField!
     var descriptionText = ""
     var placeholderLabel = UILabel()
+    var mediaArray = [TicketMediaModel]()
     var ticketType = ["Bugs", "Enhancement"]
+    weak var delegate: AddTicketCellDelegate?
+    var detailObj: TicketMediaModel? {
+        didSet {
+            cellConfig()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         typePickerButton.addTarget(self, action: #selector(showTypePicker), for: .touchUpInside)
@@ -30,6 +46,11 @@ class AddTicketCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    func cellConfig() {
+//        guard let obj = detailObj else { return }
+        print(mediaArray.count)
+        photoCollection.reloadData()
+    }
     @objc func showTypePicker() {
         ActionSheetStringPicker.show(
             withTitle: "- Select Type -",
@@ -38,28 +59,28 @@ class AddTicketCell: UITableViewCell {
             doneBlock: { picker, indexes, values in
                 guard let value = values as? String else { return }
                 self.typePickerButton.setTitle(value, for: .normal)
-//              self.delegate?.typeSelected(type: value)
+                self.delegate?.typeFilledWithValue(value: "\(indexes+1)")
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow
         )
     }
     @objc func addImageAttachment() {
-        
+        self.delegate?.openImageAttachment()
     }
     @objc func saveAction() {
-        
+        self.delegate?.saveNewTicket(withMediaArray: mediaArray)
     }
 }
 
 extension AddTicketCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return mediaArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "addTicketPhotoCollectionCellID", for: indexPath) as? AddTicketPhotoCollectionCell)!
-        
+        cell.detailObj = mediaArray[indexPath.row]
         return cell
     }
 }
@@ -68,7 +89,7 @@ extension AddTicketCell: UITextViewDelegate, UITextFieldDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             descriptionText = text
-//            self.delegate?.descFilled(withDesc: text)
+            self.delegate?.descriptionFilledWithValue(value: text)
             textView.resignFirstResponder()
             return false
         }
@@ -82,7 +103,7 @@ extension AddTicketCell: UITextViewDelegate, UITextFieldDelegate {
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         descriptionText = textView.text!
-//        self.delegate?.descFilled(withDesc: textView.text!)
+        self.delegate?.descriptionFilledWithValue(value: textView.text!)
         if textView.text.isEmpty {
             textView.text = "Description"
             textView.textColor = UIColor.lightGray
@@ -91,8 +112,16 @@ extension AddTicketCell: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !descText.text.isEmpty
     }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.delegate?.titleFilledWithString(value: textField.text!)
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        self.delegate?.titleFilledWithString(value: textField.text!)
+        return true
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        self.delegate?.titleFilledWithString(value: textField.text!)
         return true
     }
 }

@@ -38,7 +38,8 @@ class ACUrl: NSObject {
     static let PARENT_ADMIN_GET_HISTORY_TICKET = PARENT_APP + "ticket/get-history-ticket-list" // [POST] user_id, school_id, year_id
     static let PARENT_ADMIN_GET_DETAIL_TICKET = PARENT_APP + "ticket/detail-ticket" // [POST] user_id, school_id, year_id, ticket_id
     static let PARENT_ADD_TICKET = PARENT_APP + "ticket/add-ticket" // [POST] user_id, school_id, year_id, title, description, ticket_type, status, medias
-    static let PARENT_TICKET_UPLOAD_MEDIA = "ticket/upload-media" // [POST] media_type, media_file
+    static let PARENT_TICKET_SEND_MESSAGE = PARENT_APP + "ticket/ticket-send-msg" // [POST] user_id, school_id, year_id, ticket_id, chat_msg
+    static let PARENT_TICKET_UPLOAD_MEDIA = PARENT_APP + "ticket/upload-media" // [POST] media_type, media_file
     static let TEACHER_GET_DETAIL_ATTENDANCE = PARENT_APP + "user/attendanceDetail" // [POST] user_id, role, school_session_id
     static let TEACHER_GET_PERMISSION = PARENT_APP + "user/permissionRequest" // [POST] user_id, role
     static let TEACHER_UPDATE_STUDENT_ATTENDANCE_STATUS = PARENT_APP + "user/attendanceStudent" // [POST] user_id, role, school_session_id, child_id, is_attend, attendance_type, note

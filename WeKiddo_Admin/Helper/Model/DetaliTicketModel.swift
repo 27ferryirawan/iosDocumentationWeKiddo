@@ -19,6 +19,7 @@ class DetailTicketModel: NSObject {
     var response_msg = ""
     var status = 0
     var chat = [DetailTicketChatModel]()
+    var medias = [DetailTicketMediaModel]()
     
     func objectMapping(json:JSON){
         response_time = json["data"]["ticket"]["ticket_detail"]["response_time"].stringValue
@@ -35,6 +36,13 @@ class DetailTicketModel: NSObject {
             d.objectMapping(json: data)
             chat.append(d)
         }
+
+        for data in json["data"]["ticket"]["medias"].arrayValue{
+            let d = DetailTicketMediaModel()
+            d.objectMapping(json: data)
+            medias.append(d)
+        }
+
     }
 }
 
@@ -47,5 +55,32 @@ class DetailTicketChatModel: NSObject {
         chat_msg = json["chat_msg"].stringValue
         sender_id = json["sender_id"].stringValue
         ticket_id = json["ticket_id"].stringValue
+    }
+}
+
+class DetailTicketMediaModel: NSObject {
+    var url = ""
+    var media_type_id = ""
+    var mediable_id = ""
+    var mediable_type = ""
+    var media_id = 0
+    
+    func objectMapping(json:JSON){
+        url = json["url"].stringValue
+        media_type_id = json["media_type_id"].stringValue
+        mediable_id = json["mediable_id"].stringValue
+        mediable_type = json["mediable_type"].stringValue
+        media_id = json["media_id"].intValue
+    }
+}
+
+
+class TicketMediaModel: NSObject {
+    var media_id = 0
+    var media_url = ""
+    
+    init(mediaID: Int, mediaURL: String) {
+        self.media_id = mediaID
+        self.media_url = mediaURL
     }
 }
