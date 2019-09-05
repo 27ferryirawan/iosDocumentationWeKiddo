@@ -717,6 +717,25 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ADD_NEW_TICKET(
+        params:Parameters,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        print(params)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_ADD_TICKET)", parameter: params, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_STUDENT_LIST_SCORE_ADD_NEW(
         userId:String,
         school_user_id:String,
