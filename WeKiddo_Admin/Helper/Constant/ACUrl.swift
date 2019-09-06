@@ -52,6 +52,7 @@ class ACUrl: NSObject {
     
     static let PARENT_USER_SCHOOL_SCHOOL_LIST = PARENT_APP + "user-school/school-list" // [POST] user_id
     static let PARENT_USER_SCHOOL_LIST = PARENT_APP + "user-school/list" // [POST] user_id, school_id, year_id, keyword
+    static let PARENT_USER_SCHOOL_ADD_PARAM = PARENT_APP + "user-school/addparams" // [POST] user_id, school_id, year_id
     // PERMISSION RULESF
     /*
      Permission status :

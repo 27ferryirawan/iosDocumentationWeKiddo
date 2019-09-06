@@ -874,6 +874,34 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_USER_SCHOOL_ADDPARAM(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (AddUserAddParamModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_SCHOOL_ADD_PARAM)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let dashboard = AddUserAddParamModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_TICKET_ACTION(
         userId:String,
         ticketID:String,
