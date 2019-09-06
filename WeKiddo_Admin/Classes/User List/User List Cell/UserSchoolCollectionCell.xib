@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userSchoolCollectionCellID" id="gTV-IL-0wX" customClass="UserSchoolCollectionCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UDR-5z-Mbb">
+                        <rect key="frame" x="20" y="0.0" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="8tM-sB-fzr"/>
+                            <constraint firstAttribute="width" constant="60" id="tRC-uk-cOu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Darlene Zang" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-vH-Ghq">
+                        <rect key="frame" x="0.0" y="62" width="100" height="18.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Darlene Zang" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2H-v8-zM2">
+                        <rect key="frame" x="0.0" y="81.5" width="100" height="18.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="a1Y-vH-Ghq" firstAttribute="top" secondItem="UDR-5z-Mbb" secondAttribute="bottom" constant="2" id="CVB-UE-Jni"/>
+                <constraint firstItem="a1Y-vH-Ghq" firstAttribute="height" secondItem="K2H-v8-zM2" secondAttribute="height" id="KYV-9v-3Bt"/>
+                <constraint firstAttribute="bottom" secondItem="K2H-v8-zM2" secondAttribute="bottom" id="PAf-lV-bs0"/>
+                <constraint firstItem="K2H-v8-zM2" firstAttribute="leading" secondItem="a1Y-vH-Ghq" secondAttribute="leading" id="SqK-RE-YjA"/>
+                <constraint firstAttribute="trailing" secondItem="a1Y-vH-Ghq" secondAttribute="trailing" id="Tmq-pc-kL9"/>
+                <constraint firstItem="UDR-5z-Mbb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YdY-1K-SSt"/>
+                <constraint firstItem="UDR-5z-Mbb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="aKS-td-7vO"/>
+                <constraint firstItem="a1Y-vH-Ghq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rfC-SG-sDW"/>
+                <constraint firstItem="K2H-v8-zM2" firstAttribute="top" secondItem="a1Y-vH-Ghq" secondAttribute="bottom" constant="1" id="tJl-Ce-q4F"/>
+                <constraint firstItem="K2H-v8-zM2" firstAttribute="trailing" secondItem="a1Y-vH-Ghq" secondAttribute="trailing" id="uKk-is-kof"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="contentImage" destination="UDR-5z-Mbb" id="CCy-VY-H3U"/>
+                <outlet property="nisName" destination="K2H-v8-zM2" id="dmt-Sh-2DJ"/>
+                <outlet property="studentName" destination="a1Y-vH-Ghq" id="Fsf-dP-3mZ"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

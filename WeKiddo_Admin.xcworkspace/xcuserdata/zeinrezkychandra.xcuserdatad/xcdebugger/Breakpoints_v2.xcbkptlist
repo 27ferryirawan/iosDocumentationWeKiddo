@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeKiddo_Admin/Helper/Network Services/ACRequest.swift"
-            timestampString = "589353816.713593"
+            timestampString = "589463741.6490639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -26,7 +26,7 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "589115126.4327821"
+                  timestampString = "589462618.381609"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -41,7 +41,7 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "589115126.434453"
+                  timestampString = "589462618.383575"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -65,38 +65,150 @@
             endingLineNumber = "50"
             landmarkName = "toDetailContent()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Helper/Network Services/ACRequest.swift"
+            timestampString = "589463741.649222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "854"
+            endingLineNumber = "854"
+            landmarkName = "POST_USER_SCHOOL_LIST(userId:schoolID:yearID:keyword:tokenAccess:successCompletion:failCompletion:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WeKiddo_Admin.TaskListAdminCell.toDetail() -&gt; ()"
+                  symbolName = "static WeKiddo_Admin.ACRequest.POST_USER_SCHOOL_LIST(userId: Swift.String, schoolID: Swift.String, yearID: Swift.String, keyword: Swift.String, tokenAccess: Swift.String, successCompletion: (Swift.Array&lt;WeKiddo_Admin.UserListModel&gt;) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Classes/Task%20List%20Admin/Task%20List%20Admin%20Cell/TaskListAdminCell.swift"
-                  timestampString = "589115126.438749"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
+                  timestampString = "589462618.39152"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "178">
+                  startingLineNumber = "854"
+                  endingLineNumber = "854"
+                  offsetFromSymbolStart = "1624">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (WeKiddo_Admin.ExamRemedyScoreListModel) -&gt; () in WeKiddo_Admin.TaskListAdminCell.toDetail() -&gt; ()"
+                  symbolName = "closure #1 (Any) -&gt; () in static WeKiddo_Admin.ACRequest.POST_USER_SCHOOL_LIST(userId: Swift.String, schoolID: Swift.String, yearID: Swift.String, keyword: Swift.String, tokenAccess: Swift.String, successCompletion: (Swift.Array&lt;WeKiddo_Admin.UserListModel&gt;) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Classes/Task%20List%20Admin/Task%20List%20Admin%20Cell/TaskListAdminCell.swift"
-                  timestampString = "589115126.440589"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
+                  timestampString = "589462618.393464"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "855"
+                  endingLineNumber = "855"
+                  offsetFromSymbolStart = "321">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Helper/Network Services/ACRequest.swift"
+            timestampString = "589463741.649276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "858"
+            endingLineNumber = "858"
+            landmarkName = "POST_USER_SCHOOL_LIST(userId:schoolID:yearID:keyword:tokenAccess:successCompletion:failCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Helper/Network Services/ACRequest.swift"
+            timestampString = "589463741.649322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "855"
+            endingLineNumber = "855"
+            landmarkName = "POST_USER_SCHOOL_LIST(userId:schoolID:yearID:keyword:tokenAccess:successCompletion:failCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Helper/Network Services/ACAPI.swift"
+            timestampString = "589462779.686018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "POST(url:parameter:header:showHUD:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static WeKiddo_Admin.ACAPI.POST(url: Swift.String, parameter: Swift.Dictionary&lt;Swift.String, Any&gt;, header: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, showHUD: Swift.Bool, completion: (Any) -&gt; ()) -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACAPI.swift"
+                  timestampString = "589462618.416471"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "781">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static WeKiddo_Admin.ACAPI.POST(url: Swift.String, parameter: Swift.Dictionary&lt;Swift.String, Any&gt;, header: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, showHUD: Swift.Bool, completion: (Any) -&gt; ()) -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACAPI.swift"
+                  timestampString = "589462618.4184459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "154">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeKiddo_Admin/Helper/Network Services/ACAPI.swift"
+            timestampString = "589462779.686059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "POST(url:parameter:header:showHUD:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

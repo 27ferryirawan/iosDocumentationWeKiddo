@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSchoolListViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <connections>
+                <outlet property="addUserButton" destination="FX7-Nk-iwf" id="GTG-qZ-fd1"/>
+                <outlet property="tableView" destination="mOx-6m-xEH" id="wMu-Il-N9v"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-6m-xEH">
+                    <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Tk3-UA-Q6z"/>
+                        <outlet property="delegate" destination="-1" id="can-in-4AK"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FX7-Nk-iwf">
+                    <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                    <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6wC-34-P9F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="Add User">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mOx-6m-xEH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jcn-gz-Lbq"/>
+                <constraint firstItem="FX7-Nk-iwf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KXN-b6-Euj"/>
+                <constraint firstItem="FX7-Nk-iwf" firstAttribute="top" secondItem="mOx-6m-xEH" secondAttribute="bottom" id="Na6-VJ-nfl"/>
+                <constraint firstItem="mOx-6m-xEH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TVj-Zw-7KR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FX7-Nk-iwf" secondAttribute="bottom" id="dzp-7h-Jws"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FX7-Nk-iwf" secondAttribute="trailing" id="llp-Wk-igL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mOx-6m-xEH" secondAttribute="trailing" id="mTf-hh-86h"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

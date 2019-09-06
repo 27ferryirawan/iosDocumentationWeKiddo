@@ -135,5 +135,7 @@ struct ACData {
     static var TICKETPENDINGDATA = [TicketPendingModel]()
     static var DETAILTICKETDATA: DetailTicketModel!
     static var CLASSROOMDETAILDATA : ClassroomModel!
+    static var USERSCHOOLLISTDATA = [UserSchoolListModel]()
+    static var USERLISTDATA = [UserListModel]()
 //    static var STUDENTLISTSCOREADDNEW: !
 }

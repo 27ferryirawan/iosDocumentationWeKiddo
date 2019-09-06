@@ -31,6 +31,11 @@ class TaskListAdminCell: UITableViewCell {
             bgView.setBorderShadow(color:  UIColor.gray, shadowRadius: 3.0, shadowOpactiy: 1, shadowOffsetWidth: 3, shadowOffsetHeight: 3)
         }
     }
+    var detailNewObj: TaskListAdminModel? {
+        didSet {
+            cellConfigNew()
+        }
+    }
     var detailClassObj: TaskListAdminHistoryModel? {
         didSet {
             cellConfigClass()
@@ -54,7 +59,22 @@ class TaskListAdminCell: UITableViewCell {
                 SVProgressHUD.dismiss()
                 ACAlert.show(message: message)
             }
+        } else {
+            guard let obj = detailNewObj else { return }
+            ACRequest.POST_ADMIN_DETAIL_TASK(userId: ACData.LOGINDATA.userID, taskID: obj.task_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+                ACData.DETAILTASKADMINDATA = result
+                SVProgressHUD.dismiss()
+                self.delegate?.toDetailTask()
+            }) { (message) in
+                SVProgressHUD.dismiss()
+                ACAlert.show(message: message)
+            }
         }
+    }
+    func cellConfigNew() {
+        guard let obj = detailNewObj else { return }
+        taskLabel.text = obj.title
+        dateLabel.text = getMonth(time: obj.task_date)
     }
     func cellConfigClass() {
         guard let obj = detailClassObj else { return }

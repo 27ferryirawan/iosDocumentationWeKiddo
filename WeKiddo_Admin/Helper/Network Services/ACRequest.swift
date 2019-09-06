@@ -800,6 +800,106 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_USER_SCHOOL_SCHOOL_LIST(
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([UserSchoolListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_SCHOOL_SCHOOL_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var userSchoolLists = ACData.USERSCHOOLLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["school_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let userSchoolList = UserSchoolListModel()
+                            userSchoolList.objectMapping(json: jsonValue)
+                            userSchoolLists.append(userSchoolList)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(userSchoolLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_USER_SCHOOL_LIST(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([UserListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_SCHOOL_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var userLists = ACData.USERLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["user_school_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let userList = UserListModel()
+                            userList.objectMapping(json: jsonValue)
+                            userLists.append(userList)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(userLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_TICKET_ACTION(
+        userId:String,
+        ticketID:String,
+        action:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "ticket_id":ticketID,
+            "action":action
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_TICKET_ACTION)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_GET_DATA_FOR_EDIT_EXAM(
         userId:String,
         school_user_id:String,

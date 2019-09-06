@@ -113,9 +113,25 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
 //                let examScheduleVC = ExamViewController()
 //                self.navigationController?.pushViewController(examScheduleVC, animated: true)
 
-            case "38":
-                let detentionVC = DetentionViewController()
-                self.navigationController?.pushViewController(detentionVC, animated: true)
+            case "59":
+                ACRequest.POST_USER_SCHOOL_SCHOOL_LIST(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+                    ACData.USERSCHOOLLISTDATA = results
+                    SVProgressHUD.dismiss()
+                    
+                    ACRequest.POST_USER_SCHOOL_LIST(userId: ACData.LOGINDATA.userID, schoolID: ACData.USERSCHOOLLISTDATA[0].school_id, yearID: ACData.USERSCHOOLLISTDATA[0].year_id, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+                        ACData.USERLISTDATA = result
+                        SVProgressHUD.dismiss()
+                        let userschoolVC = UserSchoolListViewController()
+                        self.navigationController?.pushViewController(userschoolVC, animated: true)
+                    }) { (message) in
+                        SVProgressHUD.dismiss()
+                        ACAlert.show(message: message)
+                    }
+
+                }) { (message) in
+                    SVProgressHUD.dismiss()
+                    ACAlert.show(message: message)
+                }
             case "41":
                 let examVC = ExamViewController()
                 self.navigationController?.pushViewController(examVC, animated: true)

@@ -105,6 +105,8 @@ extension TaskListAdminViewController: UITableViewDataSource, UITableViewDelegat
         if isNew {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "taskListAdminCellID", for: indexPath) as? TaskListAdminCell)!
             cell.isHistory = false
+            cell.detailNewObj = ACData.TASKLISTADMINNEWDATA[indexPath.row]
+            cell.delegate = self
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "taskListAdminCellID", for: indexPath) as? TaskListAdminCell)!

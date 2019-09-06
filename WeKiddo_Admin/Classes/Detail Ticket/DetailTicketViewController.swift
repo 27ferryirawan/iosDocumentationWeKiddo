@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class DetailTicketViewController: UIViewController {
 
+    @IBOutlet weak var closeTicketButton: UIButton!
+    @IBOutlet weak var cancelTicketButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,23 @@ class DetailTicketViewController: UIViewController {
     }
     func configTable() {
         tableView.register(UINib(nibName: "DetailTicketContentCell", bundle: nil), forCellReuseIdentifier: "detailTicketContentCellID")
+        cancelTicketButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
+        closeTicketButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+    }
+    @objc func cancelAction() {
+        sendStatus(withStatus: "3")
+    }
+    @objc func closeAction() {
+        sendStatus(withStatus: "4")
+    }
+    func sendStatus(withStatus: String) {
+        ACRequest.POST_TICKET_ACTION(userId: ACData.LOGINDATA.userID, ticketID: ACData.DETAILTICKETDATA.ticket_id, action: withStatus, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: result)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }
 
