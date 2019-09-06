@@ -17,12 +17,13 @@ class ClassroomViewController: UIViewController {
     var levelName = [String]()
     var classLevelCount = [Int]()
     var selectedSchool:String?
+    var selectedSchoolId:String?
+    var selectedSchoolClassId:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigation()
         configTable()
         fetchData()
-        
     }
     func configNavigation() {
         detectAdaptiveClass()
@@ -48,6 +49,7 @@ class ClassroomViewController: UIViewController {
         }
         firstSelectedSchool = schools[0]
         selectedSchool = firstSelectedSchool
+        selectedSchoolId = schoolID
         ACRequest.POST_CLASSROOM_DASH(userId: ACData.LOGINDATA.userID, schoolId: schoolID, yearId: yearId, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classList) in
             ACData.CLASSROOMDASH = classList
             SVProgressHUD.dismiss()
@@ -105,11 +107,12 @@ extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 extension ClassroomViewController : ClassroomDelegate, ClassroomContentDelegate{
-    func selectedSchool(schoolName: String){
-        selectedSchool = schoolName
-    }
-    func firstPickerClass() -> String{
+    func firstPickerClass() -> String {
         return firstSelectedSchool!
+    }
+    func selectedSchool(schoolName: String, schoolId:String){
+        selectedSchool = schoolName
+        selectedSchoolId = schoolId
     }
     func refreshData(levelCount: Int, levelName: [String], classLevelCount: [Int]){
         self.levelCount = levelCount
@@ -117,9 +120,11 @@ extension ClassroomViewController : ClassroomDelegate, ClassroomContentDelegate{
         self.classLevelCount = classLevelCount
         self.tableView.reloadData()
     }
-    func toDetail(){
+    func toDetail(schoolClassId: String){
         let ClassroomDetailVC = ClassroomDetailViewController()
         ClassroomDetailVC.schoolName = selectedSchool!
+        ClassroomDetailVC.schoolId = selectedSchoolId!
+        ClassroomDetailVC.schoolClassId = schoolClassId
         self.navigationController?.pushViewController(ClassroomDetailVC, animated: true)
     }
 }

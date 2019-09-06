@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="751" id="GDh-Wv-ZYn" customClass="AddStudentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="751"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GDh-Wv-ZYn" id="1eT-wX-EEg">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="750.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jJ-au-MH5">
+                        <rect key="frame" x="28" y="23" width="39" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sch-uF-EIR" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="42" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="qcA-Pf-0MC"/>
+                        </constraints>
+                        <state key="normal" title="Select School">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOd-vH-xXc">
+                        <rect key="frame" x="28" y="88" width="33" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJ2-7H-hna" customClass="TextFieldSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="107" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="4ja-5j-hQh"/>
+                            <constraint firstAttribute="width" constant="360" id="Qjs-nb-nbn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdU-bw-XeD">
+                        <rect key="frame" x="28" y="153" width="20" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NIS" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-TS-OIh" customClass="TextFieldSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="172" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="Qol-EO-5iO"/>
+                            <constraint firstAttribute="height" constant="30" id="ufA-Vg-fWE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auY-a7-Hmb">
+                        <rect key="frame" x="28" y="354" width="47" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBr-Gf-dqz" customClass="TextFieldSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="373" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="Ofa-9j-SGX"/>
+                            <constraint firstAttribute="height" constant="30" id="UbW-0U-5fH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYQ-hb-sY9">
+                        <rect key="frame" x="28" y="484" width="54" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wP-d9-fP2" customClass="TextFieldSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="106" y="308" width="293" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="5ih-s1-Xb8"/>
+                            <constraint firstAttribute="width" constant="293" id="eVK-ow-7MD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OG5-LD-RDI">
+                        <rect key="frame" x="28" y="218" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="hKG-CB-O9F"/>
+                            <constraint firstAttribute="height" constant="60" id="oAn-Mc-7aO"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F02-vQ-gk3" customClass="FPNTextField" customModule="FlagPhoneNumber">
+                        <rect key="frame" x="28" y="308" width="65" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="x5B-Hh-C8h"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZG-GR-0Wq">
+                        <rect key="frame" x="28" y="289" width="56" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqz-E8-fWp" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="503" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="cTa-xn-WQ2"/>
+                        </constraints>
+                        <state key="normal" title="Join Date">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3X-gJ-3hO">
+                        <rect key="frame" x="28" y="549" width="58" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhY-om-M2X" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="568" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="FIg-Ez-XEw"/>
+                        </constraints>
+                        <state key="normal" title="Birth Date">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-zw-i8E">
+                        <rect key="frame" x="28" y="612.5" width="42" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbf-Ml-OFR" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="631.5" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="wly-4t-LyI"/>
+                        </constraints>
+                        <state key="normal" title="Gender">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gk8-EK-6eB">
+                        <rect key="frame" x="28" y="419" width="31" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-au-IBO" customClass="TextFieldSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
+                        <rect key="frame" x="28" y="438" width="360" height="30"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="360" id="cEy-Bh-OKa"/>
+                            <constraint firstAttribute="height" constant="30" id="ey8-0G-siN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akf-CN-5vW">
+                        <rect key="frame" x="75" y="210" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="AcM-I1-Lz9"/>
+                            <constraint firstAttribute="width" constant="20" id="nwt-VR-DNS"/>
+                        </constraints>
+                        <state key="normal" image="icon_red_cross"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKu-Dy-Yqg">
+                        <rect key="frame" x="0.0" y="686.5" width="414" height="64"/>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="7w0-bq-lc4"/>
+                        </constraints>
+                        <state key="normal" title="Save">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="F02-vQ-gk3" firstAttribute="top" secondItem="0ZG-GR-0Wq" secondAttribute="bottom" constant="4" id="0Zn-nN-N9g"/>
+                    <constraint firstItem="b3X-gJ-3hO" firstAttribute="top" secondItem="Cqz-E8-fWp" secondAttribute="bottom" constant="16" id="0jZ-Dq-TUr"/>
+                    <constraint firstItem="Snj-zw-i8E" firstAttribute="leading" secondItem="dhY-om-M2X" secondAttribute="leading" id="54O-mG-oFZ"/>
+                    <constraint firstItem="6wP-d9-fP2" firstAttribute="leading" secondItem="F02-vQ-gk3" secondAttribute="trailing" constant="13" id="6VG-6w-4CI"/>
+                    <constraint firstItem="b3X-gJ-3hO" firstAttribute="leading" secondItem="Cqz-E8-fWp" secondAttribute="leading" id="6WJ-lo-r1K"/>
+                    <constraint firstItem="3m0-au-IBO" firstAttribute="top" secondItem="Gk8-EK-6eB" secondAttribute="bottom" constant="4" id="6af-id-i18"/>
+                    <constraint firstItem="yOd-vH-xXc" firstAttribute="leading" secondItem="Sch-uF-EIR" secondAttribute="leading" id="7BO-IK-2MC"/>
+                    <constraint firstItem="sdU-bw-XeD" firstAttribute="leading" secondItem="oJ2-7H-hna" secondAttribute="leading" id="7hW-2j-tg1"/>
+                    <constraint firstItem="Sch-uF-EIR" firstAttribute="top" secondItem="8jJ-au-MH5" secondAttribute="bottom" constant="4" id="8dq-tw-z3O"/>
+                    <constraint firstItem="sdU-bw-XeD" firstAttribute="top" secondItem="oJ2-7H-hna" secondAttribute="bottom" constant="16" id="991-Zl-HOZ"/>
+                    <constraint firstItem="8jJ-au-MH5" firstAttribute="leading" secondItem="1eT-wX-EEg" secondAttribute="leading" constant="28" id="9uD-yE-ms6"/>
+                    <constraint firstItem="0ZG-GR-0Wq" firstAttribute="leading" secondItem="OG5-LD-RDI" secondAttribute="leading" id="AiJ-PZ-VuN"/>
+                    <constraint firstItem="Cqz-E8-fWp" firstAttribute="leading" secondItem="KYQ-hb-sY9" secondAttribute="leading" id="G04-bn-CVX"/>
+                    <constraint firstItem="8jJ-au-MH5" firstAttribute="top" secondItem="1eT-wX-EEg" secondAttribute="top" constant="23" id="GDS-FJ-4qz"/>
+                    <constraint firstItem="0ZG-GR-0Wq" firstAttribute="top" secondItem="OG5-LD-RDI" secondAttribute="bottom" constant="11" id="HJH-SZ-kkT"/>
+                    <constraint firstItem="Wbf-Ml-OFR" firstAttribute="leading" secondItem="Snj-zw-i8E" secondAttribute="leading" id="IAm-Jv-CvG"/>
+                    <constraint firstItem="fKu-Dy-Yqg" firstAttribute="top" secondItem="Wbf-Ml-OFR" secondAttribute="bottom" constant="25" id="LWb-a7-b4K"/>
+                    <constraint firstItem="KYQ-hb-sY9" firstAttribute="top" secondItem="3m0-au-IBO" secondAttribute="bottom" constant="16" id="Md9-jY-aAZ"/>
+                    <constraint firstItem="Cqz-E8-fWp" firstAttribute="top" secondItem="KYQ-hb-sY9" secondAttribute="bottom" constant="4" id="N5A-Hv-FWo"/>
+                    <constraint firstAttribute="trailing" secondItem="fKu-Dy-Yqg" secondAttribute="trailing" id="N6U-iG-0Hl"/>
+                    <constraint firstItem="F02-vQ-gk3" firstAttribute="leading" secondItem="0ZG-GR-0Wq" secondAttribute="leading" id="Nag-Ja-eBk"/>
+                    <constraint firstItem="Sch-uF-EIR" firstAttribute="leading" secondItem="8jJ-au-MH5" secondAttribute="leading" id="PIC-5B-Axc"/>
+                    <constraint firstItem="akf-CN-5vW" firstAttribute="leading" secondItem="OG5-LD-RDI" secondAttribute="trailing" constant="-13" id="QbV-2n-cdi"/>
+                    <constraint firstItem="Gk8-EK-6eB" firstAttribute="top" secondItem="gBr-Gf-dqz" secondAttribute="bottom" constant="16" id="TRx-n1-YhG"/>
+                    <constraint firstItem="gBr-Gf-dqz" firstAttribute="top" secondItem="auY-a7-Hmb" secondAttribute="bottom" constant="4" id="TmA-xu-GX8"/>
+                    <constraint firstItem="6wP-d9-fP2" firstAttribute="centerY" secondItem="F02-vQ-gk3" secondAttribute="centerY" id="U6Y-tg-jEO"/>
+                    <constraint firstItem="oJ2-7H-hna" firstAttribute="top" secondItem="yOd-vH-xXc" secondAttribute="bottom" constant="4" id="VLi-9p-KHI"/>
+                    <constraint firstItem="dhY-om-M2X" firstAttribute="top" secondItem="b3X-gJ-3hO" secondAttribute="bottom" constant="4" id="VUT-7M-QXI"/>
+                    <constraint firstItem="PYp-TS-OIh" firstAttribute="leading" secondItem="sdU-bw-XeD" secondAttribute="leading" id="Y5F-li-I88"/>
+                    <constraint firstItem="yOd-vH-xXc" firstAttribute="top" secondItem="Sch-uF-EIR" secondAttribute="bottom" constant="16" id="ZQD-8E-lWy"/>
+                    <constraint firstItem="3m0-au-IBO" firstAttribute="leading" secondItem="Gk8-EK-6eB" secondAttribute="leading" id="ZQX-D7-mAK"/>
+                    <constraint firstItem="PYp-TS-OIh" firstAttribute="top" secondItem="sdU-bw-XeD" secondAttribute="bottom" constant="4" id="bFa-5D-Zqg"/>
+                    <constraint firstItem="dhY-om-M2X" firstAttribute="leading" secondItem="b3X-gJ-3hO" secondAttribute="leading" id="biA-5m-Gpc"/>
+                    <constraint firstItem="OG5-LD-RDI" firstAttribute="top" secondItem="PYp-TS-OIh" secondAttribute="bottom" constant="16" id="edo-cb-bJw"/>
+                    <constraint firstItem="auY-a7-Hmb" firstAttribute="leading" secondItem="F02-vQ-gk3" secondAttribute="leading" id="iL7-FV-xFz"/>
+                    <constraint firstItem="Wbf-Ml-OFR" firstAttribute="top" secondItem="Snj-zw-i8E" secondAttribute="bottom" constant="4" id="j7E-nH-eF8"/>
+                    <constraint firstItem="Gk8-EK-6eB" firstAttribute="leading" secondItem="gBr-Gf-dqz" secondAttribute="leading" id="jPJ-DI-0Nd"/>
+                    <constraint firstAttribute="bottom" secondItem="fKu-Dy-Yqg" secondAttribute="bottom" id="jQn-lQ-rMk"/>
+                    <constraint firstItem="oJ2-7H-hna" firstAttribute="leading" secondItem="yOd-vH-xXc" secondAttribute="leading" id="nsd-ak-Lx1"/>
+                    <constraint firstItem="fKu-Dy-Yqg" firstAttribute="leading" secondItem="1eT-wX-EEg" secondAttribute="leading" id="oEm-pK-f25"/>
+                    <constraint firstItem="akf-CN-5vW" firstAttribute="top" secondItem="PYp-TS-OIh" secondAttribute="bottom" constant="8" id="ptQ-nF-b9c"/>
+                    <constraint firstItem="KYQ-hb-sY9" firstAttribute="leading" secondItem="3m0-au-IBO" secondAttribute="leading" id="qg0-ea-hKg"/>
+                    <constraint firstItem="OG5-LD-RDI" firstAttribute="leading" secondItem="PYp-TS-OIh" secondAttribute="leading" id="w69-7a-pG4"/>
+                    <constraint firstItem="auY-a7-Hmb" firstAttribute="top" secondItem="F02-vQ-gk3" secondAttribute="bottom" constant="16" id="w7A-m6-NIR"/>
+                    <constraint firstItem="gBr-Gf-dqz" firstAttribute="leading" secondItem="auY-a7-Hmb" secondAttribute="leading" id="wdT-IE-mZ1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="hCO-pL-f6v"/>
+            <connections>
+                <outlet property="NISTextField" destination="PYp-TS-OIh" id="Fdn-yz-mhv"/>
+                <outlet property="addressTextFiled" destination="gBr-Gf-dqz" id="sEs-wt-Fh1"/>
+                <outlet property="birthDatePickerBtn" destination="dhY-om-M2X" id="8Eq-eX-ual"/>
+                <outlet property="countryCode" destination="F02-vQ-gk3" id="RIR-7c-D6x"/>
+                <outlet property="deleteImgBtn" destination="akf-CN-5vW" id="bvZ-Rp-IEK"/>
+                <outlet property="emailTextField" destination="3m0-au-IBO" id="IOB-aB-sZD"/>
+                <outlet property="genderPickerBtn" destination="Wbf-Ml-OFR" id="ijH-AL-2Hb"/>
+                <outlet property="joinDatePickerBtn" destination="Cqz-E8-fWp" id="LEf-hh-vOt"/>
+                <outlet property="nameTextField" destination="oJ2-7H-hna" id="sLE-Na-8J3"/>
+                <outlet property="phoneNumbTextFiled" destination="6wP-d9-fP2" id="xBD-QE-UF2"/>
+                <outlet property="profileImage" destination="OG5-LD-RDI" id="toW-ir-gWF"/>
+                <outlet property="saveBtn" destination="fKu-Dy-Yqg" id="0b5-A9-Gaw"/>
+                <outlet property="schoolPickerBtn" destination="Sch-uF-EIR" id="MPA-S5-fZu"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="81.361607142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_red_cross" width="64" height="64"/>
+    </resources>
+</document>

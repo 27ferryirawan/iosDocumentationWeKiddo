@@ -22,22 +22,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tf1-y3-Gdx">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="754"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="PkE-P6-ZYU"/>
                         <outlet property="delegate" destination="-1" id="W0o-Ri-9l4"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fK6-1a-F1X">
+                    <rect key="frame" x="0.0" y="798" width="414" height="64"/>
+                    <color key="backgroundColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="i7N-vJ-iqW"/>
+                    </constraints>
+                    <state key="normal" title="Add Class">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fK6-1a-F1X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="03N-zu-Xw4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fK6-1a-F1X" secondAttribute="bottom" id="4J3-R4-Myp"/>
                 <constraint firstItem="Tf1-y3-Gdx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7sH-GM-i25"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Tf1-y3-Gdx" secondAttribute="bottom" id="O0P-Te-3S6"/>
+                <constraint firstItem="fK6-1a-F1X" firstAttribute="top" secondItem="Tf1-y3-Gdx" secondAttribute="bottom" id="EaO-fl-pnK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tf1-y3-Gdx" secondAttribute="trailing" id="ad8-3h-Zff"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fK6-1a-F1X" secondAttribute="trailing" id="coF-uV-F0N"/>
                 <constraint firstItem="Tf1-y3-Gdx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="q1g-Pr-bm9"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </view>
     </objects>
 </document>

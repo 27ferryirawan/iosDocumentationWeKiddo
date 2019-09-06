@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 
 protocol ClassroomContentDelegate : class{
-    func toDetail()
+    func toDetail(schoolClassId:String)
 }
 
 class ClassroomContentCell: UITableViewCell {
@@ -25,11 +25,9 @@ class ClassroomContentCell: UITableViewCell {
         super.awakeFromNib()
         toDetailBtn.addTarget(self, action: #selector(toDetail), for: .touchUpInside)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
     var classObjc : ClassroomClassesModel?{
         didSet{
             cellDataSet()
@@ -47,12 +45,11 @@ class ClassroomContentCell: UITableViewCell {
             ACData.CLASSROOMDETAILDATA = classDetailData
             print(ACData.CLASSROOMDETAILDATA.list_student.count)
             SVProgressHUD.dismiss()
-            self.delegate?.toDetail()
+            self.delegate?.toDetail(schoolClassId: obj.school_class_id)
         }, failCompletion: { (message) in
              SVProgressHUD.dismiss()
         })
     }
-    
     func cellDataSet(){
         guard let obj = classObjc else { return }
         if obj.countStudent > 1 {

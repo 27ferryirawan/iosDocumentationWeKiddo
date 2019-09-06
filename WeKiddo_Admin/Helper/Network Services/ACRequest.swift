@@ -3824,6 +3824,155 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_SAVE_EDIT_STUDENT_DETAIL(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        child_name:String,
+        child_nis:String,
+        child_address:String,
+        child_phone:String,
+        child_email:String,
+        child_gender:String,
+        child_bod:String,
+        school_class_id:String,
+        child_image:String,
+        role_id:String,
+        childId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId,
+            "child_name":child_name,
+            "child_nis":child_nis,
+            "child_address":child_address,
+            "child_phone":child_phone,
+            "child_email":child_email,
+            "child_gender":child_gender,
+            "child_bod":child_bod,
+            "school_class_id":school_class_id,
+            "child_image":child_image,
+            "role_id":role_id,
+            "child_id":childId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_SAVE_EDIT_STUDENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_GET_EDIT_STUDENT_DETAIL(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        childId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (GetEditStudentDetailModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId,
+            "child_id":childId
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_GET_EDIT_STUDENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let editStudentData = GetEditStudentDetailModel()
+                editStudentData.objcMapping(json: json)
+                successCompletion(editStudentData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_TERMINATE_CLASSROOM_STUDENT(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        childId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId,
+            "child_id":childId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_TERMINATE_STUDENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_CLASSROOM_STUDENT_ADD_PARENT(
+        user_id:String,
+        school_id:String,
+        year_id:String,
+        child_id:String,
+        parent_name:String,
+        parent_phone:String,
+        gender:String,
+        parent_type:String,
+        parent_address:String,
+        parent_email:String,
+        parent_id:String,
+        parent_image:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":user_id,
+            "school_id":school_id,
+            "year_id":year_id,
+            "child_id":child_id,
+            "parent_name":parent_name,
+            "parent_phone":parent_phone,
+            "gender":gender,
+            "parent_type":parent_type,
+            "parent_address":parent_address,
+            "parent_email":parent_email,
+            "parent_id":parent_id,
+            "parent_image":parent_image
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_CLASSROOM_STUDENT_ADD_PARENT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_CLASSROOM_DASH(
         userId:String,
         schoolId:String,
@@ -3877,6 +4026,37 @@ class ACRequest: NSObject {
             }
         }
     }
+    
+    static func POST_CLASSROOM_STUDENT_DETAIL(
+        userId:String,
+        school_id:String,
+        yearId:String,
+        child_id:String,
+        tokenAccess:String,
+        successCompletion:@escaping (StudentDetailModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":school_id,
+            "year_id":yearId,
+            "child_id":child_id
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_CLASSROOM_STUDENT_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let studentData = StudentDetailModel()
+                studentData.objcMapping(json: json)
+                successCompletion(studentData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    
     
     static func POST_CLASSROOM_CLASS_LIST(
         userId:String,

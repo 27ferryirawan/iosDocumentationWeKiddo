@@ -118,5 +118,8 @@ struct ACData {
     static var ABSENCEDETAILMODEL: AbsenceDetailModel!
     static var TASKLISTDATA = [TaskListModel]()
     static var CLASSROOMDETAILDATA : ClassroomModel!
+    static var CLASSROOMSTUDENTDETAILDATA : StudentDetailModel!
+    static var CLASSROOMGETEDITSTUDENTDATA : GetEditStudentDetailModel!
+    static var CLASSROOMIMAGEURL : ClassroomMediaModel!
 //    static var STUDENTLISTSCOREADDNEW: !
 }

@@ -58,7 +58,7 @@ class ClassroomModel : NSObject{
         secre_id = json["data"]["class_detail"]["secretary"]["child_id"].stringValue
         secre_name = json["data"]["class_detail"]["secretary"]["child_name"].stringValue
         secre_image = json["data"]["class_detail"]["secretary"]["child_image"].stringValue
-        secre_image = json["data"]["class_detail"]["secretary"]["child_nis"].stringValue
+        secre_nis = json["data"]["class_detail"]["secretary"]["child_nis"].stringValue
         
         for data in json["data"]["class_detail"]["list_student"].arrayValue{
             let d = ClassroomListStudentModel()
