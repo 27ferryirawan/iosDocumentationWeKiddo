@@ -56,6 +56,9 @@ class ACUrl: NSObject {
     static let PARENT_USER_SCHOOL_ADD_SUBJECT = PARENT_APP + "user-school/save-subject-class" // [POST] user_id, school_id, year_id, school_user_id, subject_id, school_class_id
     static let PARENT_USER_SCHOOL_REMOVE_SUBJECT = PARENT_APP + "user-school/remove-subject-class" // [POST] user_id, school_id, year_id, school_user_id, school_subject_teacher_id
     static let PARENT_USERS_LIST = PARENT_APP + "user/list" // [POST] user_id, keyword
+    static let PARENT_USER_ADDPARAM = PARENT_APP + "user/addparams" // [POST] user_id
+    static let PARENT_USER_SAVE = PARENT_APP + "user/save" // [POST] user_id, admin_id, name, address, phone, email, gender, admin_pos_id, group_acl_id, admin_photo
+    static let PARENT_USER_DETAIL = PARENT_APP + "user/detail" // [POST] user_id, admin_id
     // PERMISSION RULESF
     /*
      Permission status :

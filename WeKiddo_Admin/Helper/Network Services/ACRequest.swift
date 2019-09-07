@@ -469,6 +469,46 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_SAVE_USER_NEW(
+        userId:String,
+        adminID:String,
+        name:String,
+        address:String,
+        phone:String,
+        email:String,
+        gender:String,
+        adminPosID:String,
+        groupACLId:String,
+        adminPhoto:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "admin_id":adminID,
+            "name":name,
+            "address":address,
+            "phone":phone,
+            "email":email,
+            "gender":gender,
+            "admin_pos_id":adminPosID,
+            "group_acl_id":groupACLId,
+            "admin_photo":adminPhoto
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_SAVE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_SAVE_ABSENCE(
         userId:String,
         childID:String,
@@ -499,6 +539,32 @@ class ACRequest: NSObject {
             print(json)
             if(json["status"] == "success") {
                 successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_USERS_DETAIL(
+        userId:String,
+        adminID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (UsersDetailModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "admin_id":adminID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let usersDetail = UsersDetailModel()
+                usersDetail.objectMapping(json: json)
+                successCompletion(usersDetail)
             } else {
                 failCompletion(json["status"].stringValue)
             }
@@ -1018,6 +1084,30 @@ class ACRequest: NSObject {
                     }
                 }
                 successCompletion(usersLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_USERS_ADDPARAMS(
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (AddUserParamModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_ADDPARAM)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let dashboard = AddUserParamModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
             } else {
                 failCompletion(json["status"].stringValue)
             }

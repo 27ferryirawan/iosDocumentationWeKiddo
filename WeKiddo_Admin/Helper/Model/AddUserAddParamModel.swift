@@ -65,3 +65,42 @@ class AddUserAddParamSubjectModel: NSObject {
         subject_name = json["subject_name"].stringValue
     }
 }
+
+
+class AddUserParamModel: NSObject {
+    var user_position_list = [AddUserPositionModel]()
+    var user_acl_list = [AddUserACLModel]()
+
+    func objectMapping(json : JSON){
+        for data in json["data"]["param_list"]["position_list"].arrayValue{
+            let d = AddUserPositionModel()
+            d.objectMapping(json: data)
+            user_position_list.append(d)
+        }
+        for data in json["data"]["param_list"]["acl_list"].arrayValue{
+            let d = AddUserACLModel()
+            d.objectMapping(json: data)
+            user_acl_list.append(d)
+        }
+    }
+}
+
+class AddUserPositionModel: NSObject {
+    var admin_pos_name = ""
+    var admin_pos_id = ""
+    
+    func objectMapping(json : JSON){
+        admin_pos_name = json["admin_pos_name"].stringValue
+        admin_pos_id = json["admin_pos_id"].stringValue
+    }
+}
+
+class AddUserACLModel: NSObject {
+    var group_acl_id = ""
+    var desc_acl = ""
+    
+    func objectMapping(json : JSON){
+        group_acl_id = json["group_acl_id"].stringValue
+        desc_acl = json["desc_acl"].stringValue
+    }
+}

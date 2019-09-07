@@ -234,6 +234,11 @@
 		E61E3B4023234F110016E13D /* UsersImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B3E23234F110016E13D /* UsersImageCollectionCell.xib */; };
 		E61E3B44232379870016E13D /* AddUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B42232379870016E13D /* AddUsersViewController.swift */; };
 		E61E3B45232379870016E13D /* AddUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B43232379870016E13D /* AddUsersViewController.xib */; };
+		E61E3B49232397630016E13D /* AddUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B47232397630016E13D /* AddUsersCell.swift */; };
+		E61E3B4A232397630016E13D /* AddUsersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B48232397630016E13D /* AddUsersCell.xib */; };
+		E61E3B4E23242F5C0016E13D /* EditUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B4C23242F5C0016E13D /* EditUsersViewController.swift */; };
+		E61E3B4F23242F5C0016E13D /* EditUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B4D23242F5C0016E13D /* EditUsersViewController.xib */; };
+		E61E3B51232434630016E13D /* UsersDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B50232434630016E13D /* UsersDetailModel.swift */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
@@ -1107,6 +1112,11 @@
 		E61E3B3E23234F110016E13D /* UsersImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersImageCollectionCell.xib; sourceTree = "<group>"; };
 		E61E3B42232379870016E13D /* AddUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsersViewController.swift; sourceTree = "<group>"; };
 		E61E3B43232379870016E13D /* AddUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUsersViewController.xib; sourceTree = "<group>"; };
+		E61E3B47232397630016E13D /* AddUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddUsersCell.swift; path = "WeKiddo_Admin/Classes/Add Users/AddUsersCell.swift"; sourceTree = SOURCE_ROOT; };
+		E61E3B48232397630016E13D /* AddUsersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddUsersCell.xib; path = "WeKiddo_Admin/Classes/Add Users/AddUsersCell.xib"; sourceTree = SOURCE_ROOT; };
+		E61E3B4C23242F5C0016E13D /* EditUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUsersViewController.swift; sourceTree = "<group>"; };
+		E61E3B4D23242F5C0016E13D /* EditUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUsersViewController.xib; sourceTree = "<group>"; };
+		E61E3B50232434630016E13D /* UsersDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailModel.swift; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -2421,10 +2431,29 @@
 		E61E3B412323796D0016E13D /* Add Users */ = {
 			isa = PBXGroup;
 			children = (
+				E61E3B46232397410016E13D /* Add Users Cell */,
 				E61E3B42232379870016E13D /* AddUsersViewController.swift */,
 				E61E3B43232379870016E13D /* AddUsersViewController.xib */,
 			);
 			path = "Add Users";
+			sourceTree = "<group>";
+		};
+		E61E3B46232397410016E13D /* Add Users Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3B47232397630016E13D /* AddUsersCell.swift */,
+				E61E3B48232397630016E13D /* AddUsersCell.xib */,
+			);
+			path = "Add Users Cell";
+			sourceTree = "<group>";
+		};
+		E61E3B4B23242F3F0016E13D /* Edit Users */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3B4C23242F5C0016E13D /* EditUsersViewController.swift */,
+				E61E3B4D23242F5C0016E13D /* EditUsersViewController.xib */,
+			);
+			path = "Edit Users";
 			sourceTree = "<group>";
 		};
 		E624D106227B5890001220E9 /* Agency */ = {
@@ -3847,6 +3876,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E61E3B4B23242F3F0016E13D /* Edit Users */,
 				E61E3B412323796D0016E13D /* Add Users */,
 				E61E3B2D232349010016E13D /* Users */,
 				E61E3B17232281050016E13D /* Add User List */,
@@ -4156,6 +4186,7 @@
 				E61E3B2523228D410016E13D /* AddUserAddParamModel.swift */,
 				E61E3B2B2322DAA90016E13D /* AddNewSubjectClassModel.swift */,
 				E61E3B3723234B860016E13D /* UsersListsModel.swift */,
+				E61E3B50232434630016E13D /* UsersDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4787,6 +4818,7 @@
 				E6961048227FD9150000FC92 /* QuestionAddNewCell.xib in Resources */,
 				E63D83C122D3BC94005F07B4 /* AdministrationCell.xib in Resources */,
 				E66C5ED222E7F7F400AD186C /* ExamScoreViewController.xib in Resources */,
+				E61E3B4A232397630016E13D /* AddUsersCell.xib in Resources */,
 				E6BA19B62266D29300FD246B /* NotificationCell.xib in Resources */,
 				E689B737231A9E4800DAEFFF /* SchoolMonitoringUserListCell.xib in Resources */,
 				E61A97CA226E0BE10003E89F /* next@2x.png in Resources */,
@@ -4821,6 +4853,7 @@
 				E689B732231A9DDE00DAEFFF /* SchoolMonitoringUserListViewController.xib in Resources */,
 				E682D6AA22D9065700214F4E /* ClassTeacherRowCell.xib in Resources */,
 				E600B45B22AE764E007E7C58 /* AttachmentCell.xib in Resources */,
+				E61E3B4F23242F5C0016E13D /* EditUsersViewController.xib in Resources */,
 				E6863F93229EFD78003C4F1F /* SchoolHeaderCell.xib in Resources */,
 				E689B72B231A302F00DAEFFF /* AbsenceListCollectionCell.xib in Resources */,
 				E6C63A9D231CD86700367DE4 /* AddNewTaskAdminSubmitButtonCell.xib in Resources */,
@@ -5030,6 +5063,7 @@
 				E600B44022ACFCF5007E7C58 /* ExamListDataModel.swift in Sources */,
 				E6726E2E22A650820024F1BD /* AnnouncementListModel.swift in Sources */,
 				E61A97BD226E0BD60003E89F /* WeekdaysView.swift in Sources */,
+				E61E3B4E23242F5C0016E13D /* EditUsersViewController.swift in Sources */,
 				E699F5CA22DE306F00775758 /* UpcomingSessionListCell.swift in Sources */,
 				E69AC7B822829420000284A1 /* MenuCategoryOthersModel.swift in Sources */,
 				E6AAC3AC2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift in Sources */,
@@ -5073,6 +5107,7 @@
 				E66C5EBB22E2162B00AD186C /* SubjectTeacherByClassHeaderCell.swift in Sources */,
 				E6F427DB22968AEF00DB4250 /* CareerDetailViewController.swift in Sources */,
 				E694F2BE22B108D600467F3C /* SearchAssignmentCell.swift in Sources */,
+				E61E3B51232434630016E13D /* UsersDetailModel.swift in Sources */,
 				E69383B522A6DFE600456CA0 /* ExamsModel.swift in Sources */,
 				E63D83C022D3BC94005F07B4 /* AdministrationCell.swift in Sources */,
 				E6BA19F62269603F00FD246B /* SessionsModel.swift in Sources */,
@@ -5275,6 +5310,7 @@
 				E624D121227C866E001220E9 /* NewsHeaderCell.swift in Sources */,
 				E65BF67D22CF730700C57FEF /* AssignmentDetailFooterCell.swift in Sources */,
 				E6BFA1442275FAAB00E90803 /* MoreMenuModel.swift in Sources */,
+				E61E3B49232397630016E13D /* AddUsersCell.swift in Sources */,
 				E682D6A922D9065700214F4E /* ClassTeacherRowCell.swift in Sources */,
 				BE0030F322A506250050B48E /* MoreSchoolCell.swift in Sources */,
 				BE54A53A22903F3600162552 /* AgencyModel.swift in Sources */,

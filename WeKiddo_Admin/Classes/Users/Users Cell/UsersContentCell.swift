@@ -7,10 +7,21 @@
 //
 
 import UIKit
+import SVProgressHUD
+
+protocol UsersContentCellDelegate: class {
+    func toDetail()
+}
 
 class UsersContentCell: UITableViewCell {
 
-    @IBOutlet weak var adminCollection: UICollectionView!
+    @IBOutlet weak var adminCollection: UICollectionView! {
+        didSet {
+            adminCollection.layer.cornerRadius = 5.0
+            adminCollection.layer.borderWidth = 1.0
+            adminCollection.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+        }
+    }
     @IBOutlet weak var adminROle: UILabel!
     var adminArray = 0
     var index = 0
@@ -19,6 +30,9 @@ class UsersContentCell: UITableViewCell {
             cellConfig()
         }
     }
+    
+    weak var delegate: UsersContentCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         adminCollection.register(UINib(nibName: "UsersImageCollectionCell", bundle: nil), forCellWithReuseIdentifier: "usersImageCollectionCellID")
@@ -45,6 +59,17 @@ extension UsersContentCell: UICollectionViewDelegate, UICollectionViewDataSource
             placeholderImage: UIImage(named: "WeKiddoLogo"),
             options: .refreshCached
         )
+        cell.contentNameLabel.text = ACData.USERSLISTSDATA[index].members[indexPath.row].name
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        ACRequest.POST_USERS_DETAIL(userId: ACData.LOGINDATA.userID, adminID: ACData.USERSLISTSDATA[index].members[indexPath.row].admin_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            ACData.USERSDETAILDATA = result
+            SVProgressHUD.dismiss()
+            self.delegate?.toDetail()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }

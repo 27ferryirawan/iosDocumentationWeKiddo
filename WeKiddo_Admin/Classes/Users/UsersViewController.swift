@@ -29,15 +29,15 @@ class UsersViewController: UIViewController {
         addUserButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
     }
     @objc func addAction() {
-//        ACRequest.POST_USER_SCHOOL_ADDPARAM(userId: ACData.LOGINDATA.userID, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
-//            ACData.USERLISTPARAMDATA = result
-//            SVProgressHUD.dismiss()
-//            let addVC = AddUserListViewController()
-//            self.navigationController?.pushViewController(addVC, animated: true)
-//        }) { (message) in
-//            SVProgressHUD.dismiss()
-//            ACAlert.show(message: message)
-//        }
+        ACRequest.POST_USERS_ADDPARAMS(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            ACData.USERDATA = results
+            SVProgressHUD.dismiss()
+            let addVC = AddUsersViewController()
+            self.navigationController?.pushViewController(addVC, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }
 

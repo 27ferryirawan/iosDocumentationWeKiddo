@@ -1,15 +1,16 @@
 //
-//  AddUsersViewController.swift
+//  EditUsersViewController.swift
 //  WeKiddo_Admin
 //
-//  Created by zein rezky chandra on 07/09/19.
+//  Created by zein rezky chandra on 08/09/19.
 //  Copyright © 2019 PT. Absolute Connection. All rights reserved.
 //
 
 import UIKit
 
-class AddUsersViewController: UIViewController {
+class EditUsersViewController: UIViewController {
 
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var imagePickedBase64 = ""
@@ -21,14 +22,14 @@ class AddUsersViewController: UIViewController {
     }
     func configNavigation() {
         detectAdaptiveClass()
-        backStyleNavigationController(pageTitle: "Add User", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
+        backStyleNavigationController(pageTitle: "Edit User", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
     }
     func configTable() {
         tableView.register(UINib(nibName: "AddUsersCell", bundle: nil), forCellReuseIdentifier: "addUsersCellID")
     }
 }
 
-extension AddUsersViewController: UITableViewDataSource, UITableViewDelegate {
+extension EditUsersViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -40,17 +41,19 @@ extension AddUsersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "addUsersCellID", for: indexPath) as? AddUsersCell)!
+        /*
         cell.imageChoosen = imagePickedBase64
         let imageData = Data(base64Encoded: imagePickedBase64)
         let image = UIImage(data: imageData!)
         cell.avatarImage.image = image
         cell.detailObj = ACData.USERDATA
         cell.delegate = self
+        */
         return cell
     }
 }
 
-extension AddUsersViewController: AddUsersCellDelegate {
+extension EditUsersViewController: AddUsersCellDelegate {
     func showImageAttachment() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -72,7 +75,7 @@ extension AddUsersViewController: AddUsersCellDelegate {
     }
 }
 
-extension AddUsersViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension EditUsersViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedParentImage = info[.originalImage] as? UIImage else {
@@ -82,7 +85,7 @@ extension AddUsersViewController: UIImagePickerControllerDelegate, UINavigationC
         let imageData = newParentImage.pngData()!
         let imageStr = imageData.base64EncodedString()
         self.imagePickedBase64 = imageStr
-//        self.imagePicked = newParentImage
+        //        self.imagePicked = newParentImage
         picker.dismiss(animated: true, completion: nil)
         tableView.reloadData()
     }
