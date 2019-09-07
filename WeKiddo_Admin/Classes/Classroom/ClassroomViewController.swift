@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class ClassroomViewController: UIViewController {
 
+    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var firstSelectedSchool:String?
     var levelCount = 0
@@ -24,6 +25,11 @@ class ClassroomViewController: UIViewController {
         configNavigation()
         configTable()
         fetchData()
+        addBtn.addTarget(self, action: #selector(toAddClass), for: .touchUpInside)
+    }
+    @objc func toAddClass(){
+        let addClassVC = AddClassroomViewController()
+        self.navigationController?.pushViewController(addClassVC, animated: true)
     }
     func configNavigation() {
         detectAdaptiveClass()

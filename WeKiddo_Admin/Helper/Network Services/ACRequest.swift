@@ -4056,7 +4056,40 @@ class ACRequest: NSObject {
         }
     }
     
-    
+    static func POST_ADD_CLASSROOM_TEACHERLIST(
+        userId:String,
+        schoolId:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([AddClassroomTeacherListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_ADD_CLASSROOM_GET_TEACHERLIST)", parameter: parameters, header: headers, showHUD: false) { (jsonData) in
+            var teacherList = ACData.CLASSROOMADDTEACHERLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["teacher_list"].array{
+                    if data.count > 0{
+                        for jsonValue in data{
+                            let teacherL = AddClassroomTeacherListModel()
+                            teacherL.objcMapping(json: jsonValue)
+                            teacherList.append(teacherL)
+                        }
+                    } else {
+                        failCompletion("Have No Teacher")
+                    }
+                    successCompletion(teacherList)
+                }
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
     
     static func POST_CLASSROOM_CLASS_LIST(
         userId:String,
@@ -4089,6 +4122,32 @@ class ACRequest: NSObject {
                     }
                     successCompletion(classList)
                 }
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ADD_CLASSROOM_GET_LEVEL_MAJOR(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (AddClassroomLevelMajorModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_ADD_CLASSROOM_GET_LEVELMAJOR)", parameter: parameters, header: headers, showHUD: false) { (jsonData) in
+            let json = JSON(jsonData)
+            if(json["status"] == "success") {
+                let classRML = AddClassroomLevelMajorModel()
+                classRML.objcMapping(json: json)
+                successCompletion(classRML)
             } else {
                 failCompletion(json["status"].stringValue)
             }

@@ -31,7 +31,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="360" id="iGE-Jr-kBf"/>
                         </constraints>
-                        <state key="normal" title="Select School">
+                        <state key="normal" title="School">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -58,7 +58,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="360" id="tsz-3u-wP4"/>
                         </constraints>
-                        <state key="normal" title="Select School">
+                        <state key="normal" title="Level">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -75,7 +75,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="360" id="66R-xn-5qK"/>
                         </constraints>
-                        <state key="normal" title="Select School">
+                        <state key="normal" title="Major">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="titleShadowColor" red="0.0039215686269999999" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -127,7 +127,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-TZ-l7G">
                         <rect key="frame" x="28" y="465" width="360" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-Wh-cuh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-Wh-cuh">
                                 <rect key="frame" x="16" y="12.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="FjQ-oK-IWL"/>
@@ -194,7 +194,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7v-Hd-fcz">
                         <rect key="frame" x="28" y="600" width="360" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-TJ-aRL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-TJ-aRL">
                                 <rect key="frame" x="16" y="12.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="KgF-zn-WXg"/>
@@ -261,7 +261,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UW-RN-q2S">
                         <rect key="frame" x="28" y="735" width="360" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uT9-VE-UBx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="uT9-VE-UBx">
                                 <rect key="frame" x="16" y="12.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="8ay-UW-mA0"/>
@@ -361,9 +361,24 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="CDB-fy-NDK"/>
             <connections>
-                <outlet property="addressTextFiled" destination="NO3-wP-NwS" id="B2j-Km-jK6"/>
-                <outlet property="saveBtn" destination="kRK-7z-9YC" id="DTa-eK-hUO"/>
-                <outlet property="schoolPickerBtn" destination="7Yk-cF-Os1" id="O6u-bO-la4"/>
+                <outlet property="SecretaryNISLbl" destination="047-SW-4y4" id="nwo-z8-L2b"/>
+                <outlet property="addBtn" destination="kRK-7z-9YC" id="jjJ-k0-9HF"/>
+                <outlet property="choosClassLeaderBtn" destination="7og-Dj-0o9" id="m51-SU-DDg"/>
+                <outlet property="choosClassSecretaryBtn" destination="LyM-My-R2a" id="nII-oe-dEa"/>
+                <outlet property="chooseHomeroomBtn" destination="XNA-HO-luT" id="Zo2-Kj-pn1"/>
+                <outlet property="classCodeTextField" destination="NO3-wP-NwS" id="aDA-3g-lVV"/>
+                <outlet property="classLeaderImg" destination="Vu6-TJ-aRL" id="HgM-T8-gd0"/>
+                <outlet property="classLeaderNameLbl" destination="Sp8-yB-TVQ" id="1Ut-2p-TYh"/>
+                <outlet property="classLeaderNisLbl" destination="xOr-ip-JXm" id="wtL-XO-2vR"/>
+                <outlet property="descriptionTextView" destination="xMm-ip-Lel" id="5pf-lm-fyA"/>
+                <outlet property="homeroomImg" destination="oT8-Wh-cuh" id="05j-Iz-U7n"/>
+                <outlet property="homeroomNUPTKLbl" destination="tWB-au-jS3" id="2UR-1F-dmO"/>
+                <outlet property="homeroomNameLbl" destination="5Dl-Kz-0sv" id="OcK-wN-baa"/>
+                <outlet property="levelPicker" destination="YvE-Ry-4X1" id="esL-XN-qjM"/>
+                <outlet property="majorPicker" destination="88R-8A-aKz" id="JPI-u3-5vh"/>
+                <outlet property="schoolPicker" destination="7Yk-cF-Os1" id="cxC-R8-1ff"/>
+                <outlet property="secretaryImage" destination="uT9-VE-UBx" id="fn3-wn-hkJ"/>
+                <outlet property="secretaryNameLbl" destination="J8G-Pj-XTW" id="hxz-BP-e4r"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="162.38839285714286"/>
         </tableViewCell>

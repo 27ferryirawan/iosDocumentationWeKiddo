@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassroomViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
             <connections>
+                <outlet property="addBtn" destination="fK6-1a-F1X" id="Kea-Cl-Ogr"/>
                 <outlet property="tableView" destination="Tf1-y3-Gdx" id="0r3-dd-d0U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
