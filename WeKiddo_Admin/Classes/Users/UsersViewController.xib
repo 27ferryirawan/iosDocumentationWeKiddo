@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UsersViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
             <connections>
+                <outlet property="addUserButton" destination="SvA-jn-A6O" id="8Vo-4I-QSO"/>
+                <outlet property="tableView" destination="BmD-Ef-2sH" id="V2A-T5-1zj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +25,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BmD-Ef-2sH">
                     <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="iSO-Mj-xd7"/>
+                        <outlet property="delegate" destination="-1" id="MqP-OC-Fg5"/>
+                    </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvA-jn-A6O">
                     <rect key="frame" x="0.0" y="818" width="414" height="44"/>

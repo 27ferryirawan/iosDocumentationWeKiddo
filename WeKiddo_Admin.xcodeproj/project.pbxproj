@@ -232,6 +232,8 @@
 		E61E3B3C23234E8A0016E13D /* UsersContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B3A23234E890016E13D /* UsersContentCell.xib */; };
 		E61E3B3F23234F110016E13D /* UsersImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B3D23234F110016E13D /* UsersImageCollectionCell.swift */; };
 		E61E3B4023234F110016E13D /* UsersImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B3E23234F110016E13D /* UsersImageCollectionCell.xib */; };
+		E61E3B44232379870016E13D /* AddUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B42232379870016E13D /* AddUsersViewController.swift */; };
+		E61E3B45232379870016E13D /* AddUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B43232379870016E13D /* AddUsersViewController.xib */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
@@ -1103,6 +1105,8 @@
 		E61E3B3A23234E890016E13D /* UsersContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersContentCell.xib; sourceTree = "<group>"; };
 		E61E3B3D23234F110016E13D /* UsersImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersImageCollectionCell.swift; sourceTree = "<group>"; };
 		E61E3B3E23234F110016E13D /* UsersImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersImageCollectionCell.xib; sourceTree = "<group>"; };
+		E61E3B42232379870016E13D /* AddUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsersViewController.swift; sourceTree = "<group>"; };
+		E61E3B43232379870016E13D /* AddUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUsersViewController.xib; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -2412,6 +2416,15 @@
 				E61E3B3E23234F110016E13D /* UsersImageCollectionCell.xib */,
 			);
 			path = "Users Cell";
+			sourceTree = "<group>";
+		};
+		E61E3B412323796D0016E13D /* Add Users */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3B42232379870016E13D /* AddUsersViewController.swift */,
+				E61E3B43232379870016E13D /* AddUsersViewController.xib */,
+			);
+			path = "Add Users";
 			sourceTree = "<group>";
 		};
 		E624D106227B5890001220E9 /* Agency */ = {
@@ -3834,6 +3847,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E61E3B412323796D0016E13D /* Add Users */,
 				E61E3B2D232349010016E13D /* Users */,
 				E61E3B17232281050016E13D /* Add User List */,
 				E61E3B05232209A70016E13D /* User List */,
@@ -4674,6 +4688,7 @@
 				E682D68422D623AD00214F4E /* BannerCollectionCell.xib in Resources */,
 				E6ADFE1522811F1C004FEF49 /* DismissCell.xib in Resources */,
 				E63D83F422D4BF1C005F07B4 /* AddDetentionHeaderCell.xib in Resources */,
+				E61E3B45232379870016E13D /* AddUsersViewController.xib in Resources */,
 				BE2F585222AC3A4300103CD7 /* StudentProfileViewController.xib in Resources */,
 				E66C5F0F22E9706C00AD186C /* EditExamSessionCollectionCell.xib in Resources */,
 				E66C5F0122E8E2D500AD186C /* EditExamSectionCell.xib in Resources */,
@@ -5037,6 +5052,7 @@
 				E63D83A922D0F0BB005F07B4 /* AssignmentScoreStudentCell.swift in Sources */,
 				E6AAC3B12318DC040084ED93 /* TaskListDetailViewController.swift in Sources */,
 				E682D6C122D9EAF500214F4E /* SubjectTeacherDetailSessionCell.swift in Sources */,
+				E61E3B44232379870016E13D /* AddUsersViewController.swift in Sources */,
 				E6416F0922EC6E5900ACDCD6 /* EventMonitoringTotalParticipantCell.swift in Sources */,
 				E66C5EF722E8D3D600AD186C /* EditExamViewController.swift in Sources */,
 				E626B6C222C5211700FF660A /* AttendanceDetailViewController.swift in Sources */,

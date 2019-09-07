@@ -105,6 +105,8 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
                 ACRequest.POST_USERS_LISTS(userId: ACData.LOGINDATA.userID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
                     ACData.USERSLISTSDATA = results
                     SVProgressHUD.dismiss()
+                    let usersVC = UsersViewController()
+                    self.navigationController?.pushViewController(usersVC, animated: true)
                 }) { (message) in
                     SVProgressHUD.dismiss()
                     ACAlert.show(message: message)

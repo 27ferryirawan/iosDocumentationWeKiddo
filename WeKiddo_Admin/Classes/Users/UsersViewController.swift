@@ -7,10 +7,63 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class UsersViewController: UIViewController {
 
+    @IBOutlet weak var addUserButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        configNavigation()
+        configTable()
+    }
+    func configNavigation() {
+        detectAdaptiveClass()
+        backStyleNavigationController(pageTitle: "User", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
+    }
+    func configTable() {
+        tableView.register(UINib(nibName: "UsersCell", bundle: nil), forCellReuseIdentifier: "usersSearchCellID")
+        tableView.register(UINib(nibName: "UsersContentCell", bundle: nil), forCellReuseIdentifier: "usersContentCellID")
+        addUserButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
+    }
+    @objc func addAction() {
+//        ACRequest.POST_USER_SCHOOL_ADDPARAM(userId: ACData.LOGINDATA.userID, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+//            ACData.USERLISTPARAMDATA = result
+//            SVProgressHUD.dismiss()
+//            let addVC = AddUserListViewController()
+//            self.navigationController?.pushViewController(addVC, animated: true)
+//        }) { (message) in
+//            SVProgressHUD.dismiss()
+//            ACAlert.show(message: message)
+//        }
+    }
+}
+
+extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1 + ACData.USERSLISTSDATA.count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 44
+        } else {
+            return 140
+        }
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "usersSearchCellID", for: indexPath) as? UsersCell)!
+            return cell
+        } else {
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "usersContentCellID", for: indexPath) as? UsersContentCell)!
+            cell.index = indexPath.row - 1
+            cell.detailObj = ACData.USERSLISTSDATA[indexPath.row - 1]
+            return cell
+        }
     }
 }
