@@ -902,6 +902,92 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_USER_SCHOOL_ADD_NEW_SUBJECT(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        schoolUserID:String,
+        subjectID:String,
+        schoolClassID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([AddNewSubjectClassModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "school_user_id":schoolUserID,
+            "subject_id":subjectID,
+            "school_class_id":schoolClassID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_SCHOOL_ADD_SUBJECT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var schoolLists = ACData.SAVESUBJECTNEWDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["subject_class"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let schoolList = AddNewSubjectClassModel()
+                            schoolList.objectMapping(json: jsonValue)
+                            schoolLists.append(schoolList)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(schoolLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_USER_SCHOOL_REMOVE_SUBJECT(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        schoolUserID:String,
+        schoolSubjectTeacherID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([AddNewSubjectClassModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "school_user_id":schoolUserID,
+            "school_subject_teacher_id":schoolSubjectTeacherID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USER_SCHOOL_REMOVE_SUBJECT)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var schoolLists = ACData.SAVESUBJECTNEWDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["subject_class"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let schoolList = AddNewSubjectClassModel()
+                            schoolList.objectMapping(json: jsonValue)
+                            schoolLists.append(schoolList)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(schoolLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_TICKET_ACTION(
         userId:String,
         ticketID:String,

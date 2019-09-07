@@ -368,6 +368,7 @@
                 <outlet property="imageCollection" destination="MGv-ft-3Wd" id="sI5-Ka-Bsf"/>
                 <outlet property="nameText" destination="t3y-Yv-Lfj" id="hTp-hc-qwg"/>
                 <outlet property="nipText" destination="Siw-LB-jm2" id="KV0-VM-fbC"/>
+                <outlet property="phoneCodeAreaTxt" destination="xzm-cq-QaR" id="o9D-rt-2U4"/>
                 <outlet property="phoneText" destination="2W3-JH-ieU" id="47t-RA-9Yw"/>
                 <outlet property="positionButton" destination="7Zq-Zv-pAT" id="y6F-WS-ISg"/>
                 <outlet property="selectSchoolButton" destination="Ihy-Ws-HRe" id="NwN-2w-ni8"/>

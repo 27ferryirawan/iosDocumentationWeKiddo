@@ -222,6 +222,7 @@
 		E61E3B2623228D410016E13D /* AddUserAddParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B2523228D410016E13D /* AddUserAddParamModel.swift */; };
 		E61E3B29232291960016E13D /* AddUserProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B27232291960016E13D /* AddUserProfileImageCell.swift */; };
 		E61E3B2A232291960016E13D /* AddUserProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B28232291960016E13D /* AddUserProfileImageCell.xib */; };
+		E61E3B2C2322DAA90016E13D /* AddNewSubjectClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B2B2322DAA90016E13D /* AddNewSubjectClassModel.swift */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
@@ -1083,6 +1084,7 @@
 		E61E3B2523228D410016E13D /* AddUserAddParamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserAddParamModel.swift; sourceTree = "<group>"; };
 		E61E3B27232291960016E13D /* AddUserProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserProfileImageCell.swift; sourceTree = "<group>"; };
 		E61E3B28232291960016E13D /* AddUserProfileImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddUserProfileImageCell.xib; sourceTree = "<group>"; };
+		E61E3B2B2322DAA90016E13D /* AddNewSubjectClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSubjectClassModel.swift; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -4096,6 +4098,7 @@
 				E61E3B0F232219170016E13D /* UserSchoolListModel.swift */,
 				E61E3B112322359A0016E13D /* UserListModel.swift */,
 				E61E3B2523228D410016E13D /* AddUserAddParamModel.swift */,
+				E61E3B2B2322DAA90016E13D /* AddNewSubjectClassModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4994,6 +4997,7 @@
 				E66C5EEE22E8A96700AD186C /* AddScoreExamStudentScoreCell.swift in Sources */,
 				BE8FF8A7229DB89000EC6557 /* IntorductionCell.swift in Sources */,
 				E6F427D52296651F00DB4250 /* FuturePlanTalentModel.swift in Sources */,
+				E61E3B2C2322DAA90016E13D /* AddNewSubjectClassModel.swift in Sources */,
 				BEAFC7EE2281853E00C20DBE /* SelfSizedTableView.swift in Sources */,
 				E69AC817228968CE000284A1 /* NearbyContentCollectionCell.swift in Sources */,
 				E63D839A22D095F6005F07B4 /* SubjectModel.swift in Sources */,

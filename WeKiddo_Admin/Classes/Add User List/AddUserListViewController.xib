@@ -12,7 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddUserListViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
             <connections>
+                <outlet property="addNewView" destination="57q-TU-WK3" id="Dmr-pe-3Ii"/>
+                <outlet property="closeButton" destination="bQl-4S-AWA" id="AiE-5d-IVY"/>
                 <outlet property="saveButton" destination="apT-tM-PAp" id="ZKr-Yk-gLn"/>
+                <outlet property="selectClassButton" destination="w35-SF-pMK" id="TWu-in-QCl"/>
+                <outlet property="selectSubjectButton" destination="x5k-7k-A6d" id="oHd-3w-0C5"/>
+                <outlet property="submitNewClassButton" destination="qrr-Vy-a8t" id="Xdc-hx-95s"/>
                 <outlet property="tableView" destination="hAO-p5-M3F" id="l6x-Ve-P5u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -41,18 +46,104 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57q-TU-WK3">
+                    <rect key="frame" x="20" y="308" width="374" height="280"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awA-Nu-Qc8">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQl-4S-AWA">
+                                    <rect key="frame" x="334" y="7" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="D51-dr-qf5"/>
+                                        <constraint firstAttribute="height" constant="30" id="XaT-vi-5lX"/>
+                                    </constraints>
+                                    <state key="normal" image="icon_red_cross"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Subject &amp; Class" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBO-JG-F4F">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="GBO-JG-F4F" firstAttribute="top" secondItem="awA-Nu-Qc8" secondAttribute="top" id="0Ax-mV-jJb"/>
+                                <constraint firstItem="bQl-4S-AWA" firstAttribute="leading" secondItem="GBO-JG-F4F" secondAttribute="trailing" id="AJN-9I-NPe"/>
+                                <constraint firstAttribute="trailing" secondItem="bQl-4S-AWA" secondAttribute="trailing" constant="10" id="FVy-iw-zan"/>
+                                <constraint firstItem="GBO-JG-F4F" firstAttribute="leading" secondItem="awA-Nu-Qc8" secondAttribute="leading" id="KxW-c6-Sa3"/>
+                                <constraint firstAttribute="bottom" secondItem="GBO-JG-F4F" secondAttribute="bottom" id="Pbb-5b-B74"/>
+                                <constraint firstAttribute="height" constant="44" id="mp7-Rk-vlz"/>
+                                <constraint firstItem="bQl-4S-AWA" firstAttribute="centerY" secondItem="awA-Nu-Qc8" secondAttribute="centerY" id="reZ-2O-UoN"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5k-7k-A6d">
+                            <rect key="frame" x="30" y="74" width="314" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="3jz-ed-p1U"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Select Subject">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w35-SF-pMK">
+                            <rect key="frame" x="30" y="123" width="314" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="NET-F9-6tM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Select Class">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrr-Vy-a8t">
+                            <rect key="frame" x="30" y="189" width="314" height="44"/>
+                            <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Submit">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="awA-Nu-Qc8" secondAttribute="trailing" id="57V-pv-rFe"/>
+                        <constraint firstAttribute="trailing" secondItem="x5k-7k-A6d" secondAttribute="trailing" constant="30" id="8D8-r4-dHp"/>
+                        <constraint firstItem="awA-Nu-Qc8" firstAttribute="leading" secondItem="57q-TU-WK3" secondAttribute="leading" id="DrV-Td-1Kl"/>
+                        <constraint firstItem="x5k-7k-A6d" firstAttribute="leading" secondItem="57q-TU-WK3" secondAttribute="leading" constant="30" id="FlG-j7-eax"/>
+                        <constraint firstItem="qrr-Vy-a8t" firstAttribute="top" secondItem="w35-SF-pMK" secondAttribute="bottom" constant="22" id="Jbz-bt-I8o"/>
+                        <constraint firstItem="qrr-Vy-a8t" firstAttribute="leading" secondItem="w35-SF-pMK" secondAttribute="leading" id="MXB-BD-1EH"/>
+                        <constraint firstItem="w35-SF-pMK" firstAttribute="trailing" secondItem="x5k-7k-A6d" secondAttribute="trailing" id="NUt-iu-2c2"/>
+                        <constraint firstItem="w35-SF-pMK" firstAttribute="leading" secondItem="x5k-7k-A6d" secondAttribute="leading" id="RYn-c7-9rI"/>
+                        <constraint firstItem="x5k-7k-A6d" firstAttribute="top" secondItem="awA-Nu-Qc8" secondAttribute="bottom" constant="30" id="bCr-10-VMC"/>
+                        <constraint firstAttribute="height" constant="280" id="gFo-SW-ldo"/>
+                        <constraint firstItem="w35-SF-pMK" firstAttribute="top" secondItem="x5k-7k-A6d" secondAttribute="bottom" constant="5" id="gsw-bf-NgY"/>
+                        <constraint firstItem="qrr-Vy-a8t" firstAttribute="height" secondItem="w35-SF-pMK" secondAttribute="height" id="jAc-zb-Dlz"/>
+                        <constraint firstItem="qrr-Vy-a8t" firstAttribute="trailing" secondItem="w35-SF-pMK" secondAttribute="trailing" id="oI6-e3-WFd"/>
+                        <constraint firstItem="awA-Nu-Qc8" firstAttribute="top" secondItem="57q-TU-WK3" secondAttribute="top" id="tVc-Gu-URJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="apT-tM-PAp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1MP-Kd-t9s"/>
+                <constraint firstItem="57q-TU-WK3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="5lj-tu-cPX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="apT-tM-PAp" secondAttribute="trailing" id="A3t-AI-kYr"/>
                 <constraint firstItem="hAO-p5-M3F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IcU-ee-lqM"/>
+                <constraint firstItem="57q-TU-WK3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LaA-d6-9kX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hAO-p5-M3F" secondAttribute="trailing" id="eSb-OI-W2K"/>
                 <constraint firstItem="apT-tM-PAp" firstAttribute="top" secondItem="hAO-p5-M3F" secondAttribute="bottom" id="ivj-sM-up4"/>
+                <constraint firstItem="57q-TU-WK3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qbZ-Id-I0L"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="apT-tM-PAp" secondAttribute="bottom" id="r72-HD-6FP"/>
                 <constraint firstItem="hAO-p5-M3F" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rtk-qA-pAE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="57q-TU-WK3" secondAttribute="trailing" constant="20" id="xKs-Dc-NUK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_red_cross" width="64" height="64"/>
+    </resources>
 </document>

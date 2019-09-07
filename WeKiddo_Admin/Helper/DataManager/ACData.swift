@@ -138,5 +138,6 @@ struct ACData {
     static var USERSCHOOLLISTDATA = [UserSchoolListModel]()
     static var USERLISTDATA = [UserListModel]()
     static var USERLISTPARAMDATA: AddUserAddParamModel!
+    static var SAVESUBJECTNEWDATA = [AddNewSubjectClassModel]()
 //    static var STUDENTLISTSCOREADDNEW: !
 }
