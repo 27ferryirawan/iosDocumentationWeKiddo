@@ -13,6 +13,9 @@ import ActionSheetPicker_3_0
 
 protocol AddClassroomCellDelegate : class{
     func toSelectTeacher()
+    func toSelectLeader(schoolId:String)
+    func toSelectSecre(schoolId:String)
+    func addClassroom(schoolId:String,schoolClass:String,classDesc:String,selectedMajorId:String,selectedLevelId:String,editTeacherId:String,editLeaderId:String,editSecreId:String, schoolLevel:String)
 }
 class AddClassroomCell: UITableViewCell {
 
@@ -24,6 +27,8 @@ class AddClassroomCell: UITableViewCell {
     var selectedLevelId = ""
     var levels = [String]()
     var selectedTeacherId = ""
+    var selectedLeaderChildId = ""
+    var selectedSecreChildId = ""
     @IBOutlet weak var schoolPicker: ButtonLeftSpace!
     @IBOutlet weak var levelPicker: ButtonLeftSpace!
     @IBOutlet weak var majorPicker: ButtonLeftSpace!
@@ -61,13 +66,62 @@ class AddClassroomCell: UITableViewCell {
         majorPicker.addTarget(self, action: #selector(showMajorPicker), for: .touchUpInside)
         levelPicker.addTarget(self, action: #selector(showLevelPicker), for: .touchUpInside)
         chooseHomeroomBtn.addTarget(self, action: #selector(toSelectTeacher), for: .touchUpInside)
+        choosClassLeaderBtn.addTarget(self, action: #selector(toSelectLeader), for: .touchUpInside)
+        choosClassSecretaryBtn.addTarget(self, action: #selector(toSelectSecre), for: .touchUpInside)
+        addBtn.addTarget(self, action: #selector(addClassroom), for: .touchUpInside)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    var classCode = ""
+    var classDesc = ""
+    var classObjc : EditClassroomDetailModel?{
+        didSet{
+            cellDataSet()
+        }
+    }
+    func cellDataSet(){
+        guard let obj = classObjc else { return }
+        schoolPicker.setTitle(obj.school_name, for: .normal)
+        levelPicker.setTitle(obj.school_level, for: .normal)
+        majorPicker.setTitle(obj.school_major_id, for: .normal)
+        classCodeTextField.text = obj.school_class
+        descriptionTextView.text = obj.class_desc
+        homeroomNameLbl.text = obj.teacher_name
+        self.homeroomImg.sd_setImage(
+            with: URL(string: (obj.teacher_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+        homeroomNUPTKLbl.text = obj.nuptk
+        classLeaderNameLbl.text = obj.leader_name
+        classLeaderNisLbl.text = obj.leader_nis
+        self.classLeaderImg.sd_setImage(
+            with: URL(string: (obj.leader_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+        secretaryNameLbl.text = obj.secre_name
+        SecretaryNISLbl.text = obj.secre_nis
+        self.secretaryImage.sd_setImage(
+            with: URL(string: (obj.secre_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+    }
+    
+    @objc func addClassroom(){
+        guard let obj = classObjc else { return }
+        self.delegate?.addClassroom(schoolId:selectedSchoold, schoolClass: classCodeTextField.text!,classDesc:descriptionTextView.text!,selectedMajorId:selectedMajorId,selectedLevelId:selectedLevelId,editTeacherId:obj.teacher_id,editLeaderId:obj.leader_id,editSecreId:obj.secre_id, schoolLevel: obj.school_level)
+    }
     @objc func toSelectTeacher(){
         self.delegate?.toSelectTeacher()
+    }
+    @objc func toSelectLeader(){
+        self.delegate?.toSelectLeader(schoolId: selectedSchoold)
+    }
+    @objc func toSelectSecre(){
+        self.delegate?.toSelectSecre(schoolId: selectedSchoold)
     }
     @objc func showSchoolPicker() {
         schools.removeAll()
@@ -88,15 +142,6 @@ class AddClassroomCell: UITableViewCell {
                 self.schoolPicker.setTitle(self.schools[indexes], for: .normal)
                 self.selectedSchoold = schoolID
                 ACData.CLASSROOMADDTEACHERLISTDATA.removeAll()
-//                if ACData.CLASSROOMADDLEVELMAJORDATA.level.isEmpty == false{
-//                   ACData.CLASSROOMADDLEVELMAJORDATA.level.removeAll()
-//                }
-//                if !ACData.CLASSROOMADDLEVELMAJORDATA.major.isEmpty == false{
-//                    ACData.CLASSROOMADDLEVELMAJORDATA.major.removeAll()
-//                }
-//                if !ACData.CLASSROOMADDTEACHERLISTDATA.isEmpty == false{
-//                    ACData.CLASSROOMADDTEACHERLISTDATA.removeAll()
-//                }
                 ACRequest.POST_ADD_CLASSROOM_GET_LEVEL_MAJOR(userId: ACData.LOGINDATA.userID, schoolId: self.selectedSchoold, yearId: yearId, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (levelMajorData) in
                     ACData.CLASSROOMADDLEVELMAJORDATA = levelMajorData
                 }, failCompletion: { (status) in

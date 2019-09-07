@@ -16,7 +16,11 @@ class AddClassroomTeacherListCell: UITableViewCell {
 
     weak var delegate : AddClassroomTeacherListCellDelegate?
     @IBOutlet weak var teacherName: UILabel!
-    @IBOutlet weak var teacherProfileImage: UIImageView!
+    @IBOutlet weak var teacherProfileImage: UIImageView!{
+        didSet{
+            teacherProfileImage.layer.cornerRadius = teacherProfileImage.frame.size.width/2
+        }
+    }
     @IBOutlet weak var selectTeacherBtn: UIButton!
     @IBOutlet weak var teacherNUPTK: UILabel!
     override func awakeFromNib() {

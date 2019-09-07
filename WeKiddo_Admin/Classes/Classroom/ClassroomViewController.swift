@@ -29,6 +29,7 @@ class ClassroomViewController: UIViewController {
     }
     @objc func toAddClass(){
         let addClassVC = AddClassroomViewController()
+        addClassVC.isAddClassroom = true
         self.navigationController?.pushViewController(addClassVC, animated: true)
     }
     func configNavigation() {
@@ -47,6 +48,10 @@ class ClassroomViewController: UIViewController {
     }
     var schools: [String] = []
     func fetchData(){
+        levelName.removeAll()
+        schools.removeAll()
+        classLevelCount.removeAll()
+        levelCount = 0
         guard let schoolID = ACData.LOGINDATA.dashboardSchoolMenu[0].school_id, let yearId = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
             return
         }
@@ -106,6 +111,8 @@ extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "classroomContentCellID", for: indexPath) as? ClassroomContentCell)!
+            print(indexPath.section-1)
+            print(indexPath.row)
             cell.classObjc = ACData.CLASSROOMDASH.classroom_class_list[indexPath.section-1].classroom_classes[indexPath.row]
             cell.delegate = self
             return cell

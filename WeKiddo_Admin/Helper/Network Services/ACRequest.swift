@@ -3973,6 +3973,48 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_ADD_CLASSROOM(
+        user_id:String,
+        school_id:String,
+        year_id:String,
+        school_level_id:String,
+        school_major_id:String,
+        school_class:String,
+        class_desc:String,
+        teacher_id:String,
+        class_leader:String,
+        secretary:String,
+        school_class_id:String,
+        tokenAccess:String,
+        successCompletion:@escaping (String) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":user_id,
+            "school_id":school_id,
+            "year_id":year_id,
+            "school_level_id":school_level_id,
+            "school_major_id":school_major_id,
+            "school_class":school_class,
+            "class_desc":class_desc,
+            "teacher_id":teacher_id,
+            "class_leader":class_leader,
+            "secretary":secretary,
+            "school_class_id":school_class_id,
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_ADD_CLASSROOM)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                successCompletion(json["status"].stringValue)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_CLASSROOM_DASH(
         userId:String,
         schoolId:String,
@@ -3992,6 +4034,35 @@ class ACRequest: NSObject {
             print(json)
             if(json["status"] == "success") {
                 let classroomDashData = ClassroomDashModel()
+                classroomDashData.objcMapping(json: json)
+                successCompletion(classroomDashData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_GET_EDIT_CLASSROOM_DETAIL(
+        userId:String,
+        schoolId:String,
+        yearId:String,
+        school_class_id:String,
+        tokenAccess:String,
+        successCompletion:@escaping (EditClassroomDetailModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":yearId,
+            "school_class_id":school_class_id
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_GET_EDIT_CLASSROOM_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let classroomDashData = EditClassroomDetailModel()
                 classroomDashData.objcMapping(json: json)
                 successCompletion(classroomDashData)
             } else {
@@ -4084,6 +4155,45 @@ class ACRequest: NSObject {
                         failCompletion("Have No Teacher")
                     }
                     successCompletion(teacherList)
+                }
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ADD_CLASSROOM_STUDENT_SEARCH(
+        userId:String,
+        schoolId:String,
+        year_id:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([AddClassroomStudentSearchModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolId,
+            "year_id":year_id,
+            "keyword":keyword
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_ADD_CLASSROOM_STUDENT_SEARCH)", parameter: parameters, header: headers, showHUD: false) { (jsonData) in
+            var studentList = ACData.CLASSROOMADDSTUDENTSEARCHDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["search_student"]["result_list"].array{
+                    if data.count > 0{
+                        for jsonValue in data{
+                            let studentL = AddClassroomStudentSearchModel()
+                            studentL.objcMapping(json: jsonValue)
+                            studentList.append(studentL)
+                        }
+                    } else {
+                        failCompletion("Have No Student")
+                    }
+                    successCompletion(studentList)
                 }
             } else {
                 failCompletion(json["status"].stringValue)

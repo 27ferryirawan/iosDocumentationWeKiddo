@@ -17,6 +17,7 @@
                 <outlet property="classPosView" destination="5Sj-it-XRi" id="oxi-Kn-rTV"/>
                 <outlet property="classSchoolYearLbl" destination="eZf-xe-NtA" id="UI5-Z6-172"/>
                 <outlet property="collectionView" destination="f2k-Ta-wNe" id="qcx-TH-af6"/>
+                <outlet property="editClassBtn" destination="QAj-VM-fhp" id="Rwk-4t-aF0"/>
                 <outlet property="homeroomNIKLbl" destination="W6T-ml-0hv" id="sm5-wx-P3F"/>
                 <outlet property="homeroomNameLbl" destination="hB1-se-4XD" id="Y0j-OD-IV2"/>
                 <outlet property="homeroomProfileImage" destination="2mY-rh-SpY" id="cf3-e6-BqJ"/>

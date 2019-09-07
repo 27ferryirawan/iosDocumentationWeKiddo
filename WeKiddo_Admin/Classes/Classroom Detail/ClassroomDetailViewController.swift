@@ -36,6 +36,7 @@ class ClassroomDetailViewController: UIViewController {
     @IBOutlet weak var classNameLbl: UILabel!
     @IBOutlet weak var classSchoolYearLbl: UILabel!
     @IBOutlet weak var addStudentBtn: UIButton!
+    @IBOutlet weak var editClassBtn: UIButton!
     var schoolName:String?
     var schoolId:String?
     var schoolClassId:String?
@@ -62,6 +63,7 @@ class ClassroomDetailViewController: UIViewController {
         configCollection()
         populateData()
         addStudentBtn.addTarget(self, action: #selector(toAddStudent), for: .touchUpInside)
+        editClassBtn.addTarget(self, action: #selector(toEditClass), for: .touchUpInside)
     }
     @objc func toAddStudent(){
         let addStudentVC = AddStudentViewController()
@@ -69,6 +71,25 @@ class ClassroomDetailViewController: UIViewController {
         addStudentVC.schoolId = self.schoolId
         addStudentVC.schoolName = self.schoolName
         self.navigationController?.pushViewController(addStudentVC, animated: true)
+    }
+    @objc func toEditClass(){
+        guard let yearId = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+            return
+        }
+        guard let obj = ACData.CLASSROOMDETAILDATA else { return }
+        ACRequest.POST_GET_EDIT_CLASSROOM_DETAIL(userId: ACData.LOGINDATA.userID, schoolId: schoolId!, yearId: yearId, school_class_id: schoolClassId!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classroomData) in
+            ACData.CLASSROOMEDITDETAILDATA = classroomData
+            let addClassVC = AddClassroomViewController()
+            addClassVC.school_major_id = obj.school_major_id
+            addClassVC.school_class_id = self.schoolClassId!
+            addClassVC.school_id = self.schoolId!
+            addClassVC.isAddClassroom = false
+            SVProgressHUD.dismiss()
+            self.navigationController?.pushViewController(addClassVC, animated: true)
+        }) { (status) in
+            SVProgressHUD.dismiss()
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -99,7 +120,6 @@ class ClassroomDetailViewController: UIViewController {
         secreNISLbl.text = obj.secre_nis
         classNameLbl.text = obj.school_class
         classSchoolYearLbl.text = "Kelas \(obj.school_class) \(schoolName!) Tahun \(obj.year_desc)"
-        
     }
     
     func configNavigation() {
