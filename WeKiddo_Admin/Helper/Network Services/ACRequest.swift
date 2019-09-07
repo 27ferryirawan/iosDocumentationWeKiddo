@@ -988,6 +988,42 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_USERS_LISTS(
+        userId:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([UsersListsModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.PARENT_USERS_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var usersLists = ACData.USERSLISTSDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["user_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let userList = UsersListsModel()
+                            userList.objectMapping(json: jsonValue)
+                            usersLists.append(userList)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(usersLists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_TICKET_ACTION(
         userId:String,
         ticketID:String,

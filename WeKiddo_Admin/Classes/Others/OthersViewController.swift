@@ -101,18 +101,14 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             case "61":
                 let ticketVC = TicketViewController()
                 self.navigationController?.pushViewController(ticketVC, animated: true)
-            case "37":
-//                let latePaymentVC = LatePaymentViewController()
-//                self.navigationController?.pushViewController(latePaymentVC, animated: true)
-//                let teacherOnDutyVC = TeacherOnDutyViewController()
-//                self.navigationController?.pushViewController(teacherOnDutyVC, animated: true)
-                let subjectVC = SubjectTeacherViewController()
-                self.navigationController?.pushViewController(subjectVC, animated: true)
-//                let permissionVC = PermissionViewController()
-//                self.navigationController?.pushViewController(permissionVC, animated: true)
-//                let examScheduleVC = ExamViewController()
-//                self.navigationController?.pushViewController(examScheduleVC, animated: true)
-
+            case "58":
+                ACRequest.POST_USERS_LISTS(userId: ACData.LOGINDATA.userID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+                    ACData.USERSLISTSDATA = results
+                    SVProgressHUD.dismiss()
+                }) { (message) in
+                    SVProgressHUD.dismiss()
+                    ACAlert.show(message: message)
+                }
             case "59":
                 ACRequest.POST_USER_SCHOOL_SCHOOL_LIST(userId: ACData.LOGINDATA.userID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
                     ACData.USERSCHOOLLISTDATA = results
