@@ -11,10 +11,13 @@ import UIKit
 class UsersImageCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var contentNameLabel: UILabel!
-    @IBOutlet weak var contentImage: UIImageView!
+    @IBOutlet weak var contentImage: UIImageView!{
+        didSet{
+            contentImage.layer.cornerRadius = contentImage.frame.size.width/2
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

@@ -33,7 +33,7 @@
                         <size key="itemSize" width="70" height="70"/>
                         <size key="headerReferenceSize" width="50" height="50"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="7gg-kC-dpa"/>
@@ -54,7 +54,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtH-3K-qVY" customClass="ButtonLeftSpace" customModule="WeKiddo" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtH-3K-qVY" customClass="ButtonLeftSpace" customModule="WeKiddo_Admin" customModuleProvider="target">
                             <rect key="frame" x="31" y="75" width="272" height="40"/>
                             <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>

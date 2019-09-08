@@ -4069,7 +4069,6 @@ class ACRequest: NSObject {
     }
     
     
-    
     static func POST_PARENT_UPDATE_APPROVAL(
         eventID:String,
         isApproved:String,
@@ -5168,6 +5167,40 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_GET_SOP_LIST(
+        user_id:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([SOPListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":user_id,
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_GET_SOP_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var sopList = ACData.SOPLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_sop"].array{
+                    if data.count > 0{
+                        for jsonValue in data{
+                            let sopL = SOPListModel()
+                            sopL.objcMapping(json: jsonValue)
+                            sopList.append(sopL)
+                            print(sopL)
+                        }
+                    } else {
+                        failCompletion("Have No Teacher")
+                    }
+                    successCompletion(sopList)
+                }
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
     static func POST_GET_EDIT_CLASSROOM_DETAIL(
         userId:String,
         schoolId:String,
@@ -5191,6 +5224,31 @@ class ACRequest: NSObject {
                 let classroomDashData = EditClassroomDetailModel()
                 classroomDashData.objcMapping(json: json)
                 successCompletion(classroomDashData)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_GET_SOP_DETAIL(
+        sop_id:String,
+        userId:String,
+        tokenAccess:String,
+        successCompletion:@escaping (SOPDetailModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "sop_id":sop_id,
+            "user_id":userId
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.POST_GET_SOP_DETAIL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                let sopData = SOPDetailModel()
+                sopData.objcMapping(json: json)
+                successCompletion(sopData)
             } else {
                 failCompletion(json["status"].stringValue)
             }

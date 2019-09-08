@@ -12,10 +12,10 @@ class AdministrationCell: UICollectionViewCell {
 
     @IBOutlet weak var featuredLabel: UILabel!
     @IBOutlet weak var featuredImage: UIImageView!
-    var imageIconSettings = ["66":"ic_parent_profile",
-                             "67":"ic_logout",
-                             "65":"ic_feedback",
-                             "64":"ic_language"
+    var imageIconSettings = ["66":"PROFILEE",
+                             "67":"LOGOUT",
+                             "65":"HISTORY",
+                             "64":"TRANSLATE"
                             ]
     var detailObj: DashboardCategoryOthers? {
         didSet {

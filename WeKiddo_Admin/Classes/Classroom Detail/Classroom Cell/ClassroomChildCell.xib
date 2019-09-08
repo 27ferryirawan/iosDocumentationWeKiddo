@@ -19,18 +19,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="kQu-Aw-QYq">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_null" translatesAutoresizingMaskIntoConstraints="NO" id="kQu-Aw-QYq">
                         <rect key="frame" x="10" y="5" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="gpK-6i-Jdi"/>
                             <constraint firstAttribute="height" constant="60" id="qvn-Mv-LuL"/>
-                        </constraints>
-                    </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_accept_green" translatesAutoresizingMaskIntoConstraints="NO" id="WpE-2A-Ola">
-                        <rect key="frame" x="60" y="5" width="15" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="15" id="LaJ-MA-tL7"/>
-                            <constraint firstAttribute="height" constant="15" id="jJh-oY-pQ9"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raditya Utama" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O62-qg-Fud">
@@ -46,21 +39,17 @@
                 <constraint firstAttribute="trailing" secondItem="O62-qg-Fud" secondAttribute="trailing" id="5aE-uv-BqQ"/>
                 <constraint firstItem="O62-qg-Fud" firstAttribute="leading" secondItem="B7j-0q-S1m" secondAttribute="leading" id="DMg-yD-idC"/>
                 <constraint firstItem="kQu-Aw-QYq" firstAttribute="top" secondItem="B7j-0q-S1m" secondAttribute="top" constant="5" id="VUQ-Gh-YaO"/>
-                <constraint firstAttribute="trailing" secondItem="WpE-2A-Ola" secondAttribute="trailing" constant="5" id="VYE-GT-Nsz"/>
                 <constraint firstItem="O62-qg-Fud" firstAttribute="top" secondItem="kQu-Aw-QYq" secondAttribute="bottom" constant="3" id="b7a-eR-d7C"/>
-                <constraint firstItem="WpE-2A-Ola" firstAttribute="top" secondItem="B7j-0q-S1m" secondAttribute="top" constant="5" id="e8x-M7-i74"/>
                 <constraint firstAttribute="bottom" secondItem="O62-qg-Fud" secondAttribute="bottom" id="rgO-Mw-Zmr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="RCB-og-2pi"/>
             <connections>
                 <outlet property="userImage" destination="kQu-Aw-QYq" id="3fl-Ij-c2L"/>
                 <outlet property="userName" destination="O62-qg-Fud" id="JHQ-ms-x12"/>
-                <outlet property="userStatusImage" destination="WpE-2A-Ola" id="t2r-7s-e5j"/>
             </connections>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_accept_green" width="100" height="100"/>
-        <image name="profile" width="400" height="252"/>
+        <image name="ic_profile_null" width="400" height="252"/>
     </resources>
 </document>

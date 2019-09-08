@@ -127,7 +127,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-TZ-l7G">
                         <rect key="frame" x="28" y="465" width="360" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-Wh-cuh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_null" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-Wh-cuh">
                                 <rect key="frame" x="16" y="12.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="FjQ-oK-IWL"/>
@@ -158,7 +158,7 @@
                                     <constraint firstAttribute="width" constant="55" id="h9x-Yu-UhU"/>
                                     <constraint firstAttribute="height" constant="55" id="nQF-jZ-7Wf"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="ic_logo_wekiddo"/>
+                                <state key="normal" image="ic_select"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZK-Uv-oRb">
                                 <rect key="frame" x="278.5" y="82" width="46" height="15"/>
@@ -194,7 +194,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7v-Hd-fcz">
                         <rect key="frame" x="28" y="600" width="360" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-TJ-aRL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_null" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-TJ-aRL">
                                 <rect key="frame" x="16" y="12.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="KgF-zn-WXg"/>
@@ -225,7 +225,7 @@
                                     <constraint firstAttribute="width" constant="55" id="3Xj-NR-O62"/>
                                     <constraint firstAttribute="height" constant="55" id="voY-g7-aUG"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="ic_logo_wekiddo"/>
+                                <state key="normal" image="ic_select"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leader" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxU-Jg-6nc">
                                 <rect key="frame" x="282" y="82" width="39" height="15"/>
@@ -261,7 +261,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UW-RN-q2S">
                         <rect key="frame" x="28" y="735" width="360" height="100"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="uT9-VE-UBx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_null" translatesAutoresizingMaskIntoConstraints="NO" id="uT9-VE-UBx">
                                 <rect key="frame" x="16" y="12.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="8ay-UW-mA0"/>
@@ -292,7 +292,7 @@
                                     <constraint firstAttribute="height" constant="55" id="KJk-7O-GYR"/>
                                     <constraint firstAttribute="width" constant="55" id="sVM-Da-0hA"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="ic_logo_wekiddo"/>
+                                <state key="normal" image="ic_edit_photo"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btI-xt-ieX">
                                 <rect key="frame" x="301.5" y="82" width="0.0" height="0.0"/>
@@ -384,6 +384,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_logo_wekiddo" width="192" height="192"/>
+        <image name="ic_edit_photo" width="36" height="36"/>
+        <image name="ic_profile_null" width="400" height="252"/>
+        <image name="ic_select" width="36" height="36"/>
     </resources>
 </document>

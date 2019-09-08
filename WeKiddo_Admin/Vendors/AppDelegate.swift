@@ -302,8 +302,8 @@ import UserNotifications
         // Exam Schedule
         let examScheduleTab = UITabBarItem(
             title: menuName["70"],
-            image: UIImage(named:"tabbar_home"),
-            selectedImage: UIImage(named:"tabbar_home")
+            image: UIImage(named:"ic_exam_nb"),
+            selectedImage: UIImage(named:"ic_exam_nb")
         )
         examScheduleTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         examViewController.tabBarItem = examScheduleTab

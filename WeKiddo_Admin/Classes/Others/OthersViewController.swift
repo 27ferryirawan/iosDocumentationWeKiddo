@@ -227,7 +227,7 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
                 self.navigationController?.pushViewController(classVC, animated: true)
             case "51" : self.tabBarController?.selectedIndex = 0
             case "62" : // TODO: SOP
-                let classVC = ClassroomViewController()
+                let classVC = SOPViewController()
                 self.navigationController?.pushViewController(classVC, animated: true)
             default:
                 self.tabBarController?.selectedIndex = 0
