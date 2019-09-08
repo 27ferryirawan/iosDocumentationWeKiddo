@@ -27,6 +27,7 @@ class ClassroomDetailViewController: UIViewController {
             secreProfileImage.layer.cornerRadius = homeroomProfileImage.frame.size.width/2
         }
     }
+    var school_level = ""
     @IBOutlet weak var homeroomNameLbl: UILabel!
     @IBOutlet weak var homeroomNIKLbl: UILabel!
     @IBOutlet weak var leaderNameLbl: UILabel!
@@ -84,6 +85,7 @@ class ClassroomDetailViewController: UIViewController {
             addClassVC.school_class_id = self.schoolClassId!
             addClassVC.school_id = self.schoolId!
             addClassVC.isAddClassroom = false
+            addClassVC.selectedSchoolLevel = self.school_level
             SVProgressHUD.dismiss()
             self.navigationController?.pushViewController(addClassVC, animated: true)
         }) { (status) in
@@ -120,6 +122,7 @@ class ClassroomDetailViewController: UIViewController {
         secreNISLbl.text = obj.secre_nis
         classNameLbl.text = obj.school_class
         classSchoolYearLbl.text = "Kelas \(obj.school_class) \(schoolName!) Tahun \(obj.year_desc)"
+        school_level = obj.school_level
     }
     
     func configNavigation() {

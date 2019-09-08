@@ -29,6 +29,7 @@ class AddClassroomCell: UITableViewCell {
     var selectedTeacherId = ""
     var selectedLeaderChildId = ""
     var selectedSecreChildId = ""
+    var selectedSchooLevel = ""
     @IBOutlet weak var schoolPicker: ButtonLeftSpace!
     @IBOutlet weak var levelPicker: ButtonLeftSpace!
     @IBOutlet weak var majorPicker: ButtonLeftSpace!
@@ -108,11 +109,13 @@ class AddClassroomCell: UITableViewCell {
             placeholderImage: UIImage(named: "WeKiddoLogo"),
             options: .refreshCached
         )
+        selectedTeacherId = obj.teacher_id
+        selectedLeaderChildId = obj.leader_id
+        selectedSecreChildId = obj.secre_id
     }
     
     @objc func addClassroom(){
-        guard let obj = classObjc else { return }
-        self.delegate?.addClassroom(schoolId:selectedSchoold, schoolClass: classCodeTextField.text!,classDesc:descriptionTextView.text!,selectedMajorId:selectedMajorId,selectedLevelId:selectedLevelId,editTeacherId:obj.teacher_id,editLeaderId:obj.leader_id,editSecreId:obj.secre_id, schoolLevel: obj.school_level)
+        self.delegate?.addClassroom(schoolId:selectedSchoold, schoolClass: classCodeTextField.text!,classDesc:descriptionTextView.text!,selectedMajorId:selectedMajorId,selectedLevelId:selectedLevelId,editTeacherId:selectedTeacherId,editLeaderId:selectedLeaderChildId,editSecreId:selectedSecreChildId, schoolLevel: selectedSchooLevel)
     }
     @objc func toSelectTeacher(){
         self.delegate?.toSelectTeacher()
@@ -193,6 +196,7 @@ class AddClassroomCell: UITableViewCell {
                 }
                 self.levelPicker.setTitle(self.levels[indexes], for: .normal)
                 self.selectedLevelId = levelId
+                self.selectedSchooLevel = self.levels[indexes]
         },
             cancel: { ActionMultipleStringCancelBlock in return },
             origin:UIApplication.shared.keyWindow

@@ -16,13 +16,13 @@ class OtherCollectionCell: UICollectionViewCell {
                         "69": "ic_announcment",
                         "68": "ic_assignment",
                         "70": "ic_examSch",
-                        "72": "ic_permission",
-                        "58": "ic_parent_profile",
-                        "59": "ic_parent_profile",
-                        "60": "ic_class_room",
-                        "61": "ic_ticket",
-                        "62": "ic_sop",
-                        "63": "ic_teacher_on_duty"
+                        "72": "MONITORING",
+                        "58": "user",
+                        "59": "user-school",
+                        "60": "class-room",
+                        "61": "ticket",
+                        "62": "SOP",
+                        "63": "TASK-LIST"
                     ]
     override func awakeFromNib() {
         super.awakeFromNib()

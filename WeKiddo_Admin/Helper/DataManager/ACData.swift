@@ -149,4 +149,6 @@ struct ACData {
     static var CLASSROOMADDTEACHERLISTDATA = [AddClassroomTeacherListModel]()
     static var CLASSROOMADDSTUDENTSEARCHDATA = [AddClassroomStudentSearchModel]()
     static var CLASSROOMEDITDETAILDATA : EditClassroomDetailModel!
+    static var SOPLISTDATA = [SOPListModel]()
+    static var SOPDETAILDATA : SOPDetailModel!
 }

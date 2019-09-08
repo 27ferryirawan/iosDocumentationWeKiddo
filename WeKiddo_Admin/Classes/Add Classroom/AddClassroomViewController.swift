@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 class AddClassroomViewController: UIViewController {
 
+    var selectedSchoolLevel = ""
     var school_level_id = ""
     var school_id = ""
     var isAddClassroom : Bool?
@@ -50,6 +51,21 @@ class AddClassroomViewController: UIViewController {
             })
             ACRequest.POST_ADD_CLASSROOM_TEACHERLIST(userId: ACData.LOGINDATA.userID, schoolId: school_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classroomList) in
                 ACData.CLASSROOMADDTEACHERLISTDATA = classroomList
+            }, failCompletion: { (status) in
+                
+            })
+            ACRequest.POST_ADD_CLASSROOM_GET_LEVEL_MAJOR(userId: ACData.LOGINDATA.userID, schoolId: school_id, yearId: yearId, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (levelMajorData) in
+                print(self.selectedSchoolLevel)
+                for a in levelMajorData.level{
+                    self.levelList.append(a)
+                    print(a.school_level)
+                }
+                for b in self.levelList{
+                    if b.school_level == self.selectedSchoolLevel{
+                        self.school_level_id = b.school_level_id!
+                        print(self.school_level_id)
+                    }
+                }
             }, failCompletion: { (status) in
                 
             })
@@ -113,6 +129,7 @@ extension AddClassroomViewController:UITableViewDelegate,UITableViewDataSource{
 }
 extension AddClassroomViewController : AddClassroomCellDelegate, AddClassroomTeacherListViewControllerDelegate,AddClassroomStudentlListViewControllerDelegate{
     func addClassroom(schoolId: String, schoolClass: String, classDesc: String, selectedMajorId: String, selectedLevelId: String,editTeacherId:String,editLeaderId:String,editSecreId:String, schoolLevel:String) {
+        print(isAddClassroom!)
         if isAddClassroom!{
             guard let yearId = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
                 return
@@ -132,21 +149,7 @@ extension AddClassroomViewController : AddClassroomCellDelegate, AddClassroomTea
             guard let yearId = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
                 return
             }
-            
-            ACRequest.POST_ADD_CLASSROOM_GET_LEVEL_MAJOR(userId: ACData.LOGINDATA.userID, schoolId: school_id, yearId: yearId, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (levelMajorData) in
-                for a in levelMajorData.level{
-                    self.levelList.append(a)
-                    print(a)
-                }
-                for b in self.levelList{
-                    if b.school_level == schoolLevel{
-                        self.school_level_id = b.school_level_id!
-                    }
-                }
-            }, failCompletion: { (status) in
-                
-            })
-            ACRequest.POST_ADD_CLASSROOM(user_id: ACData.LOGINDATA.userID, school_id: school_id, year_id: yearId, school_level_id: school_level_id, school_major_id: school_major_id, school_class: schoolClass, class_desc: classDesc, teacher_id: editTeacherId, class_leader: editLeaderId, secretary: editSecreId, school_class_id: school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
+            ACRequest.POST_ADD_CLASSROOM(user_id: ACData.LOGINDATA.userID, school_id: school_id, year_id: yearId, school_level_id: self.school_level_id, school_major_id: school_major_id, school_class: schoolClass, class_desc: classDesc, teacher_id: editTeacherId, class_leader: editLeaderId, secretary: editSecreId, school_class_id: school_class_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (status) in
                 if status == "success" {
                     ACAlert.show(message: "Successfully Edit Classroom")
                     UserDefaults.standard.removeObject(forKey: "AddParentProfileImg")
