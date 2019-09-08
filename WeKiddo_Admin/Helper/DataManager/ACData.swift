@@ -142,5 +142,11 @@ struct ACData {
     static var USERSLISTSDATA = [UsersListsModel]()
     static var USERDATA: AddUserParamModel!
     static var USERSDETAILDATA: UsersDetailModel!
-//    static var STUDENTLISTSCOREADDNEW: !
+    static var CLASSROOMSTUDENTDETAILDATA : StudentDetailModel!
+    static var CLASSROOMGETEDITSTUDENTDATA : GetEditStudentDetailModel!
+    static var CLASSROOMIMAGEURL : ClassroomMediaModel!
+    static var CLASSROOMADDLEVELMAJORDATA : AddClassroomLevelMajorModel!
+    static var CLASSROOMADDTEACHERLISTDATA = [AddClassroomTeacherListModel]()
+    static var CLASSROOMADDSTUDENTSEARCHDATA = [AddClassroomStudentSearchModel]()
+    static var CLASSROOMEDITDETAILDATA : EditClassroomDetailModel!
 }

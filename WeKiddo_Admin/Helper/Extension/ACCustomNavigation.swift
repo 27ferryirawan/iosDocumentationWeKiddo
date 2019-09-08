@@ -117,7 +117,8 @@ extension UIViewController {
                 let backBarItem = UIBarButtonItem(customView: backView)
                 self.navigationItem.leftBarButtonItem = backBarItem
             }
-        } else if pageTitle == "Add Student" {
+        }
+        else if pageTitle == "Select Homeroom Teacher" {
             //Notification
             let notificationView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
             let notificationButton = UIButton(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 33, height: 33)))

@@ -84,6 +84,20 @@ class ACUrl: NSObject {
     static let POST_HISOTRY_LIST = PARENT_APP + "history/list" // [POST] user_id, page
     static let POST_CLASSROOM_CLASS_LIST = PARENT_APP + "classroom-admin/get-class" // [POST] user_id, school_id, year_id
     static let POST_CLASSROOM_DETAIL = PARENT_APP + "classroom-admin/detail-classroom" // [POST] user_id, school_class_id, year_id
+    static let POST_CLASSROOM_STUDENT_DETAIL = PARENT_APP + "classroom-admin/view-student"// [POST] user_id,school_id,year_id,child_id
+    static let POST_TERMINATE_STUDENT = PARENT_APP + "classroom-admin/terminate-student" // [POST] user_id, school_id, year_id, child_id
+    static let POST_GET_EDIT_STUDENT_DETAIL = PARENT_APP + "classroom-admin/get-edit-student"
+    // [POST] user_id, school_id, year_id, child_id
+    static let POST_SAVE_EDIT_STUDENT_DETAIL = PARENT_APP + "classroom-admin/save-student"
+    // [POST] user_id,school_id, year_id, child_name, child_nis, child_address, child_phone
+    // child_email, child_gender, child_bod, school_class_id, child_image, role_id, child_id
+    static let POST_CLASSROOM_STUDENT_ADD_PARENT = PARENT_APP + "classroom-admin/add-parent"//[POST] user_id, school_id,year_id, child_id, parent_name, parent_phone, gender, parent_type, parent_address, parent_email, parent_id, parent_image
+    static let POST_ADD_CLASSROOM_GET_LEVELMAJOR = PARENT_APP + "classroom-admin/get-level-major"//[POST] user_id, school_id,year_id
+    static let POST_ADD_CLASSROOM_GET_TEACHERLIST = PARENT_APP + "classroom-admin/get-teacher" // [POST] user_id, school_id
+    static let POST_ADD_CLASSROOM_STUDENT_SEARCH = PARENT_APP + "classroom-admin/search-student" //user_id, school_id, year_id, keyword
+    static let POST_ADD_CLASSROOM = PARENT_APP + "classroom-admin/save-classroom" //user_id, school_id, year_id, school_level_id, school_major_id, school_class, class_desc, teacher_id, class_leader, secretary, school_class_id
+    static let POST_GET_EDIT_CLASSROOM_DETAIL = PARENT_APP + "classroom-admin/get-edit-classroom"
+    
     
     static let POST_CLASSROOM_DASHBOARD = PARENT_APP + "classroom-admin/school-class-list" // [POST] user_id, school_id, year_id
     static let POST_DELETE_ASSIGNMENT_ATTACHMENT = PARENT_APP + "user/deleteAssignmentAttachment" // [POST] user_id, role, attachment_id

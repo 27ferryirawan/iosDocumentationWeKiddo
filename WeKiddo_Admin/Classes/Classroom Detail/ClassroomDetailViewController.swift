@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ClassroomDetailViewController: UIViewController {
 
@@ -34,7 +35,11 @@ class ClassroomDetailViewController: UIViewController {
     @IBOutlet weak var secreNISLbl: UILabel!
     @IBOutlet weak var classNameLbl: UILabel!
     @IBOutlet weak var classSchoolYearLbl: UILabel!
+    @IBOutlet weak var addStudentBtn: UIButton!
+    @IBOutlet weak var editClassBtn: UIButton!
     var schoolName:String?
+    var schoolId:String?
+    var schoolClassId:String?
     
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
@@ -57,6 +62,34 @@ class ClassroomDetailViewController: UIViewController {
         configNavigation()
         configCollection()
         populateData()
+        addStudentBtn.addTarget(self, action: #selector(toAddStudent), for: .touchUpInside)
+        editClassBtn.addTarget(self, action: #selector(toEditClass), for: .touchUpInside)
+    }
+    @objc func toAddStudent(){
+        let addStudentVC = AddStudentViewController()
+        addStudentVC.schoolClassId = schoolClassId
+        addStudentVC.schoolId = self.schoolId
+        addStudentVC.schoolName = self.schoolName
+        self.navigationController?.pushViewController(addStudentVC, animated: true)
+    }
+    @objc func toEditClass(){
+        guard let yearId = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+            return
+        }
+        guard let obj = ACData.CLASSROOMDETAILDATA else { return }
+        ACRequest.POST_GET_EDIT_CLASSROOM_DETAIL(userId: ACData.LOGINDATA.userID, schoolId: schoolId!, yearId: yearId, school_class_id: schoolClassId!, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classroomData) in
+            ACData.CLASSROOMEDITDETAILDATA = classroomData
+            let addClassVC = AddClassroomViewController()
+            addClassVC.school_major_id = obj.school_major_id
+            addClassVC.school_class_id = self.schoolClassId!
+            addClassVC.school_id = self.schoolId!
+            addClassVC.isAddClassroom = false
+            SVProgressHUD.dismiss()
+            self.navigationController?.pushViewController(addClassVC, animated: true)
+        }) { (status) in
+            SVProgressHUD.dismiss()
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,8 +117,6 @@ class ClassroomDetailViewController: UIViewController {
         leaderNameLbl.text = obj.leader_name
         leaderNISLbl.text = obj.leader_nis
         secreNameLbl.text = obj.secre_name
-        print("NIS \(obj.secre_nis)")
-        print("NUPTK \(obj.nuptk)")
         secreNISLbl.text = obj.secre_nis
         classNameLbl.text = obj.school_class
         classSchoolYearLbl.text = "Kelas \(obj.school_class) \(schoolName!) Tahun \(obj.year_desc)"
@@ -123,6 +154,18 @@ extension ClassroomDetailViewController : UICollectionViewDelegate, UICollection
         )
         return cell
     }
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let yearId = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+            return
+        }
+        ACRequest.POST_CLASSROOM_STUDENT_DETAIL(userId: ACData.LOGINDATA.userID, school_id: schoolId!, yearId: yearId, child_id: ACData.CLASSROOMDETAILDATA.list_student[indexPath.row].child_id, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (studentData) in
+            ACData.CLASSROOMSTUDENTDETAILDATA = studentData
+            SVProgressHUD.dismiss()
+            let StudentDetailVC = StudentDetailViewController()
+            StudentDetailVC.schoolId = self.schoolId
+            self.navigationController?.pushViewController(StudentDetailVC, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+        }
+    }
 }
