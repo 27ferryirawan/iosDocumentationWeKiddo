@@ -36,6 +36,12 @@ class UsersDetailModel: NSObject {
             d.objectMapping(json: data)
             user_detail_assigned.append(d)
         }
+        user_detail_phone = json["data"]["info"]["user_detail"]["phone"].stringValue
+        user_detail_address = json["data"]["info"]["user_detail"]["address"].stringValue
+        user_detail_email = json["data"]["info"]["user_detail"]["email"].stringValue
+        user_detail_adminPhoto = json["data"]["info"]["user_detail"]["admin_photo"].stringValue
+        user_detail_name = json["data"]["info"]["user_detail"]["name"].stringValue
+        user_detail_gender = json["data"]["info"]["user_detail"]["gender"].stringValue
     }
 }
 

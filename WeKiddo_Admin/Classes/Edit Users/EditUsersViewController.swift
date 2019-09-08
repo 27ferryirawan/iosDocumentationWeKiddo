@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class EditUsersViewController: UIViewController {
 
@@ -25,7 +26,8 @@ class EditUsersViewController: UIViewController {
         backStyleNavigationController(pageTitle: "Edit User", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
     }
     func configTable() {
-        tableView.register(UINib(nibName: "AddUsersCell", bundle: nil), forCellReuseIdentifier: "addUsersCellID")
+        tableView.register(UINib(nibName: "EditUsersCell", bundle: nil), forCellReuseIdentifier: "editUsersCellID")
+        tableView.register(UINib(nibName: "EditUsersContentCell", bundle: nil), forCellReuseIdentifier: "editUsersContentCellID")
     }
 }
 
@@ -34,26 +36,41 @@ extension EditUsersViewController: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 1 + ACData.USERSDETAILDATA.user_detail_assigned.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 764
+        if indexPath.row == 0 {
+            return 692
+        } else {
+            return 55
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = (tableView.dequeueReusableCell(withIdentifier: "addUsersCellID", for: indexPath) as? AddUsersCell)!
-        /*
-        cell.imageChoosen = imagePickedBase64
-        let imageData = Data(base64Encoded: imagePickedBase64)
-        let image = UIImage(data: imageData!)
-        cell.avatarImage.image = image
-        cell.detailObj = ACData.USERDATA
-        cell.delegate = self
-        */
-        return cell
+        if indexPath.row == 0 {
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "editUsersCellID", for: indexPath) as? EditUsersCell)!
+            if imagePickedBase64 != "" {
+                cell.imageChoosen = imagePickedBase64
+                let imageData = Data(base64Encoded: imagePickedBase64)
+                let image = UIImage(data: imageData!)
+                cell.avatarImage.image = image
+            } else {
+                cell.avatarImage.sd_setImage(
+                    with: URL(string: (ACData.USERSDETAILDATA.user_detail_adminPhoto)),
+                    placeholderImage: UIImage(named: "WeKiddoLogo"),
+                    options: .refreshCached
+                )
+            }
+            cell.detailObj = ACData.USERSDETAILDATA
+            cell.delegate = self
+            return cell
+        } else {
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "editUsersContentCellID", for: indexPath) as? EditUsersContentCell)!
+            return cell
+        }
     }
 }
 
-extension EditUsersViewController: AddUsersCellDelegate {
+extension EditUsersViewController: EditUsersCellDelegate {
     func showImageAttachment() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self

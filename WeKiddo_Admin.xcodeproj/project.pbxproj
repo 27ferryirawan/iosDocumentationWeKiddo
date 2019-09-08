@@ -239,6 +239,10 @@
 		E61E3B4E23242F5C0016E13D /* EditUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B4C23242F5C0016E13D /* EditUsersViewController.swift */; };
 		E61E3B4F23242F5C0016E13D /* EditUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B4D23242F5C0016E13D /* EditUsersViewController.xib */; };
 		E61E3B51232434630016E13D /* UsersDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B50232434630016E13D /* UsersDetailModel.swift */; };
+		E61E3B5523248D270016E13D /* EditUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B5323248D270016E13D /* EditUsersCell.swift */; };
+		E61E3B5623248D270016E13D /* EditUsersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B5423248D270016E13D /* EditUsersCell.xib */; };
+		E61E3B5923248E3D0016E13D /* EditUsersContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E3B5723248E3D0016E13D /* EditUsersContentCell.swift */; };
+		E61E3B5A23248E3D0016E13D /* EditUsersContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61E3B5823248E3D0016E13D /* EditUsersContentCell.xib */; };
 		E624D0FD227B5817001220E9 /* CalendarSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */; };
 		E624D0FE227B5817001220E9 /* CalendarSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */; };
 		E624D10A227B58B9001220E9 /* AgencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624D108227B58B9001220E9 /* AgencyViewController.swift */; };
@@ -1117,6 +1121,10 @@
 		E61E3B4C23242F5C0016E13D /* EditUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUsersViewController.swift; sourceTree = "<group>"; };
 		E61E3B4D23242F5C0016E13D /* EditUsersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUsersViewController.xib; sourceTree = "<group>"; };
 		E61E3B50232434630016E13D /* UsersDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailModel.swift; sourceTree = "<group>"; };
+		E61E3B5323248D270016E13D /* EditUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUsersCell.swift; sourceTree = "<group>"; };
+		E61E3B5423248D270016E13D /* EditUsersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUsersCell.xib; sourceTree = "<group>"; };
+		E61E3B5723248E3D0016E13D /* EditUsersContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUsersContentCell.swift; sourceTree = "<group>"; };
+		E61E3B5823248E3D0016E13D /* EditUsersContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditUsersContentCell.xib; sourceTree = "<group>"; };
 		E624D0FB227B5817001220E9 /* CalendarSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionCell.swift; sourceTree = "<group>"; };
 		E624D0FC227B5817001220E9 /* CalendarSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionCell.xib; sourceTree = "<group>"; };
 		E624D108227B58B9001220E9 /* AgencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgencyViewController.swift; path = WeKiddo_Admin/Classes/Agency/AgencyViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -2450,10 +2458,22 @@
 		E61E3B4B23242F3F0016E13D /* Edit Users */ = {
 			isa = PBXGroup;
 			children = (
+				E61E3B5223248CFF0016E13D /* Edit Users Cell */,
 				E61E3B4C23242F5C0016E13D /* EditUsersViewController.swift */,
 				E61E3B4D23242F5C0016E13D /* EditUsersViewController.xib */,
 			);
 			path = "Edit Users";
+			sourceTree = "<group>";
+		};
+		E61E3B5223248CFF0016E13D /* Edit Users Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E61E3B5323248D270016E13D /* EditUsersCell.swift */,
+				E61E3B5423248D270016E13D /* EditUsersCell.xib */,
+				E61E3B5723248E3D0016E13D /* EditUsersContentCell.swift */,
+				E61E3B5823248E3D0016E13D /* EditUsersContentCell.xib */,
+			);
+			path = "Edit Users Cell";
 			sourceTree = "<group>";
 		};
 		E624D106227B5890001220E9 /* Agency */ = {
@@ -4790,6 +4810,7 @@
 				E682D68C22D7809B00214F4E /* VideoMediaCollectionCell.xib in Resources */,
 				E682D6C622D9FE7200214F4E /* SubjectTeacherDetailClassCell.xib in Resources */,
 				E61E3B1623223DE50016E13D /* UserSchoolCollectionCell.xib in Resources */,
+				E61E3B5623248D270016E13D /* EditUsersCell.xib in Resources */,
 				E6961028227F2DAE0000FC92 /* PermissionContentCell.xib in Resources */,
 				E6396FED22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib in Resources */,
 				E6396FFB22B67C4200C928E5 /* LatePaymentContentCell.xib in Resources */,
@@ -4875,6 +4896,7 @@
 				E624D126227C873C001220E9 /* NewsContentCell.xib in Resources */,
 				BE2FF58522ABDA9F00003E1A /* ParentProfileCell.xib in Resources */,
 				E65BF68822CF849A00C57FEF /* AddAssignmentTopCell.xib in Resources */,
+				E61E3B5A23248E3D0016E13D /* EditUsersContentCell.xib in Resources */,
 				E66C5EB722E2105400AD186C /* SubjectTeacherByClassViewController.xib in Resources */,
 				E6EAB9102292F8240032B975 /* SubjectGraphicPerformanceCell.xib in Resources */,
 				E6F4281F2298471100DB4250 /* CourseDetailCell.xib in Resources */,
@@ -5373,6 +5395,7 @@
 				E682D6D522DA4AB300214F4E /* SubjectTeacherDetailFooterCell.swift in Sources */,
 				E600B46122AE7D63007E7C58 /* AttachmentModel.swift in Sources */,
 				E6AAC3C72318FF1D0084ED93 /* TaskListViewController.swift in Sources */,
+				E61E3B5923248E3D0016E13D /* EditUsersContentCell.swift in Sources */,
 				E6961027227F2DAE0000FC92 /* PermissionContentCell.swift in Sources */,
 				BE2FF57122AABFC300003E1A /* PrivacyPolicyViewController.swift in Sources */,
 				BE2FF57F22ABDA4600003E1A /* ParentProfileViewController.swift in Sources */,
@@ -5410,6 +5433,7 @@
 				E699F5E622DF146600775758 /* LatePaymentDetailViewController.swift in Sources */,
 				E689B752231AF4CF00DAEFFF /* TaskListAdminHistoryModel.swift in Sources */,
 				E699F5C522DE300600775758 /* UpcomingSessionListViewController.swift in Sources */,
+				E61E3B5523248D270016E13D /* EditUsersCell.swift in Sources */,
 				E66C5EBF22E2170200AD186C /* SubjectTeacherByClassContentCell.swift in Sources */,
 				E6416F3122ECDF3E00ACDCD6 /* EditPaymentFooterCell.swift in Sources */,
 				E600B40822A910B9007E7C58 /* SessionDetailModel.swift in Sources */,

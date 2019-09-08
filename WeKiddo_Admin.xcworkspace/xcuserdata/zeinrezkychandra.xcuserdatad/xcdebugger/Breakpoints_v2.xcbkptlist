@@ -26,7 +26,7 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "589541763.434224"
+                  timestampString = "589601635.30056"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -41,7 +41,7 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "589541763.436857"
+                  timestampString = "589601635.302667"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -81,38 +81,6 @@
             endingLineNumber = "854"
             landmarkName = "POST_TICKET_SEND_MESSAGE(userId:schoolID:yearID:ticketID:chatMessage:tokenAccess:successCompletion:failCompletion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static WeKiddo_Admin.ACRequest.POST_USER_SCHOOL_LIST(userId: Swift.String, schoolID: Swift.String, yearID: Swift.String, keyword: Swift.String, tokenAccess: Swift.String, successCompletion: (Swift.Array&lt;WeKiddo_Admin.UserListModel&gt;) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "WeKiddo_Admin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "589541763.4475091"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "854"
-                  endingLineNumber = "854"
-                  offsetFromSymbolStart = "1624">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in static WeKiddo_Admin.ACRequest.POST_USER_SCHOOL_LIST(userId: Swift.String, schoolID: Swift.String, yearID: Swift.String, keyword: Swift.String, tokenAccess: Swift.String, successCompletion: (Swift.Array&lt;WeKiddo_Admin.UserListModel&gt;) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "WeKiddo_Admin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
-                  timestampString = "589541763.449671"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "855"
-                  endingLineNumber = "855"
-                  offsetFromSymbolStart = "321">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,6 +97,38 @@
             endingLineNumber = "858"
             landmarkName = "POST_TICKET_SEND_MESSAGE(userId:schoolID:yearID:ticketID:chatMessage:tokenAccess:successCompletion:failCompletion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static WeKiddo_Admin.ACRequest.POST_TICKET_SEND_MESSAGE(userId: Swift.String, schoolID: Swift.String, yearID: Swift.String, ticketID: Swift.String, chatMessage: Swift.String, tokenAccess: Swift.String, successCompletion: (Swift.String) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
+                  timestampString = "589601635.316915"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "858"
+                  endingLineNumber = "858"
+                  offsetFromSymbolStart = "1806">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Any) -&gt; () in static WeKiddo_Admin.ACRequest.POST_TICKET_SEND_MESSAGE(userId: Swift.String, schoolID: Swift.String, yearID: Swift.String, ticketID: Swift.String, chatMessage: Swift.String, tokenAccess: Swift.String, successCompletion: (Swift.String) -&gt; (), failCompletion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "WeKiddo_Admin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACRequest.swift"
+                  timestampString = "589601635.318773"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "859"
+                  endingLineNumber = "859"
+                  offsetFromSymbolStart = "230">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,7 +170,7 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACAPI.swift"
-                  timestampString = "589541763.464094"
+                  timestampString = "589601635.3275191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "47"
@@ -185,7 +185,7 @@
                   moduleName = "WeKiddo_Admin"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zeinrezkychandra/Documents/Zein/Private/WeKiddo/Admin/wekiddo-admin/WeKiddo_Admin/Helper/Network%20Services/ACAPI.swift"
-                  timestampString = "589541763.466074"
+                  timestampString = "589601635.32941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"

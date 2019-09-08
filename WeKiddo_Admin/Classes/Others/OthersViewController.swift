@@ -8,10 +8,90 @@
 
 import UIKit
 import SVProgressHUD
+import ActionSheetPicker_3_0
 
 class OthersViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var changeLanguageHeaderView: UIView!{
+        didSet{
+            changeLanguageHeaderView.backgroundColor = ACColor.MAIN
+        }
+    }
+    @IBOutlet weak var changeLanguageView: UIView!{
+        didSet{
+            changeLanguageView.isHidden = true
+        }
+    }
+    @IBOutlet weak var selectLanguageBtn: ButtonLeftSpace!
+    var languageChoose: [String] = ["English", "Indonesia"]
+    var languageChooseID = -1
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var submitBtn: UIButton!{
+        didSet{
+            submitBtn.backgroundColor = ACColor.MAIN
+            submitBtn.layer.cornerRadius = 5
+            submitBtn.clipsToBounds = true
+        }
+    }
+    func isChangeLanguageDisplay(){
+        changeLanguageView.isHidden = false
+//        grayAreaBtn.isHidden = false
+        selectLanguageBtn.addTarget(self, action: #selector(showLanguagePicker), for: .touchUpInside)
+        guard let currentLanguage = UserDefaults.standard.value(forKey: "app_lang") as? String else { return }
+        if currentLanguage == "en" {
+            selectLanguageBtn.setTitle("English", for: .normal)
+            languageChooseID = 0
+        } else if currentLanguage == "id" {
+            selectLanguageBtn.setTitle("Indonesia", for: .normal)
+            languageChooseID = 1
+        }
+    }
+    @objc func closeChangeLangView(){
+        changeLanguageView.isHidden = true
+//        grayAreaBtn.isHidden = true
+    }
+    @objc func showLanguagePicker() {
+//        guard let currentLanguage = UserDefaults.standard.value(forKey: "app_lang") as? String else { return }
+//        if currentLanguage == "en" {
+//            languageChooseID = 0
+//        } else if currentLanguage == "id" {
+//            languageChooseID = 1
+//        }
+        ActionSheetStringPicker.show(
+            withTitle: "- Select Language -",
+            rows: languageChoose,
+            initialSelection: self.languageChooseID,
+            doneBlock: { picker, indexes, values in
+                guard let value = values as? String else { return }
+                self.selectLanguageBtn.setTitle(value, for: .normal)
+                //                self.languageChooseID = indexes + 1
+                if value == "English" {
+                    self.languageChooseID = 0
+                } else if value == "Indonesia" {
+                    self.languageChooseID = 1
+                }
+        },
+            cancel: { ActionMultipleStringCancelBlock in return },
+            origin:UIApplication.shared.keyWindow
+        )
+    }
+    @objc func chooseLanguage(){
+        guard let currentLanguage = UserDefaults.standard.value(forKey: "app_lang") as? String else { return }
+        if languageChooseID == 1 && currentLanguage == "en"{
+            Bundle.setLanguage(lang: "id")
+            let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+            appDelegate.goToHome()
+        } else if languageChooseID == 0 && currentLanguage == "id"{
+            Bundle.setLanguage(lang: "en")
+            let appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+            appDelegate.goToHome()
+        } else if languageChooseID == 0 && currentLanguage == "en"{
+            closeChangeLangView()
+        } else if languageChooseID == 1 && currentLanguage == "id"{
+            closeChangeLangView()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,6 +226,9 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
                 let classVC = ClassroomViewController()
                 self.navigationController?.pushViewController(classVC, animated: true)
             case "51" : self.tabBarController?.selectedIndex = 0
+            case "62" : // TODO: SOP
+                let classVC = ClassroomViewController()
+                self.navigationController?.pushViewController(classVC, animated: true)
             default:
                 self.tabBarController?.selectedIndex = 0
             }
@@ -154,13 +237,15 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             switch menu {
             case "66":
                 fetchProfileData()
-            case "57":
-                let feedbackVC = FeedbackViewController()
-                self.navigationController?.pushViewController(feedbackVC, animated: true)
+            case "64":
+                isChangeLanguageDisplay()
+                closeBtn.addTarget(self, action: #selector(closeChangeLangView), for: .touchUpInside)
+//                grayAreaBtn.addTarget(self, action: #selector(closeChangeLangView), for: .touchUpInside)
+                submitBtn.addTarget(self, action: #selector(chooseLanguage), for: .touchUpInside)
             case "65":
                 let historyVC = HistoryViewController()
                 self.navigationController?.pushViewController(historyVC, animated: true)
-            case "55":
+            case "67":
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 UserDefaults.standard.synchronize()
                 let mainViewController = ViewController()

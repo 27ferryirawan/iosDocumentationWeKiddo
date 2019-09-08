@@ -63,7 +63,15 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "usersContentCellID", for: indexPath) as? UsersContentCell)!
             cell.index = indexPath.row - 1
             cell.detailObj = ACData.USERSLISTSDATA[indexPath.row - 1]
+            cell.delegate = self
             return cell
         }
+    }
+}
+
+extension UsersViewController: UsersContentCellDelegate {
+    func toDetail() {
+        let detailVC = EditUsersViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
