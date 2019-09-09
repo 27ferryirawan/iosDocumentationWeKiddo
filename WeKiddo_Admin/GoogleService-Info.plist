@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>18250050801-bfa06e2rft5fkf7v39pcf49hjplj41t7.apps.googleusercontent.com</string>
+	<string>18250050801-6j5racj167827s9rno1nu2rm7mt58933.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.18250050801-bfa06e2rft5fkf7v39pcf49hjplj41t7</string>
+	<string>com.googleusercontent.apps.18250050801-6j5racj167827s9rno1nu2rm7mt58933</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>18250050801-c4e0oke0aji567q0d0kl4ge4k41375si.apps.googleusercontent.com</string>
+	<string>18250050801-8fe1fpa3450cspssf8ij01aosacol3s1.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAph-2JlKvsUEPSAg5jzaGiCwmCcTz_5tU</string>
 	<key>GCM_SENDER_ID</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.apps.WekiddoSchool</string>
+	<string>com.apps.WekiddoAdmin</string>
 	<key>PROJECT_ID</key>
 	<string>wekiddo-eccbd</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:18250050801:ios:a0f9a3c08e0ec7dc</string>
+	<string>1:18250050801:ios:71e58d82cbf1d132d5cd50</string>
 	<key>DATABASE_URL</key>
 	<string>https://wekiddo-eccbd.firebaseio.com</string>
 </dict>
