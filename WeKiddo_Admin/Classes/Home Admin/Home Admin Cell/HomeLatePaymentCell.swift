@@ -36,7 +36,7 @@ class HomeLatePaymentCell: UITableViewCell {
     weak var delegate: HomeLatePaymentCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentButton.addTarget(self, action: #selector(goToDetail), for: .touchUpInside)
+//        contentButton.addTarget(self, action: #selector(goToDetail), for: .touchUpInside)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

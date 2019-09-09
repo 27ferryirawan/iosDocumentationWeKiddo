@@ -10,7 +10,7 @@ import Foundation
 
 class ACUrl: NSObject {
 
-    static let isProduction = false
+    static let isProduction = true
     static let MAIN = isProduction ? "http://54.169.210.190/backend-wekiddo/public" : "http://3.1.194.152/backend-wekiddo/public"
     static let PARENT_APP = MAIN + "/api/administrator/"
     
