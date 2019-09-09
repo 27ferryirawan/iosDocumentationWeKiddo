@@ -286,8 +286,8 @@ import UserNotifications
         // ANNOUNCEMENT
         let announcementTab = UITabBarItem(
             title: menuName["69"],
-            image: UIImage(named:"tabbar_assigment"),
-            selectedImage: UIImage(named:"tabbar_assigment")
+            image: UIImage(named:"icon_announcement_nb"),
+            selectedImage: UIImage(named:"icon_announcement_nb")
         )
         announcementTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         announcementViewController.tabBarItem = announcementTab
