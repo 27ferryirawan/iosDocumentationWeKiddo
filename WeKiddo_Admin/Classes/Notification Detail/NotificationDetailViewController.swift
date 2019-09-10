@@ -128,8 +128,8 @@ extension NotificationDetailViewController: NotificationHeaderCellDelegate, Appr
         openPicker()
     }
     func toPaymentPage() {
-        let paymentVC = EditPaymentViewController()
-        self.navigationController?.pushViewController(paymentVC, animated: true)
+//        let paymentVC = EditPaymentViewController()
+//        self.navigationController?.pushViewController(paymentVC, animated: true)
     }
     func toEditEvent() {
         ACData.ANNOUNCEMENTLEVELLISTDATA.removeAll()

@@ -220,8 +220,8 @@ extension HomeRoomViewController: HomeButtonCellDelegate, HomeRoomDueDateAssignm
             ACRequest.POST_CURRENT_SESSION_MORE(userID: ACData.LOGINDATA.userID, role: ACData.LOGINDATA.role, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, page: 1, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (jsonDatas) in
                 SVProgressHUD.dismiss()
                 ACData.CURRENTCLASSLISTDATA = jsonDatas
-                let currentClassVC = CurrentSessionListViewController()
-                self.navigationController?.pushViewController(currentClassVC, animated: true)
+//                let currentClassVC = CurrentSessionListViewController()
+//                self.navigationController?.pushViewController(currentClassVC, animated: true)
             }) { (message) in
                 SVProgressHUD.dismiss()
                 ACAlert.show(message: message)

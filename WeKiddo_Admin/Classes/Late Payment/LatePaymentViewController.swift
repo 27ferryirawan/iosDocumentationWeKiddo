@@ -68,7 +68,7 @@ extension LatePaymentViewController: UITableViewDataSource, UITableViewDelegate 
 
 extension LatePaymentViewController: LatePaymentContentCellDelegate {
     func toDetailLatePayment() {
-        let detailVC = LatePaymentDetailViewController()
-        self.navigationController?.pushViewController(detailVC, animated: true)
+//        let detailVC = LatePaymentDetailViewController()
+//        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

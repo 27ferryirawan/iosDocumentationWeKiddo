@@ -141,7 +141,7 @@ import UserNotifications
         let attendanceViewController = AttendancesViewController(nibName: "AttendancesViewController", bundle: nil)
         let userViewController = UserViewController(nibName: "UserViewController", bundle: nil)
         let classroomViewController = ClassroomViewController(nibName: "ClassroomViewController", bundle: nil)
-        let subjectViewController = SubjectViewController(nibName: "SubjectViewController", bundle: nil)
+//        let subjectViewController = SubjectViewController(nibName: "SubjectViewController", bundle: nil)
         let permissionViewController = PermissionViewController(nibName: "PermissionViewController", bundle: nil)
         let announcementViewController = AnnouncementViewController(nibName: "AnnouncementViewController", bundle: nil)
         let assignmentViewController = AssignmentViewController(nibName: "AssignmentViewController", bundle: nil)
@@ -168,7 +168,7 @@ import UserNotifications
         let assignment = UINavigationController(rootViewController: assignmentViewController)
         let announcement = UINavigationController(rootViewController: announcementViewController)
         let more = UINavigationController(rootViewController: othersViewController)
-        let subjectList = UINavigationController(rootViewController: subjectListViewController)
+//        let subjectList = UINavigationController(rootViewController: subjectListViewController)
         let examSchedule = UINavigationController(rootViewController: examViewController)
 //        let nearbyCourse = UINavigationController(rootViewController: nearbyCourseController)
 //        let user = UINavigationController(rootViewController: userViewController)
@@ -189,7 +189,7 @@ import UserNotifications
                 "38": detention,
                 "42": latePayment,
                 "68": assignment,
-                "47": subjectList, //subjectTopic
+//                "47": subjectList, //subjectTopic
                 "71": dashboard,
                 "70": examSchedule, // -> DEVELOPMEMNT PHASE 1
                 //                "26": schoolProfile,
@@ -228,13 +228,13 @@ import UserNotifications
         userRoomTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         userViewController.tabBarItem = userRoomTab
         // SUBJECT
-        let subjectRoomTab = UITabBarItem(
-            title: menuName["28"],
-            image: UIImage(named:"icon_home"),
-            selectedImage: UIImage(named:"icon_home")
-        )
-        subjectRoomTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
-        subjectViewController.tabBarItem = subjectRoomTab
+//        let subjectRoomTab = UITabBarItem(
+//            title: menuName["28"],
+//            image: UIImage(named:"icon_home"),
+//            selectedImage: UIImage(named:"icon_home")
+//        )
+//        subjectRoomTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
+//        subjectViewController.tabBarItem = subjectRoomTab
         // CLASSROOM
         let classRoomTab = UITabBarItem(
             title: menuName["29"],
