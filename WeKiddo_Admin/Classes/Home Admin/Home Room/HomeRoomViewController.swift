@@ -39,9 +39,11 @@ class HomeRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigation()
         configTable()
         configureSections()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        configNavigation()
     }
     
     func configNavigation() {

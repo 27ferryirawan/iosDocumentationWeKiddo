@@ -83,18 +83,22 @@ class ClassroomHeaderCell: UITableViewCell {
         )
     }
     func getSchoolData(schoolID: String, yearID: String) {
-        ACData.CLASSROOMDASH.classroom_class_list.removeAll()
+        levelName.removeAll()
+        classLevelCount.removeAll()
+        levelCount = 0
         ACRequest.POST_CLASSROOM_DASH(userId: ACData.LOGINDATA.userID, schoolId: schoolID, yearId: yearID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (classList) in
             ACData.CLASSROOMDASH = classList
             SVProgressHUD.dismiss()
-            DispatchQueue.main.async {
                 self.levelCount = ACData.CLASSROOMDASH.classroom_class_list.count
                 for indexes in ACData.CLASSROOMDASH.classroom_class_list {
+                    print(indexes.school_level)
+                    print(self.levelCount)
+                    print(indexes.classroom_classes.count)
                     self.levelName.append(indexes.school_level)
                     self.classLevelCount.append(indexes.classroom_classes.count)
                 }
                 self.delegate?.refreshData(levelCount: self.levelCount, levelName: self.levelName, classLevelCount: self.classLevelCount)
-            }
+            
         }) { (message) in
             SVProgressHUD.dismiss()
         }
