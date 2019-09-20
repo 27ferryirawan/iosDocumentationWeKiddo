@@ -107,6 +107,7 @@ extension UIViewController {
                     action: #selector(self.dismissSelf(_:)),
                     for: .touchUpInside
                 )
+                self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
                 let backImageView = UIImageView(frame: CGRect(x: 0, y: 8, width: 35, height: 30))
                 backImageView.image = UIImage(named: "ic_back_blue")
                 
@@ -139,6 +140,7 @@ extension UIViewController {
                     action: #selector(self.dismissSelf(_:)),
                     for: .touchUpInside
                 )
+                self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
                 let backImageView = UIImageView(frame: CGRect(x: 0, y: 8, width: 15, height: 25))
                 backImageView.image = UIImage(named: "ic_arrow_left")
 
@@ -156,6 +158,7 @@ extension UIViewController {
                     action: #selector(self.dismissSelf(_:)),
                     for: .touchUpInside
                 )
+                self.navigationController?.interactivePopGestureRecognizer!.delegate = nil
                 let backImageView = UIImageView(frame: CGRect(x: -5, y: 8, width: 15, height: 25))
                 backImageView.image = UIImage(named: "ic_arrow_left")
                 let secondImageView = UIImageView(frame: CGRect(x: 18, y: -7, width: 55, height: 55))
