@@ -13,7 +13,7 @@ protocol AddLatePaymentStudentCellDelegate: class {
 }
 
 class AddLatePaymentStudentCell: UITableViewCell {
-
+    
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var nisLabel: UILabel!

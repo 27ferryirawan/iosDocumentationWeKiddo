@@ -77,7 +77,6 @@ class ClassroomViewController: UIViewController {
 }
 extension ClassroomViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        print(levelCount)
         return levelCount + 1
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -128,6 +127,10 @@ extension ClassroomViewController : ClassroomDelegate, ClassroomContentDelegate{
         selectedSchoolId = schoolId
     }
     func refreshData(levelCount: Int, levelName: [String], classLevelCount: [Int]){
+        self.levelName.removeAll()
+        self.classLevelCount.removeAll()
+        self.levelCount = 0
+        
         self.levelCount = levelCount
         self.levelName = levelName
         self.classLevelCount = classLevelCount
