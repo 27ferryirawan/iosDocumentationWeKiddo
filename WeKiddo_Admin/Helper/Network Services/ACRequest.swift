@@ -24,8 +24,8 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void){
         let parameters:Parameters = [
             "token_device":tokenDevice,
-            "phone":"6285760033332",
-            "password":"ggwpend",
+            "phone":phone,
+            "password":password,
             "user_agent":"ios"
         ]
         print(parameters)

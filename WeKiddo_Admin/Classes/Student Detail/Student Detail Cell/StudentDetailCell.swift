@@ -31,8 +31,6 @@ class StudentDetailCell: UITableViewCell {
     @IBOutlet weak var studentCrossMajorLbl: UILabel!
     @IBOutlet weak var addParentBtn: UIButton!
     var yearId = ""
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         addParentBtn.addTarget(self, action: #selector(addParent), for: .touchUpInside)
@@ -51,7 +49,6 @@ class StudentDetailCell: UITableViewCell {
             cellDataSet()
         }
     }
-    
     func cellDataSet(){
         guard let obj = studentObjc else { return }
         self.studentImage.sd_setImage(
@@ -64,10 +61,28 @@ class StudentDetailCell: UITableViewCell {
         studentAddressLbl.text = ": \(obj.child_address)"
         studentEmailLbl.text = ": \(obj.child_email)"
         studentPhoneLbl.text = ": \(obj.child_phone)"
-        studentJoinLbl.text = ""
-        studentBdateLbl.text = ": \(obj.child_bod)"
+        studentJoinLbl.text = ":"
+        studentBdateLbl.text = ": \(getDMMMY(time: obj.child_bod))"
         studentGenderLbl.text = ": \(obj.child_gender)"
-        studentCrossMajorLbl.text = ""
+        studentCrossMajorLbl.text = ":"
     }
-    
+}
+extension StudentDetailCell {
+    func getDMMMY(time: String) -> String {
+        // Convert from string to date first
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        guard let date = dateFormatter.date(from: time) else {
+            return ""
+        }
+        // then convert date to string again
+        let dateFormatterResult = DateFormatter()
+        dateFormatterResult.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatterResult.locale = NSLocale.current
+        dateFormatterResult.dateFormat = "dd MMM yyyy"
+        let stringDate = dateFormatterResult.string(from: date)
+        return stringDate
+    }
 }
