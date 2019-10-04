@@ -37,20 +37,20 @@ import UserNotifications
             UserDefaults.standard.set(true, forKey: "isFromNotif")
             NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: userInfo as? [AnyHashable : Any])
         }
-        if !isFirstInstall {
-            let loginViewController = OnboardingViewController()
-            let navController = UINavigationController(rootViewController: loginViewController)
-            window!.rootViewController = navController
-        } else {
-//            let status = UserDefaults.standard.bool(forKey: "isLogin")
-//            if status {
-//                goToHome()
-//            } else {
-//            }
+//        if !isFirstInstall {
+//            let loginViewController = OnboardingViewController()
+//            let navController = UINavigationController(rootViewController: loginViewController)
+//            window!.rootViewController = navController
+//        } else {
+////            let status = UserDefaults.standard.bool(forKey: "isLogin")
+////            if status {
+////                goToHome()
+////            } else {
+////            }
             let loginViewController = ViewController()
             let navController = UINavigationController(rootViewController: loginViewController)
             window!.rootViewController = navController
-        }
+//        }
         window!.makeKeyAndVisible()
         return true
     }
@@ -286,8 +286,8 @@ import UserNotifications
         // ANNOUNCEMENT
         let announcementTab = UITabBarItem(
             title: menuName["69"],
-            image: UIImage(named:"icon_announcement_nb"),
-            selectedImage: UIImage(named:"icon_announcement_nb")
+            image: UIImage(named:"megaphone icon"),
+            selectedImage: UIImage(named:"megaphone icon")
         )
         announcementTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         announcementViewController.tabBarItem = announcementTab

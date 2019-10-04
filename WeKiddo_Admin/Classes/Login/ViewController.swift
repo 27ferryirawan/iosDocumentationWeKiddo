@@ -118,7 +118,7 @@ class ViewController: UIViewController {
             
             let index = newPhoneNumber.index(newPhoneNumber.startIndex, offsetBy: 2)
             print(newPhoneNumber[index])
-            if newPhoneNumber[index] == "0" {
+            if newPhoneNumber.count > 2 && newPhoneNumber[index] == "0"{
                 newPhoneNumber = newPhoneNumber.prefix(2) + "" + newPhoneNumber.dropFirst(3)
                 print(newPhoneNumber)
 //                newPhoneNumber = String(newPhoneNumber.dropFirst(2))
