@@ -451,6 +451,10 @@
 		E65C44FB23642F2000E0BD3B /* CourseDetailFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65C44F923642F2000E0BD3B /* CourseDetailFooterCell.xib */; };
 		E65C44FE23642F8A00E0BD3B /* CourseDetailRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65C44FC23642F8A00E0BD3B /* CourseDetailRatingCell.swift */; };
 		E65C44FF23642F8A00E0BD3B /* CourseDetailRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65C44FD23642F8A00E0BD3B /* CourseDetailRatingCell.xib */; };
+		E65C4503236435E500E0BD3B /* MoreCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65C4501236435E500E0BD3B /* MoreCoursesViewController.swift */; };
+		E65C4504236435E500E0BD3B /* MoreCoursesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65C4502236435E500E0BD3B /* MoreCoursesViewController.xib */; };
+		E65C45082364362A00E0BD3B /* MoreCoursesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65C45062364362A00E0BD3B /* MoreCoursesCollectionCell.swift */; };
+		E65C45092364362A00E0BD3B /* MoreCoursesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E65C45072364362A00E0BD3B /* MoreCoursesCollectionCell.xib */; };
 		E661F65F228DBE4A0055E830 /* AnnouncementDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E661F65E228DBE4A0055E830 /* AnnouncementDetail.swift */; };
 		E662274F22BBD7530060079E /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662274E22BBD7530060079E /* LoginModel.swift */; };
 		E662277022C106000060079E /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662276F22C106000060079E /* DashboardModel.swift */; };
@@ -1300,6 +1304,10 @@
 		E65C44F923642F2000E0BD3B /* CourseDetailFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseDetailFooterCell.xib; sourceTree = "<group>"; };
 		E65C44FC23642F8A00E0BD3B /* CourseDetailRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailRatingCell.swift; sourceTree = "<group>"; };
 		E65C44FD23642F8A00E0BD3B /* CourseDetailRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseDetailRatingCell.xib; sourceTree = "<group>"; };
+		E65C4501236435E500E0BD3B /* MoreCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoursesViewController.swift; sourceTree = "<group>"; };
+		E65C4502236435E500E0BD3B /* MoreCoursesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCoursesViewController.xib; sourceTree = "<group>"; };
+		E65C45062364362A00E0BD3B /* MoreCoursesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCoursesCollectionCell.swift; sourceTree = "<group>"; };
+		E65C45072364362A00E0BD3B /* MoreCoursesCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreCoursesCollectionCell.xib; sourceTree = "<group>"; };
 		E661F65E228DBE4A0055E830 /* AnnouncementDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetail.swift; sourceTree = "<group>"; };
 		E662274E22BBD7530060079E /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		E662276F22C106000060079E /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
@@ -2972,6 +2980,25 @@
 			path = "Course Detail Cell";
 			sourceTree = "<group>";
 		};
+		E65C4500236435D400E0BD3B /* More Courses */ = {
+			isa = PBXGroup;
+			children = (
+				E65C45052364361300E0BD3B /* More Courses Cell */,
+				E65C4501236435E500E0BD3B /* MoreCoursesViewController.swift */,
+				E65C4502236435E500E0BD3B /* MoreCoursesViewController.xib */,
+			);
+			path = "More Courses";
+			sourceTree = "<group>";
+		};
+		E65C45052364361300E0BD3B /* More Courses Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E65C45062364362A00E0BD3B /* MoreCoursesCollectionCell.swift */,
+				E65C45072364362A00E0BD3B /* MoreCoursesCollectionCell.xib */,
+			);
+			path = "More Courses Cell";
+			sourceTree = "<group>";
+		};
 		E662277122C115010060079E /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -3849,6 +3876,7 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E65C4500236435D400E0BD3B /* More Courses */,
 				E65C44EA23642DE400E0BD3B /* Course Detail Page */,
 				E65C44D82362205500E0BD3B /* Nearby Course */,
 				BEB839F523251754002ED447 /* SOP Detail */,
@@ -4494,6 +4522,7 @@
 				E65C44F323642E8100E0BD3B /* CourseDetailCell.xib in Resources */,
 				E696103F227F3D470000FC92 /* QuestionsViewController.xib in Resources */,
 				E61BEE95226F583000A533B3 /* ScoreNewCell.xib in Resources */,
+				E65C4504236435E500E0BD3B /* MoreCoursesViewController.xib in Resources */,
 				E61E3AEC231F26640016E13D /* ReceiverCollectionCell.xib in Resources */,
 				E65C44EE23642E1100E0BD3B /* CourseDetailViewController.xib in Resources */,
 				E6396FF622B67C0800C928E5 /* LatePaymentViewController.xib in Resources */,
@@ -4566,6 +4595,7 @@
 				E600B48422AFB967007E7C58 /* SubjectDetailQuestionCell.xib in Resources */,
 				E689B74D231AEECD00DAEFFF /* AddNewTaskAdminViewController.xib in Resources */,
 				E6C63AAD231D234900367DE4 /* DetailTaskAdminHistoryCell.xib in Resources */,
+				E65C45092364362A00E0BD3B /* MoreCoursesCollectionCell.xib in Resources */,
 				BE311DE0231FA1E300C37E37 /* StudentDetailViewController.xib in Resources */,
 				E62F864D22F0469700CE355E /* SpecialAttentionDetailContentCell.xib in Resources */,
 				E66C5F0522E8E43200AD186C /* EditExamRelatedCell.xib in Resources */,
@@ -5141,6 +5171,7 @@
 				BE2FF58422ABDA9F00003E1A /* ParentProfileCell.swift in Sources */,
 				E600B44622AE6162007E7C58 /* StudentsNoteViewController.swift in Sources */,
 				E6416F0522EB538100ACDCD6 /* AddExamSessionCell.swift in Sources */,
+				E65C45082364362A00E0BD3B /* MoreCoursesCollectionCell.swift in Sources */,
 				E600B41322AA4513007E7C58 /* ExamCell.swift in Sources */,
 				E682D6A122D8F93700214F4E /* AddStudentCollectionCell.swift in Sources */,
 				E689B746231AE53300DAEFFF /* TaskListAdminCell.swift in Sources */,
@@ -5209,6 +5240,7 @@
 				E626B6B222C3852200FF660A /* ClassroomHeaderCell.swift in Sources */,
 				E6416F1F22ECD60800ACDCD6 /* EditEventFooterCell.swift in Sources */,
 				E65C44DB2362206A00E0BD3B /* NearbyCourseViewController.swift in Sources */,
+				E65C4503236435E500E0BD3B /* MoreCoursesViewController.swift in Sources */,
 				E6AAC3B92318E76F0084ED93 /* AbsenceDetailModel.swift in Sources */,
 				E6BC3CCE22EF199C00B080A1 /* SpecialAttentionListCell.swift in Sources */,
 				BE2F585122AC3A4300103CD7 /* StudentProfileViewController.swift in Sources */,

@@ -67,4 +67,8 @@ extension NearbyCourseViewController: NearbyCourseHeaderCellDelegate, NearbyCour
         let courseDetailVC = CourseDetailViewController()
         self.navigationController?.pushViewController(courseDetailVC, animated: true)
     }
+    func goToMore() {
+        let moreVC = MoreCoursesViewController()
+        self.navigationController?.pushViewController(moreVC, animated: true)
+    }
 }

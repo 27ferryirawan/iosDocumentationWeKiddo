@@ -27,6 +27,7 @@ class NearbyCourseMoreModel: NSObject {
     var course_lat = 0.0
     var course_long = 0.0
     var franchise_id = ""
+    var kilometers = ""
     
     func objectMapping(json: JSON) {
         course_id = json["course_id"].stringValue
@@ -46,5 +47,6 @@ class NearbyCourseMoreModel: NSObject {
         course_lat = json["course_lat"].doubleValue
         course_long = json["course_long"].doubleValue
         franchise_id = json["franchise_id"].stringValue
+        kilometers = json["kilometers"].stringValue
     }
 }

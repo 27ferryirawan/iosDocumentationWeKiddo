@@ -4479,16 +4479,22 @@ class ACRequest: NSObject {
     
     static func GET_NEARBY_MORE(
         courseCategoryId:Int,
+        schoolID:String,
+        tokenAccess:String,
         successCompletion:@escaping ([NearbyCourseMoreModel]) -> Void,
         failCompletion:@escaping (String) -> Void) {
-        let headers:HTTPHeaders = ["Content-Type":"application/json"]
-        print("url: \(ACUrl.PARENT_GET_NEARBY_COURSE_MORE)")
-        ACAPI.GET(url: "\(ACUrl.PARENT_GET_NEARBY_COURSE_MORE)course_category_id=\(courseCategoryId)", header: headers, showHUD: true) { (jsonData) in
+        let parameters: Parameters = [
+            "course_category_id":courseCategoryId,
+            "school_id":schoolID
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: ACUrl.PARENT_GET_NEARBY_COURSE_MORE, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             var nearbyCourseMoreModels = ACData.NEARBYCOURSEMOREDATA
             let json = JSON(jsonData)
             print(json)
             if(json["status"] == "success") {
-                if let data = json["course"].array {
+                if let data = json["data"]["courses_more"].array {
                     if data.count > 0 {
                         for jsonValue in data {
                             let nearbyMoreModel = NearbyCourseMoreModel()
