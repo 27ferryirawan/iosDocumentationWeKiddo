@@ -24,8 +24,8 @@ class ACRequest: NSObject {
         failCompletion:@escaping (String) -> Void){
         let parameters:Parameters = [
             "token_device":tokenDevice,
-            "phone":phone,
-            "password":password,
+            "phone":"6281274164293",
+            "password":"12345",
             "user_agent":"ios"
         ]
         print(parameters)
@@ -4415,34 +4415,34 @@ class ACRequest: NSObject {
     }
     
     static func GET_NEARBY_DATA(
-        successCompletion:@escaping ([NearbyModel]) -> Void,
+        userID:String,
+        schoolID:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping (NearbyModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
-        let headers:HTTPHeaders = ["Content-Type":"application/json"]
-        //print("url: \(ACUrl.PARENT_GET_NEARBY_COURSE)")
-        ACAPI.GET(url: "\(ACUrl.PARENT_GET_NEARBY_COURSE)", header: headers, showHUD: true) { (jsonData) in
-            
-            var nearbyModels = ACData.NEARBYDATA
-            
+        let parameters: Parameters = [
+            "user_id":userID,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: ACUrl.PARENT_GET_NEARBY_COURSE, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
-            //print(json)
-            
+            print(json)
             if(json["status"] == "success") {
-                if let data = json["course_categories"].array {
-                    if data.count > 0 {
-                        for jsonValue in data {
-                            let nearbyModel = NearbyModel()
-                            nearbyModel.objectMapping(json: jsonValue)
-                            nearbyModels.append(nearbyModel)
-                        }
-                    } else {
-                        failCompletion("Have no nearby course")
-                    }
-                }
-                successCompletion(nearbyModels)
+                let nearby = NearbyModel()
+                nearby.objectMapping(json: json)
+                successCompletion(nearby)
             } else {
                 failCompletion(json["message"].stringValue)
             }
         }
+//        ACAPI.GET(url: "\(ACUrl.PARENT_GET_NEARBY_COURSE)", header: headers, showHUD: true) { (jsonData) in
+//        }
     }
     
     static func GET_NEWS_DATA(
@@ -4809,15 +4809,17 @@ class ACRequest: NSObject {
     
     static func GET_COURSE_DETAIL(
         courseID:String,
+        tokenAccess:String,
         successCompletion:@escaping (CourseDetailModel) -> Void,
         failCompletion:@escaping (String) -> Void) {
-        let headers:HTTPHeaders = ["Content-Type":"application/json"]
-        //print("url: \(ACUrl.PARENT_GET_NEARBY_COURSE_DETAIL)")
-        ACAPI.GET(url: "\(ACUrl.PARENT_GET_NEARBY_COURSE_DETAIL)course_id=\(courseID)", header: headers, showHUD: true) { (jsonData) in
-            
+        let parameters: Parameters = [
+            "course_id":courseID
+        ]
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: ACUrl.PARENT_GET_NEARBY_COURSE_DETAIL, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
             let json = JSON(jsonData)
-            //print(json)
-            
+            print(json)
             if(json["status"] == "success") {
                 let courseDetail = CourseDetailModel()
                 courseDetail.objectMapping(json: json)

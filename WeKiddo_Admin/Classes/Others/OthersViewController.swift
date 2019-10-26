@@ -170,8 +170,17 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             let menu = ACData.LOGINDATA.dashboardCategoryFeature[indexPath.row].menu_id
             switch menu {
             case "72":
-                let monitoringVC = SchoolMonitoringViewController()
-                self.navigationController?.pushViewController(monitoringVC, animated: true)
+                ACRequest.GET_NEARBY_DATA(userID: ACData.LOGINDATA.userID, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+                    SVProgressHUD.dismiss()
+                    ACData.NEARBYDATA = result
+                    let nearbyVC = NearbyCourseViewController()
+                    self.navigationController?.pushViewController(nearbyVC, animated: true)
+                }) { (message) in
+                    SVProgressHUD.dismiss()
+                    ACAlert.show(message: message)
+                }
+//                let monitoringVC = SchoolMonitoringViewController()
+//                self.navigationController?.pushViewController(monitoringVC, animated: true)
             case "63":
                 let tasklistAdminVC = TaskListAdminViewController()
                 self.navigationController?.pushViewController(tasklistAdminVC, animated: true)

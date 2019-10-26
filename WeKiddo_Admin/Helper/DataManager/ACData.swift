@@ -47,7 +47,7 @@ struct ACData {
     static var PERMISSIONDETAILDATA: PermissionDataModel!
     static var COMPETITIONDATA = [CompetitionModel]()
     static var COMPETITIONCATEGORYDATA = [CompetitionCategoryModel]()
-    static var NEARBYDATA = [NearbyModel]()
+    static var NEARBYDATA: NearbyModel!
     static var CALENDARDATA: CalendarModel!
     static var FUTUREPLANACADEMYDATA = [FuturePlanAcademyModel]()
     static var FUTUREPLANTALENTDATA = [FuturePlanTalentModel]()

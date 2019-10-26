@@ -10,8 +10,9 @@ import Foundation
 
 class ACUrl: NSObject {
 
-    static let isProduction = true
-    static let MAIN = isProduction ? "http://54.169.210.190/backend-wekiddo/public" : "http://3.1.194.152/backend-wekiddo/public"
+    static let isProduction = false
+    static let MAIN = isProduction ? "http://production.wekiddo.com/backend-wekiddo/public" : "http://dev.wekiddo.com/backend-wekiddo/public"
+//    static let MAIN = isProduction ? "http://54.169.210.190/backend-wekiddo/public" : "http://3.1.194.152/backend-wekiddo/public"
     static let PARENT_APP = MAIN + "/api/administrator/"
     
     /* API */
@@ -244,9 +245,9 @@ class ACUrl: NSObject {
     static let PARENT_GET_FUTURE_PLAN_UNIVERSITY_DETAIL = PARENT_APP + "getUniversity?" // [GET] university_id=
     
     // NEARBY COURSE
-    static let PARENT_GET_NEARBY_COURSE = PARENT_APP + "getNearbyCourses" // [GET]
+    static let PARENT_GET_NEARBY_COURSE = PARENT_APP + "course/list" // [POST] user_id, school_id, year_id, keyword
     static let PARENT_GET_NEARBY_SEARCH = PARENT_APP + "searchCourse?" // [GET] keyword=
-    static let PARENT_GET_NEARBY_COURSE_DETAIL = PARENT_APP + "getCourseDetail?" // [GET] course_id=
+    static let PARENT_GET_NEARBY_COURSE_DETAIL = PARENT_APP + "course/detail" // [POST] course_id
     static let PARENT_ADD_NEARBY_COURSE = PARENT_APP + "applyCourse" // [POST] child_id, course_id
     static let PARENT_GET_NEARBY_COURSE_MORE = PARENT_APP + "getMoreCourses?" // course_category_id =
     
