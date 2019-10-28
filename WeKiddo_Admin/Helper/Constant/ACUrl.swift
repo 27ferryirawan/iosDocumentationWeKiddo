@@ -251,6 +251,9 @@ class ACUrl: NSObject {
     static let PARENT_ADD_NEARBY_COURSE = PARENT_APP + "applyCourse" // [POST] child_id, course_id
     static let PARENT_GET_NEARBY_COURSE_MORE = PARENT_APP + "course/more" // [POST] course_category_id, school_id
     
+    // COURSE BRAND
+    static let GET_COURSE_BRAND_ALL = PARENT_APP + "brand/get-brand-all" // [POST] user_id, school_id, year_id, category, keyword
+    
     // COMPETITION
     static let PARENT_GET_COMPETITION_CATEGORY = PARENT_APP + "getCompetitionCategory?" // [GET]
     static let PARENT_GET_COMPETITION = PARENT_APP + "getCompetition?" // [GET] competition_category_id=

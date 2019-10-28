@@ -4512,6 +4512,48 @@ class ACRequest: NSObject {
         }
     }
     
+    static func GET_COURSE_BRAND_ALL(
+        userID:String,
+        schoolID:String,
+        yearID:String,
+        category:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([CourseBrandModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters: Parameters = [
+            "user_id":userID,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "category":category,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                   "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: ACUrl.GET_COURSE_BRAND_ALL, parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var nearbyCourseMoreModels = ACData.COURSEBRANDDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_brand_by_category"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let nearbyMoreModel = CourseBrandModel()
+                            nearbyMoreModel.objectMapping(json: jsonValue)
+                            nearbyCourseMoreModels.append(nearbyMoreModel)
+                        }
+                    } else {
+                        failCompletion("Have no course brand data")
+                    }
+                }
+                successCompletion(nearbyCourseMoreModels)
+            } else {
+                failCompletion(json["message"].stringValue)
+            }
+        }
+    }
+    
     static func GET_CALENDAR_DATA(
         childID:String,
         eventDate:String,

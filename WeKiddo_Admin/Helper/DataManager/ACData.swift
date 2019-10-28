@@ -151,4 +151,5 @@ struct ACData {
     static var CLASSROOMEDITDETAILDATA : EditClassroomDetailModel!
     static var SOPLISTDATA = [SOPListModel]()
     static var SOPDETAILDATA : SOPDetailModel!
+    static var COURSEBRANDDATA = [CourseBrandModel]()
 }

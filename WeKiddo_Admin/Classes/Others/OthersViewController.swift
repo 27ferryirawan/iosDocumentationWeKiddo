@@ -170,6 +170,16 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
             let menu = ACData.LOGINDATA.dashboardCategoryFeature[indexPath.row].menu_id
             switch menu {
             case "72":
+                ACRequest.GET_COURSE_BRAND_ALL(userID: ACData.LOGINDATA.userID, schoolID: ACData.DASHBOARDDATA.home_profile_school_id, yearID: ACData.DASHBOARDDATA.home_profile_year_id, category: "ALL", keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+                    SVProgressHUD.dismiss()
+                    ACData.COURSEBRANDDATA = results
+                    let courseVC = CourseBrandViewController()
+                    self.navigationController?.pushViewController(courseVC, animated: true)
+                }) { (message) in
+                    SVProgressHUD.dismiss()
+                    ACAlert.show(message: message)
+                }
+                /*
                 ACRequest.GET_NEARBY_DATA(userID: ACData.LOGINDATA.userID, schoolID: ACData.LOGINDATA.school_id, yearID: ACData.LOGINDATA.year_id, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
                     SVProgressHUD.dismiss()
                     ACData.NEARBYDATA = result
@@ -179,6 +189,7 @@ extension OthersViewController: UICollectionViewDataSource, UICollectionViewDele
                     SVProgressHUD.dismiss()
                     ACAlert.show(message: message)
                 }
+                */
 //                let monitoringVC = SchoolMonitoringViewController()
 //                self.navigationController?.pushViewController(monitoringVC, animated: true)
             case "63":
