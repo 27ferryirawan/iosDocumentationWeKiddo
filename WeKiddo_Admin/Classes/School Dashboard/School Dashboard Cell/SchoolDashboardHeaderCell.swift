@@ -10,6 +10,28 @@ import UIKit
 
 class SchoolDashboardHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var dateView: UIView! {
+        didSet {
+            dateView.layer.borderWidth = 1.0
+            dateView.layer.borderColor = UIColor.lightGray.cgColor
+            dateView.layer.cornerRadius = 5.0
+            dateView.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var totalSchoolView: UIView! {
+        didSet {
+            totalSchoolView.layer.cornerRadius = 5.0
+            totalSchoolView.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var bgView: UIView! {
+        didSet {
+            bgView.layer.borderWidth = 1.0
+            bgView.layer.borderColor = UIColor.lightGray.cgColor
+            bgView.layer.cornerRadius = 5.0
+            bgView.layer.masksToBounds = true
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

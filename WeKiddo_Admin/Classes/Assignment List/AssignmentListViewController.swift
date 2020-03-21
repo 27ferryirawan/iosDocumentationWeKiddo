@@ -10,21 +10,34 @@ import UIKit
 
 class AssignmentListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configTable()
+        configNavigation()
+    }
+    func configNavigation() {
+        detectAdaptiveClass()
+        if self == self.navigationController?.viewControllers[0] {
+            backStyleNavigationController(pageTitle: "Assignment", isLeftLogoHide: "ic_logo_wekiddo", isLeftSecondLogoHide: "")
+        } else {
+            backStyleNavigationController(pageTitle: "Assignment", isLeftLogoHide: "ic_arrow_left", isLeftSecondLogoHide: "ic_logo_wekiddo")
+        }
+    }
+    func configTable() {
+        tableView.register(UINib(nibName: "AssignmentListContentCell", bundle: nil), forCellReuseIdentifier: "assignmentListContentCelliD")
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension AssignmentListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
-    */
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 240
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentListContentCelliD", for: indexPath) as? AssignmentListContentCell)!
+        return cell
+    }
 }

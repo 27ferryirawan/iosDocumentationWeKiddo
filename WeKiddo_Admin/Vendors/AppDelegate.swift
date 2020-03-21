@@ -148,6 +148,7 @@ import UserNotifications
         let othersViewController = OthersViewController(nibName: "OthersViewController", bundle: nil)
         let subjectListViewController = SubjectListViewController(nibName: "SubjectListViewController", bundle: nil)
         let examViewController = ExamViewController(nibName: "ExamViewController", bundle: nil)
+        let trackerDashboardViewController = TrackerDashboardViewController(nibName: "TrackerDashboardViewController", bundle: nil)
 //        let questionViewController = QuestionsViewController(nibName: "QuestionsViewController", bundle: nil)
 //        let approvalViewController = ApprovalViewController(nibName: "ApprovalViewController", bundle: nil)
 //        let nearbyCourseController = NearbyCourseMoreViewController(nibName: "NearbyCourseMoreViewController", bundle: nil)
@@ -168,6 +169,7 @@ import UserNotifications
         let assignment = UINavigationController(rootViewController: assignmentViewController)
         let announcement = UINavigationController(rootViewController: announcementViewController)
         let more = UINavigationController(rootViewController: othersViewController)
+        let trackerDashboard = UINavigationController(rootViewController: trackerDashboardViewController)
 //        let subjectList = UINavigationController(rootViewController: subjectListViewController)
         let examSchedule = UINavigationController(rootViewController: examViewController)
 //        let nearbyCourse = UINavigationController(rootViewController: nearbyCourseController)
@@ -189,8 +191,9 @@ import UserNotifications
                 "38": detention,
                 "42": latePayment,
                 "68": assignment,
+                "71": trackerDashboard,
 //                "47": subjectList, //subjectTopic
-                "71": dashboard,
+//                "71": dashboard,
                 "70": examSchedule, // -> DEVELOPMEMNT PHASE 1
                 //                "26": schoolProfile,
                 //                "27": user,
@@ -243,6 +246,14 @@ import UserNotifications
         )
         classRoomTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         classroomViewController.tabBarItem = classRoomTab
+        // TRACKER DASHBOARD
+        let trackerDashboardTab = UITabBarItem(
+            title: menuName["71"],
+            image: UIImage(named:"icon_home"),
+            selectedImage: UIImage(named:"icon_home")
+        )
+        trackerDashboardTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
+        trackerDashboardViewController.tabBarItem = trackerDashboardTab
         // ATTENDANCE
         let attendanceRoomTab = UITabBarItem(
             title: menuName["36"],
@@ -292,13 +303,13 @@ import UserNotifications
         announcementTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         announcementViewController.tabBarItem = announcementTab
         // HOMEROOM ADMIN
-        let homeAdminTab = UITabBarItem(
-            title: menuName["71"],
-            image: UIImage(named:"tabbar_home"),
-            selectedImage: UIImage(named:"tabbar_home")
-        )
-        homeAdminTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
-        homeViewController.tabBarItem = homeAdminTab
+//        let homeAdminTab = UITabBarItem(
+//            title: menuName["71"],
+//            image: UIImage(named:"tabbar_home"),
+//            selectedImage: UIImage(named:"tabbar_home")
+//        )
+//        homeAdminTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
+//        homeViewController.tabBarItem = homeAdminTab
         // Exam Schedule
         let examScheduleTab = UITabBarItem(
             title: menuName["70"],

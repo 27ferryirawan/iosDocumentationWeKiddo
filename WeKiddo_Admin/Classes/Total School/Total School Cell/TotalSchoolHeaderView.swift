@@ -10,12 +10,14 @@ import UIKit
 
 class TotalSchoolHeaderView: UITableViewHeaderFooterView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bgView: UIView! {
+        didSet {
+            bgView.layer.cornerRadius = 5.0
+            bgView.layer.masksToBounds = true
+            bgView.layer.borderWidth = 1.0
+            bgView.layer.borderColor = UIColor.lightGray.cgColor
+        }
     }
-    */
-
+    
 }

@@ -8,11 +8,19 @@
 
 import UIKit
 
-class TotalSchoolContentCell: UITableViewCell {
+protocol TotalSchoolContentCellDelegate: class {
+    func toSchoolDashboard()
+}
 
+class TotalSchoolContentCell: UITableViewCell {
+    
+    @IBOutlet weak var schoolCollection: UICollectionView!
+    
+    weak var delegate: TotalSchoolContentCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        schoolCollection.register(UINib(nibName: "SchoolContentCell", bundle: nil), forCellWithReuseIdentifier: "schoolContentCellID")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,4 +29,23 @@ class TotalSchoolContentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func fetchDetailSchoolDashbaord() {
+        self.delegate?.toSchoolDashboard()
+    }
+}
+
+extension TotalSchoolContentCell: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "schoolContentCellID", for: indexPath) as? SchoolContentCell)!
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        fetchDetailSchoolDashbaord()
+    }
 }
