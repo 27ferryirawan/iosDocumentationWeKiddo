@@ -12,6 +12,11 @@ class DashboardAssignmentViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
+    var isAssignment = Bool()
+    var isEbook = Bool()
+    var isExercise = Bool()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTable()
@@ -46,8 +51,16 @@ extension DashboardAssignmentViewController: UITableViewDelegate, UITableViewDat
 
 extension DashboardAssignmentViewController: DashboardAssignmentContentCellDelegate {
     func toAssignmentList() {
-        let assignmentListVC = AssignmentListViewController()
-        self.navigationController?.pushViewController(assignmentListVC, animated: true)
+        if isAssignment {
+            let assignmentListVC = AssignmentListViewController()
+            self.navigationController?.pushViewController(assignmentListVC, animated: true)
+        } else if isEbook {
+            let ebookListVC = EbookListViewController()
+            self.navigationController?.pushViewController(ebookListVC, animated: true)
+        } else {
+            let exerciseListVC = ExerciseListViewController()
+            self.navigationController?.pushViewController(exerciseListVC, animated: true)
+        }
     }
 }
 

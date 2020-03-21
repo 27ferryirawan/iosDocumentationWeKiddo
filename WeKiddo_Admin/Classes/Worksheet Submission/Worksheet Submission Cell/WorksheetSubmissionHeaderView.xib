@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="r16-Vu-YJQ" customClass="WorksheetSubmissionHeaderView" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ExH-QF-WvH">
+                    <rect key="frame" x="10" y="0.0" width="394" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math | 10.00 - 12.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RS-o6-Mu9">
+                            <rect key="frame" x="5" y="8" width="114" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigonometri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ok-Xk-yEl">
+                            <rect key="frame" x="5" y="25" width="114" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40/38" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pce-hu-M2M">
+                            <rect key="frame" x="180" y="18" width="34.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-H6-oe2">
+                            <rect key="frame" x="304" y="10" width="80" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X IPA A" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOZ-cA-qhf">
+                                    <rect key="frame" x="2" y="0.0" width="76" height="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="dOZ-cA-qhf" firstAttribute="top" secondItem="9iq-H6-oe2" secondAttribute="top" id="0Zg-Ua-7YQ"/>
+                                <constraint firstItem="dOZ-cA-qhf" firstAttribute="leading" secondItem="9iq-H6-oe2" secondAttribute="leading" constant="2" id="B9a-cx-8Je"/>
+                                <constraint firstAttribute="bottom" secondItem="dOZ-cA-qhf" secondAttribute="bottom" id="WJ4-vc-nME"/>
+                                <constraint firstAttribute="trailing" secondItem="dOZ-cA-qhf" secondAttribute="trailing" constant="2" id="ZCW-IA-aB9"/>
+                                <constraint firstAttribute="width" constant="80" id="arA-8v-3Le"/>
+                                <constraint firstAttribute="height" constant="30" id="d5o-4h-gGF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="1RS-o6-Mu9" firstAttribute="top" secondItem="ExH-QF-WvH" secondAttribute="top" constant="8" id="0tE-LN-gSX"/>
+                        <constraint firstItem="0Ok-Xk-yEl" firstAttribute="leading" secondItem="1RS-o6-Mu9" secondAttribute="leading" id="1sX-jN-4Em"/>
+                        <constraint firstItem="9iq-H6-oe2" firstAttribute="centerY" secondItem="ExH-QF-WvH" secondAttribute="centerY" id="6yl-zb-GIs"/>
+                        <constraint firstAttribute="trailing" secondItem="9iq-H6-oe2" secondAttribute="trailing" constant="10" id="7Mb-r7-XtQ"/>
+                        <constraint firstItem="pce-hu-M2M" firstAttribute="centerX" secondItem="ExH-QF-WvH" secondAttribute="centerX" id="8bX-HA-gy9"/>
+                        <constraint firstItem="0Ok-Xk-yEl" firstAttribute="trailing" secondItem="1RS-o6-Mu9" secondAttribute="trailing" id="OUw-Ro-7Cn"/>
+                        <constraint firstItem="pce-hu-M2M" firstAttribute="centerY" secondItem="ExH-QF-WvH" secondAttribute="centerY" id="PSv-7d-Tzq"/>
+                        <constraint firstItem="0Ok-Xk-yEl" firstAttribute="top" secondItem="1RS-o6-Mu9" secondAttribute="bottom" constant="2.5" id="hZt-qZ-HT2"/>
+                        <constraint firstItem="1RS-o6-Mu9" firstAttribute="leading" secondItem="ExH-QF-WvH" secondAttribute="leading" constant="5" id="nya-Q2-yzo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="ExH-QF-WvH" firstAttribute="leading" secondItem="nKc-Ga-ICT" secondAttribute="leading" constant="10" id="Qxz-Wf-Nsk"/>
+                <constraint firstItem="nKc-Ga-ICT" firstAttribute="trailing" secondItem="ExH-QF-WvH" secondAttribute="trailing" constant="10" id="UXp-t3-G3t"/>
+                <constraint firstItem="ExH-QF-WvH" firstAttribute="top" secondItem="r16-Vu-YJQ" secondAttribute="top" id="wGQ-Ka-x4r"/>
+                <constraint firstAttribute="bottom" secondItem="ExH-QF-WvH" secondAttribute="bottom" id="yga-ZT-UtD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="nKc-Ga-ICT"/>
+            <point key="canvasLocation" x="32" y="76"/>
+        </view>
+    </objects>
+</document>

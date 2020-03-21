@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorksheetSubmissionViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EbookListViewController" customModule="WeKiddo_Admin" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="L3b-CJ-Cos" id="Q04-dk-qtX"/>
+                <outlet property="tableView" destination="EA0-2l-kxB" id="AgL-AR-bOl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,21 +19,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L3b-CJ-Cos">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EA0-2l-kxB">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="aea-Jg-2Rl"/>
-                        <outlet property="delegate" destination="-1" id="OPl-nc-DV7"/>
+                        <outlet property="dataSource" destination="-1" id="DNA-yJ-SDG"/>
+                        <outlet property="delegate" destination="-1" id="Wua-6m-Z8r"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="L3b-CJ-Cos" secondAttribute="bottom" id="Ndg-90-Fze"/>
-                <constraint firstItem="L3b-CJ-Cos" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="RON-Xm-vwQ"/>
-                <constraint firstItem="L3b-CJ-Cos" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lD7-Vl-RG6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L3b-CJ-Cos" secondAttribute="trailing" id="wQ5-9Z-NNd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EA0-2l-kxB" secondAttribute="trailing" id="H0a-vR-0s0"/>
+                <constraint firstItem="EA0-2l-kxB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WB9-9r-cdu"/>
+                <constraint firstItem="EA0-2l-kxB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZK9-nI-WkR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EA0-2l-kxB" secondAttribute="bottom" id="bGM-rT-ehK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>

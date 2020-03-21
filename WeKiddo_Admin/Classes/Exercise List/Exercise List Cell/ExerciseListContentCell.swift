@@ -1,20 +1,22 @@
 //
-//  AssignmentListContentCell.swift
+//  ExerciseListContentCell.swift
 //  WeKiddo_Admin
 //
-//  Created by zein rezky chandra on 21/03/20.
+//  Created by zein rezky chandra on 22/03/20.
 //  Copyright © 2020 PT. Absolute Connection. All rights reserved.
 //
 
 import UIKit
 
-protocol AssignmentListContentCellDelegate: class {
-    func toDetailWorksheet()
+protocol ExerciseListContentCellDelegate: class {
+    func toDetailExercise()
 }
 
-class AssignmentListContentCell: UITableViewCell {
+class ExerciseListContentCell: UITableViewCell {
 
-    weak var delegate: AssignmentListContentCellDelegate?
+    @IBOutlet weak var detailButton: UIButton!
+    
+    weak var delegate: ExerciseListContentCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +28,8 @@ class AssignmentListContentCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func detailButton(_ sender: UIButton) {
-        self.delegate?.toDetailWorksheet()
+    @IBAction func detailAction(_ sender: UIButton) {
+        self.delegate?.toDetailExercise()
     }
     
 }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseListContentCellID" id="lkB-5m-eP1" customClass="ExerciseListContentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkB-5m-eP1" id="wMZ-Kl-x3q">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jim-wA-vrc">
+                        <rect key="frame" x="10" y="0.0" width="300" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31/10/2019 - 31/11/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3m-6E-m0e">
+                                <rect key="frame" x="5" y="10" width="290" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biology Mid Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP7-1Q-bMu">
+                                <rect key="frame" x="5" y="29.5" width="290" height="14.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr Bambang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHH-HP-JTF">
+                                <rect key="frame" x="30" y="52.5" width="265" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_profile_teacher" translatesAutoresizingMaskIntoConstraints="NO" id="hPA-an-BHf">
+                                <rect key="frame" x="5" y="49" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="DgL-qG-rn4"/>
+                                    <constraint firstAttribute="height" constant="20" id="uAt-Tc-Frk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hPA-an-BHf" firstAttribute="top" secondItem="HP7-1Q-bMu" secondAttribute="bottom" constant="5" id="4i0-io-qpe"/>
+                            <constraint firstItem="CHH-HP-JTF" firstAttribute="trailing" secondItem="HP7-1Q-bMu" secondAttribute="trailing" id="BlT-bR-b0K"/>
+                            <constraint firstItem="t3m-6E-m0e" firstAttribute="top" secondItem="jim-wA-vrc" secondAttribute="top" constant="10" id="DHu-NJ-gK1"/>
+                            <constraint firstItem="hPA-an-BHf" firstAttribute="leading" secondItem="HP7-1Q-bMu" secondAttribute="leading" id="H9X-UD-LbG"/>
+                            <constraint firstItem="CHH-HP-JTF" firstAttribute="leading" secondItem="hPA-an-BHf" secondAttribute="trailing" constant="5" id="L7p-y6-hIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="t3m-6E-m0e" secondAttribute="trailing" constant="5" id="RXw-8J-TpH"/>
+                            <constraint firstItem="HP7-1Q-bMu" firstAttribute="trailing" secondItem="t3m-6E-m0e" secondAttribute="trailing" id="WQH-D0-x1Z"/>
+                            <constraint firstItem="t3m-6E-m0e" firstAttribute="leading" secondItem="jim-wA-vrc" secondAttribute="leading" constant="5" id="aHQ-ri-1mN"/>
+                            <constraint firstItem="HP7-1Q-bMu" firstAttribute="top" secondItem="t3m-6E-m0e" secondAttribute="bottom" constant="5" id="cM5-s0-Ie3"/>
+                            <constraint firstItem="CHH-HP-JTF" firstAttribute="centerY" secondItem="hPA-an-BHf" secondAttribute="centerY" id="gi8-m5-j5j"/>
+                            <constraint firstItem="HP7-1Q-bMu" firstAttribute="leading" secondItem="t3m-6E-m0e" secondAttribute="leading" id="oRp-65-Eew"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xey-jX-3TS">
+                        <rect key="frame" x="10" y="0.0" width="300" height="77"/>
+                        <connections>
+                            <action selector="detailAction:" destination="lkB-5m-eP1" eventType="touchUpInside" id="PGp-4m-73w"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xey-jX-3TS" firstAttribute="bottom" secondItem="jim-wA-vrc" secondAttribute="bottom" id="6he-1J-7gS"/>
+                    <constraint firstAttribute="bottom" secondItem="jim-wA-vrc" secondAttribute="bottom" id="9uM-uk-vWZ"/>
+                    <constraint firstItem="Xey-jX-3TS" firstAttribute="top" secondItem="jim-wA-vrc" secondAttribute="top" id="fxg-iN-8dr"/>
+                    <constraint firstItem="Xey-jX-3TS" firstAttribute="trailing" secondItem="jim-wA-vrc" secondAttribute="trailing" id="r9v-4J-f6i"/>
+                    <constraint firstItem="jim-wA-vrc" firstAttribute="top" secondItem="wMZ-Kl-x3q" secondAttribute="top" id="tip-iW-4Uj"/>
+                    <constraint firstItem="Xey-jX-3TS" firstAttribute="leading" secondItem="jim-wA-vrc" secondAttribute="leading" id="utQ-hT-4t2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="jim-wA-vrc" firstAttribute="leading" secondItem="IKM-cE-dbO" secondAttribute="leading" constant="10" id="DLv-aZ-FQV"/>
+                <constraint firstItem="IKM-cE-dbO" firstAttribute="trailing" secondItem="jim-wA-vrc" secondAttribute="trailing" constant="10" id="PbW-pz-umF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="IKM-cE-dbO"/>
+            <connections>
+                <outlet property="detailButton" destination="Xey-jX-3TS" id="jG3-sF-9Ub"/>
+            </connections>
+            <point key="canvasLocation" x="84" y="34"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_profile_teacher" width="36" height="36"/>
+    </resources>
+</document>

@@ -106,7 +106,19 @@
                             <constraint firstItem="p3b-XQ-l7t" firstAttribute="centerY" secondItem="gu9-je-YCa" secondAttribute="centerY" id="zBu-RF-mA4"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcV-At-LUr">
+                        <rect key="frame" x="10" y="10" width="300" height="220"/>
+                        <connections>
+                            <action selector="detailButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P9I-mu-vCh"/>
+                        </connections>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="KcV-At-LUr" firstAttribute="trailing" secondItem="IYe-vj-I0n" secondAttribute="trailing" id="2VY-xT-Kgs"/>
+                    <constraint firstItem="KcV-At-LUr" firstAttribute="bottom" secondItem="IYe-vj-I0n" secondAttribute="bottom" id="cZw-8S-NQH"/>
+                    <constraint firstItem="KcV-At-LUr" firstAttribute="top" secondItem="IYe-vj-I0n" secondAttribute="top" id="sQn-Qw-XUW"/>
+                    <constraint firstItem="KcV-At-LUr" firstAttribute="leading" secondItem="IYe-vj-I0n" secondAttribute="leading" id="vq4-Av-iCD"/>
+                </constraints>
             </tableViewCellContentView>
             <constraints>
                 <constraint firstItem="IYe-vj-I0n" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="10" id="6o3-M0-Wnh"/>

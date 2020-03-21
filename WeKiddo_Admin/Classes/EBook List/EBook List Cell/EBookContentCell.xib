@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookContentCellID" rowHeight="150" id="rh7-id-iyE" customClass="EBookContentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rh7-id-iyE" id="yGf-u6-r7e">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_wekiddo" translatesAutoresizingMaskIntoConstraints="NO" id="0Vs-pL-HV9">
+                        <rect key="frame" x="15" y="10" width="100" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="kNj-R0-LDl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buku Siswa - Tematik Terpadu SD/MI Kelas IV Tema 3; Peduli terhadap Makhluk Hidup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WP-e9-rIv">
+                        <rect key="frame" x="120" y="10" width="185" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download : 233" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-ki-vxu">
+                        <rect key="frame" x="120" y="56" width="185" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View : 2324" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfW-Rs-qGH">
+                        <rect key="frame" x="120" y="78" width="185" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source : Upload" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taS-w8-Bhr">
+                        <rect key="frame" x="120" y="100" width="185" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="0Vs-pL-HV9" secondAttribute="bottom" constant="10" id="1Wg-V3-W8b"/>
+                    <constraint firstItem="5WP-e9-rIv" firstAttribute="top" secondItem="0Vs-pL-HV9" secondAttribute="top" id="37z-2I-Dnn"/>
+                    <constraint firstItem="ka9-ki-vxu" firstAttribute="top" secondItem="5WP-e9-rIv" secondAttribute="bottom" constant="10" id="VZ4-CB-fzY"/>
+                    <constraint firstItem="ka9-ki-vxu" firstAttribute="leading" secondItem="5WP-e9-rIv" secondAttribute="leading" id="VZv-H2-cIQ"/>
+                    <constraint firstItem="0Vs-pL-HV9" firstAttribute="top" secondItem="yGf-u6-r7e" secondAttribute="top" constant="10" id="VrX-cp-w3x"/>
+                    <constraint firstItem="0Vs-pL-HV9" firstAttribute="leading" secondItem="yGf-u6-r7e" secondAttribute="leading" constant="15" id="aIv-A9-ZTS"/>
+                    <constraint firstItem="taS-w8-Bhr" firstAttribute="trailing" secondItem="FfW-Rs-qGH" secondAttribute="trailing" id="g6L-vw-gXO"/>
+                    <constraint firstAttribute="trailing" secondItem="5WP-e9-rIv" secondAttribute="trailing" constant="15" id="gq4-IP-H0n"/>
+                    <constraint firstItem="ka9-ki-vxu" firstAttribute="trailing" secondItem="5WP-e9-rIv" secondAttribute="trailing" id="hEr-MY-hwc"/>
+                    <constraint firstItem="FfW-Rs-qGH" firstAttribute="leading" secondItem="ka9-ki-vxu" secondAttribute="leading" id="jX6-t8-Psh"/>
+                    <constraint firstItem="FfW-Rs-qGH" firstAttribute="trailing" secondItem="ka9-ki-vxu" secondAttribute="trailing" id="kjg-3p-Myu"/>
+                    <constraint firstItem="taS-w8-Bhr" firstAttribute="leading" secondItem="FfW-Rs-qGH" secondAttribute="leading" id="qzn-Yd-Gzd"/>
+                    <constraint firstItem="5WP-e9-rIv" firstAttribute="leading" secondItem="0Vs-pL-HV9" secondAttribute="trailing" constant="5" id="thv-l2-Pet"/>
+                    <constraint firstItem="taS-w8-Bhr" firstAttribute="top" secondItem="FfW-Rs-qGH" secondAttribute="bottom" constant="10" id="twS-Y3-aY8"/>
+                    <constraint firstItem="FfW-Rs-qGH" firstAttribute="top" secondItem="ka9-ki-vxu" secondAttribute="bottom" constant="10" id="weI-Os-hoY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="zaa-KC-auB"/>
+            <connections>
+                <outlet property="bookImage" destination="0Vs-pL-HV9" id="j6W-ye-V44"/>
+                <outlet property="bookName" destination="5WP-e9-rIv" id="SHU-YL-I47"/>
+                <outlet property="bookSource" destination="taS-w8-Bhr" id="fGV-gQ-dK6"/>
+                <outlet property="bookTotalDownload" destination="ka9-ki-vxu" id="jWa-xr-8pV"/>
+                <outlet property="bookTotalView" destination="FfW-Rs-qGH" id="D8S-0T-OrG"/>
+            </connections>
+            <point key="canvasLocation" x="160.86956521739131" y="290.625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_logo_wekiddo" width="192" height="192"/>
+    </resources>
+</document>

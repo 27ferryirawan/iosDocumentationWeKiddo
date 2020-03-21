@@ -38,6 +38,14 @@ extension AssignmentListViewController: UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentListContentCelliD", for: indexPath) as? AssignmentListContentCell)!
+        cell.delegate = self
         return cell
+    }
+}
+
+extension AssignmentListViewController: AssignmentListContentCellDelegate {
+    func toDetailWorksheet() {
+        let worksheetVC = WorksheetSubmissionViewController()
+        self.navigationController?.pushViewController(worksheetVC, animated: true)
     }
 }

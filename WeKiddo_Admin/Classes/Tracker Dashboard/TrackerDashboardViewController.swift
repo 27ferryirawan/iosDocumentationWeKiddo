@@ -63,7 +63,26 @@ extension TrackerDashboardViewController: UITableViewDelegate, UITableViewDataSo
 
 extension TrackerDashboardViewController: TrackerDashboardHeaderCellDelegate, TrackerContentCellDelegate {
     func toDetailPage(withIndex: Int) {
-        if withIndex == 1 {
+        switch withIndex {
+        case 1:
+            let dashboardAssignment = DashboardAssignmentViewController()
+            dashboardAssignment.isAssignment = true
+            dashboardAssignment.isEbook = false
+            dashboardAssignment.isExercise = false
+            self.navigationController?.pushViewController(dashboardAssignment, animated: true)
+        case 2:
+            let dashboardAssignment = DashboardAssignmentViewController()
+            dashboardAssignment.isAssignment = false
+            dashboardAssignment.isEbook = true
+            dashboardAssignment.isExercise = false
+            self.navigationController?.pushViewController(dashboardAssignment, animated: true)
+        case 3:
+            let dashboardAssignment = DashboardAssignmentViewController()
+            dashboardAssignment.isAssignment = false
+            dashboardAssignment.isEbook = false
+            dashboardAssignment.isExercise = true
+            self.navigationController?.pushViewController(dashboardAssignment, animated: true)
+        default:
             let dashboardAssignment = DashboardAssignmentViewController()
             self.navigationController?.pushViewController(dashboardAssignment, animated: true)
         }
