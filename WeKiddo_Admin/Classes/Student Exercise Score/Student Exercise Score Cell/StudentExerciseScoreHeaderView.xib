@@ -17,27 +17,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCO-Iv-YXh">
                     <rect key="frame" x="10" y="0.0" width="394" height="44"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31/10/2019 - 31/11/2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-4f-t0Y">
-                            <rect key="frame" x="5" y="5" width="384" height="14.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biology Mid Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s0-ei-68G">
-                            <rect key="frame" x="5" y="24.5" width="384" height="14.5"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <rect key="frame" x="126" y="13.5" width="142.5" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="RVd-4f-t0Y" secondAttribute="trailing" constant="5" id="9u9-Yi-oLc"/>
-                        <constraint firstItem="RVd-4f-t0Y" firstAttribute="top" secondItem="KCO-Iv-YXh" secondAttribute="top" constant="5" id="Zt7-sH-UMI"/>
-                        <constraint firstItem="0s0-ei-68G" firstAttribute="top" secondItem="RVd-4f-t0Y" secondAttribute="bottom" constant="5" id="bgW-L1-RC9"/>
-                        <constraint firstItem="0s0-ei-68G" firstAttribute="leading" secondItem="RVd-4f-t0Y" secondAttribute="leading" id="kO2-Fk-2x5"/>
-                        <constraint firstItem="RVd-4f-t0Y" firstAttribute="leading" secondItem="KCO-Iv-YXh" secondAttribute="leading" constant="5" id="sRo-hH-u9n"/>
-                        <constraint firstItem="0s0-ei-68G" firstAttribute="trailing" secondItem="RVd-4f-t0Y" secondAttribute="trailing" id="xZ9-9g-bp1"/>
+                        <constraint firstItem="0s0-ei-68G" firstAttribute="centerY" secondItem="KCO-Iv-YXh" secondAttribute="centerY" id="I1h-Py-hNA"/>
+                        <constraint firstItem="0s0-ei-68G" firstAttribute="centerX" secondItem="KCO-Iv-YXh" secondAttribute="centerX" id="xDI-e4-FJy"/>
                     </constraints>
                 </view>
             </subviews>

@@ -56,12 +56,43 @@ extension TrackerDashboardViewController: UITableViewDelegate, UITableViewDataSo
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "trackerUserCellID", for: indexPath) as? TrackerUserCell)!
+            cell.index = indexPath.row
+            cell.delegate = self
             return cell
         }
     }
 }
 
-extension TrackerDashboardViewController: TrackerDashboardHeaderCellDelegate, TrackerContentCellDelegate {
+extension TrackerDashboardViewController: TrackerDashboardHeaderCellDelegate, TrackerContentCellDelegate, TrackerUserCellDelegate {
+    func toDetailDashboard(withIndex: Int) {
+        switch withIndex {
+        case 4:
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = true
+            studentDashboard.isTeacher = false
+            studentDashboard.isParent = false
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        case 5:
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = false
+            studentDashboard.isTeacher = true
+            studentDashboard.isParent = false
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        case 6:
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = false
+            studentDashboard.isTeacher = false
+            studentDashboard.isParent = true
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        default:
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = true
+            studentDashboard.isTeacher = false
+            studentDashboard.isParent = false
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        }
+    }
+    
     func toDetailPage(withIndex: Int) {
         switch withIndex {
         case 1:

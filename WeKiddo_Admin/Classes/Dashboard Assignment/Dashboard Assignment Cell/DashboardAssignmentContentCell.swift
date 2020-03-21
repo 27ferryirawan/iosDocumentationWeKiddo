@@ -19,16 +19,12 @@ class DashboardAssignmentContentCell: UITableViewCell {
         didSet {
             rightView.layer.borderColor = UIColor.lightGray.cgColor
             rightView.layer.borderWidth = 1.0
-            rightView.layer.cornerRadius = 5.0
-            rightView.layer.masksToBounds = true
         }
     }
     @IBOutlet weak var leftView: UIView! {
         didSet {
             leftView.layer.borderColor = UIColor.lightGray.cgColor
             leftView.layer.borderWidth = 1.0
-            leftView.layer.cornerRadius = 5.0
-            leftView.layer.masksToBounds = true
         }
     }
     @IBOutlet weak var statisticView: UIView! {

@@ -58,16 +58,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIi-tB-bb8">
-                                <rect key="frame" x="10" y="65" width="145" height="59"/>
+                                <rect key="frame" x="10" y="65" width="147.5" height="59"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Assignment (by Student)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUz-GI-3Ec">
-                                        <rect key="frame" x="5" y="5" width="135" height="26.5"/>
+                                        <rect key="frame" x="5" y="5" width="137.5" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-Gn-XGF">
-                                        <rect key="frame" x="5" y="36.5" width="135" height="14.5"/>
+                                        <rect key="frame" x="5" y="36.5" width="137.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -85,16 +85,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmI-S3-Kwl">
-                                <rect key="frame" x="160" y="65" width="145" height="59"/>
+                                <rect key="frame" x="157.5" y="65" width="147.5" height="59"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worksheet Submission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xz-9E-A6s">
-                                        <rect key="frame" x="5" y="5" width="135" height="13.5"/>
+                                        <rect key="frame" x="5" y="5" width="137.5" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlR-fm-H7Y">
-                                        <rect key="frame" x="5" y="26" width="135" height="14.5"/>
+                                        <rect key="frame" x="5" y="26" width="137.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -126,7 +126,7 @@
                             <constraint firstAttribute="trailing" secondItem="3kg-8d-ISA" secondAttribute="trailing" constant="5" id="OZu-7q-InF"/>
                             <constraint firstItem="fIi-tB-bb8" firstAttribute="leading" secondItem="PfM-Nu-7VB" secondAttribute="leading" id="QUh-go-let"/>
                             <constraint firstItem="NmI-S3-Kwl" firstAttribute="width" secondItem="fIi-tB-bb8" secondAttribute="width" id="QyH-sE-cIN"/>
-                            <constraint firstItem="NmI-S3-Kwl" firstAttribute="leading" secondItem="fIi-tB-bb8" secondAttribute="trailing" constant="5" id="RAI-nc-wTc"/>
+                            <constraint firstItem="NmI-S3-Kwl" firstAttribute="leading" secondItem="fIi-tB-bb8" secondAttribute="trailing" id="RAI-nc-wTc"/>
                             <constraint firstItem="yhs-WN-HTW" firstAttribute="bottom" secondItem="PfM-Nu-7VB" secondAttribute="bottom" id="YHe-xH-EOp"/>
                             <constraint firstItem="NmI-S3-Kwl" firstAttribute="centerY" secondItem="fIi-tB-bb8" secondAttribute="centerY" id="bsz-Sl-GfR"/>
                             <constraint firstItem="NmI-S3-Kwl" firstAttribute="trailing" secondItem="yhs-WN-HTW" secondAttribute="trailing" id="hbj-3u-l3e"/>

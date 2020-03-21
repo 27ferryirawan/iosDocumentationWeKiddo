@@ -32,7 +32,7 @@ class WorksheetSubmissionViewController: UIViewController {
 }
 extension WorksheetSubmissionViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "WorksheetSubmissionHeaderView") as! WorksheetSubmissionHeaderView

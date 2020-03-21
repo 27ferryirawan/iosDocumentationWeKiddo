@@ -67,11 +67,33 @@
                             <action selector="detailAction:" destination="lkB-5m-eP1" eventType="touchUpInside" id="PGp-4m-73w"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUw-nb-p5f">
+                        <rect key="frame" x="250" y="10" width="60" height="57"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student 34" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y09-1j-mg0">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="57"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="55j-Pd-0Z1"/>
+                            <constraint firstAttribute="trailing" secondItem="y09-1j-mg0" secondAttribute="trailing" id="6Dr-XO-8na"/>
+                            <constraint firstItem="y09-1j-mg0" firstAttribute="top" secondItem="qUw-nb-p5f" secondAttribute="top" id="Nam-tD-zsf"/>
+                            <constraint firstItem="y09-1j-mg0" firstAttribute="leading" secondItem="qUw-nb-p5f" secondAttribute="leading" id="gCO-ws-QUR"/>
+                            <constraint firstAttribute="bottom" secondItem="y09-1j-mg0" secondAttribute="bottom" id="rxe-kj-oXc"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Xey-jX-3TS" firstAttribute="bottom" secondItem="jim-wA-vrc" secondAttribute="bottom" id="6he-1J-7gS"/>
                     <constraint firstAttribute="bottom" secondItem="jim-wA-vrc" secondAttribute="bottom" id="9uM-uk-vWZ"/>
+                    <constraint firstAttribute="trailing" secondItem="qUw-nb-p5f" secondAttribute="trailing" constant="10" id="CCb-vo-oIH"/>
+                    <constraint firstItem="qUw-nb-p5f" firstAttribute="top" secondItem="wMZ-Kl-x3q" secondAttribute="top" constant="10" id="MDf-aq-xLE"/>
                     <constraint firstItem="Xey-jX-3TS" firstAttribute="top" secondItem="jim-wA-vrc" secondAttribute="top" id="fxg-iN-8dr"/>
+                    <constraint firstAttribute="bottom" secondItem="qUw-nb-p5f" secondAttribute="bottom" constant="10" id="jmd-aw-ec6"/>
                     <constraint firstItem="Xey-jX-3TS" firstAttribute="trailing" secondItem="jim-wA-vrc" secondAttribute="trailing" id="r9v-4J-f6i"/>
                     <constraint firstItem="jim-wA-vrc" firstAttribute="top" secondItem="wMZ-Kl-x3q" secondAttribute="top" id="tip-iW-4Uj"/>
                     <constraint firstItem="Xey-jX-3TS" firstAttribute="leading" secondItem="jim-wA-vrc" secondAttribute="leading" id="utQ-hT-4t2"/>

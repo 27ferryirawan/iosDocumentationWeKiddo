@@ -21,14 +21,14 @@
                         <rect key="frame" x="10" y="0.0" width="300" height="80"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeKiddoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1U3-Pk-eJ8">
-                                <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                <rect key="frame" x="5" y="10" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Ywj-xI-ceu"/>
                                     <constraint firstAttribute="height" constant="60" id="lDi-EZ-pWt"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-m1-4xR">
-                                <rect key="frame" x="78" y="18.5" width="69.5" height="43"/>
+                                <rect key="frame" x="69" y="18.5" width="94" height="43"/>
                                 <string key="text">Karen Julian
 NIK 123123
 X IPA A</string>
@@ -37,7 +37,7 @@ X IPA A</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aZ-V4-5Tx">
-                                <rect key="frame" x="230" y="10" width="60" height="60"/>
+                                <rect key="frame" x="235" y="10" width="60" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMn-6Q-Sgx">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -57,16 +57,40 @@ X IPA A</string>
                                     <constraint firstAttribute="bottom" secondItem="OMn-6Q-Sgx" secondAttribute="bottom" id="oxu-5O-kXa"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-W4-MzX">
+                                <rect key="frame" x="187" y="10" width="46" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="eUB-3A-0jL"/>
+                                </constraints>
+                                <string key="text">22/01/2020
+11:00 WIB</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_subject" translatesAutoresizingMaskIntoConstraints="NO" id="vB7-ZB-9ts">
+                                <rect key="frame" x="165" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Nt8-0J-ZU8"/>
+                                    <constraint firstAttribute="width" constant="20" id="RjL-kf-8Ip"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vB7-ZB-9ts" firstAttribute="centerY" secondItem="cVs-W4-MzX" secondAttribute="centerY" id="Bo2-Iv-PJn"/>
+                            <constraint firstItem="cVs-W4-MzX" firstAttribute="leading" secondItem="vB7-ZB-9ts" secondAttribute="trailing" constant="2" id="FhD-hW-zub"/>
+                            <constraint firstItem="vB7-ZB-9ts" firstAttribute="leading" secondItem="MWD-m1-4xR" secondAttribute="trailing" constant="2" id="FwA-2Y-5zT"/>
                             <constraint firstItem="MWD-m1-4xR" firstAttribute="centerY" secondItem="1U3-Pk-eJ8" secondAttribute="centerY" id="I41-h0-pZD"/>
-                            <constraint firstAttribute="trailing" secondItem="3aZ-V4-5Tx" secondAttribute="trailing" constant="10" id="ICw-ad-BgJ"/>
-                            <constraint firstItem="1U3-Pk-eJ8" firstAttribute="leading" secondItem="dv1-pi-F2a" secondAttribute="leading" constant="10" id="JYL-F7-vFT"/>
-                            <constraint firstItem="MWD-m1-4xR" firstAttribute="leading" secondItem="1U3-Pk-eJ8" secondAttribute="trailing" constant="8" id="SBe-xW-PHp"/>
+                            <constraint firstAttribute="trailing" secondItem="3aZ-V4-5Tx" secondAttribute="trailing" constant="5" id="ICw-ad-BgJ"/>
+                            <constraint firstItem="1U3-Pk-eJ8" firstAttribute="leading" secondItem="dv1-pi-F2a" secondAttribute="leading" constant="5" id="JYL-F7-vFT"/>
+                            <constraint firstItem="cVs-W4-MzX" firstAttribute="top" secondItem="3aZ-V4-5Tx" secondAttribute="top" id="MRZ-us-PiC"/>
+                            <constraint firstItem="MWD-m1-4xR" firstAttribute="leading" secondItem="1U3-Pk-eJ8" secondAttribute="trailing" constant="4" id="SBe-xW-PHp"/>
                             <constraint firstItem="3aZ-V4-5Tx" firstAttribute="top" secondItem="dv1-pi-F2a" secondAttribute="top" constant="10" id="hOf-JP-gov"/>
                             <constraint firstAttribute="bottom" secondItem="3aZ-V4-5Tx" secondAttribute="bottom" constant="10" id="qSb-po-aJQ"/>
                             <constraint firstItem="1U3-Pk-eJ8" firstAttribute="centerY" secondItem="dv1-pi-F2a" secondAttribute="centerY" id="vOC-I9-Jjk"/>
+                            <constraint firstItem="cVs-W4-MzX" firstAttribute="bottom" secondItem="3aZ-V4-5Tx" secondAttribute="bottom" id="yE5-Yr-Ki3"/>
+                            <constraint firstItem="3aZ-V4-5Tx" firstAttribute="leading" secondItem="cVs-W4-MzX" secondAttribute="trailing" constant="2" id="zFO-jG-TUE"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -83,5 +107,6 @@ X IPA A</string>
     </objects>
     <resources>
         <image name="WeKiddoLogo" width="406" height="410"/>
+        <image name="ic_subject" width="1625" height="1625"/>
     </resources>
 </document>

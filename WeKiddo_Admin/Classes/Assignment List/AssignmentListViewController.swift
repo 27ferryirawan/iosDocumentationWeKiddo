@@ -25,16 +25,27 @@ class AssignmentListViewController: UIViewController {
         }
     }
     func configTable() {
+        tableView.register(UINib(nibName: "AssignmentListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "AssignmentListHeaderView")
         tableView.register(UINib(nibName: "AssignmentListContentCell", bundle: nil), forCellReuseIdentifier: "assignmentListContentCelliD")
     }
 
 }
 extension AssignmentListViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "AssignmentListHeaderView") as! AssignmentListHeaderView
+        return headerView
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
+        return 170
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentListContentCelliD", for: indexPath) as? AssignmentListContentCell)!

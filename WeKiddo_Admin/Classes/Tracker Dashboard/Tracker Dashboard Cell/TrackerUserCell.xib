@@ -260,17 +260,25 @@
                             <constraint firstItem="4YG-9z-4Fj" firstAttribute="leading" secondItem="lDy-Jq-3cn" secondAttribute="trailing" constant="5" id="zRr-30-yyw"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKe-vq-6ce">
+                        <rect key="frame" x="5" y="5" width="310" height="170"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="uKe-vq-6ce" firstAttribute="trailing" secondItem="DWD-hx-Yqq" secondAttribute="trailing" id="0an-KF-9BB"/>
                     <constraint firstItem="DWD-hx-Yqq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="8h3-9o-j3f"/>
+                    <constraint firstItem="uKe-vq-6ce" firstAttribute="bottom" secondItem="DWD-hx-Yqq" secondAttribute="bottom" id="Gon-7t-eVd"/>
                     <constraint firstItem="DWD-hx-Yqq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="If3-Ly-XdX"/>
+                    <constraint firstItem="uKe-vq-6ce" firstAttribute="top" secondItem="DWD-hx-Yqq" secondAttribute="top" id="YOw-gS-UwJ"/>
                     <constraint firstAttribute="trailing" secondItem="DWD-hx-Yqq" secondAttribute="trailing" constant="5" id="bMh-A9-Hke"/>
                     <constraint firstAttribute="bottom" secondItem="DWD-hx-Yqq" secondAttribute="bottom" constant="5" id="dlk-Py-6YS"/>
+                    <constraint firstItem="uKe-vq-6ce" firstAttribute="leading" secondItem="DWD-hx-Yqq" secondAttribute="leading" id="rTV-dq-e1t"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bgView" destination="DWD-hx-Yqq" id="1Ck-0A-y9e"/>
+                <outlet property="detailButton" destination="uKe-vq-6ce" id="Qwx-zt-wJt"/>
                 <outlet property="totalActiveView" destination="4YG-9z-4Fj" id="k2U-zT-i2w"/>
                 <outlet property="totalDownloadView" destination="rqd-E8-ciY" id="W1z-Tg-31w"/>
                 <outlet property="totalLoginView" destination="lDy-Jq-3cn" id="dik-A7-Mv2"/>
