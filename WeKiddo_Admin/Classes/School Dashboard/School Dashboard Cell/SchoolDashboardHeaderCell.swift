@@ -10,6 +10,11 @@ import UIKit
 
 class SchoolDashboardHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var today: UILabel!
+    @IBOutlet weak var dateToday: UILabel!
+    @IBOutlet weak var schoolName: UILabel!
+    @IBOutlet weak var schoolClass: UILabel!
+    @IBOutlet weak var schoolImage: UIImageView!
     @IBOutlet weak var dateView: UIView! {
         didSet {
             dateView.layer.borderWidth = 1.0
@@ -32,6 +37,13 @@ class SchoolDashboardHeaderCell: UITableViewCell {
             bgView.layer.masksToBounds = true
         }
     }
+    
+    var detailObj: DashboardDetailSchoolModel? {
+        didSet {
+            cellConfig()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,4 +55,37 @@ class SchoolDashboardHeaderCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        self.schoolImage.sd_setImage(
+            with: URL(string: (obj.school_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+        schoolName.text = obj.school_name
+        schoolClass.text = "School | \(obj.school_grade)"
+        today.text = obj.day
+        dateToday.text = convertDate(time: obj.date)
+    }
+    
+}
+
+extension SchoolDashboardHeaderCell {
+    func convertDate(time: String) -> String {
+        // Convert from string to date first
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: time) else {
+            return ""
+        }
+        // then convert date to string again
+        let dateFormatterResult = DateFormatter()
+        dateFormatterResult.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatterResult.locale = NSLocale.current
+        dateFormatterResult.dateFormat = "dd MMMM yyyy"
+        let stringDate = dateFormatterResult.string(from: date)
+        return stringDate
+    }
 }

@@ -97,6 +97,14 @@
                 <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="IYe-vj-I0n" secondAttribute="bottom" id="l42-pp-gkx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="IYe-vj-I0n" id="BKz-D9-V1a"/>
+                <outlet property="contentDescLabel" destination="0un-HN-2Gd" id="InI-1M-sba"/>
+                <outlet property="subjectAndDateLabel" destination="gu9-je-YCa" id="ldy-eX-2MB"/>
+                <outlet property="subjectCountLabel" destination="p3b-XQ-l7t" id="QEf-An-fFI"/>
+                <outlet property="subjectNameLabel" destination="Cfu-TC-ckd" id="98t-YS-CPe"/>
+                <outlet property="userName" destination="j5M-nv-j0G" id="dPT-o6-8dR"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="222.65625"/>
         </tableViewCell>
     </objects>

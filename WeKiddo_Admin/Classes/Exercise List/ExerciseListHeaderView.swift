@@ -10,18 +10,23 @@ import UIKit
 
 class ExerciseListHeaderView: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var bgView: UIView! {
         didSet {
-            bgView.layer.borderColor = UIColor.lightGray.cgColor
+            bgView.layer.borderColor = UIColor.white.cgColor
             bgView.layer.borderWidth = 1.0
         }
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    var detailObj: CoordinatorExerciseSchoolCreateListModel? {
+        didSet {
+            cellConfig()
+        }
     }
-    */
+    
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        sectionLabel.text = obj.subject_name
+    }
 
 }

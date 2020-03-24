@@ -10,12 +10,17 @@ import UIKit
 
 class AssignmentListHeaderView: UITableViewHeaderFooterView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var classLabek: UILabel!
 
+    var detailObj: CoordinatorAssignmentListPerSchool? {
+        didSet {
+            cellConfig()
+        }
+    }
+    
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        classLabek.text = obj.kelas
+    }
+    
 }

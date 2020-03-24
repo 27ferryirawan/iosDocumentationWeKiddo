@@ -102,6 +102,13 @@ X IPA A</string>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="k11-fF-erb"/>
+            <connections>
+                <outlet property="bgView" destination="dv1-pi-F2a" id="EQs-MF-uqR"/>
+                <outlet property="childImage" destination="1U3-Pk-eJ8" id="lgf-T0-0MW"/>
+                <outlet property="childName" destination="MWD-m1-4xR" id="VXs-Al-WHk"/>
+                <outlet property="dateLabel" destination="cVs-W4-MzX" id="36e-PE-lAe"/>
+                <outlet property="scoreLabel" destination="OMn-6Q-Sgx" id="Or1-nR-uJE"/>
+            </connections>
             <point key="canvasLocation" x="138" y="248"/>
         </tableViewCell>
     </objects>

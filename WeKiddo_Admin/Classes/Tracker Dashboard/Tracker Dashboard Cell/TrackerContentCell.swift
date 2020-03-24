@@ -14,6 +14,11 @@ protocol TrackerContentCellDelegate: class {
 
 class TrackerContentCell: UITableViewCell {
 
+    @IBOutlet weak var labelRight: UILabel!
+    @IBOutlet weak var totalRight: UILabel!
+    @IBOutlet weak var labelLeft: UILabel!
+    @IBOutlet weak var totalLeft: UILabel!
+    @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var worksheetView: UIView! {
         didSet {
             worksheetView.layer.cornerRadius = worksheetView.frame.size.width / 2
@@ -55,6 +60,12 @@ class TrackerContentCell: UITableViewCell {
     weak var delegate: TrackerContentCellDelegate?
     var index = 0
     
+    var detailObj: DashboardCoordinatorModel? {
+        didSet {
+            cellConfig()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -67,6 +78,29 @@ class TrackerContentCell: UITableViewCell {
     }
     @IBAction func toDetailAction(_ sender: Any) {
         self.delegate?.toDetailPage(withIndex: index)
+    }
+    
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        if index == 1 {
+            sectionLabel.text = "Assignment"
+            totalLeft.text = "\(obj.assignment_average_assignment)"
+            labelLeft.text = "Average Assignment (by Student)"
+            totalRight.text = "\(obj.assignment_worksheet_submission_percent)%"
+            labelRight.text = "Worksheet Submission"
+        } else if index == 2 {
+            sectionLabel.text = "E Book"
+            totalLeft.text = "\(obj.ebook_school_with_ebook_percent)%"
+            labelLeft.text = "School With EBook"
+            totalRight.text = "\(obj.ebook_total_student_download)"
+            labelRight.text = "Total Student Download"
+        } else {
+            sectionLabel.text = "Exercise"
+            totalLeft.text = "\(obj.exercise_school_created_exercise_percent)%"
+            labelLeft.text = "School Created Exercise"
+            totalRight.text = "\(obj.exercise_total_student_do_exercise)"
+            labelRight.text = "Total Student Do Exercise"
+        }
     }
     
 }

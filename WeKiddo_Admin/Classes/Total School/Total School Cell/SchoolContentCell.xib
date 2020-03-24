@@ -41,6 +41,10 @@
                 <constraint firstAttribute="bottom" secondItem="qrx-xP-hXu" secondAttribute="bottom" constant="1" id="zLZ-yH-d14"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="tCg-r0-c2D"/>
+            <connections>
+                <outlet property="schoolImage" destination="3k1-fO-su3" id="iQi-hI-5Qw"/>
+                <outlet property="schoolName" destination="qrx-xP-hXu" id="aIT-FS-M3k"/>
+            </connections>
             <point key="canvasLocation" x="-159" y="83"/>
         </collectionViewCell>
     </objects>

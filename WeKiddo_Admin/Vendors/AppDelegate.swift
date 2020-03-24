@@ -191,9 +191,9 @@ import UserNotifications
                 "38": detention,
                 "42": latePayment,
                 "68": assignment,
-                "71": trackerDashboard,
+                "100": trackerDashboard,
 //                "47": subjectList, //subjectTopic
-//                "71": dashboard,
+                "71": dashboard,
                 "70": examSchedule, // -> DEVELOPMEMNT PHASE 1
                 //                "26": schoolProfile,
                 //                "27": user,
@@ -248,7 +248,7 @@ import UserNotifications
         classroomViewController.tabBarItem = classRoomTab
         // TRACKER DASHBOARD
         let trackerDashboardTab = UITabBarItem(
-            title: menuName["71"],
+            title: menuName["100"],
             image: UIImage(named:"icon_home"),
             selectedImage: UIImage(named:"icon_home")
         )
@@ -302,14 +302,14 @@ import UserNotifications
         )
         announcementTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         announcementViewController.tabBarItem = announcementTab
-        // HOMEROOM ADMIN
-//        let homeAdminTab = UITabBarItem(
-//            title: menuName["71"],
-//            image: UIImage(named:"tabbar_home"),
-//            selectedImage: UIImage(named:"tabbar_home")
-//        )
-//        homeAdminTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
-//        homeViewController.tabBarItem = homeAdminTab
+        // HOMEROOM ADMIN 
+        let homeAdminTab = UITabBarItem(
+            title: menuName["71"],
+            image: UIImage(named:"tabbar_home"),
+            selectedImage: UIImage(named:"tabbar_home")
+        )
+        homeAdminTab.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
+        homeViewController.tabBarItem = homeAdminTab
         // Exam Schedule
         let examScheduleTab = UITabBarItem(
             title: menuName["70"],

@@ -145,8 +145,13 @@
             <connections>
                 <outlet property="averageView" destination="n59-A9-oXy" id="ddx-ED-jTD"/>
                 <outlet property="bgView" destination="QI5-Pg-e5X" id="ZPJ-T7-J1v"/>
+                <outlet property="labelLeft" destination="6rC-OG-33X" id="NHF-7F-ahU"/>
+                <outlet property="labelRight" destination="N2u-AY-jUI" id="scM-eH-aPg"/>
                 <outlet property="leftView" destination="ejf-0A-pRL" id="QcJ-nO-tEm"/>
                 <outlet property="rightView" destination="SAG-01-ehV" id="Vq6-bn-HzT"/>
+                <outlet property="sectionLabel" destination="4dN-lX-eVp" id="P7A-yu-XXM"/>
+                <outlet property="totalLeft" destination="M3q-iW-hH9" id="ds5-Vd-Th9"/>
+                <outlet property="totalRight" destination="O9N-dW-C7o" id="UcY-ZW-OYp"/>
                 <outlet property="worksheetView" destination="4r8-GJ-s2E" id="swa-2C-tPB"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol TotalSchoolContentCellDelegate: class {
     func toSchoolDashboard()
@@ -15,6 +16,9 @@ protocol TotalSchoolContentCellDelegate: class {
 class TotalSchoolContentCell: UITableViewCell {
     
     @IBOutlet weak var schoolCollection: UICollectionView!
+    
+    var indexSection = 0
+    var date = ""
     
     weak var delegate: TotalSchoolContentCellDelegate?
     
@@ -30,18 +34,28 @@ class TotalSchoolContentCell: UITableViewCell {
     }
     
     func fetchDetailSchoolDashbaord() {
-        self.delegate?.toSchoolDashboard()
+        guard let schoolIndexZero = ACData.LOGINDATA.dashboardSchoolMenu[0].school_id, let yearIndexZero = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+            return
+        }
+        ACRequest.POST_DASHBOARD_DETAIL_SCHOOL(userId: ACData.LOGINDATA.userID, date: date, yearID: yearIndexZero, schoolID: schoolIndexZero, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (result) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDSCHOOLLISTDETAILDATA = result
+            self.delegate?.toSchoolDashboard()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
 }
 
 extension TotalSchoolContentCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA[indexSection].list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "schoolContentCellID", for: indexPath) as? SchoolContentCell)!
-        
+        cell.detailObj = ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA[indexSection].list[indexPath.row]
         return cell
     }
     

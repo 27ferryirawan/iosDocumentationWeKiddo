@@ -36,19 +36,26 @@ extension WorksheetSubmissionViewController: UITableViewDelegate, UITableViewDat
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "WorksheetSubmissionHeaderView") as! WorksheetSubmissionHeaderView
+        headerView.detailObj = ACData.COORDINATORASSIGNMENTLISTPERCLASS[section]
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return ACData.COORDINATORASSIGNMENTLISTPERCLASS[0].student_lists.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "worksheetStudentCellID", for: indexPath) as? WorksheetStudentCell)!
+        cell.detailObj = ACData.COORDINATORASSIGNMENTLISTPERCLASS[indexPath.section].student_lists[indexPath.row]
+        if indexPath.row % 2 == 0 {
+            cell.bgView.backgroundColor = .groupTableViewBackground
+        } else {
+            cell.bgView.backgroundColor = .white
+        }
         return cell
     }
 }

@@ -16,11 +16,11 @@ class EBookContentCell: UITableViewCell {
     @IBOutlet weak var bookTotalDownload: UILabel!
     @IBOutlet weak var bookName: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
-//    var detailObj: EBookListModel? {
-//        didSet {
-//            cellConfig()
-//        }
-//    }
+    var detailObj: CoordinatorEbookUploadListModel? {
+        didSet {
+            cellConfig()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -33,16 +33,16 @@ class EBookContentCell: UITableViewCell {
     }
     
     func cellConfig() {
-//        guard let obj = detailObj else { return }
-//        bookName.text = obj.book_name
-//        bookTotalDownload.text = "Download : \(obj.total_download)"
-//        bookTotalView.text = "View : \(obj.total_view)"
-//        bookSource.text = obj.is_master ? "Source : From Master" : "Source : Upload"
-//        self.bookImage.sd_setImage(
-//            with: URL(string: (obj.book_image)),
-//            placeholderImage: UIImage(named: "WeKiddoLogo"),
-//            options: .refreshCached
-//        )
+        guard let obj = detailObj else { return }
+        bookName.text = obj.book_name
+        bookTotalDownload.text = "Downloaded : \(obj.total_download)"
+        bookTotalView.text = "View : \(obj.total_view)"
+        bookSource.text = obj.source == 1 ? "Source : Upload" : "Source : From Master"
+        self.bookImage.sd_setImage(
+            with: URL(string: (obj.book_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
     }
     
 }

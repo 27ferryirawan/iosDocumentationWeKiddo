@@ -138,7 +138,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bgView" destination="99R-im-yf4" id="zwf-GX-wjR"/>
+                <outlet property="currentDayLabel" destination="yEC-Op-Fc4" id="x3b-s3-GPv"/>
                 <outlet property="dateView" destination="kzI-ar-EdN" id="WTd-rH-4R3"/>
+                <outlet property="todayLabel" destination="7ix-Ud-JzA" id="1Bb-XK-hF3"/>
+                <outlet property="totalSchoolLabel" destination="GyA-4n-Lur" id="h3j-c9-ecd"/>
                 <outlet property="totalSchoolView" destination="6m1-Jl-I1j" id="o1C-uV-BF3"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="170.08928571428569"/>

@@ -11,7 +11,7 @@ import Foundation
 class ACUrl: NSObject {
 
     static let isProduction = false
-    static let MAIN = isProduction ? "http://production.wekiddo.com/backend-wekiddo/public" : "http://dev.wekiddo.com/backend-wekiddo/public"
+    static let MAIN = isProduction ? "http://production.wekiddo.com/backend-wekiddo/public" : "http://staging.wekiddo.com/backend-wekiddo/public"
 //    static let MAIN = isProduction ? "http://54.169.210.190/backend-wekiddo/public" : "http://3.1.194.152/backend-wekiddo/public"
     static let PARENT_APP = MAIN + "/api/administrator/"
     
@@ -412,4 +412,23 @@ class ACUrl: NSObject {
     static let ADMIN_POST_UPDATE_PROFILE_ADMIN = PARENT_APP + "admin-profile/update-admin-profile"
     static let ADMIN_GET_CHECK_PHONE = PARENT_APP + "admin-profile/check-phone-admin"
     static let ADMIN_POST_UPDATE_PASSWORD_ADMIN = PARENT_APP + "admin-profile/update-password-admin"
+    
+    
+    //COORDINATOR
+    static let ADMIN_DASHBOARD_COORDINATOR = PARENT_APP + "school-monitoring/dashboard" // [POST] user_id, date, year_id
+    static let ADMIN_DASHBOARD_ASSIGNMENT_LIST = PARENT_APP + "school-monitoring/dashboard/assignment-list" // [POST] user_id, date, year_id, keyword
+    static let ADMIN_DASHBOARD_EBOOK_LIST = PARENT_APP + "school-monitoring/dashboard/ebook-list" // [POST] user_id, date, year_id, keyword
+    static let ADMIN_DASHBOARD_EXERCISE_LIST = PARENT_APP + "school-monitoring/dashboard/exercise-list" // [POST] user_id, date, year_id, keyword
+    static let ADMIN_DASHBOARD_STUDENT_LIST = PARENT_APP + "school-monitoring/dashboard/student-list" // [POST] user_id, date, year_id, keyword
+    static let ADMIN_DASHBOARD_TEACHER_LIST = PARENT_APP + "school-monitoring/dashboard/teacher-list" // [POST] user_id, date, year_id, keyword
+    static let ADMIN_DASHBOARD_PARENT_LIST = PARENT_APP + "school-monitoring/dashboard/parent-list" // [POST] user_id, date, year_id, keyword
+    static let ADMIN_ASSIGNMENT_LIST_PERSCHOOL = PARENT_APP + "school-monitoring/assignment-list" // [POST] user_id, date, year_id, school_id
+    static let ADMIN_ASSIGNMENT_LIST_PERCLASS = PARENT_APP + "school-monitoring/assignment-detail" // [POST] user_id, school_class_id, year_id, assignment_id
+    static let ADMIN_EBOOK_LIST_UPLOAD = PARENT_APP + "school-monitoring/total-book-upload-list" // [POST] user_id, school_id, year_id
+    static let ADMIN_EBOOK_LIST_DOWNLOAD = PARENT_APP + "school-monitoring/total-student-download" // [POST] user_id, school_id, year_id
+    static let ADMIN_EXERCISE_SCHOOL_CREATE_LIST = PARENT_APP + "school-monitoring/school-create-exercise" // [POST] year_id, user_id, e_id, school_id
+    static let ADMIN_EXERCISE_DETAIL_SCHOOL_CREATE = PARENT_APP + "school-monitoring/detail-school-create-exercise" // [POST] year_id, user_id, e_id, school_id
+    static let ADMIN_EXERCISE_TOTAL_STUDENT_DO_EXERCISE = PARENT_APP + "school-monitoring/total-student-do-exercise-list-child" // [POST] year_id, user_id, school_id
+    static let ADMIN_DASHBOARD_COORDINATOR_SCHOOL_LIST = PARENT_APP + "school-monitoring/school-list" // [POST] user_id, year_id
+    static let ADMIN_DASHBOARD_DETAIL_SCHOOL = PARENT_APP + "school/detail-school" // [POST] year_id, user_id, school_id, date
 }

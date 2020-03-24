@@ -279,9 +279,19 @@
             <connections>
                 <outlet property="bgView" destination="DWD-hx-Yqq" id="1Ck-0A-y9e"/>
                 <outlet property="detailButton" destination="uKe-vq-6ce" id="Qwx-zt-wJt"/>
+                <outlet property="imageLeft" destination="7tz-qI-cnl" id="q8n-OL-g74"/>
+                <outlet property="sectionLabel" destination="9W7-xU-Af8" id="k2R-uq-89I"/>
+                <outlet property="titleUserLabel" destination="XWT-bP-rhj" id="Esi-is-zeO"/>
+                <outlet property="totalActiveLabel" destination="1xY-82-TGP" id="MfH-fo-MVr"/>
+                <outlet property="totalActivePercentLabel" destination="ete-29-ppa" id="X8F-Is-Ztf"/>
                 <outlet property="totalActiveView" destination="4YG-9z-4Fj" id="k2U-zT-i2w"/>
+                <outlet property="totalDownloadLabel" destination="oyV-g9-194" id="w5Y-Bf-OTr"/>
+                <outlet property="totalDownloadPercentLabel" destination="ya0-sV-r0M" id="cxC-Yd-OXY"/>
                 <outlet property="totalDownloadView" destination="rqd-E8-ciY" id="W1z-Tg-31w"/>
+                <outlet property="totalLoginLabel" destination="sQq-rD-wab" id="mto-Cx-TTt"/>
+                <outlet property="totalLoginPercentLabel" destination="FYn-dr-KmO" id="VfY-wq-5ij"/>
                 <outlet property="totalLoginView" destination="lDy-Jq-3cn" id="dik-A7-Mv2"/>
+                <outlet property="totalUserLabel" destination="k9k-uy-ag8" id="g1X-0F-Y1p"/>
                 <outlet property="totalUserView" destination="FO7-WS-YHp" id="O15-S9-PH6"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="197.54464285714286"/>

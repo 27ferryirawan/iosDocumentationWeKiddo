@@ -772,6 +772,16 @@
 		E6B0B29C242696A300B37C5E /* TeacherDashboardContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B29A242696A300B37C5E /* TeacherDashboardContentCell.xib */; };
 		E6B0B29E24269BDF00B37C5E /* AssignmentListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0B29D24269BDF00B37C5E /* AssignmentListHeaderView.swift */; };
 		E6B0B2A024269BE600B37C5E /* AssignmentListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B29F24269BE600B37C5E /* AssignmentListHeaderView.xib */; };
+		E6B0B2A5242775C700B37C5E /* EBookDownloadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0B2A3242775C700B37C5E /* EBookDownloadedViewController.swift */; };
+		E6B0B2A6242775C700B37C5E /* EBookDownloadedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B2A4242775C700B37C5E /* EBookDownloadedViewController.xib */; };
+		E6B0B2AA2427761600B37C5E /* EBookDownloadedContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0B2A82427761600B37C5E /* EBookDownloadedContentCell.swift */; };
+		E6B0B2AB2427761600B37C5E /* EBookDownloadedContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B2A92427761600B37C5E /* EBookDownloadedContentCell.xib */; };
+		E6B0B2AE2427791100B37C5E /* StudentDoExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0B2AC2427791100B37C5E /* StudentDoExerciseViewController.swift */; };
+		E6B0B2AF2427791100B37C5E /* StudentDoExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B2AD2427791100B37C5E /* StudentDoExerciseViewController.xib */; };
+		E6B0B2B32427795200B37C5E /* StudentDoExerciseContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0B2B12427795200B37C5E /* StudentDoExerciseContentCell.swift */; };
+		E6B0B2B42427795200B37C5E /* StudentDoExerciseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B2B22427795200B37C5E /* StudentDoExerciseContentCell.xib */; };
+		E6B0B2B6242779EC00B37C5E /* StudentDoExerciseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0B2B5242779EC00B37C5E /* StudentDoExerciseHeaderView.swift */; };
+		E6B0B2B8242779F400B37C5E /* StudentDoExerciseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0B2B7242779F400B37C5E /* StudentDoExerciseHeaderView.xib */; };
 		E6B0D47B24266E6400A54E48 /* SchoolContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0D47924266E6400A54E48 /* SchoolContentCell.swift */; };
 		E6B0D47C24266E6400A54E48 /* SchoolContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6B0D47A24266E6400A54E48 /* SchoolContentCell.xib */; };
 		E6B0D4802426712800A54E48 /* SchoolDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B0D47E2426712800A54E48 /* SchoolDashboardViewController.swift */; };
@@ -1694,6 +1704,16 @@
 		E6B0B29A242696A300B37C5E /* TeacherDashboardContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherDashboardContentCell.xib; sourceTree = "<group>"; };
 		E6B0B29D24269BDF00B37C5E /* AssignmentListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListHeaderView.swift; sourceTree = "<group>"; };
 		E6B0B29F24269BE600B37C5E /* AssignmentListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentListHeaderView.xib; sourceTree = "<group>"; };
+		E6B0B2A3242775C700B37C5E /* EBookDownloadedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDownloadedViewController.swift; sourceTree = "<group>"; };
+		E6B0B2A4242775C700B37C5E /* EBookDownloadedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBookDownloadedViewController.xib; sourceTree = "<group>"; };
+		E6B0B2A82427761600B37C5E /* EBookDownloadedContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBookDownloadedContentCell.swift; sourceTree = "<group>"; };
+		E6B0B2A92427761600B37C5E /* EBookDownloadedContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBookDownloadedContentCell.xib; sourceTree = "<group>"; };
+		E6B0B2AC2427791100B37C5E /* StudentDoExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDoExerciseViewController.swift; sourceTree = "<group>"; };
+		E6B0B2AD2427791100B37C5E /* StudentDoExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentDoExerciseViewController.xib; sourceTree = "<group>"; };
+		E6B0B2B12427795200B37C5E /* StudentDoExerciseContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDoExerciseContentCell.swift; sourceTree = "<group>"; };
+		E6B0B2B22427795200B37C5E /* StudentDoExerciseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentDoExerciseContentCell.xib; sourceTree = "<group>"; };
+		E6B0B2B5242779EC00B37C5E /* StudentDoExerciseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDoExerciseHeaderView.swift; sourceTree = "<group>"; };
+		E6B0B2B7242779F400B37C5E /* StudentDoExerciseHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentDoExerciseHeaderView.xib; sourceTree = "<group>"; };
 		E6B0D47924266E6400A54E48 /* SchoolContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolContentCell.swift; sourceTree = "<group>"; };
 		E6B0D47A24266E6400A54E48 /* SchoolContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolContentCell.xib; sourceTree = "<group>"; };
 		E6B0D47E2426712800A54E48 /* SchoolDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDashboardViewController.swift; sourceTree = "<group>"; };
@@ -3999,6 +4019,46 @@
 			path = "Student List Dashboard Cell";
 			sourceTree = "<group>";
 		};
+		E6B0B2A12426A0CA00B37C5E /* Ebook Downloaded */ = {
+			isa = PBXGroup;
+			children = (
+				E6B0B2A7242775FA00B37C5E /* EBook Downloaded Cell */,
+				E6B0B2A3242775C700B37C5E /* EBookDownloadedViewController.swift */,
+				E6B0B2A4242775C700B37C5E /* EBookDownloadedViewController.xib */,
+			);
+			path = "Ebook Downloaded";
+			sourceTree = "<group>";
+		};
+		E6B0B2A22426A0E800B37C5E /* Student Do Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				E6B0B2B02427793B00B37C5E /* Student Do Exercise Cell */,
+				E6B0B2AC2427791100B37C5E /* StudentDoExerciseViewController.swift */,
+				E6B0B2AD2427791100B37C5E /* StudentDoExerciseViewController.xib */,
+			);
+			path = "Student Do Exercise";
+			sourceTree = "<group>";
+		};
+		E6B0B2A7242775FA00B37C5E /* EBook Downloaded Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6B0B2A82427761600B37C5E /* EBookDownloadedContentCell.swift */,
+				E6B0B2A92427761600B37C5E /* EBookDownloadedContentCell.xib */,
+			);
+			path = "EBook Downloaded Cell";
+			sourceTree = "<group>";
+		};
+		E6B0B2B02427793B00B37C5E /* Student Do Exercise Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E6B0B2B12427795200B37C5E /* StudentDoExerciseContentCell.swift */,
+				E6B0B2B22427795200B37C5E /* StudentDoExerciseContentCell.xib */,
+				E6B0B2B5242779EC00B37C5E /* StudentDoExerciseHeaderView.swift */,
+				E6B0B2B7242779F400B37C5E /* StudentDoExerciseHeaderView.xib */,
+			);
+			path = "Student Do Exercise Cell";
+			sourceTree = "<group>";
+		};
 		E6B0D47D2426711500A54E48 /* School Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -4195,6 +4255,8 @@
 		E6D39C0E225F968C00831511 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E6B0B2A22426A0E800B37C5E /* Student Do Exercise */,
+				E6B0B2A12426A0CA00B37C5E /* Ebook Downloaded */,
 				E6B0B28A24268FC400B37C5E /* Student List Dashboard */,
 				E6B0B27B24268C5C00B37C5E /* Student Exercise Score */,
 				E6B0B26D2426890A00B37C5E /* Exercise List */,
@@ -4811,6 +4873,7 @@
 				E6B0D4862426717200A54E48 /* SchoolDashboardHeaderCell.xib in Resources */,
 				E600B47822AFADC5007E7C58 /* SubjectDetailSectionCell.xib in Resources */,
 				E65BF68322CF824600C57FEF /* AddNewAssignmentViewController.xib in Resources */,
+				E6B0B2AB2427761600B37C5E /* EBookDownloadedContentCell.xib in Resources */,
 				E61E3AE4231E71F40016E13D /* DetailTicketContentCell.xib in Resources */,
 				E6B0B28E24268FE400B37C5E /* StudentListDashboardViewController.xib in Resources */,
 				E63D83FC22D4C3E1005F07B4 /* AddDetentionFooterCell.xib in Resources */,
@@ -4910,6 +4973,7 @@
 				E6D39C1E225F97DE00831511 /* ScoreViewController.xib in Resources */,
 				E65C44F323642E8100E0BD3B /* CourseDetailCell.xib in Resources */,
 				E696103F227F3D470000FC92 /* QuestionsViewController.xib in Resources */,
+				E6B0B2B42427795200B37C5E /* StudentDoExerciseContentCell.xib in Resources */,
 				E61BEE95226F583000A533B3 /* ScoreNewCell.xib in Resources */,
 				E65C4504236435E500E0BD3B /* MoreCoursesViewController.xib in Resources */,
 				E61E3AEC231F26640016E13D /* ReceiverCollectionCell.xib in Resources */,
@@ -4973,6 +5037,7 @@
 				E61E3B312323491A0016E13D /* UsersViewController.xib in Resources */,
 				BEE7E1FA228598CE005D5CC7 /* AnnouncementAllCell.xib in Resources */,
 				E682D68822D77F7A00214F4E /* ImageMediaCollectionCell.xib in Resources */,
+				E6B0B2A6242775C700B37C5E /* EBookDownloadedViewController.xib in Resources */,
 				E6D39C0C225F940000831511 /* ViewController.xib in Resources */,
 				BEAC89AD2324EFD8001BB34D /* SOPCell.xib in Resources */,
 				E63D83A122D0EED1005F07B4 /* AssignmentScoresViewController.xib in Resources */,
@@ -5014,6 +5079,7 @@
 				E6396FED22B6652900C928E5 /* HomeRoomSpecialAttentionCell.xib in Resources */,
 				E6396FFB22B67C4200C928E5 /* LatePaymentContentCell.xib in Resources */,
 				E6ADFE0D2280827B004FEF49 /* SessionMenuCollectionCell.xib in Resources */,
+				E6B0B2AF2427791100B37C5E /* StudentDoExerciseViewController.xib in Resources */,
 				E69AC7A92281C1A0000284A1 /* AssignmentDetailViewController.xib in Resources */,
 				E699F5B922DCE34300775758 /* EditProfileParentCell.xib in Resources */,
 				E689B7272319922B00DAEFFF /* AbsenceListCell.xib in Resources */,
@@ -5033,6 +5099,7 @@
 				E69AC7B22281CB81000284A1 /* AssignmentDetailViewCollectionCell.xib in Resources */,
 				E6DB0B1B22B7EE7300758AB2 /* HomeRoomHeaderCell.xib in Resources */,
 				E6961048227FD9150000FC92 /* QuestionAddNewCell.xib in Resources */,
+				E6B0B2B8242779F400B37C5E /* StudentDoExerciseHeaderView.xib in Resources */,
 				E63D83C122D3BC94005F07B4 /* AdministrationCell.xib in Resources */,
 				E66C5ED222E7F7F400AD186C /* ExamScoreViewController.xib in Resources */,
 				E61E3B4A232397630016E13D /* AddUsersCell.xib in Resources */,
@@ -5301,6 +5368,7 @@
 				E69AC7B822829420000284A1 /* MenuCategoryOthersModel.swift in Sources */,
 				E6B0B292242690A800B37C5E /* StudentDashboardContentCell.swift in Sources */,
 				E6AAC3AC2316F0780084ED93 /* SchoolMonitoringHeaderCell.swift in Sources */,
+				E6B0B2A5242775C700B37C5E /* EBookDownloadedViewController.swift in Sources */,
 				BE14C8DB22D8776D00ADC95D /* StudentCollectionViewCell.swift in Sources */,
 				E6D39C19225F974800831511 /* CalendarViewController.swift in Sources */,
 				E63D841122D5EA29005F07B4 /* AddAnnouncementDescCell.swift in Sources */,
@@ -5401,6 +5469,7 @@
 				E66C5F0E22E9706C00AD186C /* EditExamSessionCollectionCell.swift in Sources */,
 				E63D83B822D1C47E005F07B4 /* DetentionViewController.swift in Sources */,
 				E6D39C30225FA1A500831511 /* ACRequest.swift in Sources */,
+				E6B0B2AE2427791100B37C5E /* StudentDoExerciseViewController.swift in Sources */,
 				E699F5F422E0ACF900775758 /* SubjectTeacherChapterListModel.swift in Sources */,
 				E696103E227F3D470000FC92 /* QuestionsViewController.swift in Sources */,
 				E6F427C6229441CC00DB4250 /* CompetitionModel.swift in Sources */,
@@ -5511,6 +5580,7 @@
 				E6EAB90B2292F5AE0032B975 /* SubjectContentCell.swift in Sources */,
 				E65BF68B22CF8B4D00C57FEF /* AddAssignmentClassCell.swift in Sources */,
 				E682D6E722DA55AC00214F4E /* AddSubjectTeacherAddMoreSessionCell.swift in Sources */,
+				E6B0B2B32427795200B37C5E /* StudentDoExerciseContentCell.swift in Sources */,
 				E61E3B10232219170016E13D /* UserSchoolListModel.swift in Sources */,
 				BE2F584B22AC306000103CD7 /* StudentProfileCell.swift in Sources */,
 				E626B6A922C3577700FF660A /* UserProfileCollectionCell.swift in Sources */,
@@ -5584,6 +5654,7 @@
 				E6A50BCE226C181300359D78 /* AnnouncementSubjectCell.swift in Sources */,
 				E639700822B6843200C928E5 /* AddLatePaymentFormCell.swift in Sources */,
 				E69AC7B12281CB81000284A1 /* AssignmentDetailViewCollectionCell.swift in Sources */,
+				E6B0B2AA2427761600B37C5E /* EBookDownloadedContentCell.swift in Sources */,
 				E6D39C31225FA1A500831511 /* ACAlert.swift in Sources */,
 				E6BC3CC922EF195A00B080A1 /* SpecialAttentionListViewController.swift in Sources */,
 				E6A50BD3226C253B00359D78 /* AnnouncementDetailViewController.swift in Sources */,
@@ -5699,6 +5770,7 @@
 				E662277E22C11F480060079E /* ClassroomViewController.swift in Sources */,
 				E66C5ED122E7F7F400AD186C /* ExamScoreViewController.swift in Sources */,
 				E600B43D22AC397B007E7C58 /* SchoolDetailBannerCell.swift in Sources */,
+				E6B0B2B6242779EC00B37C5E /* StudentDoExerciseHeaderView.swift in Sources */,
 				E6C63AAC231D234900367DE4 /* DetailTaskAdminHistoryCell.swift in Sources */,
 				E689B72D231A467200DAEFFF /* SchoolMonitoringModel.swift in Sources */,
 				E63D83EE22D4BB2D005F07B4 /* AddDetentionViewController.swift in Sources */,

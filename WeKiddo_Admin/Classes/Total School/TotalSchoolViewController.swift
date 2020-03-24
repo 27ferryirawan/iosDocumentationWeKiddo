@@ -11,6 +11,8 @@ import UIKit
 class TotalSchoolViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var schoolID = ""
+    var date = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         configTable()
@@ -32,10 +34,11 @@ class TotalSchoolViewController: UIViewController {
 }
 extension TotalSchoolViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA.count
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TotalSchoolHeaderView") as! TotalSchoolHeaderView
+        headerView.titleLabel.text = ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA[section].school_grade
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -49,6 +52,8 @@ extension TotalSchoolViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "totalSchoolContentCellID", for: indexPath) as? TotalSchoolContentCell)!
+        cell.indexSection = indexPath.section
+        cell.date = self.date
         cell.delegate = self
         return cell
     }

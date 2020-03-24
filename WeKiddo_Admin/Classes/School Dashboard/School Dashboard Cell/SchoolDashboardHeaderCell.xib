@@ -130,7 +130,12 @@
             <viewLayoutGuide key="safeArea" id="Qex-ID-D9B"/>
             <connections>
                 <outlet property="bgView" destination="bot-ch-GyI" id="iJa-R1-rwP"/>
+                <outlet property="dateToday" destination="lCn-TA-ZWW" id="7rf-rI-YxE"/>
                 <outlet property="dateView" destination="Ihj-rf-R3p" id="igm-M5-6Fi"/>
+                <outlet property="schoolClass" destination="CZv-wX-4Bq" id="BFW-Fb-aJt"/>
+                <outlet property="schoolImage" destination="u0O-xE-k1N" id="At9-rm-MnV"/>
+                <outlet property="schoolName" destination="h07-zz-dAb" id="UJ7-Ql-HZd"/>
+                <outlet property="today" destination="fjm-SD-Cqi" id="uZ3-Xs-dWh"/>
                 <outlet property="totalSchoolView" destination="PNW-EY-D36" id="zkj-vk-hy6"/>
             </connections>
             <point key="canvasLocation" x="166.66666666666669" y="376.00446428571428"/>

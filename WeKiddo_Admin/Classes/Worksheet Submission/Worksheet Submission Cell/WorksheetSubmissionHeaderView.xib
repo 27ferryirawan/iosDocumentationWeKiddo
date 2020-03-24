@@ -56,7 +56,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="1RS-o6-Mu9" firstAttribute="top" secondItem="ExH-QF-WvH" secondAttribute="top" constant="8" id="0tE-LN-gSX"/>
                         <constraint firstItem="0Ok-Xk-yEl" firstAttribute="leading" secondItem="1RS-o6-Mu9" secondAttribute="leading" id="1sX-jN-4Em"/>
@@ -79,6 +79,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="nKc-Ga-ICT"/>
+            <connections>
+                <outlet property="bgView" destination="ExH-QF-WvH" id="wau-31-oBg"/>
+                <outlet property="classLabel" destination="dOZ-cA-qhf" id="Fvk-i3-KJv"/>
+                <outlet property="classView" destination="9iq-H6-oe2" id="E5O-7v-yHA"/>
+                <outlet property="subjectAndDateLabel" destination="1RS-o6-Mu9" id="i3b-En-PYs"/>
+                <outlet property="subjectCountLabel" destination="pce-hu-M2M" id="x56-le-I26"/>
+                <outlet property="subjectNameLabel" destination="0Ok-Xk-yEl" id="kIQ-oC-leJ"/>
+            </connections>
             <point key="canvasLocation" x="32" y="76"/>
         </view>
     </objects>

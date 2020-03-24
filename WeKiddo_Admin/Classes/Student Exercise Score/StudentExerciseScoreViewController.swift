@@ -36,19 +36,26 @@ extension StudentExerciseScoreViewController: UITableViewDelegate, UITableViewDa
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "StudentExerciseScoreHeaderView") as! StudentExerciseScoreHeaderView
+        headerView.contentLabel.text = ACData.DASHBOARDCOORDINATORDETAILSCHOOLCREATEEXERCISEDATA.subject_name
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return ACData.DASHBOARDCOORDINATORDETAILSCHOOLCREATEEXERCISEDATA.list_student.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "studentExerciseScoreContentCellID", for: indexPath) as? StudentExerciseScoreContentCell)!
+        cell.detailObj = ACData.DASHBOARDCOORDINATORDETAILSCHOOLCREATEEXERCISEDATA.list_student[indexPath.row]
+        if indexPath.row % 2 == 0 {
+            cell.bgView.backgroundColor = .groupTableViewBackground
+        } else {
+            cell.bgView.backgroundColor = .white
+        }
         return cell
     }
 }

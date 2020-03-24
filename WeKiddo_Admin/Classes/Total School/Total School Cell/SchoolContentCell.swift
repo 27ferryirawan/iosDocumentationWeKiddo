@@ -7,12 +7,32 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SchoolContentCell: UICollectionViewCell {
 
+    @IBOutlet weak var schoolName: UILabel!
+    @IBOutlet weak var schoolImage: UIImageView!
+    
+    var detailObj: DashboardCoordinatorSchoolListDataModel? {
+        didSet {
+            cellConfig()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        self.schoolImage.sd_setImage(
+            with: URL(string: (obj.school_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
+        schoolName.text = obj.school_name
     }
 
 }

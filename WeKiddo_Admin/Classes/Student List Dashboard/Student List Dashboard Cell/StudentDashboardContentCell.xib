@@ -28,23 +28,37 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMK Kristen 1 Penabur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzC-KF-dwg">
-                                <rect key="frame" x="65" y="5" width="240" height="14.5"/>
+                                <rect key="frame" x="65" y="5" width="220" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7b4-Mu-qV1">
+                                <rect key="frame" x="290" y="5" width="15" height="15"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="bxW-ao-TIt"/>
+                                    <constraint firstAttribute="width" constant="15" id="czn-Dn-XnW"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5M-pe-Vco">
-                                <rect key="frame" x="65" y="27" width="240" height="28"/>
+                                <rect key="frame" x="65" y="27.5" width="240" height="27.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Statistic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQg-SO-TFC">
-                                        <rect key="frame" x="10" y="7.5" width="84" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <rect key="frame" x="10" y="9" width="63.5" height="10"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submission : 76 %" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-bE-wtm">
-                                        <rect key="frame" x="139" y="7.5" width="96" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active : 76 %" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-bE-wtm">
+                                        <rect key="frame" x="183.5" y="9" width="51.5" height="10"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login : 76 %" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSk-rT-Pqa">
+                                        <rect key="frame" x="105" y="9" width="48.5" height="10"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -53,8 +67,10 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gmJ-bE-wtm" secondAttribute="trailing" constant="5" id="71E-Ka-CAe"/>
                                     <constraint firstItem="GQg-SO-TFC" firstAttribute="leading" secondItem="P5M-pe-Vco" secondAttribute="leading" constant="10" id="815-Zm-YTO"/>
+                                    <constraint firstItem="hSk-rT-Pqa" firstAttribute="centerY" secondItem="gmJ-bE-wtm" secondAttribute="centerY" id="Mhb-rB-a2k"/>
                                     <constraint firstItem="gmJ-bE-wtm" firstAttribute="centerY" secondItem="GQg-SO-TFC" secondAttribute="centerY" id="axp-AA-DRu"/>
                                     <constraint firstItem="GQg-SO-TFC" firstAttribute="centerY" secondItem="P5M-pe-Vco" secondAttribute="centerY" id="cX6-P8-NRL"/>
+                                    <constraint firstItem="gmJ-bE-wtm" firstAttribute="leading" secondItem="hSk-rT-Pqa" secondAttribute="trailing" constant="30" id="qLD-ZS-avE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8k-wv-rNU">
@@ -271,12 +287,13 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pzC-KF-dwg" secondAttribute="trailing" constant="5" id="6at-ti-E9u"/>
+                            <constraint firstItem="7b4-Mu-qV1" firstAttribute="centerY" secondItem="pzC-KF-dwg" secondAttribute="centerY" id="5vD-6E-p3g"/>
                             <constraint firstItem="e8k-wv-rNU" firstAttribute="height" secondItem="kzn-gL-sNW" secondAttribute="height" id="B49-bJ-KfK"/>
                             <constraint firstItem="CMl-1b-HXa" firstAttribute="centerY" secondItem="A9j-lK-mVH" secondAttribute="centerY" id="FAk-rB-j12"/>
                             <constraint firstItem="e8k-wv-rNU" firstAttribute="leading" secondItem="kzn-gL-sNW" secondAttribute="trailing" constant="5" id="FjE-2j-IJc"/>
                             <constraint firstItem="P5M-pe-Vco" firstAttribute="top" secondItem="pzC-KF-dwg" secondAttribute="bottom" constant="7.5" id="G42-qN-sRD"/>
                             <constraint firstItem="o0b-QD-M6R" firstAttribute="top" secondItem="dS1-P4-j0N" secondAttribute="top" constant="5" id="GJK-Ra-XNp"/>
+                            <constraint firstItem="P5M-pe-Vco" firstAttribute="trailing" secondItem="7b4-Mu-qV1" secondAttribute="trailing" id="JtQ-8X-DLE"/>
                             <constraint firstItem="kzn-gL-sNW" firstAttribute="leading" secondItem="A9j-lK-mVH" secondAttribute="leading" id="N20-kb-RRF"/>
                             <constraint firstItem="CMl-1b-HXa" firstAttribute="height" secondItem="A9j-lK-mVH" secondAttribute="height" id="QWI-Oa-McK"/>
                             <constraint firstItem="CMl-1b-HXa" firstAttribute="width" secondItem="A9j-lK-mVH" secondAttribute="width" id="Rq9-ng-ZBu"/>
@@ -293,9 +310,10 @@
                             <constraint firstItem="CMl-1b-HXa" firstAttribute="leading" secondItem="A9j-lK-mVH" secondAttribute="trailing" constant="5" id="ii4-pi-YEa"/>
                             <constraint firstItem="o0b-QD-M6R" firstAttribute="leading" secondItem="dS1-P4-j0N" secondAttribute="leading" constant="10" id="jD9-2s-DqD"/>
                             <constraint firstItem="pzC-KF-dwg" firstAttribute="top" secondItem="o0b-QD-M6R" secondAttribute="top" id="jli-MS-iYG"/>
+                            <constraint firstAttribute="trailing" secondItem="7b4-Mu-qV1" secondAttribute="trailing" constant="5" id="k9T-tm-5TB"/>
+                            <constraint firstItem="7b4-Mu-qV1" firstAttribute="leading" secondItem="pzC-KF-dwg" secondAttribute="trailing" constant="5" id="mJa-aO-Vm9"/>
                             <constraint firstItem="kzn-gL-sNW" firstAttribute="top" secondItem="A9j-lK-mVH" secondAttribute="bottom" constant="5" id="mcb-IT-wcR"/>
                             <constraint firstItem="P5M-pe-Vco" firstAttribute="leading" secondItem="pzC-KF-dwg" secondAttribute="leading" id="sIl-Ij-HYf"/>
-                            <constraint firstItem="P5M-pe-Vco" firstAttribute="trailing" secondItem="pzC-KF-dwg" secondAttribute="trailing" id="xB0-kl-O9B"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -309,12 +327,25 @@
             <viewLayoutGuide key="safeArea" id="4xS-Pi-LId"/>
             <connections>
                 <outlet property="bgView" destination="dS1-P4-j0N" id="R7D-Yo-wDw"/>
+                <outlet property="labelLeft" destination="esQ-5w-tF3" id="rsD-So-bBQ"/>
+                <outlet property="schoolImage" destination="o0b-QD-M6R" id="Joz-Lj-BHW"/>
+                <outlet property="schoolName" destination="pzC-KF-dwg" id="wy6-QG-IhR"/>
+                <outlet property="statusView" destination="7b4-Mu-qV1" id="t2K-47-11A"/>
+                <outlet property="totalActiveLabel" destination="GUd-HV-mcR" id="4qB-Yt-Pjw"/>
+                <outlet property="totalActivePercentLabel" destination="lRf-Gx-hyd" id="XxX-HT-JrQ"/>
                 <outlet property="totalActiveView" destination="e8k-wv-rNU" id="kLr-nV-jMA"/>
+                <outlet property="totalDownloadLabel" destination="3hB-Af-0ge" id="pdN-iU-sYU"/>
+                <outlet property="totalDownloadPercentLabel" destination="l8Y-Hp-IJM" id="5dL-eV-3WB"/>
                 <outlet property="totalDownloadView" destination="CMl-1b-HXa" id="90q-BF-3l5"/>
+                <outlet property="totalLoginLabel" destination="zS9-Xv-Pcz" id="XVZ-lQ-6Fl"/>
+                <outlet property="totalLoginPercentLabel" destination="b2W-Zk-AjP" id="ZxE-Aa-hHS"/>
                 <outlet property="totalLoginView" destination="kzn-gL-sNW" id="OBT-JU-06O"/>
+                <outlet property="totalStudentLabel" destination="gSV-nZ-Ndb" id="Zqp-bu-fHY"/>
                 <outlet property="totalUserView" destination="A9j-lK-mVH" id="S24-bP-lsX"/>
+                <outlet property="weeklyActiveLabel" destination="gmJ-bE-wtm" id="oRF-2B-PPJ"/>
+                <outlet property="weeklyLoginLabel" destination="hSk-rT-Pqa" id="pW0-K5-nkr"/>
             </connections>
-            <point key="canvasLocation" x="207" y="362"/>
+            <point key="canvasLocation" x="205.79710144927537" y="361.60714285714283"/>
         </tableViewCell>
     </objects>
     <resources>

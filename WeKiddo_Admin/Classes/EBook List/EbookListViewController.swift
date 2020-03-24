@@ -31,13 +31,14 @@ class EbookListViewController: UIViewController {
 }
 extension EbookListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return ACData.COORDINATOREBOOKUPLOADLISTDATA.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "bookContentCellID", for: indexPath) as? EBookContentCell)!
+        cell.detailObj = ACData.COORDINATOREBOOKUPLOADLISTDATA[indexPath.row]
         return cell
     }
 }

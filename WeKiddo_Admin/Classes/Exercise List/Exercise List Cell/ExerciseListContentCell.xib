@@ -105,7 +105,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="IKM-cE-dbO"/>
             <connections>
+                <outlet property="bgView" destination="jim-wA-vrc" id="36J-NO-YVb"/>
+                <outlet property="datePeriodLabel" destination="t3m-6E-m0e" id="BDn-bF-34a"/>
                 <outlet property="detailButton" destination="Xey-jX-3TS" id="jG3-sF-9Ub"/>
+                <outlet property="nameLabel" destination="HP7-1Q-bMu" id="D0n-ZZ-2lC"/>
+                <outlet property="totalStudentLabel" destination="y09-1j-mg0" id="vNb-ep-a0Z"/>
+                <outlet property="userNameLabel" destination="CHH-HP-JTF" id="fJf-kF-waw"/>
             </connections>
             <point key="canvasLocation" x="84" y="34"/>
         </tableViewCell>

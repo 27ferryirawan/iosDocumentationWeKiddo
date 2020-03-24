@@ -1,5 +1,5 @@
 //
-//  StudentExerciseScoreContentCell.swift
+//  EBookDownloadedContentCell.swift
 //  WeKiddo_Admin
 //
 //  Created by zein rezky chandra on 22/03/20.
@@ -9,15 +9,16 @@
 import UIKit
 import SDWebImage
 
-class StudentExerciseScoreContentCell: UITableViewCell {
+class EBookDownloadedContentCell: UITableViewCell {
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var bookImage: UIImageView!
+    @IBOutlet weak var bookDate: UILabel!
+    @IBOutlet weak var bookName: UILabel!
     @IBOutlet weak var childName: UILabel!
     @IBOutlet weak var childImage: UIImageView!
     @IBOutlet weak var bgView: UIView!
     
-    var detailObj: CoordinatorDetailExerciseSchoolCreateStudentListDataModel? {
+    var detailObj: CoordinatorEbookDownloadListModel? {
         didSet {
             cellConfig()
         }
@@ -42,13 +43,18 @@ class StudentExerciseScoreContentCell: UITableViewCell {
             options: .refreshCached
         )
         childName.text = "\(obj.child_name)\nNIK \(obj.child_nis)\n\(obj.school_class)"
-        dateLabel.text = convertDate(time: obj.start_time)
-        scoreLabel.text = "Score \(obj.score)"
+        bookName.text = "\(obj.book_name)"
+        bookDate.text = convertDate(time: obj.download_date)
+        self.bookImage.sd_setImage(
+            with: URL(string: (obj.book_image)),
+            placeholderImage: UIImage(named: "WeKiddoLogo"),
+            options: .refreshCached
+        )
     }
     
 }
 
-extension StudentExerciseScoreContentCell {
+extension EBookDownloadedContentCell {
     func convertDate(time: String) -> String {
         // Convert from string to date first
         let dateFormatter = DateFormatter()
@@ -62,7 +68,7 @@ extension StudentExerciseScoreContentCell {
         let dateFormatterResult = DateFormatter()
         dateFormatterResult.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatterResult.locale = NSLocale.current
-        dateFormatterResult.dateFormat = "dd/MM/yyyy HH:mm"
+        dateFormatterResult.dateFormat = "dd/MM/yyyy"
         let stringDate = dateFormatterResult.string(from: date)
         return stringDate
     }

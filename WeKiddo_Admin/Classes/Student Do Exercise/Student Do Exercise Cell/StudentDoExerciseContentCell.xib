@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentDoExerciseContentCellID" rowHeight="113" id="dUr-3C-Hof" customClass="StudentDoExerciseContentCell" customModule="WeKiddo_Admin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dUr-3C-Hof" id="T2W-Ex-XgK">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fep-xC-Wr5">
+                        <rect key="frame" x="10" y="0.0" width="300" height="80"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeKiddoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="j38-fU-Nym">
+                                <rect key="frame" x="5" y="10" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="SNe-ZI-Dll"/>
+                                    <constraint firstAttribute="width" constant="60" id="cgd-pQ-4yX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ss-ra-Khx">
+                                <rect key="frame" x="69" y="18.5" width="94" height="43"/>
+                                <string key="text">Karen Julian
+NIK 123123
+X IPA A</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2u-OV-zHD">
+                                <rect key="frame" x="235" y="10" width="60" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-eO-Vdj">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <string key="text">Score
+91</string>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.66666666669999997" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="kgg-eO-Vdj" firstAttribute="top" secondItem="y2u-OV-zHD" secondAttribute="top" id="0sF-qC-x6a"/>
+                                    <constraint firstItem="kgg-eO-Vdj" firstAttribute="leading" secondItem="y2u-OV-zHD" secondAttribute="leading" id="Mgs-fg-M0Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="kgg-eO-Vdj" secondAttribute="bottom" id="iX7-kC-8v2"/>
+                                    <constraint firstAttribute="width" constant="60" id="llR-fx-Nug"/>
+                                    <constraint firstAttribute="trailing" secondItem="kgg-eO-Vdj" secondAttribute="trailing" id="qKb-YA-NIX"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biology Mid Exercise" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1t-HO-fbV">
+                                <rect key="frame" x="187" y="10" width="46" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="CKR-It-52Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_subject" translatesAutoresizingMaskIntoConstraints="NO" id="mhX-vX-kMF">
+                                <rect key="frame" x="165" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="3oS-hP-u9E"/>
+                                    <constraint firstAttribute="height" constant="20" id="Fi3-Db-qtY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z1t-HO-fbV" firstAttribute="leading" secondItem="mhX-vX-kMF" secondAttribute="trailing" constant="2" id="17g-UN-hia"/>
+                            <constraint firstItem="z1t-HO-fbV" firstAttribute="bottom" secondItem="y2u-OV-zHD" secondAttribute="bottom" id="1aP-bQ-BPE"/>
+                            <constraint firstItem="j38-fU-Nym" firstAttribute="leading" secondItem="Fep-xC-Wr5" secondAttribute="leading" constant="5" id="3b0-70-SlB"/>
+                            <constraint firstItem="mhX-vX-kMF" firstAttribute="centerY" secondItem="z1t-HO-fbV" secondAttribute="centerY" id="7Ob-Qr-zhL"/>
+                            <constraint firstItem="z1t-HO-fbV" firstAttribute="top" secondItem="y2u-OV-zHD" secondAttribute="top" id="9TH-kU-myd"/>
+                            <constraint firstItem="y2u-OV-zHD" firstAttribute="top" secondItem="Fep-xC-Wr5" secondAttribute="top" constant="10" id="SlT-th-vEi"/>
+                            <constraint firstItem="j38-fU-Nym" firstAttribute="centerY" secondItem="Fep-xC-Wr5" secondAttribute="centerY" id="Vep-RQ-3le"/>
+                            <constraint firstItem="3ss-ra-Khx" firstAttribute="centerY" secondItem="j38-fU-Nym" secondAttribute="centerY" id="Xug-V5-e5s"/>
+                            <constraint firstItem="mhX-vX-kMF" firstAttribute="leading" secondItem="3ss-ra-Khx" secondAttribute="trailing" constant="2" id="YcW-Dh-dX1"/>
+                            <constraint firstItem="y2u-OV-zHD" firstAttribute="leading" secondItem="z1t-HO-fbV" secondAttribute="trailing" constant="2" id="hgb-KY-P8p"/>
+                            <constraint firstAttribute="trailing" secondItem="y2u-OV-zHD" secondAttribute="trailing" constant="5" id="wqz-Hj-FOE"/>
+                            <constraint firstItem="3ss-ra-Khx" firstAttribute="leading" secondItem="j38-fU-Nym" secondAttribute="trailing" constant="4" id="y47-ch-WC5"/>
+                            <constraint firstAttribute="bottom" secondItem="y2u-OV-zHD" secondAttribute="bottom" constant="10" id="zce-cT-PoS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Fep-xC-Wr5" firstAttribute="top" secondItem="T2W-Ex-XgK" secondAttribute="top" id="24j-WV-8XF"/>
+                    <constraint firstItem="Fep-xC-Wr5" firstAttribute="leading" secondItem="T2W-Ex-XgK" secondAttribute="leading" constant="10" id="eGW-vH-1XZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Fep-xC-Wr5" secondAttribute="bottom" id="qj3-k1-OQT"/>
+                    <constraint firstAttribute="trailing" secondItem="Fep-xC-Wr5" secondAttribute="trailing" constant="10" id="tgf-MP-nxe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="f9W-8n-ogx"/>
+            <connections>
+                <outlet property="bgView" destination="Fep-xC-Wr5" id="07H-Gv-QWl"/>
+                <outlet property="childImage" destination="j38-fU-Nym" id="yNK-H7-gjU"/>
+                <outlet property="childName" destination="3ss-ra-Khx" id="HYy-fI-CfZ"/>
+                <outlet property="scoreLabel" destination="kgg-eO-Vdj" id="oIG-PC-Fme"/>
+                <outlet property="subjectName" destination="z1t-HO-fbV" id="VOq-4i-H3W"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="247.76785714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="WeKiddoLogo" width="406" height="410"/>
+        <image name="ic_subject" width="1625" height="1625"/>
+    </resources>
+</document>

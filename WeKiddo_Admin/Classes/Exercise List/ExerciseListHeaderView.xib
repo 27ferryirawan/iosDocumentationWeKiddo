@@ -44,6 +44,7 @@
             <viewLayoutGuide key="safeArea" id="zBi-Oz-sYR"/>
             <connections>
                 <outlet property="bgView" destination="vCe-uI-Ezn" id="O3l-b0-nxo"/>
+                <outlet property="sectionLabel" destination="HZg-5N-Ics" id="wWJ-cq-Ic3"/>
             </connections>
             <point key="canvasLocation" x="-58" y="116"/>
         </view>

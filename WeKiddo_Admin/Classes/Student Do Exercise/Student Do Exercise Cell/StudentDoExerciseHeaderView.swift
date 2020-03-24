@@ -1,5 +1,5 @@
 //
-//  StudentExerciseScoreHeaderView.swift
+//  StudentDoExerciseHeaderView.swift
 //  WeKiddo_Admin
 //
 //  Created by zein rezky chandra on 22/03/20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class StudentExerciseScoreHeaderView: UITableViewHeaderFooterView {
+class StudentDoExerciseHeaderView: UITableViewHeaderFooterView {
 
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

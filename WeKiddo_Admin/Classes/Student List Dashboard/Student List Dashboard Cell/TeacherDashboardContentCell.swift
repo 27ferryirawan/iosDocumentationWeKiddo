@@ -10,6 +10,10 @@ import UIKit
 
 class TeacherDashboardContentCell: UITableViewCell {
 
+    @IBOutlet weak var weeklyLoginLabel: UILabel!
+    @IBOutlet weak var weeklyActiveLabel: UILabel!
+    @IBOutlet weak var schoolName: UILabel!
+    @IBOutlet weak var schoolImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

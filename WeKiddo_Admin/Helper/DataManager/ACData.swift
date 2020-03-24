@@ -152,4 +152,20 @@ struct ACData {
     static var SOPLISTDATA = [SOPListModel]()
     static var SOPDETAILDATA : SOPDetailModel!
     static var COURSEBRANDDATA = [CourseBrandModel]()
+    static var DASHBOARDCOORDINATOR: DashboardCoordinatorModel!
+    static var DASHBOARDCOORDINATORASSIGNMENTLISTDATA = [DashboardCoordinatorAssignmentListModel]()
+    static var DASHBOARDCOORDINATOREBOOKLISTDATA = [DashboardCoordinatorEbookListModel]()
+    static var DASHBOARDCOORDINATOREXERCISELISTDATA = [DashboardCoordinatorExerciseListModel]()
+    static var DASHBOARDCOORDINATORSTUDENTLISTDATA = [DashboardCoordinatorStudentListModel]()
+    static var DASHBOARDCOORDINATORTEACHERLISTDATA = [DashboardCoordinatorTeacherListModel]()
+    static var DASHBOARDCOORDINATORPARENTLISTDATA = [DashboardCoordinatorParentListModel]()
+    static var COORDINATORASSIGNMENTLISTPERSCHOOL = [CoordinatorAssignmentListPerSchool]()
+    static var COORDINATORASSIGNMENTLISTPERCLASS = [CoordinatorAssignmentListPerClass]()
+    static var COORDINATOREBOOKUPLOADLISTDATA = [CoordinatorEbookUploadListModel]()
+    static var COORDINATOREBOOKDOWNLOADLISTDATA = [CoordinatorEbookDownloadListModel]()
+    static var COORDINATOREXERCISESCHOOLCREATEDATA = [CoordinatorExerciseSchoolCreateListModel]()
+    static var COORDINATORSTUDENTDOEXERCISELISTDATA: CoordinatorExerciseStudentDoExerciseModel!
+    static var DASHBOARDCOORDINATORSCHOOLLISTDATA = [DashboardCoordinatorSchooListModel]()
+    static var DASHBOARDCOORDINATORDETAILSCHOOLCREATEEXERCISEDATA: CoordinatorDetailExerciseSchoolCreateModel!
+    static var DASHBOARDSCHOOLLISTDETAILDATA: DashboardDetailSchoolModel!
 }

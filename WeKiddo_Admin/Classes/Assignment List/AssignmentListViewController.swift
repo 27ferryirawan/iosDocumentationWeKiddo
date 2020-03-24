@@ -11,6 +11,7 @@ import UIKit
 class AssignmentListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTable()
@@ -32,17 +33,18 @@ class AssignmentListViewController: UIViewController {
 }
 extension AssignmentListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return ACData.COORDINATORASSIGNMENTLISTPERSCHOOL.count
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "AssignmentListHeaderView") as! AssignmentListHeaderView
+        headerView.detailObj = ACData.COORDINATORASSIGNMENTLISTPERSCHOOL[section]
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return ACData.COORDINATORASSIGNMENTLISTPERSCHOOL[section].list_assignment.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
@@ -50,6 +52,12 @@ extension AssignmentListViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "assignmentListContentCelliD", for: indexPath) as? AssignmentListContentCell)!
         cell.delegate = self
+        cell.detailObj = ACData.COORDINATORASSIGNMENTLISTPERSCHOOL[indexPath.section].list_assignment[indexPath.row]
+        if indexPath.row % 2 == 0 {
+            cell.bgView.backgroundColor = .groupTableViewBackground
+        } else {
+            cell.bgView.backgroundColor = .white
+        }
         return cell
     }
 }

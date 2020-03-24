@@ -70,6 +70,13 @@ NIK 123123</string>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="tFz-j7-JoO" id="Wak-KI-ljs"/>
+                <outlet property="imageStatut" destination="twY-yk-HD4" id="n8A-B5-Mp7"/>
+                <outlet property="studentImage" destination="GpS-wg-Yyt" id="Lf3-bL-hrG"/>
+                <outlet property="studentName" destination="TMq-co-Iev" id="clJ-vz-oxA"/>
+                <outlet property="studentStatus" destination="fwM-KR-xad" id="Jy2-hj-d0i"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="175.78125"/>
         </tableViewCell>
     </objects>

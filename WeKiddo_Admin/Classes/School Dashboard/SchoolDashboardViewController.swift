@@ -47,6 +47,7 @@ extension SchoolDashboardViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "schoolDashboardHeaderCellID", for: indexPath) as? SchoolDashboardHeaderCell)!
+            cell.detailObj = ACData.DASHBOARDSCHOOLLISTDETAILDATA
             return cell
         } else if indexPath.row < 4 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "trackerContentCellID", for: indexPath) as? TrackerContentCell)!

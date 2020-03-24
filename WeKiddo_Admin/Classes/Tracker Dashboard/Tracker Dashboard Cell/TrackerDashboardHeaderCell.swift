@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol TrackerDashboardHeaderCellDelegate: class {
     func toTotalSchoolPage()
@@ -14,6 +15,9 @@ protocol TrackerDashboardHeaderCellDelegate: class {
 
 class TrackerDashboardHeaderCell: UITableViewCell {
     
+    @IBOutlet weak var currentDayLabel: UILabel!
+    @IBOutlet weak var todayLabel: UILabel!
+    @IBOutlet weak var totalSchoolLabel: UILabel!
     @IBOutlet weak var dateView: UIView! {
         didSet {
             dateView.layer.borderWidth = 1.0
@@ -39,6 +43,12 @@ class TrackerDashboardHeaderCell: UITableViewCell {
     
     weak var delegate: TrackerDashboardHeaderCellDelegate?
     
+    var detailObj: DashboardCoordinatorModel? {
+        didSet {
+            cellConfig()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -50,7 +60,44 @@ class TrackerDashboardHeaderCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func toTotalSchool(_ sender: UIButton) {
-        self.delegate?.toTotalSchoolPage()
+        guard let yearID = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+            return
+        }
+        ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA.removeAll()
+        ACRequest.POST_DASHBOARD_COORDINATOR_SCHOOL_LIST(userId: ACData.LOGINDATA.userID, yearID: yearID, tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA = results
+            self.delegate?.toTotalSchoolPage()
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
     }
     
+    func cellConfig() {
+        guard let obj = detailObj else { return }
+        totalSchoolLabel.text = "\(obj.total_school)"
+        todayLabel.text = convertDate(time: obj.date)
+        currentDayLabel.text = obj.day
+    }
+}
+
+extension TrackerDashboardHeaderCell {
+    func convertDate(time: String) -> String {
+        // Convert from string to date first
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = dateFormatter.date(from: time) else {
+            return ""
+        }
+        // then convert date to string again
+        let dateFormatterResult = DateFormatter()
+        dateFormatterResult.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatterResult.locale = NSLocale.current
+        dateFormatterResult.dateFormat = "dd MMMM yyyy"
+        let stringDate = dateFormatterResult.string(from: date)
+        return stringDate
+    }
 }

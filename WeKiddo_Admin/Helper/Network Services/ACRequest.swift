@@ -100,6 +100,596 @@ class ACRequest: NSObject {
         }
     }
     
+    static func POST_DASHBOARD_COORDINATOR(
+        userId:String,
+        date:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (DashboardCoordinatorModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_COORDINATOR)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print("json dashboard: \(json)")
+            if(json["status"] == "success") {
+                let dashboard = DashboardCoordinatorModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_DETAIL_SCHOOL(
+        userId:String,
+        date:String,
+        yearID:String,
+        schoolID:String,
+        tokenAccess:String,
+        successCompletion:@escaping (DashboardDetailSchoolModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "school_id":schoolID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_DETAIL_SCHOOL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print("json dashboard: \(json)")
+            if(json["status"] == "success") {
+                let dashboard = DashboardDetailSchoolModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_ASSIGNMENT_LIST(
+        userId:String,
+        date:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorAssignmentListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_ASSIGNMENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATORASSIGNMENTLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["assignment_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorAssignmentListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no assignments")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_EBOOK_LIST(
+        userId:String,
+        date:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorEbookListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_EBOOK_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATOREBOOKLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["ebook-list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorEbookListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no ebook")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_EXERCISE_LIST(
+        userId:String,
+        date:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorExerciseListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_EXERCISE_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATOREXERCISELISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["exercise_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorExerciseListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no exercise")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_STUDENT_LIST(
+        userId:String,
+        date:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorStudentListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_STUDENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATORSTUDENTLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["school_monitoring_student_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorStudentListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no students")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_TEACHER_LIST(
+        userId:String,
+        date:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorTeacherListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_TEACHER_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATORTEACHERLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["school_monitoring_teacher_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorTeacherListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no teachers")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_PARENT_LIST(
+        userId:String,
+        date:String,
+        yearID:String,
+        keyword:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorParentListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "keyword":keyword
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_PARENT_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATORPARENTLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["school_monitoring_parent_list"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorParentListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no parents")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ASSIGNMENT_LIST_PER_SCHOOL(
+        userId:String,
+        date:String,
+        yearID:String,
+        schoolID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([CoordinatorAssignmentListPerSchool]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "date":date,
+            "year_id":yearID,
+            "school_id":schoolID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_ASSIGNMENT_LIST_PERSCHOOL)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.COORDINATORASSIGNMENTLISTPERSCHOOL
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["school_assignment"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = CoordinatorAssignmentListPerSchool()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_ASSIGNMENT_LIST_PER_CLASS(
+        userId:String,
+        schoolClassID:String,
+        yearID:String,
+        assignmentID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([CoordinatorAssignmentListPerClass]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_class_id":schoolClassID,
+            "year_id":yearID,
+            "assignment_id":assignmentID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_ASSIGNMENT_LIST_PERCLASS)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.COORDINATORASSIGNMENTLISTPERCLASS
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["assignment_detail"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = CoordinatorAssignmentListPerClass()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_EBOOK_UPLOAD_LIST(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([CoordinatorEbookUploadListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_EBOOK_LIST_UPLOAD)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.COORDINATOREBOOKUPLOADLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_book"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = CoordinatorEbookUploadListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_EBOOK_DOWNLOAD_LIST(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([CoordinatorEbookDownloadListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_EBOOK_LIST_DOWNLOAD)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.COORDINATOREBOOKDOWNLOADLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_downloaded_book"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = CoordinatorEbookDownloadListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_EXERCISE_SCHOOL_CREATE_LIST(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        exerciseID:Int,
+        tokenAccess:String,
+        successCompletion:@escaping ([CoordinatorExerciseSchoolCreateListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_EXERCISE_SCHOOL_CREATE_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.COORDINATOREXERCISESCHOOLCREATEDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_exercise"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = CoordinatorExerciseSchoolCreateListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DASHBOARD_COORDINATOR_SCHOOL_LIST(
+        userId:String,
+        yearID:String,
+        tokenAccess:String,
+        successCompletion:@escaping ([DashboardCoordinatorSchooListModel]) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_DASHBOARD_COORDINATOR_SCHOOL_LIST)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            var tasklists = ACData.DASHBOARDCOORDINATORSCHOOLLISTDATA
+            let json = JSON(jsonData)
+            print(json)
+            if(json["status"] == "success") {
+                if let data = json["data"]["list_school"].array {
+                    if data.count > 0 {
+                        for jsonValue in data {
+                            let tasklist = DashboardCoordinatorSchooListModel()
+                            tasklist.objectMapping(json: jsonValue)
+                            tasklists.append(tasklist)
+                        }
+                    } else {
+                        failCompletion("Have no data")
+                    }
+                }
+                successCompletion(tasklists)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_DETAIL_EXERCISE_SCHOOL_CREATE_LIST(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        exerciseID:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (CoordinatorDetailExerciseSchoolCreateModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID,
+            "e_id":exerciseID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_EXERCISE_DETAIL_SCHOOL_CREATE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print("json: \(json)")
+            if(json["status"] == "success") {
+                let dashboard = CoordinatorDetailExerciseSchoolCreateModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    static func POST_EXERCISE_STUDENT_DO_EXERCISE_LIST(
+        userId:String,
+        schoolID:String,
+        yearID:String,
+        exerciseID:Int,
+        tokenAccess:String,
+        successCompletion:@escaping (CoordinatorExerciseStudentDoExerciseModel) -> Void,
+        failCompletion:@escaping (String) -> Void) {
+        let parameters:Parameters = [
+            "user_id":userId,
+            "school_id":schoolID,
+            "year_id":yearID
+        ]
+        print(parameters)
+        let headers:HTTPHeaders = ["Content-Type":"application/json",
+                                    "Authorization":"Bearer \(tokenAccess)"]
+        ACAPI.POST(url: "\(ACUrl.ADMIN_EXERCISE_TOTAL_STUDENT_DO_EXERCISE)", parameter: parameters, header: headers, showHUD: true) { (jsonData) in
+            let json = JSON(jsonData)
+            print("json: \(json)")
+            if(json["status"] == "success") {
+                let dashboard = CoordinatorExerciseStudentDoExerciseModel()
+                dashboard.objectMapping(json: json)
+                successCompletion(dashboard)
+            } else {
+                failCompletion(json["status"].stringValue)
+            }
+        }
+    }
+    
+    
+    
     static func POST_TASKLIST_MORE(
         userId:String,
         role:String,
