@@ -72,6 +72,12 @@ class TrackerUserCell: UITableViewCell {
         }
     }
     
+    var detailSchoolObj: DashboardDetailSchoolModel? {
+        didSet {
+            cellConfigSchool()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         detailButton.addTarget(self, action: #selector(toDetailAction), for: .touchUpInside)
@@ -85,6 +91,53 @@ class TrackerUserCell: UITableViewCell {
     
     @objc func toDetailAction() {
         self.delegate?.toDetailDashboard(withIndex: index)
+    }
+    
+    func cellConfigSchool() {
+        guard let obj = detailSchoolObj else { return }
+        if index == 4 {
+            sectionLabel.text = "Student"
+//            imageLeft.image = UIImage(named: "")
+            totalUserLabel.text = "\(obj.student_total_student)"
+            titleUserLabel.text = "Total Student"
+            
+            totalDownloadPercentLabel.text = "\(obj.student_percentage_download)%"
+            totalDownloadLabel.text = "\(obj.student_total_download)"
+            
+            totalLoginPercentLabel.text = "\(obj.student_percentage_login)%"
+            totalLoginLabel.text = "\(obj.student_total_login)"
+            
+            totalActivePercentLabel.text = "\(obj.student_percentage_active)%"
+            totalActiveLabel.text = "\(obj.student_total_active)"
+        } else if index == 5 {
+            sectionLabel.text = "Teacher"
+//            imageLeft.image = UIImage(named: "")
+            totalUserLabel.text = "\(obj.teacher_total_teacher)"
+            titleUserLabel.text = "Total Teacher"
+            
+            totalDownloadPercentLabel.text = "\(obj.teacher_percentage_download)%"
+            totalDownloadLabel.text = "\(obj.teacher_total_download)"
+            
+            totalLoginPercentLabel.text = "\(obj.teacher_percentage_login)%"
+            totalLoginLabel.text = "\(obj.teacher_total_login)"
+            
+            totalActivePercentLabel.text = "\(obj.teacher_percentage_active)%"
+            totalActiveLabel.text = "\(obj.teacher_total_active)"
+        } else {
+            sectionLabel.text = "Parent"
+//            imageLeft.image = UIImage(named: "")
+            totalUserLabel.text = "\(obj.parent_total_parent)"
+            titleUserLabel.text = "Total Parent"
+            
+            totalDownloadPercentLabel.text = "\(obj.parent_percentage_download)%"
+            totalDownloadLabel.text = "\(obj.parent_total_download)"
+            
+            totalLoginPercentLabel.text = "\(obj.parent_percentage_login)%"
+            totalLoginLabel.text = "\(obj.parent_total_login)"
+            
+            totalActivePercentLabel.text = "\(obj.parent_percentage_active)%"
+            totalActiveLabel.text = "\(obj.parent_total_active)"
+        }
     }
     
     func cellConfig() {

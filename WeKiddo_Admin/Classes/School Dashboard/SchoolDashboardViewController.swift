@@ -68,9 +68,15 @@ extension SchoolDashboardViewController: UITableViewDelegate, UITableViewDataSou
             return cell
         } else if indexPath.row < 4 {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "trackerContentCellID", for: indexPath) as? TrackerContentCell)!
+            cell.index = indexPath.row
+            cell.delegate = self
+            cell.detailSchoolObj = ACData.DASHBOARDSCHOOLLISTDETAILDATA
             return cell
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "trackerUserCellID", for: indexPath) as? TrackerUserCell)!
+            cell.index = indexPath.row
+            cell.delegate = self
+            cell.detailSchoolObj = ACData.DASHBOARDSCHOOLLISTDETAILDATA
             return cell
         }
     }

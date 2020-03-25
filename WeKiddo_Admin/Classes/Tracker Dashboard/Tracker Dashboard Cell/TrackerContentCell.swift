@@ -66,6 +66,12 @@ class TrackerContentCell: UITableViewCell {
         }
     }
     
+    var detailSchoolObj: DashboardDetailSchoolModel? {
+        didSet {
+            cellConfigSchool()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -78,6 +84,29 @@ class TrackerContentCell: UITableViewCell {
     }
     @IBAction func toDetailAction(_ sender: Any) {
         self.delegate?.toDetailPage(withIndex: index)
+    }
+    
+    func cellConfigSchool() {
+        guard let obj = detailSchoolObj else { return }
+        if index == 1 {
+            sectionLabel.text = "Assignment"
+            totalLeft.text = "\(obj.assignment_average_assignment)"
+            labelLeft.text = "Average Assignment by Student"
+            totalRight.text = "\(obj.assignment_worksheet_submission)%"
+            labelRight.text = "Worksheet Submission"
+        } else if index == 2 {
+            sectionLabel.text = "E Book"
+            totalLeft.text = "\(obj.ebook_total_school_upload)%"
+            labelLeft.text = "Total School Upload"
+            totalRight.text = "\(obj.ebook_total_school_download)"
+            labelRight.text = "Total Student Download"
+        } else {
+            sectionLabel.text = "Exercise"
+            totalLeft.text = "\(obj.exercise_total_created_exercise)%"
+            labelLeft.text = "Total Created Exercise"
+            totalRight.text = "\(obj.exercise_total_student_do_exercsie)"
+            labelRight.text = "Total Student Do Exercise"
+        }
     }
     
     func cellConfig() {
