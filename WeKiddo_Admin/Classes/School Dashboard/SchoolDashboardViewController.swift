@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SchoolDashboardViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var currentDate = ""
+    var yearID = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configTable()
         configNavigation()
+        generateCurrentDate()
     }
     func configNavigation() {
         detectAdaptiveClass()
@@ -28,6 +34,17 @@ class SchoolDashboardViewController: UIViewController {
         tableView.register(UINib(nibName: "SchoolDashboardHeaderCell", bundle: nil), forCellReuseIdentifier: "schoolDashboardHeaderCellID")
         tableView.register(UINib(nibName: "TrackerContentCell", bundle: nil), forCellReuseIdentifier: "trackerContentCellID")
         tableView.register(UINib(nibName: "TrackerUserCell", bundle: nil), forCellReuseIdentifier: "trackerUserCellID")
+    }
+    func generateCurrentDate() {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        self.currentDate = formatter.string(from: date)
+        
+        guard let yearIndexZero = ACData.LOGINDATA.dashboardSchoolMenu[0].year_id else {
+            return
+        }
+        yearID = yearIndexZero
     }
 
 }
@@ -55,6 +72,136 @@ extension SchoolDashboardViewController: UITableViewDelegate, UITableViewDataSou
         } else {
             let cell = (tableView.dequeueReusableCell(withIdentifier: "trackerUserCellID", for: indexPath) as? TrackerUserCell)!
             return cell
+        }
+    }
+}
+
+extension SchoolDashboardViewController: TrackerContentCellDelegate, TrackerUserCellDelegate {
+    func toDetailDashboard(withIndex: Int) {
+        switch withIndex {
+        case 4:
+            fetchStudentDashboard()
+        case 5:
+            fetchTeacherDashboard()
+        case 6:
+            fetchParentDashboard()
+        default:
+            fetchStudentDashboard()
+        }
+    }
+    
+    func toDetailPage(withIndex: Int) {
+        switch withIndex {
+        case 1:
+            self.fetchAssignmentDashboard()
+        case 2:
+            self.fetchEbookDashboard()
+        case 3:
+            self.fetchExerciseDashboard()
+        default:
+            self.fetchAssignmentDashboard()
+        }
+    }
+    
+    func fetchParentDashboard() {
+        ACRequest.POST_DASHBOARD_COORDINATOR_PARENT_LIST(userId: ACData.LOGINDATA.userID, date: currentDate, yearID: yearID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATORPARENTLISTDATA = results
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = false
+            studentDashboard.isTeacher = false
+            studentDashboard.isParent = true
+            studentDashboard.currentDate = self.currentDate
+            studentDashboard.yearID = self.yearID
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    
+    func fetchTeacherDashboard() {
+        ACRequest.POST_DASHBOARD_COORDINATOR_TEACHER_LIST(userId: ACData.LOGINDATA.userID, date: currentDate, yearID: yearID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATORTEACHERLISTDATA = results
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = false
+            studentDashboard.isTeacher = true
+            studentDashboard.isParent = false
+            studentDashboard.currentDate = self.currentDate
+            studentDashboard.yearID = self.yearID
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    
+    func fetchStudentDashboard() {
+        ACRequest.POST_DASHBOARD_COORDINATOR_STUDENT_LIST(userId: ACData.LOGINDATA.userID, date: currentDate, yearID: yearID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATORSTUDENTLISTDATA = results
+            let studentDashboard = StudentListDashboardViewController()
+            studentDashboard.isStudent = true
+            studentDashboard.isTeacher = false
+            studentDashboard.isParent = false
+            studentDashboard.currentDate = self.currentDate
+            studentDashboard.yearID = self.yearID
+            self.navigationController?.pushViewController(studentDashboard, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    
+    func fetchAssignmentDashboard() {
+        ACRequest.POST_DASHBOARD_COORDINATOR_ASSIGNMENT_LIST(userId: ACData.LOGINDATA.userID, date: currentDate, yearID: yearID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATORASSIGNMENTLISTDATA = results
+            let dashboardAssignment = DashboardAssignmentViewController()
+            dashboardAssignment.isAssignment = true
+            dashboardAssignment.isEbook = false
+            dashboardAssignment.isExercise = false
+            dashboardAssignment.currentDate = self.currentDate
+            dashboardAssignment.yearID = self.yearID
+            self.navigationController?.pushViewController(dashboardAssignment, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    
+    func fetchEbookDashboard() {
+        ACRequest.POST_DASHBOARD_COORDINATOR_EBOOK_LIST(userId: ACData.LOGINDATA.userID, date: currentDate, yearID: yearID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATOREBOOKLISTDATA = results
+            let dashboardAssignment = DashboardAssignmentViewController()
+            dashboardAssignment.isAssignment = false
+            dashboardAssignment.isEbook = true
+            dashboardAssignment.isExercise = false
+            dashboardAssignment.currentDate = self.currentDate
+            dashboardAssignment.yearID = self.yearID
+            self.navigationController?.pushViewController(dashboardAssignment, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
+        }
+    }
+    
+    func fetchExerciseDashboard() {
+        ACRequest.POST_DASHBOARD_COORDINATOR_EXERCISE_LIST(userId: ACData.LOGINDATA.userID, date: currentDate, yearID: yearID, keyword: "", tokenAccess: ACData.LOGINDATA.accessToken, successCompletion: { (results) in
+            SVProgressHUD.dismiss()
+            ACData.DASHBOARDCOORDINATOREXERCISELISTDATA = results
+            let dashboardAssignment = DashboardAssignmentViewController()
+            dashboardAssignment.isAssignment = false
+            dashboardAssignment.isEbook = false
+            dashboardAssignment.isExercise = true
+            dashboardAssignment.currentDate = self.currentDate
+            dashboardAssignment.yearID = self.yearID
+            self.navigationController?.pushViewController(dashboardAssignment, animated: true)
+        }) { (message) in
+            SVProgressHUD.dismiss()
+            ACAlert.show(message: message)
         }
     }
 }
